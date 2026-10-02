@@ -1,0 +1,67 @@
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.269s
+
+OK
+Copied bell.wav -> <temporary-file>
+Copied welcome.wav -> <temporary-file>
+Copied attention.wav -> <temporary-file>
+Copied error.wav -> <temporary-file>
+Copied abort.wav -> <temporary-file>
+Copied dead.wav -> <temporary-file>
+Copied bell.wav -> <temporary-file>
+Copied welcome.wav -> <temporary-file>
+Copied attention.wav -> <temporary-file>
+Copied error.wav -> <temporary-file>
+Copied abort.wav -> <temporary-file>
+Copied dead.wav -> <temporary-file>
+Copied abort.cue -> <temporary-file>
+Overlaid abort.wav -> <temporary-file>
+Copied attention.cue -> <temporary-file>
+Overlaid attention.wav -> <temporary-file>
+Copied error.cue -> <temporary-file>
+Overlaid error.wav -> <temporary-file>
+Copied welcome.cue -> <temporary-file>
+Overlaid welcome.wav -> <temporary-file>
+Audio image 1713158 bytes (limit 1835008)
+Copied bell.wav -> <temporary-file>
+Copied welcome.wav -> <temporary-file>
+Copied attention.wav -> <temporary-file>
+Copied error.wav -> <temporary-file>
+Copied abort.wav -> <temporary-file>
+Copied dead.wav -> <temporary-file>
+Copied bell.wav -> <temporary-file>
+Copied welcome.wav -> <temporary-file>
+Copied attention.wav -> <temporary-file>
+Copied error.wav -> <temporary-file>
+Copied abort.wav -> <temporary-file>
+Copied dead.wav -> <temporary-file>
+Copied bell.wav -> <temporary-file>
+Copied welcome.wav -> <temporary-file>
+Copied attention.wav -> <temporary-file>
+Copied error.wav -> <temporary-file>
+Copied abort.wav -> <temporary-file>
+Copied dead.wav -> <temporary-file>
+Copied welcome.cue -> <temporary-file>
+Overlaid welcome.wav -> <temporary-file>
+Audio image 291428 bytes (limit 1934464)
+Copied bell.wav -> <temporary-file>
+Copied welcome.wav -> <temporary-file>
+Copied attention.wav -> <temporary-file>
+Copied error.wav -> <temporary-file>
+Copied abort.wav -> <temporary-file>
+Copied dead.wav -> <temporary-file>
+Audio image 264864 bytes (limit 1934464)
+Copied bell.wav -> <temporary-file>
+Copied welcome.wav -> <temporary-file>
+Copied attention.wav -> <temporary-file>
+Copied error.wav -> <temporary-file>
+Copied abort.wav -> <temporary-file>
+Copied dead.wav -> <temporary-file>
+Audio image 264864 bytes (limit 1934464)
+Copied bell.wav -> <temporary-file>
+Copied welcome.wav -> <temporary-file>
+Copied attention.wav -> <temporary-file>
+Copied error.wav -> <temporary-file>
+Copied abort.wav -> <temporary-file>
+Copied dead.wav -> <temporary-file>

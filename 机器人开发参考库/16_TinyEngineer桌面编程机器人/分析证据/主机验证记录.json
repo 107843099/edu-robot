@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-03",
+  "rows": [
+    {
+      "name": "tiny-cursor",
+      "command": [
+        "node",
+        "--test",
+        "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/packages/tiny-engineer-cursor/test/map.test.js"
+      ],
+      "cwd": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer",
+      "exit_code": 0,
+      "elapsed_seconds": 1.316,
+      "tail": "✔ EVENT_ANIM maps reading events to reading (3.625582ms)\n✔ EVENT_ANIM maps thinking events to thinking (0.442399ms)\n✔ EVENT_ANIM maps typing events to typing (0.280693ms)\n✔ preToolUse maps reading tools to reading (0.254787ms)\n✔ preToolUse maps typing tools to typing (0.268754ms)\n✔ preToolUse skips unknown tools (0.218304ms)\n✔ stop maps aborted to abort (0.237632ms)\n✔ stop maps error to error (0.227855ms)\n✔ stop maps completed or missing status to ring (0.341067ms)\n✔ skips empty conversation_id or generation_id (0.390843ms)\n✔ skips missing or unknown hook_event_name (0.26921ms)\nℹ tests 11\nℹ suites 0\nℹ pass 11\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 443.854617\n"
+    },
+    {
+      "name": "tiny-antigravity",
+      "command": [
+        "node",
+        "--test",
+        "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/packages/tiny-engineer-antigravity/test/map.test.js"
+      ],
+      "cwd": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer",
+      "exit_code": 0,
+      "elapsed_seconds": 1.31,
+      "tail": "✔ PreInvocation maps to thinking (11.152554ms)\n✔ PreToolUse maps reading tools to reading (0.546889ms)\n✔ PreToolUse maps typing tools to typing (8.53613ms)\n✔ PostToolUse maps error to attention (0.810412ms)\n✔ Stop maps model_stop to ring (0.541966ms)\n✔ Stop maps error to error (1.533503ms)\n✔ Stop maps abort to abort (1.029791ms)\nℹ tests 7\nℹ suites 0\nℹ pass 7\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 437.840563\n"
+    },
+    {
+      "name": "tiny-claude-code",
+      "command": [
+        "node",
+        "--test",
+        "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/packages/tiny-engineer-claude-code/test/env.test.js",
+        "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/packages/tiny-engineer-claude-code/test/map.test.js"
+      ],
+      "cwd": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer",
+      "exit_code": 0,
+      "elapsed_seconds": 1.316,
+      "tail": "✔ a project .env can set both the token and the URL (6.880119ms)\n✔ a project .env cannot redirect a token inherited from the environment (1.890138ms)\n✔ an inherited URL still wins over the project .env (1.584568ms)\n✔ lifecycle events map to their poses (1.828ms)\n✔ SessionStart welcomes only a fresh launch; every other start wakes up (0.39517ms)\n✔ PreToolUse maps reading tools to reading (2.056821ms)\n✔ PreToolUse maps typing tools to typing (0.335872ms)\n✔ PreToolUse skips unknown or missing tools (0.29814ms)\n✔ skips missing, unknown, or Cursor-cased hook_event_name (0.255396ms)\n✔ parseArgs reads --url in both forms and rejects unknown args (6.738601ms)\nℹ tests 10\nℹ suites 0\nℹ pass 10\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 450.702413\n"
+    },
+    {
+      "name": "tiny-expressions-generate",
+      "command": [
+        "node",
+        "scripts/expressions/generate.js",
+        "--check"
+      ],
+      "cwd": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer",
+      "exit_code": 0,
+      "elapsed_seconds": 1.051,
+      "tail": "Verified 16 expressions, 480 frames, 87 unique frames; 18624 asset bytes.\n"
+    },
+    {
+      "name": "tiny-expressions-assets",
+      "command": [
+        "node",
+        "scripts/expressions/test-assets.js"
+      ],
+      "cwd": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer",
+      "exit_code": 0,
+      "elapsed_seconds": 0.415,
+      "tail": "Verified 16 expressions, 480 frames, 87 unique frames; 18624 asset bytes.\nPASS: all 480 frames match the original pixels; packing, RLE limits, and generated files verified.\n"
+    },
+    {
+      "name": "tiny-audio",
+      "command": [
+        "python3",
+        "scripts/test_audio_pack.py"
+      ],
+      "cwd": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer",
+      "exit_code": 0,
+      "elapsed_seconds": 0.523,
+      "tail": "00gn/T/tmpncq5vjne/data/bell.wav\nCopied welcome.wav -> <temporary-file>\nCopied attention.wav -> <temporary-file>\nCopied error.wav -> <temporary-file>\nCopied abort.wav -> <temporary-file>\nCopied dead.wav -> <temporary-file>\nCopied welcome.cue -> <temporary-file>\nOverlaid welcome.wav -> <temporary-file>\nAudio image 291428 bytes (limit 1934464)\nCopied bell.wav -> <temporary-file>\nCopied welcome.wav -> <temporary-file>\nCopied attention.wav -> <temporary-file>\nCopied error.wav -> <temporary-file>\nCopied abort.wav -> <temporary-file>\nCopied dead.wav -> <temporary-file>\nAudio image 264864 bytes (limit 1934464)\nCopied bell.wav -> <temporary-file>\nCopied welcome.wav -> <temporary-file>\nCopied attention.wav -> <temporary-file>\nCopied error.wav -> <temporary-file>\nCopied abort.wav -> <temporary-file>\nCopied dead.wav -> <temporary-file>\nAudio image 264864 bytes (limit 1934464)\nCopied bell.wav -> <temporary-file>\nCopied welcome.wav -> <temporary-file>\nCopied attention.wav -> <temporary-file>\nCopied error.wav -> <temporary-file>\nCopied abort.wav -> <temporary-file>\nCopied dead.wav -> <temporary-file>\n"
+    }
+  ],
+  "upstream_source_changed": false,
+  "physical_robot_test": false,
+  "scope": "28 Node tests, 9 Python audio tests, 480 expression frames; no firmware or KiCad build",
+  "offline_fixture_rerun": null,
+  "runtime_versions": {
+    "node": "v24.19.0",
+    "python": "3.12.14"
+  },
+  "test_generated_files_note": "Pytest cache and worker-test bytecode were moved outside fixed source snapshots after checks; source file counts reverified."
+}

@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-02",
+  "date": "2026-10-03",
   "repository": "https://github.com/107843099/edu-robot",
   "scope": {
     "folder": "机器人开发参考库",
@@ -64,13 +64,34 @@
     "机器人开发参考库/跨项目开发借鉴.md",
     "机器人开发参考库/配套链接核查与缺口.md"
   ],
-  "source_snapshots": 67,
-  "distinct_upstream_repositories": 66,
+  "source_snapshots": 76,
+  "distinct_upstream_repositories": 75,
   "omitted_os_metadata_files": 5,
   "large_file_threshold_bytes": 2097152,
-  "large_files_selected": 358,
-  "large_files_logical_bytes": 3190454867,
+  "large_files_selected": 379,
+  "large_files_logical_bytes": 3321305454,
   "redaction_record": "机器人开发参考库/上游源码脱敏记录.json",
   "source_snapshot_policy": "Preserve source and licenses; one recorded credential replacement. Nested ignore rules are bypassed only for explicitly enumerated source files.",
-  "hardware_execution": false
+  "hardware_execution": false,
+  "updates": [
+    {
+      "date": "2026-10-03",
+      "projects": [
+        "16_TinyEngineer桌面编程机器人",
+        "17_Needle端侧模型"
+      ],
+      "added_github_snapshots": 9,
+      "added_source_files": 1953,
+      "huggingface_inference_files": 76,
+      "hf_training_checkpoints_downloaded": false,
+      "source_bytes_compared_to_original_zips": true,
+      "new_large_files_selected": 21,
+      "new_large_file_bytes": 130850587,
+      "new_plaintext_files_secret_pattern_checked": 1545,
+      "secret_pattern_findings": [],
+      "host_validation": "Tiny: 28 Node, 9 audio, 480 frames; Needle selected SDK checks plus two prompt conditions of ten offline queries each",
+      "physical_robot_test": false,
+      "unrelated_existing_work_staged": false
+    }
+  ]
 }

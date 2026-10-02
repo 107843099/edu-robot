@@ -1,0 +1,11 @@
+[project]
+name = "turboquant-sanitized"
+version = "0.1.0"
+description = "Sanitized TurboQuant-H trajectory, calibration, and fixed quantization pipeline"
+requires-python = ">=3.11"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

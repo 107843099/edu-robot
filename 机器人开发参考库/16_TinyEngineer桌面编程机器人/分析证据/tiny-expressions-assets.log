@@ -1,0 +1,2 @@
+Verified 16 expressions, 480 frames, 87 unique frames; 18624 asset bytes.
+PASS: all 480 frames match the original pixels; packing, RLE limits, and generated files verified.

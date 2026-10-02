@@ -1,0 +1,51 @@
+{
+  "n8n": {
+    "webhook_url": "https://your-n8n.example/webhook/your-id",
+    "auth_header_name": "",
+    "auth_header_value": "",
+    "timeout_seconds": 120,
+    "stream": true,
+    "session_switch_threshold_seconds": 30,
+    "include_hmmm_chunk": true,
+    "thinking_delay_seconds": 2.0,
+    "extra_payload": {}
+  },
+  "open_ai": {
+    "api_key": "sk-proj-...",
+    "budget": {
+      "daily_usd_limit": 10.00
+    }
+  },
+  "text2speech": {
+    "model": "gpt-4o-mini-tts",
+    "voice": "marin",
+    "speed": 1.25,
+    "instructions": "You are a English voice assistant. Read the input text aloud in natural, fluent language with clear pronunciation. Maintain a polite and helpful tone. Do not translate or improvise."
+  },
+  "speech2text": {
+    "model": "gpt-4o-transcribe",
+    "streaming": true,
+    "instructions": "The audio is an English voice command for a voice assistant. Transcribe only if the speech is clear and logical. Use correct spelling and punctuation. If the audio is unclear, contains noise, or is not valid, return an empty string ''). Do not attempt to guess or translate.",
+    "language": "en",
+    "noise_reduction": "far_field",
+    "audio_logs_path": "",
+    "prerecord_beep": "beep7.wav",
+    "preprocessing": {
+      "min_speech_length": 0.5,
+      "high_pass_cutoff_freq": 70.0,
+      "declicking": true,
+      "noise_supresion_level": 0,
+      "agc_enabled": true,
+      "vad_aggressiveness": 1,
+      "normalization_enabled": true,
+      "normalization_target_rms_dbfs": -20.0,
+      "normalization_peak_limit_dbfs": -3.0,
+      "edge_fade_enabled": false
+    }
+  },
+  "voice_id": {
+    "enabled": false,
+    "include_embedding": false,
+    "threshold": 0.267
+  }
+}

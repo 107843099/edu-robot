@@ -1,0 +1,61 @@
+{
+  "name": "desk-hud",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "provision-remote": "pm2 deploy production setup",
+    "build": "webpack --config webpack.config.js --mode production",
+    "build-demo": "webpack --config webpack.config.js --mode production --env demo='true'",
+    "serve-demo": "http-server -c-1 ./dist/demo",
+    "watch": "webpack --config webpack.config.js --mode development --watch",
+    "deploy": "pm2 deploy production",
+    "deploy-local": "pm2 start ecosystem.config.js",
+    "undeploy-local": "pm2 delete ecosystem.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamro/desk-hud.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamro/desk-hud/issues"
+  },
+  "homepage": "https://github.com/jamro/desk-hud#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "fluent-ffmpeg": "^2.1.3",
+    "googleapis": "^118.0.0",
+    "hls.js": "^1.5.8",
+    "home-assistant-js-websocket": "^8.0.1",
+    "node-fetch": "^2.6.0",
+    "node-persist": "^3.1.3",
+    "os-utils": "^0.0.14",
+    "socket.io": "^4.6.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "@google-cloud/local-auth": "^2.1.1",
+    "babel-loader": "^9.1.2",
+    "cloc": "^1.96.0-cloc",
+    "connect-livereload": "^0.6.1",
+    "copy-webpack-plugin": "^11.0.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "fontfaceobserver": "^2.3.0",
+    "html-webpack-plugin": "^5.5.1",
+    "http-server": "^14.1.1",
+    "livereload": "^0.9.3",
+    "pm2": "^5.3.0",
+    "webpack": "^5.83.1",
+    "webpack-cli": "^5.1.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  firmware:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.platformio
+            ~/.cache/pip
+            .pio
+          key: ${{ runner.os }}-pio-${{ hashFiles('platformio.ini') }}
+          restore-keys: |
+            ${{ runner.os }}-pio-
+      - name: Install PlatformIO
+        run: pip install -U platformio
+      - name: Audio pack tests
+        run: python3 scripts/test_audio_pack.py
+      - name: Build firmware
+        run: pio run
+      - name: Build OLED expression demo
+        run: pio run -e expression-demo
+      - name: Host Unity tests
+        run: pio test -e native
+
+  packages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check OLED expression assets
+        run: |
+          node scripts/expressions/generate.js --check
+          node scripts/expressions/test-assets.js
+      - name: Cursor package tests
+        run: npm test --prefix packages/tiny-engineer-cursor
+      - name: Antigravity package tests
+        run: npm test --prefix packages/tiny-engineer-antigravity
+      - name: Claude Code package tests
+        run: npm test --prefix packages/tiny-engineer-claude-code
+
+  pcb:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install KiCad 10
+        run: |
+          sudo add-apt-repository -y ppa:kicad/kicad-10.0-releases
+          sudo apt-get update
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends kicad
+          kicad-cli version
+      - name: ERC / DRC / expected-nets
+        run: python3 scripts/check_pcb.py --report-dir artifacts/pcb
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: pcb-reports
+          path: artifacts/pcb/

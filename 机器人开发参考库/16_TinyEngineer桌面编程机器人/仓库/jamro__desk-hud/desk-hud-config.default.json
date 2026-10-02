@@ -1,0 +1,105 @@
+{
+  "core": {
+    "port": 3000,
+    "distance": {
+      "wakeUp": 80,
+      "goSleep": 100
+    },
+    "powerOffTime": 10000
+  },
+  "dateTime": {
+    "countdown": {
+      "name": "...",
+      "date": "1970-01-01T00:00:00.000Z"
+    },
+    "timezones": [
+      {
+        "id": "europe/warsaw",
+        "name": "Warsaw"
+      },
+      {
+        "id": "europe/dublin",
+        "name": "Dublin"
+      },
+      {
+        "id": "america/los_angeles",
+        "name": "San Francisco"
+      }
+    ]
+  },
+  "weather": {
+    "apiKey": "...",
+    "lat": 51.489389447148035, 
+    "lon": -0.1485535284481777
+  },
+  "hass": {
+    "url": "http://192.168.1.100:8123",
+    "token": "...",
+    "entities": {
+      "temp":"sensor...",
+      "tempBattery": "sensor...",
+      "ac": "climate...",
+      "door1": "binary_sensor...",
+      "door2": "binary_sensor...",
+      "door3": "binary_sensor...",
+      "cover1": "cover...",
+      "cover2": "cover...",
+      "cover3": "cover...",
+      "cover4": "cover...",
+      "cover5": "cover...",
+      "door1Battery": "sensor...",
+      "door2Battery": "sensor...",
+      "door3Battery": "sensor...",
+      "cover1Battery": "sensor...",
+      "cover2Battery": "sensor...",
+      "cover3Battery": "sensor...",
+      "cover4Battery": "sensor...",
+      "cover5Battery": "sensor..."
+    }
+  },
+  "google": {
+    "clientId": "...",
+    "clientSecret": "...",
+    "clientToken": "...",
+    "tasks": {
+      "inboxId": "...",
+      "actionsId": "..."
+    },
+    "calendars": [
+      "contact@gmail.com"
+    ]
+  },
+  "stockdata": {
+    "apiKey": "...",
+    "symbol": "IBM"
+  },
+  "webcam": {
+    "name": "Webcam",
+    "areas": [
+      {
+        "cameraX": 0,
+        "cameraY": 100,
+        "viewX": 0,
+        "viewY": 0,
+        "width": 580,
+        "height": 200,
+        "scale": 0.35
+      },
+      {
+        "cameraX": 480,
+        "cameraY": 520,
+        "viewX": 220,
+        "viewY": -90,
+        "width": 140,
+        "height": 30,
+        "scale": 0.45
+      }
+    ],
+    "stream": {
+      "rtsp": "rtsp://user:pass@192.168.1.123/stream1",
+      "segmentSize": 5,
+      "segmentCount": 5,
+      "buffer": 15
+    }
+  }
+}

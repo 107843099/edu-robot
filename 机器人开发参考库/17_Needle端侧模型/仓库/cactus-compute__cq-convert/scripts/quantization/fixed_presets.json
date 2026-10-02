@@ -1,0 +1,50 @@
+{
+  "llm4_pli2_emb4": {
+    "vision_bits": 16,
+    "audio_bits": 16,
+    "bridge_bits": 16,
+    "llm_bits": 4,
+    "pli_bits": 2,
+    "embed_bits": 4
+  },
+  "vision4_llm4_pli2_emb4": {
+    "vision_bits": 4,
+    "audio_bits": 16,
+    "bridge_bits": 4,
+    "llm_bits": 4,
+    "pli_bits": 2,
+    "embed_bits": 4
+  },
+  "audio4_llm4_pli2_emb4": {
+    "vision_bits": 16,
+    "audio_bits": 4,
+    "bridge_bits": 4,
+    "llm_bits": 4,
+    "pli_bits": 2,
+    "embed_bits": 4
+  },
+  "joint4_pli2_emb4": {
+    "vision_bits": 4,
+    "audio_bits": 4,
+    "bridge_bits": 4,
+    "llm_bits": 4,
+    "pli_bits": 2,
+    "embed_bits": 4
+  },
+  "audio2_llm4_pli2_emb4": {
+    "vision_bits": 16,
+    "audio_bits": 2,
+    "bridge_bits": 4,
+    "llm_bits": 4,
+    "pli_bits": 2,
+    "embed_bits": 4
+  },
+  "vision2_llm4_pli2_emb4": {
+    "vision_bits": 2,
+    "audio_bits": 16,
+    "bridge_bits": 4,
+    "llm_bits": 4,
+    "pli_bits": 2,
+    "embed_bits": 4
+  }
+}

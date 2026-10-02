@@ -1,0 +1,18 @@
+✔ a project .env can set both the token and the URL (6.880119ms)
+✔ a project .env cannot redirect a token inherited from the environment (1.890138ms)
+✔ an inherited URL still wins over the project .env (1.584568ms)
+✔ lifecycle events map to their poses (1.828ms)
+✔ SessionStart welcomes only a fresh launch; every other start wakes up (0.39517ms)
+✔ PreToolUse maps reading tools to reading (2.056821ms)
+✔ PreToolUse maps typing tools to typing (0.335872ms)
+✔ PreToolUse skips unknown or missing tools (0.29814ms)
+✔ skips missing, unknown, or Cursor-cased hook_event_name (0.255396ms)
+✔ parseArgs reads --url in both forms and rejects unknown args (6.738601ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 450.702413

@@ -1,0 +1,1360 @@
+---
+title: "Cactus Engine FFI API Reference"
+description: "C API documentation for Cactus on-device AI inference engine. Supports text completion, vision, transcription, embeddings, RAG, tool calling, and cloud handoff."
+keywords: ["on-device AI", "mobile inference", "LLM API", "C FFI", "edge AI", "transcription", "embeddings", "RAG", "tool calling"]
+---
+
+# Cactus Engine FFI Documentation
+
+The Cactus Engine provides a clean C FFI (Foreign Function Interface) for integrating the LLM inference engine into various applications. This documentation covers all available functions, their parameters, and usage examples.
+
+## Getting Started
+
+Before using the Cactus Engine, you need to download model weights:
+
+```bash
+./setup
+cactus download LiquidAI/LFM2-1.2B
+cactus download LiquidAI/LFM2-VL-450M
+cactus download openai/whisper-small
+
+# Optional: set your Cactus Cloud API key for automatic cloud fallback
+cactus auth
+```
+
+`cactus download` fetches a **pre-built runtime bundle** (CQ weights + serialized
+graph + manifest) from
+[huggingface.co/Cactus-Compute](https://huggingface.co/Cactus-Compute) into
+`weights/<model>-cq<bits>/`. The result can be loaded directly via
+`cactus_init()`.
+
+For models not on Cactus-Compute, `cactus convert <model>` can still quantize
+weights to Cactus CQ format, but local runtime bundle generation is unavailable
+while the graph builder is being rewritten.
+
+## Types
+
+### `cactus_model_t`
+An opaque pointer type representing a loaded model instance. This handle is used throughout the API to reference a specific model.
+
+```c
+typedef void* cactus_model_t;
+```
+
+### `cactus_index_t`
+An opaque pointer type representing a vector index instance.
+
+```c
+typedef void* cactus_index_t;
+```
+
+### `cactus_token_callback`
+Callback function type for streaming token generation. Called for each generated token during completion.
+
+```c
+typedef void (*cactus_token_callback)(
+    const char* token,      // The generated token text
+    uint32_t token_id,      // The token's ID in the vocabulary
+    void* user_data         // User-provided context data
+);
+```
+
+### `cactus_log_callback_t`
+Callback function type for log messages. Installed via `cactus_log_set_callback`.
+
+```c
+typedef void (*cactus_log_callback_t)(int level, const char* component, const char* message, void* user_data);
+```
+
+## Core Functions
+
+### `cactus_init`
+Initializes a model from disk and prepares it for inference.
+
+```c
+cactus_model_t cactus_init(
+    const char* model_path,   // Path to the model directory
+    const char* corpus_dir,   // Optional path to corpus directory for RAG (can be NULL)
+    bool cache_index          // false = always rebuild index, true = load cached if available
+);
+```
+
+**Returns:** Model handle on success, NULL on failure
+
+**Example:**
+```c
+cactus_model_t model = cactus_init("../../weights/qwen3-600m", NULL, false);
+if (!model) {
+    fprintf(stderr, "Failed to initialize model\n");
+    return -1;
+}
+
+// with RAG corpus
+cactus_model_t rag_model = cactus_init("../../weights/lfm2-rag", "./documents", true);
+```
+
+### `cactus_complete`
+Performs text completion with optional streaming and tool support.
+
+```c
+int cactus_complete(
+    cactus_model_t model,           // Model handle
+    const char* messages_json,      // JSON array of messages
+    char* response_buffer,          // Buffer for response JSON
+    size_t buffer_size,             // Size of response buffer
+    const char* options_json,       // Optional generation options (can be NULL)
+    const char* tools_json,         // Optional tools definition (can be NULL)
+    cactus_token_callback callback, // Optional streaming callback (can be NULL)
+    void* user_data,                // User data for callback (can be NULL)
+    const uint8_t* pcm_buffer,     // Optional raw PCM audio buffer (can be NULL)
+    size_t pcm_buffer_size         // Size of PCM buffer in bytes (0 when not used)
+);
+```
+
+**Returns:** Number of bytes written to response_buffer on success, negative value on error
+
+**Message Format:**
+```json
+[
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": "What is your name?"}
+]
+```
+
+**Messages with Images (for VLM models):**
+```json
+[
+    {"role": "user", "content": "Describe this image", "images": ["/path/to/image.jpg"]}
+]
+```
+
+**Messages with Audio (for multimodal models like Gemma4):**
+```json
+[
+    {"role": "user", "content": "Transcribe the audio.", "audio": ["/path/to/audio.wav"]}
+]
+```
+
+**Messages with Images and Audio:**
+```json
+[
+    {"role": "user", "content": "Describe the image and transcribe the audio.", "images": ["/path/to/image.jpg"], "audio": ["/path/to/audio.wav"]}
+]
+```
+
+**Options Format:**
+```json
+{
+    "max_tokens": 256,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "min_p": 0.15,
+    "repetition_penalty": 1.1,
+    "top_k": 40,
+    "stop_sequences": ["<|im_end|>", "<end_of_turn>"],
+    "include_stop_sequences": false,
+    "force_tools": false,
+    "tool_rag_top_k": 2,
+    "confidence_threshold": 0.7,
+    "auto_handoff": true,
+    "cloud_timeout_ms": 15000,
+    "handoff_with_images": true,
+    "enable_thinking_if_supported": false
+}
+```
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `max_tokens` | int | 100 | Maximum tokens to generate |
+| `temperature` | float | 0.0 | Sampling temperature |
+| `top_p` | float | 0.0 | Top-p (nucleus) sampling |
+| `top_k` | int | 0 | Top-k sampling |
+| `min_p` | float | 0.15 | Minimum probability threshold relative to max probability |
+| `repetition_penalty` | float | 1.1 | Penalize previously generated tokens (1.0 disables) |
+| `stop_sequences` | array | [] | Stop generation on these strings |
+| `include_stop_sequences` | bool | false | Include stop sequence tokens in the response |
+| `force_tools` | bool | false | Constrain output to tool call format |
+| `tool_rag_top_k` | int | 2 | Select top-k relevant tools via Tool RAG (0 = disabled, use all tools) |
+| `confidence_threshold` | float | model-dependent | Minimum confidence for local generation; triggers cloud_handoff when below. Resolved in this order: `0.5` if the bundle ships a `handoff_probe.bin`; else the model's `default_cloud_handoff_threshold` (Gemma 4 = `0.81`); else `0.7`. |
+| `auto_handoff` | bool | true | Automatically attempt cloud handoff when confidence is low |
+| `cloud_timeout_ms` | int | 15000 | Timeout in milliseconds for cloud handoff requests |
+| `handoff_with_images` | bool | true | Allow cloud handoff for requests that include images |
+| `enable_thinking_if_supported` | bool | false | Enable chain-of-thought thinking blocks for models that support it |
+
+**Response Format:**
+```json
+{
+    "success": true,
+    "error": null,
+    "cloud_handoff": false,
+    "response": "I am an AI assistant.",
+    "function_calls": [],
+    "segments": [],
+    "confidence": 0.85,
+    "confidence_threshold": 0.7,
+    "time_to_first_token_ms": 150.5,
+    "total_time_ms": 1250.3,
+    "prefill_tps": 166.1,
+    "decode_tps": 45.2,
+    "ram_usage_mb": 245.67,
+    "prefill_tokens": 25,
+    "decode_tokens": 8,
+    "total_tokens": 33
+}
+```
+
+`confidence_threshold` is the resolved value `confidence` is compared against — model-dependent (see the options table above), or whatever you pass; the `0.7` here is just the fallback default. `cloud_handoff` becomes `true` when `confidence` drops below it.
+
+The `thinking` field is only present in the JSON when the model produced a chain-of-thought block:
+```json
+{
+    "success": true,
+    "error": null,
+    "cloud_handoff": false,
+    "response": "The answer is 4.",
+    "thinking": "Let me consider this... 2+2 equals 4.",
+    "function_calls": [],
+    "segments": [],
+    "confidence": 0.91,
+    "confidence_threshold": 0.7,
+    "time_to_first_token_ms": 150.5,
+    "total_time_ms": 1250.3,
+    "prefill_tps": 166.1,
+    "decode_tps": 45.2,
+    "ram_usage_mb": 245.67,
+    "prefill_tokens": 25,
+    "decode_tokens": 8,
+    "total_tokens": 33
+}
+```
+
+**Cloud Handoff Response** (when model detects low confidence and cloud handoff succeeds):
+```json
+{
+    "success": true,
+    "error": null,
+    "cloud_handoff": true,
+    "response": "Cloud-provided answer.",
+    "function_calls": [],
+    "segments": [],
+    "confidence": 0.18,
+    "confidence_threshold": 0.7,
+    "time_to_first_token_ms": 45.2,
+    "total_time_ms": 45.2,
+    "prefill_tps": 619.5,
+    "decode_tps": 0.0,
+    "ram_usage_mb": 245.67,
+    "prefill_tokens": 28,
+    "decode_tokens": 0,
+    "total_tokens": 28
+}
+```
+
+When `cloud_handoff` is true, the model's confidence dropped below the resolved `confidence_threshold` (see the request options above) and the response was fulfilled by a cloud-based model. The `response` field contains the cloud-provided answer.
+
+**Error Response:**
+```json
+{
+    "success": false,
+    "error": "Error message here",
+    "cloud_handoff": false,
+    "response": null,
+    "function_calls": [],
+    "confidence": null,
+    "time_to_first_token_ms": 0.0,
+    "total_time_ms": 0.0,
+    "prefill_tps": 0.0,
+    "decode_tps": 0.0,
+    "ram_usage_mb": 245.67,
+    "prefill_tokens": 0,
+    "decode_tokens": 0,
+    "total_tokens": 0
+}
+```
+
+Note: `ram_usage_mb` reflects actual current RAM usage even in error responses.
+
+**Response with Function Call:**
+```json
+{
+    "success": true,
+    "error": null,
+    "cloud_handoff": false,
+    "response": "",
+    "function_calls": [
+        {
+            "name": "get_weather",
+            "arguments": {"location": "San Francisco, CA, USA"}
+        }
+    ],
+    "segments": [],
+    "confidence": 0.92,
+    "confidence_threshold": 0.7,
+    "time_to_first_token_ms": 120.0,
+    "total_time_ms": 450.5,
+    "prefill_tps": 375.0,
+    "decode_tps": 38.5,
+    "ram_usage_mb": 245.67,
+    "prefill_tokens": 45,
+    "decode_tokens": 15,
+    "total_tokens": 60
+}
+```
+
+**Example with Streaming:**
+```c
+void streaming_callback(const char* token, uint32_t token_id, void* user_data) {
+    printf("%s", token);
+    fflush(stdout);
+}
+
+const char* messages = "[{\"role\": \"user\", \"content\": \"Tell me a story\"}]";
+
+char response[8192];
+int result = cactus_complete(model, messages, response, sizeof(response),
+                             NULL, NULL, streaming_callback, NULL, NULL, 0);
+```
+
+### `cactus_prefill`
+Pre-processes input text and populates the KV cache without generating output tokens. This reduces latency for future calls to `cactus_complete`.
+
+```c
+int cactus_prefill(
+    cactus_model_t model,           // Model handle
+    const char* messages_json,      // JSON array of messages
+    char* response_buffer,         // Buffer for response JSON
+    size_t buffer_size,             // Size of response buffer
+    const char* options_json,       // Optional generation options (can be NULL)
+    const char* tools_json,         // Optional tools definition (can be NULL)
+    const uint8_t* pcm_buffer,     // Optional raw PCM audio buffer (can be NULL)
+    size_t pcm_buffer_size         // Size of PCM buffer in bytes (0 when not used)
+);
+```
+
+**Returns:** Number of bytes written to response_buffer on success, negative value on error.
+
+**Message Format:** Same as `cactus_complete` (see above)
+
+**Options Format:** Same as `cactus_complete` (see above)
+
+**Response Format:**
+```json
+{
+    "success": true,
+    "error": null,
+    "prefill_tokens": 25,
+    "prefill_tps": 166.1,
+    "total_time_ms": 150.5,
+    "ram_usage_mb": 245.67
+}
+```
+
+**Error Response:**
+```json
+{
+    "success": false,
+    "error": "Error message here",
+    "prefill_tokens": 0,
+    "prefill_tps": 0.0,
+    "total_time_ms": 0.0,
+    "ram_usage_mb": 245.67
+}
+```
+
+**Example:**
+```c
+const char* tools = R"([{
+    "type": "function",
+    "function": {
+        "name": "get_weather",
+        "description": "Get weather for a location",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "location": {"type": "string", "description": "City, State, Country"}
+            },
+            "required": ["location"]
+        }
+    }
+}])";
+
+const char* base_messages = R"([
+    { "role": "system", "content": "You are a helpful assistant." },
+    { "role": "user", "content": "What is the weather in Paris?" },
+    { "role": "assistant", "content": "<|tool_call_start|>get_weather(location=\"Paris\")<|tool_call_end|>" },
+    { "role": "tool", "content": "{\"name\": \"get_weather\", \"content\": \"Sunny, 72°F\"}" },
+    { "role": "assistant", "content": "It's sunny and 72°F in Paris!" }
+])";
+
+char prefill_response[1024];
+cactus_prefill(model, base_messages, prefill_response, sizeof(prefill_response), NULL, tools, NULL, 0);
+
+const char* completion_messages = R"([
+    { "role": "system", "content": "You are a helpful assistant." },
+    { "role": "user", "content": "What is the weather in Paris?" },
+    { "role": "assistant", "content": "<|tool_call_start|>get_weather(location=\"Paris\")<|tool_call_end|>" },
+    { "role": "tool", "content": "{\"name\": \"get_weather\", \"content\": \"Sunny, 72°F\"}" },
+    { "role": "assistant", "content": "It's sunny and 72°F in Paris!" },
+    { "role": "user", "content": "What about SF?" }
+])";
+char response[4096];
+cactus_complete(model, completion_messages, response, sizeof(response), NULL, tools, NULL, NULL, NULL, 0);
+```
+
+### `cactus_tokenize`
+Tokenizes text into token IDs using the model's tokenizer.
+
+```c
+int cactus_tokenize(
+    cactus_model_t model,        // Model handle
+    const char* text,            // Text to tokenize
+    uint32_t* token_buffer,      // Buffer for token IDs
+    size_t token_buffer_len,     // Maximum number of tokens buffer can hold
+    size_t* out_token_len        // Output: actual number of tokens
+);
+```
+
+**Returns:** 0 on success; -1 on invalid parameters or tokenization error; -2 if `token_buffer_len` is smaller than the number of tokens produced (but `*out_token_len` is still set to the required count). Pass `NULL` for `token_buffer` and `0` for `token_buffer_len` to query the token count without copying.
+
+**Example:**
+```c
+const char* text = "Hello, world!";
+uint32_t tokens[256];
+size_t num_tokens = 0;
+
+int result = cactus_tokenize(model, text, tokens, 256, &num_tokens);
+if (result == 0) {
+    printf("Tokenized into %zu tokens: ", num_tokens);
+    for (size_t i = 0; i < num_tokens; i++) {
+        printf("%u ", tokens[i]);
+    }
+    printf("\n");
+}
+```
+
+### `cactus_render_prompt`
+Renders the chat-templated prompt string for the given messages without running inference. Useful for debugging prompt formatting, estimating token budgets, or feeding the rendered text to another tool.
+
+```c
+int cactus_render_prompt(
+    cactus_model_t model,        // Model handle
+    const char* messages_json,   // JSON array of messages (same format as cactus_complete)
+    const char* options_json,    // Optional generation options (can be NULL)
+    const char* tools_json,      // Optional tools definition (can be NULL)
+    char* prompt_buffer,         // Buffer for the rendered prompt text
+    size_t buffer_size           // Size of prompt_buffer
+);
+```
+
+**Returns:** The rendered prompt length in bytes (excluding the null terminator) on success; -1 on invalid parameters or rendering error; -2 if the buffer is too small to hold the rendered prompt and its null terminator.
+
+**Note:** The output is plain prompt text, not JSON.
+
+**Example:**
+```c
+const char* messages = "[{\"role\": \"user\", \"content\": \"Hello!\"}]";
+char prompt[4096];
+int len = cactus_render_prompt(model, messages, NULL, NULL, prompt, sizeof(prompt));
+if (len >= 0) {
+    printf("Rendered prompt:\n%s\n", prompt);
+}
+```
+
+### `cactus_score_window`
+Scores a window of tokens for perplexity calculation or token probability analysis.
+
+```c
+int cactus_score_window(
+    cactus_model_t model,        // Model handle
+    const uint32_t* tokens,      // Array of token IDs
+    size_t token_len,            // Total number of tokens
+    size_t start,                // Start index of window to score
+    size_t end,                  // End index of window to score
+    size_t context,              // Context window size
+    char* response_buffer,       // Buffer for response JSON
+    size_t buffer_size           // Size of response buffer
+);
+```
+
+**Returns:** Number of bytes written to response_buffer on success, negative value on error
+
+**Response Format:**
+```json
+{
+    "success": true,
+    "logprob": -12.3456789012,
+    "tokens": 4
+}
+```
+
+- `logprob`: Total log-probability of the scored token window
+- `tokens`: Number of tokens scored in the window
+
+**Example:**
+```c
+uint32_t tokens[256];
+size_t num_tokens;
+cactus_tokenize(model, "The quick brown fox", tokens, 256, &num_tokens);
+
+char response[4096];
+int result = cactus_score_window(model, tokens, num_tokens, 0, num_tokens, 512,
+                                  response, sizeof(response));
+if (result >= 0) {
+    printf("Scores: %s\n", response);
+}
+```
+
+### `cactus_benchmark_tokens`
+Runs a prefill + decode benchmark on the given prompt tokens and returns timing JSON
+(prefill ms, decode ms, tokens/sec). Useful for measuring inference performance on
+a specific model + device without running the full chat loop.
+
+```c
+int cactus_benchmark_tokens(
+    cactus_model_t model,
+    const uint32_t* prompt_tokens,
+    size_t prompt_token_len,
+    size_t decode_token_len,
+    char* response_buffer,
+    size_t buffer_size
+);
+```
+
+Returns the number of bytes written to `response_buffer` on success, `-1` on error.
+
+### `cactus_transcribe`
+Transcribes audio to text using Whisper or Parakeet TDT models. Supports both file-based and buffer-based audio input.
+
+```c
+int cactus_transcribe(
+    cactus_model_t model,           // Model handle (Whisper or Parakeet TDT model)
+    const char* audio_file_path,    // Path to WAV file (16-bit PCM) - can be NULL if using pcm_buffer
+    const char* prompt,             // Optional prompt to guide transcription (can be NULL)
+    char* response_buffer,          // Buffer for response JSON
+    size_t buffer_size,             // Size of response buffer
+    const char* options_json,       // Optional transcription options (can be NULL)
+    cactus_token_callback callback, // Optional streaming callback (can be NULL)
+    void* user_data,                // User data for callback (can be NULL)
+    const uint8_t* pcm_buffer,      // Optional raw PCM audio buffer (can be NULL if using file)
+    size_t pcm_buffer_size          // Size of PCM buffer in bytes (must be even and >= 2)
+);
+```
+
+**Returns:** Number of bytes written to response_buffer on success, negative value on error
+
+**Note:** Exactly one of `audio_file_path` or `pcm_buffer` must be provided; passing both or neither returns -1. The file path must point to a 16-bit PCM WAV file. The `pcm_buffer` must contain 16-bit signed PCM samples at 16 kHz and `pcm_buffer_size` must be even and at least 2.
+
+**Options Format:**
+```json
+{
+    "max_tokens": 448,
+    "language": "en",
+    "timestamps": true
+}
+```
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `max_tokens` | int | auto | Maximum tokens to generate. When unset, it defaults to the larger of 100 and an audio-length estimate (`audio_sec × 20` for Whisper, `audio_sec × 30` for Parakeet). For Whisper the result is then capped so the prompt tokens plus generated tokens fit the decoder's 448-position limit. |
+| `language` | string | model default | Whisper only. Two-letter language code (e.g. `en`, `es`, `de`) substituted into the decoder prompt's language token. Ignored by Parakeet and when an explicit `prompt` is supplied. |
+| `timestamps` | bool | false | Whisper only. Decodes timestamp tokens and populates `segments` with `{start, end, text}` entries (seconds). Empty otherwise, including all Parakeet transcription. |
+
+**Response Format:**
+```json
+{
+    "success": true,
+    "error": null,
+    "cloud_handoff": false,
+    "response": "Transcribed text here.",
+    "function_calls": [],
+    "segments": [],
+    "confidence": 1.0,
+    "confidence_threshold": -1.0,
+    "time_to_first_token_ms": 120.0,
+    "total_time_ms": 450.0,
+    "prefill_tps": 50.0,
+    "decode_tps": 30.0,
+    "ram_usage_mb": 512.34,
+    "prefill_tokens": 10,
+    "decode_tokens": 15,
+    "total_tokens": 25
+}
+```
+
+- `response`: Full transcription text
+- `segments`: `{start, end, text}` entries (seconds), populated only for Whisper when the `timestamps` option is set; empty otherwise, including all Parakeet transcription
+- `cloud_handoff`: Always false for transcription
+- `confidence_threshold`: `-1.0` (unset) — transcription does not resolve a cloud-handoff threshold
+
+**Example (file-based):**
+```c
+cactus_model_t whisper = cactus_init("../../weights/whisper-small", NULL, false);
+
+char response[16384];
+int result = cactus_transcribe(whisper, "audio.wav", NULL,
+                                response, sizeof(response), NULL, NULL, NULL,
+                                NULL, 0);
+if (result >= 0) {
+    printf("Transcription: %s\n", response);
+}
+```
+
+**Example (buffer-based):**
+```c
+uint8_t* pcm_data = load_audio_buffer("audio.wav", &pcm_size); // 16kHz, mono, 16-bit
+
+char response[16384];
+int result = cactus_transcribe(whisper, NULL, NULL,
+                                response, sizeof(response), NULL, NULL, NULL,
+                                pcm_data, pcm_size);
+```
+
+### Streaming transcription
+Transcribe continuously while audio is still being captured, instead of waiting for a complete recording. You push PCM as it arrives and read back text as soon as it stabilizes. Supported for the dedicated speech models (Whisper and Parakeet TDT).
+
+The session emits text in two parts on every call:
+
+- **`confirmed`** — newly finalized words. Append them to your running transcript; they never change.
+- **`pending`** — the current best guess for the still-changing tail. Replace it on every call (do not append it); it is for live display only.
+
+Text is confirmed once two successive re-transcriptions of the audio agree (LocalAgreement, compared per **segment** for Whisper) or once a following token starts a new word (Parakeet TDT). Confirmed audio is dropped from the front of the buffer as the window advances, so memory stays bounded and the active window never approaches the model's fixed input length.
+
+#### `cactus_stream_transcribe_start`
+Opens a streaming session bound to an already-initialized speech model.
+```c
+cactus_stream_transcribe_t cactus_stream_transcribe_start(
+    cactus_model_t model,       // Whisper or Parakeet TDT model handle
+    const char* options_json    // Optional (can be NULL); forwarded to cactus_transcribe
+);
+```
+**Returns:** an opaque session handle, or `NULL` on error (see `cactus_get_last_error`). Free it with `cactus_stream_transcribe_stop`.
+
+`options_json` (optional) is forwarded to the underlying `cactus_transcribe` call **for Whisper only** (e.g. `language`); the Parakeet TDT path ignores it. Chunking and segmentation are handled internally with no user-facing tunables.
+
+#### `cactus_stream_transcribe_process`
+Feeds the next slice of audio. Input is 16-bit signed PCM, **16 kHz, mono** — the same format as `cactus_transcribe`'s `pcm_buffer`. Feed reasonably small chunks (≈ 0.1–2 s) for low latency.
+```c
+int cactus_stream_transcribe_process(
+    cactus_stream_transcribe_t stream,
+    const uint8_t* pcm_buffer,  // 16-bit PCM, 16 kHz, mono
+    size_t pcm_buffer_size,     // size in bytes
+    char* response_buffer,
+    size_t buffer_size
+);
+```
+**Returns:** bytes written to `response_buffer`, or -1 on error.
+
+**Response Format:** (also includes timing stats: `decode_tps`, `total_time_ms`, `time_to_first_token_ms`, `decode_tokens`)
+```json
+{ "success": true, "confirmed": "the quick brown", "pending": "fox jumps", "decode_tps": 0, "total_time_ms": 0, "time_to_first_token_ms": 0, "decode_tokens": 0 }
+```
+
+#### `cactus_stream_transcribe_stop`
+Flushes any buffered audio, returns the final `confirmed` text, and destroys the session.
+```c
+int cactus_stream_transcribe_stop(
+    cactus_stream_transcribe_t stream,
+    char* response_buffer,      // may be NULL to discard the final text
+    size_t buffer_size
+);
+```
+**Returns:** bytes written (0 when discarded), or -1 on error.
+
+**Example:**
+```c
+cactus_model_t whisper = cactus_init("../../weights/whisper-base", NULL, false);
+cactus_stream_transcribe_t stream = cactus_stream_transcribe_start(whisper, NULL);
+
+char response[16384];
+
+// Push audio as it is captured (here, 0.5s chunks of 16kHz mono PCM16).
+for (each chunk) {
+    int rc = cactus_stream_transcribe_process(
+        stream, chunk_pcm, chunk_bytes, response, sizeof(response));
+    if (rc < 0) break;
+    // Parse "confirmed" from response and append it to your transcript;
+    // show "confirmed-so-far + pending" live.
+}
+
+// Flush the tail; its "confirmed" holds the final words.
+cactus_stream_transcribe_stop(stream, response, sizeof(response));
+```
+
+The `transcribe` CLI uses this streaming path for **live microphone** transcription (no file; a colored UI with running captions, press Enter to stop). With a **file** it does a one-shot transcription (long files are windowed internally, so there is no 30s limit):
+```bash
+cactus transcribe openai/whisper-base                  # live microphone (press Enter to stop)
+cactus transcribe openai/whisper-base --file audio.wav # one-shot file transcription (any length)
+```
+
+### `cactus_embed`
+Generates text embeddings for semantic search, similarity, and RAG applications.
+
+```c
+int cactus_embed(
+    cactus_model_t model,        // Model handle
+    const char* text,            // Text to embed
+    float* embeddings_buffer,    // Buffer for embedding vector
+    size_t buffer_size,          // Size of embeddings_buffer in bytes
+    size_t* embedding_dim,       // Output: actual embedding dimensions
+    bool normalize               // Whether to L2-normalize the output vector
+);
+```
+
+**Returns:** Number of float elements written to embeddings_buffer on success; -1 on invalid parameters, tokenization error, or other failure; -2 if `buffer_size` (in bytes) is smaller than `embedding_dim * sizeof(float)`
+
+**Example:**
+```c
+const char* text = "The quick brown fox jumps over the lazy dog";
+float embeddings[2048];
+size_t actual_dim = 0;
+
+int result = cactus_embed(model, text, embeddings, sizeof(embeddings), &actual_dim, true);
+if (result >= 0) {
+    printf("Generated %zu-dimensional embedding\n", actual_dim);
+}
+```
+
+**Note:** Set `normalize` to `true` for cosine similarity comparisons (recommended for most use cases).
+
+### `cactus_image_embed`
+Generates embeddings for images, useful for multimodal retrieval tasks.
+
+```c
+int cactus_image_embed(
+    cactus_model_t model,        // Model handle (must support vision)
+    const char* image_path,      // Path to image file
+    float* embeddings_buffer,    // Buffer for embedding vector
+    size_t buffer_size,          // Size of embeddings_buffer in bytes
+    size_t* embedding_dim        // Output: actual embedding dimensions
+);
+```
+
+**Returns:** Number of float elements written to embeddings_buffer on success; -1 on invalid parameters or embedding failure; -2 if `buffer_size` (in bytes) is smaller than `embedding_dim * sizeof(float)`
+
+**Example:**
+```c
+float image_embeddings[1024];
+size_t dim = 0;
+
+int result = cactus_image_embed(model, "photo.jpg", image_embeddings, sizeof(image_embeddings), &dim);
+if (result >= 0) {
+    printf("Image embedding dimension: %zu\n", dim);
+}
+```
+
+### `cactus_audio_embed`
+Generates embeddings for audio files, useful for audio retrieval and classification.
+
+```c
+int cactus_audio_embed(
+    cactus_model_t model,        // Model handle (must support audio)
+    const char* audio_path,      // Path to audio file
+    float* embeddings_buffer,    // Buffer for embedding vector
+    size_t buffer_size,          // Size of embeddings_buffer in bytes
+    size_t* embedding_dim        // Output: actual embedding dimensions
+);
+```
+
+**Returns:** Number of float elements written to embeddings_buffer on success; -1 on invalid parameters or embedding failure; -2 if `buffer_size` (in bytes) is smaller than `embedding_dim * sizeof(float)`
+
+**Example:**
+```c
+float audio_embeddings[768];
+size_t dim = 0;
+
+int result = cactus_audio_embed(model, "speech.wav", audio_embeddings, sizeof(audio_embeddings), &dim);
+```
+
+### `cactus_stop`
+Stops ongoing generation. Useful for implementing early stopping based on custom logic.
+
+```c
+void cactus_stop(cactus_model_t model);
+```
+
+**Example with Controlled Generation:**
+```c
+struct ControlData {
+    cactus_model_t model;
+    int token_count;
+    int max_tokens;
+};
+
+void control_callback(const char* token, uint32_t token_id, void* user_data) {
+    struct ControlData* data = (struct ControlData*)user_data;
+    printf("%s", token);
+    data->token_count++;
+
+    // Stop after reaching limit
+    if (data->token_count >= data->max_tokens) {
+        cactus_stop(data->model);
+    }
+}
+
+struct ControlData control = {model, 0, 50};
+cactus_complete(model, messages, response, sizeof(response),
+                NULL, NULL, control_callback, &control, NULL, 0);
+```
+
+### `cactus_reset`
+Resets the model's internal state, clearing KV cache and any cached context.
+
+```c
+void cactus_reset(cactus_model_t model);
+```
+
+**Use Cases:**
+- Starting a new conversation
+- Clearing context between unrelated requests
+- Recovering from errors
+- Freeing memory after long conversations
+
+### `cactus_rag_query`
+Queries the RAG corpus and returns relevant text chunks. Requires model to be initialized with a corpus directory.
+
+```c
+int cactus_rag_query(
+    cactus_model_t model,        // Model handle (must have corpus_dir set)
+    const char* query,           // Query text
+    char* response_buffer,       // Buffer for response JSON
+    size_t buffer_size,          // Size of response buffer
+    size_t top_k                 // Number of chunks to retrieve
+);
+```
+
+**Returns:** Number of bytes written to response_buffer on success; 0 when the query cannot be executed (no corpus index, no tokenizer, empty query, or dimension mismatch) — response_buffer contains `{"chunks":[],"error":"..."}` in those cases; also 0 when the query executes but returns no results — response_buffer contains `{"chunks":[]}` with no `error` field; -1 on error (invalid params, buffer too small, or exception)
+
+**Response Format:**
+```json
+{
+    "chunks": [
+        {"score": 0.85, "source": "document.txt", "content": "Relevant chunk 1..."},
+        {"score": 0.72, "source": "document.txt", "content": "Relevant chunk 2..."}
+    ]
+}
+```
+
+When the query cannot be executed (no corpus index, no tokenizer, empty query, or dimension mismatch), `chunks` is empty and an `error` field is present:
+```json
+{
+    "chunks": [],
+    "error": "No corpus index loaded"
+}
+```
+
+**Example:**
+```c
+// Initialize model with corpus
+cactus_model_t model = cactus_init("path/to/model", "./documents", true);
+
+// Query for relevant chunks
+char response[65536];
+int result = cactus_rag_query(model, "What is machine learning?",
+                               response, sizeof(response), 5);
+if (result >= 0) {
+    printf("Retrieved chunks: %s\n", response);
+}
+```
+
+### `cactus_destroy`
+Releases all resources associated with the model.
+
+```c
+void cactus_destroy(cactus_model_t model);
+```
+
+**Important:** Always call this when done with a model to prevent memory leaks.
+
+## Utility Functions
+
+### `cactus_get_last_error`
+Returns the last error message from the Cactus engine.
+
+```c
+const char* cactus_get_last_error(void);
+```
+
+**Returns:** Error message string (never NULL; empty string if no error)
+
+**Example:**
+```c
+cactus_model_t model = cactus_init("invalid/path", NULL, false);
+if (!model) {
+    const char* error = cactus_get_last_error();
+    fprintf(stderr, "Error: %s\n", error);
+}
+```
+
+## Vector Index APIs
+
+The vector index APIs provide persistent storage and retrieval of embeddings for RAG (Retrieval-Augmented Generation) applications.
+
+### `cactus_index_init`
+Initializes or opens a vector index from disk.
+
+```c
+cactus_index_t cactus_index_init(
+    const char* index_dir,       // Path to index directory
+    size_t embedding_dim         // Dimension of embeddings to store
+);
+```
+
+**Returns:** Index handle on success, NULL on failure
+
+**Example:**
+```c
+cactus_index_t index = cactus_index_init("./my_index", 768);
+if (!index) {
+    fprintf(stderr, "Failed to initialize index\n");
+    return -1;
+}
+```
+
+### `cactus_index_add`
+Adds documents with their embeddings to the index.
+
+```c
+int cactus_index_add(
+    cactus_index_t index,        // Index handle
+    const int* ids,              // Array of document IDs
+    const char** documents,      // Array of document texts
+    const char** metadatas,      // Array of metadata JSON strings (can be NULL)
+    const float** embeddings,    // Array of embedding vectors
+    size_t count,                // Number of documents to add
+    size_t embedding_dim         // Dimension of each embedding
+);
+```
+
+**Returns:** 0 on success, negative value on error
+
+**Example:**
+```c
+int ids[] = {1, 2, 3};
+const char* docs[] = {"Hello world", "Foo bar", "Test document"};
+const char* metas[] = {"{\"source\":\"a\"}", "{\"source\":\"b\"}", NULL};
+
+float emb1[768], emb2[768], emb3[768];
+const float* embeddings[] = {emb1, emb2, emb3};
+
+int result = cactus_index_add(index, ids, docs, metas, embeddings, 3, 768);
+```
+
+### `cactus_index_delete`
+Deletes documents from the index by ID.
+
+```c
+int cactus_index_delete(
+    cactus_index_t index,        // Index handle
+    const int* ids,              // Array of document IDs to delete
+    size_t ids_count             // Number of IDs
+);
+```
+
+**Returns:** 0 on success, negative value on error
+
+**Example:**
+```c
+int ids_to_delete[] = {1, 3};
+cactus_index_delete(index, ids_to_delete, 2);
+```
+
+### `cactus_index_get`
+Retrieves documents by their IDs.
+
+```c
+int cactus_index_get(
+    cactus_index_t index,        // Index handle
+    const int* ids,              // Array of document IDs to retrieve
+    size_t ids_count,            // Number of IDs
+    char** document_buffers,     // Output: document text buffers
+    size_t* document_buffer_sizes,  // Sizes of document buffers (in bytes)
+    char** metadata_buffers,     // Output: metadata JSON buffers
+    size_t* metadata_buffer_sizes,  // Sizes of metadata buffers (in bytes)
+    float** embedding_buffers,   // Output: embedding buffers
+    size_t* embedding_buffer_sizes  // Sizes of embedding buffers (in float elements, not bytes)
+);
+```
+
+**Returns:** 0 on success, negative value on error
+
+### `cactus_index_query`
+Queries the index for similar documents using embedding vectors.
+
+```c
+int cactus_index_query(
+    cactus_index_t index,        // Index handle
+    const float** embeddings,    // Array of query embeddings
+    size_t embeddings_count,     // Number of query embeddings
+    size_t embedding_dim,        // Dimension of each embedding
+    const char* options_json,    // Query options (e.g., {"top_k": 10, "score_threshold": 0.5})
+    int** id_buffers,            // Output: arrays of result IDs
+    size_t* id_buffer_sizes,     // In: capacity of each id_buffer; Out: actual result count written
+    float** score_buffers,       // Output: arrays of similarity scores
+    size_t* score_buffer_sizes   // In: capacity of each score_buffer; Out: actual result count written
+);
+```
+
+**Returns:** 0 on success, negative value on error
+
+**Options JSON fields:**
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `top_k` | int | 10 | Maximum number of results to return per query |
+| `score_threshold` | float | -1.0 | Minimum similarity score threshold; results below this are excluded (-1.0 disables filtering) |
+
+**Example:**
+```c
+float query_emb[768];
+size_t dim;
+cactus_embed(model, "search query", query_emb, sizeof(query_emb), &dim, true);
+
+const float* queries[] = {query_emb};
+int result_ids[10];
+float result_scores[10];
+int* id_bufs[] = {result_ids};
+float* score_bufs[] = {result_scores};
+size_t id_sizes[] = {10};
+size_t score_sizes[] = {10};
+
+cactus_index_query(index, queries, 1, 768, "{\"top_k\": 10}",
+                   id_bufs, id_sizes, score_bufs, score_sizes);
+
+// id_sizes[0] is updated to the actual number of results returned
+for (size_t i = 0; i < id_sizes[0]; i++) {
+    printf("ID: %d, Score: %.4f\n", result_ids[i], result_scores[i]);
+}
+```
+
+### `cactus_index_compact`
+Compacts the index to optimize storage and query performance.
+
+```c
+int cactus_index_compact(cactus_index_t index);
+```
+
+**Returns:** 0 on success, negative value on error
+
+**Example:**
+```c
+cactus_index_compact(index);
+```
+
+### `cactus_index_destroy`
+Releases all resources associated with the index.
+
+```c
+void cactus_index_destroy(cactus_index_t index);
+```
+
+**Important:** Always call this when done with an index to ensure data is persisted.
+
+### Complete RAG Example
+
+```c
+#include "cactus_engine.h"
+
+int main() {
+    cactus_model_t embed_model = cactus_init("path/to/embed-model", NULL, false);
+    cactus_index_t index = cactus_index_init("./rag_index", 768);
+
+    const char* docs[] = {
+        "The capital of France is Paris.",
+        "Python is a programming language.",
+        "The Earth orbits the Sun."
+    };
+    int ids[] = {1, 2, 3};
+    float emb1[768], emb2[768], emb3[768];
+    size_t dim;
+
+    cactus_embed(embed_model, docs[0], emb1, sizeof(emb1), &dim, true);
+    cactus_embed(embed_model, docs[1], emb2, sizeof(emb2), &dim, true);
+    cactus_embed(embed_model, docs[2], emb3, sizeof(emb3), &dim, true);
+
+    const float* embeddings[] = {emb1, emb2, emb3};
+    cactus_index_add(index, ids, docs, NULL, embeddings, 3, 768);
+
+    float query_emb[768];
+    cactus_embed(embed_model, "What is the capital of France?", query_emb, sizeof(query_emb), &dim, true);
+
+    const float* queries[] = {query_emb};
+    int result_ids[3];
+    float result_scores[3];
+    int* id_bufs[] = {result_ids};
+    float* score_bufs[] = {result_scores};
+    size_t id_sizes[] = {3};
+    size_t score_sizes[] = {3};
+
+    cactus_index_query(index, queries, 1, 768, "{\"top_k\": 3}",
+                       id_bufs, id_sizes, score_bufs, score_sizes);
+
+    printf("Top result ID: %d (score: %.4f)\n", result_ids[0], result_scores[0]);
+
+    cactus_index_destroy(index);
+    cactus_destroy(embed_model);
+    return 0;
+}
+```
+
+## Complete Examples
+
+### Basic Conversation
+```c
+#include "cactus_engine.h"
+#include <stdio.h>
+
+int main() {
+    cactus_model_t model = cactus_init("path/to/model", NULL, false);
+    if (!model) return -1;
+
+    const char* messages =
+        "[{\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},"
+        " {\"role\": \"user\", \"content\": \"Hello!\"},"
+        " {\"role\": \"assistant\", \"content\": \"Hello! How can I help you today?\"},"
+        " {\"role\": \"user\", \"content\": \"What's 2+2?\"}]";
+
+    char response[4096];
+    int result = cactus_complete(model, messages, response,
+                                 sizeof(response), NULL, NULL, NULL, NULL, NULL, 0);
+    if (result >= 0) {
+        printf("Response: %s\n", response);
+    }
+
+    cactus_destroy(model);
+    return 0;
+}
+```
+
+### Vision-Language Model (VLM)
+```c
+#include "cactus_engine.h"
+
+int main() {
+    cactus_model_t vlm = cactus_init("path/to/lfm2-vlm", NULL, false);
+    if (!vlm) return -1;
+
+    const char* messages =
+        "[{\"role\": \"user\","
+        "  \"content\": \"What do you see in this image?\","
+        "  \"images\": [\"/path/to/photo.jpg\"]}]";
+
+    char response[8192];
+    int result = cactus_complete(vlm, messages, response, sizeof(response),
+                                 NULL, NULL, NULL, NULL, NULL, 0);
+    if (result >= 0) {
+        printf("%s\n", response);
+    }
+
+    cactus_destroy(vlm);
+    return 0;
+}
+```
+
+### Tool Calling
+```c
+const char* tools =
+    "[{\"type\": \"function\", \"function\": {"
+    "    \"name\": \"get_weather\","
+    "    \"description\": \"Get weather for a location\","
+    "    \"parameters\": {"
+    "        \"type\": \"object\","
+    "        \"properties\": {"
+    "            \"location\": {\"type\": \"string\", \"description\": \"City, State, Country\"}"
+    "        },"
+    "        \"required\": [\"location\"]"
+    "    }"
+    "}}]";
+
+const char* messages = "[{\"role\": \"user\", \"content\": \"What's the weather in Paris?\"}]";
+
+char response[4096];
+int result = cactus_complete(model, messages, response, sizeof(response),
+                             NULL, tools, NULL, NULL, NULL, 0);
+printf("Response: %s\n", response);
+```
+
+### Computing Similarity with Embeddings
+```c
+float compute_cosine_similarity(cactus_model_t model, const char* text1, const char* text2) {
+    float embeddings1[2048], embeddings2[2048];
+    size_t dim1, dim2;
+
+    cactus_embed(model, text1, embeddings1, sizeof(embeddings1), &dim1, true);
+    cactus_embed(model, text2, embeddings2, sizeof(embeddings2), &dim2, true);
+
+    // with normalized embeddings, cosine similarity = dot product
+    float dot_product = 0.0f;
+    for (size_t i = 0; i < dim1; i++) {
+        dot_product += embeddings1[i] * embeddings2[i];
+    }
+    return dot_product;
+}
+
+float similarity = compute_cosine_similarity(embed_model,
+    "The cat sat on the mat", "A feline rested on the rug");
+printf("Similarity: %.4f\n", similarity);
+```
+
+### Audio Transcription with Whisper
+```c
+#include "cactus_engine.h"
+#include <stdio.h>
+
+void transcription_callback(const char* token, uint32_t token_id, void* user_data) {
+    printf("%s", token);
+    fflush(stdout);
+}
+
+int main() {
+    cactus_model_t whisper = cactus_init("path/to/whisper-small", NULL, false);
+    if (!whisper) return -1;
+
+    char response[32768];
+    int result = cactus_transcribe(whisper, "meeting.wav", NULL,
+                                    response, sizeof(response), NULL,
+                                    transcription_callback, NULL, NULL, 0);
+    printf("\n\nFull response: %s\n", response);
+
+    cactus_destroy(whisper);
+    return 0;
+}
+```
+
+### Multimodal Retrieval
+```c
+#include "cactus_engine.h"
+#include <math.h>
+
+int find_similar_image(cactus_model_t model, const char* query,
+                       const char** image_paths, int num_images) {
+    float query_embed[1024];
+    size_t query_dim;
+    cactus_embed(model, query, query_embed, sizeof(query_embed), &query_dim, true);
+
+    float best_score = -1.0f;
+    int best_idx = -1;
+
+    for (int i = 0; i < num_images; i++) {
+        float img_embed[1024];
+        size_t img_dim;
+        cactus_image_embed(model, image_paths[i], img_embed, sizeof(img_embed), &img_dim);
+
+        float dot = 0, norm_q = 0, norm_i = 0;
+        for (size_t j = 0; j < query_dim; j++) {
+            dot += query_embed[j] * img_embed[j];
+            norm_q += query_embed[j] * query_embed[j];
+            norm_i += img_embed[j] * img_embed[j];
+        }
+        float score = dot / (sqrtf(norm_q) * sqrtf(norm_i));
+
+        if (score > best_score) {
+            best_score = score;
+            best_idx = i;
+        }
+    }
+    return best_idx;
+}
+```
+
+## Best Practices
+
+1. **Always Check Return Values**: Functions return negative values on error
+2. **Buffer Sizes**: Use large response buffers (8192+ bytes recommended)
+3. **Memory Management**: Always call `cactus_destroy()` when done
+4. **Thread Safety**: Each model instance should be used from a single thread
+5. **Context Management**: Use `cactus_reset()` between unrelated conversations
+6. **Streaming**: Implement callbacks for better user experience with long generations
+7. **Reuse Models**: Initialize once, use multiple times for efficiency
+
+## Error Handling
+
+Most functions return:
+- Positive values or 0 on success
+- Negative values on error
+
+Common error scenarios:
+- Invalid model path
+- Insufficient buffer size
+- Malformed JSON input
+- Unsupported operation for model type
+- Out of memory
+
+## Performance Tips
+
+1. **Reuse Model Instances**: Initialize once, use multiple times
+2. **Streaming for UX**: Use callbacks for responsive user interfaces
+3. **Early Stopping**: Use `cactus_stop()` to avoid unnecessary generation
+4. **Batch Embeddings**: When possible, process multiple texts in sequence without resetting
+
+## Logging
+
+### `cactus_log_set_level`
+Sets the minimum log level. Messages below this level are suppressed.
+
+```c
+void cactus_log_set_level(int level);
+// level: 0=DEBUG, 1=INFO, 2=WARN (default), 3=ERROR, 4=NONE
+```
+
+### `cactus_log_set_callback`
+Installs a callback to receive log messages. Pass NULL to remove the callback.
+
+```c
+typedef void (*cactus_log_callback_t)(int level, const char* component, const char* message, void* user_data);
+
+void cactus_log_set_callback(cactus_log_callback_t callback, void* user_data);
+```
+
+**Example:**
+```c
+void my_log(int level, const char* component, const char* message, void* user_data) {
+    printf("[%d] %s: %s\n", level, component, message);
+}
+
+cactus_log_set_level(1); // INFO and above
+cactus_log_set_callback(my_log, NULL);
+```
+
+## Telemetry
+
+These functions configure anonymous usage telemetry sent to Cactus Compute. Telemetry is opt-out and contains no user data.
+
+### `cactus_set_telemetry_environment`
+Identifies the calling framework and cache directory.
+
+```c
+void cactus_set_telemetry_environment(const char* framework, const char* cache_location, const char* version);
+```
+
+### `cactus_set_app_id`
+Associates telemetry events with an application identifier.
+
+```c
+void cactus_set_app_id(const char* app_id);
+```
+
+### `cactus_telemetry_flush`
+Flushes pending telemetry events.
+
+```c
+void cactus_telemetry_flush(void);
+```
+
+### `cactus_telemetry_shutdown`
+Flushes and shuts down the telemetry subsystem. Call before process exit.
+
+```c
+void cactus_telemetry_shutdown(void);
+```
+
+## See Also
+
+- [Cactus Graph API](/docs/cactus_graph.md) — Low-level computational graph for custom tensor operations
+- [Cactus Index API](/docs/cactus_index.md) — On-device vector database for RAG applications
+- [Fine-tuning Guide](/docs/finetuning.md) — Deploy Unsloth LoRA fine-tunes to mobile
+- [Runtime Compatibility](/docs/compatibility.md) — Weight versioning across releases
+- [Python Binding](/python/) — Python bindings for the Engine API
+- [Swift Binding](/bindings/swift/) — Swift bindings for iOS and macOS
+- [Kotlin Binding](/bindings/kotlin/) — Kotlin Multiplatform bindings
+- [Flutter Binding](/bindings/flutter/) — Dart FFI bindings for mobile apps
+- [Rust Binding](/bindings/rust/) — Raw `extern "C"` FFI declarations

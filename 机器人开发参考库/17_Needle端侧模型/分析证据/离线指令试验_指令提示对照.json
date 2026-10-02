@@ -1,0 +1,294 @@
+{
+  "date": "2026-10-03",
+  "sdk_commit": "8881c1ceada54814465fa5edddc6599f32383985",
+  "model_revision": "c7c415a3d1b3d929014bc6e866d51ebb971f7089",
+  "engine": "3.1.0 macosx_11_0_x86_64 wheel",
+  "host": {
+    "system": "Darwin",
+    "machine": "x86_64",
+    "python": "3.12.14"
+  },
+  "telemetry_disabled": true,
+  "explicit_local_weights_and_engine": true,
+  "robot_connected": false,
+  "callables_bound": false,
+  "method": "complete only; no run; each independent query reset",
+  "load_seconds": 0.913,
+  "tool_schemas": [
+    {
+      "name": "show_expression",
+      "description": "Show an expression on the robot face",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "expression": {
+            "type": "string",
+            "enum": [
+              "happy",
+              "sad",
+              "thinking"
+            ]
+          }
+        },
+        "required": [
+          "expression"
+        ]
+      }
+    },
+    {
+      "name": "nod",
+      "description": "Nod the robot head a specified number of times",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          }
+        },
+        "required": [
+          "count"
+        ]
+      }
+    }
+  ],
+  "rows": [
+    {
+      "label": "expression_en",
+      "query": "Show a happy face.",
+      "result": {
+        "type": "call",
+        "success": true,
+        "error": null,
+        "error_code": null,
+        "reason": null,
+        "function_calls": [
+          {
+            "name": "show_expression",
+            "arguments": {
+              "expression": "happy"
+            }
+          }
+        ],
+        "suppressed_calls": [],
+        "reasoning": "'happy face' -> show_expression with expression 'happy'.",
+        "confidence": 0.8478,
+        "prefill_tps": 277.9,
+        "decode_tps": 83.7,
+        "peak_ram_mb": 105.9,
+        "validation": {
+          "ungrounded": [],
+          "negation": false
+        }
+      },
+      "max_new_tokens": 128,
+      "elapsed_seconds": 0.57
+    },
+    {
+      "label": "nod_en",
+      "query": "Nod twice.",
+      "result": {
+        "type": "call",
+        "success": true,
+        "error": null,
+        "error_code": null,
+        "reason": null,
+        "function_calls": [],
+        "suppressed_calls": [
+          {
+            "name": "nod",
+            "arguments": {
+              "count": 2
+            }
+          }
+        ],
+        "reasoning": "'twice' -> count 2; 'Nod' -> nod.",
+        "confidence": 0.692,
+        "prefill_tps": 154.3,
+        "decode_tps": 114.7,
+        "peak_ram_mb": 105.9,
+        "validation": {
+          "ungrounded": [],
+          "negation": false
+        }
+      },
+      "max_new_tokens": 128,
+      "elapsed_seconds": 0.383
+    },
+    {
+      "label": "refuse_en",
+      "query": "Tell me the capital of France.",
+      "result": {
+        "type": "call",
+        "success": true,
+        "error": null,
+        "error_code": null,
+        "reason": null,
+        "function_calls": [],
+        "suppressed_calls": [],
+        "reasoning": "No tool available for geography or factual lookup.",
+        "confidence": 0.8521,
+        "prefill_tps": 206.8,
+        "decode_tps": 113.9,
+        "peak_ram_mb": 105.9
+      },
+      "max_new_tokens": 128,
+      "elapsed_seconds": 0.257
+    },
+    {
+      "label": "negation_en",
+      "query": "Do not nod.",
+      "result": {
+        "type": "call",
+        "success": false,
+        "error": "tool call truncated: token budget exhausted",
+        "error_code": "truncated",
+        "reason": "runtime_failure",
+        "function_calls": [],
+        "suppressed_calls": [],
+        "reasoning": "'Do not nod' means disable -> nod with default count.",
+        "confidence": 0.1169,
+        "prefill_tps": 105.6,
+        "decode_tps": 110.9,
+        "peak_ram_mb": 105.9
+      },
+      "max_new_tokens": 128,
+      "elapsed_seconds": 0.386
+    },
+    {
+      "label": "expression_zh",
+      "query": "请显示开心的表情。",
+      "result": {
+        "type": "call",
+        "success": false,
+        "error": "tool call truncated: token budget exhausted",
+        "error_code": "truncated",
+        "reason": "runtime_failure",
+        "function_calls": [],
+        "suppressed_calls": [],
+        "reasoning": "'请显示开心的表情。' is a question -> show_expression with expression '请显示开心的表情。'",
+        "confidence": 0.1019,
+        "prefill_tps": 269.2,
+        "decode_tps": 126.6,
+        "peak_ram_mb": 106.4
+      },
+      "max_new_tokens": 128,
+      "elapsed_seconds": 0.853
+    },
+    {
+      "label": "nod_zh",
+      "query": "点头两次。",
+      "result": {
+        "type": "call",
+        "success": true,
+        "error": null,
+        "error_code": null,
+        "reason": null,
+        "function_calls": [],
+        "suppressed_calls": [],
+        "reasoning": "'点头两次。' is a long phrase for a long time. No tool can translate or translate text.",
+        "confidence": 0.4415,
+        "prefill_tps": 175.9,
+        "decode_tps": 128.8,
+        "peak_ram_mb": 106.4
+      },
+      "max_new_tokens": 128,
+      "elapsed_seconds": 0.464
+    },
+    {
+      "label": "nod_digits_en",
+      "query": "Nod 2 times.",
+      "result": {
+        "type": "call",
+        "success": true,
+        "error": null,
+        "error_code": null,
+        "reason": null,
+        "function_calls": [
+          {
+            "name": "nod",
+            "arguments": {
+              "count": 2
+            }
+          }
+        ],
+        "suppressed_calls": [],
+        "reasoning": "'2 times' -> count 2.",
+        "confidence": 0.9,
+        "prefill_tps": 216.3,
+        "decode_tps": 115.4,
+        "peak_ram_mb": 106.4,
+        "validation": {
+          "ungrounded": [],
+          "negation": false
+        }
+      },
+      "max_new_tokens": 128,
+      "elapsed_seconds": 0.271
+    },
+    {
+      "label": "negation_en_512",
+      "query": "Do not nod.",
+      "result": {
+        "type": "call",
+        "success": false,
+        "error": "tool call truncated: token budget exhausted",
+        "error_code": "truncated",
+        "reason": "runtime_failure",
+        "function_calls": [],
+        "suppressed_calls": [],
+        "reasoning": "'Do not nod' means disable -> nod with default count.",
+        "confidence": 0.1169,
+        "prefill_tps": 139.7,
+        "decode_tps": 110.0,
+        "peak_ram_mb": 106.4
+      },
+      "max_new_tokens": 512,
+      "elapsed_seconds": 0.363
+    },
+    {
+      "label": "expression_zh_512",
+      "query": "请显示开心的表情。",
+      "result": {
+        "type": "call",
+        "success": false,
+        "error": "tool call truncated: token budget exhausted",
+        "error_code": "truncated",
+        "reason": "runtime_failure",
+        "function_calls": [],
+        "suppressed_calls": [],
+        "reasoning": "'请显示开心的表情。' is a question -> show_expression with expression '请显示开心的表情。'",
+        "confidence": 0.1019,
+        "prefill_tps": 221.7,
+        "decode_tps": 114.2,
+        "peak_ram_mb": 106.4
+      },
+      "max_new_tokens": 512,
+      "elapsed_seconds": 0.957
+    },
+    {
+      "label": "nod_zh_512",
+      "query": "点头两次。",
+      "result": {
+        "type": "call",
+        "success": true,
+        "error": null,
+        "error_code": null,
+        "reason": null,
+        "function_calls": [],
+        "suppressed_calls": [],
+        "reasoning": "'点头两次。' is a long phrase for a long time. No tool can translate or translate text.",
+        "confidence": 0.4415,
+        "prefill_tps": 198.1,
+        "decode_tps": 100.5,
+        "peak_ram_mb": 106.4
+      },
+      "max_new_tokens": 512,
+      "elapsed_seconds": 0.546
+    }
+  ],
+  "scope": "Ten synthetic smoke queries with three 512-token follow-ups, not an accuracy or latency benchmark; no ASR, training, device or network integration",
+  "system_prompt": "You control a desktop robot. Use only available tools. Do not execute a negated command.",
+  "prompt_method": "Initial instruction-style system; differs from upstream llms.txt fact-only recommendation; followed by fact-style controlled rerun"
+}

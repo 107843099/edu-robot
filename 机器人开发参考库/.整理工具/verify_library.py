@@ -14,7 +14,7 @@ for r in good:
  if count!=expected:errors.append(f"file count mismatch {r['repo']} {count} != {expected}")
  if not re.fullmatch('[a-f0-9]{40}',r['commit']):errors.append('invalid commit '+r['repo'])
  if not re.fullmatch('[a-f0-9]{64}',r['archive_sha256']):errors.append('invalid zip hash '+r['repo'])
-primary=['dorianborian/sesame-robot','RussellCooper-DJZ/manbo-robot-dog','ace-trump-tech/MindPaw','stack-chan/stack-chan','thinking0things/AlbertMicro','ViolinLee/NodeHexa','rookidroid/hexapod','78/xiaozhi-esp32','txp666/ottodiy-docs','M-D-777/EMO-Dot','peng-zhihui/ElectronBot','maker-community/VerdureLab','LuwuDynamics/xgoduck_hardware','KingKongRobotics/jumper']
+primary=['dorianborian/sesame-robot','RussellCooper-DJZ/manbo-robot-dog','ace-trump-tech/MindPaw','stack-chan/stack-chan','thinking0things/AlbertMicro','ViolinLee/NodeHexa','rookidroid/hexapod','78/xiaozhi-esp32','txp666/ottodiy-docs','M-D-777/EMO-Dot','peng-zhihui/ElectronBot','maker-community/VerdureLab','LuwuDynamics/xgoduck_hardware','KingKongRobotics/jumper','jamro/tiny-engineer','cactus-compute/needle']
 for repo in primary:
  if repo not in {r['repo'] for r in good}:errors.append('missing original '+repo)
 folders=[p for p in ROOT.iterdir() if p.is_dir() and re.match(r'^\d\d_',p.name)]
@@ -25,7 +25,7 @@ for p in folders:
   if (p/name).exists():
    body=re.sub(r'\]\(<[^>]+>\)',']',(p/name).read_text())
    if len(body)<500:errors.append('too brief '+str(p/name))
-md=[p for p in ROOT.glob('*.md')]+[p for f in folders for p in f.glob('*.md')]+list(ROOT.parent.glob('*.md'))
+md=[p for p in ROOT.glob('*.md')]+[p for f in folders for p in f.glob('*.md')]+list(ROOT.parent.glob('*.md'))+[p for f in folders for p in (f/'分析证据').glob('*.md')]
 links=0
 for p in md:
  text=p.read_text()
@@ -51,5 +51,24 @@ if paper.is_dir():
  if static['errors']:errors.append('cardboard static audit has errors')
  if not all(r['assertion'] for r in probes['rows']):errors.append('cardboard isolated probe failed')
  local_audits.append({'folder':paper.name,'source_files_verified':static['source_files_verified'],'archive_files_verified':static['archive_files_verified'],'release_files_verified':static['release_files_verified'],'isolated_serial_probes':probes['checks'],'physical_tests':False})
-result={'project_folders':len(folders),'original_repositories_present':len(primary),'downloaded_snapshots':len(good),'distinct_repositories':len({r['repo'] for r in good}),'source_files':source_count,'authored_markdown_docs':len(md),'local_links_checked':links,'lfs_files_hash_verified':lfsok,'local_attachment_audits':local_audits,'known_unavailable_entries':[r['repo'] for r in m if r.get('status')!='downloaded'],'errors':errors,'verification_scope':'File and source-version checks; local attachment static analysis and isolated fake-serial probes. No firmware compilation, model training or physical robot tests'}
+hf_verified=0
+new_host_checks=[]
+needle=ROOT/'17_Needle端侧模型'
+if needle.is_dir():
+ resources=json.loads((needle/'运行资源下载记录.json').read_text())
+ for resource in resources:
+  for row in resource['files']:
+   p=ROOT.parent/row['saved_path']
+   if not p.is_file() or p.stat().st_size!=row['bytes'] or hashlib.sha256(p.read_bytes()).hexdigest()!=row['sha256']:errors.append('HF resource hash mismatch '+row['saved_path'])
+   else:hf_verified+=1
+ audit=json.loads((needle/'分析证据/源码与模型格式核查.json').read_text())
+ for row in audit['source_snapshots']:
+  if row['mismatches'] or not row['archive_sha256_verified']:errors.append('addition source mismatch '+row['repo'])
+ for folder in ['16_TinyEngineer桌面编程机器人','17_Needle端侧模型']:
+  report=json.loads((ROOT/folder/'分析证据/主机验证记录.json').read_text())
+  if folder.startswith('16') and any(row.get('exit_code')!=0 for row in report['rows']):errors.append('Tiny host check failed')
+  new_host_checks.append({'folder':folder,'scope':report['scope'],'physical_robot_test':False})
+ smoke=json.loads((needle/'分析证据/离线指令试验.json').read_text())
+ if len(smoke['rows'])!=10 or smoke['robot_connected'] or smoke['callables_bound']:errors.append('unexpected Needle smoke scope')
+result={'project_folders':len(folders),'original_repositories_present':14,'requested_main_repositories_present':len(primary),'downloaded_snapshots':len(good),'distinct_repositories':len({r['repo'] for r in good}),'source_files':source_count,'authored_markdown_docs':len(md),'local_links_checked':links,'lfs_files_hash_verified':lfsok,'local_attachment_audits':local_audits,'hf_resource_files_hash_verified':hf_verified,'new_project_host_checks':new_host_checks,'known_unavailable_entries':[r['repo'] for r in m if r.get('status')!='downloaded'],'errors':errors,'verification_scope':'File and source-version checks, HF inference resource hashes, local attachment static analysis, fake-serial probes, selected Tiny host checks and Needle SDK/offline inference evidence. No firmware compilation, model training or physical robot tests'}
 (ROOT/'资料库校验记录.json').write_text(json.dumps(result,ensure_ascii=False,indent=2));print(json.dumps(result,ensure_ascii=False,indent=2));raise SystemExit(bool(errors))

@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+.env
+.venv/
+venv/
+outputs/
+data/
+logs/
+*.log
+*.safetensors.tmp
+wandb/
+hf_cache/
+model_cache/
+precursors/

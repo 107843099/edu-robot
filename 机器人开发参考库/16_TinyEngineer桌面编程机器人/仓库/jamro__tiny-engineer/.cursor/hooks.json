@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "node packages/tiny-engineer-cursor/bin/tiny-engineer-cursor.js",
+        "timeout": 2
+      },
+      {
+        "command": ".cursor/hooks/log-event.sh sessionStart",
+        "timeout": 2
+      }
+    ],
+    "beforeSubmitPrompt": [
+      {
+        "command": "node packages/tiny-engineer-cursor/bin/tiny-engineer-cursor.js",
+        "timeout": 2
+      },
+      {
+        "command": ".cursor/hooks/log-event.sh beforeSubmitPrompt",
+        "timeout": 2
+      }
+    ],
+    "afterAgentThought": [
+      {
+        "command": "node packages/tiny-engineer-cursor/bin/tiny-engineer-cursor.js",
+        "timeout": 2
+      },
+      {
+        "command": ".cursor/hooks/log-event.sh afterAgentThought",
+        "timeout": 2
+      }
+    ],
+    "preCompact": [
+      {
+        "command": "node packages/tiny-engineer-cursor/bin/tiny-engineer-cursor.js",
+        "timeout": 2
+      },
+      {
+        "command": ".cursor/hooks/log-event.sh preCompact",
+        "timeout": 2
+      }
+    ],
+    "preToolUse": [
+      {
+        "command": "node packages/tiny-engineer-cursor/bin/tiny-engineer-cursor.js",
+        "timeout": 2
+      },
+      {
+        "command": ".cursor/hooks/log-event.sh preToolUse",
+        "timeout": 2
+      }
+    ],
+    "beforeReadFile": [
+      {
+        "command": "node packages/tiny-engineer-cursor/bin/tiny-engineer-cursor.js",
+        "timeout": 2
+      },
+      {
+        "command": ".cursor/hooks/log-event.sh beforeReadFile",
+        "timeout": 2
+      }
+    ],
+    "beforeShellExecution": [
+      {
+        "command": "node packages/tiny-engineer-cursor/bin/tiny-engineer-cursor.js",
+        "timeout": 2
+      },
+      {
+        "command": ".cursor/hooks/log-event.sh beforeShellExecution",
+        "timeout": 2
+      }
+    ],
+    "subagentStart": [
+      {
+        "command": "node packages/tiny-engineer-cursor/bin/tiny-engineer-cursor.js",
+        "timeout": 2
+      },
+      {
+        "command": ".cursor/hooks/log-event.sh subagentStart",
+        "timeout": 2
+      }
+    ],
+    "afterFileEdit": [
+      {
+        "command": "node packages/tiny-engineer-cursor/bin/tiny-engineer-cursor.js",
+        "timeout": 2
+      },
+      {
+        "command": ".cursor/hooks/log-event.sh afterFileEdit",
+        "timeout": 2
+      }
+    ],
+    "stop": [
+      {
+        "command": "node packages/tiny-engineer-cursor/bin/tiny-engineer-cursor.js",
+        "timeout": 2
+      },
+      {
+        "command": ".cursor/hooks/log-event.sh stop",
+        "timeout": 2
+      }
+    ]
+  }
+}

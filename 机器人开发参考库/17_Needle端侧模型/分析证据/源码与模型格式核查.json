@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-03",
+  "source_snapshots": [
+    {
+      "repo": "cactus-compute/cactus",
+      "commit": "2cfcdb8568eb9192323b27fd0012a834517b4419",
+      "files_checked": 702,
+      "archive_sha256_verified": true,
+      "mismatches": []
+    },
+    {
+      "repo": "cactus-compute/cq-convert",
+      "commit": "f1d461218238eaf3a27c2e8d9a52ef7a7ff1365d",
+      "files_checked": 17,
+      "archive_sha256_verified": true,
+      "mismatches": []
+    },
+    {
+      "repo": "cactus-compute/depth-over-specialization",
+      "commit": "8849083ae61576fb65609fec8c342f52ed57958d",
+      "files_checked": 33,
+      "archive_sha256_verified": true,
+      "mismatches": []
+    },
+    {
+      "repo": "cactus-compute/needle-environments",
+      "commit": "3875d55d7a2680157ea093d87694f16c59f79926",
+      "files_checked": 8,
+      "archive_sha256_verified": true,
+      "mismatches": []
+    },
+    {
+      "repo": "cactus-compute/needle",
+      "commit": "8881c1ceada54814465fa5edddc6599f32383985",
+      "files_checked": 68,
+      "archive_sha256_verified": true,
+      "mismatches": []
+    },
+    {
+      "repo": "jamro/brass-thumb-pomodoro",
+      "commit": "04dfe78fb5fc89643590cd321c45707cfaef2fc9",
+      "files_checked": 105,
+      "archive_sha256_verified": true,
+      "mismatches": []
+    },
+    {
+      "repo": "jamro/desk-hud",
+      "commit": "1e4eb6c77555abdccd5914aa84d12edc8e37c0a3",
+      "files_checked": 177,
+      "archive_sha256_verified": true,
+      "mismatches": []
+    },
+    {
+      "repo": "jamro/tiny-engineer",
+      "commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+      "files_checked": 664,
+      "archive_sha256_verified": true,
+      "mismatches": []
+    },
+    {
+      "repo": "jamro/yova",
+      "commit": "ef2aab36e1901d396e3ef9cbcb8210dc54b9e558",
+      "files_checked": 179,
+      "archive_sha256_verified": true,
+      "mismatches": []
+    }
+  ],
+  "source_files_checked": 1953,
+  "needle_binary_header": {
+    "format_tag": "0x05e12a84",
+    "header_bytes": 196,
+    "tensor_records": 581,
+    "directory_record_bytes": 44,
+    "kv_window": 256,
+    "kv_bits": 8,
+    "vocab": 8192,
+    "out_vocab": 8192,
+    "d_model": 768,
+    "heads": 12,
+    "kv_heads": 2,
+    "layers": 20,
+    "qk_head_dim": 48,
+    "v_head_dim": 64,
+    "max_seq_len": 8192,
+    "mhc_lanes": 4,
+    "sliding_window": 1024,
+    "quantized_tensor_bit_widths": {
+      "4": 7,
+      "2": 115
+    },
+    "tensor_data_bytes": 35306576,
+    "file_bytes": 35335380,
+    "head_codes": [
+      2
+    ],
+    "head_code_meaning": {
+      "1": "embedding",
+      "2": "confidence",
+      "3": "router"
+    },
+    "all_tensor_offsets_in_bounds": true,
+    "last_record_raw_tokenizer": true
+  },
+  "notes": [
+    "Source snapshots compared byte-for-byte against fixed-commit original ZIPs, no vendor source changes",
+    "Needle exporter prose calls the header 120 bytes; actual struct <48If is 196 bytes",
+    "Native needle.h declares five arguments for needle_embed; source _worker.py binds and calls three; no worker embed call attempted",
+    "Header declares one process-global, non-thread-safe model per kind; process isolation is required for concurrent student sessions"
+  ]
+}

@@ -2,6 +2,8 @@
 from pathlib import Path
 from urllib.parse import quote
 import hashlib, json, os, re, subprocess, shlex
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 REPO = Path(__file__).resolve().parents[2]
 LIB = REPO/'机器人开发参考库'
@@ -90,10 +92,11 @@ for event in ['pre-push','post-commit','post-checkout','post-merge']:
     hook.chmod(0o755)
 
 previous=json.loads((LIB/'发布整理记录.json').read_text()) if (LIB/'发布整理记录.json').exists() else {}
-record={'date':'2026-10-02','repository':'https://github.com/107843099/edu-robot',
+good_snapshots=[row for row in snapshots if row.get('status')=='downloaded']
+record={**previous,'date':datetime.now(ZoneInfo('Asia/Hong_Kong')).date().isoformat(),'repository':'https://github.com/107843099/edu-robot',
         'scope':{'folder':'机器人开发参考库','files':top_files},
         'navigation_files_converted':sorted(set(previous.get('navigation_files_converted',[])+changes)),
-        'source_snapshots':67,'distinct_upstream_repositories':66,
+        'source_snapshots':len(good_snapshots),'distinct_upstream_repositories':len({row['repo'] for row in good_snapshots}),
         'omitted_os_metadata_files':sum(len(row.get('publication_omitted_files',[])) for row in snapshots),
         'large_file_threshold_bytes':2*1024*1024,'large_files_selected':len(large),
         'large_files_logical_bytes':sum(f.stat().st_size for f in large),

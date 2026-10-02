@@ -1,0 +1,842 @@
+[
+  {
+    "repository": "Cactus-Compute/needle3",
+    "provider": "Hugging Face",
+    "revision": "c7c415a3d1b3d929014bc6e866d51ebb971f7089",
+    "downloaded_date": "2026-10-03",
+    "license": "apache-2.0",
+    "purpose": "Pinned inference weights, current engines, C API headers and source model card",
+    "files": [
+      {
+        "path": ".gitattributes",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/.gitattributes",
+        "bytes": 6234,
+        "sha256": "2c981e19e246fdbdf1ecf56920b1f79f0640e5c1cd6cbfff8877376154755253",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/.gitattributes",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "LICENSE",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/LICENSE",
+        "bytes": 11358,
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/LICENSE",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "README.md",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/README.md",
+        "bytes": 8021,
+        "sha256": "5351c4642df40999d3b52febcf2d93705fedbe0f5f88e884901c6b88541c33e0",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/README.md",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "android-arm64/libneedle.a",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/android-arm64/libneedle.a",
+        "bytes": 2128166,
+        "sha256": "16752fb75adea7af89bbc435a97d1cda7e71bc74d04578d551d0d3bbd5f9e633",
+        "expected_lfs_sha256": "16752fb75adea7af89bbc435a97d1cda7e71bc74d04578d551d0d3bbd5f9e633",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/android-arm64/libneedle.a",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "android-arm64/needle",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/android-arm64/needle",
+        "bytes": 1468888,
+        "sha256": "4a8f2090c5dc7d21ca52b9d167682d5ccb51f730fa21f4c6a700b320c858a17b",
+        "expected_lfs_sha256": "4a8f2090c5dc7d21ca52b9d167682d5ccb51f730fa21f4c6a700b320c858a17b",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/android-arm64/needle",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "android-arm64/needle.h",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/android-arm64/needle.h",
+        "bytes": 3322,
+        "sha256": "90f347f9dca1199de79967ab199a56e0588bd473fe306051f8d80d146976a324",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/android-arm64/needle.h",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "android-armv7/libneedle.a",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/android-armv7/libneedle.a",
+        "bytes": 1646250,
+        "sha256": "8cb5af3c2a7e6ad55a1fe94cb9b6c012b40ae921aae2981594362389872fa7c0",
+        "expected_lfs_sha256": "8cb5af3c2a7e6ad55a1fe94cb9b6c012b40ae921aae2981594362389872fa7c0",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/android-armv7/libneedle.a",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "android-armv7/needle",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/android-armv7/needle",
+        "bytes": 893692,
+        "sha256": "eab77b1712b5127201d7e9cbb700f03b3645566347be0446c4818002deeab9d3",
+        "expected_lfs_sha256": "eab77b1712b5127201d7e9cbb700f03b3645566347be0446c4818002deeab9d3",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/android-armv7/needle",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "android-armv7/needle.h",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/android-armv7/needle.h",
+        "bytes": 3322,
+        "sha256": "90f347f9dca1199de79967ab199a56e0588bd473fe306051f8d80d146976a324",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/android-armv7/needle.h",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "android-riscv64/libneedle.a",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/android-riscv64/libneedle.a",
+        "bytes": 4634608,
+        "sha256": "5580972d83ea6eb466c0989d605935233360564b24f20ef7f671c08e0e8f7482",
+        "expected_lfs_sha256": "5580972d83ea6eb466c0989d605935233360564b24f20ef7f671c08e0e8f7482",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/android-riscv64/libneedle.a",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "android-riscv64/needle",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/android-riscv64/needle",
+        "bytes": 1277992,
+        "sha256": "846948100f440c014f046c4615a2ff0cc9febeabef0768fda9db5a4e98f7e82f",
+        "expected_lfs_sha256": "846948100f440c014f046c4615a2ff0cc9febeabef0768fda9db5a4e98f7e82f",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/android-riscv64/needle",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "android-riscv64/needle.h",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/android-riscv64/needle.h",
+        "bytes": 3322,
+        "sha256": "90f347f9dca1199de79967ab199a56e0588bd473fe306051f8d80d146976a324",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/android-riscv64/needle.h",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "assets/banner.svg",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/assets/banner.svg",
+        "bytes": 3070,
+        "sha256": "91769858be6b5b4dd5d25acad5924fec36afcbd731cd4014594a9c2280fda57f",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/assets/banner.svg",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "assets/benchmarks.svg",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/assets/benchmarks.svg",
+        "bytes": 75530,
+        "sha256": "94567dad9ea460cb309a893f43a5ab04ae834675543d89edcb4c7cf9c1c786af",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/assets/benchmarks.svg",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "assets/deploy.svg",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/assets/deploy.svg",
+        "bytes": 18851,
+        "sha256": "e3a92fbdfd9009829efa4a20cf2a9659f69ade5274975b93d7c93fd04015897e",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/assets/deploy.svg",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "assets/finetune.svg",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/assets/finetune.svg",
+        "bytes": 14808,
+        "sha256": "9a89aa06d28399f63bc4d268446c4f532050ad0bfeb6332880e4b65954aa3fcd",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/assets/finetune.svg",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "assets/model.svg",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/assets/model.svg",
+        "bytes": 7535,
+        "sha256": "1fa28ee93050c7d54ed7fa7db94f62555378c8b2afcbf1e7444dbbe57f9b0bca",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/assets/model.svg",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "config.json",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/config.json",
+        "bytes": 1273,
+        "sha256": "d65e8e076d42b26ed473313e4890dfd8397274a238fd6c1715fff539b464c04e",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/config.json",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "ios-arm64/libneedle.a",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/ios-arm64/libneedle.a",
+        "bytes": 1465680,
+        "sha256": "e507b914d32cfe7dfbc9be8de65dc899451d8cbd38a63b2e47bfddaca73373ac",
+        "expected_lfs_sha256": "e507b914d32cfe7dfbc9be8de65dc899451d8cbd38a63b2e47bfddaca73373ac",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/ios-arm64/libneedle.a",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "ios-arm64/needle.h",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/ios-arm64/needle.h",
+        "bytes": 3322,
+        "sha256": "90f347f9dca1199de79967ab199a56e0588bd473fe306051f8d80d146976a324",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/ios-arm64/needle.h",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "ios-sim-arm64/libneedle.a",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/ios-sim-arm64/libneedle.a",
+        "bytes": 1503120,
+        "sha256": "a75a67f98c057cef82977e5e1e3d505b57fed131710a5ae89683ad9d0d74d849",
+        "expected_lfs_sha256": "a75a67f98c057cef82977e5e1e3d505b57fed131710a5ae89683ad9d0d74d849",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/ios-sim-arm64/libneedle.a",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "ios-sim-arm64/needle.h",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/ios-sim-arm64/needle.h",
+        "bytes": 3322,
+        "sha256": "90f347f9dca1199de79967ab199a56e0588bd473fe306051f8d80d146976a324",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/ios-sim-arm64/needle.h",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "linux-arm64/libneedle.a",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/linux-arm64/libneedle.a",
+        "bytes": 1966732,
+        "sha256": "d6e33724cab170f0a25bd943d3a8ed5da925fcb793e9fcb1f201bf2478a50f91",
+        "expected_lfs_sha256": "d6e33724cab170f0a25bd943d3a8ed5da925fcb793e9fcb1f201bf2478a50f91",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/linux-arm64/libneedle.a",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "linux-arm64/needle",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/linux-arm64/needle",
+        "bytes": 1409312,
+        "sha256": "bcf48b66a3e1834e8cb92c9f9998d85d4618d3e949c8a9d293116749a1f0d205",
+        "expected_lfs_sha256": "bcf48b66a3e1834e8cb92c9f9998d85d4618d3e949c8a9d293116749a1f0d205",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/linux-arm64/needle",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "linux-arm64/needle.h",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/linux-arm64/needle.h",
+        "bytes": 3322,
+        "sha256": "90f347f9dca1199de79967ab199a56e0588bd473fe306051f8d80d146976a324",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/linux-arm64/needle.h",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "linux-armv7/libneedle.a",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/linux-armv7/libneedle.a",
+        "bytes": 1732630,
+        "sha256": "f3cdfcc9a5e9aa3afcd0af6612fe2d6099f85c31b7fb5a7d486e3362e7e60c57",
+        "expected_lfs_sha256": "f3cdfcc9a5e9aa3afcd0af6612fe2d6099f85c31b7fb5a7d486e3362e7e60c57",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/linux-armv7/libneedle.a",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "linux-armv7/needle",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/linux-armv7/needle",
+        "bytes": 1216328,
+        "sha256": "9eea74cba1f8660b1d1835d5d1704559bdf06af6736cfa6dc403e9edc19da0a6",
+        "expected_lfs_sha256": "9eea74cba1f8660b1d1835d5d1704559bdf06af6736cfa6dc403e9edc19da0a6",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/linux-armv7/needle",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "linux-armv7/needle.h",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/linux-armv7/needle.h",
+        "bytes": 3322,
+        "sha256": "90f347f9dca1199de79967ab199a56e0588bd473fe306051f8d80d146976a324",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/linux-armv7/needle.h",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "linux-mipsel/libneedle.a",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/linux-mipsel/libneedle.a",
+        "bytes": 1636470,
+        "sha256": "3a17c4c012075510c9f24321a98259dd02a2d6e03adf11a492c5951d1cbd5b7e",
+        "expected_lfs_sha256": "3a17c4c012075510c9f24321a98259dd02a2d6e03adf11a492c5951d1cbd5b7e",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/linux-mipsel/libneedle.a",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "linux-mipsel/needle",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/linux-mipsel/needle",
+        "bytes": 1773672,
+        "sha256": "48aba03a7fd1575c9f0a26a864b04f714e0caba91f311073534dcb331e7b0f98",
+        "expected_lfs_sha256": "48aba03a7fd1575c9f0a26a864b04f714e0caba91f311073534dcb331e7b0f98",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/linux-mipsel/needle",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "linux-mipsel/needle.h",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/linux-mipsel/needle.h",
+        "bytes": 3322,
+        "sha256": "90f347f9dca1199de79967ab199a56e0588bd473fe306051f8d80d146976a324",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/linux-mipsel/needle.h",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "linux-riscv64/libneedle.a",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/linux-riscv64/libneedle.a",
+        "bytes": 1881996,
+        "sha256": "6e84c1fac7562fc507962a26dd1f25ae4203f755ab16104551fe365dc0833c05",
+        "expected_lfs_sha256": "6e84c1fac7562fc507962a26dd1f25ae4203f755ab16104551fe365dc0833c05",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/linux-riscv64/libneedle.a",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "linux-riscv64/needle",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/linux-riscv64/needle",
+        "bytes": 1157928,
+        "sha256": "a95e703c00e0a8b053e5829c10fd684e387d5fab76adb1c317f8f0a30e2e2c45",
+        "expected_lfs_sha256": "a95e703c00e0a8b053e5829c10fd684e387d5fab76adb1c317f8f0a30e2e2c45",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/linux-riscv64/needle",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "linux-riscv64/needle.h",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/linux-riscv64/needle.h",
+        "bytes": 3322,
+        "sha256": "90f347f9dca1199de79967ab199a56e0588bd473fe306051f8d80d146976a324",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/linux-riscv64/needle.h",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "linux-x86_64/libneedle.a",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/linux-x86_64/libneedle.a",
+        "bytes": 2143656,
+        "sha256": "5c0ff309dcf9c2238bd07986d9d100069d568596c2378f0bfedc1677cc02f756",
+        "expected_lfs_sha256": "5c0ff309dcf9c2238bd07986d9d100069d568596c2378f0bfedc1677cc02f756",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/linux-x86_64/libneedle.a",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "linux-x86_64/needle",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/linux-x86_64/needle",
+        "bytes": 1517200,
+        "sha256": "b197ceaef3b300a0b14c3a4fde92305527e43f9256c53d2a53d2a2fe8fe69678",
+        "expected_lfs_sha256": "b197ceaef3b300a0b14c3a4fde92305527e43f9256c53d2a53d2a2fe8fe69678",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/linux-x86_64/needle",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "linux-x86_64/needle.h",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/linux-x86_64/needle.h",
+        "bytes": 3322,
+        "sha256": "90f347f9dca1199de79967ab199a56e0588bd473fe306051f8d80d146976a324",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/linux-x86_64/needle.h",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "macos-arm64/libneedle.a",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/macos-arm64/libneedle.a",
+        "bytes": 1503976,
+        "sha256": "a3b9163abe7b4bd52487c4005506cb35c5163bb9b9587af4ae07ed7587de697d",
+        "expected_lfs_sha256": "a3b9163abe7b4bd52487c4005506cb35c5163bb9b9587af4ae07ed7587de697d",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/macos-arm64/libneedle.a",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "macos-arm64/needle",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/macos-arm64/needle",
+        "bytes": 1073160,
+        "sha256": "f52c9ce7c05ef44e8d8441584aec9e6ac6054f811866eacd70f33da2462577dc",
+        "expected_lfs_sha256": "f52c9ce7c05ef44e8d8441584aec9e6ac6054f811866eacd70f33da2462577dc",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/macos-arm64/needle",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "macos-arm64/needle.h",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/macos-arm64/needle.h",
+        "bytes": 3322,
+        "sha256": "90f347f9dca1199de79967ab199a56e0588bd473fe306051f8d80d146976a324",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/macos-arm64/needle.h",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "needle3.cact",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/needle3.cact",
+        "bytes": 35335380,
+        "sha256": "c9d915eca282ed42d1a09b143b592adb4cc6744ffe2d294adf5cfc5548170c38",
+        "expected_lfs_sha256": "c9d915eca282ed42d1a09b143b592adb4cc6744ffe2d294adf5cfc5548170c38",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/needle3.cact",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "python/cactus_needle-3.1.0-py3-none-macosx_11_0_arm64.whl",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/python/cactus_needle-3.1.0-py3-none-macosx_11_0_arm64.whl",
+        "bytes": 523657,
+        "sha256": "ad1cba80ede4c058692370964eec4d881a1fdc80014f7210b2d13891bad7d1c6",
+        "expected_lfs_sha256": "ad1cba80ede4c058692370964eec4d881a1fdc80014f7210b2d13891bad7d1c6",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/python/cactus_needle-3.1.0-py3-none-macosx_11_0_arm64.whl",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "python/cactus_needle-3.1.0-py3-none-macosx_11_0_x86_64.whl",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/python/cactus_needle-3.1.0-py3-none-macosx_11_0_x86_64.whl",
+        "bytes": 575529,
+        "sha256": "31a90adbaa898ea65e92b370e80ba5830a346348022a913a8bb254ab7d20bad6",
+        "expected_lfs_sha256": "31a90adbaa898ea65e92b370e80ba5830a346348022a913a8bb254ab7d20bad6",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/python/cactus_needle-3.1.0-py3-none-macosx_11_0_x86_64.whl",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "python/cactus_needle-3.1.0-py3-none-manylinux2014_aarch64.whl",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/python/cactus_needle-3.1.0-py3-none-manylinux2014_aarch64.whl",
+        "bytes": 649611,
+        "sha256": "f2f30a1178856025ab4bf75ef75e1bf28b8d0552cdd5614f7d06cedc1f713606",
+        "expected_lfs_sha256": "f2f30a1178856025ab4bf75ef75e1bf28b8d0552cdd5614f7d06cedc1f713606",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/python/cactus_needle-3.1.0-py3-none-manylinux2014_aarch64.whl",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "python/cactus_needle-3.1.0-py3-none-manylinux2014_x86_64.whl",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/python/cactus_needle-3.1.0-py3-none-manylinux2014_x86_64.whl",
+        "bytes": 671203,
+        "sha256": "a0fc2f682ef18525d4d18583081ac31c1f6f211abe6c0b3bee44811ed7e0347e",
+        "expected_lfs_sha256": "a0fc2f682ef18525d4d18583081ac31c1f6f211abe6c0b3bee44811ed7e0347e",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/python/cactus_needle-3.1.0-py3-none-manylinux2014_x86_64.whl",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "python/cactus_needle-3.1.0-py3-none-musllinux_1_2_aarch64.whl",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/python/cactus_needle-3.1.0-py3-none-musllinux_1_2_aarch64.whl",
+        "bytes": 649438,
+        "sha256": "b5e3c48b2c181d29117949f4f55c57cab8c3ccd08d782302b56489fde9c15f73",
+        "expected_lfs_sha256": "b5e3c48b2c181d29117949f4f55c57cab8c3ccd08d782302b56489fde9c15f73",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/python/cactus_needle-3.1.0-py3-none-musllinux_1_2_aarch64.whl",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "python/cactus_needle-3.1.0-py3-none-musllinux_1_2_x86_64.whl",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/python/cactus_needle-3.1.0-py3-none-musllinux_1_2_x86_64.whl",
+        "bytes": 672183,
+        "sha256": "835ea0d5765704b65bfaf286e2e94aa2e6027b9494a18adf0fb845f2e3bc7a04",
+        "expected_lfs_sha256": "835ea0d5765704b65bfaf286e2e94aa2e6027b9494a18adf0fb845f2e3bc7a04",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/python/cactus_needle-3.1.0-py3-none-musllinux_1_2_x86_64.whl",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "python/cactus_needle-3.1.0-py3-none-win_amd64.whl",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/python/cactus_needle-3.1.0-py3-none-win_amd64.whl",
+        "bytes": 683889,
+        "sha256": "4f5fc86abfc50d551cdb237a34b501f36d82d4b6f5911ee7bec4e9532d44dd95",
+        "expected_lfs_sha256": "4f5fc86abfc50d551cdb237a34b501f36d82d4b6f5911ee7bec4e9532d44dd95",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/python/cactus_needle-3.1.0-py3-none-win_amd64.whl",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "python/cactus_needle-3.1.0-py3-none-win_arm64.whl",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/python/cactus_needle-3.1.0-py3-none-win_arm64.whl",
+        "bytes": 617795,
+        "sha256": "39806d54910c207cd0ac5dc60009c8c5330072ef729711d74061faf0e99e7a6c",
+        "expected_lfs_sha256": "39806d54910c207cd0ac5dc60009c8c5330072ef729711d74061faf0e99e7a6c",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/python/cactus_needle-3.1.0-py3-none-win_arm64.whl",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "tokenizer/tokenizer.model",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/tokenizer/tokenizer.model",
+        "bytes": 126520,
+        "sha256": "97dfd5666620b19875deba9e55953d312364e7763bd08bee428b94f1b9491b25",
+        "expected_lfs_sha256": "97dfd5666620b19875deba9e55953d312364e7763bd08bee428b94f1b9491b25",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/tokenizer/tokenizer.model",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "tokenizer/tokenizer.vocab",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/tokenizer/tokenizer.vocab",
+        "bytes": 106870,
+        "sha256": "7c87aa0da9f19b5d5a97824ec94555d6e73766f2a60e51e7ebe0b7c61ded3b33",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/tokenizer/tokenizer.vocab",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "tvos-arm64/libneedle.a",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/tvos-arm64/libneedle.a",
+        "bytes": 1465744,
+        "sha256": "fe1105a1f377f40a79a225336256e2cc2b8da18836d0871f549afb31099a6d76",
+        "expected_lfs_sha256": "fe1105a1f377f40a79a225336256e2cc2b8da18836d0871f549afb31099a6d76",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/tvos-arm64/libneedle.a",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "tvos-arm64/needle.h",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/tvos-arm64/needle.h",
+        "bytes": 3322,
+        "sha256": "90f347f9dca1199de79967ab199a56e0588bd473fe306051f8d80d146976a324",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/tvos-arm64/needle.h",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "wasm-component/needle.component.wasm",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/wasm-component/needle.component.wasm",
+        "bytes": 4452455,
+        "sha256": "5c07eba8742a3d76c1d7bfbef8129210a70b44e0e7fdcaecdece67f7a4bc4678",
+        "expected_lfs_sha256": "5c07eba8742a3d76c1d7bfbef8129210a70b44e0e7fdcaecdece67f7a4bc4678",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/wasm-component/needle.component.wasm",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "wasm-component/needle.wit",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/wasm-component/needle.wit",
+        "bytes": 526,
+        "sha256": "fdae1bf6a9c9d572bc44de36c269734b0e2717f8f3e00ee2113c7d3d6498126e",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/wasm-component/needle.wit",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "wasm/needle.h",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/wasm/needle.h",
+        "bytes": 3322,
+        "sha256": "90f347f9dca1199de79967ab199a56e0588bd473fe306051f8d80d146976a324",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/wasm/needle.h",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "wasm/needle.js",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/wasm/needle.js",
+        "bytes": 62823,
+        "sha256": "f3f7366dcad9555b792ee519d2518f3c506038bcb2ffd179e76e850000749359",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/wasm/needle.js",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "wasm/needle.wasm",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/wasm/needle.wasm",
+        "bytes": 903655,
+        "sha256": "c19b9ddf9c7de4eb4f37e5f1811c5bbea9f099041d2a27284daf89789ee8523d",
+        "expected_lfs_sha256": "c19b9ddf9c7de4eb4f37e5f1811c5bbea9f099041d2a27284daf89789ee8523d",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/wasm/needle.wasm",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "watchos-arm64/libneedle.a",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/watchos-arm64/libneedle.a",
+        "bytes": 1486712,
+        "sha256": "bc0e82958495dc8a9f041faef071b61300c10472b1d3566fcf41934309cdff70",
+        "expected_lfs_sha256": "bc0e82958495dc8a9f041faef071b61300c10472b1d3566fcf41934309cdff70",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/watchos-arm64/libneedle.a",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "watchos-arm64/needle.h",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/watchos-arm64/needle.h",
+        "bytes": 3322,
+        "sha256": "90f347f9dca1199de79967ab199a56e0588bd473fe306051f8d80d146976a324",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/watchos-arm64/needle.h",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "windows-arm64/libneedle.a",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/windows-arm64/libneedle.a",
+        "bytes": 2078628,
+        "sha256": "e6c479a4094896785a22c2a54e3c8bfd8f60903488651ad6d4b47685512cec61",
+        "expected_lfs_sha256": "e6c479a4094896785a22c2a54e3c8bfd8f60903488651ad6d4b47685512cec61",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/windows-arm64/libneedle.a",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "windows-arm64/needle.exe",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/windows-arm64/needle.exe",
+        "bytes": 1331712,
+        "sha256": "078a7659770c5117458abf23b320e7de603aeac8d0d9cbbb31eb65eedbc0795d",
+        "expected_lfs_sha256": "078a7659770c5117458abf23b320e7de603aeac8d0d9cbbb31eb65eedbc0795d",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/windows-arm64/needle.exe",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "windows-arm64/needle.h",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/windows-arm64/needle.h",
+        "bytes": 3322,
+        "sha256": "90f347f9dca1199de79967ab199a56e0588bd473fe306051f8d80d146976a324",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/windows-arm64/needle.h",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "windows-x86_64/libneedle.a",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/windows-x86_64/libneedle.a",
+        "bytes": 2292578,
+        "sha256": "a2501f416a562bf0c2ad734821dd190571d22ced22c104372b8cd41b40245114",
+        "expected_lfs_sha256": "a2501f416a562bf0c2ad734821dd190571d22ced22c104372b8cd41b40245114",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/windows-x86_64/libneedle.a",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "windows-x86_64/needle.exe",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/windows-x86_64/needle.exe",
+        "bytes": 1540096,
+        "sha256": "c70ca998f6c542c862c06c22352046e303ef5c769384069ee25cef9f4667e4cf",
+        "expected_lfs_sha256": "c70ca998f6c542c862c06c22352046e303ef5c769384069ee25cef9f4667e4cf",
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/windows-x86_64/needle.exe",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "windows-x86_64/needle.h",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__needle3/windows-x86_64/needle.h",
+        "bytes": 3322,
+        "sha256": "90f347f9dca1199de79967ab199a56e0588bd473fe306051f8d80d146976a324",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/windows-x86_64/needle.h",
+        "status": "downloaded_verified"
+      }
+    ],
+    "omitted_files": [
+      {
+        "path": "checkpoints/needle3.safetensors",
+        "bytes": 242047978,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.0-py3-none-macosx_11_0_arm64.whl",
+        "bytes": 376196,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.0-py3-none-macosx_11_0_x86_64.whl",
+        "bytes": 430782,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.0-py3-none-manylinux2014_aarch64.whl",
+        "bytes": 500887,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.0-py3-none-manylinux2014_x86_64.whl",
+        "bytes": 530108,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.0-py3-none-musllinux_1_2_aarch64.whl",
+        "bytes": 500458,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.0-py3-none-musllinux_1_2_x86_64.whl",
+        "bytes": 530918,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.0-py3-none-win_amd64.whl",
+        "bytes": 547384,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.0-py3-none-win_arm64.whl",
+        "bytes": 477839,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.1-py3-none-macosx_11_0_arm64.whl",
+        "bytes": 387232,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.1-py3-none-macosx_11_0_x86_64.whl",
+        "bytes": 431615,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.1-py3-none-manylinux2014_aarch64.whl",
+        "bytes": 517746,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.1-py3-none-manylinux2014_x86_64.whl",
+        "bytes": 536871,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.1-py3-none-musllinux_1_2_aarch64.whl",
+        "bytes": 517367,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.1-py3-none-musllinux_1_2_x86_64.whl",
+        "bytes": 537929,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.1-py3-none-win_amd64.whl",
+        "bytes": 553581,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.1-py3-none-win_arm64.whl",
+        "bytes": 493234,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.2-py3-none-macosx_11_0_arm64.whl",
+        "bytes": 387420,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.2-py3-none-macosx_11_0_x86_64.whl",
+        "bytes": 431850,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.2-py3-none-manylinux2014_aarch64.whl",
+        "bytes": 518061,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.2-py3-none-manylinux2014_x86_64.whl",
+        "bytes": 537236,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.2-py3-none-musllinux_1_2_aarch64.whl",
+        "bytes": 517651,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.2-py3-none-musllinux_1_2_x86_64.whl",
+        "bytes": 538243,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.2-py3-none-win_amd64.whl",
+        "bytes": 553681,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      },
+      {
+        "path": "python/cactus_needle-3.0.2-py3-none-win_arm64.whl",
+        "bytes": 493507,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      }
+    ],
+    "training_checkpoint_downloaded": false
+  },
+  {
+    "repository": "Cactus-Compute/whistle",
+    "provider": "Hugging Face",
+    "revision": "b358ddadd89b7a713b5aa131f23032d3cca1b251",
+    "downloaded_date": "2026-10-03",
+    "license": "apache-2.0",
+    "purpose": "Pinned inference weights, current engines, C API headers and source model card",
+    "files": [
+      {
+        "path": ".gitattributes",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__whistle/.gitattributes",
+        "bytes": 1568,
+        "sha256": "a0ee6f21134d82a1e5eabb2f279ca1a1fecdf8262004e7a99353ede43b353f06",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/whistle/resolve/b358ddadd89b7a713b5aa131f23032d3cca1b251/.gitattributes",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "LICENSE",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__whistle/LICENSE",
+        "bytes": 11358,
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/whistle/resolve/b358ddadd89b7a713b5aa131f23032d3cca1b251/LICENSE",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "README.md",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__whistle/README.md",
+        "bytes": 6882,
+        "sha256": "7c288d7eded692c795cc932902ee3f7fe6aa7c6417ca28a954088f1aa8a9f8f4",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/whistle/resolve/b358ddadd89b7a713b5aa131f23032d3cca1b251/README.md",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "assets/deploy.svg",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__whistle/assets/deploy.svg",
+        "bytes": 18851,
+        "sha256": "e3a92fbdfd9009829efa4a20cf2a9659f69ade5274975b93d7c93fd04015897e",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/whistle/resolve/b358ddadd89b7a713b5aa131f23032d3cca1b251/assets/deploy.svg",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "assets/whistle-banner.svg",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__whistle/assets/whistle-banner.svg",
+        "bytes": 5576,
+        "sha256": "d28bee62a11e99bfd1275344558dbbc40fc9a32df85811b684407deb436c76c2",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/whistle/resolve/b358ddadd89b7a713b5aa131f23032d3cca1b251/assets/whistle-banner.svg",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "assets/whistle-benchmarks.svg",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__whistle/assets/whistle-benchmarks.svg",
+        "bytes": 19674,
+        "sha256": "5c1637003a743011a7fd73b7d71e19dabcec24a82cabd7d458827e5fbec0af34",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/whistle/resolve/b358ddadd89b7a713b5aa131f23032d3cca1b251/assets/whistle-benchmarks.svg",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "assets/whistle-model.svg",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__whistle/assets/whistle-model.svg",
+        "bytes": 8456,
+        "sha256": "e4828d45403e7307eeb352289128c796089a76f54cb425f884048e059535284c",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/whistle/resolve/b358ddadd89b7a713b5aa131f23032d3cca1b251/assets/whistle-model.svg",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "assets/whistle.svg",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__whistle/assets/whistle.svg",
+        "bytes": 21892,
+        "sha256": "9ffb19e1bc801da7065adc46e2092f26d54626243b5d92219c30d2352c76b058",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/whistle/resolve/b358ddadd89b7a713b5aa131f23032d3cca1b251/assets/whistle.svg",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "config.json",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__whistle/config.json",
+        "bytes": 603,
+        "sha256": "ac2dbcb98a945eff2de98a03104c468dc9d68c06b9ff791539327f90298a3d43",
+        "expected_lfs_sha256": null,
+        "download_url": "https://huggingface.co/Cactus-Compute/whistle/resolve/b358ddadd89b7a713b5aa131f23032d3cca1b251/config.json",
+        "status": "downloaded_verified"
+      },
+      {
+        "path": "whistle.cact",
+        "saved_path": "机器人开发参考库/17_Needle端侧模型/运行资源/Cactus-Compute__whistle/whistle.cact",
+        "bytes": 16919407,
+        "sha256": "b6e02f048568ac5d01a2042556c658061e699acbc0aa2a1439f52f3d461dffeb",
+        "expected_lfs_sha256": "b6e02f048568ac5d01a2042556c658061e699acbc0aa2a1439f52f3d461dffeb",
+        "download_url": "https://huggingface.co/Cactus-Compute/whistle/resolve/b358ddadd89b7a713b5aa131f23032d3cca1b251/whistle.cact",
+        "status": "downloaded_verified"
+      }
+    ],
+    "omitted_files": [
+      {
+        "path": "checkpoints/whistle.safetensors",
+        "bytes": 220618620,
+        "reason": "Optional training checkpoint or superseded engine wheel; original pinned URL remains available"
+      }
+    ],
+    "training_checkpoint_downloaded": false
+  }
+]

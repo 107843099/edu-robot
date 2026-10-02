@@ -1,0 +1,19 @@
+✔ EVENT_ANIM maps reading events to reading (3.625582ms)
+✔ EVENT_ANIM maps thinking events to thinking (0.442399ms)
+✔ EVENT_ANIM maps typing events to typing (0.280693ms)
+✔ preToolUse maps reading tools to reading (0.254787ms)
+✔ preToolUse maps typing tools to typing (0.268754ms)
+✔ preToolUse skips unknown tools (0.218304ms)
+✔ stop maps aborted to abort (0.237632ms)
+✔ stop maps error to error (0.227855ms)
+✔ stop maps completed or missing status to ring (0.341067ms)
+✔ skips empty conversation_id or generation_id (0.390843ms)
+✔ skips missing or unknown hook_event_name (0.26921ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 443.854617

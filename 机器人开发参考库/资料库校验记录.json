@@ -1,11 +1,12 @@
 {
-  "project_folders": 15,
+  "project_folders": 17,
   "original_repositories_present": 14,
-  "downloaded_snapshots": 67,
-  "distinct_repositories": 66,
-  "source_files": 44630,
-  "authored_markdown_docs": 54,
-  "local_links_checked": 1050,
+  "requested_main_repositories_present": 16,
+  "downloaded_snapshots": 76,
+  "distinct_repositories": 75,
+  "source_files": 46583,
+  "authored_markdown_docs": 65,
+  "local_links_checked": 1240,
   "lfs_files_hash_verified": 81,
   "local_attachment_audits": [
     {
@@ -17,9 +18,22 @@
       "physical_tests": false
     }
   ],
+  "hf_resource_files_hash_verified": 76,
+  "new_project_host_checks": [
+    {
+      "folder": "16_TinyEngineer桌面编程机器人",
+      "scope": "28 Node tests, 9 Python audio tests, 480 expression frames; no firmware or KiCad build",
+      "physical_robot_test": false
+    },
+    {
+      "folder": "17_Needle端侧模型",
+      "scope": "Selected SDK tests only: initial 91 passed, 1 skipped, 5 offline-cache failures; failing five rerun with explicit local weight fixture, 5 passed",
+      "physical_robot_test": false
+    }
+  ],
   "known_unavailable_entries": [
     "one-for-all/sesame-simulator"
   ],
   "errors": [],
-  "verification_scope": "File and source-version checks; local attachment static analysis and isolated fake-serial probes. No firmware compilation, model training or physical robot tests"
+  "verification_scope": "File and source-version checks, HF inference resource hashes, local attachment static analysis, fake-serial probes, selected Tiny host checks and Needle SDK/offline inference evidence. No firmware compilation, model training or physical robot tests"
 }

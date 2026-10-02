@@ -1,0 +1,231 @@
+#include <Arduino.h>
+
+#include "animation.h"
+#include "animation/constants.h"
+#include "animation/error.h"
+#include "animation/util.h"
+#include "audio/audio.h"
+#include "hardware/servo_wrapper.h"
+#include "servos.h"
+
+using anim::randRangeMs;
+using anim::stopAnimServos;
+
+namespace {
+
+constexpr float ERROR_PREP_SPEED_DEG_S = 135.0f;
+constexpr float ERROR_GLANCE_SPEED_DEG_S = 42.0f;
+
+enum class ErrorLook {
+  Task,
+  Human,
+  Away,
+};
+
+enum class ErrorPhase {
+  ObstaclePose,
+  PlayAudio,
+  Finished,
+  BlockedHold,
+};
+
+ErrorPhase g_errorPhase = ErrorPhase::ObstaclePose;
+uint32_t g_errorAudioStartMs = 0;
+bool g_errorAudioStarted = false;
+bool (*g_warningStartPlayback)() = startErrorPlayback;
+bool (*g_warningUpdatePlayback)() = updateErrorPlayback;
+uint32_t g_blockedHoldStartedMs = 0;
+uint32_t g_nextHoldMoveMs = 0;
+bool g_holdNodLow = false;
+ErrorLook g_currentLook = ErrorLook::Task;
+
+void commandObstaclePose() {
+  servoAt(SERVO_BODY).setNormTarget(
+    anim::ERROR_BODY_TASK_SIDE,
+    ERROR_PREP_SPEED_DEG_S
+  );
+  servoAt(SERVO_NECK).setNormTarget(
+    anim::ERROR_NECK_TASK_SIDE,
+    ERROR_PREP_SPEED_DEG_S
+  );
+  servoAt(SERVO_HEAD).setNormTarget(
+    anim::ERROR_HEAD_CONCERNED,
+    ERROR_PREP_SPEED_DEG_S
+  );
+  servoAt(SERVO_HAND_LEFT).setNormTarget(
+    anim::ERROR_HAND_LEFT_TASK_POINT,
+    ERROR_PREP_SPEED_DEG_S
+  );
+  servoAt(SERVO_HAND_RIGHT).setNormTarget(
+    anim::ERROR_HAND_RIGHT_PRESENT,
+    ERROR_PREP_SPEED_DEG_S
+  );
+}
+
+bool allErrorServosStopped() {
+  return !servoAt(SERVO_BODY).isMoving()
+    && !servoAt(SERVO_NECK).isMoving()
+    && !servoAt(SERVO_HEAD).isMoving()
+    && !servoAt(SERVO_HAND_LEFT).isMoving()
+    && !servoAt(SERVO_HAND_RIGHT).isMoving();
+}
+
+void scheduleNextHoldMove(uint32_t now) {
+  g_nextHoldMoveMs = now + randRangeMs(450, 950);
+}
+
+ErrorLook nextNervousLook() {
+  switch (g_currentLook) {
+    case ErrorLook::Task:
+      return ErrorLook::Human;
+    case ErrorLook::Human:
+      return ErrorLook::Away;
+    case ErrorLook::Away:
+    default:
+      return ErrorLook::Task;
+  }
+}
+
+void commandNervousLook(uint32_t now) {
+  if (now < g_nextHoldMoveMs) {
+    return;
+  }
+
+  g_currentLook = nextNervousLook();
+  g_holdNodLow = !g_holdNodLow;
+
+  float neckOffset = 0.0f;
+  float headOffset = g_holdNodLow
+    ? -anim::ERROR_WORRY_HEAD_NOD
+    : anim::ERROR_WORRY_HEAD_NOD;
+
+  switch (g_currentLook) {
+    case ErrorLook::Task:
+      neckOffset = 0.0f;
+      headOffset -= anim::ERROR_HELP_HEAD_GLANCE;
+      break;
+    case ErrorLook::Human:
+      neckOffset = anim::ERROR_HELP_NECK_GLANCE;
+      headOffset += anim::ERROR_HELP_HEAD_GLANCE;
+      break;
+    case ErrorLook::Away:
+      neckOffset = -anim::ERROR_AWAY_NECK_GLANCE;
+      break;
+  }
+
+  servoAt(SERVO_HEAD).setNormTarget(
+    anim::ERROR_HEAD_CONCERNED + headOffset,
+    ERROR_GLANCE_SPEED_DEG_S
+  );
+  servoAt(SERVO_NECK).setNormTarget(
+    anim::ERROR_NECK_TASK_SIDE + neckOffset,
+    ERROR_GLANCE_SPEED_DEG_S
+  );
+
+  scheduleNextHoldMove(now);
+}
+
+void enterBlockedHold(uint32_t now) {
+  g_errorPhase = ErrorPhase::BlockedHold;
+  g_blockedHoldStartedMs = now;
+  g_holdNodLow = false;
+  g_currentLook = ErrorLook::Task;
+  scheduleNextHoldMove(now);
+}
+
+void beginObstacleWarning(
+  bool (*startPlayback)(),
+  bool (*updatePlayback)()
+) {
+  stopAllWavPlayback();
+  stopAnimServos();
+
+  g_warningStartPlayback = startPlayback;
+  g_warningUpdatePlayback = updatePlayback;
+  g_errorPhase = ErrorPhase::ObstaclePose;
+  g_errorAudioStartMs = 0;
+  g_errorAudioStarted = false;
+  g_blockedHoldStartedMs = 0;
+  g_nextHoldMoveMs = 0;
+  g_holdNodLow = false;
+  g_currentLook = ErrorLook::Task;
+
+  commandObstaclePose();
+}
+
+}  // namespace
+
+void startError() {
+  beginObstacleWarning(startErrorPlayback, updateErrorPlayback);
+}
+
+void startDeadWarning() {
+  beginObstacleWarning(startDeadPlayback, updateDeadPlayback);
+}
+
+bool errorAudioStarted() {
+  return g_errorAudioStarted;
+}
+
+uint32_t errorAudioElapsed(uint32_t now) {
+  if (!g_errorAudioStarted) {
+    return 0;
+  }
+
+  return now - g_errorAudioStartMs;
+}
+
+bool updateErrorWarning(uint32_t now) {
+  switch (g_errorPhase) {
+    case ErrorPhase::ObstaclePose:
+      updateAllServos();
+      if (allErrorServosStopped()) {
+        if (g_warningStartPlayback()) {
+          g_errorAudioStarted = true;
+          g_errorAudioStartMs = now;
+          g_nextHoldMoveMs = now + ERROR_AUDIO_UHOH_END_MS;
+          g_errorPhase = ErrorPhase::PlayAudio;
+        } else {
+          g_errorPhase = ErrorPhase::Finished;
+          return true;
+        }
+      }
+      return false;
+
+    case ErrorPhase::PlayAudio:
+      updateAllServos();
+      if (allErrorServosStopped()) {
+        commandNervousLook(now);
+      }
+      if (!g_warningUpdatePlayback()) {
+        g_errorPhase = ErrorPhase::Finished;
+        return true;
+      }
+      return false;
+
+    case ErrorPhase::Finished:
+    case ErrorPhase::BlockedHold:
+      return true;
+  }
+
+  return false;
+}
+
+void updateError(uint32_t now) {
+  if (g_errorPhase != ErrorPhase::BlockedHold) {
+    if (updateErrorWarning(now)) {
+      enterBlockedHold(now);
+    }
+    return;
+  }
+
+  if ((now - g_blockedHoldStartedMs) >= anim::NON_CONTINUOUS_HOLD_MS) {
+    finishAnimation(now);
+    return;
+  }
+
+  updateAllServos();
+  if (allErrorServosStopped()) {
+    commandNervousLook(now);
+  }
+}

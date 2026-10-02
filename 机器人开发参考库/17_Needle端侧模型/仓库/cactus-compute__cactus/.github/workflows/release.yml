@@ -1,0 +1,117 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  pypi:
+    permissions:
+      id-token: write
+      contents: read
+    uses: ./.github/workflows/pypi.yml
+
+  homebrew:
+    needs: pypi
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PACKAGE: cactus-compute
+      TAP: cactus-compute/homebrew-cactus
+      TAG: ${{ github.event.release.tag_name }}
+    steps:
+      - name: Resolve version
+        id: ver
+        run: |
+          raw="${TAG#v}"
+          version=$(python3 -c "raw='${raw}'; print(raw + '.0' if raw.count('.') == 1 else raw)")
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Resolve sdist URL and SHA256 from PyPI
+        id: pypi
+        env:
+          VERSION: ${{ steps.ver.outputs.version }}
+        run: |
+          for i in $(seq 1 10); do
+            if json=$(curl -fsSL "https://pypi.org/pypi/${PACKAGE}/${VERSION}/json"); then
+              break
+            fi
+            echo "Waiting for PyPI metadata (attempt $i)..."
+            sleep 30
+          done
+          [ -n "$json" ] || { echo "PyPI metadata not available for ${PACKAGE} ${VERSION}"; exit 1; }
+          pick() { echo "$json" | jq -er '.urls[] | select(.packagetype=="sdist") | .'"$1"; }
+          {
+            echo "sdist_url=$(pick url)"
+            echo "sdist_sha=$(pick digests.sha256)"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Update tap formula
+        env:
+          HOMEBREW_TAP_TOKEN: ${{ secrets.HOMEBREW_TAP_TOKEN }}
+          VERSION: ${{ steps.ver.outputs.version }}
+          SDIST_URL: ${{ steps.pypi.outputs.sdist_url }}
+          SDIST_SHA: ${{ steps.pypi.outputs.sdist_sha }}
+        run: |
+          git clone "https://x-access-token:${HOMEBREW_TAP_TOKEN}@github.com/${TAP}.git" tap
+          mkdir -p tap/Formula
+          cat > tap/Formula/cactus.rb <<EOF
+          class Cactus < Formula
+            desc "On-device AI inference"
+            homepage "https://cactuscompute.com"
+            url "${SDIST_URL}"
+            sha256 "${SDIST_SHA}"
+            version "${VERSION}"
+            license "Cactus Compute License"
+            include Language::Python::Virtualenv
+            depends_on "python@3.12"
+            depends_on macos: :sonoma
+            depends_on arch: :arm64
+
+            livecheck do
+              url "https://pypi.org/pypi/${PACKAGE}/json"
+              regex(/"version":\s*"(\d+(?:\.\d+)+)"/i)
+            end
+
+            def install
+              virtualenv_create(libexec, "python3.12")
+              system Formula["python@3.12"].opt_bin/"python3.12", "-m", "pip",
+                     "--python=#{libexec}/bin/python", "install", "${PACKAGE}==#{version}"
+              bin.install_symlink libexec/"bin/cactus"
+            end
+
+            def caveats
+              <<~EOS
+                cactus code needs Node.js >= 22 on PATH.
+                cactus convert (torch) is opt-in, same as pip's [convert] extra:
+                #{Formula["python@3.12"].opt_bin}/python3.12 -m pip --python=#{libexec}/bin/python install "${PACKAGE}[convert]==#{version}"
+              EOS
+            end
+
+            test do
+              assert_equal "cactus #{version}\n", shell_output("#{bin}/cactus --version")
+              assert_match "libcactus_engine",
+                Dir[libexec/"lib/python*/site-packages/cactus/bindings/lib/*"].join
+            end
+          end
+          EOF
+          cd tap
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Formula/cactus.rb
+          git commit -m "Update cactus to ${TAG}"
+          git push origin main
+
+  docs:
+    permissions:
+      contents: write
+    uses: ./.github/workflows/docs.yml
+    with:
+      version: ${{ github.event.release.tag_name }}

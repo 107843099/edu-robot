@@ -1,0 +1,27 @@
+package cactus:needle@3.0.0;
+
+interface engine {
+  record failure {
+    code: s32,
+    message: string,
+  }
+
+  load: func(model: list<u8>) -> result<_, failure>;
+  init: func(
+    system-prompt: option<string>,
+    tools-json: option<string>,
+    tool-index-path: option<string>,
+  ) -> result<u32, failure>;
+  complete: func(
+    input: string,
+    max-new-tokens: u32,
+  ) -> result<string, failure>;
+  embed: func(
+    input: string,
+  ) -> result<list<f32>, failure>;
+  reset: func();
+}
+
+world needle {
+  export engine;
+}

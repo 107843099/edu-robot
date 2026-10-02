@@ -1,0 +1,79 @@
+.DS_Store
+__pycache__/
+data/*.*
+
+# Cursor hook event log
+cursor_events.log
+
+# Local secrets (Cursor CLI auth token, etc.)
+.env
+
+# platform.io
+.pio
+
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# debug information files
+*.dwo
+
+# KiCad (hardware/ only — do not ignore xml/csv globally)
+hardware/**/.history/
+hardware/**/*-backups/
+hardware/**/_autosave-*
+hardware/**/*.kicad_prl
+hardware/**/fp-info-cache
+hardware/**/~*.lck
+hardware/**/#auto_saved_files#
+hardware/**/*.kicad_pcb-bak
+hardware/**/*.kicad_sch-bak

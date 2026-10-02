@@ -1,0 +1,962 @@
+#include "../cactus_kernels.h"
+#include "threading.h"
+#include <arm_neon.h>
+#include <cmath>
+#include <algorithm>
+#include <limits>
+#include <cstring>
+#include <vector>
+#include <cassert>
+#include <cstdlib>
+
+#ifdef __APPLE__
+#include <Accelerate/Accelerate.h>
+#endif
+
+#ifdef __APPLE__
+static void cactus_attention_f16_accelerate(
+    const __fp16* queries,
+    const __fp16* keys,
+    const __fp16* values,
+    __fp16* output,
+    size_t batch_size,
+    size_t seq_len,
+    size_t kv_seq_len,
+    size_t num_q_heads,
+    size_t num_kv_heads,
+    size_t head_dim,
+    size_t v_head_dim,
+    float scale,
+    size_t position_offset,
+    bool is_causal,
+    const __fp16* mask,
+    bool mask_is_additive,
+    bool mask_per_head
+) {
+    constexpr size_t BLOCK_SIZE = 64;
+
+    const size_t group_size = num_q_heads / num_kv_heads;
+    const size_t q_batch_stride = seq_len * num_q_heads * head_dim;
+    const size_t k_batch_stride = kv_seq_len * num_kv_heads * head_dim;
+    const size_t v_batch_stride = kv_seq_len * num_kv_heads * v_head_dim;
+    const size_t o_batch_stride = seq_len * num_q_heads * v_head_dim;
+    const size_t q_seq_stride = num_q_heads * head_dim;
+    const size_t k_seq_stride = num_kv_heads * head_dim;
+    const size_t v_seq_stride = num_kv_heads * v_head_dim;
+    const size_t o_seq_stride = num_q_heads * v_head_dim;
+    const size_t mask_batch_stride = mask
+        ? (mask_per_head ? num_q_heads * seq_len * kv_seq_len : seq_len * kv_seq_len)
+        : 0;
+
+    static constexpr CactusThreading::ParallelConfig ATTENTION_BATCHED{1, 1};
+    CactusThreading::parallel_for(batch_size * num_q_heads, ATTENTION_BATCHED,
+        [&](size_t start, size_t end) {
+
+        std::vector<float> Q_f32(seq_len * head_dim);
+        std::vector<float> K_f32(BLOCK_SIZE * head_dim);
+        std::vector<float> V_f32(BLOCK_SIZE * v_head_dim);
+        std::vector<float> scores(seq_len * BLOCK_SIZE);
+        std::vector<float> acc(seq_len * v_head_dim);
+        std::vector<float> row_max(seq_len);
+        std::vector<float> row_sum(seq_len);
+
+        for (size_t work = start; work < end; ++work) {
+            const size_t batch = work / num_q_heads;
+            const size_t q_head = work % num_q_heads;
+            const size_t kv_head = q_head / group_size;
+            const __fp16* head_mask = mask
+                ? mask + batch * mask_batch_stride
+                    + (mask_per_head ? q_head * seq_len * kv_seq_len : 0)
+                : nullptr;
+
+            for (size_t q = 0; q < seq_len; ++q) {
+                const __fp16* q_src = queries + batch*q_batch_stride + q*q_seq_stride + q_head*head_dim;
+                float* q_dst = Q_f32.data() + q * head_dim;
+                for (size_t d = 0; d < head_dim; d += 8) {
+                    float16x8_t v = vld1q_f16(q_src + d);
+                    vst1q_f32(q_dst + d,     vcvt_f32_f16(vget_low_f16(v)));
+                    vst1q_f32(q_dst + d + 4, vcvt_f32_f16(vget_high_f16(v)));
+                }
+            }
+
+            std::fill(row_max.begin(), row_max.begin() + seq_len, -INFINITY);
+            std::fill(row_sum.begin(), row_sum.begin() + seq_len, 0.0f);
+            memset(acc.data(), 0, seq_len * v_head_dim * sizeof(float));
+
+            for (size_t kv0 = 0; kv0 < kv_seq_len; kv0 += BLOCK_SIZE) {
+                const size_t block_len = std::min(BLOCK_SIZE, kv_seq_len - kv0);
+
+                size_t q_start = 0;
+                size_t active_rows = seq_len;
+                if (is_causal) {
+                    if (kv0 > position_offset) {
+                        q_start = kv0 - position_offset;
+                    }
+                    if (q_start >= seq_len) continue;
+                    active_rows = seq_len - q_start;
+                }
+
+                for (size_t i = 0; i < block_len; ++i) {
+                    const __fp16* k_src = keys + batch*k_batch_stride + (kv0+i)*k_seq_stride + kv_head*head_dim;
+                    float* k_dst = K_f32.data() + i * head_dim;
+                    for (size_t d = 0; d < head_dim; d += 8) {
+                        float16x8_t v = vld1q_f16(k_src + d);
+                        vst1q_f32(k_dst + d,     vcvt_f32_f16(vget_low_f16(v)));
+                        vst1q_f32(k_dst + d + 4, vcvt_f32_f16(vget_high_f16(v)));
+                    }
+                }
+
+                cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasTrans,
+                            (int)active_rows, (int)block_len, (int)head_dim,
+                            scale,
+                            Q_f32.data() + q_start * head_dim, (int)head_dim,
+                            K_f32.data(), (int)head_dim,
+                            0.0f,
+                            scores.data(), (int)block_len);
+
+                for (size_t r = 0; r < active_rows; ++r) {
+                    const size_t q_pos = q_start + r;
+                    const size_t abs_q = position_offset + q_pos;
+                    float* s_row = scores.data() + r * block_len;
+
+                    size_t valid_len = block_len;
+                    if (is_causal) {
+                        if (abs_q < kv0) {
+                            memset(s_row, 0, block_len * sizeof(float));
+                            continue;
+                        }
+                        valid_len = std::min(block_len, abs_q - kv0 + 1);
+                    }
+
+                    if (head_mask) {
+                        const __fp16* mask_row = head_mask + q_pos * kv_seq_len + kv0;
+                        for (size_t j = 0; j < valid_len; ++j) {
+                            const float mask_value = static_cast<float>(mask_row[j]);
+                            if (mask_is_additive) {
+                                s_row[j] = std::isfinite(mask_value)
+                                    ? s_row[j] + mask_value
+                                    : -INFINITY;
+                            } else if (mask_value == 0.0f) {
+                                s_row[j] = -INFINITY;
+                            }
+                        }
+                    }
+
+                    float32x4_t vmax = vdupq_n_f32(-INFINITY);
+                    size_t j = 0;
+                    for (; j + 4 <= valid_len; j += 4) {
+                        vmax = vmaxq_f32(vmax, vld1q_f32(s_row + j));
+                    }
+                    float block_max = vmaxvq_f32(vmax);
+                    for (; j < valid_len; ++j) {
+                        block_max = std::max(block_max, s_row[j]);
+                    }
+
+                    if (!std::isfinite(block_max)) {
+                        memset(s_row, 0, block_len * sizeof(float));
+                        continue;
+                    }
+
+                    float prev_max = row_max[q_pos];
+                    float new_max = std::max(prev_max, block_max);
+                    float scale_old = expf(prev_max - new_max);
+
+                    if (prev_max != -INFINITY) {
+                        float* acc_row = acc.data() + q_pos * v_head_dim;
+                        float32x4_t sv = vdupq_n_f32(scale_old);
+                        for (size_t d = 0; d < v_head_dim; d += 4) {
+                            float32x4_t a = vld1q_f32(acc_row + d);
+                            vst1q_f32(acc_row + d, vmulq_f32(a, sv));
+                        }
+                    }
+                    row_sum[q_pos] = row_sum[q_pos] * scale_old;
+                    row_max[q_pos] = new_max;
+
+                    float32x4_t vsum = vdupq_n_f32(0.0f);
+                    float32x4_t vnmax = vdupq_n_f32(new_max);
+                    float32x4_t log2e = vdupq_n_f32(1.442695f);
+                    j = 0;
+                    for (; j + 4 <= valid_len; j += 4) {
+                        float32x4_t x = vmulq_f32(vsubq_f32(vld1q_f32(s_row + j), vnmax), log2e);
+                        float32x4_t x_floor = vrndmq_f32(x);
+                        int32x4_t xi = vcvtq_s32_f32(x_floor);
+                        float32x4_t xf = vsubq_f32(x, x_floor);
+                        float32x4_t t = vfmaq_n_f32(vdupq_n_f32(0.2246932f), xf, 0.0789673f);
+                        t = vfmaq_f32(vdupq_n_f32(0.6963248f), t, xf);
+                        float32x4_t y = vfmaq_f32(vdupq_n_f32(0.9999003f), t, xf);
+                        xi = vshlq_n_s32(vaddq_s32(xi, vdupq_n_s32(127)), 23);
+                        y = vmulq_f32(y, vreinterpretq_f32_s32(xi));
+                        uint32x4_t underflow = vcltq_f32(x, vdupq_n_f32(-126.0f));
+                        y = vbslq_f32(underflow, vdupq_n_f32(0.0f), y);
+                        vst1q_f32(s_row + j, y);
+                        vsum = vaddq_f32(vsum, y);
+                    }
+                    float block_sum = vaddvq_f32(vsum);
+                    for (; j < valid_len; ++j) {
+                        s_row[j] = expf(s_row[j] - new_max);
+                        block_sum += s_row[j];
+                    }
+                    if (valid_len < block_len) {
+                        memset(s_row + valid_len, 0, (block_len - valid_len) * sizeof(float));
+                    }
+                    row_sum[q_pos] += block_sum;
+                }
+
+                for (size_t i = 0; i < block_len; ++i) {
+                    const __fp16* v_src = values + batch*v_batch_stride + (kv0+i)*v_seq_stride + kv_head*v_head_dim;
+                    float* v_dst = V_f32.data() + i * v_head_dim;
+                    for (size_t d = 0; d < v_head_dim; d += 8) {
+                        float16x8_t v = vld1q_f16(v_src + d);
+                        vst1q_f32(v_dst + d,     vcvt_f32_f16(vget_low_f16(v)));
+                        vst1q_f32(v_dst + d + 4, vcvt_f32_f16(vget_high_f16(v)));
+                    }
+                }
+
+                cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,
+                            (int)active_rows, (int)v_head_dim, (int)block_len,
+                            1.0f,
+                            scores.data(), (int)block_len,
+                            V_f32.data(), (int)v_head_dim,
+                            1.0f,
+                            acc.data() + q_start * v_head_dim, (int)v_head_dim);
+            }
+
+            for (size_t q = 0; q < seq_len; ++q) {
+                __fp16* o = output + batch*o_batch_stride + q*o_seq_stride + q_head*v_head_dim;
+                float sum = row_sum[q];
+                if (sum == 0.0f) {
+                    memset(o, 0, v_head_dim * sizeof(__fp16));
+                    continue;
+                }
+                float inv = 1.0f / sum;
+                float32x4_t invv = vdupq_n_f32(inv);
+                float* acc_row = acc.data() + q * v_head_dim;
+                for (size_t d = 0; d < v_head_dim; d += 8) {
+                    float32x4_t a0 = vmulq_f32(vld1q_f32(acc_row + d), invv);
+                    float32x4_t a1 = vmulq_f32(vld1q_f32(acc_row + d + 4), invv);
+                    vst1q_f16(o + d, vcombine_f16(vcvt_f16_f32(a0), vcvt_f16_f32(a1)));
+                }
+            }
+        }
+    });
+}
+#endif
+
+static inline void cactus_attention_f16_fast(
+    const __fp16* queries,
+    const __fp16* keys,
+    const __fp16* values,
+    __fp16* output,
+    size_t batch_size,
+    size_t seq_len,
+    size_t kv_seq_len,
+    size_t num_q_heads,
+    size_t num_kv_heads,
+    size_t head_dim,
+    float scale,
+    size_t position_offset,
+    bool is_causal,
+    size_t window_size,
+    size_t v_head_dim
+) {
+    constexpr size_t BLOCK_SIZE = 32;
+    const size_t qk_nblocks = head_dim / 8;
+    const size_t v_nblocks = v_head_dim / 8;
+
+#ifdef __APPLE__
+    if (seq_len >= 64 && window_size == 0) {
+        cactus_attention_f16_accelerate(
+            queries, keys, values, output,
+            batch_size, seq_len, kv_seq_len,
+            num_q_heads, num_kv_heads, head_dim, v_head_dim,
+            scale, position_offset, is_causal,
+            nullptr, false, false
+        );
+        return;
+    }
+#endif
+
+    const size_t group_size = num_q_heads / num_kv_heads;
+    const size_t q_batch_stride = seq_len * num_q_heads * head_dim;
+    const size_t kv_batch_stride = kv_seq_len * num_kv_heads * head_dim;
+    const size_t v_batch_stride = kv_seq_len * num_kv_heads * v_head_dim;
+    const size_t o_batch_stride = seq_len * num_q_heads * v_head_dim;
+    const size_t q_seq_stride = num_q_heads * head_dim;
+    const size_t kv_seq_stride = num_kv_heads * head_dim;
+    const size_t v_seq_stride = num_kv_heads * v_head_dim;
+    const size_t o_seq_stride = num_q_heads * v_head_dim;
+
+    CactusThreading::parallel_for(batch_size * num_q_heads * seq_len, CactusThreading::Thresholds::ATTENTION,
+        [&](size_t start, size_t end) {
+
+        float block_scores[BLOCK_SIZE];
+        std::vector<float32x4_t> acc_lo(v_nblocks), acc_hi(v_nblocks);
+
+        for (size_t work = start; work < end; ++work) {
+            const size_t batch = work / (num_q_heads * seq_len);
+            const size_t rem = work % (num_q_heads * seq_len);
+            const size_t q_head = rem / seq_len;
+            const size_t q_pos = rem % seq_len;
+            const size_t kv_head = q_head / group_size;
+
+            const __fp16* q = queries + batch*q_batch_stride + q_pos*q_seq_stride + q_head*head_dim;
+            __fp16* o = output + batch*o_batch_stride + q_pos*o_seq_stride + q_head*v_head_dim;
+
+            for (size_t i = 0; i < v_nblocks; i++) {
+                acc_lo[i] = vdupq_n_f32(0.f);
+                acc_hi[i] = vdupq_n_f32(0.f);
+            }
+
+            float running_max = -INFINITY;
+            float running_sum = 0.f;
+
+            const size_t abs_q = position_offset + q_pos;
+            size_t kv_end = is_causal ? std::min(kv_seq_len, abs_q + 1) : kv_seq_len;
+            size_t kv_start = (window_size > 0 && abs_q > window_size) ? abs_q - window_size : 0;
+
+            for (size_t kv0 = kv_start; kv0 < kv_end; kv0 += BLOCK_SIZE) {
+                const size_t kv1 = std::min(kv0 + BLOCK_SIZE, kv_end);
+                float block_max = -INFINITY;
+
+                for (size_t i = kv0; i < kv1; i++) {
+                    const __fp16* k = keys + batch*kv_batch_stride + i*kv_seq_stride + kv_head*head_dim;
+                    float score;
+                    if (seq_len == 1) {
+                        // Decode is bandwidth/latency sensitive and Q/K are already
+                        // FP16.  Accumulating eight lanes in FP16 avoids four
+                        // widening conversions per vector; reduce the short lane
+                        // accumulators in FP32 before applying the attention scale.
+                        float16x8_t s = vdupq_n_f16((__fp16)0.0f);
+                        for (size_t d = 0; d < qk_nblocks; d++) {
+                            s = vfmaq_f16(s, vld1q_f16(q + d*8), vld1q_f16(k + d*8));
+                        }
+                        score = (vaddvq_f32(vcvt_f32_f16(vget_low_f16(s)))
+                               + vaddvq_f32(vcvt_f32_f16(vget_high_f16(s)))) * scale;
+                    } else {
+                        float32x4_t s0 = vdupq_n_f32(0.f);
+                        float32x4_t s1 = vdupq_n_f32(0.f);
+                        for (size_t d = 0; d < qk_nblocks; d++) {
+                            float16x8_t qv = vld1q_f16(q + d*8);
+                            float16x8_t kv = vld1q_f16(k + d*8);
+                            s0 = vfmaq_f32(s0, vcvt_f32_f16(vget_low_f16(qv)),
+                                          vcvt_f32_f16(vget_low_f16(kv)));
+                            s1 = vfmaq_f32(s1, vcvt_f32_f16(vget_high_f16(qv)),
+                                          vcvt_f32_f16(vget_high_f16(kv)));
+                        }
+                        score = vaddvq_f32(vaddq_f32(s0, s1)) * scale;
+                    }
+                    block_scores[i - kv0] = score;
+                    block_max = std::max(block_max, score);
+                }
+
+                float current_block_scale = 1.0f;
+                if (block_max > running_max) {
+                    float scale_correction = expf(running_max - block_max);
+                    running_sum *= scale_correction;
+
+                    for (size_t d = 0; d < v_nblocks; d++) {
+                        acc_lo[d] = vmulq_n_f32(acc_lo[d], scale_correction);
+                        acc_hi[d] = vmulq_n_f32(acc_hi[d], scale_correction);
+                    }
+                    running_max = block_max;
+                } else {
+                    current_block_scale = expf(block_max - running_max);
+                }
+
+                float block_sum = 0.f;
+                for (size_t i = 0; i < kv1 - kv0; i++) {
+                    block_scores[i] = expf(block_scores[i] - block_max);
+                    block_sum += block_scores[i];
+                }
+
+                for (size_t i = 0; i < kv1 - kv0; i++) {
+                    const float attn_weight = block_scores[i] * current_block_scale;
+                    if (attn_weight == 0.f) continue;
+
+                    const __fp16* v = values + batch*v_batch_stride + (kv0+i)*v_seq_stride + kv_head*v_head_dim;
+                    float32x4_t wv = vdupq_n_f32(attn_weight);
+
+                    for (size_t d = 0; d < v_nblocks; d++) {
+                        float16x8_t vv = vld1q_f16(v + d*8);
+                        acc_lo[d] = vfmaq_f32(acc_lo[d], vcvt_f32_f16(vget_low_f16(vv)), wv);
+                        acc_hi[d] = vfmaq_f32(acc_hi[d], vcvt_f32_f16(vget_high_f16(vv)), wv);
+                    }
+                }
+
+                running_sum += block_sum * current_block_scale;
+            }
+
+            if (running_sum == 0.f) {
+                memset(o, 0, v_head_dim * sizeof(__fp16));
+                continue;
+            }
+
+            float inv = 1.f / running_sum;
+            float32x4_t invv = vdupq_n_f32(inv);
+
+            for (size_t d = 0; d < v_nblocks; d++) {
+                float16x8_t out = vcombine_f16(
+                    vcvt_f16_f32(vmulq_f32(acc_lo[d], invv)),
+                    vcvt_f16_f32(vmulq_f32(acc_hi[d], invv))
+                );
+                vst1q_f16(o + d*8, out);
+            }
+        }
+    });
+}
+
+void cactus_attention_f16(
+    const __fp16* queries,
+    const __fp16* keys,
+    const __fp16* values,
+    __fp16* output,
+    size_t batch_size,
+    size_t seq_len,
+    size_t kv_seq_len,
+    size_t num_q_heads,
+    size_t num_kv_heads,
+    size_t head_dim,
+    float scale,
+    const __fp16* mask,
+    size_t position_offset,
+    size_t window_size,
+    bool is_causal,
+    bool mask_is_additive,
+    bool mask_per_head,
+    size_t v_head_dim,
+    float logit_cap
+) {
+    if (v_head_dim == 0) v_head_dim = head_dim;
+    if (scale == 0.0f) {
+        scale = 1.0f / sqrtf(static_cast<float>(head_dim));
+    }
+
+#ifdef __APPLE__
+    if (mask != nullptr && std::getenv("CACTUS_DISABLE_TILED_MASKED_ATTENTION") == nullptr
+        && seq_len >= 64 && window_size == 0
+        && head_dim % 8 == 0 && v_head_dim % 8 == 0 && logit_cap == 0.0f) {
+        cactus_attention_f16_accelerate(
+            queries, keys, values, output,
+            batch_size, seq_len, kv_seq_len,
+            num_q_heads, num_kv_heads, head_dim, v_head_dim,
+            scale, position_offset, is_causal,
+            mask, mask_is_additive, mask_per_head
+        );
+        return;
+    }
+#endif
+
+    if (mask == nullptr && head_dim % 8 == 0 && v_head_dim % 8 == 0 && logit_cap == 0.0f) {
+        cactus_attention_f16_fast(
+            queries, keys, values, output,
+            batch_size, seq_len, kv_seq_len,
+            num_q_heads, num_kv_heads, head_dim,
+            scale, position_offset, is_causal, window_size, v_head_dim
+        );
+        return;
+    }
+
+    constexpr size_t VECTOR_WIDTH = 8;
+    constexpr size_t BLOCK_SIZE = 32;
+    const size_t head_dim_aligned = (head_dim / VECTOR_WIDTH) * VECTOR_WIDTH;
+    const size_t v_head_dim_aligned = (v_head_dim / VECTOR_WIDTH) * VECTOR_WIDTH;
+
+    const size_t group_size = num_q_heads / num_kv_heads;
+
+    const size_t q_batch_stride = seq_len * num_q_heads * head_dim;
+    const size_t kv_batch_stride = kv_seq_len * num_kv_heads * head_dim;
+    const size_t v_batch_stride = kv_seq_len * num_kv_heads * v_head_dim;
+    const size_t o_batch_stride = seq_len * num_q_heads * v_head_dim;
+    const size_t q_seq_stride = num_q_heads * head_dim;
+    const size_t kv_seq_stride = num_kv_heads * head_dim;
+    const size_t v_seq_stride = num_kv_heads * v_head_dim;
+    const size_t o_seq_stride = num_q_heads * v_head_dim;
+    const size_t mask_batch_stride = mask
+        ? (mask_per_head ? (num_q_heads * seq_len * kv_seq_len) : (seq_len * kv_seq_len))
+        : 0;
+
+    CactusThreading::parallel_for(batch_size * num_q_heads * seq_len, CactusThreading::Thresholds::ATTENTION,
+        [=](size_t start_idx, size_t end_idx) {
+            std::vector<float> block_scores(BLOCK_SIZE);
+            std::vector<float32x4_t> output_accum_low(v_head_dim_aligned / VECTOR_WIDTH * 2);
+            std::vector<float32x4_t> output_accum_high(v_head_dim_aligned / VECTOR_WIDTH * 2);
+            
+            const size_t v_tail_dims = v_head_dim - v_head_dim_aligned;
+            std::vector<float> output_accum_tail(v_tail_dims, 0.0f);
+
+            const float NEG_INF = -std::numeric_limits<float>::infinity();
+            const size_t used_vec_blocks = v_head_dim_aligned / VECTOR_WIDTH;
+
+            for (size_t work_idx = start_idx; work_idx < end_idx; ++work_idx) {
+                const size_t batch_idx = work_idx / (num_q_heads * seq_len);
+                const size_t remainder = work_idx % (num_q_heads * seq_len);
+                const size_t q_head_idx = remainder / seq_len;
+                const size_t q_pos = remainder % seq_len;
+
+                const size_t kv_head_idx = q_head_idx / group_size;
+
+                const __fp16* Q_base = queries + batch_idx * q_batch_stride;
+                const __fp16* K_base = keys + batch_idx * kv_batch_stride;
+                const __fp16* V_base = values + batch_idx * v_batch_stride;
+                __fp16* O_base = output + batch_idx * o_batch_stride;
+                const __fp16* M = mask ? (mask + batch_idx * mask_batch_stride) : nullptr;
+                    const __fp16* q_vec = Q_base + q_pos * q_seq_stride + q_head_idx * head_dim;
+                    __fp16* o_vec = O_base + q_pos * o_seq_stride + q_head_idx * v_head_dim;
+                    
+                    float running_max = -std::numeric_limits<float>::infinity();
+                    float running_sum = 0.0f;
+                    
+                    for (size_t i = 0; i < output_accum_low.size(); ++i) {
+                        output_accum_low[i] = vdupq_n_f32(0.0f);
+                        output_accum_high[i] = vdupq_n_f32(0.0f);
+                    }
+                    for (size_t i = 0; i < v_tail_dims; ++i) {
+                        output_accum_tail[i] = 0.0f;
+                    }
+                    
+                    const bool is_decode = (q_pos == seq_len - 1) && seq_len > 1;
+                    const size_t absolute_q_pos = position_offset + q_pos;
+
+                    size_t kv_start = 0;
+                    size_t kv_end = kv_seq_len;
+
+                    if (window_size > 0 && window_size < kv_seq_len) {
+                        if (absolute_q_pos > window_size) {
+                            kv_start = absolute_q_pos - window_size;
+                        }
+                        if (is_causal) {
+                            kv_end = std::min(kv_end, absolute_q_pos + 1);
+                        }
+                    } else if (is_causal) {
+                        kv_end = std::min(kv_end, absolute_q_pos + 1);
+                    }
+
+                    for (size_t kv_block_start = kv_start; kv_block_start < kv_end; kv_block_start += BLOCK_SIZE) {
+                        const size_t kv_block_end = std::min(kv_block_start + BLOCK_SIZE, kv_end);
+                        const size_t block_size = kv_block_end - kv_block_start;
+
+                        float block_max = -std::numeric_limits<float>::infinity();
+
+                        if (!is_decode && is_causal && kv_block_start > absolute_q_pos) {
+                            for (size_t kv_idx = 0; kv_idx < block_size; ++kv_idx) {
+                                block_scores[kv_idx] = NEG_INF;
+                            }
+                            continue; 
+                        }
+
+                        for (size_t kv_idx = 0; kv_idx < block_size; ++kv_idx) {
+                            const size_t kv_pos = kv_block_start + kv_idx;
+
+                            if (!is_decode && is_causal && kv_pos > absolute_q_pos) {
+                                block_scores[kv_idx] = NEG_INF;
+                                continue;
+                            }
+
+                            const __fp16* k_vec = K_base + kv_pos * kv_seq_stride + kv_head_idx * head_dim;
+
+                            if (kv_idx + 1 < block_size) {
+                                const __fp16* next_k_vec = K_base + (kv_pos + 1) * kv_seq_stride + kv_head_idx * head_dim;
+                                __builtin_prefetch(next_k_vec, 0, 1);
+                            }
+
+                            float32x4_t score_accum_low = vdupq_n_f32(0.0f);
+                            float32x4_t score_accum_high = vdupq_n_f32(0.0f);
+                            
+                            for (size_t dim_block = 0; dim_block < head_dim_aligned; dim_block += VECTOR_WIDTH) {
+                                float16x8_t q_vec_f16 = vld1q_f16(&q_vec[dim_block]);
+                                float16x8_t k_vec_f16 = vld1q_f16(&k_vec[dim_block]);
+                                
+                                float32x4_t q_low = vcvt_f32_f16(vget_low_f16(q_vec_f16));
+                                float32x4_t q_high = vcvt_f32_f16(vget_high_f16(q_vec_f16));
+                                float32x4_t k_low = vcvt_f32_f16(vget_low_f16(k_vec_f16));
+                                float32x4_t k_high = vcvt_f32_f16(vget_high_f16(k_vec_f16));
+                                
+                                score_accum_low = vfmaq_f32(score_accum_low, q_low, k_low);
+                                score_accum_high = vfmaq_f32(score_accum_high, q_high, k_high);
+                            }
+                            
+                            float score = vaddvq_f32(vaddq_f32(score_accum_low, score_accum_high));
+                            
+                            for (size_t dim = head_dim_aligned; dim < head_dim; ++dim) {
+                                score += static_cast<float>(q_vec[dim]) * static_cast<float>(k_vec[dim]);
+                            }
+                            
+                            score *= scale;
+                            
+                            size_t absolute_q_pos = position_offset + q_pos;
+
+                            if (is_causal && kv_pos > absolute_q_pos) {
+                                score = NEG_INF;
+                            }
+                            else if (window_size > 0 && kv_pos < absolute_q_pos && (absolute_q_pos - kv_pos) > window_size) {
+                                score = NEG_INF;
+                            }
+                            else if (M) {
+                                const size_t mask_index = mask_per_head
+                                    ? ((q_head_idx * seq_len + q_pos) * kv_seq_len + kv_pos)
+                                    : (q_pos * kv_seq_len + kv_pos);
+                                const float mask_value = static_cast<float>(M[mask_index]);
+                                if (mask_is_additive) {
+                                    if (!std::isfinite(mask_value)) {
+                                        score = NEG_INF;
+                                    } else {
+                                        score += mask_value;
+                                    }
+                                } else if (mask_value == 0.0f) {
+                                    score = NEG_INF;
+                                }
+                            }
+                            
+                            if (logit_cap > 0.0f && std::isfinite(score)) {
+                                score = logit_cap * tanhf(score / logit_cap);
+                            }
+
+                            block_scores[kv_idx] = score;
+                            block_max = std::max(block_max, score);
+                        }
+                        
+                        float current_block_scale = 1.0f;
+
+                        if (block_max > NEG_INF) {
+                            if (block_max > running_max) {
+                            float scale_correction = expf(running_max - block_max);
+                            running_sum *= scale_correction;
+                            
+                            for (size_t i = 0; i < used_vec_blocks; ++i) {
+                                output_accum_low[i] = vmulq_n_f32(output_accum_low[i], scale_correction);
+                                output_accum_high[i] = vmulq_n_f32(output_accum_high[i], scale_correction);
+                            }
+                            for (size_t i = 0; i < v_tail_dims; ++i) {
+                                output_accum_tail[i] *= scale_correction;
+                            }
+                            running_max = block_max;
+                            } else {
+                                current_block_scale = expf(block_max - running_max);
+                            }
+                        }
+                        
+                        float block_sum = 0.0f;
+                        const size_t vec_size = (block_size / 4) * 4;
+
+                        for (size_t kv_idx = 0; kv_idx < vec_size; kv_idx += 4) {
+                            float32x4_t scores = vld1q_f32(&block_scores[kv_idx]);
+                            uint32x4_t inf_mask = vceqq_f32(scores, vdupq_n_f32(NEG_INF));
+
+                            float32x4_t x = vsubq_f32(scores, vdupq_n_f32(block_max));
+                            x = vmulq_n_f32(x, 1.442695f); 
+                            float32x4_t x_floor = vrndmq_f32(x);
+                            int32x4_t xi = vcvtq_s32_f32(x_floor);
+                            float32x4_t xf = vsubq_f32(x, x_floor);
+
+                            float32x4_t t = vfmaq_n_f32(vdupq_n_f32(0.2246932f), xf, 0.0789673f);
+                            t = vfmaq_f32(vdupq_n_f32(0.6963248f), t, xf);
+                            float32x4_t y = vfmaq_f32(vdupq_n_f32(0.9999003f), t, xf);
+
+                            xi = vaddq_s32(xi, vdupq_n_s32(127));
+                            xi = vshlq_n_s32(xi, 23);
+                            y = vmulq_f32(y, vreinterpretq_f32_s32(xi));
+
+                            uint32x4_t underflow_mask = vcltq_f32(x, vdupq_n_f32(-126.0f));
+                            uint32x4_t zero_mask = vorrq_u32(inf_mask, underflow_mask);
+                            y = vbslq_f32(zero_mask, vdupq_n_f32(0.0f), y);
+
+                            vst1q_f32(&block_scores[kv_idx], y);
+                            block_sum += vaddvq_f32(y);
+                        }
+
+                        for (size_t kv_idx = vec_size; kv_idx < block_size; ++kv_idx) {
+                            if (block_scores[kv_idx] != NEG_INF) {
+                                block_scores[kv_idx] = expf(block_scores[kv_idx] - block_max);
+                                block_sum += block_scores[kv_idx];
+                            } else {
+                                block_scores[kv_idx] = 0.0f;
+                            }
+                        }
+                        
+                        for (size_t kv_idx = 0; kv_idx < block_size; ++kv_idx) {
+                            const float attn_weight = block_scores[kv_idx] * current_block_scale;
+                            if (attn_weight == 0.0f) continue;
+                            
+                            const size_t kv_pos = kv_block_start + kv_idx;
+                            const __fp16* v_vec = V_base + kv_pos * v_seq_stride + kv_head_idx * v_head_dim;
+                            
+                            const float32x4_t weight_vec = vdupq_n_f32(attn_weight);
+                            
+                            for (size_t dim_block = 0; dim_block < v_head_dim_aligned; dim_block += VECTOR_WIDTH) {
+                                float16x8_t v_vec_f16 = vld1q_f16(&v_vec[dim_block]);
+                                float32x4_t v_low = vcvt_f32_f16(vget_low_f16(v_vec_f16));
+                                float32x4_t v_high = vcvt_f32_f16(vget_high_f16(v_vec_f16));
+                                
+                                size_t idx = dim_block / VECTOR_WIDTH;
+                                output_accum_low[idx] = vfmaq_f32(output_accum_low[idx], v_low, weight_vec);
+                                output_accum_high[idx] = vfmaq_f32(output_accum_high[idx], v_high, weight_vec);
+                            }
+                            
+                            for (size_t dim = v_head_dim_aligned; dim < v_head_dim; ++dim) {
+                                float val = attn_weight * static_cast<float>(v_vec[dim]);
+                                output_accum_tail[dim - v_head_dim_aligned] += val;
+                            }
+                        }
+                        
+                        running_sum += block_sum * current_block_scale;
+                    }
+                    
+                    if (running_sum > 0.0f) {
+                        const float inv_sum = 1.0f / running_sum;
+                        const float32x4_t inv_sum_vec = vdupq_n_f32(inv_sum);
+                        
+                        for (size_t dim_block = 0; dim_block < v_head_dim_aligned; dim_block += VECTOR_WIDTH) {
+                            size_t idx = dim_block / VECTOR_WIDTH;
+                            float32x4_t final_low = vmulq_f32(output_accum_low[idx], inv_sum_vec);
+                            float32x4_t final_high = vmulq_f32(output_accum_high[idx], inv_sum_vec);
+                            
+                            float16x4_t low_f16 = vcvt_f16_f32(final_low);
+                            float16x4_t high_f16 = vcvt_f16_f32(final_high);
+                            float16x8_t combined = vcombine_f16(low_f16, high_f16);
+                            
+                            vst1q_f16(&o_vec[dim_block], combined);
+                        }
+                        
+                        for (size_t dim = v_head_dim_aligned; dim < v_head_dim; ++dim) {
+                            o_vec[dim] = static_cast<__fp16>(output_accum_tail[dim - v_head_dim_aligned] * inv_sum);
+                        }
+                    } else {
+                        for (size_t dim = 0; dim < v_head_dim; ++dim) {
+                            o_vec[dim] = static_cast<__fp16>(0.0f);
+                        }
+                    }
+            }
+        });
+}
+
+namespace {
+
+constexpr size_t REL_POS_BLOCK_Q = 32;
+constexpr size_t REL_POS_CHUNK_BLOCKS = 8;
+constexpr CactusThreading::ParallelConfig REL_POS_ATTENTION_PARALLEL{2, 1};
+#ifdef __APPLE__
+constexpr bool REL_POS_PANELS = false;
+#else
+constexpr bool REL_POS_PANELS = true;
+#endif
+
+inline float32x4_t rel_pos_exp_f32(float32x4_t x) {
+    x = vmaxq_f32(x, vdupq_n_f32(-87.0f));
+    const float32x4_t n = vrndnq_f32(vmulq_n_f32(x, 1.4426950408889634f));
+    float32x4_t r = vfmsq_f32(x, n, vdupq_n_f32(0.693145751953125f));
+    r = vfmsq_f32(r, n, vdupq_n_f32(1.428606765330187e-06f));
+    float32x4_t p = vdupq_n_f32(1.0f / 720.0f);
+    p = vfmaq_f32(vdupq_n_f32(1.0f / 120.0f), p, r);
+    p = vfmaq_f32(vdupq_n_f32(1.0f / 24.0f), p, r);
+    p = vfmaq_f32(vdupq_n_f32(1.0f / 6.0f), p, r);
+    p = vfmaq_f32(vdupq_n_f32(0.5f), p, r);
+    p = vfmaq_f32(vdupq_n_f32(1.0f), p, r);
+    p = vfmaq_f32(vdupq_n_f32(1.0f), p, r);
+    const int32x4_t e = vshlq_n_s32(vaddq_s32(vcvtq_s32_f32(n), vdupq_n_s32(127)), 23);
+    return vmulq_f32(p, vreinterpretq_f32_s32(e));
+}
+
+void rel_pos_rows_to_f32(const __fp16* src, size_t row_stride, size_t rows, size_t dim, float scale, float* dst) {
+    const float32x4_t s = vdupq_n_f32(scale);
+    for (size_t r = 0; r < rows; ++r) {
+        for (size_t i = 0; i < dim; i += 8) {
+            const float16x8_t v = vld1q_f16(src + r * row_stride + i);
+            vst1q_f32(dst + r * dim + i, vmulq_f32(vcvt_f32_f16(vget_low_f16(v)), s));
+            vst1q_f32(dst + r * dim + i + 4, vmulq_f32(vcvt_f32_f16(vget_high_f16(v)), s));
+        }
+    }
+}
+
+void rel_pos_pack_16_rows(const __fp16* src, size_t row_stride, ptrdiff_t row0, size_t num_rows, size_t dim,
+                          bool panels, float* dst) {
+    auto load = [&](size_t r, size_t i) {
+        const ptrdiff_t g = row0 + static_cast<ptrdiff_t>(r);
+        return (g < 0 || g >= static_cast<ptrdiff_t>(num_rows)) ? vdupq_n_f32(0.0f) : vcvt_f32_f16(vld1_f16(src + g * row_stride + i));
+    };
+    for (size_t r = 0; r < 16; r += 4) {
+        for (size_t i = 0; i < dim; i += 4) {
+            const float32x4_t v[4] = {load(r, i), load(r + 1, i), load(r + 2, i), load(r + 3, i)};
+            if (!panels) {
+                for (size_t j = 0; j < 4; ++j) vst1q_f32(dst + (r + j) * dim + i, v[j]);
+                continue;
+            }
+            const float32x4x2_t lo = vtrnq_f32(v[0], v[1]);
+            const float32x4x2_t hi = vtrnq_f32(v[2], v[3]);
+            vst1q_f32(dst + i * 16 + r, vcombine_f32(vget_low_f32(lo.val[0]), vget_low_f32(hi.val[0])));
+            vst1q_f32(dst + (i + 1) * 16 + r, vcombine_f32(vget_low_f32(lo.val[1]), vget_low_f32(hi.val[1])));
+            vst1q_f32(dst + (i + 2) * 16 + r, vcombine_f32(vget_high_f32(lo.val[0]), vget_high_f32(hi.val[0])));
+            vst1q_f32(dst + (i + 3) * 16 + r, vcombine_f32(vget_high_f32(lo.val[1]), vget_high_f32(hi.val[1])));
+        }
+    }
+}
+
+template <int L>
+inline void rel_pos_lane_fma(float32x4_t (&acc)[4][4], const float32x4_t (&a)[4], const float* b) {
+    const float32x4_t bv[4] = {vld1q_f32(b), vld1q_f32(b + 4), vld1q_f32(b + 8), vld1q_f32(b + 12)};
+    for (int i = 0; i < 4; ++i)
+        for (int j = 0; j < 4; ++j) acc[i][j] = vfmaq_laneq_f32(acc[i][j], bv[j], a[i], L);
+}
+
+void rel_pos_gemm(const float* a, size_t lda, const float* b, bool b_is_keys, size_t depth,
+                  float* c, size_t ldc, size_t rows, size_t cols) {
+#ifdef __APPLE__
+    cblas_sgemm(CblasRowMajor, CblasNoTrans, b_is_keys ? CblasTrans : CblasNoTrans, (int)rows, (int)cols, (int)depth,
+                1.0f, a, (int)lda, b, (int)(b_is_keys ? depth : cols), 0.0f, c, (int)ldc);
+#else
+    const size_t ldb = b_is_keys ? 16 : cols;
+    const size_t panel = b_is_keys ? 16 * depth : 16;
+    for (size_t n = 0; n < cols; n += 16) {
+        const float* bp = b + (n / 16) * panel;
+        for (size_t m = 0; m < rows; m += 4) {
+            float32x4_t acc[4][4] = {};
+            for (size_t k = 0; k < depth; k += 4) {
+                const float32x4_t av[4] = {vld1q_f32(a + m * lda + k), vld1q_f32(a + (m + 1) * lda + k),
+                                           vld1q_f32(a + (m + 2) * lda + k), vld1q_f32(a + (m + 3) * lda + k)};
+                rel_pos_lane_fma<0>(acc, av, bp + k * ldb);
+                rel_pos_lane_fma<1>(acc, av, bp + (k + 1) * ldb);
+                rel_pos_lane_fma<2>(acc, av, bp + (k + 2) * ldb);
+                rel_pos_lane_fma<3>(acc, av, bp + (k + 3) * ldb);
+            }
+            for (size_t i = 0; i < 4; ++i)
+                for (size_t j = 0; j < 4; ++j) vst1q_f32(c + (m + i) * ldc + n + 4 * j, acc[i][j]);
+        }
+    }
+#endif
+}
+
+void rel_pos_softmax_row(float* s, const float* rel, const __fp16* key_mask, size_t c_lo, size_t c_hi, size_t len) {
+    std::fill(s, s + c_lo, 0.0f);
+    std::fill(s + c_hi, s + len, 0.0f);
+    size_t c = c_lo;
+    float32x4_t vmax = vdupq_n_f32(-INFINITY);
+    for (; c + 4 <= c_hi; c += 4) {
+        float32x4_t x = vaddq_f32(vld1q_f32(s + c), vld1q_f32(rel + c));
+        if (key_mask) x = vaddq_f32(x, vcvt_f32_f16(vld1_f16(key_mask + c)));
+        vst1q_f32(s + c, x);
+        vmax = vmaxq_f32(vmax, x);
+    }
+    float row_max = vmaxvq_f32(vmax);
+    for (; c < c_hi; ++c) {
+        s[c] += rel[c] + (key_mask ? static_cast<float>(key_mask[c]) : 0.0f);
+        row_max = std::max(row_max, s[c]);
+    }
+    const float32x4_t vrow_max = vdupq_n_f32(row_max);
+    float32x4_t vsum = vdupq_n_f32(0.0f);
+    for (c = c_lo; c + 4 <= c_hi; c += 4) {
+        const float32x4_t e = rel_pos_exp_f32(vsubq_f32(vld1q_f32(s + c), vrow_max));
+        vst1q_f32(s + c, e);
+        vsum = vaddq_f32(vsum, e);
+    }
+    float sum = vaddvq_f32(vsum);
+    for (; c < c_hi; ++c) {
+        s[c] = std::exp(s[c] - row_max);
+        sum += s[c];
+    }
+    const float inv = 1.0f / sum;
+    for (c = c_lo; c < c_hi; ++c) s[c] *= inv;
+}
+
+}
+
+void cactus_rel_pos_attention_f16(
+    const __fp16* query,
+    const __fp16* key,
+    const __fp16* value,
+    const __fp16* rel_query,
+    const __fp16* rel_key,
+    const __fp16* key_mask,
+    __fp16* output,
+    size_t batch_size,
+    size_t seq_len,
+    size_t num_heads,
+    size_t head_dim,
+    size_t rel_len,
+    float scale,
+    size_t window_size
+) {
+    constexpr size_t BQ = REL_POS_BLOCK_Q;
+    const size_t T = seq_len;
+    const size_t D = head_dim;
+    const size_t row_stride = num_heads * D;
+    const size_t window = (window_size == 0 || window_size >= T) ? T : window_size;
+    const ptrdiff_t center = static_cast<ptrdiff_t>((rel_len - 1) / 2);
+    const size_t padded_len = (T + 15) / 16 * 16;
+    const size_t num_blocks = (T + BQ - 1) / BQ;
+    const size_t workers = CactusThreading::get_thread_pool().num_workers();
+    const size_t chunk = std::clamp<size_t>(batch_size * num_heads * num_blocks / (16 * workers), 1, REL_POS_CHUNK_BLOCKS);
+    const size_t num_chunks = (num_blocks + chunk - 1) / chunk;
+
+    auto key_start = [&](size_t t0) { return (t0 > window ? t0 - window : 0) / 16 * 16; };
+    auto key_end = [&](size_t t0) { return std::min(padded_len, (t0 + BQ + window + 15) / 16 * 16); };
+    auto rel_start = [&](size_t t0) { return center + 1 + static_cast<ptrdiff_t>(key_start(t0)) - static_cast<ptrdiff_t>(t0 + BQ); };
+
+    CactusThreading::parallel_for(batch_size * num_heads * num_chunks, REL_POS_ATTENTION_PARALLEL,
+        [&](size_t start, size_t end) {
+            thread_local std::vector<float> keys, values, rels, q_f, qv_f, out_f, scores, rel;
+            q_f.resize(BQ * D);
+            qv_f.resize(BQ * D);
+            out_f.resize(BQ * D);
+
+            for (size_t item = start; item < end;) {
+                const size_t bh = item / num_chunks;
+                const size_t run_end = std::min({end, (bh + 1) * num_chunks, item + REL_POS_CHUNK_BLOCKS / chunk});
+                const size_t b = bh / num_heads;
+                const size_t h = bh % num_heads;
+                const size_t head_offset = b * T * row_stride + h * D;
+                const size_t blk_begin = (item % num_chunks) * chunk;
+                const size_t blk_end = std::min(num_blocks, ((run_end - 1) % num_chunks + 1) * chunk);
+                item = run_end;
+
+                const size_t k0 = key_start(blk_begin * BQ);
+                const size_t k1 = key_end((blk_end - 1) * BQ);
+                const ptrdiff_t g0 = rel_start((blk_end - 1) * BQ);
+                const ptrdiff_t g1 = rel_start(blk_begin * BQ) + static_cast<ptrdiff_t>(key_end(blk_begin * BQ) - k0 + BQ);
+                keys.resize((k1 - k0) * D);
+                values.resize((k1 - k0) * D);
+                rels.resize(static_cast<size_t>(g1 - g0 + 15) / 16 * 16 * D);
+                for (size_t k = k0; k < k1; k += 16) {
+                    rel_pos_pack_16_rows(key + head_offset, row_stride, k, T, D, REL_POS_PANELS, keys.data() + (k - k0) * D);
+                    rel_pos_pack_16_rows(value + head_offset, row_stride, k, T, D, false, values.data() + (k - k0) * D);
+                }
+                for (ptrdiff_t g = g0; g < g1; g += 16) {
+                    rel_pos_pack_16_rows(rel_key + h * D, row_stride, g, rel_len, D, REL_POS_PANELS, rels.data() + (g - g0) * D);
+                }
+
+                for (size_t blk = blk_begin; blk < blk_end; ++blk) {
+                    const size_t t0 = blk * BQ;
+                    const size_t nq = std::min(BQ, T - t0);
+                    const size_t ks = key_start(t0);
+                    const size_t len = key_end(t0) - ks;
+                    scores.resize(BQ * len);
+                    rel.resize(BQ * (len + BQ));
+
+                    rel_pos_rows_to_f32(query + head_offset + t0 * row_stride, row_stride, nq, D, scale, q_f.data());
+                    rel_pos_rows_to_f32(rel_query + head_offset + t0 * row_stride, row_stride, nq, D, scale, qv_f.data());
+                    rel_pos_gemm(q_f.data(), D, keys.data() + (ks - k0) * D, true, D, scores.data(), len, BQ, len);
+                    rel_pos_gemm(qv_f.data(), D, rels.data() + (rel_start(t0) - g0) * D, true, D, rel.data(), len + BQ, BQ, len + BQ);
+
+                    const __fp16* mask_row = key_mask ? key_mask + b * T + ks : nullptr;
+                    for (size_t r = 0; r < BQ; ++r) {
+                        float* row = scores.data() + r * len;
+                        if (r < nq) {
+                            const size_t t = t0 + r;
+                            const size_t j_lo = t > window ? t - window : 0;
+                            const size_t j_hi = std::min(T, t + window + 1);
+                            rel_pos_softmax_row(row, rel.data() + r * (len + BQ) + (BQ - 1 - r), mask_row, j_lo - ks, j_hi - ks, len);
+                        } else {
+                            std::fill(row, row + len, 0.0f);
+                        }
+                    }
+                    rel_pos_gemm(scores.data(), len, values.data() + (ks - k0) * D, false, len, out_f.data(), D, BQ, D);
+
+                    for (size_t r = 0; r < nq; ++r) {
+                        __fp16* o = output + head_offset + (t0 + r) * row_stride;
+                        const float* src = out_f.data() + r * D;
+                        for (size_t d = 0; d < D; d += 8) {
+                            vst1q_f16(o + d, vcombine_f16(vcvt_f16_f32(vld1q_f32(src + d)), vcvt_f16_f32(vld1q_f32(src + d + 4))));
+                        }
+                    }
+                }
+            }
+        });
+}

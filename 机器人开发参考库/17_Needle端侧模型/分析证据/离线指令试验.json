@@ -1,0 +1,342 @@
+{
+  "date": "2026-10-03",
+  "sdk_commit": "8881c1ceada54814465fa5edddc6599f32383985",
+  "model_revision": "c7c415a3d1b3d929014bc6e866d51ebb971f7089",
+  "engine": "3.1.0 macosx_11_0_x86_64 wheel",
+  "host": {
+    "system": "Darwin",
+    "machine": "x86_64",
+    "python": "3.12.14"
+  },
+  "telemetry_disabled": true,
+  "explicit_local_weights_and_engine": true,
+  "robot_connected": false,
+  "callables_bound": false,
+  "method": "complete only; no run; each independent query reset",
+  "system_prompt": "locale: en-US; device: desktop-robot",
+  "prompt_method": "system facts per upstream llms.txt; initial instruction-style run archived separately",
+  "load_seconds": 0.721,
+  "tool_schemas": [
+    {
+      "name": "show_expression",
+      "description": "Show an expression on the robot face",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "expression": {
+            "type": "string",
+            "enum": [
+              "happy",
+              "sad",
+              "thinking"
+            ]
+          }
+        },
+        "required": [
+          "expression"
+        ]
+      }
+    },
+    {
+      "name": "nod",
+      "description": "Nod the robot head a specified number of times",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          }
+        },
+        "required": [
+          "count"
+        ]
+      }
+    }
+  ],
+  "rows": [
+    {
+      "label": "expression_en",
+      "query": "Show a happy face.",
+      "result": {
+        "type": "call",
+        "success": true,
+        "error": null,
+        "error_code": null,
+        "reason": null,
+        "function_calls": [
+          {
+            "name": "show_expression",
+            "arguments": {
+              "expression": "happy"
+            }
+          }
+        ],
+        "suppressed_calls": [],
+        "reasoning": "'happy face' -> show_expression with expression 'happy'.",
+        "confidence": 0.8885,
+        "prefill_tps": 223.6,
+        "decode_tps": 108.2,
+        "peak_ram_mb": 105.5,
+        "validation": {
+          "ungrounded": [],
+          "negation": false
+        }
+      },
+      "max_new_tokens": 128,
+      "elapsed_seconds": 0.461
+    },
+    {
+      "label": "nod_en",
+      "query": "Nod twice.",
+      "result": {
+        "type": "call",
+        "success": true,
+        "error": null,
+        "error_code": null,
+        "reason": null,
+        "function_calls": [],
+        "suppressed_calls": [
+          {
+            "name": "nod",
+            "arguments": {
+              "count": 2
+            }
+          }
+        ],
+        "reasoning": "'twice' -> count 2; 'Nod' -> nod.",
+        "confidence": 0.7443,
+        "prefill_tps": 207.4,
+        "decode_tps": 101.3,
+        "peak_ram_mb": 105.5,
+        "validation": {
+          "ungrounded": [],
+          "negation": false
+        }
+      },
+      "max_new_tokens": 128,
+      "elapsed_seconds": 0.401
+    },
+    {
+      "label": "refuse_en",
+      "query": "Tell me the capital of France.",
+      "result": {
+        "type": "call",
+        "success": true,
+        "error": null,
+        "error_code": null,
+        "reason": null,
+        "function_calls": [],
+        "suppressed_calls": [],
+        "reasoning": "No tool available for geography or factual lookup.",
+        "confidence": 0.8917,
+        "prefill_tps": 243.4,
+        "decode_tps": 127.5,
+        "peak_ram_mb": 105.5
+      },
+      "max_new_tokens": 128,
+      "elapsed_seconds": 0.221
+    },
+    {
+      "label": "negation_en",
+      "query": "Do not nod.",
+      "result": {
+        "type": "call",
+        "success": true,
+        "error": null,
+        "error_code": null,
+        "reason": null,
+        "function_calls": [],
+        "suppressed_calls": [
+          {
+            "name": "nod",
+            "arguments": {
+              "count": 3
+            }
+          }
+        ],
+        "reasoning": "'Do not nod' means disable nod. count defaults to 3.",
+        "confidence": 0.2854,
+        "prefill_tps": 239.5,
+        "decode_tps": 136.9,
+        "peak_ram_mb": 105.5,
+        "validation": {
+          "ungrounded": [
+            "nod.count"
+          ],
+          "negation": true
+        }
+      },
+      "max_new_tokens": 128,
+      "elapsed_seconds": 0.297
+    },
+    {
+      "label": "expression_zh",
+      "query": "请显示开心的表情。",
+      "result": {
+        "type": "call",
+        "success": true,
+        "error": null,
+        "error_code": null,
+        "reason": null,
+        "function_calls": [],
+        "suppressed_calls": [],
+        "reasoning": "'请显示开心的表情。' is a long transcript. No tool for translation.",
+        "confidence": 0.5689,
+        "prefill_tps": 216.9,
+        "decode_tps": 121.7,
+        "peak_ram_mb": 105.7
+      },
+      "max_new_tokens": 128,
+      "elapsed_seconds": 0.557
+    },
+    {
+      "label": "nod_zh",
+      "query": "点头两次。",
+      "result": {
+        "type": "call",
+        "success": true,
+        "error": null,
+        "error_code": null,
+        "reason": null,
+        "function_calls": [],
+        "suppressed_calls": [
+          {
+            "name": "show_expression",
+            "arguments": {
+              "expression": "happy"
+            }
+          }
+        ],
+        "reasoning": "'点头两次。' means 'how to go to the gym' -> show_expression with 'happy' as default.",
+        "confidence": 0.0516,
+        "prefill_tps": 228.8,
+        "decode_tps": 123.6,
+        "peak_ram_mb": 105.8,
+        "validation": {
+          "ungrounded": [],
+          "negation": false
+        }
+      },
+      "max_new_tokens": 128,
+      "elapsed_seconds": 0.612
+    },
+    {
+      "label": "nod_digits_en",
+      "query": "Nod 2 times.",
+      "result": {
+        "type": "call",
+        "success": true,
+        "error": null,
+        "error_code": null,
+        "reason": null,
+        "function_calls": [
+          {
+            "name": "nod",
+            "arguments": {
+              "count": 2
+            }
+          }
+        ],
+        "suppressed_calls": [],
+        "reasoning": "'2 times' -> count 2.",
+        "confidence": 0.9183,
+        "prefill_tps": 244.8,
+        "decode_tps": 147.5,
+        "peak_ram_mb": 105.8,
+        "validation": {
+          "ungrounded": [],
+          "negation": false
+        }
+      },
+      "max_new_tokens": 128,
+      "elapsed_seconds": 0.218
+    },
+    {
+      "label": "negation_en_512",
+      "query": "Do not nod.",
+      "result": {
+        "type": "call",
+        "success": true,
+        "error": null,
+        "error_code": null,
+        "reason": null,
+        "function_calls": [],
+        "suppressed_calls": [
+          {
+            "name": "nod",
+            "arguments": {
+              "count": 3
+            }
+          }
+        ],
+        "reasoning": "'Do not nod' means disable nod. count defaults to 3.",
+        "confidence": 0.2854,
+        "prefill_tps": 239.1,
+        "decode_tps": 117.2,
+        "peak_ram_mb": 105.8,
+        "validation": {
+          "ungrounded": [
+            "nod.count"
+          ],
+          "negation": true
+        }
+      },
+      "max_new_tokens": 512,
+      "elapsed_seconds": 0.339
+    },
+    {
+      "label": "expression_zh_512",
+      "query": "请显示开心的表情。",
+      "result": {
+        "type": "call",
+        "success": true,
+        "error": null,
+        "error_code": null,
+        "reason": null,
+        "function_calls": [],
+        "suppressed_calls": [],
+        "reasoning": "'请显示开心的表情。' is a long transcript. No tool for translation.",
+        "confidence": 0.5689,
+        "prefill_tps": 246.2,
+        "decode_tps": 110.3,
+        "peak_ram_mb": 105.8
+      },
+      "max_new_tokens": 512,
+      "elapsed_seconds": 0.581
+    },
+    {
+      "label": "nod_zh_512",
+      "query": "点头两次。",
+      "result": {
+        "type": "call",
+        "success": true,
+        "error": null,
+        "error_code": null,
+        "reason": null,
+        "function_calls": [],
+        "suppressed_calls": [
+          {
+            "name": "show_expression",
+            "arguments": {
+              "expression": "happy"
+            }
+          }
+        ],
+        "reasoning": "'点头两次。' means 'how to go to the gym' -> show_expression with 'happy' as default.",
+        "confidence": 0.0516,
+        "prefill_tps": 195.3,
+        "decode_tps": 121.8,
+        "peak_ram_mb": 105.9,
+        "validation": {
+          "ungrounded": [],
+          "negation": false
+        }
+      },
+      "max_new_tokens": 512,
+      "elapsed_seconds": 0.635
+    }
+  ],
+  "scope": "Ten synthetic smoke queries with three 512-token follow-ups, not an accuracy or latency benchmark; no ASR, training, device or network integration"
+}

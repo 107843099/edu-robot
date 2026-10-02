@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-03",
+  "rows": [
+    {
+      "name": "needle-sdk",
+      "command": [
+        ".git/needle-venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_tools.py",
+        "tests/test_grounding.py",
+        "tests/test_fetch.py",
+        "tests/test_environments.py",
+        "tests/test_packaging.py",
+        "tests/test_worker.py",
+        "-o",
+        "cache_dir=.git/reference-downloads/test-logs/pytest-cache",
+        "--basetemp",
+        ".git/reference-downloads/test-logs/pytest-temp"
+      ],
+      "cwd": "机器人开发参考库/17_Needle端侧模型/仓库/cactus-compute__needle",
+      "exit_code": 1,
+      "elapsed_seconds": 9.886,
+      "tail": "tion issue or Hub downtime => let's warn the user\n>           raise LocalEntryNotFoundError(\n                \"An error happened while trying to locate the file on the Hub and we cannot find the requested files\"\n                \" in the local cache. Please check your connection and try again or make sure your Internet connection\"\n                \" is on.\"\n            ) from head_call_error\nE           huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.\n\n../../../../.git/needle-venv/lib/python3.12/site-packages/huggingface_hub/file_download.py:1961: LocalEntryNotFoundError\n=========================== short test summary info ============================\nFAILED tests/test_environments.py::test_suite_passes_at_29_of_32 - huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.\nFAILED tests/test_environments.py::test_suite_fails_at_28_of_32 - huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.\nFAILED tests/test_environments.py::test_one_critical_failure_fails_a_suite_that_clears_the_rate - huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.\nFAILED tests/test_environments.py::test_min_confidence_treats_a_low_confidence_call_as_a_refusal - huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.\nFAILED tests/test_environments.py::test_min_confidence_keeps_a_call_at_the_threshold - huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.\n5 failed, 91 passed, 1 skipped in 8.33s\n"
+    }
+  ],
+  "upstream_source_changed": false,
+  "physical_robot_test": false,
+  "scope": "Selected SDK tests only: initial 91 passed, 1 skipped, 5 offline-cache failures; failing five rerun with explicit local weight fixture, 5 passed",
+  "offline_fixture_rerun": ".....                                                                    [100%]\n5 passed, 27 deselected in 0.21s\n",
+  "runtime_versions": {
+    "node": "v24.19.0",
+    "python": "3.12.14"
+  },
+  "test_generated_files_note": "Pytest cache and worker-test bytecode were moved outside fixed source snapshots after checks; source file counts reverified."
+}

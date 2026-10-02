@@ -1,0 +1,228 @@
+{
+  "date": "2026-10-03",
+  "owner": "cactus",
+  "inventory_scope": "GitHub public repositories returned at research time; not a guarantee of all historical/private repositories",
+  "entries": [
+    {
+      "full_name": "cactus-compute/needle",
+      "html_url": "https://github.com/cactus-compute/needle",
+      "description": "Automation foundation model for tiny devices: 2-bit, 8-29 MB, tool calls, structured extraction and embeddings on phones, wearables, smart homes, robots, cars and microcontrollers.",
+      "fork": false,
+      "default_branch": "main",
+      "metadata_license": "Apache-2.0",
+      "status": "downloaded_and_source_read",
+      "scope": "主项目：Needle3 Python SDK、训练参考与导出",
+      "conclusion": "SDK3.1.0；complete生成、run执行；原生3推理库由HF分发，worker embed ABI差异待解决。"
+    },
+    {
+      "full_name": "cactus-compute/cactus",
+      "html_url": "https://github.com/cactus-compute/cactus",
+      "description": "Quantization, kernels, runtime and inference engine for mobiles, wearables, smart home and robots. ",
+      "fork": false,
+      "default_branch": "main",
+      "metadata_license": "NOASSERTION",
+      "status": "downloaded_and_source_read",
+      "scope": "同组织通用移动推理与旧版Needle源码参考",
+      "conclusion": "旧encoder/decoder与模型目录API不同于Needle3 cact ABI；不能视为已核实的3代引擎实现。"
+    },
+    {
+      "full_name": "cactus-compute/cactus-hybrid",
+      "html_url": "https://github.com/cactus-compute/cactus-hybrid",
+      "description": "On-device models that know when they're wrong: every answer carries a confidence score for cloud handoff.",
+      "fork": false,
+      "default_branch": "main",
+      "metadata_license": "MIT",
+      "status": "metadata_lead_only",
+      "scope": "关联线索：未下载、未作源码兼容验证",
+      "conclusion": "其他课程/移动/混合推理方向；当前两个主项目没有确认依赖该仓，按需要另做专项核查。"
+    },
+    {
+      "full_name": "cactus-compute/demo-cactus-chat",
+      "html_url": "https://github.com/cactus-compute/demo-cactus-chat",
+      "description": "Repo for the Cactus Chat app - please contribute!",
+      "fork": false,
+      "default_branch": "main",
+      "metadata_license": null,
+      "status": "metadata_lead_only",
+      "scope": "关联线索：未下载、未作源码兼容验证",
+      "conclusion": "其他课程/移动/混合推理方向；当前两个主项目没有确认依赖该仓，按需要另做专项核查。"
+    },
+    {
+      "full_name": "cactus-compute/homebrew-cactus",
+      "html_url": "https://github.com/cactus-compute/homebrew-cactus",
+      "description": null,
+      "fork": false,
+      "default_branch": "main",
+      "metadata_license": null,
+      "status": "metadata_screened_not_selected",
+      "scope": "公开项目清单筛选，非直接配套或重复fork",
+      "conclusion": "未下载、不作为能力或兼容证据。"
+    },
+    {
+      "full_name": "cactus-compute/needle-environments",
+      "html_url": "https://github.com/cactus-compute/needle-environments",
+      "description": null,
+      "fork": false,
+      "default_branch": "main",
+      "metadata_license": "Apache-2.0",
+      "status": "downloaded_and_source_read",
+      "scope": "六个工具场景的schema和手工测试参考",
+      "conclusion": "旧README 14MB不代表当前模型；合同与边界可借鉴，兼容升级需对照SDK。"
+    },
+    {
+      "full_name": "cactus-compute/cactus-react-native",
+      "html_url": "https://github.com/cactus-compute/cactus-react-native",
+      "description": "Cactus React Native package: Run AI locally in your React Native apps",
+      "fork": false,
+      "default_branch": "main",
+      "metadata_license": "NOASSERTION",
+      "status": "metadata_lead_only",
+      "scope": "关联线索：未下载、未作源码兼容验证",
+      "conclusion": "其他课程/移动/混合推理方向；当前两个主项目没有确认依赖该仓，按需要另做专项核查。"
+    },
+    {
+      "full_name": "cactus-compute/.github",
+      "html_url": "https://github.com/cactus-compute/.github",
+      "description": null,
+      "fork": false,
+      "default_branch": "main",
+      "metadata_license": null,
+      "status": "metadata_screened_not_selected",
+      "scope": "公开项目清单筛选，非直接配套或重复fork",
+      "conclusion": "未下载、不作为能力或兼容证据。"
+    },
+    {
+      "full_name": "cactus-compute/depth-over-specialization",
+      "html_url": "https://github.com/cactus-compute/depth-over-specialization",
+      "description": null,
+      "fork": false,
+      "default_branch": "main",
+      "metadata_license": null,
+      "status": "downloaded_and_source_read",
+      "scope": "多模态对比编码器研究参考，非Needle3直接依赖",
+      "conclusion": "比较共享/独立text-image-audio编码器，PyTorch对比训练；数据/训练结果不在快照，非现成机器人感知。"
+    },
+    {
+      "full_name": "cactus-compute/cq-convert",
+      "html_url": "https://github.com/cactus-compute/cq-convert",
+      "description": null,
+      "fork": false,
+      "default_branch": "main",
+      "metadata_license": null,
+      "status": "downloaded_and_source_read",
+      "scope": "TurboQuant-H固定量化研究参考，非Needle3直接依赖",
+      "conclusion": "Gemma相关sanitized pipeline，README所列数据未完整在快照提供；不宣称可一键导出Needle3。"
+    },
+    {
+      "full_name": "cactus-compute/cactus-kotlin",
+      "html_url": "https://github.com/cactus-compute/cactus-kotlin",
+      "description": "Cactus Kotlin Multiplatform library: Run AI locally in your Kotlin apps",
+      "fork": false,
+      "default_branch": "main",
+      "metadata_license": "NOASSERTION",
+      "status": "metadata_lead_only",
+      "scope": "关联线索：未下载、未作源码兼容验证",
+      "conclusion": "其他课程/移动/混合推理方向；当前两个主项目没有确认依赖该仓，按需要另做专项核查。"
+    },
+    {
+      "full_name": "cactus-compute/cactus-flutter",
+      "html_url": "https://github.com/cactus-compute/cactus-flutter",
+      "description": "Cactus Flutter plugin: Run AI locally in your Flutter apps",
+      "fork": false,
+      "default_branch": "main",
+      "metadata_license": "NOASSERTION",
+      "status": "metadata_lead_only",
+      "scope": "关联线索：未下载、未作源码兼容验证",
+      "conclusion": "其他课程/移动/混合推理方向；当前两个主项目没有确认依赖该仓，按需要另做专项核查。"
+    },
+    {
+      "full_name": "cactus-compute/functiongemma-hackathon",
+      "html_url": "https://github.com/cactus-compute/functiongemma-hackathon",
+      "description": "Getting started repo for the Cactus x DeepMind Hackathon",
+      "fork": false,
+      "default_branch": "main",
+      "metadata_license": null,
+      "status": "metadata_lead_only",
+      "scope": "关联线索：未下载、未作源码兼容验证",
+      "conclusion": "其他课程/移动/混合推理方向；当前两个主项目没有确认依赖该仓，按需要另做专项核查。"
+    },
+    {
+      "full_name": "cactus-compute/voice-agents-hack",
+      "html_url": "https://github.com/cactus-compute/voice-agents-hack",
+      "description": "Get started with Cactus x Google DeepMind x Y Combinator - Gemma 4 Voice Agents ",
+      "fork": false,
+      "default_branch": "main",
+      "metadata_license": null,
+      "status": "metadata_lead_only",
+      "scope": "关联线索：未下载、未作源码兼容验证",
+      "conclusion": "其他课程/移动/混合推理方向；当前两个主项目没有确认依赖该仓，按需要另做专项核查。"
+    },
+    {
+      "full_name": "cactus-compute/cactus-gemma4",
+      "html_url": "https://github.com/cactus-compute/cactus-gemma4",
+      "description": "Cactus-Gemma-4 Demo App",
+      "fork": false,
+      "default_branch": "main",
+      "metadata_license": null,
+      "status": "metadata_screened_not_selected",
+      "scope": "公开项目清单筛选，非直接配套或重复fork",
+      "conclusion": "未下载、不作为能力或兼容证据。"
+    },
+    {
+      "full_name": "cactus-compute/dllm",
+      "html_url": "https://github.com/cactus-compute/dllm",
+      "description": "dLLM: Simple Diffusion Language Modeling",
+      "fork": true,
+      "default_branch": "main",
+      "metadata_license": "MIT",
+      "status": "metadata_screened_not_selected",
+      "scope": "公开项目清单筛选，非直接配套或重复fork",
+      "conclusion": "未下载、不作为能力或兼容证据。"
+    },
+    {
+      "full_name": "cactus-compute/openclaw",
+      "html_url": "https://github.com/cactus-compute/openclaw",
+      "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+      "fork": true,
+      "default_branch": "main",
+      "metadata_license": "MIT",
+      "status": "metadata_screened_not_selected",
+      "scope": "公开项目清单筛选，非直接配套或重复fork",
+      "conclusion": "未下载、不作为能力或兼容证据。"
+    },
+    {
+      "full_name": "cactus-compute/opencode",
+      "html_url": "https://github.com/cactus-compute/opencode",
+      "description": "The open source coding agent.",
+      "fork": true,
+      "default_branch": "dev",
+      "metadata_license": "MIT",
+      "status": "metadata_screened_not_selected",
+      "scope": "公开项目清单筛选，非直接配套或重复fork",
+      "conclusion": "未下载、不作为能力或兼容证据。"
+    },
+    {
+      "full_name": "cactus-compute/fmtp",
+      "html_url": "https://github.com/cactus-compute/fmtp",
+      "description": "Optimized/Lightweight LoRA Multi Token Prediction",
+      "fork": true,
+      "default_branch": "master",
+      "metadata_license": "MIT",
+      "status": "metadata_screened_not_selected",
+      "scope": "公开项目清单筛选，非直接配套或重复fork",
+      "conclusion": "未下载、不作为能力或兼容证据。"
+    },
+    {
+      "full_name": "cactus-compute/fast-mtp",
+      "html_url": "https://github.com/cactus-compute/fast-mtp",
+      "description": null,
+      "fork": false,
+      "default_branch": "main",
+      "metadata_license": null,
+      "status": "metadata_screened_not_selected",
+      "scope": "公开项目清单筛选，非直接配套或重复fork",
+      "conclusion": "未下载、不作为能力或兼容证据。"
+    }
+  ],
+  "direct_resources_inside_main_repo": "SDK environments, architecture/export, llms reference; HF inference resources separately archived"
+}

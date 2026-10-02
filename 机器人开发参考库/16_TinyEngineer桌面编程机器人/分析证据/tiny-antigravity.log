@@ -1,0 +1,15 @@
+✔ PreInvocation maps to thinking (11.152554ms)
+✔ PreToolUse maps reading tools to reading (0.546889ms)
+✔ PreToolUse maps typing tools to typing (8.53613ms)
+✔ PostToolUse maps error to attention (0.810412ms)
+✔ Stop maps model_stop to ring (0.541966ms)
+✔ Stop maps error to error (1.533503ms)
+✔ Stop maps abort to abort (1.029791ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 437.840563
