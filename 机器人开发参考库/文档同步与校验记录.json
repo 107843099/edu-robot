@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-03",
+  "word_path": "开源机器人项目参考与后续开发规划.docx",
+  "word_sha256": "cbb65a18cb276b37bfbd00ad635b74e61ab0bc70fe966324974159fe62bca1ca",
+  "project_overview_entries": 19,
+  "original_images_preserved_unchanged": 12,
+  "rendered_pages": 26,
+  "all_pages_visually_reviewed": true,
+  "font_issue_repaired": true,
+  "extra_blank_page_removed": true,
+  "course_reference_navigation_updated": true,
+  "markdown_overview_updated": true,
+  "github_source_snapshots": 76,
+  "local_source_folders_added_or_merged": 3,
+  "physical_robot_tests": false,
+  "word_validation_note": "Bundled renderer used with private Fontconfig configuration and existing Noto Sans SC reference font; no desktop office installation or global font change."
+}

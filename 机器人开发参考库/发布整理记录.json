@@ -92,6 +92,28 @@
       "host_validation": "Tiny: 28 Node, 9 audio, 480 frames; Needle selected SDK checks plus two prompt conditions of ten offline queries each",
       "physical_robot_test": false,
       "unrelated_existing_work_staged": false
+    },
+    {
+      "date": "2026-10-03",
+      "kind": "local robot bundles",
+      "merged_folder": "02_曼波小狗",
+      "new_folders": [
+        "18_桌面小坦克",
+        "19_每逢佳节瘦三斤固件生态"
+      ],
+      "input_original_files": 9,
+      "public_original_files": 8,
+      "public_extracted_files": 768,
+      "archive_only_installer_files": 1,
+      "private_only_firmware_files": 1,
+      "new_checks": {
+        "tank_mock_motor_host": 5,
+        "music_synthetic_index": 9
+      },
+      "word_document_updated": true,
+      "redaction": "Tank TLS key removed from public ZIP and extracted copy; original hashes retained. Standalone 略懂.bin with embedded valid private key kept only locally; static metadata published.",
+      "physical_robot_tests": false
     }
-  ]
+  ],
+  "project_folders": 19
 }

@@ -79,7 +79,9 @@
       ]
     ],
     "image": "机器人开发参考库/02_曼波小狗/图片/参考图.png",
-    "image_caption": "Herobrine 立创项目实物  仅对应该项目"
+    "image_caption": "Herobrine 立创项目实物  仅对应该项目",
+    "local_supplement": "02_曼波小狗/本地资料对照与迁移分析.md",
+    "updated": "2026-10-03"
   },
   {
     "facts": "基础为 ESP8266／ESP12F、4 舵机与 OLED；仓库有 Arduino／PlatformIO 工程、网页、PCB 工程及 STL。手势模型源码标明权重未训练，三维重建模块默认使用 mock，未附预训练权重。",
@@ -627,5 +629,57 @@
     "image_caption": "提供指南图1模块示意，未实物复刻",
     "source_kind": "user_provided_local_files",
     "folder": "15_小纸壳机器人"
+  },
+  {
+    "id": 16,
+    "title": "Tiny Engineer",
+    "tag": "桌面编程搭档",
+    "folder": "16_TinyEngineer桌面编程机器人",
+    "readme": "16_TinyEngineer桌面编程机器人/README.md",
+    "borrow": [
+      "主机事件、表现状态、校准"
+    ],
+    "limits": "主机测试不代表硬件兼容",
+    "updated": "2026-10-03",
+    "physical_test": false
+  },
+  {
+    "id": 17,
+    "title": "Needle",
+    "tag": "配套软件",
+    "folder": "17_Needle端侧模型",
+    "readme": "17_Needle端侧模型/README.md",
+    "borrow": [
+      "有限工具调用与本地意图解析"
+    ],
+    "limits": "不直接部署C3；中文/ABI缺口",
+    "updated": "2026-10-03",
+    "physical_test": false
+  },
+  {
+    "id": 18,
+    "title": "桌面小坦克",
+    "tag": "移动底盘",
+    "folder": "18_桌面小坦克",
+    "readme": "18_桌面小坦克/README.md",
+    "borrow": [
+      "差速、网页路径、NVS、失联停止"
+    ],
+    "limits": "整体许可与真机未验证；私钥已脱敏",
+    "updated": "2026-10-03",
+    "physical_test": false
+  },
+  {
+    "id": 19,
+    "title": "每逢佳节瘦三斤固件生态",
+    "tag": "配套生态",
+    "folder": "19_每逢佳节瘦三斤固件生态",
+    "readme": "19_每逢佳节瘦三斤固件生态/README.md",
+    "borrow": [
+      "模式切换、版本分析、媒体索引"
+    ],
+    "limits": "闭源BIN、缺接线与商用许可；略懂仅本地",
+    "updated": "2026-10-03",
+    "physical_test": false
   }
 ]

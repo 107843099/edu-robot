@@ -1,0 +1,134 @@
+*************************** START ****************************
+Chip: ESP32S3
+Download mode: uart
+Start time: 20260425-04:31
+Connect baud: 115200
+Com:COM21
+connecting...
+manufacturer_id: 0x68
+device_id: 0x4018
+com closed
+Total use time: 18 s
+Download result: PASS
+*************************** END ****************************
+
+*************************** START ****************************
+Chip: ESP32S3
+Download mode: uart
+Start time: 20260425-04:32
+Connect baud: 115200
+Com:COM21
+connecting...
+manufacturer_id: 0x68
+device_id: 0x4018
+fs:0x200
+address/file: 0 C:\Users\PLL\Desktop\每逢佳节瘦三斤的固件-群控3.1\xiaoche\flash_download_tool\dl_temp\bin_tmp\downloadPanel1\merged_firmware.bin
+Wrote 9575212 bytes (2425690 compressed) at 0x00000000 in 231.0 seconds (effective 331.7 kbit/s)...
+File: C:\Users\PLL\Desktop\每逢佳节瘦三斤的固件-群控3.1\xiaoche\flash_download_tool\dl_temp\bin_tmp\downloadPanel1\merged_firmware.bin
+File  md5: 5f9607006ccb10b3b64a42a92f2e1887
+Flash md5: 5f9607006ccb10b3b64a42a92f2e1887
+Hash of data verified.
+
+Leaving...
+com closed
+Total use time: 251 s
+Download result: PASS
+*************************** END ****************************
+
+*************************** START ****************************
+Chip: ESP32S3
+Download mode: uart
+Start time: 20260506-11:40
+Connect baud: 115200
+Com:COM21
+connecting...
+manufacturer_id: 0x68
+device_id: 0x4018
+com closed
+Total use time: 30 s
+Download result: PASS
+*************************** END ****************************
+
+*************************** START ****************************
+Chip: ESP32S3
+Download mode: uart
+Start time: 20260506-11:40
+Connect baud: 115200
+Com:COM21
+connecting...
+manufacturer_id: 0x68
+device_id: 0x4018
+fs:0x200
+address/file: 0 C:\Users\PLL\Desktop\每逢佳节瘦三斤的固件\群控遥控小车3.2\xiaoche\flash_download_tool\dl_temp\bin_tmp\downloadPanel1\merged_all.bin
+Wrote 9575212 bytes (2432919 compressed) at 0x00000000 in 232.4 seconds (effective 329.7 kbit/s)...
+File: C:\Users\PLL\Desktop\每逢佳节瘦三斤的固件\群控遥控小车3.2\xiaoche\flash_download_tool\dl_temp\bin_tmp\downloadPanel1\merged_all.bin
+File  md5: 05831a00364f1b6cb66b3d3b7122e0fb
+Flash md5: 05831a00364f1b6cb66b3d3b7122e0fb
+Hash of data verified.
+
+Leaving...
+com closed
+Total use time: 253 s
+Download result: PASS
+*************************** END ****************************
+
+*************************** START ****************************
+Chip: ESP32S3
+Download mode: uart
+Start time: 20260506-18:02
+Connect baud: 115200
+Com:COM21
+connecting...
+manufacturer_id: 0x68
+device_id: 0x4018
+fs:0x200
+address/file: 0 C:\Users\PLL\Desktop\每逢佳节瘦三斤的固件\群控遥控小车3.2\xiaoche\flash_download_tool\dl_temp\bin_tmp\downloadPanel1\merged_all_2605_1342.bin
+Wrote 9575212 bytes (2434043 compressed) at 0x00000000 in 231.9 seconds (effective 330.3 kbit/s)...
+File: C:\Users\PLL\Desktop\每逢佳节瘦三斤的固件\群控遥控小车3.2\xiaoche\flash_download_tool\dl_temp\bin_tmp\downloadPanel1\merged_all_2605_1342.bin
+File  md5: 6e6adb1f62d6ed2578524e25cbe28967
+Flash md5: 6e6adb1f62d6ed2578524e25cbe28967
+Hash of data verified.
+
+Leaving...
+com closed
+Total use time: 253 s
+Download result: PASS
+*************************** END ****************************
+
+*************************** START ****************************
+Chip: ESP32S3
+Download mode: uart
+Start time: 20260510-19:26
+Connect baud: 115200
+Com:COM21
+connecting...
+manufacturer_id: 0x68
+device_id: 0x4018
+com closed
+Total use time: 34 s
+Download result: PASS
+*************************** END ****************************
+
+*************************** START ****************************
+Chip: ESP32S3
+Download mode: uart
+Start time: 20260510-19:27
+Connect baud: 115200
+Com:COM21
+connecting...
+manufacturer_id: 0x68
+device_id: 0x4018
+fs:0x200
+address/file: 0 C:\Users\PLL\Desktop\每逢佳节瘦三斤的固件\群控遥控小车3.2\xiaoche\flash_download_tool\dl_temp\bin_tmp\downloadPanel1\merged_all_2605_2356.bin
+Wrote 9575212 bytes (2434128 compressed) at 0x00000000 in 232.6 seconds (effective 329.3 kbit/s)...
+File: C:\Users\PLL\Desktop\每逢佳节瘦三斤的固件\群控遥控小车3.2\xiaoche\flash_download_tool\dl_temp\bin_tmp\downloadPanel1\merged_all_2605_2356.bin
+File  md5: ca81a9fbb3a905e25d163e7bbc1d214d
+Flash md5: ca81a9fbb3a905e25d163e7bbc1d214d
+Hash of data verified.
+
+Leaving...
+com closed
+Total use time: 253 s
+Download result: PASS
+*************************** END ****************************
+

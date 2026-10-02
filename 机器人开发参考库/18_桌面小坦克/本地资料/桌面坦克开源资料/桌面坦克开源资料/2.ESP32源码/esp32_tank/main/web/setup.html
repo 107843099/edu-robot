@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>ESP32 Tank 配网</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #1a1a2e;
+    color: #eee;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .card {
+    width: 100%;
+    max-width: 360px;
+    background: #16213e;
+    border-radius: 16px;
+    padding: 28px 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  h1 { font-size: 1.3rem; margin-bottom: 8px; }
+  .sub { color: #888; font-size: 0.85rem; margin-bottom: 24px; line-height: 1.5; }
+  label { display: block; font-size: 0.85rem; color: #aaa; margin-bottom: 6px; margin-top: 16px; }
+  input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #0f3460;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+  }
+  input:focus { border-color: #e94560; }
+  button {
+    width: 100%;
+    margin-top: 28px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #e94560;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:disabled { opacity: 0.5; }
+  #msg { margin-top: 16px; text-align: center; font-size: 0.9rem; min-height: 1.4em; line-height: 1.6; }
+  #msg.ok { color: #66bb6a; }
+  #msg.err { color: #ef5350; }
+  #msg a { color: #e94560; word-break: break-all; }
+  .ip-box {
+    margin-top: 12px;
+    padding: 12px;
+    background: #0f3460;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>🛞 ESP32 Tank 配网</h1>
+  <p class="sub">配网成功后，请将手机连上<strong>同一 WiFi</strong>，用下方 IP 地址遥控（手机热点请用 IP，不要用 tank.local）</p>
+  <form id="form">
+    <label for="ssid">WiFi 名称</label>
+    <input id="ssid" name="ssid" required autocomplete="off" placeholder="输入 WiFi SSID">
+    <label for="password">WiFi 密码</label>
+    <input id="password" name="password" type="password" autocomplete="off" placeholder="无密码可留空">
+    <button type="submit" id="btn">保存并连接</button>
+  </form>
+  <div id="msg"></div>
+</div>
+<script>
+document.getElementById('form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById('btn');
+  const msg = document.getElementById('msg');
+  const form = document.getElementById('form');
+  btn.disabled = true;
+  msg.className = '';
+  msg.textContent = '正在连接 WiFi，请稍候…';
+  try {
+    const res = await fetch('/api/wifi', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        ssid: document.getElementById('ssid').value.trim(),
+        password: document.getElementById('password').value
+      })
+    });
+    const data = await res.json();
+    if (data.ok && data.ip) {
+      form.style.display = 'none';
+      msg.className = 'ok';
+      msg.innerHTML =
+        '配网成功！请将手机连上同一 WiFi，然后访问：<div class="ip-box"><a href="http://' + data.ip + '">http://' + data.ip + '</a></div>';
+    } else {
+      throw new Error(data.error || '保存失败');
+    }
+  } catch (err) {
+    msg.className = 'err';
+    msg.textContent = err.message || '网络错误';
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>

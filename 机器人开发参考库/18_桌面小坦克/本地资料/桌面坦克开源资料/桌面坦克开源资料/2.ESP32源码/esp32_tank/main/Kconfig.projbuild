@@ -1,0 +1,45 @@
+menu "Tank WiFi Configuration"
+
+    config TANK_WIFI_SSID
+        string "WiFi SSID (fallback if NVS empty)"
+        default "myssid"
+        help
+            Used only when no WiFi saved in NVS. Leave as myssid to force Captive Portal.
+
+    config TANK_WIFI_PASSWORD
+        string "WiFi Password (fallback)"
+        default "mypassword"
+
+    config TANK_AP_SSID
+        string "Captive Portal AP SSID"
+        default "ESP32-Tank-Setup"
+        help
+            SoftAP name shown during provisioning.
+
+    config TANK_AP_PASSWORD
+        string "Captive Portal AP Password"
+        default ""
+        help
+            Leave empty for open AP. Minimum 8 characters for WPA2.
+
+    config TANK_MDNS_HOSTNAME
+        string "mDNS hostname"
+        default "tank"
+        help
+            Access at http://<hostname>.local after provisioning.
+
+    config TANK_USE_HTTPS
+        bool "Enable HTTPS in control mode"
+        default n
+        help
+            Use self-signed TLS on port 443. HTTP port 80 redirects to HTTPS.
+            Captive Portal always uses plain HTTP.
+
+    config TANK_CMD_TIMEOUT_MS
+        int "Command timeout (ms)"
+        default 500
+        range 200 3000
+        help
+            Stop motors if no WebSocket command is received within this time.
+
+endmenu

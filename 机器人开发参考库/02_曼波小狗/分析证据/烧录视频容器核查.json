@@ -1,0 +1,129 @@
+{
+  "source": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/烧录教程/9月28日.mp4",
+  "bytes": 1056270446,
+  "duration_seconds": 413.943,
+  "container_atoms": [
+    {
+      "offset": 0,
+      "type": "ftyp",
+      "size": 32,
+      "depth": 0
+    },
+    {
+      "offset": 32,
+      "type": "free",
+      "size": 8,
+      "depth": 0
+    },
+    {
+      "offset": 40,
+      "type": "mdat",
+      "size": 1056017484,
+      "depth": 0
+    },
+    {
+      "offset": 1056017524,
+      "type": "moov",
+      "size": 252922,
+      "depth": 0
+    },
+    {
+      "offset": 1056017532,
+      "type": "mvhd",
+      "size": 108,
+      "depth": 1
+    },
+    {
+      "offset": 1056017640,
+      "type": "trak",
+      "size": 165817,
+      "depth": 1
+    },
+    {
+      "offset": 1056017648,
+      "type": "tkhd",
+      "size": 92,
+      "depth": 2
+    },
+    {
+      "offset": 1056017740,
+      "type": "edts",
+      "size": 36,
+      "depth": 2
+    },
+    {
+      "offset": 1056017776,
+      "type": "mdia",
+      "size": 165681,
+      "depth": 2
+    },
+    {
+      "offset": 1056017784,
+      "type": "mdhd",
+      "size": 32,
+      "depth": 3
+    },
+    {
+      "offset": 1056017816,
+      "type": "hdlr",
+      "size": 45,
+      "depth": 3
+    },
+    {
+      "offset": 1056017861,
+      "type": "minf",
+      "size": 165596,
+      "depth": 3
+    },
+    {
+      "offset": 1056183457,
+      "type": "trak",
+      "size": 85981,
+      "depth": 1
+    },
+    {
+      "offset": 1056183465,
+      "type": "tkhd",
+      "size": 92,
+      "depth": 2
+    },
+    {
+      "offset": 1056183557,
+      "type": "edts",
+      "size": 36,
+      "depth": 2
+    },
+    {
+      "offset": 1056183593,
+      "type": "mdia",
+      "size": 85845,
+      "depth": 2
+    },
+    {
+      "offset": 1056183601,
+      "type": "mdhd",
+      "size": 32,
+      "depth": 3
+    },
+    {
+      "offset": 1056183633,
+      "type": "hdlr",
+      "size": 45,
+      "depth": 3
+    },
+    {
+      "offset": 1056183678,
+      "type": "minf",
+      "size": 85760,
+      "depth": 3
+    },
+    {
+      "offset": 1056269438,
+      "type": "udta",
+      "size": 1008,
+      "depth": 1
+    }
+  ],
+  "decoded_frames": 0,
+  "complete_tutorial_viewing": false
+}

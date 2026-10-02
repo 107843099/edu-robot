@@ -1,0 +1,24 @@
+[
+  {
+    "source_type": "user-provided local folder",
+    "date": "2026-10-03",
+    "manifest": "本地资料来源与校验.json",
+    "original_files": [
+      {
+        "original_path": "桌面小坦克开源资料/桌面坦克开源资料.zip",
+        "saved_path": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+        "bytes": 44419645,
+        "sha256": "2c48ec9f62dfc8cb264ae7cea719f02cbae55061f680281c028295e7a44f9e7d",
+        "original_bytes": 44424509,
+        "original_sha256": "d7300064712c88e6ac8705ee7b30241639de59ebc4928a1c49bfad12900e55b2",
+        "publication_transform": "one TLS private key entry replaced with a comment placeholder; original retained outside Git"
+      }
+    ],
+    "public_extracted_files": 143,
+    "archive_only_entries": [],
+    "private_only_files": [],
+    "github_commit": null,
+    "license_status": "not supplied for the complete local bundle",
+    "physical_test": false
+  }
+]

@@ -1,0 +1,865 @@
+{
+  "date": "2026-10-03",
+  "sources": [
+    "https://docs.espressif.com/projects/esptool/en/latest/esp32/advanced-topics/firmware-image-format.html",
+    "https://github.com/espressif/esptool/blob/master/esptool/targets/esp32s3.py",
+    "https://github.com/espressif/esptool/blob/master/esptool/targets/esp32c3.py"
+  ],
+  "rows": [
+    {
+      "path": null,
+      "bytes": 11891073,
+      "sha256": "ea6bf96aa919130ceaf27dec4df3c123b3a1ec2a06d5422e16968649033b8b21",
+      "headers": [
+        {
+          "offset": "0x0",
+          "segments": 3,
+          "chip_id": 9,
+          "chip": "ESP32-S3",
+          "flash_size_field_mb": 16,
+          "entrypoint": "0x403c8908"
+        }
+      ],
+      "valid_full_image_or_flash_layout_verified": false,
+      "partition_table_at_0x8000": [
+        {
+          "type": 1,
+          "subtype": 2,
+          "offset": "0x9000",
+          "size": 1048576,
+          "label": "nvs",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 0,
+          "offset": "0x109000",
+          "size": 8192,
+          "label": "otadata",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 1,
+          "offset": "0x10b000",
+          "size": 4096,
+          "label": "phy_init",
+          "flags": 0
+        },
+        {
+          "type": 0,
+          "subtype": 16,
+          "offset": "0x110000",
+          "size": 5242880,
+          "label": "ota_0",
+          "flags": 0
+        },
+        {
+          "type": 0,
+          "subtype": 17,
+          "offset": "0x610000",
+          "size": 5242880,
+          "label": "ota_1",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 130,
+          "offset": "0xb10000",
+          "size": 5177344,
+          "label": "assets",
+          "flags": 0
+        }
+      ],
+      "app_descriptor_candidates": [
+        {
+          "file_offset": "0x110020",
+          "version": "2.1.0",
+          "project_name": "xiaozhi",
+          "build_time": "17:50:39",
+          "build_date": "Aug 22 2026",
+          "idf_version": "v5.5.4-dirty"
+        }
+      ],
+      "pem_private_key_marker_present": true,
+      "pem_private_key_candidates": [
+        {
+          "offset": "0x13bf40",
+          "bytes": 60,
+          "sha256": "b1d8004ba3b72f1427d27082a737c6b85088d375e701f07299f4a1e953497112",
+          "openssl_valid_private_key": false,
+          "matches_public_mbedtls_test_fixture_sources": []
+        },
+        {
+          "offset": "0x13bf7d",
+          "bytes": 56,
+          "sha256": "ed901bd4c25ada7abfc5b2c617f8a586ed0e9aa0ad7b64ee2fa0d5dff64236b7",
+          "openssl_valid_private_key": false,
+          "matches_public_mbedtls_test_fixture_sources": []
+        },
+        {
+          "offset": "0x13bfb6",
+          "bytes": 63,
+          "sha256": "6d545a207f44ba4dc060b5f34bcf0dba9353c11ba3c01ef05013a257660ac312",
+          "openssl_valid_private_key": false,
+          "matches_public_mbedtls_test_fixture_sources": []
+        },
+        {
+          "offset": "0x1869ea",
+          "bytes": 1674,
+          "sha256": "534605327bd05fb2738af47b0e35fb9de553ce48d74b0e660ac6d59f15abdc94",
+          "openssl_valid_private_key": true,
+          "matches_public_mbedtls_test_fixture_sources": []
+        }
+      ],
+      "valid_pem_private_keys_found": 1,
+      "non_fixture_private_keys_found": 1,
+      "source_name": "略懂.bin",
+      "public_notice": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/原始资料/每逢佳节瘦三斤的固件/固件分发/略懂固件公开归档说明.md",
+      "publication_status": "private-only original binary; static metadata published"
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/每逢佳节瘦三斤的固件(未经许可切勿商用)/月薪喵/yuexinmiao-c3_flash_0x0.bin",
+      "bytes": 1030912,
+      "sha256": "b4dcf99d9345e7df6c413af4fa90a5a0bb41379dd06d5efffceab61c36b2ca2c",
+      "headers": [
+        {
+          "offset": "0x0",
+          "segments": 3,
+          "chip_id": 5,
+          "chip": "ESP32-C3",
+          "flash_size_field_mb": 4,
+          "entrypoint": "0x403cbf1a"
+        },
+        {
+          "offset": "0x10000",
+          "segments": 6,
+          "chip_id": 5,
+          "chip": "ESP32-C3",
+          "flash_size_field_mb": 4,
+          "entrypoint": "0x403802ec"
+        }
+      ],
+      "valid_full_image_or_flash_layout_verified": false,
+      "partition_table_at_0x8000": [
+        {
+          "type": 1,
+          "subtype": 2,
+          "offset": "0x9000",
+          "size": 16384,
+          "label": "nvs",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 0,
+          "offset": "0xd000",
+          "size": 8192,
+          "label": "otadata",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 1,
+          "offset": "0xf000",
+          "size": 4096,
+          "label": "phy_init",
+          "flags": 0
+        },
+        {
+          "type": 0,
+          "subtype": 0,
+          "offset": "0x10000",
+          "size": 2555904,
+          "label": "factory",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 130,
+          "offset": "0x280000",
+          "size": 1572864,
+          "label": "assets",
+          "flags": 0
+        }
+      ],
+      "app_descriptor_candidates": [
+        {
+          "file_offset": "0x10020",
+          "version": "1",
+          "project_name": "yuexinmiao",
+          "build_time": "16:58:40",
+          "build_date": "Jun 16 2026",
+          "idf_version": "v5.5.4"
+        }
+      ],
+      "pem_private_key_marker_present": false,
+      "pem_private_key_candidates": [],
+      "valid_pem_private_keys_found": 0,
+      "non_fixture_private_keys_found": 0
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/每逢佳节瘦三斤的固件(未经许可切勿商用)/月薪喵/yuexinmiao-s3_flash_0x0.bin",
+      "bytes": 1117648,
+      "sha256": "caf2743bc03dd11fc79fafe059b21b7850674614dbed1bf068e5ca0203ad3dcc",
+      "headers": [
+        {
+          "offset": "0x0",
+          "segments": 3,
+          "chip_id": 9,
+          "chip": "ESP32-S3",
+          "flash_size_field_mb": 16,
+          "entrypoint": "0x403c8924"
+        }
+      ],
+      "valid_full_image_or_flash_layout_verified": false,
+      "partition_table_at_0x8000": [
+        {
+          "type": 1,
+          "subtype": 2,
+          "offset": "0x9000",
+          "size": 16384,
+          "label": "nvs",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 0,
+          "offset": "0xd000",
+          "size": 8192,
+          "label": "otadata",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 1,
+          "offset": "0xf000",
+          "size": 4096,
+          "label": "phy_init",
+          "flags": 0
+        },
+        {
+          "type": 0,
+          "subtype": 16,
+          "offset": "0x20000",
+          "size": 4128768,
+          "label": "ota_0",
+          "flags": 0
+        },
+        {
+          "type": 0,
+          "subtype": 17,
+          "offset": "0x410000",
+          "size": 4128768,
+          "label": "ota_1",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 130,
+          "offset": "0x800000",
+          "size": 8388608,
+          "label": "assets",
+          "flags": 0
+        }
+      ],
+      "app_descriptor_candidates": [
+        {
+          "file_offset": "0x20020",
+          "version": "cb978f1-dirty",
+          "project_name": "yuexinmiao",
+          "build_time": "21:24:13",
+          "build_date": "Jun 18 2026",
+          "idf_version": "v5.5.4"
+        }
+      ],
+      "pem_private_key_marker_present": false,
+      "pem_private_key_candidates": [],
+      "valid_pem_private_keys_found": 0,
+      "non_fixture_private_keys_found": 0
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/每逢佳节瘦三斤的固件(未经许可切勿商用)/S3_music_rgb小智小车（可唤醒可自定义唤醒词)/s3_music_20260714_ws2812b_0x0.bin",
+      "bytes": 8679809,
+      "sha256": "3b1168f1edfae064d6e1c745f746ac3534eabaada49b56acd7346333d0a1521f",
+      "headers": [
+        {
+          "offset": "0x0",
+          "segments": 3,
+          "chip_id": 9,
+          "chip": "ESP32-S3",
+          "flash_size_field_mb": 16,
+          "entrypoint": "0x403c8908"
+        }
+      ],
+      "valid_full_image_or_flash_layout_verified": false,
+      "partition_table_at_0x8000": [
+        {
+          "type": 1,
+          "subtype": 2,
+          "offset": "0x9000",
+          "size": 16384,
+          "label": "nvs",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 0,
+          "offset": "0xd000",
+          "size": 8192,
+          "label": "otadata",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 1,
+          "offset": "0xf000",
+          "size": 4096,
+          "label": "phy_init",
+          "flags": 0
+        },
+        {
+          "type": 0,
+          "subtype": 16,
+          "offset": "0x20000",
+          "size": 4128768,
+          "label": "ota_0",
+          "flags": 0
+        },
+        {
+          "type": 0,
+          "subtype": 17,
+          "offset": "0x410000",
+          "size": 4128768,
+          "label": "ota_1",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 130,
+          "offset": "0x800000",
+          "size": 8388608,
+          "label": "assets",
+          "flags": 0
+        }
+      ],
+      "app_descriptor_candidates": [
+        {
+          "file_offset": "0x20020",
+          "version": "2.1.0",
+          "project_name": "xiaozhi",
+          "build_time": "15:30:29",
+          "build_date": "Jul 12 2026",
+          "idf_version": "v5.5.4-dirty"
+        }
+      ],
+      "pem_private_key_marker_present": true,
+      "pem_private_key_candidates": [
+        {
+          "offset": "0x45c96",
+          "bytes": 60,
+          "sha256": "b1d8004ba3b72f1427d27082a737c6b85088d375e701f07299f4a1e953497112",
+          "openssl_valid_private_key": false,
+          "matches_public_mbedtls_test_fixture_sources": []
+        },
+        {
+          "offset": "0x45cd3",
+          "bytes": 56,
+          "sha256": "ed901bd4c25ada7abfc5b2c617f8a586ed0e9aa0ad7b64ee2fa0d5dff64236b7",
+          "openssl_valid_private_key": false,
+          "matches_public_mbedtls_test_fixture_sources": []
+        },
+        {
+          "offset": "0x45d0c",
+          "bytes": 63,
+          "sha256": "6d545a207f44ba4dc060b5f34bcf0dba9353c11ba3c01ef05013a257660ac312",
+          "openssl_valid_private_key": false,
+          "matches_public_mbedtls_test_fixture_sources": []
+        }
+      ],
+      "valid_pem_private_keys_found": 0,
+      "non_fixture_private_keys_found": 0
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/每逢佳节瘦三斤的固件(未经许可切勿商用)/c3minin小智小车1.1（可唤醒)/merged_all_2605_2247.bin",
+      "bytes": 3019796,
+      "sha256": "64c4601582c8d34af61cc5f687d70130cb5178f18cc341bc7bdc8b7836a857dc",
+      "headers": [
+        {
+          "offset": "0x0",
+          "segments": 3,
+          "chip_id": 5,
+          "chip": "ESP32-C3",
+          "flash_size_field_mb": 4,
+          "entrypoint": "0x403cbf10"
+        },
+        {
+          "offset": "0x10000",
+          "segments": 6,
+          "chip_id": 5,
+          "chip": "ESP32-C3",
+          "flash_size_field_mb": 4,
+          "entrypoint": "0x403803d8"
+        }
+      ],
+      "valid_full_image_or_flash_layout_verified": false,
+      "partition_table_at_0x8000": [
+        {
+          "type": 1,
+          "subtype": 2,
+          "offset": "0x9000",
+          "size": 16384,
+          "label": "nvs",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 0,
+          "offset": "0xd000",
+          "size": 8192,
+          "label": "otadata",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 1,
+          "offset": "0xf000",
+          "size": 4096,
+          "label": "phy_init",
+          "flags": 0
+        },
+        {
+          "type": 0,
+          "subtype": 0,
+          "offset": "0x10000",
+          "size": 2555904,
+          "label": "factory",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 130,
+          "offset": "0x280000",
+          "size": 1572864,
+          "label": "assets",
+          "flags": 0
+        }
+      ],
+      "app_descriptor_candidates": [
+        {
+          "file_offset": "0x10020",
+          "version": "2.2.0",
+          "project_name": "xiaozhi",
+          "build_time": "22:03:24",
+          "build_date": "May 17 2026",
+          "idf_version": "v5.5.4"
+        }
+      ],
+      "pem_private_key_marker_present": true,
+      "pem_private_key_candidates": [
+        {
+          "offset": "0x29b1c",
+          "bytes": 60,
+          "sha256": "b1d8004ba3b72f1427d27082a737c6b85088d375e701f07299f4a1e953497112",
+          "openssl_valid_private_key": false,
+          "matches_public_mbedtls_test_fixture_sources": []
+        },
+        {
+          "offset": "0x29b5c",
+          "bytes": 57,
+          "sha256": "9dc5fa87e9eb1d99cbe0a2e2c28f19ba06b9684fceffe5fb53c3bc87604a814d",
+          "openssl_valid_private_key": false,
+          "matches_public_mbedtls_test_fixture_sources": []
+        },
+        {
+          "offset": "0x29b98",
+          "bytes": 63,
+          "sha256": "6d545a207f44ba4dc060b5f34bcf0dba9353c11ba3c01ef05013a257660ac312",
+          "openssl_valid_private_key": false,
+          "matches_public_mbedtls_test_fixture_sources": []
+        }
+      ],
+      "valid_pem_private_keys_found": 0,
+      "non_fixture_private_keys_found": 0
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/每逢佳节瘦三斤的固件(未经许可切勿商用)/c3minin小智小车2.0（不可唤醒）/q-c3_20260618_flash_0x0.bin",
+      "bytes": 2893766,
+      "sha256": "0686d37440cc45affcf97573a66797f3a49f217084d65832523923c67f0cf647",
+      "headers": [
+        {
+          "offset": "0x0",
+          "segments": 3,
+          "chip_id": 5,
+          "chip": "ESP32-C3",
+          "flash_size_field_mb": 4,
+          "entrypoint": "0x403cbf10"
+        },
+        {
+          "offset": "0x10000",
+          "segments": 6,
+          "chip_id": 5,
+          "chip": "ESP32-C3",
+          "flash_size_field_mb": 4,
+          "entrypoint": "0x403802ea"
+        }
+      ],
+      "valid_full_image_or_flash_layout_verified": false,
+      "partition_table_at_0x8000": [
+        {
+          "type": 1,
+          "subtype": 2,
+          "offset": "0x9000",
+          "size": 16384,
+          "label": "nvs",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 0,
+          "offset": "0xd000",
+          "size": 8192,
+          "label": "otadata",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 1,
+          "offset": "0xf000",
+          "size": 4096,
+          "label": "phy_init",
+          "flags": 0
+        },
+        {
+          "type": 0,
+          "subtype": 0,
+          "offset": "0x10000",
+          "size": 2555904,
+          "label": "factory",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 130,
+          "offset": "0x280000",
+          "size": 1572864,
+          "label": "assets",
+          "flags": 0
+        }
+      ],
+      "app_descriptor_candidates": [
+        {
+          "file_offset": "0x10020",
+          "version": "2.1.0",
+          "project_name": "xiaozhi",
+          "build_time": "19:29:42",
+          "build_date": "Jun 18 2026",
+          "idf_version": "v5.5.4"
+        }
+      ],
+      "pem_private_key_marker_present": true,
+      "pem_private_key_candidates": [
+        {
+          "offset": "0x31528",
+          "bytes": 60,
+          "sha256": "b1d8004ba3b72f1427d27082a737c6b85088d375e701f07299f4a1e953497112",
+          "openssl_valid_private_key": false,
+          "matches_public_mbedtls_test_fixture_sources": []
+        },
+        {
+          "offset": "0x31568",
+          "bytes": 57,
+          "sha256": "9dc5fa87e9eb1d99cbe0a2e2c28f19ba06b9684fceffe5fb53c3bc87604a814d",
+          "openssl_valid_private_key": false,
+          "matches_public_mbedtls_test_fixture_sources": []
+        },
+        {
+          "offset": "0x315a4",
+          "bytes": 63,
+          "sha256": "6d545a207f44ba4dc060b5f34bcf0dba9353c11ba3c01ef05013a257660ac312",
+          "openssl_valid_private_key": false,
+          "matches_public_mbedtls_test_fixture_sources": []
+        }
+      ],
+      "valid_pem_private_keys_found": 0,
+      "non_fixture_private_keys_found": 0
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/每逢佳节瘦三斤的固件(未经许可切勿商用)/群控遥控小车3.2/yuyin/fw-4m.bin",
+      "bytes": 1802240,
+      "sha256": "3468e9130898fc12ee832cc614163395941e08bd41721e19849bbe8e3b75bf7b",
+      "headers": [],
+      "valid_full_image_or_flash_layout_verified": false,
+      "partition_table_at_0x8000": [],
+      "app_descriptor_candidates": [],
+      "pem_private_key_marker_present": false,
+      "pem_private_key_candidates": [],
+      "valid_pem_private_keys_found": 0,
+      "non_fixture_private_keys_found": 0
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/每逢佳节瘦三斤的固件(未经许可切勿商用)/群控遥控小车3.2/yuyin/fw-2m.bin",
+      "bytes": 1802240,
+      "sha256": "05f4c583834b557e52dbe7259d0ba5f1776fddbf3d2c5223af190fc5242aede8",
+      "headers": [],
+      "valid_full_image_or_flash_layout_verified": false,
+      "partition_table_at_0x8000": [],
+      "app_descriptor_candidates": [],
+      "pem_private_key_marker_present": false,
+      "pem_private_key_candidates": [],
+      "valid_pem_private_keys_found": 0,
+      "non_fixture_private_keys_found": 0
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/每逢佳节瘦三斤的固件(未经许可切勿商用)/群控遥控小车3.2/xiaoche/QUNKONG2.2.bin",
+      "bytes": 4194304,
+      "sha256": "be98848593e43900855c121603258275f1a276523dd62a254191f0f5baf4f39b",
+      "headers": [
+        {
+          "offset": "0x0",
+          "segments": 3,
+          "chip_id": 5,
+          "chip": "ESP32-C3",
+          "flash_size_field_mb": 4,
+          "entrypoint": "0x403cbf10"
+        },
+        {
+          "offset": "0x10000",
+          "segments": 6,
+          "chip_id": 5,
+          "chip": "ESP32-C3",
+          "flash_size_field_mb": 4,
+          "entrypoint": "0x403807ca"
+        }
+      ],
+      "valid_full_image_or_flash_layout_verified": false,
+      "partition_table_at_0x8000": [
+        {
+          "type": 1,
+          "subtype": 2,
+          "offset": "0x9000",
+          "size": 20480,
+          "label": "nvs",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 0,
+          "offset": "0xe000",
+          "size": 8192,
+          "label": "otadata",
+          "flags": 0
+        },
+        {
+          "type": 0,
+          "subtype": 16,
+          "offset": "0x10000",
+          "size": 2031616,
+          "label": "app0",
+          "flags": 0
+        },
+        {
+          "type": 0,
+          "subtype": 17,
+          "offset": "0x200000",
+          "size": 2031616,
+          "label": "app1",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 3,
+          "offset": "0x3f0000",
+          "size": 65536,
+          "label": "coredump",
+          "flags": 0
+        }
+      ],
+      "app_descriptor_candidates": [
+        {
+          "file_offset": "0x10020",
+          "version": "8cabf2c",
+          "project_name": "arduino-lib-builder",
+          "build_time": "19:57:14",
+          "build_date": "Feb 11 2026",
+          "idf_version": "v5.5.2-729-g87912cd291"
+        }
+      ],
+      "pem_private_key_marker_present": true,
+      "pem_private_key_candidates": [
+        {
+          "offset": "0x2b6b8",
+          "bytes": 60,
+          "sha256": "b1d8004ba3b72f1427d27082a737c6b85088d375e701f07299f4a1e953497112",
+          "openssl_valid_private_key": false,
+          "matches_public_mbedtls_test_fixture_sources": []
+        },
+        {
+          "offset": "0x2b6f8",
+          "bytes": 57,
+          "sha256": "9dc5fa87e9eb1d99cbe0a2e2c28f19ba06b9684fceffe5fb53c3bc87604a814d",
+          "openssl_valid_private_key": false,
+          "matches_public_mbedtls_test_fixture_sources": []
+        },
+        {
+          "offset": "0x2b734",
+          "bytes": 63,
+          "sha256": "6d545a207f44ba4dc060b5f34bcf0dba9353c11ba3c01ef05013a257660ac312",
+          "openssl_valid_private_key": false,
+          "matches_public_mbedtls_test_fixture_sources": []
+        }
+      ],
+      "valid_pem_private_keys_found": 0,
+      "non_fixture_private_keys_found": 0
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/每逢佳节瘦三斤的固件(未经许可切勿商用)/群控遥控小车3.2/xiaoche/flash_download_tool/combine/target.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "headers": [],
+      "valid_full_image_or_flash_layout_verified": false,
+      "partition_table_at_0x8000": [],
+      "app_descriptor_candidates": [],
+      "pem_private_key_marker_present": false,
+      "pem_private_key_candidates": [],
+      "valid_pem_private_keys_found": 0,
+      "non_fixture_private_keys_found": 0
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/每逢佳节瘦三斤的固件(未经许可切勿商用)/群控遥控小车3.2/xiaoche/flash_download_tool/flash_dump/48f6ee21ab48_0x000_0x10000_20260122_181026.bin",
+      "bytes": 65536,
+      "sha256": "0788c750692be029acccdffe022ca5d2085410c76c76ab1b8e5df51976119eaf",
+      "headers": [
+        {
+          "offset": "0x0",
+          "segments": 3,
+          "chip_id": 5,
+          "chip": "ESP32-C3",
+          "flash_size_field_mb": 4,
+          "entrypoint": "0x403cbf10"
+        }
+      ],
+      "valid_full_image_or_flash_layout_verified": false,
+      "partition_table_at_0x8000": [
+        {
+          "type": 1,
+          "subtype": 2,
+          "offset": "0x9000",
+          "size": 20480,
+          "label": "nvs",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 0,
+          "offset": "0xe000",
+          "size": 8192,
+          "label": "otadata",
+          "flags": 0
+        },
+        {
+          "type": 0,
+          "subtype": 16,
+          "offset": "0x10000",
+          "size": 1310720,
+          "label": "app0",
+          "flags": 0
+        },
+        {
+          "type": 0,
+          "subtype": 17,
+          "offset": "0x150000",
+          "size": 1310720,
+          "label": "app1",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 130,
+          "offset": "0x290000",
+          "size": 1441792,
+          "label": "spiffs",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 3,
+          "offset": "0x3f0000",
+          "size": 65536,
+          "label": "coredump",
+          "flags": 0
+        }
+      ],
+      "app_descriptor_candidates": [],
+      "pem_private_key_marker_present": false,
+      "pem_private_key_candidates": [],
+      "valid_pem_private_keys_found": 0,
+      "non_fixture_private_keys_found": 0
+    },
+    {
+      "path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/3.固件+烧录软件(无需编译，直接烧录)/固件/target.bin",
+      "bytes": 973712,
+      "sha256": "68fb36ba3bf09ad2007459dfece6bd36593e384674238ae8647b80a6de4fdc97",
+      "headers": [
+        {
+          "offset": "0x0",
+          "segments": 3,
+          "chip_id": 9,
+          "chip": "ESP32-S3",
+          "flash_size_field_mb": 2,
+          "entrypoint": "0x403c8924"
+        },
+        {
+          "offset": "0x10000",
+          "segments": 6,
+          "chip_id": 9,
+          "chip": "ESP32-S3",
+          "flash_size_field_mb": 2,
+          "entrypoint": "0x40375538"
+        }
+      ],
+      "valid_full_image_or_flash_layout_verified": false,
+      "partition_table_at_0x8000": [
+        {
+          "type": 1,
+          "subtype": 2,
+          "offset": "0x9000",
+          "size": 24576,
+          "label": "nvs",
+          "flags": 0
+        },
+        {
+          "type": 1,
+          "subtype": 1,
+          "offset": "0xf000",
+          "size": 4096,
+          "label": "phy_init",
+          "flags": 0
+        },
+        {
+          "type": 0,
+          "subtype": 0,
+          "offset": "0x10000",
+          "size": 1048576,
+          "label": "factory",
+          "flags": 0
+        }
+      ],
+      "app_descriptor_candidates": [
+        {
+          "file_offset": "0x10020",
+          "version": "1",
+          "project_name": "esp32_tank",
+          "build_time": "14:26:46",
+          "build_date": "Jul  3 2026",
+          "idf_version": "v5.5.2"
+        }
+      ],
+      "pem_private_key_marker_present": false,
+      "pem_private_key_candidates": [],
+      "valid_pem_private_keys_found": 0,
+      "non_fixture_private_keys_found": 0
+    }
+  ],
+  "scope": "Parse known image-header offsets only. No image execution, disassembly, full image checksum validation, flashing, peripheral compatibility or functional verification. Also read candidate 0x8000 partition tables and app descriptors; these are untrusted binary labels, not a source-to-binary reproducible build proof."
+}

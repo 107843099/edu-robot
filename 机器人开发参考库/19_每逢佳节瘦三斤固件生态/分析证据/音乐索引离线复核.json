@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-03",
+  "scope": "AST extraction of original MusicManager and iter_faststart only; synthetic filenames, fake audio bytes, LRC and MP4 boxes. No FastAPI server, network download, genuine audio decode or firmware client.",
+  "source_sha256": "1346faccbe0a1d110660cad7465d7c07d40b405fb36fe5c30d61599e463fe352",
+  "checks": [
+    "PASS five formats scanned; OGG excluded",
+    "PASS spaced separator artist-first",
+    "PASS unspaced separator title-first",
+    "PASS case normalization and directory artist fallback",
+    "PASS pagination",
+    "PASS UTF-8 LRC and missing song",
+    "PASS IDs depend on relative path rather than content",
+    "PASS synthetic MP4 box reorder without transcoding",
+    "PASS already faststart uses original order"
+  ],
+  "check_count": 9,
+  "hardware_test": false,
+  "network_used": false
+}

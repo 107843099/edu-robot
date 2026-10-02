@@ -1,0 +1,61 @@
+[
+  {
+    "source_type": "user-provided local folder",
+    "date": "2026-10-03",
+    "manifest": "本地资料来源与校验.json",
+    "original_files": [
+      {
+        "original_path": "每逢佳节瘦三斤的固件/flash_download_tool (1).zip",
+        "saved_path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/原始资料/每逢佳节瘦三斤的固件/flash_download_tool (1).zip",
+        "bytes": 24864745,
+        "sha256": "042280a777ca7f812f013035cddf63d64254858dc3fcbea46dc8fe6ae14560b5"
+      },
+      {
+        "original_path": "每逢佳节瘦三斤的固件/ESP32烧录工具_带MAC1.1.exe",
+        "saved_path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/原始资料/每逢佳节瘦三斤的固件/ESP32烧录工具_带MAC1.1.exe",
+        "bytes": 24922405,
+        "sha256": "b7bd917351d97c710c1c598e1cd894294a377d43e0cf9d5ceab01b2e5cec0c59"
+      },
+      {
+        "original_path": "每逢佳节瘦三斤的固件/本地音乐服务器-配套支持小智四足机器人.zip",
+        "saved_path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/原始资料/每逢佳节瘦三斤的固件/本地音乐服务器-配套支持小智四足机器人.zip",
+        "bytes": 85679014,
+        "sha256": "dc8d6065cda8c86563c23888c8984124a90a6a8cae8d1cd6e7918aca77ffccba"
+      },
+      {
+        "original_path": "每逢佳节瘦三斤的固件/每逢佳节瘦三斤的固件(未经许可切勿商用).zip",
+        "saved_path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/原始资料/每逢佳节瘦三斤的固件/每逢佳节瘦三斤的固件(未经许可切勿商用).zip",
+        "bytes": 101303975,
+        "sha256": "5a84fa72f266c1dd2ad1045a607b7c1ed50a8d46300c574240ed65bb905cb3dc"
+      },
+      {
+        "original_path": "每逢佳节瘦三斤的固件/固件分发/略懂.bin",
+        "saved_path": null,
+        "bytes": 11891073,
+        "sha256": "ea6bf96aa919130ceaf27dec4df3c123b3a1ec2a06d5422e16968649033b8b21",
+        "public_notice": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/原始资料/每逢佳节瘦三斤的固件/固件分发/略懂固件公开归档说明.md",
+        "publication_status": "private-only: embedded valid private key; binary preserved unchanged outside public repository",
+        "static_metadata_published": true
+      },
+      {
+        "original_path": "每逢佳节瘦三斤的固件/高精度5V2A充放电一体模块 Type-C输入 兼容4.2V4.35V锂电池/新建 DOCX 文档.docx",
+        "saved_path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/原始资料/每逢佳节瘦三斤的固件/高精度5V2A充放电一体模块 Type-C输入 兼容4.2V4.35V锂电池/新建 DOCX 文档.docx",
+        "bytes": 439445,
+        "sha256": "1302bc2df3f3beff7a67bd0d3f0092deb156d3a0a9289873b37f740bd78c162e"
+      }
+    ],
+    "public_extracted_files": 325,
+    "archive_only_entries": [],
+    "private_only_files": [
+      {
+        "original_path": "每逢佳节瘦三斤的固件/固件分发/略懂.bin",
+        "bytes": 11891073,
+        "sha256": "ea6bf96aa919130ceaf27dec4df3c123b3a1ec2a06d5422e16968649033b8b21",
+        "reason": "Complete valid PEM private key embedded in binary, not matched to known public test fixtures. No binary patch or flashable public replacement."
+      }
+    ],
+    "github_commit": null,
+    "license_status": "not supplied for the complete local bundle",
+    "physical_test": false
+  }
+]

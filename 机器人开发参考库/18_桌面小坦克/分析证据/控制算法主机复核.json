@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-03",
+  "scope": "Unchanged vendor tank_control.c compiled for host using a mock motor driver. Does not compile the full ESP-IDF firmware or validate watchdog timing, WiFi, PWM, current, motion or hardware.",
+  "source_sha256": "486da39cca2ce7e53bf6a58306f097a7257922b8a5dd075eefea6c2c41a86509",
+  "compile_exit_code": 0,
+  "run_exit_code": 0,
+  "checks": [
+    "PASS first_call_ramp_8",
+    "PASS nominal_85_limit_becomes_93_after_deadzone",
+    "PASS stop_resets_ramp_state",
+    "PASS in_place_rotation",
+    "PASS differential_normalization"
+  ],
+  "hardware_test": false
+}

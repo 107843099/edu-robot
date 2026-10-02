@@ -1,0 +1,20 @@
+INFO:     Started server process [4120]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+==================================================
+  本地音乐服务器 - xiaozhi-esp32
+==================================================
+  服务器: http://192.168.3.7:8888
+  曲库:   e:\music_server\music
+  歌曲:   0 首
+
+  API:
+  GET http://192.168.3.7:8888/api/list         列出歌曲
+  GET http://192.168.3.7:8888/api/search?      搜索歌曲
+  GET http://192.168.3.7:8888/api/play/ID     播放歌曲
+  GET http://192.168.3.7:8888/api/lyrics/ID   查看歌词
+  POST http://192.168.3.7:8888/api/rescan     重新扫描
+==================================================
+INFO:     127.0.0.1:60965 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60983 - "POST /api/rescan HTTP/1.1" 200 OK

@@ -1,0 +1,66 @@
+*************************** START ****************************
+Chip: ESP32C3
+Download mode: uart
+Start time: 20260417-10:19
+Connect baud: 115200
+Com:COM19
+connecting...
+manufacturer_id: 0x46
+device_id: 0x4016
+fs:0x200200
+address/file: 0 C:\Users\PLL\Desktop\每逢佳节瘦三斤的固件-群控3.0\xiaoche\flash_download_tool\dl_temp\bin_tmp\downloadPanel1\QUNKONG.bin
+Wrote 4194304 bytes (815560 compressed) at 0x00000000 in 7.6 seconds (effective 4429.8 kbit/s)...
+File: C:\Users\PLL\Desktop\每逢佳节瘦三斤的固件-群控3.0\xiaoche\flash_download_tool\dl_temp\bin_tmp\downloadPanel1\QUNKONG.bin
+File  md5: a4666fd1d176fae0a48448e0d1e01e3c
+Flash md5: a4666fd1d176fae0a48448e0d1e01e3c
+Hash of data verified.
+
+Leaving...
+com closed
+Total use time: 13 s
+Download result: PASS
+*************************** END ****************************
+
+*************************** START ****************************
+Chip: ESP32C3
+Download mode: uart
+Start time: 20260426-12:12
+Connect baud: 115200
+Com:COM19
+connecting...
+manufacturer_id: 0x46
+device_id: 0x4016
+com closed
+Total use time: 8 s
+Download result: PASS
+*************************** END ****************************
+
+*************************** START ****************************
+Chip: ESP32C3
+Download mode: uart
+Start time: 20260426-12:13
+Connect baud: 115200
+Com:COM19
+*************************** START ****************************
+Chip: ESP32C3
+Download mode: uart
+Start time: 20260426-12:13
+Connect baud: 115200
+Com:COM19
+connecting...
+manufacturer_id: 0x46
+device_id: 0x4016
+fs:0x200200
+address/file: 0 C:\Users\PLL\Desktop\每逢佳节瘦三斤的固件-群控3.1\xiaoche\flash_download_tool\dl_temp\bin_tmp\downloadPanel1\merged-binary.bin
+Wrote 3019816 bytes (1573238 compressed) at 0x00000000 in 11.7 seconds (effective 2056.6 kbit/s)...
+File: C:\Users\PLL\Desktop\每逢佳节瘦三斤的固件-群控3.1\xiaoche\flash_download_tool\dl_temp\bin_tmp\downloadPanel1\merged-binary.bin
+File  md5: eec39f84b17f17aa065ac4f1802272b8
+Flash md5: eec39f84b17f17aa065ac4f1802272b8
+Hash of data verified.
+
+Leaving...
+com closed
+Total use time: 19 s
+Download result: PASS
+*************************** END ****************************
+

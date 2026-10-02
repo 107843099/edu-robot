@@ -1,0 +1,1479 @@
+{
+  "date": "2026-10-03",
+  "comparison": {
+    "common_files": 100,
+    "identical_files": 77,
+    "different_files": 23,
+    "critical_files": {
+      "User/main.c": {
+        "path": "User/main.c",
+        "local_sha256": "298cddedb108422aa89afc984afc1d6f8689e4a9c3c57eee23442514364e8c80",
+        "github_sha256": "93f443ecc6e475f2613b3622c669c12da50b8788502286a077636062ee45aa78",
+        "same": false
+      },
+      "User/Mode.c": {
+        "path": "User/Mode.c",
+        "local_sha256": "f1ba581fd3fa87379ef6bf37f7b5e46464ea971073aaa176d214609acc0b7e5c",
+        "github_sha256": "257136ee4a65164f96f4700498ab8c748e60aca3e58f56e3c6ef9006b18bea0b",
+        "same": false
+      },
+      "Hardware/Movement.c": {
+        "path": "Hardware/Movement.c",
+        "local_sha256": "3c952d65b9bfa8e9a6f864fddda6b322ca551b2044d994515064c691a034dd92",
+        "github_sha256": "ff9f6bc146a9244a373e54eff3ca204439a22330d3ef0a7608a9a1596cd9eab6",
+        "same": false
+      },
+      "Hardware/PWM.c": {
+        "path": "Hardware/PWM.c",
+        "local_sha256": "75918cd390bace25bd1249f0727f6b456201b46b9850190c8591c30fdee19000",
+        "github_sha256": "75918cd390bace25bd1249f0727f6b456201b46b9850190c8591c30fdee19000",
+        "same": true
+      },
+      "Hardware/Servo.c": {
+        "path": "Hardware/Servo.c",
+        "local_sha256": "9bf870a15dd36e72d0a76151904673f24a3212942686fa3fb11a6b110b5c311e",
+        "github_sha256": "6f4f59f2ce320d2bf5d842d77f7b2683c7ffbdb700c04ad8ccb70cab5408b30f",
+        "same": false
+      },
+      "System/usart1.c": {
+        "path": "System/usart1.c",
+        "local_sha256": "3837ff5bb6065c19795d9c5af3833da71eb594deabee3539c27c4f513c2d0d5c",
+        "github_sha256": "61d2089e915f8b3d4a5af05057011561565e96e5ee662733aad2d775e44804f8",
+        "same": false
+      },
+      "System/usart2.c": {
+        "path": "System/usart2.c",
+        "local_sha256": "ae082db462f61e1a9b1c31d2d7eb2e61f781bbb77ce024a79c1e6058aa46e571",
+        "github_sha256": "c9228f4bbd8c8e056d1c7010ade66addeaf25c32192d87b74fc0b5b52e1a631b",
+        "same": false
+      }
+    },
+    "all_common_files": [
+      {
+        "path": "Project.uvprojx",
+        "local_sha256": "fc4d337cacaf72af20008e1a6d1df5fc0d829e5557be51e2f18647a6071306fd",
+        "github_sha256": "091a755a140c1cf08ad277a549e346f10cb5d3d6f064d18f3eeece3147bff30e",
+        "same": false
+      },
+      {
+        "path": "Project.uvoptx",
+        "local_sha256": "a6bff989f59f2678f61bea57702eaa825f7f5ea6e764fc071a110fb3966b6f73",
+        "github_sha256": "9540f0b6628a807191a84ce6e0aae136ba9a00c5475ad3d9edb241f98991ed4a",
+        "same": false
+      },
+      {
+        "path": "Hardware/Mode.c",
+        "local_sha256": "8041e819dd61a34a596e592a347e0661cf70ae36926ae02d4bbab4ed57475745",
+        "github_sha256": "8041e819dd61a34a596e592a347e0661cf70ae36926ae02d4bbab4ed57475745",
+        "same": true
+      },
+      {
+        "path": "Hardware/LED.c",
+        "local_sha256": "7bad1b9435111441802e9892e19869a2f61509607e3320fb4e77bab879d381c4",
+        "github_sha256": "7bad1b9435111441802e9892e19869a2f61509607e3320fb4e77bab879d381c4",
+        "same": true
+      },
+      {
+        "path": "Hardware/Hongwai.c",
+        "local_sha256": "019afa96849a46a6113a4928758d5e6c92ab288d124a938b5ae1d9d6db05ebea",
+        "github_sha256": "019afa96849a46a6113a4928758d5e6c92ab288d124a938b5ae1d9d6db05ebea",
+        "same": true
+      },
+      {
+        "path": "Hardware/Movement.h",
+        "local_sha256": "abbac22729b04e6eb5aa7296d625ad6237b70cc3852232533df3849b1408de47",
+        "github_sha256": "abbac22729b04e6eb5aa7296d625ad6237b70cc3852232533df3849b1408de47",
+        "same": true
+      },
+      {
+        "path": "Hardware/Serial.c",
+        "local_sha256": "3e5ad295389661853e56a7fb3a4b6c267e527f034a9b69edb8d0c24717b7b751",
+        "github_sha256": "dceebbeca2cb16c67b7d2d07957424460a7a61590b2f42c23d1f0798df62e7ba",
+        "same": false
+      },
+      {
+        "path": "Hardware/Timer.c",
+        "local_sha256": "56c62f65bc5a01316e855ae7251a5a54c60eef62615dfed6c78deefbe68d5777",
+        "github_sha256": "56db47f2dc40241cb8b33ddd5454b5d2e0efc43d06ae5092bb231152411525ce",
+        "same": false
+      },
+      {
+        "path": "Hardware/OLED.c",
+        "local_sha256": "17aa3288e22cdefb581ca46ad27de1ea5116c50b4fc37a9cb8ee89dac890045f",
+        "github_sha256": "077fde5fbdc60e31e5cd5556aaf2534096f07b44dbdd8af22a106eab41794d76",
+        "same": false
+      },
+      {
+        "path": "Hardware/6288.txt",
+        "local_sha256": "a624d0f1ec7b3266dccc3ee97bd2b4c563a00cbfbd3dff249e9a6341f646a1f3",
+        "github_sha256": "a624d0f1ec7b3266dccc3ee97bd2b4c563a00cbfbd3dff249e9a6341f646a1f3",
+        "same": true
+      },
+      {
+        "path": "Hardware/Servo.c",
+        "local_sha256": "9bf870a15dd36e72d0a76151904673f24a3212942686fa3fb11a6b110b5c311e",
+        "github_sha256": "6f4f59f2ce320d2bf5d842d77f7b2683c7ffbdb700c04ad8ccb70cab5408b30f",
+        "same": false
+      },
+      {
+        "path": "Hardware/OLED_Data.h",
+        "local_sha256": "20bf7493c001f3c8395d5b2b503aed36196f04bcc4b580018b9d90d20f25660c",
+        "github_sha256": "78dc1b34a904fc2a8a5bab96a13365e2dae0755ce62ed53c7e90f680c81ff756",
+        "same": false
+      },
+      {
+        "path": "Hardware/PWM.h",
+        "local_sha256": "1d53af1036e0cf737befe95340d6f338cedba7007ce7bd3500d988d4cfc42d48",
+        "github_sha256": "1d53af1036e0cf737befe95340d6f338cedba7007ce7bd3500d988d4cfc42d48",
+        "same": true
+      },
+      {
+        "path": "Hardware/syn6288.c",
+        "local_sha256": "87cc40e91b6fc724c1cfd685537f8dfcda81bbb17d31ab45fe488aae6f9f1971",
+        "github_sha256": "ef8003819603b06cc2cf104960014aba8188bf848f51fdce7373b09a1d7011d8",
+        "same": false
+      },
+      {
+        "path": "Hardware/UltrasonicWave.h",
+        "local_sha256": "95aa05c2fb356952081762d2786026ced8ee64477d2c38739a2dca84ef2521df",
+        "github_sha256": "95aa05c2fb356952081762d2786026ced8ee64477d2c38739a2dca84ef2521df",
+        "same": true
+      },
+      {
+        "path": "Hardware/Serial.h",
+        "local_sha256": "09f2702a026732e53272064dacf9af4b1201d6495519d307cf113358e06723d6",
+        "github_sha256": "8858e25baf2a838d007c096df581720fb9ea833b1619ca04e87f4215947251da",
+        "same": false
+      },
+      {
+        "path": "Hardware/Timer.h",
+        "local_sha256": "07c47549e762ea40043d5751d282beba02a8dc3499a217e30ad5fa85c62d0855",
+        "github_sha256": "487334067875e6966ab2da1b1bcce290016faa688e5504a353831f169e2d2ee5",
+        "same": false
+      },
+      {
+        "path": "Hardware/Movement.c",
+        "local_sha256": "3c952d65b9bfa8e9a6f864fddda6b322ca551b2044d994515064c691a034dd92",
+        "github_sha256": "ff9f6bc146a9244a373e54eff3ca204439a22330d3ef0a7608a9a1596cd9eab6",
+        "same": false
+      },
+      {
+        "path": "Hardware/Hongwai.h",
+        "local_sha256": "956e01bcdbf17f68ff008cb27b1c03cd37a0c565e7cf6e2ff7ccba90a34ed0c1",
+        "github_sha256": "956e01bcdbf17f68ff008cb27b1c03cd37a0c565e7cf6e2ff7ccba90a34ed0c1",
+        "same": true
+      },
+      {
+        "path": "Hardware/LED.h",
+        "local_sha256": "8be876335a47ec5e1665c9006822a3108165a9c2fd2c65b1ffdd68a295b08918",
+        "github_sha256": "8be876335a47ec5e1665c9006822a3108165a9c2fd2c65b1ffdd68a295b08918",
+        "same": true
+      },
+      {
+        "path": "Hardware/Mode.h",
+        "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "github_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "same": true
+      },
+      {
+        "path": "Hardware/Servo.h",
+        "local_sha256": "e242066e03608cd01379866ead3eb1eb35e4d841ad1b75f696719112835ac3e1",
+        "github_sha256": "e242066e03608cd01379866ead3eb1eb35e4d841ad1b75f696719112835ac3e1",
+        "same": true
+      },
+      {
+        "path": "Hardware/OLED.h",
+        "local_sha256": "d83606f60ff68d70b4a3a0859b45e3234fe7e521e49633105b84febc24586d39",
+        "github_sha256": "e75f0995aaa097bf303ad72b64aafbb14830e7b2dc4f3073ea7f678459bdbf0a",
+        "same": false
+      },
+      {
+        "path": "Hardware/PWM.c",
+        "local_sha256": "75918cd390bace25bd1249f0727f6b456201b46b9850190c8591c30fdee19000",
+        "github_sha256": "75918cd390bace25bd1249f0727f6b456201b46b9850190c8591c30fdee19000",
+        "same": true
+      },
+      {
+        "path": "Hardware/OLED_Data.c",
+        "local_sha256": "a409728b5e81084514c810d37482f048d7071803f4d169de4997464565091428",
+        "github_sha256": "4919098ca59ca6461f38a9ca232c2662e573e59c690257e844d48d83c0a95581",
+        "same": false
+      },
+      {
+        "path": "Hardware/UltrasonicWave.c",
+        "local_sha256": "10736d8bc20aa54c064fc85e90867dc311763e90abaa13a34aa003966de898dc",
+        "github_sha256": "3e9807f8741f7e5897cc52817891516302039b7b4ba96f2d97f180d4b8188ddf",
+        "same": false
+      },
+      {
+        "path": "Hardware/syn6288.h",
+        "local_sha256": "507a00ce00854c9e06a32c0d83d2deeb78fb44f18ea2a7a339e8a0fca945e4d3",
+        "github_sha256": "507a00ce00854c9e06a32c0d83d2deeb78fb44f18ea2a7a339e8a0fca945e4d3",
+        "same": true
+      },
+      {
+        "path": "Start/startup_stm32f10x_cl.s",
+        "local_sha256": "fe249e5ec3856feb2596bda8a09eed91a5b7d634abc96fc2981c24c1260e204d",
+        "github_sha256": "fe249e5ec3856feb2596bda8a09eed91a5b7d634abc96fc2981c24c1260e204d",
+        "same": true
+      },
+      {
+        "path": "Start/core_cm3.h",
+        "local_sha256": "de4668aa9d314d05769dfb29f028e205b50577c6b2150fc6bccb34bd34179bbb",
+        "github_sha256": "de4668aa9d314d05769dfb29f028e205b50577c6b2150fc6bccb34bd34179bbb",
+        "same": true
+      },
+      {
+        "path": "Start/startup_stm32f10x_md_vl.s",
+        "local_sha256": "4d453f0a56a416ef6f1f6ff3f3ecdd3e65c1f055b46c0be1fde0bcf47535498b",
+        "github_sha256": "4d453f0a56a416ef6f1f6ff3f3ecdd3e65c1f055b46c0be1fde0bcf47535498b",
+        "same": true
+      },
+      {
+        "path": "Start/startup_stm32f10x_hd_vl.s",
+        "local_sha256": "1c20befd815cc2707370a3ff530c0e050db4a90d5d76a270290e3c3495f76f3c",
+        "github_sha256": "1c20befd815cc2707370a3ff530c0e050db4a90d5d76a270290e3c3495f76f3c",
+        "same": true
+      },
+      {
+        "path": "Start/startup_stm32f10x_ld_vl.s",
+        "local_sha256": "ad7afad5352f4ebef018c689d40fda1834805c8a9c3f67a3826f6e8d15d2f41f",
+        "github_sha256": "ad7afad5352f4ebef018c689d40fda1834805c8a9c3f67a3826f6e8d15d2f41f",
+        "same": true
+      },
+      {
+        "path": "Start/system_stm32f10x.c",
+        "local_sha256": "45f52950f5fc6509920fb26d1362e8457907c2d62fa455cbe3c6ce6daa974a76",
+        "github_sha256": "45f52950f5fc6509920fb26d1362e8457907c2d62fa455cbe3c6ce6daa974a76",
+        "same": true
+      },
+      {
+        "path": "Start/stm32f10x.h",
+        "local_sha256": "4ee722d262c1e7d7505d7dc7eeb8ccaaf67158b51ee4bc177397cd64e74e1b3a",
+        "github_sha256": "4ee722d262c1e7d7505d7dc7eeb8ccaaf67158b51ee4bc177397cd64e74e1b3a",
+        "same": true
+      },
+      {
+        "path": "Start/core_cm3.c",
+        "local_sha256": "e93a7e36349e7810f328276a3fed56701e10536779f7527a8ccd140618a556b0",
+        "github_sha256": "e93a7e36349e7810f328276a3fed56701e10536779f7527a8ccd140618a556b0",
+        "same": true
+      },
+      {
+        "path": "Start/startup_stm32f10x_ld.s",
+        "local_sha256": "d36ebab687be79789ac7250e1e70310ae7ea4f7de7a6fddc1deda4a134263977",
+        "github_sha256": "d36ebab687be79789ac7250e1e70310ae7ea4f7de7a6fddc1deda4a134263977",
+        "same": true
+      },
+      {
+        "path": "Start/startup_stm32f10x_xl.s",
+        "local_sha256": "0946ba9c61c7cf85f5669b0ce38cf393177e5e1a735666331587dcf124019a18",
+        "github_sha256": "0946ba9c61c7cf85f5669b0ce38cf393177e5e1a735666331587dcf124019a18",
+        "same": true
+      },
+      {
+        "path": "Start/startup_stm32f10x_hd.s",
+        "local_sha256": "1ad6e0a965254d4cd1a6cc289011214c8d3f1468d77e9ad1f235d80792cda2fc",
+        "github_sha256": "1ad6e0a965254d4cd1a6cc289011214c8d3f1468d77e9ad1f235d80792cda2fc",
+        "same": true
+      },
+      {
+        "path": "Start/system_stm32f10x.h",
+        "local_sha256": "919dc1f5c6bbba74cb712e8ec7cf73f1988eafa9438c706526fb401a2ab4672d",
+        "github_sha256": "919dc1f5c6bbba74cb712e8ec7cf73f1988eafa9438c706526fb401a2ab4672d",
+        "same": true
+      },
+      {
+        "path": "Start/startup_stm32f10x_md.s",
+        "local_sha256": "8bff69adff662663c0fcbee4cfbeb3ed9ff2b7501527f24815789f2736420d23",
+        "github_sha256": "8bff69adff662663c0fcbee4cfbeb3ed9ff2b7501527f24815789f2736420d23",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_tim.h",
+        "local_sha256": "dddf89f9b7134a2f15ed9cc2521589ee9a2e18c0553a6017c71b5d5b394524e5",
+        "github_sha256": "dddf89f9b7134a2f15ed9cc2521589ee9a2e18c0553a6017c71b5d5b394524e5",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_cec.c",
+        "local_sha256": "5cf689d7a2ecc3244b18099ae254dc6b0bff023406c898a82dbbd42a29b86e7c",
+        "github_sha256": "5cf689d7a2ecc3244b18099ae254dc6b0bff023406c898a82dbbd42a29b86e7c",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_usart.c",
+        "local_sha256": "6d7af47017b01eb260fb7699f5c483e0a8576b4c780069a99975b7c6443030dd",
+        "github_sha256": "6d7af47017b01eb260fb7699f5c483e0a8576b4c780069a99975b7c6443030dd",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_spi.h",
+        "local_sha256": "e5dce165ef95fd872a8802cc4f9205b389e4ecdd28a0d74f8aa6c9c3d1ea4225",
+        "github_sha256": "e5dce165ef95fd872a8802cc4f9205b389e4ecdd28a0d74f8aa6c9c3d1ea4225",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_pwr.c",
+        "local_sha256": "3f8c77033caad162a69fe9780d7be2ab973f02be0e736e37c2e633f4a4e2bd28",
+        "github_sha256": "3f8c77033caad162a69fe9780d7be2ab973f02be0e736e37c2e633f4a4e2bd28",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_rtc.h",
+        "local_sha256": "4a0ef73054c3f7f7ad325c6ef0268edb3c5e8987978bdac8a695dc548e13b94c",
+        "github_sha256": "4a0ef73054c3f7f7ad325c6ef0268edb3c5e8987978bdac8a695dc548e13b94c",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_flash.h",
+        "local_sha256": "952ca72ee4d01e49d392d55af2b146bd9f15763230660334e78ac2cad8cb8982",
+        "github_sha256": "952ca72ee4d01e49d392d55af2b146bd9f15763230660334e78ac2cad8cb8982",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_gpio.h",
+        "local_sha256": "ef945fe7b2e4a8f3bf8fa22d44274085444dec80424f91606a1467ea4e69626f",
+        "github_sha256": "ef945fe7b2e4a8f3bf8fa22d44274085444dec80424f91606a1467ea4e69626f",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_adc.c",
+        "local_sha256": "d269b826f617c7b1426155cdfc8a220d05aee74580b80b92f86bf33ea9d8be98",
+        "github_sha256": "d269b826f617c7b1426155cdfc8a220d05aee74580b80b92f86bf33ea9d8be98",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_bkp.h",
+        "local_sha256": "bd3ae6fe6a6e617216d60a11a7437be97dca2ea02f3ad78afe889850473fdb16",
+        "github_sha256": "bd3ae6fe6a6e617216d60a11a7437be97dca2ea02f3ad78afe889850473fdb16",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_fsmc.c",
+        "local_sha256": "1b623840bba04095a150fcf051fd2a3df4838799b96ae2e36f28675e92c23e44",
+        "github_sha256": "1b623840bba04095a150fcf051fd2a3df4838799b96ae2e36f28675e92c23e44",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_dma.c",
+        "local_sha256": "b0ac759af150deaa84d8a337a8873a2fbc03e36b1db6623175ab2443efa45d6f",
+        "github_sha256": "b0ac759af150deaa84d8a337a8873a2fbc03e36b1db6623175ab2443efa45d6f",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_exti.c",
+        "local_sha256": "5783d10d46275d8baee9f2861cf434b5c12a4bc8f42ed4af9e503c1818941ebe",
+        "github_sha256": "5783d10d46275d8baee9f2861cf434b5c12a4bc8f42ed4af9e503c1818941ebe",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_dac.c",
+        "local_sha256": "789a92c1dbb0dc74688fff8e415a93da816956a7a44882488d25af7ac055cbc7",
+        "github_sha256": "789a92c1dbb0dc74688fff8e415a93da816956a7a44882488d25af7ac055cbc7",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_wwdg.c",
+        "local_sha256": "1d51fbbe3da7731b2303408f00693b51dbf62226590b1264cbbf35be01aa90ea",
+        "github_sha256": "1d51fbbe3da7731b2303408f00693b51dbf62226590b1264cbbf35be01aa90ea",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_sdio.h",
+        "local_sha256": "35f5d75421ab3c76d1d76e2c26d0910864161966cc16b74f8327c173ae123deb",
+        "github_sha256": "35f5d75421ab3c76d1d76e2c26d0910864161966cc16b74f8327c173ae123deb",
+        "same": true
+      },
+      {
+        "path": "Library/misc.h",
+        "local_sha256": "40c918f726035dfa67a7bfadefac8e922196d7918f915a7f2db1e652625c7e41",
+        "github_sha256": "40c918f726035dfa67a7bfadefac8e922196d7918f915a7f2db1e652625c7e41",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_can.c",
+        "local_sha256": "bf9d3bec0785b8f28d9eb046bc67181071586e10014d4f595ba0e582257f31ad",
+        "github_sha256": "bf9d3bec0785b8f28d9eb046bc67181071586e10014d4f595ba0e582257f31ad",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_i2c.h",
+        "local_sha256": "08b14d416090815765a02e6fecf78cbdd3de4ad330d3bc04b2133f8f4f3f2daa",
+        "github_sha256": "08b14d416090815765a02e6fecf78cbdd3de4ad330d3bc04b2133f8f4f3f2daa",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_iwdg.c",
+        "local_sha256": "bdae6086ce189dac8d464d10bb2ab58a957bbd8f89834e1cc7716faf3e34c9ce",
+        "github_sha256": "bdae6086ce189dac8d464d10bb2ab58a957bbd8f89834e1cc7716faf3e34c9ce",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_dbgmcu.h",
+        "local_sha256": "998751256df8a0423dc73be45e489fc04cb2b124a6f04a6ad65e4d53e59f45ba",
+        "github_sha256": "998751256df8a0423dc73be45e489fc04cb2b124a6f04a6ad65e4d53e59f45ba",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_crc.c",
+        "local_sha256": "962aa1381467118ee7e9bea68ad01b3ca3f9fbbd749242211e2d340bf896d0d4",
+        "github_sha256": "962aa1381467118ee7e9bea68ad01b3ca3f9fbbd749242211e2d340bf896d0d4",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_rcc.h",
+        "local_sha256": "894e140a70b0cdc94e4e96c5011def9dca5a103752783c3bb7cab538fc426f9e",
+        "github_sha256": "894e140a70b0cdc94e4e96c5011def9dca5a103752783c3bb7cab538fc426f9e",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_flash.c",
+        "local_sha256": "a04fcf26499252a6b02de1cefd33c26b8802d5ff1f9bef920bbddeefdd602f43",
+        "github_sha256": "a04fcf26499252a6b02de1cefd33c26b8802d5ff1f9bef920bbddeefdd602f43",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_gpio.c",
+        "local_sha256": "8255650b583b2bab2c320e0974309a6ccf26f661e7ad1b54282c0f0e2b9a1acf",
+        "github_sha256": "8255650b583b2bab2c320e0974309a6ccf26f661e7ad1b54282c0f0e2b9a1acf",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_pwr.h",
+        "local_sha256": "b7b31d2bfb3d56e763d70e9db4eecfc996664619916ac4bee9d9928430ffac79",
+        "github_sha256": "b7b31d2bfb3d56e763d70e9db4eecfc996664619916ac4bee9d9928430ffac79",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_rtc.c",
+        "local_sha256": "59bc07137d60efbbf69703b88e72bb2153c2e97beee16a1d262a7050686fb00b",
+        "github_sha256": "59bc07137d60efbbf69703b88e72bb2153c2e97beee16a1d262a7050686fb00b",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_usart.h",
+        "local_sha256": "9d4c2067e54defd64b000076e6561726d758c872d354bed6eea66a6767c08bce",
+        "github_sha256": "9d4c2067e54defd64b000076e6561726d758c872d354bed6eea66a6767c08bce",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_spi.c",
+        "local_sha256": "0214f213058353f2fd9d3a4036ccabbea0b73b60aae0652acf36df539adbb9c6",
+        "github_sha256": "0214f213058353f2fd9d3a4036ccabbea0b73b60aae0652acf36df539adbb9c6",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_tim.c",
+        "local_sha256": "bd12bf18b03b8585ac2ba6bd0e80ec39d8fd0c89307eb54f5a7be38a46894d03",
+        "github_sha256": "bd12bf18b03b8585ac2ba6bd0e80ec39d8fd0c89307eb54f5a7be38a46894d03",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_cec.h",
+        "local_sha256": "620485eb06b33c96a5a8de3fb1116db876162a44da15441883f0cc675e890059",
+        "github_sha256": "620485eb06b33c96a5a8de3fb1116db876162a44da15441883f0cc675e890059",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_wwdg.h",
+        "local_sha256": "eb1a01bbaa33babc416d8ecdb40b5a97a21522eb5c7952ba1bec09924580790e",
+        "github_sha256": "eb1a01bbaa33babc416d8ecdb40b5a97a21522eb5c7952ba1bec09924580790e",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_dac.h",
+        "local_sha256": "446107ab9e933ccc284be0cd8f0c32edc3e96ba6f990dea8bd1f1cf080d35ef6",
+        "github_sha256": "446107ab9e933ccc284be0cd8f0c32edc3e96ba6f990dea8bd1f1cf080d35ef6",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_exti.h",
+        "local_sha256": "661b039483459137a58bfdea7522528b9b6e923d61966d4c7c8a5035bd375f5f",
+        "github_sha256": "661b039483459137a58bfdea7522528b9b6e923d61966d4c7c8a5035bd375f5f",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_sdio.c",
+        "local_sha256": "d042b43fbfd5431719a7310ebe2d38c861a663d07e0c0735e466785e07fc1d97",
+        "github_sha256": "d042b43fbfd5431719a7310ebe2d38c861a663d07e0c0735e466785e07fc1d97",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_dma.h",
+        "local_sha256": "2ba038050d07735a42645f2508e62078c217dc750878097f7f113660e0d58ffb",
+        "github_sha256": "2ba038050d07735a42645f2508e62078c217dc750878097f7f113660e0d58ffb",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_bkp.c",
+        "local_sha256": "f78d5077029cfec54da52ea4f9d8796dabdf1da5dc6cc29e3395e0f6923645a0",
+        "github_sha256": "f78d5077029cfec54da52ea4f9d8796dabdf1da5dc6cc29e3395e0f6923645a0",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_adc.h",
+        "local_sha256": "005a122259e9657bd6b3171dd0e478c143c2a70f8e364b505b84f3fd0a8b1b9f",
+        "github_sha256": "005a122259e9657bd6b3171dd0e478c143c2a70f8e364b505b84f3fd0a8b1b9f",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_fsmc.h",
+        "local_sha256": "b2e640d05f6dd11e1fe70bfa0db8aa53cb0a918eef412d6a35630b1357dc5ff6",
+        "github_sha256": "b2e640d05f6dd11e1fe70bfa0db8aa53cb0a918eef412d6a35630b1357dc5ff6",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_dbgmcu.c",
+        "local_sha256": "9bfb6f964cd3b06a04c67772e52f31814e5a3d39a951a27bf9f2ef352237e23d",
+        "github_sha256": "9bfb6f964cd3b06a04c67772e52f31814e5a3d39a951a27bf9f2ef352237e23d",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_iwdg.h",
+        "local_sha256": "4a0e65ceebeb69dee10923ab5478938ec7af1357849fbf862d45d19dbb01091a",
+        "github_sha256": "4a0e65ceebeb69dee10923ab5478938ec7af1357849fbf862d45d19dbb01091a",
+        "same": true
+      },
+      {
+        "path": "Library/misc.c",
+        "local_sha256": "152c632e56151b2564121c56ff359d0f041621f0da6ed101d7fd376a139a5c75",
+        "github_sha256": "152c632e56151b2564121c56ff359d0f041621f0da6ed101d7fd376a139a5c75",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_i2c.c",
+        "local_sha256": "5014d8cf824a3f3d4fca09241352e82177752ebf2a5a97a6de2fb8968e6d44c9",
+        "github_sha256": "5014d8cf824a3f3d4fca09241352e82177752ebf2a5a97a6de2fb8968e6d44c9",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_can.h",
+        "local_sha256": "df4e1602f2b208b335fa22890908ff518de18c6e27ffb94b92cd498e8212b248",
+        "github_sha256": "df4e1602f2b208b335fa22890908ff518de18c6e27ffb94b92cd498e8212b248",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_rcc.c",
+        "local_sha256": "f23bbc9b83e44e69f5dc34f072867f0087a3eb0452034ab09c363088d2354cd9",
+        "github_sha256": "f23bbc9b83e44e69f5dc34f072867f0087a3eb0452034ab09c363088d2354cd9",
+        "same": true
+      },
+      {
+        "path": "Library/stm32f10x_crc.h",
+        "local_sha256": "98e5537eb5e8837de2170472b774d9f9559f14b60dfcb09d9f839611bc18cb66",
+        "github_sha256": "98e5537eb5e8837de2170472b774d9f9559f14b60dfcb09d9f839611bc18cb66",
+        "same": true
+      },
+      {
+        "path": "User/Mode.c",
+        "local_sha256": "f1ba581fd3fa87379ef6bf37f7b5e46464ea971073aaa176d214609acc0b7e5c",
+        "github_sha256": "257136ee4a65164f96f4700498ab8c748e60aca3e58f56e3c6ef9006b18bea0b",
+        "same": false
+      },
+      {
+        "path": "User/stm32f10x_it.h",
+        "local_sha256": "d41e14c819d2df2adca148e514a8d36290afbf94ac8319ac9694dde2a6e0f747",
+        "github_sha256": "d41e14c819d2df2adca148e514a8d36290afbf94ac8319ac9694dde2a6e0f747",
+        "same": true
+      },
+      {
+        "path": "User/Mode.h",
+        "local_sha256": "ce6af1a954e3cc91c88bb1bf4420d7992abbccbebd601c78f5a055d96da8079e",
+        "github_sha256": "56bbb28c33641f20fbcafefa3b744c322ee0703852699699e72c772d8abd58cd",
+        "same": false
+      },
+      {
+        "path": "User/main.c",
+        "local_sha256": "298cddedb108422aa89afc984afc1d6f8689e4a9c3c57eee23442514364e8c80",
+        "github_sha256": "93f443ecc6e475f2613b3622c669c12da50b8788502286a077636062ee45aa78",
+        "same": false
+      },
+      {
+        "path": "User/stm32f10x_it.c",
+        "local_sha256": "317179050a5070dbd5357385cc7eea92d309d92797e9b3e84f864776ea8dd51e",
+        "github_sha256": "317179050a5070dbd5357385cc7eea92d309d92797e9b3e84f864776ea8dd51e",
+        "same": true
+      },
+      {
+        "path": "User/stm32f10x_conf.h",
+        "local_sha256": "d5f06afeb57a339fd877ec6bd7f75bd8a940a38108ce69ed3cb591caa4cd0620",
+        "github_sha256": "d5f06afeb57a339fd877ec6bd7f75bd8a940a38108ce69ed3cb591caa4cd0620",
+        "same": true
+      },
+      {
+        "path": "System/usart1.h",
+        "local_sha256": "1ba925a3d88717c7e584a95f4be74f42bf531ec947bbf964d73f5830de7130d9",
+        "github_sha256": "fd668928c1c065bcb3fa322b06edbc79ed7f8c0b5b1be7dfa75a417628cc68b9",
+        "same": false
+      },
+      {
+        "path": "System/usart3.c",
+        "local_sha256": "96ec3743b3cb0026848be1afd412e6e37f20fe5b7cf12236ab39065d44805f85",
+        "github_sha256": "a283deacec68707a9afeece3ad0e440bf34822d1d95d9b20203a7d04d48a91a3",
+        "same": false
+      },
+      {
+        "path": "System/usart2.h",
+        "local_sha256": "b1e5803c025fc7281e1791e520a1647e5333c00e97a53f2eee7a1be8907a8027",
+        "github_sha256": "08f04b13ab0b9cc1db2c53d3a7e91ae7dfbd49ffb049369cea8e0cefc24cce33",
+        "same": false
+      },
+      {
+        "path": "System/Delay.c",
+        "local_sha256": "03afaf6279ef043efb2dbe9468a0405fd187b0c32c3f100d3e9e6ece0bd1d64d",
+        "github_sha256": "03afaf6279ef043efb2dbe9468a0405fd187b0c32c3f100d3e9e6ece0bd1d64d",
+        "same": true
+      },
+      {
+        "path": "System/usart3.h",
+        "local_sha256": "32af5f6557bad0efcfa9467bb4cd6f8b00b36d4bfcdb3c704c368ec137b5fc45",
+        "github_sha256": "38498bee159d75da2ab7e308744af02a95577b4541a2f0ec2fa5d4670f898317",
+        "same": false
+      },
+      {
+        "path": "System/usart1.c",
+        "local_sha256": "3837ff5bb6065c19795d9c5af3833da71eb594deabee3539c27c4f513c2d0d5c",
+        "github_sha256": "61d2089e915f8b3d4a5af05057011561565e96e5ee662733aad2d775e44804f8",
+        "same": false
+      },
+      {
+        "path": "System/Delay.h",
+        "local_sha256": "f0bf8cbd91c797ef0e64860ae1d05dc310481fd97e72fc487401b131af1346ad",
+        "github_sha256": "f0bf8cbd91c797ef0e64860ae1d05dc310481fd97e72fc487401b131af1346ad",
+        "same": true
+      },
+      {
+        "path": "System/usart2.c",
+        "local_sha256": "ae082db462f61e1a9b1c31d2d7eb2e61f781bbb77ce024a79c1e6058aa46e571",
+        "github_sha256": "c9228f4bbd8c8e056d1c7010ade66addeaf25c32192d87b74fc0b5b52e1a631b",
+        "same": false
+      }
+    ]
+  },
+  "voice_xml": {
+    "path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/3.天问软件+程序/曼波语音.hd",
+    "serial_initialization": [
+      {
+        "serial_select": "Serial1",
+        "TX": "PA_2",
+        "RX": "PA_3"
+      }
+    ],
+    "command_words": [
+      {
+        "ASR": "曼波",
+        "leibie": "唤醒词",
+        "huifu": "叫我干嘛",
+        "id": "100"
+      },
+      {
+        "ASR": "前进",
+        "leibie": "命令词",
+        "huifu": "我他妈撞死你",
+        "id": "1"
+      },
+      {
+        "ASR": "后退",
+        "leibie": "命令词",
+        "huifu": "请注意倒车",
+        "id": "2"
+      },
+      {
+        "ASR": "左转",
+        "leibie": "命令词",
+        "huifu": "屌毛左转",
+        "id": "3"
+      },
+      {
+        "ASR": "右转",
+        "leibie": "命令词",
+        "huifu": "屌毛右转",
+        "id": "4"
+      },
+      {
+        "ASR": "摇摆",
+        "leibie": "命令词",
+        "huifu": "屌毛摇摆",
+        "id": "5"
+      },
+      {
+        "ASR": "趴下",
+        "leibie": "命令词",
+        "huifu": "你搁这训狗呢",
+        "id": "6"
+      },
+      {
+        "ASR": "坐下",
+        "leibie": "命令词",
+        "huifu": "屌毛坐下",
+        "id": "7"
+      },
+      {
+        "ASR": "抬手",
+        "leibie": "命令词",
+        "huifu": "哇喔",
+        "id": "8"
+      },
+      {
+        "ASR": "伸懒腰",
+        "leibie": "命令词",
+        "huifu": "哇喔",
+        "id": "9"
+      },
+      {
+        "ASR": "抬头",
+        "leibie": "命令词",
+        "huifu": "阿米诺斯",
+        "id": "10"
+      },
+      {
+        "ASR": "睡觉",
+        "leibie": "命令词",
+        "huifu": "我要睡觉了，叫曼波唤醒我",
+        "id": "11"
+      },
+      {
+        "ASR": "卧下睡觉",
+        "leibie": "命令词",
+        "huifu": "我要睡觉了，叫曼波唤醒我",
+        "id": "12"
+      },
+      {
+        "ASR": "立正",
+        "leibie": "命令词",
+        "huifu": "我立了",
+        "id": "13"
+      },
+      {
+        "ASR": "停下来",
+        "leibie": "命令词",
+        "huifu": "我立了",
+        "id": "14"
+      },
+      {
+        "ASR": "表白",
+        "leibie": "命令词",
+        "huifu": "哇喔",
+        "id": "16"
+      },
+      {
+        "ASR": "打招呼",
+        "leibie": "命令词",
+        "huifu": "哦欸",
+        "id": "18"
+      },
+      {
+        "ASR": "开心",
+        "leibie": "命令词",
+        "huifu": "哈哈哈",
+        "id": "19"
+      },
+      {
+        "ASR": "跳舞",
+        "leibie": "命令词",
+        "huifu": "哇喔",
+        "id": "20"
+      },
+      {
+        "ASR": "扭一扭",
+        "leibie": "命令词",
+        "huifu": "哇喔",
+        "id": "21"
+      },
+      {
+        "ASR": "撅屁股",
+        "leibie": "命令词",
+        "huifu": "你想干嘛死基佬",
+        "id": "22"
+      },
+      {
+        "ASR": "滚吧",
+        "leibie": "命令词",
+        "huifu": "阿玛忒拉斯",
+        "id": "23"
+      },
+      {
+        "ASR": "早上好呀",
+        "leibie": "命令词",
+        "huifu": "你好 屌毛",
+        "id": "24"
+      },
+      {
+        "ASR": "俯卧撑",
+        "leibie": "命令词",
+        "huifu": "哇喔",
+        "id": "25"
+      },
+      {
+        "ASR": "起身",
+        "leibie": "命令词",
+        "huifu": "我起来了",
+        "id": "26"
+      },
+      {
+        "ASR": "切换表情",
+        "leibie": "命令词",
+        "huifu": "卡擦",
+        "id": "27"
+      },
+      {
+        "ASR": "切换颜色",
+        "leibie": "命令词",
+        "huifu": "卡擦",
+        "id": "28"
+      },
+      {
+        "ASR": "做个韵克吧",
+        "leibie": "命令词",
+        "huifu": "这事好久不做了",
+        "id": "29"
+      },
+      {
+        "ASR": "来一首生日歌",
+        "leibie": "命令词",
+        "huifu": "《生日基米》",
+        "id": "50"
+      },
+      {
+        "ASR": "来一首奇迹再哈",
+        "leibie": "命令词",
+        "huifu": "《奇迹再哈》",
+        "id": "51"
+      },
+      {
+        "ASR": "来一首今天你要哈基米",
+        "leibie": "命令词",
+        "huifu": "《今天你要哈基米》",
+        "id": "52"
+      },
+      {
+        "ASR": "来一首最后一哈",
+        "leibie": "命令词",
+        "huifu": "《最后一哈》",
+        "id": "53"
+      },
+      {
+        "ASR": "来一首泡哈",
+        "leibie": "命令词",
+        "huifu": "《泡哈》",
+        "id": "54"
+      },
+      {
+        "ASR": "来一首往事只能哈基米",
+        "leibie": "命令词",
+        "huifu": "《往事只能哈基米》",
+        "id": "55"
+      },
+      {
+        "ASR": "来一首蓝莲哈",
+        "leibie": "命令词",
+        "huifu": "《蓝莲哈》",
+        "id": "56"
+      },
+      {
+        "ASR": "来一首一二三哈基米",
+        "leibie": "命令词",
+        "huifu": "《一二三哈基米》",
+        "id": "57"
+      },
+      {
+        "ASR": "来一首海阔天哈",
+        "leibie": "命令词",
+        "huifu": "《海阔天哈》",
+        "id": "58"
+      },
+      {
+        "ASR": "来一首曼波与基米",
+        "leibie": "命令词",
+        "huifu": "《曼波与基米》",
+        "id": "59"
+      },
+      {
+        "ASR": "来一首游哈",
+        "leibie": "命令词",
+        "huifu": "《游哈》",
+        "id": "60"
+      },
+      {
+        "ASR": "来一首青基",
+        "leibie": "命令词",
+        "huifu": "《青基》",
+        "id": "61"
+      },
+      {
+        "ASR": "来一首哈气之路",
+        "leibie": "命令词",
+        "huifu": "《哈气之路》",
+        "id": "62"
+      },
+      {
+        "ASR": "来一首风摧雨",
+        "leibie": "命令词",
+        "huifu": "《风摧雨》",
+        "id": "63"
+      },
+      {
+        "ASR": "来一首弄波得",
+        "leibie": "命令词",
+        "huifu": "《弄波得》",
+        "id": "64"
+      },
+      {
+        "ASR": "换一首歌曲",
+        "leibie": "命令词",
+        "huifu": null,
+        "id": "65"
+      },
+      {
+        "ASR": "来点音乐",
+        "leibie": "命令词",
+        "huifu": null,
+        "id": "66"
+      },
+      {
+        "ASR": "红灯",
+        "leibie": "唤醒词",
+        "huifu": "红色灯光已打开",
+        "id": "30"
+      },
+      {
+        "ASR": "黄灯",
+        "leibie": "命令词",
+        "huifu": "黄色灯光已打开",
+        "id": "31"
+      },
+      {
+        "ASR": "蓝灯",
+        "leibie": "命令词",
+        "huifu": "蓝色灯光已打开",
+        "id": "32"
+      },
+      {
+        "ASR": "绿灯",
+        "leibie": "命令词",
+        "huifu": "绿色灯光已打开",
+        "id": "33"
+      },
+      {
+        "ASR": "紫灯",
+        "leibie": "命令词",
+        "huifu": "紫色灯光已打开",
+        "id": "34"
+      },
+      {
+        "ASR": "开灯",
+        "leibie": "命令词",
+        "huifu": "灯光已打开",
+        "id": "35"
+      },
+      {
+        "ASR": "关灯",
+        "leibie": "命令词",
+        "huifu": "灯光已关闭",
+        "id": "36"
+      },
+      {
+        "ASR": "彩虹灯",
+        "leibie": "命令词",
+        "huifu": "彩虹灯已打开",
+        "id": "37"
+      },
+      {
+        "ASR": "流水灯",
+        "leibie": "命令词",
+        "huifu": "流水灯已打开",
+        "id": "38"
+      },
+      {
+        "ASR": "呼吸灯",
+        "leibie": "命令词",
+        "huifu": "呼吸灯已打开",
+        "id": "39"
+      },
+      {
+        "ASR": "闪光灯",
+        "leibie": "命令词",
+        "huifu": "闪光灯已打开",
+        "id": "40"
+      }
+    ],
+    "serial_outputs": [
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "f"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "b"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "l"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "r"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "p"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "s"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "j"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "y"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "1"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "p"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "2"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "5"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "5"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "B"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "Y"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "o"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "K"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "y"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "p"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "5"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "1"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "d"
+      },
+      {
+        "serial_select": "Serial",
+        "mode": "HEX",
+        "wordwrap": "0",
+        "NAME": "80"
+      },
+      {
+        "serial_select": "Serial",
+        "mode": "HEX",
+        "wordwrap": "0",
+        "NAME": "80"
+      },
+      {
+        "serial_select": "Serial",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "80"
+      },
+      {
+        "serial_select": "Serial",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "80"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "5"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "5"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "5"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "5"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "5"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "5"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "q"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "R"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "Q"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "W"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "A"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "E"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "U"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "G"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "I"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "H"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "n"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "7"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "3"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "6"
+      },
+      {
+        "serial_select": "Serial1",
+        "mode": "String",
+        "wordwrap": "0",
+        "NAME": "4"
+      }
+    ],
+    "stm32_main_case_commands": [
+      "f",
+      "b",
+      "l",
+      "r",
+      "w",
+      "z",
+      "d",
+      "5",
+      "q",
+      "s",
+      "j",
+      "y",
+      "1",
+      "p",
+      "2",
+      "B",
+      "o",
+      "K",
+      "R",
+      "Q",
+      "W"
+    ],
+    "voice_serial1_string_commands": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "A",
+      "B",
+      "E",
+      "G",
+      "H",
+      "I",
+      "K",
+      "Q",
+      "R",
+      "U",
+      "W",
+      "Y",
+      "b",
+      "d",
+      "f",
+      "j",
+      "l",
+      "n",
+      "o",
+      "p",
+      "q",
+      "r",
+      "s",
+      "y"
+    ],
+    "voice_commands_without_main_case": [
+      "3",
+      "4",
+      "6",
+      "7",
+      "A",
+      "E",
+      "G",
+      "H",
+      "I",
+      "U",
+      "Y",
+      "n"
+    ]
+  },
+  "intel_hex": [
+    {
+      "path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/Project.hex",
+      "sha256": "09299e23e099154b556d255316d1db2cda430c330c61222a36a4c92b2c16280b",
+      "record_count": 3693,
+      "checksum_errors": [],
+      "data_bytes": 59036,
+      "min_address": "0x8000000",
+      "max_address": "0x800e69b"
+    },
+    {
+      "path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/4.固件+烧录软件(无需编译，直接烧录)/固件/Project.hex",
+      "sha256": "0e5484139c2c989cbdc37baabd033eb0a62d83f0dd6eba7eb530cb8a1ea288a0",
+      "record_count": 4026,
+      "checksum_errors": [],
+      "data_bytes": 64368,
+      "min_address": "0x8000000",
+      "max_address": "0x800fb6f"
+    }
+  ],
+  "hardware_test": false
+}

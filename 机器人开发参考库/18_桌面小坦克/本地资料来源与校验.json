@@ -1,0 +1,1177 @@
+{
+  "date": "2026-10-03",
+  "source_type": "user-provided local folders; not a GitHub snapshot",
+  "original_files": [
+    {
+      "original_path": "桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "bytes": 44419645,
+      "sha256": "2c48ec9f62dfc8cb264ae7cea719f02cbae55061f680281c028295e7a44f9e7d",
+      "original_bytes": 44424509,
+      "original_sha256": "d7300064712c88e6ac8705ee7b30241639de59ebc4928a1c49bfad12900e55b2",
+      "publication_transform": "one TLS private key entry replaced with a comment placeholder; original retained outside Git"
+    }
+  ],
+  "extracted_files": [
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/1.BOM清单/BOM_Board1_Schematic1_2026-09-30.xlsx",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/1.BOM清单/BOM_Board1_Schematic1_2026-09-30.xlsx",
+      "bytes": 48699,
+      "sha256": "19f658ad2d025986fa7e38bd4735e8e8326f4109b02c7f54345d6a40989d4cac",
+      "crc32": "b3412ece"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/.clangd",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/.clangd",
+      "bytes": 39,
+      "sha256": "b64f692298e718f35ed78bfdff2d4eccba2d5f8e7b995a119a7cfffba463b931",
+      "crc32": "062acd35"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/.gitignore",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/.gitignore",
+      "bytes": 1188,
+      "sha256": "a0c3e71b0a115ff6f5893bb809bb558bb3d5f00edf6a22375b601f39355397a9",
+      "crc32": "102da639"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/CMakeLists.txt",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/CMakeLists.txt",
+      "bytes": 246,
+      "sha256": "aa5797b9f88a26d8b48a8ddc8e403f2abd4f0e33168237d434db1233995117fb",
+      "crc32": "c5627ba8"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/dependencies.lock",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/dependencies.lock",
+      "bytes": 526,
+      "sha256": "6cdde8e0a2af0ca603ccce64fb7f9b37888552ad32e7676d4009be2b259acfc5",
+      "crc32": "e0c7a7d1"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/main/certs/server.crt",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/certs/server.crt",
+      "bytes": 1025,
+      "sha256": "aab5ac683b464740039445dc9e45eae2a7ac2e6102f9cec585cdc43473ce1cf4",
+      "crc32": "0215986d"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/main/certs/server.key",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/certs/server.key",
+      "bytes": 128,
+      "sha256": "0dda650dd8889a7dbb5d0987bf4d8cc6a1ab4b67876dab70b720ce0f5944205c",
+      "crc32": "676ae8d4",
+      "original_bytes": 1675,
+      "original_sha256": "0e109119deb7371598811b33433829c1a4bc075c2acfcee4bbbb1e2a2c2e432d",
+      "publication_transform": "TLS private key redacted"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/main/CMakeLists.txt",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/CMakeLists.txt",
+      "bytes": 392,
+      "sha256": "0487e26887f68e1efcfea6e4e73c5cc4de627cc354df2ac7238eac6ca9d21b86",
+      "crc32": "8ecd3eb7"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/main/idf_compat.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/idf_compat.h",
+      "bytes": 2890,
+      "sha256": "1e0f092676e8f50f890a75806250d3ffd2f60756456affe449a6a8d64fd070d9",
+      "crc32": "1a5077d4"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/main/idf_component.yml",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/idf_component.yml",
+      "bytes": 38,
+      "sha256": "7907fa5408e31be1568b8a306fc2c62463c9d53a851680a63a15b871d592fa9f",
+      "crc32": "fcd76f92"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/main/Kconfig.projbuild",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/Kconfig.projbuild",
+      "bytes": 1326,
+      "sha256": "72d39ed2ca5f59e068bc08336fe234cf0c5f2460329571799605733ce6e2e2fb",
+      "crc32": "cd9cc4fc"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/main/main.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/main.c",
+      "bytes": 3058,
+      "sha256": "cffd846e1864895d61b1731461e0987899660115d105d754bfb5de08be336c43",
+      "crc32": "74d5092e"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/main/motor.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/motor.c",
+      "bytes": 6916,
+      "sha256": "9b9f28399b3c0f0ba99c51b43e31426f9da9f67aaabc6bf312420c8354f79edd",
+      "crc32": "d3e8a8ba"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/main/motor.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/motor.h",
+      "bytes": 1616,
+      "sha256": "b560cf21f8d5e8807de6124c995991b80d40a6aa3093d3a076fc53d496d566b8",
+      "crc32": "302b1741"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/main/tank_control.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/tank_control.c",
+      "bytes": 2429,
+      "sha256": "486da39cca2ce7e53bf6a58306f097a7257922b8a5dd075eefea6c2c41a86509",
+      "crc32": "a29b58d9"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/main/tank_control.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/tank_control.h",
+      "bytes": 851,
+      "sha256": "b13cad12adee40e6b4a208eeea130c0947167808924c894d76bcf90b027d6f4f",
+      "crc32": "4724e1e9"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/main/web/index.html",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/web/index.html",
+      "bytes": 25608,
+      "sha256": "362ba956653c2af4fe3d2dbd18bd2c0c1f1c5df375eb019ce6319944ed07cbe2",
+      "crc32": "bf62dddf"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/main/web/setup.html",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/web/setup.html",
+      "bytes": 3710,
+      "sha256": "32dc6012c26fb9672fa1613c75ebafd0b1bec7563053471ed2bb60da98c80d3b",
+      "crc32": "2bb52329"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/main/wifi_web_control.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/wifi_web_control.c",
+      "bytes": 35357,
+      "sha256": "d441e683e124228259705aaf76c8348140dcde59725eafd13cb15d9b9343cce9",
+      "crc32": "b861f8cc"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/main/wifi_web_control.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/wifi_web_control.h",
+      "bytes": 497,
+      "sha256": "10fa9074074e217fea7bce7c9b26eb1d4e1ba088ed443fa09480ed31b3070506",
+      "crc32": "ce939ffa"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/.component_hash",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/.component_hash",
+      "bytes": 64,
+      "sha256": "767a4e814b9400ca7f102aca4f2b25f0b5a03be77bba260bfba782eb9b4f83e2",
+      "crc32": "0f613a77"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/.cz.yaml",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/.cz.yaml",
+      "bytes": 217,
+      "sha256": "a8e064ba7dcd61128b033ceec2e95f7afc2cd0fc68446c8416dcba5c51e44ae3",
+      "crc32": "fb27dc44"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/CHANGELOG.md",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/CHANGELOG.md",
+      "bytes": 72882,
+      "sha256": "7dcd9bef2d94e2620887307597d3809b8571d18edd456a1e2d2853ea72d179c4",
+      "crc32": "59880900"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/CHECKSUMS.json",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/CHECKSUMS.json",
+      "bytes": 14283,
+      "sha256": "541ebb0ff1b69e2c16919df4af344d9c03bc9dfaba11bb7e666ea8e51974535e",
+      "crc32": "20aad7c3"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/CMakeLists.txt",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/CMakeLists.txt",
+      "bytes": 1501,
+      "sha256": "80da9c09bd128d479dcb26b2d7c41506a3376cb4d1979ce42e80164992b47c25",
+      "crc32": "521fe73e"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/CMakeLists.txt",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/CMakeLists.txt",
+      "bytes": 239,
+      "sha256": "d0442b76ac4c9d8bd895e06b4097d1b5b878fcc5ba5833b04221a8c630bd623c",
+      "crc32": "0c9cfa09"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/main/CMakeLists.txt",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/main/CMakeLists.txt",
+      "bytes": 88,
+      "sha256": "d02d665083ea78f8aa519b770ea9c4c348889f7c4964b5d224e4898f08fc6adb",
+      "crc32": "f53da370"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/main/idf_component.yml",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/main/idf_component.yml",
+      "bytes": 169,
+      "sha256": "868447bb1d289904ac26b54562bcc208988ac737530fc25ea8e4bef701c966ea",
+      "crc32": "6305fa29"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/main/Kconfig.projbuild",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/main/Kconfig.projbuild",
+      "bytes": 1920,
+      "sha256": "544af51bd80b0a8be3930329b3611219e95c54a58ff2947ec22a458bba5e417f",
+      "crc32": "481765fe"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/main/mdns_example_main.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/main/mdns_example_main.c",
+      "bytes": 14341,
+      "sha256": "c12ed545332a730a4da204d27ec47cba762cf6b5c61e49b94056692f864d4528",
+      "crc32": "f3c1ec28"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/pytest_mdns.py",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/pytest_mdns.py",
+      "bytes": 14356,
+      "sha256": "bc600dd3ce613fa5803e825eccab4f47f4e4676ce7b977ae294ffbbcf02a837a",
+      "crc32": "211c53e4"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/README.md",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/README.md",
+      "bytes": 4517,
+      "sha256": "6e41319d31b1bc66c4a31d68516a92986ac21beeb56eabcf0c13a5e84466e878",
+      "crc32": "180340d0"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/sdkconfig.ci.eth_custom_netif",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/sdkconfig.ci.eth_custom_netif",
+      "bytes": 683,
+      "sha256": "a5a60e353448f411de036bef4eccc399f06280419855f032df5c5d7822847e08",
+      "crc32": "a779d002"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/sdkconfig.ci.eth_def",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/sdkconfig.ci.eth_def",
+      "bytes": 489,
+      "sha256": "e6c46e51ac75407c09b32b6361383727337ddea0275555eb82f4f7908196ca6c",
+      "crc32": "88213fb4"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/sdkconfig.ci.eth_no_ipv4",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/sdkconfig.ci.eth_no_ipv4",
+      "bytes": 478,
+      "sha256": "e0c9f0ada36d3ede6772e5161293dcabb67aaf13bf3e88255397f435ec07f626",
+      "crc32": "5fb14873"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/sdkconfig.ci.eth_no_ipv6",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/sdkconfig.ci.eth_no_ipv6",
+      "bytes": 508,
+      "sha256": "6ec8aff6b96fbc6a3884cc7a24c9e292c7ddda4933ca708359c860d8262d8a4d",
+      "crc32": "86105b30"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/sdkconfig.ci.eth_socket",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/examples/query_advertise/sdkconfig.ci.eth_socket",
+      "bytes": 521,
+      "sha256": "f3bbfa2a648d3908d7b8235d3c3d62714bcadf5aa160ae9347d285e6512e7eb1",
+      "crc32": "96267c83"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/idf_component.yml",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/idf_component.yml",
+      "bytes": 536,
+      "sha256": "27c4f6216f432c990848aa90a76a4835a04cd8c9825e340b645332c791342180",
+      "crc32": "d2e1000f"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/include/mdns.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/include/mdns.h",
+      "bytes": 38157,
+      "sha256": "5e85885f6594cecae8a93f3bfff2d77252f0170092df5c0f2a75d5b636fdb8d1",
+      "crc32": "275bf801"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/include/mdns_console.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/include/mdns_console.h",
+      "bytes": 308,
+      "sha256": "7b06003a193a2b602dc38e2f8d7b34c4ed3043e02c57345565f06030464d946a",
+      "crc32": "3aba1706"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/Kconfig",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/Kconfig",
+      "bytes": 7284,
+      "sha256": "cdb06d18a0db35941c2a57352dd6a2037608dcceb807effcba299eccd00e5f24",
+      "crc32": "bf80b12a"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/LICENSE",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "crc32": "86e2b4b4"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_browser.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_browser.c",
+      "bytes": 28671,
+      "sha256": "788de52288236bc2b4e0d99e051328bd212cb3d0a05dc9dd023e26da7d97cd2f",
+      "crc32": "2cd11703"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_console.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_console.c",
+      "bytes": 47930,
+      "sha256": "404e6b43423af614db393422c5af6e7898529f93c139b45470b049472bb1329d",
+      "crc32": "bf10e257"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_debug.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_debug.c",
+      "bytes": 17189,
+      "sha256": "66ec208c67fd316539dac363770475e00f3614cf8fdd53ec4839bcb8d234130a",
+      "crc32": "559d80a4"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_diagram.md",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_diagram.md",
+      "bytes": 1508,
+      "sha256": "00b0441991d2a8a5a0c60c58ee88cfc32ace635fdf8f2314ad45d0096e0b2a4d",
+      "crc32": "c20d9eab"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_mem_caps.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_mem_caps.c",
+      "bytes": 2407,
+      "sha256": "eeaf91732c95432c97bd44cd1211e017f5d6e9bf9d52fe13b988099a9c9fc9ad",
+      "crc32": "a97808df"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_netif.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_netif.c",
+      "bytes": 15570,
+      "sha256": "2b7ccdd371235236ea30c7facc869cce21930cecfcc7c7173eb761b3d5742978",
+      "crc32": "56c89c27"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_networking_lwip.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_networking_lwip.c",
+      "bytes": 11825,
+      "sha256": "adc139fa504a925ab644f21f8dce3659927f534e390a176b72b0ae3206c6a3ea",
+      "crc32": "2fcbbee0"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_networking_socket.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_networking_socket.c",
+      "bytes": 19743,
+      "sha256": "84dcefa81cdbc52212a09934bdc7eb3f49fbac24c2679da0bca2103ce84961c7",
+      "crc32": "37f223bc"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_pcb.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_pcb.c",
+      "bytes": 15269,
+      "sha256": "0d87034a1cbdfa290460a14417f58895e477a4b358752b99dbab56afa4018d38",
+      "crc32": "35642b80"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_querier.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_querier.c",
+      "bytes": 31663,
+      "sha256": "4c461ee64b27e0e84fc5ca01234e475c7a0924b4f118b1d4ada878ff7f4ee391",
+      "crc32": "985aebfd"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_receive.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_receive.c",
+      "bytes": 54701,
+      "sha256": "534ad9dec2b9bec446d2be9dc80af1bbe216b00e622628ee48045128b3b97e5f",
+      "crc32": "2d6c95af"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_responder.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_responder.c",
+      "bytes": 52038,
+      "sha256": "b024978ea150dbb44e55536a392b7dadd5db84212da42ffca9103a6ea5bc2589",
+      "crc32": "12a3ff33"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_send.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_send.c",
+      "bytes": 64999,
+      "sha256": "c4ec7beea87551572676f603435f8abf416706b5dca13cfb4159a15a277e5182",
+      "crc32": "677047fd"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_service.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_service.c",
+      "bytes": 13286,
+      "sha256": "9cea7331a8c043d175dc98c1db610b10213b1555e6c492fb948efa51d71045f8",
+      "crc32": "c5497515"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_utils.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mdns_utils.c",
+      "bytes": 9321,
+      "sha256": "08be6efa154755234f18d8a69413d346ed676e3017609acc130848cb8b4cb8a2",
+      "crc32": "9fa5522b"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mem_prefix_script.py",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/mem_prefix_script.py",
+      "bytes": 1370,
+      "sha256": "5320bff3afb9fca57e5a12a9a217f7d68bccc28300d4a96b6aab8aa648206575",
+      "crc32": "6550af45"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_browser.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_browser.h",
+      "bytes": 5074,
+      "sha256": "12c3a7fde4f6f69c8d81206ef5f51deeaba97e2748746204da9a591cda8f49b3",
+      "crc32": "f6735bab"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_debug.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_debug.h",
+      "bytes": 1739,
+      "sha256": "43c7e7036b596a2c376482bd886b93fa8dfc31defaaadc50f827fa1695d0a2af",
+      "crc32": "c1118285"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_mem_caps.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_mem_caps.h",
+      "bytes": 1483,
+      "sha256": "67f749086445e9eb9ba8d00120eca699e9b16865c1c8ccdf4449ad9cd6c9076d",
+      "crc32": "cc8f46bb"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_netif.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_netif.h",
+      "bytes": 1734,
+      "sha256": "9ab3c26a5fee95965417dfd8e6d3fa69c4b7480aec51bc19d0f86ff20eba14f2",
+      "crc32": "7a2e851d"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_networking.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_networking.h",
+      "bytes": 1392,
+      "sha256": "07b4ac8ed569bfb500641afd90808b2988e9dc894044391ae824510a265c45aa",
+      "crc32": "0eb4b079"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_pcb.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_pcb.h",
+      "bytes": 3609,
+      "sha256": "95bf89b3a83f0fd6f91ee33d70245117fe1788b6ff487120e2aebdf51aefb496",
+      "crc32": "e8930578"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_private.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_private.h",
+      "bytes": 11944,
+      "sha256": "de6f519c2bb215ad662c50f64985de0eb257caf7a3dd3448f58c002d5789d433",
+      "crc32": "2127b637"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_querier.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_querier.h",
+      "bytes": 3641,
+      "sha256": "9c6b62600bca9a9a60a50d63b1ab64bead0e5f3f5f3267ce41cab06d762a3511",
+      "crc32": "682464d5"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_receive.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_receive.h",
+      "bytes": 441,
+      "sha256": "fff10a3f796db4b7698cef6aae625d3983978790f53730a569bb4f91c91d2d0c",
+      "crc32": "89599674"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_responder.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_responder.h",
+      "bytes": 2103,
+      "sha256": "e1db6cca0a43d1c8f55f432b54f7990b556841b8e44f4735289a879d2a3a158b",
+      "crc32": "35d10397"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_send.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_send.h",
+      "bytes": 4111,
+      "sha256": "4b85ed92b8bcbb9ac2ed9024db0a6fe1bbab115a33609399b60d635de96631f2",
+      "crc32": "f2b29083"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_service.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_service.h",
+      "bytes": 511,
+      "sha256": "330285a5c1e0b62ada683b1ec5f67f2b9946bfb7ab06cec1d8c5dae163ca630a",
+      "crc32": "47964191"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_utils.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/private_include/mdns_utils.h",
+      "bytes": 4734,
+      "sha256": "944a551127a5d041c0e53fe02d066514fd4a52633753808da88a0532d883488e",
+      "crc32": "92e7641b"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/README.md",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/README.md",
+      "bytes": 673,
+      "sha256": "05ae92097f344b060cbf90ae21c9fe9953d53188a363f45f3ce2af945a8b6244",
+      "crc32": "de5c526d"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/refactoring_details.md",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/refactoring_details.md",
+      "bytes": 161613,
+      "sha256": "0ce37336fb27802372c2f8fc3ec452fc321525cbe923251887c302a3d8f17917",
+      "crc32": "db288b9e"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/refactor_2025.md",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/refactor_2025.md",
+      "bytes": 5631,
+      "sha256": "00b1c0714818028776bdd4ca9112b2982ea1e8e402e8295d59b5eaa48db87881",
+      "crc32": "2d85c97d"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/bonjour_order_responder.py",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/bonjour_order_responder.py",
+      "bytes": 8021,
+      "sha256": "0d3ff85c5e0640ea3a11d9aeb1b2acb00b583e294df51eda6f0644f0da07b2bd",
+      "crc32": "e98a0066"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/CMakeLists.txt",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/CMakeLists.txt",
+      "bytes": 541,
+      "sha256": "d69a08646eb7af5535b1b4fbd78501eb1e8a18086e7db058677139e540fc9440",
+      "crc32": "dc8c2e73"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/components/esp_netif_linux/CMakeLists.txt",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/components/esp_netif_linux/CMakeLists.txt",
+      "bytes": 314,
+      "sha256": "b57723ef05c094444d19dc123ba11aee2a5693d7685c0a5a9aaf7dfaeee7110b",
+      "crc32": "55fea6cf"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/components/esp_netif_linux/esp_netif_linux.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/components/esp_netif_linux/esp_netif_linux.c",
+      "bytes": 4982,
+      "sha256": "0ead2caefe0a8b66196b37236724cb85df69f34ccf14d530fe548ff9d5094aee",
+      "crc32": "806aeba6"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/components/esp_netif_linux/include/esp_wifi_types.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/components/esp_netif_linux/include/esp_wifi_types.h",
+      "bytes": 158,
+      "sha256": "42b1dd10e6b6a54bc6f2a3f761d096bd5bbdc7c3d0ba122110fbcd879221bd86",
+      "crc32": "46e20f6f"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/components/esp_netif_linux/include/machine/endian.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/components/esp_netif_linux/include/machine/endian.h",
+      "bytes": 161,
+      "sha256": "6affb826a6caad86367e44a69e3ea901b19e6589120980ac73e31f076b782610",
+      "crc32": "e0f37b61"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/components/esp_netif_linux/Kconfig",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/components/esp_netif_linux/Kconfig",
+      "bytes": 257,
+      "sha256": "ac8bff8c86c8e268c11d1926ed0d70459156e00f48d9f715b856b9dbe8d9511d",
+      "crc32": "1060c70e"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/dnsfixture.py",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/dnsfixture.py",
+      "bytes": 6758,
+      "sha256": "601e19959ff436ca1b8bea3bd07ffa33024efe67b1b1d62b84dd1e8c7d422a47",
+      "crc32": "d7725e6e"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/main/CMakeLists.txt",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/main/CMakeLists.txt",
+      "bytes": 147,
+      "sha256": "750a466f2ab682e1aff3eea846752dc5148b7e638b14ad6842bae79d96e279c5",
+      "crc32": "540e1f8a"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/main/idf_component.yml",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/main/idf_component.yml",
+      "bytes": 201,
+      "sha256": "ba446b66e793f1e609b753740c205d1cf9a7b1bad509bdbec6ef694c8401ecf5",
+      "crc32": "51ed727e"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/main/Kconfig.projbuild",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/main/Kconfig.projbuild",
+      "bytes": 507,
+      "sha256": "43e5370c092dcace9d05489494f8178df02adace71014f025cc465a01e2e8781",
+      "crc32": "639721e1"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/main/main.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/main/main.c",
+      "bytes": 4195,
+      "sha256": "959f245702ba4719fc0c27daf814cae660ca3a511d598aea72567a7731bed444",
+      "crc32": "9f4bccec"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/pytest_mdns.py",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/pytest_mdns.py",
+      "bytes": 16229,
+      "sha256": "dfe88895849322a69661a8fd5f7df39c6576d54db8e1d56a8c14503f41d020da",
+      "crc32": "9d8318b6"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/README.md",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/README.md",
+      "bytes": 975,
+      "sha256": "168820c132bd2c276d22856e5dd533cdc0add8952da06358e19528d4a3dea3a7",
+      "crc32": "6c4f60a9"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/sdkconfig.ci.app",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/sdkconfig.ci.app",
+      "bytes": 127,
+      "sha256": "b1a7f50d173e21fcc01d3d45e2698e8840c87d6963e2dbb27e6c5943b9125593",
+      "crc32": "7806e345"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/sdkconfig.ci.console",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/sdkconfig.ci.console",
+      "bytes": 114,
+      "sha256": "36fbd4c9edc43321f412b6704d3b1ad7ad625cf8e12a6881b1ffd09ed8d6fac2",
+      "crc32": "0b15c9c4"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/sdkconfig.ci.target",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/sdkconfig.ci.target",
+      "bytes": 26,
+      "sha256": "b5cb63deea9b1e4d616752e09fab4ed18fbb039e5f980ea26431acf1307d67cb",
+      "crc32": "0b99ea5c"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/sdkconfig.defaults",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_test/sdkconfig.defaults",
+      "bytes": 199,
+      "sha256": "68e2a590541166d099f182e88bf4e239c259cd79bdf516ce1d08f5a4266e7bf8",
+      "crc32": "29cf6672"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/CMakeLists.txt",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/CMakeLists.txt",
+      "bytes": 3033,
+      "sha256": "93b7c9202fabaf8e2844bfec8a24099585a635edbf70d0cc2228a22086296757",
+      "crc32": "7d9600cc"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/input/generate_cases.py",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/input/generate_cases.py",
+      "bytes": 6224,
+      "sha256": "dceb89dcc6aa3b012bb3b6961c651ddbff09ab03399603ba551e15ccba58f954",
+      "crc32": "aea6719f"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/main.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/main.c",
+      "bytes": 4225,
+      "sha256": "368540106a245ec95d53e6c2b6b90a2d72a69badf7b99c32f47b56094a25c672",
+      "crc32": "cd067add"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/README.md",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/README.md",
+      "bytes": 2205,
+      "sha256": "12567d82bc06124a354ecf62db82d4d6d528fad312f71acd1691095ad0a55a8c",
+      "crc32": "a2559ed4"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/sdkconfig.defaults",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/sdkconfig.defaults",
+      "bytes": 260,
+      "sha256": "c2d9e4cd278769551762ecf101839f8378f3a5e9a6c1bda891fa83b43b01bbd4",
+      "crc32": "0debb258"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/stubs/esp_assert.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/stubs/esp_assert.h",
+      "bytes": 244,
+      "sha256": "ddbfcb413066dfa9acbcb63de0a887d1fb09e4a94cf39ba26f6c22a35b6f0942",
+      "crc32": "2aef40ae"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/stubs/esp_idf.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/stubs/esp_idf.c",
+      "bytes": 1615,
+      "sha256": "8ed7eb0fd2ca620949f929d59673ca410a4ce84dccd153474f7ab27d93dbd94d",
+      "crc32": "e0be8ae6"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/stubs/esp_random.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/stubs/esp_random.h",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "crc32": "00000000"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/stubs/mdns_engine.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/stubs/mdns_engine.c",
+      "bytes": 1448,
+      "sha256": "6af98fdd817ed6bb4683e6de47dd1c819d1f3aff0de1a0493d2e4d2aa0a71b82",
+      "crc32": "c341c442"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/stubs/mdns_mem_caps.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/stubs/mdns_mem_caps.c",
+      "bytes": 1112,
+      "sha256": "110cdb2cb3ccf262358fea02b8e37bc67e37ea96b8d2bd1f75ab813152a5c3a3",
+      "crc32": "8b976944"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/stubs/mdns_networking.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/stubs/mdns_networking.c",
+      "bytes": 2684,
+      "sha256": "0d32592cbaf31a73ce838c9aa69eef5ec9ad93c20d070e56c62881c1021d7911",
+      "crc32": "1fb98f76"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/stubs/sdkconfig.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/stubs/sdkconfig.h",
+      "bytes": 40673,
+      "sha256": "7d5765a1e4892056e5669d1c31781c1d038bf093060ce25575ab85efd2908e21",
+      "crc32": "3285559f"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/cmock_config.yml",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/cmock_config.yml",
+      "bytes": 285,
+      "sha256": "dea71eb95e7afdf259a605f9b8d24286dbe40627ce7cd2b81dae93393bda171d",
+      "crc32": "5118e878"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/create_test_packet.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/create_test_packet.c",
+      "bytes": 4728,
+      "sha256": "d7868cf2accf42c8b53334e94815f1045c357e3bb0b7c84af48780fd7571e8f3",
+      "crc32": "70342b9f"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/create_test_packet.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/create_test_packet.h",
+      "bytes": 1027,
+      "sha256": "418f8da9cb9d2829568320a2072d6eaf7dfaa3574689c3e7cd8ccdf10f3a1c88",
+      "crc32": "ad2f3747"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/enable_testing.cmake",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/enable_testing.cmake",
+      "bytes": 422,
+      "sha256": "27c5432b363bf7fe61dc45f03f17f41346b3ef615fd0dadfb21c9e7a8c78938d",
+      "crc32": "4f221211"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/test_receiver/test_receiver.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/test_receiver/test_receiver.c",
+      "bytes": 3617,
+      "sha256": "7a303dc3b9221848b760278cb81708b64d1337da862b6c320fcb32d358ec6e80",
+      "crc32": "5b40954d"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/test_receiver/unit_test.cmake",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/test_receiver/unit_test.cmake",
+      "bytes": 163,
+      "sha256": "91c876c76954a0e6d965d0978e5a1db288d87e18a758178493a0fd8362f60da1",
+      "crc32": "18ea80d9"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/test_sender/test_sender.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/test_sender/test_sender.c",
+      "bytes": 756,
+      "sha256": "3b28db690bab8ac3cd932eb54c4f1c944b66ed749835533aa7a2d1be25f422a2",
+      "crc32": "d63aa21d"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/test_sender/unit_test.cmake",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/test_sender/unit_test.cmake",
+      "bytes": 132,
+      "sha256": "2f59a9a1d5c95be498e367760ba66564eb7f26b6639f85142f50314ae0a7233a",
+      "crc32": "22ebd207"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/unity_main.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/unity_main.c",
+      "bytes": 4555,
+      "sha256": "e35cb484e863e94c39d6f8bbe5cf9f0ab7a259468913371bfed9020ede366e2c",
+      "crc32": "1ba1386f"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/unity_main.h",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/unity_main.h",
+      "bytes": 300,
+      "sha256": "0e9d96137dfdfc42a4a6ade44e364035d7682e18f07646a093efbb2f2d3c503b",
+      "crc32": "fc492b9a"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/unit_test.cmake",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/host_unit_test/unity/unit_test.cmake",
+      "bytes": 2128,
+      "sha256": "a9bc900561e8bc0ceac1f55d26e911b538f3068e1208bbd3f51a703dd7700bae",
+      "crc32": "221b2a35"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/CMakeLists.txt",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/CMakeLists.txt",
+      "bytes": 243,
+      "sha256": "664d50a77bf6a7fd8f4c0c465c23b461f1cb747f37146f2a8b6d449ccfa50b8f",
+      "crc32": "83737cbf"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/main/CMakeLists.txt",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/main/CMakeLists.txt",
+      "bytes": 93,
+      "sha256": "da39a012d77ed08c2115f9365fb14c6e75c694fa73b5bafc1351f6600593c390",
+      "crc32": "d88bbe4b"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/main/idf_component.yml",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/main/idf_component.yml",
+      "bytes": 228,
+      "sha256": "5115862e7e8d2ace9eb87e34edc0be447a6bce021b579eb79bd45fadfe2740c0",
+      "crc32": "67d456b7"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/main/Kconfig.projbuild",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/main/Kconfig.projbuild",
+      "bytes": 1290,
+      "sha256": "8e68cdd831c047ecccb4a0c20fbf2da283590fc17f2abee7afc0ef5d8f4cadc4",
+      "crc32": "ad932855"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/main/main.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/main/main.c",
+      "bytes": 3423,
+      "sha256": "d889f6a7dd56fd90812327554ee68e86780a617dfe2737d5540dfecc300c4524",
+      "crc32": "0834f09a"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/main/mdns_test.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/main/mdns_test.c",
+      "bytes": 5793,
+      "sha256": "493dba6479833d997ca2cc79cc0b8e48c516303362f71dbfa40608c635904fb0",
+      "crc32": "e3a9222e"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/pytest_mdns_app.py",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/pytest_mdns_app.py",
+      "bytes": 11562,
+      "sha256": "e05f0a3ed9b65a7bea960ae56e435b10d7ab1c1b950fda81147ac08ec972b17c",
+      "crc32": "f69dff0e"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/README.md",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/README.md",
+      "bytes": 2600,
+      "sha256": "83e5d96b712d48a2a280126d6722c2d1780cb56483dfc42af088c6dc407830f6",
+      "crc32": "f9c001af"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/sdkconfig.ci",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/sdkconfig.ci",
+      "bytes": 426,
+      "sha256": "269731303d830c4b4833ef64d82b1415ae8cd39a2fd462d2535e95dab8521d72",
+      "crc32": "c0936500"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/sdkconfig.defaults",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/test_apps/sdkconfig.defaults",
+      "bytes": 80,
+      "sha256": "35419efd9750423871740ce1b16035eccb27abe99b058b5e1558c7901c8c0870",
+      "crc32": "1d2797b3"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/unit_test/CMakeLists.txt",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/unit_test/CMakeLists.txt",
+      "bytes": 490,
+      "sha256": "f334a8e3913a6da2f0d4dcbe7448c517a50a930a68a89c4a17fdc31b84ad8d2e",
+      "crc32": "d061f938"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/unit_test/main/CMakeLists.txt",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/unit_test/main/CMakeLists.txt",
+      "bytes": 175,
+      "sha256": "45f26ae5395a211f0499ef4dac97d1fc1ddccab75e0b2bd672aade8c170ada45",
+      "crc32": "6eb61e70"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/unit_test/main/test_mdns.c",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/unit_test/main/test_mdns.c",
+      "bytes": 16484,
+      "sha256": "f523dd033e3dbc4e4d9b4fbeec51b1c86fb7454bdaeea785dbdd8dc64f9a341c",
+      "crc32": "70471027"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/unit_test/pytest_app_mdns.py",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/unit_test/pytest_app_mdns.py",
+      "bytes": 213,
+      "sha256": "b15b764b8d0fcf025dbe7ae4d06f0077537749fba52bef09b46ac2ebc12c82a8",
+      "crc32": "80289244"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/unit_test/sdkconfig.ci",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/unit_test/sdkconfig.ci",
+      "bytes": 94,
+      "sha256": "8da7589f815a526c0e9bc8291cd1e58864041b80bec592a91840a5c8847cffa6",
+      "crc32": "e7cb7ea0"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/unit_test/sdkconfig.defaults",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/managed_components/espressif__mdns/tests/unit_test/sdkconfig.defaults",
+      "bytes": 68,
+      "sha256": "bf225acae456eb714b977921a0e9d29bdce06d7113f5544593758357810adc56",
+      "crc32": "8005b240"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/sdkconfig",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/sdkconfig",
+      "bytes": 77034,
+      "sha256": "7e9b089d2d16a395f977306cce9e94c4321e696df94176bec83975e4e4443545",
+      "crc32": "e1b1d63e"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/2.ESP32源码/esp32_tank/sdkconfig.defaults",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/sdkconfig.defaults",
+      "bytes": 132,
+      "sha256": "c3110a41a458df15a9b034274e9e80199304adb97e4cfaf7067eb0b7cbb8d46c",
+      "crc32": "238fe101"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/3.固件+烧录软件(无需编译，直接烧录)/固件/target.bin",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/3.固件+烧录软件(无需编译，直接烧录)/固件/target.bin",
+      "bytes": 973712,
+      "sha256": "68fb36ba3bf09ad2007459dfece6bd36593e384674238ae8647b80a6de4fdc97",
+      "crc32": "c07bf972"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/3.固件+烧录软件(无需编译，直接烧录)/烧录软件/esp32/._cache_flash_download_tool_3.9.7.exe",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/3.固件+烧录软件(无需编译，直接烧录)/烧录软件/esp32/._cache_flash_download_tool_3.9.7.exe",
+      "bytes": 20692963,
+      "sha256": "0a47560bf84db5dcfa82567cb111688ac2358e1f3537a9c8fd3f01ca8c8704b0",
+      "crc32": "3900cdb4"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/3.固件+烧录软件(无需编译，直接烧录)/烧录软件/esp32/configure/esp32s3/security.conf",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/3.固件+烧录软件(无需编译，直接烧录)/烧录软件/esp32/configure/esp32s3/security.conf",
+      "bytes": 797,
+      "sha256": "b1c7e8222f9534cb921132986fefc3ad706112e1399b5b3755f04bcf115c36d0",
+      "crc32": "bb128bbb"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/3.固件+烧录软件(无需编译，直接烧录)/烧录软件/esp32/configure/esp32s3/spi_download.conf",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/3.固件+烧录软件(无需编译，直接烧录)/烧录软件/esp32/configure/esp32s3/spi_download.conf",
+      "bytes": 1747,
+      "sha256": "688de6c369d9b671d87d62151e09f24b8c7d99235496c71d456016851fe21aad",
+      "crc32": "eb2171f2"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/3.固件+烧录软件(无需编译，直接烧录)/烧录软件/esp32/configure/esp32s3/utility.conf",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/3.固件+烧录软件(无需编译，直接烧录)/烧录软件/esp32/configure/esp32s3/utility.conf",
+      "bytes": 261,
+      "sha256": "9f4eebd462902bd10d1cbfe15d7421c9855091281dc73458e52e89fd01ec28d1",
+      "crc32": "dc250289"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/3.固件+烧录软件(无需编译，直接烧录)/烧录软件/esp32/flash_download_tool_3.9.7.exe",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/3.固件+烧录软件(无需编译，直接烧录)/烧录软件/esp32/flash_download_tool_3.9.7.exe",
+      "bytes": 20692963,
+      "sha256": "0a47560bf84db5dcfa82567cb111688ac2358e1f3537a9c8fd3f01ca8c8704b0",
+      "crc32": "3900cdb4"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/3.固件+烧录软件(无需编译，直接烧录)/烧录软件/FlyMcuConfig.ini",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/3.固件+烧录软件(无需编译，直接烧录)/烧录软件/FlyMcuConfig.ini",
+      "bytes": 1464,
+      "sha256": "94306c8a4413fe45bf9bf683cd691304298955c4730c68b90ea12d3810cc26c0",
+      "crc32": "a10d7cb1"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/4.3D打印文件/坦克.3mf",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/4.3D打印文件/坦克.3mf",
+      "bytes": 366946,
+      "sha256": "d4517aed3147527301d7c96c9615e1e3f84daced4ff00738017f986f834214dd",
+      "crc32": "a4028803"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/5.原理图PCB/坦克.eprj2",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/5.原理图PCB/坦克.eprj2",
+      "bytes": 2633728,
+      "sha256": "5c52c166167b414a24fc099b7dfbc19b15f63fb1484a9f1ae5578a7de66d5342",
+      "crc32": "9e0c4f51"
+    },
+    {
+      "archive": "机器人开发参考库/18_桌面小坦克/原始资料/桌面小坦克开源资料/桌面坦克开源资料.zip",
+      "archive_entry": "桌面坦克开源资料/5.原理图PCB/坦克.eprj_backup",
+      "saved_path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/5.原理图PCB/坦克.eprj_backup",
+      "bytes": 2392064,
+      "sha256": "8b50d11d938727aa78d1cb532e0d114e1aa4a7bf8b2bf6213087137cb160c39a",
+      "crc32": "980ff853"
+    }
+  ],
+  "original_copy_hashes_verified": true,
+  "zip_crc_checked_on_full_read": true,
+  "executables_run": false,
+  "firmware_flashed": false,
+  "scope": "Originals preserved separately; top-level ZIP files fully extracted with legacy Chinese filename decoding; nested ZIPs retained and inspected separately One private key is redacted in the public ZIP and extracted copy; original and publication hashes are separately recorded.",
+  "publication_redactions": [
+    {
+      "path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/certs/server.key",
+      "reason": "Actual self-signed TLS private key for tank.local, not an established public fixture; HTTPS disabled in provided sdkconfig. Certificate preserved, key redacted in ZIP and extracted file.",
+      "certificate_subject": "CN=tank.local",
+      "private_original_retained_outside_git": true
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "date": "2026-10-03",
+  "model": {
+    "path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/4.3D打印文件/坦克.3mf",
+    "unit": "millimeter",
+    "objects": [
+      {
+        "id": "1",
+        "name": "____04_(3)",
+        "vertices": 4386,
+        "triangles": 8768,
+        "bbox": {
+          "x": [
+            29.80002,
+            77.29968
+          ],
+          "y": [
+            3.9517,
+            58.6006
+          ],
+          "z": [
+            -4.1,
+            17.9
+          ]
+        }
+      },
+      {
+        "id": "2",
+        "name": "____10_(8)",
+        "vertices": 2098,
+        "triangles": 4196,
+        "bbox": {
+          "x": [
+            30.065086,
+            51.087472
+          ],
+          "y": [
+            63.3757,
+            83.82548
+          ],
+          "z": [
+            2.113476,
+            7.963476
+          ]
+        }
+      },
+      {
+        "id": "3",
+        "name": "____10_(9)",
+        "vertices": 2098,
+        "triangles": 4196,
+        "bbox": {
+          "x": [
+            30.065086,
+            51.087472
+          ],
+          "y": [
+            88.375704,
+            108.82548
+          ],
+          "z": [
+            2.113476,
+            7.963476
+          ]
+        }
+      },
+      {
+        "id": "4",
+        "name": "____01_(9)",
+        "vertices": 2172,
+        "triangles": 4344,
+        "bbox": {
+          "x": [
+            53.765088,
+            74.787464
+          ],
+          "y": [
+            88.375704,
+            108.82548
+          ],
+          "z": [
+            2.188476,
+            8.038476
+          ]
+        }
+      },
+      {
+        "id": "5",
+        "name": "____01_(8)",
+        "vertices": 2172,
+        "triangles": 4344,
+        "bbox": {
+          "x": [
+            53.765088,
+            74.787464
+          ],
+          "y": [
+            63.3757,
+            83.82548
+          ],
+          "z": [
+            2.188476,
+            8.038476
+          ]
+        }
+      }
+    ],
+    "build_items": 5
+  },
+  "eda_projects": [
+    {
+      "path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/5.原理图PCB/6-stm32曼波小狗.eprj2",
+      "magic": "SQLite format 3",
+      "tables": [
+        "attributes",
+        "backups",
+        "block_symbol_attributes",
+        "boards",
+        "sqlite_sequence",
+        "categories",
+        "coppers",
+        "notifications",
+        "project_logs",
+        "project_members",
+        "schematics",
+        "sessions",
+        "system_attributes",
+        "team_members",
+        "users",
+        "system_config",
+        "db_paths",
+        "db_versions",
+        "resources",
+        "texts",
+        "editor_caches",
+        "broadcast_messages",
+        "components_tmp",
+        "documents",
+        "component_fts_ids",
+        "component_fts_inv_idx",
+        "device_fts_ids",
+        "device_fts_inv_idx",
+        "component_histories",
+        "branches",
+        "branch_locks",
+        "project_images",
+        "project_structures",
+        "project_histories",
+        "history_data",
+        "components",
+        "devices",
+        "projects",
+        "project_history_329e8aefb60d43b281ba985ee17889a0"
+      ]
+    },
+    {
+      "path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/5.原理图PCB/坦克.eprj2",
+      "magic": "SQLite format 3",
+      "tables": [
+        "attributes",
+        "backups",
+        "block_symbol_attributes",
+        "boards",
+        "sqlite_sequence",
+        "categories",
+        "coppers",
+        "notifications",
+        "project_logs",
+        "project_members",
+        "schematics",
+        "sessions",
+        "system_attributes",
+        "team_members",
+        "users",
+        "system_config",
+        "db_paths",
+        "db_versions",
+        "resources",
+        "texts",
+        "editor_caches",
+        "broadcast_messages",
+        "components_tmp",
+        "documents",
+        "component_histories",
+        "branches",
+        "branch_locks",
+        "project_images",
+        "project_structures",
+        "project_histories",
+        "history_data",
+        "components",
+        "devices",
+        "projects",
+        "project_history_0dd48055c1464570a28b82eefbb596b6",
+        "project_history_"
+      ]
+    }
+  ],
+  "printed_or_opened_in_cad": false
+}

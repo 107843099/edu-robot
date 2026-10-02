@@ -1,0 +1,2436 @@
+{
+  "date": "2026-10-03",
+  "source_type": "user-provided local folders; not a GitHub snapshot",
+  "original_files": [
+    {
+      "original_path": "曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "saved_path": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "bytes": 1378186051,
+      "sha256": "d73db51305ca58ff2be748dd73cdf18f22a74935ad1a966f4d6186f199bd83ac"
+    },
+    {
+      "original_path": "曼波机器狗开源资料/烧录教程/9月28日.mp4",
+      "saved_path": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/烧录教程/9月28日.mp4",
+      "bytes": 1056270446,
+      "sha256": "128ce841d8c70d69a1667220b1eb250cc89b112b380e75b9495aac01d2a848e5"
+    }
+  ],
+  "extracted_files": [
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/1.BOM清单/曼波BOM.xlsx",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/1.BOM清单/曼波BOM.xlsx",
+      "bytes": 11276,
+      "sha256": "bdadb32fcee0466ff956dd6b37e522c1942a4d99c3958b34844c13bddf0ea008",
+      "crc32": "91e86f4f"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/DebugConfig/Target_1_STM32F103C8_1.0.0.dbgconf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/DebugConfig/Target_1_STM32F103C8_1.0.0.dbgconf",
+      "bytes": 2403,
+      "sha256": "e8e0a727328839728e29631f7bc97913f0dc214e1415960551216e89cb9d77b6",
+      "crc32": "472a2ba7"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/6288.txt",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/6288.txt",
+      "bytes": 2244,
+      "sha256": "a624d0f1ec7b3266dccc3ee97bd2b4c563a00cbfbd3dff249e9a6341f646a1f3",
+      "crc32": "c84317f6"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/Hongwai.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/Hongwai.c",
+      "bytes": 1790,
+      "sha256": "019afa96849a46a6113a4928758d5e6c92ab288d124a938b5ae1d9d6db05ebea",
+      "crc32": "a12a99d5"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/Hongwai.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/Hongwai.h",
+      "bytes": 223,
+      "sha256": "956e01bcdbf17f68ff008cb27b1c03cd37a0c565e7cf6e2ff7ccba90a34ed0c1",
+      "crc32": "48537600"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/LED.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/LED.c",
+      "bytes": 1570,
+      "sha256": "7bad1b9435111441802e9892e19869a2f61509607e3320fb4e77bab879d381c4",
+      "crc32": "34d955e0"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/LED.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/LED.h",
+      "bytes": 139,
+      "sha256": "8be876335a47ec5e1665c9006822a3108165a9c2fd2c65b1ffdd68a295b08918",
+      "crc32": "392372be"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/Mode.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/Mode.c",
+      "bytes": 58,
+      "sha256": "8041e819dd61a34a596e592a347e0661cf70ae36926ae02d4bbab4ed57475745",
+      "crc32": "51e6b5a8"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/Mode.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/Mode.h",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "crc32": "00000000"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/Movement.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/Movement.c",
+      "bytes": 10370,
+      "sha256": "3c952d65b9bfa8e9a6f864fddda6b322ca551b2044d994515064c691a034dd92",
+      "crc32": "ab3e2fe8"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/Movement.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/Movement.h",
+      "bytes": 689,
+      "sha256": "abbac22729b04e6eb5aa7296d625ad6237b70cc3852232533df3849b1408de47",
+      "crc32": "8400d9c8"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/OLED.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/OLED.c",
+      "bytes": 40888,
+      "sha256": "17aa3288e22cdefb581ca46ad27de1ea5116c50b4fc37a9cb8ee89dac890045f",
+      "crc32": "32f89762"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/OLED.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/OLED.h",
+      "bytes": 2525,
+      "sha256": "d83606f60ff68d70b4a3a0859b45e3234fe7e521e49633105b84febc24586d39",
+      "crc32": "20065371"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/OLED_Data.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/OLED_Data.c",
+      "bytes": 237984,
+      "sha256": "a409728b5e81084514c810d37482f048d7071803f4d169de4997464565091428",
+      "crc32": "806dfb3d"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/OLED_Data.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/OLED_Data.h",
+      "bytes": 2240,
+      "sha256": "20bf7493c001f3c8395d5b2b503aed36196f04bcc4b580018b9d90d20f25660c",
+      "crc32": "fbfbba2f"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/PWM.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/PWM.c",
+      "bytes": 3968,
+      "sha256": "75918cd390bace25bd1249f0727f6b456201b46b9850190c8591c30fdee19000",
+      "crc32": "0cde8ab7"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/PWM.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/PWM.h",
+      "bytes": 258,
+      "sha256": "1d53af1036e0cf737befe95340d6f338cedba7007ce7bd3500d988d4cfc42d48",
+      "crc32": "3edf31cf"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/Serial.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/Serial.c",
+      "bytes": 11144,
+      "sha256": "3e5ad295389661853e56a7fb3a4b6c267e527f034a9b69edb8d0c24717b7b751",
+      "crc32": "9cce4d7a"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/Serial.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/Serial.h",
+      "bytes": 580,
+      "sha256": "09f2702a026732e53272064dacf9af4b1201d6495519d307cf113358e06723d6",
+      "crc32": "f1bbd9e2"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/Servo.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/Servo.c",
+      "bytes": 1513,
+      "sha256": "9bf870a15dd36e72d0a76151904673f24a3212942686fa3fb11a6b110b5c311e",
+      "crc32": "0d6dfd64"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/Servo.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/Servo.h",
+      "bytes": 370,
+      "sha256": "e242066e03608cd01379866ead3eb1eb35e4d841ad1b75f696719112835ac3e1",
+      "crc32": "58bbb9ad"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/syn6288.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/syn6288.c",
+      "bytes": 1911,
+      "sha256": "87cc40e91b6fc724c1cfd685537f8dfcda81bbb17d31ab45fe488aae6f9f1971",
+      "crc32": "cd75dd75"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/syn6288.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/syn6288.h",
+      "bytes": 159,
+      "sha256": "507a00ce00854c9e06a32c0d83d2deeb78fb44f18ea2a7a339e8a0fca945e4d3",
+      "crc32": "fdeb9742"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/Timer.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/Timer.c",
+      "bytes": 1538,
+      "sha256": "56c62f65bc5a01316e855ae7251a5a54c60eef62615dfed6c78deefbe68d5777",
+      "crc32": "a1eb8bdc"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/Timer.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/Timer.h",
+      "bytes": 70,
+      "sha256": "07c47549e762ea40043d5751d282beba02a8dc3499a217e30ad5fa85c62d0855",
+      "crc32": "d5396a7f"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/UltrasonicWave.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/UltrasonicWave.c",
+      "bytes": 1560,
+      "sha256": "10736d8bc20aa54c064fc85e90867dc311763e90abaa13a34aa003966de898dc",
+      "crc32": "3b4bf68b"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Hardware/UltrasonicWave.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/UltrasonicWave.h",
+      "bytes": 193,
+      "sha256": "95aa05c2fb356952081762d2786026ced8ee64477d2c38739a2dca84ef2521df",
+      "crc32": "683209c6"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/keilkill.bat",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/keilkill.bat",
+      "bytes": 399,
+      "sha256": "77c33184dd517bd3eb31c9e54b96f2810e70ecc9cafedb0487e3cd1e666e5a83",
+      "crc32": "8a198fbc"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/misc.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/misc.c",
+      "bytes": 7046,
+      "sha256": "152c632e56151b2564121c56ff359d0f041621f0da6ed101d7fd376a139a5c75",
+      "crc32": "78888139"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/misc.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/misc.h",
+      "bytes": 8982,
+      "sha256": "40c918f726035dfa67a7bfadefac8e922196d7918f915a7f2db1e652625c7e41",
+      "crc32": "7cf8af3e"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_adc.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_adc.c",
+      "bytes": 47201,
+      "sha256": "d269b826f617c7b1426155cdfc8a220d05aee74580b80b92f86bf33ea9d8be98",
+      "crc32": "3c38dd89"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_adc.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_adc.h",
+      "bytes": 21690,
+      "sha256": "005a122259e9657bd6b3171dd0e478c143c2a70f8e364b505b84f3fd0a8b1b9f",
+      "crc32": "b364f2f2"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_bkp.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_bkp.c",
+      "bytes": 8463,
+      "sha256": "f78d5077029cfec54da52ea4f9d8796dabdf1da5dc6cc29e3395e0f6923645a0",
+      "crc32": "ce519e68"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_bkp.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_bkp.h",
+      "bytes": 7555,
+      "sha256": "bd3ae6fe6a6e617216d60a11a7437be97dca2ea02f3ad78afe889850473fdb16",
+      "crc32": "553c4c7e"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_can.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_can.c",
+      "bytes": 45103,
+      "sha256": "bf9d3bec0785b8f28d9eb046bc67181071586e10014d4f595ba0e582257f31ad",
+      "crc32": "96582ec4"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_can.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_can.h",
+      "bytes": 27559,
+      "sha256": "df4e1602f2b208b335fa22890908ff518de18c6e27ffb94b92cd498e8212b248",
+      "crc32": "850e59ef"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_cec.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_cec.c",
+      "bytes": 11656,
+      "sha256": "5cf689d7a2ecc3244b18099ae254dc6b0bff023406c898a82dbbd42a29b86e7c",
+      "crc32": "6656e25e"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_cec.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_cec.h",
+      "bytes": 6573,
+      "sha256": "620485eb06b33c96a5a8de3fb1116db876162a44da15441883f0cc675e890059",
+      "crc32": "5661e4d8"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_crc.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_crc.c",
+      "bytes": 3347,
+      "sha256": "962aa1381467118ee7e9bea68ad01b3ca3f9fbbd749242211e2d340bf896d0d4",
+      "crc32": "847e732e"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_crc.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_crc.h",
+      "bytes": 2162,
+      "sha256": "98e5537eb5e8837de2170472b774d9f9559f14b60dfcb09d9f839611bc18cb66",
+      "crc32": "13a649fd"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_dac.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_dac.c",
+      "bytes": 19087,
+      "sha256": "789a92c1dbb0dc74688fff8e415a93da816956a7a44882488d25af7ac055cbc7",
+      "crc32": "669c1bae"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_dac.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_dac.h",
+      "bytes": 15233,
+      "sha256": "446107ab9e933ccc284be0cd8f0c32edc3e96ba6f990dea8bd1f1cf080d35ef6",
+      "crc32": "e2f088dc"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_dbgmcu.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_dbgmcu.c",
+      "bytes": 5149,
+      "sha256": "9bfb6f964cd3b06a04c67772e52f31814e5a3d39a951a27bf9f2ef352237e23d",
+      "crc32": "f30dc27c"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_dbgmcu.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_dbgmcu.h",
+      "bytes": 3818,
+      "sha256": "998751256df8a0423dc73be45e489fc04cb2b124a6f04a6ad65e4d53e59f45ba",
+      "crc32": "c215a2f5"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_dma.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_dma.c",
+      "bytes": 29607,
+      "sha256": "b0ac759af150deaa84d8a337a8873a2fbc03e36b1db6623175ab2443efa45d6f",
+      "crc32": "4c7f758c"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_dma.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_dma.h",
+      "bytes": 20754,
+      "sha256": "2ba038050d07735a42645f2508e62078c217dc750878097f7f113660e0d58ffb",
+      "crc32": "291e922f"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_exti.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_exti.c",
+      "bytes": 6959,
+      "sha256": "5783d10d46275d8baee9f2861cf434b5c12a4bc8f42ed4af9e503c1818941ebe",
+      "crc32": "afee2915"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_exti.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_exti.h",
+      "bytes": 6824,
+      "sha256": "661b039483459137a58bfdea7522528b9b6e923d61966d4c7c8a5035bd375f5f",
+      "crc32": "c0653e88"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_flash.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_flash.c",
+      "bytes": 62551,
+      "sha256": "a04fcf26499252a6b02de1cefd33c26b8802d5ff1f9bef920bbddeefdd602f43",
+      "crc32": "aef34f76"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_flash.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_flash.h",
+      "bytes": 25445,
+      "sha256": "952ca72ee4d01e49d392d55af2b146bd9f15763230660334e78ac2cad8cb8982",
+      "crc32": "0b512bd1"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_fsmc.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_fsmc.c",
+      "bytes": 35484,
+      "sha256": "1b623840bba04095a150fcf051fd2a3df4838799b96ae2e36f28675e92c23e44",
+      "crc32": "4b012780"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_fsmc.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_fsmc.h",
+      "bytes": 27016,
+      "sha256": "b2e640d05f6dd11e1fe70bfa0db8aa53cb0a918eef412d6a35630b1357dc5ff6",
+      "crc32": "984376b3"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_gpio.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_gpio.c",
+      "bytes": 23221,
+      "sha256": "8255650b583b2bab2c320e0974309a6ccf26f661e7ad1b54282c0f0e2b9a1acf",
+      "crc32": "d3bfa8ba"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_gpio.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_gpio.h",
+      "bytes": 20175,
+      "sha256": "ef945fe7b2e4a8f3bf8fa22d44274085444dec80424f91606a1467ea4e69626f",
+      "crc32": "966ef9ae"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_i2c.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_i2c.c",
+      "bytes": 45781,
+      "sha256": "5014d8cf824a3f3d4fca09241352e82177752ebf2a5a97a6de2fb8968e6d44c9",
+      "crc32": "17b0ec3b"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_i2c.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_i2c.h",
+      "bytes": 30029,
+      "sha256": "08b14d416090815765a02e6fecf78cbdd3de4ad330d3bc04b2133f8f4f3f2daa",
+      "crc32": "5fb062ce"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_iwdg.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_iwdg.c",
+      "bytes": 4916,
+      "sha256": "bdae6086ce189dac8d464d10bb2ab58a957bbd8f89834e1cc7716faf3e34c9ce",
+      "crc32": "7297aac2"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_iwdg.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_iwdg.h",
+      "bytes": 3828,
+      "sha256": "4a0e65ceebeb69dee10923ab5478938ec7af1357849fbf862d45d19dbb01091a",
+      "crc32": "6b391cd1"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_pwr.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_pwr.c",
+      "bytes": 8759,
+      "sha256": "3f8c77033caad162a69fe9780d7be2ab973f02be0e736e37c2e633f4a4e2bd28",
+      "crc32": "f991a356"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_pwr.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_pwr.h",
+      "bytes": 4383,
+      "sha256": "b7b31d2bfb3d56e763d70e9db4eecfc996664619916ac4bee9d9928430ffac79",
+      "crc32": "20076872"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_rcc.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_rcc.c",
+      "bytes": 51271,
+      "sha256": "f23bbc9b83e44e69f5dc34f072867f0087a3eb0452034ab09c363088d2354cd9",
+      "crc32": "4295862e"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_rcc.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_rcc.h",
+      "bytes": 30452,
+      "sha256": "894e140a70b0cdc94e4e96c5011def9dca5a103752783c3bb7cab538fc426f9e",
+      "crc32": "c7213f50"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_rtc.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_rtc.c",
+      "bytes": 8598,
+      "sha256": "59bc07137d60efbbf69703b88e72bb2153c2e97beee16a1d262a7050686fb00b",
+      "crc32": "7ee7799b"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_rtc.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_rtc.h",
+      "bytes": 3857,
+      "sha256": "4a0ef73054c3f7f7ad325c6ef0268edb3c5e8987978bdac8a695dc548e13b94c",
+      "crc32": "fb86fdf9"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_sdio.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_sdio.c",
+      "bytes": 28933,
+      "sha256": "d042b43fbfd5431719a7310ebe2d38c861a663d07e0c0735e466785e07fc1d97",
+      "crc32": "106595c7"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_sdio.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_sdio.h",
+      "bytes": 21863,
+      "sha256": "35f5d75421ab3c76d1d76e2c26d0910864161966cc16b74f8327c173ae123deb",
+      "crc32": "6445d585"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_spi.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_spi.c",
+      "bytes": 30224,
+      "sha256": "0214f213058353f2fd9d3a4036ccabbea0b73b60aae0652acf36df539adbb9c6",
+      "crc32": "4fea48e6"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_spi.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_spi.h",
+      "bytes": 17725,
+      "sha256": "e5dce165ef95fd872a8802cc4f9205b389e4ecdd28a0d74f8aa6c9c3d1ea4225",
+      "crc32": "74b8e5ab"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_tim.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_tim.c",
+      "bytes": 109159,
+      "sha256": "bd12bf18b03b8585ac2ba6bd0e80ec39d8fd0c89307eb54f5a7be38a46894d03",
+      "crc32": "78b90091"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_tim.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_tim.h",
+      "bytes": 52427,
+      "sha256": "dddf89f9b7134a2f15ed9cc2521589ee9a2e18c0553a6017c71b5d5b394524e5",
+      "crc32": "7efe9abb"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_usart.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_usart.c",
+      "bytes": 38308,
+      "sha256": "6d7af47017b01eb260fb7699f5c483e0a8576b4c780069a99975b7c6443030dd",
+      "crc32": "fff45ec0"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_usart.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_usart.h",
+      "bytes": 16548,
+      "sha256": "9d4c2067e54defd64b000076e6561726d758c872d354bed6eea66a6767c08bce",
+      "crc32": "8c036942"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_wwdg.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_wwdg.c",
+      "bytes": 5735,
+      "sha256": "1d51fbbe3da7731b2303408f00693b51dbf62226590b1264cbbf35be01aa90ea",
+      "crc32": "fcb279dd"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_wwdg.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Library/stm32f10x_wwdg.h",
+      "bytes": 2966,
+      "sha256": "eb1a01bbaa33babc416d8ecdb40b5a97a21522eb5c7952ba1bec09924580790e",
+      "crc32": "0c37a310"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Listings/Project.map",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Listings/Project.map",
+      "bytes": 180400,
+      "sha256": "9fed4a6228f47ef328a900426f3846a40c67f8466022b8a81d4e2f0089c21da7",
+      "crc32": "b21d627c"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Listings/startup_stm32f10x_md.lst",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Listings/startup_stm32f10x_md.lst",
+      "bytes": 40373,
+      "sha256": "0f6d87ad4e8853756f1678d0cc5b2a9c2d173c27e66fbc92293ea7972952d01f",
+      "crc32": "95bd64bc"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/core_cm3.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/core_cm3.crf",
+      "bytes": 3957,
+      "sha256": "4f4a6af00684ec633f92cbbaa52e24cad3347b96ceae107703b3d60dfd9ab82c",
+      "crc32": "05d8aa48"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/core_cm3.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/core_cm3.d",
+      "bytes": 125,
+      "sha256": "6312c212f362f339ca9a5b992fafed303ae7b64d366aeb1eb3f066021152fd5d",
+      "crc32": "80d3804d"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/core_cm3.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/core_cm3.o",
+      "bytes": 11160,
+      "sha256": "a1e850be69734498cd0d1cdde89176f80e6226013698af67825fc8ddde2edcb5",
+      "crc32": "bae0078e"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/delay.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/delay.crf",
+      "bytes": 346245,
+      "sha256": "4d49358471dcee38915f2433d0dc17bf881b84494161b3555f9b5e6df28f08d2",
+      "crc32": "03da68a0"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/delay.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/delay.d",
+      "bytes": 1389,
+      "sha256": "6f399dd1bd9f67ccf1196dc2e752bb74c7f266ccc3f7fd7e76eff9ddc96d695b",
+      "crc32": "5304b70a"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/delay.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/delay.o",
+      "bytes": 379700,
+      "sha256": "c3eeab26963790838a077d6a0124a121e6f40c273c817ac32e03638986906adb",
+      "crc32": "50c97ea3"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/hongwai.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/hongwai.crf",
+      "bytes": 348014,
+      "sha256": "47c1bea7e8cd02556fb985cae363b1cec40d8a31d260ccf403cad171f5ff2bd4",
+      "crc32": "94bfe225"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/hongwai.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/hongwai.d",
+      "bytes": 1534,
+      "sha256": "004eb493abdea66abb288f198e59eb57032fd0ba7e6dc17e59fef12fe3209429",
+      "crc32": "a1d53569"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/hongwai.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/hongwai.o",
+      "bytes": 388624,
+      "sha256": "6b76d650f7e8f2bec34bb09ed2873a68a7d0df9f86c346ee6a4f101c31e59358",
+      "crc32": "b80502ca"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/key.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/key.crf",
+      "bytes": 346592,
+      "sha256": "7277f3988a00d82e0c31ccfe162477610c60c04b27f44be150670a5ccfb57af7",
+      "crc32": "0552da29"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/key.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/key.d",
+      "bytes": 1344,
+      "sha256": "c982add93ca3826c84b1dfa47417bd1f59df9b15abfa3f829f6ce22eb8349097",
+      "crc32": "7aa08f9d"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/key.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/key.o",
+      "bytes": 380788,
+      "sha256": "82caf66cfabeaaca13ecaa90f69062a3f715895552a423fc0cd8aa90dd24218f",
+      "crc32": "13367cc5"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/led.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/led.crf",
+      "bytes": 346435,
+      "sha256": "bd4bb9f15fd4309b76d468e8cb0a089f8a4b2dee15f813ac38ac3eb9a05a3c2c",
+      "crc32": "ab607ded"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/led.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/led.d",
+      "bytes": 1329,
+      "sha256": "e7e8516907cc59e7152f64efa6169eae1dc1e090444e3324dfaf08800bebecbc",
+      "crc32": "88b51801"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/led.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/led.o",
+      "bytes": 381152,
+      "sha256": "d9a808766544feaef95ba65a5180248f4fcc2bb88664788f3f63ef6f7087e5a1",
+      "crc32": "c0c82e7c"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/main.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/main.crf",
+      "bytes": 364840,
+      "sha256": "8bda72d665f8fb889d3c84401b4a312c53771f06bdd77ca90c03b976afd707d2",
+      "crc32": "79a93b26"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/main.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/main.d",
+      "bytes": 1888,
+      "sha256": "e5246e88d7a496e50f2a00aa6301a90b13e935166a57981dc2f64091ba1fb677",
+      "crc32": "652a74cb"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/main.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/main.o",
+      "bytes": 394924,
+      "sha256": "350ffcce6748ba511b36907b0c536494d1718bebe117dc2959a38c7f703d7cbe",
+      "crc32": "1f8d453c"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/misc.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/misc.crf",
+      "bytes": 346934,
+      "sha256": "6fe754e40e1d41c728fe9bdc00faeec043417198cd34dba68b4666feb3065964",
+      "crc32": "8d36ad58"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/misc.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/misc.d",
+      "bytes": 1393,
+      "sha256": "ef3f80378908d27f042711531eb720a7739c25b914d098e1945a23a3896de69f",
+      "crc32": "130042c5"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/misc.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/misc.o",
+      "bytes": 382776,
+      "sha256": "e1456ea9fc46fa7d9102a9cd9cbbeaefd1cf511650e4c513e20560595e98266f",
+      "crc32": "e4632905"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/mode.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/mode.crf",
+      "bytes": 367032,
+      "sha256": "3e68980043578b6cc9e4f8b0733344045a9439b7f52619cd3eebf7c89a6b3f8b",
+      "crc32": "2b939a7a"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/mode.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/mode.d",
+      "bytes": 1965,
+      "sha256": "c1d9403fa815890f686bcf5ec69df51b7275de8c1d75d75ac3258608c12c383c",
+      "crc32": "fb09361a"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/mode.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/mode.o",
+      "bytes": 428232,
+      "sha256": "2aa56afe51c9831a963c3ff8a77ecaf6e23709a27ff3d7632ce6bf0b29ed91a5",
+      "crc32": "8a23a126"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/movement.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/movement.crf",
+      "bytes": 354894,
+      "sha256": "9e92bb49a4c77dd881c518affcf37bd80b7e385edb3728b8d0fa7b1517c3a395",
+      "crc32": "4442be6f"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/movement.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/movement.d",
+      "bytes": 1687,
+      "sha256": "93122e2b3e557626d8e199eae3a86c7541facd882aa24f2d17cec0b70a3779ff",
+      "crc32": "8b86b0cb"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/movement.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/movement.o",
+      "bytes": 415176,
+      "sha256": "e3214e1b7edce14653c16c8677e00569271c3213cdc92e338df9aa6dca4923e8",
+      "crc32": "7efb345a"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/oled.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/oled.crf",
+      "bytes": 380506,
+      "sha256": "4a512352042a38043e21245497686545e1a2c66f0dc650e653d170492abc8c4c",
+      "crc32": "8a3c3176"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/oled.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/oled.d",
+      "bytes": 1756,
+      "sha256": "11b3fb7f669e6b2931d1075b239c93d164a042fb51623908bf48167aca67b8ce",
+      "crc32": "69b7867e"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/oled.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/oled.o",
+      "bytes": 456700,
+      "sha256": "050abd538bde6b1f97a8e2592a6659a4a7ddc2272205e221c461bbf2aa9d6404",
+      "crc32": "2f1aa312"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/oled_data.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/oled_data.crf",
+      "bytes": 5574,
+      "sha256": "6b5667bff16423606a12783938ee4359afb6509308b842263208f0969c42fae9",
+      "crc32": "e7c489e1"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/oled_data.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/oled_data.d",
+      "bytes": 176,
+      "sha256": "95c3e0c47e9aafb316d5c31726f19a81d782365559b3cded4de3cbddf810589b",
+      "crc32": "37f340a5"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/oled_data.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/oled_data.o",
+      "bytes": 57056,
+      "sha256": "afca266a6065ef0d9e938db609a2048c36f7138ea60a9e47cf1d725484e5caf4",
+      "crc32": "4a4335fd"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/Project.axf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/Project.axf",
+      "bytes": 475228,
+      "sha256": "e0044bbb936495f91966a3164ddcded084630607d39b0ff693de7ea122685058",
+      "crc32": "9606034f"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/Project.build_log.htm",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/Project.build_log.htm",
+      "bytes": 1803,
+      "sha256": "f62e3b97a7bafb148651b640a67f70de0fdd12ad342054ccda32fb9b4c611785",
+      "crc32": "a984c3d0"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/Project.hex",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/Project.hex",
+      "bytes": 166093,
+      "sha256": "09299e23e099154b556d255316d1db2cda430c330c61222a36a4c92b2c16280b",
+      "crc32": "c934bcf9"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/Project.htm",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/Project.htm",
+      "bytes": 105236,
+      "sha256": "54c63aa95d71e41a2467da8e86ffd67e1a56002fdf5dc6bbecd3c4c8665f5e00",
+      "crc32": "af8155fa"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/Project.lnp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/Project.lnp",
+      "bytes": 1359,
+      "sha256": "b869fd5ec61e31e4660ed6a066465f15f86627b339859fb3c1bfcadd74de93e1",
+      "crc32": "f4638b51"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/Project.sct",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/Project.sct",
+      "bytes": 494,
+      "sha256": "e8a4264c51e4986cc8611d934f9518430ba5b09a0b75d26783105060326aa979",
+      "crc32": "7247bf98"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/Project_sct.Bak",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/Project_sct.Bak",
+      "bytes": 479,
+      "sha256": "a18239d2ef21b2772b33ab01d9a312bb3513b88fd18792ce64fadd6729d1818a",
+      "crc32": "bb8d4d58"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/Project_Target 1.dep",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/Project_Target 1.dep",
+      "bytes": 68075,
+      "sha256": "883ddc1a39478d6d3d2fb3ec4ae02325717dc5fb8abe9ad5f8137f14915d45eb",
+      "crc32": "2bb8d80c"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/pwm.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/pwm.crf",
+      "bytes": 347034,
+      "sha256": "14fc6f5130cb97f965bceebab027635af8f638a4a3dfbb4c40932f9b6ce707ed",
+      "crc32": "0ce81a3c"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/pwm.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/pwm.d",
+      "bytes": 1329,
+      "sha256": "ace0d0afa2fe4219698a942a75a8bcecd57a2558abf9a976e9f8cac5c85479bb",
+      "crc32": "58201d48"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/pwm.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/pwm.o",
+      "bytes": 383484,
+      "sha256": "98dc4fff47b9996616ad7bc9a38d9b243690023c41dbf99e40b156a307a2fdbe",
+      "crc32": "e93abcb3"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/serial.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/serial.crf",
+      "bytes": 357535,
+      "sha256": "3871f2cda5d5e546b0ea5b65489ec745baba49e8cf3ab785a94b65ae4f50a72e",
+      "crc32": "11cde6b0"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/serial.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/serial.d",
+      "bytes": 1628,
+      "sha256": "bf8005ffbad8b29d892741d7f50dc7de2537a27239c63363218660a9de22afdf",
+      "crc32": "47b72afd"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/serial.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/serial.o",
+      "bytes": 401824,
+      "sha256": "06525645bc7bd501499241453dbc2b79b38a986d0397e5b6c043da5e66bfa671",
+      "crc32": "75d16f91"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/servo.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/servo.crf",
+      "bytes": 346928,
+      "sha256": "50d108a449655e4fac077c783d2a7de8d225cb3449daf01d17a460d73ea34fdd",
+      "crc32": "99eb9bf6"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/servo.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/servo.d",
+      "bytes": 1426,
+      "sha256": "04b3822df64cb97ca768cdbeddb1e20301d318298a89cddd6f02f7d6af2f4398",
+      "crc32": "4f014ea6"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/servo.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/servo.o",
+      "bytes": 389452,
+      "sha256": "1bfa9017d1bb46063a17639b06e67dafb2ec96a7c0ab0f4f96cb329dc4c13541",
+      "crc32": "70aa7954"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/startup_stm32f10x_md.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/startup_stm32f10x_md.d",
+      "bytes": 64,
+      "sha256": "7b318e6bad5ed72f901bce41792502bb878ff19a4e019aed3897ccbe26d7f889",
+      "crc32": "c6c3357a"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/startup_stm32f10x_md.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/startup_stm32f10x_md.o",
+      "bytes": 5856,
+      "sha256": "868719b4fa5216c2132ae43a3f9c3b4496218f8ae4cb5273b19bc6f1bff67212",
+      "crc32": "bc49cc07"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_adc.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_adc.crf",
+      "bytes": 354103,
+      "sha256": "1027031ed8873aaf0181ae07e25c45a056d0c96f0f7c7ce43124e06aadaea94b",
+      "crc32": "e0af5897"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_adc.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_adc.d",
+      "bytes": 1690,
+      "sha256": "1d796ba289c8e8eed650548cec709b3c3b7b3bfe724e033ed8d6b6607555b1fd",
+      "crc32": "05411415"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_adc.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_adc.o",
+      "bytes": 429192,
+      "sha256": "f4ab724367c8bdff6bb827000c10ddab9ba4884fae92076d9cce99048a41b697",
+      "crc32": "ff102e6f"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_bkp.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_bkp.crf",
+      "bytes": 347874,
+      "sha256": "106804b3a6bc5538df1f8c3de0a422605b1ce1107df3fb676c96dab2f24e70e1",
+      "crc32": "d96570f4"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_bkp.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_bkp.d",
+      "bytes": 1690,
+      "sha256": "23d4aa0bb0c3097c1a5ec5bde590d077811d4649a17cfae1e54c6902f18b53d5",
+      "crc32": "c5d55f94"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_bkp.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_bkp.o",
+      "bytes": 392488,
+      "sha256": "567709fd740c5ce31713b3ddf99d4ea4418fb7a0b463d33d8257570d1a83b9c3",
+      "crc32": "bb42d5ce"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_can.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_can.crf",
+      "bytes": 355716,
+      "sha256": "0baed5752c05b101a80c564ee21252978f04a79ec8d87e657700e097d2c279f5",
+      "crc32": "c4e9f322"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_can.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_can.d",
+      "bytes": 1690,
+      "sha256": "fa89c314929e2160bf26bbc13f8c476592d7b4b52a5e7018a55f8edeb0f4e54b",
+      "crc32": "f2214069"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_can.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_can.o",
+      "bytes": 414608,
+      "sha256": "9e729227aef15d912ba71590a0d7ac793d1342b65b0cc577a10eb310e88cec59",
+      "crc32": "020f109e"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_cec.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_cec.crf",
+      "bytes": 348427,
+      "sha256": "c3c31a833ecbbd2657fefc7bf91bd455272e5469a6651925ba3e7726a54a2491",
+      "crc32": "eb6698ff"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_cec.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_cec.d",
+      "bytes": 1690,
+      "sha256": "38311faf2a37622ecdd9a7cce8f0c9ab7dc64f8e3e5bd67dfb62cdcaee1ab451",
+      "crc32": "7cbfb267"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_cec.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_cec.o",
+      "bytes": 395068,
+      "sha256": "23eee91ec58d517c791a287eee9af938a1ba9cf7b07128712906d843f1208157",
+      "crc32": "401b9a77"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_crc.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_crc.crf",
+      "bytes": 346487,
+      "sha256": "7ceac04ae04fe3189facc7b7ed14685c54ecd85fb1e6e8e9ca638a757f61ec87",
+      "crc32": "71e560d2"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_crc.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_crc.d",
+      "bytes": 1690,
+      "sha256": "9e0c9e82315faa80fafdede4569abb39a4ad06cc4b1d2d8544a1905d24381485",
+      "crc32": "a30194a8"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_crc.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_crc.o",
+      "bytes": 383772,
+      "sha256": "7cb08884ce60b838f191ac35f067158ef439407986c8928c148ddc80959486e1",
+      "crc32": "849def2f"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dac.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dac.crf",
+      "bytes": 348560,
+      "sha256": "11148000bcfe12a5fb2f9854e16940caf072ca76132a465d27c92d7dd1c9bd69",
+      "crc32": "e6388bc1"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dac.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dac.d",
+      "bytes": 1690,
+      "sha256": "41c03329638bfcec533483b2e97b2dc4f884b474517d0f3b045dccbe09f3a841",
+      "crc32": "687c6909"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dac.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dac.o",
+      "bytes": 393136,
+      "sha256": "94bdb50c87488a3f11d0d9657210245c901acb5f9b1f62453e2704d5226193ea",
+      "crc32": "3556da07"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dbgmcu.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dbgmcu.crf",
+      "bytes": 346277,
+      "sha256": "a5be76806bdf4c3d496d42593bd83c1d1dd6b97dc40d9b21f7063be946eef10b",
+      "crc32": "b00fa80a"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dbgmcu.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dbgmcu.d",
+      "bytes": 1789,
+      "sha256": "617939cfff786af60ebf872350b01066d16b3b604aed1b42889c477984d81fbe",
+      "crc32": "c04aa544"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dbgmcu.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dbgmcu.o",
+      "bytes": 379912,
+      "sha256": "e5fca633be58dbbe297f42e1d69d79d8b868d201238d2b187f2413f76ea72e0a",
+      "crc32": "64dce789"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dma.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dma.crf",
+      "bytes": 350042,
+      "sha256": "65656db7debd610bc457099b8f75dd58c76d36717b236697110b3f9a482cbf70",
+      "crc32": "d85505d3"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dma.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dma.d",
+      "bytes": 1690,
+      "sha256": "516fe8beb496c3c69ef66aecb5e810ab2edc2a5dd9f62a4862277f5f31ef3cdd",
+      "crc32": "4f819faa"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dma.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_dma.o",
+      "bytes": 392612,
+      "sha256": "59576309cad47e4c4d5b8b0fbb4976479744089a01861b78ea8cf9fd2b35d1ce",
+      "crc32": "13a7d188"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_exti.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_exti.crf",
+      "bytes": 347493,
+      "sha256": "36e39ed719bc1540413f48007be89d344d33c793c85f735d6849959edc1aab9f",
+      "crc32": "0492e4a7"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_exti.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_exti.d",
+      "bytes": 1723,
+      "sha256": "89c7a936b91252cf5f0ac0b2938cc91e018c49a55592ed8290a7a915142a0578",
+      "crc32": "05e71dfc"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_exti.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_exti.o",
+      "bytes": 386812,
+      "sha256": "58d6e82bf8706f700133d9f25ce0f4e41c0814c87573c991dedb73d5d312f279",
+      "crc32": "d3f9f0d6"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_flash.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_flash.crf",
+      "bytes": 353944,
+      "sha256": "141723e8b2db08b7885611e4d5841b2ab293d1f473a573fe091013276ac01e81",
+      "crc32": "e2035417"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_flash.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_flash.d",
+      "bytes": 1756,
+      "sha256": "09541d860170fbe3ac1ce0a93c9219c7bced54f5bfcffb55e9f89abcb8da61d8",
+      "crc32": "91a13e3a"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_flash.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_flash.o",
+      "bytes": 418204,
+      "sha256": "47a2eb453471e062ed08a54a6d0913c059ef274eae95a1da2ab10f7ff3bb95d5",
+      "crc32": "4046539b"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_fsmc.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_fsmc.crf",
+      "bytes": 352449,
+      "sha256": "f3dca4b1b74b97c14275bd282f7cb672cbd0c0eba35de2046f2a7ba86f6f6118",
+      "crc32": "685c7ba2"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_fsmc.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_fsmc.d",
+      "bytes": 1723,
+      "sha256": "4d75ce3a35282e3e49b9f3ef25d8dbebe75c7d3a1bf46b5728dea65fad974e96",
+      "crc32": "df870a17"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_fsmc.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_fsmc.o",
+      "bytes": 403900,
+      "sha256": "1c4510991a69acd4c8b0d406ef1fc7c5cb5d220f0947c140a6ffaafe2537e7fa",
+      "crc32": "8346304c"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_gpio.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_gpio.crf",
+      "bytes": 350432,
+      "sha256": "7bb5b3040be1eb1a143134fb218099ed7267146e74e20af0c4f3463179565184",
+      "crc32": "25c80397"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_gpio.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_gpio.d",
+      "bytes": 1723,
+      "sha256": "5aa6f56a0096d6ba9f0dad523ef1d3b441a7f5ae81e320acc80a8bfb2f9381f3",
+      "crc32": "f3691d75"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_gpio.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_gpio.o",
+      "bytes": 402768,
+      "sha256": "077965e200a817e613204353e210cc6e52d59dd8596f85daa15802c7ef7fd305",
+      "crc32": "4a58775c"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_i2c.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_i2c.crf",
+      "bytes": 352863,
+      "sha256": "68aae01e38b2102888265bacdc20200cd2daeadf7df24d03e39406b04bf113d5",
+      "crc32": "716914c5"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_i2c.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_i2c.d",
+      "bytes": 1690,
+      "sha256": "44ddf8190aef1234866e838c98384649dbc8da362d2b824691eddaae5618a3e0",
+      "crc32": "8e63c73a"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_i2c.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_i2c.o",
+      "bytes": 423376,
+      "sha256": "909d82d33cbff732a81497f4587d608ec7507403c820d66b7bee7018560475eb",
+      "crc32": "8ab748bd"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_it.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_it.crf",
+      "bytes": 346408,
+      "sha256": "d620d48b8f1b23e2739e5ed3eb8bd3b7251835c91db174fb58bb59088dfa197d",
+      "crc32": "959b4112"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_it.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_it.d",
+      "bytes": 1651,
+      "sha256": "08f791e70234cc6d5a4a2977ae1c59764fb4804332fad6f019de4830f0465e0d",
+      "crc32": "7adabd3c"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_it.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_it.o",
+      "bytes": 387460,
+      "sha256": "0f85080d5b1e48d88c63b74d275a8ff72e12bff3b4e9788d8e018bc48285410d",
+      "crc32": "521d8916"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_iwdg.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_iwdg.crf",
+      "bytes": 346588,
+      "sha256": "e5ef998d7145d372f36d6a7f8d7d0fe7b9f74a1c64f24cad257752eaaa7c7691",
+      "crc32": "d60d292d"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_iwdg.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_iwdg.d",
+      "bytes": 1723,
+      "sha256": "67d9f7aef18c93778c15ec71f8783d1264a16ee528ffb5495da796abff46b383",
+      "crc32": "b72019b4"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_iwdg.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_iwdg.o",
+      "bytes": 383748,
+      "sha256": "1df343e9c06a6bd97bed0d350ed5fad1ca3c437184925e2ea8dd4305dd3a9d20",
+      "crc32": "2e5e84d3"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_pwr.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_pwr.crf",
+      "bytes": 347781,
+      "sha256": "9ea6258bbad39b5143edb683fdf7057192d73100797affb3620f4867aad3ddc1",
+      "crc32": "fe1e24f5"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_pwr.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_pwr.d",
+      "bytes": 1690,
+      "sha256": "8740849e58b7a515f51d8f6ae2b351aaad37d5ca44474ce008059b20f3602412",
+      "crc32": "ca6298c6"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_pwr.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_pwr.o",
+      "bytes": 388408,
+      "sha256": "f8205134a7f7f0c357009e6e72b777746dc9c31752d01159ff083e770c2e1145",
+      "crc32": "4e501360"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_rcc.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_rcc.crf",
+      "bytes": 354007,
+      "sha256": "229d9fc399a03debd53479874911a99f8c4b3b7a5fbff900014bb76d5578737f",
+      "crc32": "db758dea"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_rcc.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_rcc.d",
+      "bytes": 1690,
+      "sha256": "79da389e41b3eb67ba9f1195ab8fc191fc343d647ce895114fd4c61ec14fd50d",
+      "crc32": "2a7c2757"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_rcc.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_rcc.o",
+      "bytes": 422124,
+      "sha256": "07f323b34ff86368566a76a375c7cb4d53ca513b99f5144619dc4c372b3dcb4a",
+      "crc32": "17a11adc"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_rtc.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_rtc.crf",
+      "bytes": 347781,
+      "sha256": "b66da51d54dae07d2c1927da76b9f5ae48d24cafd86cbcfca342e3d095de7a27",
+      "crc32": "fc21a226"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_rtc.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_rtc.d",
+      "bytes": 1690,
+      "sha256": "d9b50733bc836449656fbe52f34d6ce514c0774f10aa7bb7738451e00ee00e76",
+      "crc32": "f5c20198"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_rtc.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_rtc.o",
+      "bytes": 394596,
+      "sha256": "ad21598febbe46cdc1ee1a718725c7064278b9de57e4a542a59bf6db20cadf2a",
+      "crc32": "5147b6d3"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_sdio.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_sdio.crf",
+      "bytes": 351043,
+      "sha256": "f3442796c0239663ba830c2b7e35cc87a52c083efce57e805648344da9c880eb",
+      "crc32": "24b4e342"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_sdio.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_sdio.d",
+      "bytes": 1723,
+      "sha256": "72e1da60b2bd3acbaa6d7e235178c20c121f8561a7e3753f65cba4de7e88e843",
+      "crc32": "c76c28b3"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_sdio.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_sdio.o",
+      "bytes": 416960,
+      "sha256": "56ee03112fd3d865b5c77947bfb3de85ccae893e5eb4687a61e3d63b70bb47f8",
+      "crc32": "b97af888"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_spi.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_spi.crf",
+      "bytes": 350907,
+      "sha256": "345506a6e72e486620e1851538b32d83367ae7f2a00c41ba80d3b9b56e190adc",
+      "crc32": "426a25d2"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_spi.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_spi.d",
+      "bytes": 1690,
+      "sha256": "ca13affdd0ed95017d2a2c7d5d6ac7f56a76db591a29284c5ce6202a7df3210c",
+      "crc32": "019d6a71"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_spi.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_spi.o",
+      "bytes": 409136,
+      "sha256": "176dc0cb8aca64bcd4941cdde8a214f67ef7e45004b1dd4ac12c6dcdac1ab339",
+      "crc32": "693ce405"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_tim.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_tim.crf",
+      "bytes": 369020,
+      "sha256": "2f47b61a1a478657d6c96ef991f266eb65d88f39ed236d967422d59f045ee00b",
+      "crc32": "02907e4e"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_tim.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_tim.d",
+      "bytes": 1690,
+      "sha256": "6e6ce25bc461f2da3f8053bd43dddf97c36b1c53634ccc6bedac847290ecd991",
+      "crc32": "42f25489"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_tim.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_tim.o",
+      "bytes": 506860,
+      "sha256": "8c9bba3bda47730ea34b3d4e3ae3a7961a7cb463f636284db469b11541735b9a",
+      "crc32": "ab708e6d"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_usart.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_usart.crf",
+      "bytes": 352545,
+      "sha256": "2495b37310a26ad1f96123fbce99ed7b61036b7ad1c183d731be6fa1a8263718",
+      "crc32": "cfb1dd9c"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_usart.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_usart.d",
+      "bytes": 1756,
+      "sha256": "c69cb9746b54fe9d67fcf67796a0e232154485f64d60fee2b434f9eb8e409a75",
+      "crc32": "e7d44d32"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_usart.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_usart.o",
+      "bytes": 418260,
+      "sha256": "ab47cf58bcb9c3bbe885096074a3af015cfcf75d719e9cf2a78cd39a4fea0ca4",
+      "crc32": "35c483da"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_wwdg.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_wwdg.crf",
+      "bytes": 347039,
+      "sha256": "8e2c66a4cc78d12d67a3fa3694f18db2c995b6d8fb124c4896adc16a41decc8a",
+      "crc32": "3b9e5aea"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_wwdg.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_wwdg.d",
+      "bytes": 1723,
+      "sha256": "5adce606fd30fddfdfc46d63a997741da0c94edd637e07b680c4a5dd38b81570",
+      "crc32": "79a17be6"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_wwdg.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/stm32f10x_wwdg.o",
+      "bytes": 386632,
+      "sha256": "283b4ba3d10274215cb855bd7bfa0394d52561ba4aecbfccd0dddf7cd28410b8",
+      "crc32": "61a25a29"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/syn6288.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/syn6288.crf",
+      "bytes": 353574,
+      "sha256": "9358799ce15f708411aba4e0f5bc7569080a37b6cc4191035de71856405e6a37",
+      "crc32": "049a6d5a"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/syn6288.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/syn6288.d",
+      "bytes": 1740,
+      "sha256": "6221de70ac4cb8d30ec553346bdded8a16de1068b20da19d22778dd9444877d3",
+      "crc32": "e1aed351"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/syn6288.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/syn6288.o",
+      "bytes": 386696,
+      "sha256": "2e4d2af7f5f35a80acd4116fa839b8d418ed291d1b0b2a26e9280fef94ac0c5c",
+      "crc32": "01cf8209"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/sys.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/sys.crf",
+      "bytes": 347139,
+      "sha256": "3e62f21e38199f6078718de69749eb2683058eb8d0f95519ba47d788d28cc8bf",
+      "crc32": "58e96376"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/sys.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/sys.d",
+      "bytes": 1338,
+      "sha256": "b27901d2e983aa29246eaace99183e0627061fedd2ce6920350101bc3162a98e",
+      "crc32": "40c82e3e"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/sys.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/sys.o",
+      "bytes": 382704,
+      "sha256": "4ec49e8b5eb0e0dbc22e8af4042f680eee1f545ef3893e075a87b75c24b904cd",
+      "crc32": "417988f2"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/system_stm32f10x.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/system_stm32f10x.crf",
+      "bytes": 348108,
+      "sha256": "fd510efd8e65e446a55bf5feaa1310d3eaf76ee70d56814119687e19f805d179",
+      "crc32": "109fcc45"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/system_stm32f10x.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/system_stm32f10x.d",
+      "bytes": 1723,
+      "sha256": "0b3dfa5891455dbbe5be204f8280cddbfe6af3cd8c46b356aaea904a43e31f7e",
+      "crc32": "c5ef9a91"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/system_stm32f10x.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/system_stm32f10x.o",
+      "bytes": 382128,
+      "sha256": "3711a28bdf4292b9923898e838db9b2badd0d305137cec81de61fd700d30ca37",
+      "crc32": "0c35ddd0"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/timer.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/timer.crf",
+      "bytes": 346562,
+      "sha256": "819ec79d3d9a52905e708188786b8ea947a9566e041a2942fe649e488e33232b",
+      "crc32": "0d3232c3"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/timer.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/timer.d",
+      "bytes": 1391,
+      "sha256": "6d55f062a96f42152aa43b3e7bfb3233152a839c2de7215913dbe6757cb1ab45",
+      "crc32": "2084da3c"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/timer.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/timer.o",
+      "bytes": 379380,
+      "sha256": "6aae94018640347ff0b8923a49df283ef2afaecaea66fe97400a8dcc1e85eab1",
+      "crc32": "942380fd"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/ultrasonicwave.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/ultrasonicwave.crf",
+      "bytes": 347865,
+      "sha256": "10c3c57d5183495e33a7acce7d42e3517c4a5e151c95a42be71677b8c1990e3c",
+      "crc32": "0a68cff0"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/ultrasonicwave.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/ultrasonicwave.d",
+      "bytes": 1811,
+      "sha256": "3230860a0006026147a1a71e3591851cc7ca53ab03e01620cd486b5ad0c1c52f",
+      "crc32": "28a7f450"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/ultrasonicwave.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/ultrasonicwave.o",
+      "bytes": 387672,
+      "sha256": "9aa90a5d574cd7f3294339c3c82827c33ef8d6aaefc5bdb936d1d5dae2f030eb",
+      "crc32": "1fbe7d8e"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/usart.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/usart.crf",
+      "bytes": 352307,
+      "sha256": "d1b78b7bb610c86d8b85f4b5965e05c0ac37badf0451cf162c6d1709f9e01586",
+      "crc32": "77b42491"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/usart.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/usart.d",
+      "bytes": 1469,
+      "sha256": "cba1ae2a5d91793e0157a5709290ff6014db4c168f6364f398b63cd926359b35",
+      "crc32": "0df9050c"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/usart.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/usart.o",
+      "bytes": 389976,
+      "sha256": "88392c032505b5269add6ef91f7d297b420729f45aef20abd862fd4a9b667e18",
+      "crc32": "9110b108"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/usart1.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/usart1.crf",
+      "bytes": 357262,
+      "sha256": "7c803f0f829263b462769a1258bac7cba91cef6e3829992e78df58097adf8b99",
+      "crc32": "17952099"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/usart1.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/usart1.d",
+      "bytes": 1704,
+      "sha256": "0a50991988fa8150a8990206ec03c1eec38e77163ebd74fa02ef0673d27e2bad",
+      "crc32": "8ad0c0b9"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/usart1.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/usart1.o",
+      "bytes": 398940,
+      "sha256": "1cecbaee2ae0d992520919fce1197ca0795cb5d61ba6b80261bcd2ff60b84f51",
+      "crc32": "b8991290"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/usart2.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/usart2.crf",
+      "bytes": 356429,
+      "sha256": "6258e9ca147ff9766d9152f237316386b1446c6aff6a492405dec24b69638b2a",
+      "crc32": "e946396c"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/usart2.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/usart2.d",
+      "bytes": 1704,
+      "sha256": "67731c35553b00af209922fdebcc9377b19e5d974695b604be5d22d659f4d554",
+      "crc32": "379f4079"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/usart2.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/usart2.o",
+      "bytes": 390292,
+      "sha256": "fc8c53e42421607b7327ed6ce841cbd099393e6f753afd555494cc8037695f66",
+      "crc32": "c3a9636b"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/usart3.crf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/usart3.crf",
+      "bytes": 356234,
+      "sha256": "5f42ed744cd235a031bd545549f049b12cbca2d3ee6b01a288c7fae3998ad722",
+      "crc32": "eb10b2f5"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/usart3.d",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/usart3.d",
+      "bytes": 1704,
+      "sha256": "13b863b4f48c2adab9f7456f61423362ccc3859150364d29c9555e3b04ad61d4",
+      "crc32": "5ca5c039"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Objects/usart3.o",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Objects/usart3.o",
+      "bytes": 388852,
+      "sha256": "b785f14b98ea9cc255d9bf2a95c97e8ff80306390da075b4c23acffb9fb5a1af",
+      "crc32": "baeb68be"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Project.uvguix.23644",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Project.uvguix.23644",
+      "bytes": 94083,
+      "sha256": "2d682eadf24e20543551a17f0abad5297a0234894f487c11d750337b297d2b33",
+      "crc32": "bf8401f6"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Project.uvguix.27442",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Project.uvguix.27442",
+      "bytes": 91956,
+      "sha256": "0807719476671edbe341d204433956b69a4ccedc5d72c3e424bfe60d56686e59",
+      "crc32": "0a716b5d"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Project.uvguix.Admin",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Project.uvguix.Admin",
+      "bytes": 173292,
+      "sha256": "d8bc4bb3f099d6574cf442d33c32baaeae1d31db78c284ad2fcced2dcfab0f14",
+      "crc32": "d8dec0a2"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Project.uvguix.Administrator",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Project.uvguix.Administrator",
+      "bytes": 97858,
+      "sha256": "ebdacf8aff310297285dc6b2c63b360a78aa3705d097c26db101901dbf32d1fa",
+      "crc32": "899da369"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Project.uvguix.dell",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Project.uvguix.dell",
+      "bytes": 92836,
+      "sha256": "a71c4689504f8fbe2293a887805f02b5a1c5f2cea25d14b4845a2b02de27bd95",
+      "crc32": "33cfdf00"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Project.uvguix.HH",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Project.uvguix.HH",
+      "bytes": 88761,
+      "sha256": "ca5646f579c0dcfa30aa78e2ccd708a0f8e3dc3b797ca43189cad93192216e57",
+      "crc32": "d4826e8e"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Project.uvguix.lenovo",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Project.uvguix.lenovo",
+      "bytes": 94038,
+      "sha256": "7f27a964951aa10ba0bfaa664723918772ed2b4fe06d9e8904708269aee7cdda",
+      "crc32": "52fbe7dd"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Project.uvoptx",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Project.uvoptx",
+      "bytes": 36994,
+      "sha256": "a6bff989f59f2678f61bea57702eaa825f7f5ea6e764fc071a110fb3966b6f73",
+      "crc32": "6b3f727c"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Project.uvprojx",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Project.uvprojx",
+      "bytes": 28962,
+      "sha256": "fc4d337cacaf72af20008e1a6d1df5fc0d829e5557be51e2f18647a6071306fd",
+      "crc32": "55f7b179"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/RTE/Device/STM32F103C8/STM32F101_102_103_105_107.dbgconf",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/RTE/Device/STM32F103C8/STM32F101_102_103_105_107.dbgconf",
+      "bytes": 2403,
+      "sha256": "e8e0a727328839728e29631f7bc97913f0dc214e1415960551216e89cb9d77b6",
+      "crc32": "472a2ba7"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/RTE/Device/STM32F103C8/STM32F101_102_103_105_107.dbgconf.base@1.0.0",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/RTE/Device/STM32F103C8/STM32F101_102_103_105_107.dbgconf.base@1.0.0",
+      "bytes": 2403,
+      "sha256": "e8e0a727328839728e29631f7bc97913f0dc214e1415960551216e89cb9d77b6",
+      "crc32": "472a2ba7"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Start/core_cm3.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Start/core_cm3.c",
+      "bytes": 17273,
+      "sha256": "e93a7e36349e7810f328276a3fed56701e10536779f7527a8ccd140618a556b0",
+      "crc32": "200ac441"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Start/core_cm3.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Start/core_cm3.h",
+      "bytes": 85714,
+      "sha256": "de4668aa9d314d05769dfb29f028e205b50577c6b2150fc6bccb34bd34179bbb",
+      "crc32": "ae7035cf"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Start/startup_stm32f10x_cl.s",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Start/startup_stm32f10x_cl.s",
+      "bytes": 15766,
+      "sha256": "fe249e5ec3856feb2596bda8a09eed91a5b7d634abc96fc2981c24c1260e204d",
+      "crc32": "5ea4e0ce"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Start/startup_stm32f10x_hd.s",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Start/startup_stm32f10x_hd.s",
+      "bytes": 15503,
+      "sha256": "1ad6e0a965254d4cd1a6cc289011214c8d3f1468d77e9ad1f235d80792cda2fc",
+      "crc32": "21426c57"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Start/startup_stm32f10x_hd_vl.s",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Start/startup_stm32f10x_hd_vl.s",
+      "bytes": 15692,
+      "sha256": "1c20befd815cc2707370a3ff530c0e050db4a90d5d76a270290e3c3495f76f3c",
+      "crc32": "5ef4fdfa"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Start/startup_stm32f10x_ld.s",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Start/startup_stm32f10x_ld.s",
+      "bytes": 12376,
+      "sha256": "d36ebab687be79789ac7250e1e70310ae7ea4f7de7a6fddc1deda4a134263977",
+      "crc32": "baa9d0ec"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Start/startup_stm32f10x_ld_vl.s",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Start/startup_stm32f10x_ld_vl.s",
+      "bytes": 13656,
+      "sha256": "ad7afad5352f4ebef018c689d40fda1834805c8a9c3f67a3826f6e8d15d2f41f",
+      "crc32": "be4f84da"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Start/startup_stm32f10x_md.s",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Start/startup_stm32f10x_md.s",
+      "bytes": 12765,
+      "sha256": "8bff69adff662663c0fcbee4cfbeb3ed9ff2b7501527f24815789f2736420d23",
+      "crc32": "f77becee"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Start/startup_stm32f10x_md_vl.s",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Start/startup_stm32f10x_md_vl.s",
+      "bytes": 14073,
+      "sha256": "4d453f0a56a416ef6f1f6ff3f3ecdd3e65c1f055b46c0be1fde0bcf47535498b",
+      "crc32": "cd071484"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Start/startup_stm32f10x_xl.s",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Start/startup_stm32f10x_xl.s",
+      "bytes": 15955,
+      "sha256": "0946ba9c61c7cf85f5669b0ce38cf393177e5e1a735666331587dcf124019a18",
+      "crc32": "76bf07d1"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Start/stm32f10x.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Start/stm32f10x.h",
+      "bytes": 633941,
+      "sha256": "4ee722d262c1e7d7505d7dc7eeb8ccaaf67158b51ee4bc177397cd64e74e1b3a",
+      "crc32": "97f3c515"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Start/system_stm32f10x.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Start/system_stm32f10x.c",
+      "bytes": 36557,
+      "sha256": "45f52950f5fc6509920fb26d1362e8457907c2d62fa455cbe3c6ce6daa974a76",
+      "crc32": "bf2f3697"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/Start/system_stm32f10x.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Start/system_stm32f10x.h",
+      "bytes": 2085,
+      "sha256": "919dc1f5c6bbba74cb712e8ec7cf73f1988eafa9438c706526fb401a2ab4672d",
+      "crc32": "d57ea127"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/System/Delay.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/System/Delay.c",
+      "bytes": 838,
+      "sha256": "03afaf6279ef043efb2dbe9468a0405fd187b0c32c3f100d3e9e6ece0bd1d64d",
+      "crc32": "c12a4d4b"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/System/Delay.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/System/Delay.h",
+      "bytes": 135,
+      "sha256": "f0bf8cbd91c797ef0e64860ae1d05dc310481fd97e72fc487401b131af1346ad",
+      "crc32": "71faddab"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/System/usart1.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/System/usart1.c",
+      "bytes": 6119,
+      "sha256": "3837ff5bb6065c19795d9c5af3833da71eb594deabee3539c27c4f513c2d0d5c",
+      "crc32": "84bc2d67"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/System/usart1.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/System/usart1.h",
+      "bytes": 634,
+      "sha256": "1ba925a3d88717c7e584a95f4be74f42bf531ec947bbf964d73f5830de7130d9",
+      "crc32": "f7d0f7a4"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/System/usart2.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/System/usart2.c",
+      "bytes": 3971,
+      "sha256": "ae082db462f61e1a9b1c31d2d7eb2e61f781bbb77ce024a79c1e6058aa46e571",
+      "crc32": "828b500e"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/System/usart2.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/System/usart2.h",
+      "bytes": 361,
+      "sha256": "b1e5803c025fc7281e1791e520a1647e5333c00e97a53f2eee7a1be8907a8027",
+      "crc32": "d4e9a13d"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/System/usart3.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/System/usart3.c",
+      "bytes": 3712,
+      "sha256": "96ec3743b3cb0026848be1afd412e6e37f20fe5b7cf12236ab39065d44805f85",
+      "crc32": "0e12edff"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/System/usart3.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/System/usart3.h",
+      "bytes": 321,
+      "sha256": "32af5f6557bad0efcfa9467bb4cd6f8b00b36d4bfcdb3c704c368ec137b5fc45",
+      "crc32": "a81253a3"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/User/main.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/User/main.c",
+      "bytes": 3076,
+      "sha256": "298cddedb108422aa89afc984afc1d6f8689e4a9c3c57eee23442514364e8c80",
+      "crc32": "e71b08f0"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/User/Mode.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/User/Mode.c",
+      "bytes": 10063,
+      "sha256": "f1ba581fd3fa87379ef6bf37f7b5e46464ea971073aaa176d214609acc0b7e5c",
+      "crc32": "33124df3"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/User/Mode.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/User/Mode.h",
+      "bytes": 873,
+      "sha256": "ce6af1a954e3cc91c88bb1bf4420d7992abbccbebd601c78f5a055d96da8079e",
+      "crc32": "1d89100a"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/User/stm32f10x_conf.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/User/stm32f10x_conf.h",
+      "bytes": 3259,
+      "sha256": "d5f06afeb57a339fd877ec6bd7f75bd8a940a38108ce69ed3cb591caa4cd0620",
+      "crc32": "a8a61fd6"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/User/stm32f10x_it.c",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/User/stm32f10x_it.c",
+      "bytes": 4405,
+      "sha256": "317179050a5070dbd5357385cc7eea92d309d92797e9b3e84f864776ea8dd51e",
+      "crc32": "6e6bd8bb"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/User/stm32f10x_it.h",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/User/stm32f10x_it.h",
+      "bytes": 2086,
+      "sha256": "d41e14c819d2df2adca148e514a8d36290afbf94ac8319ac9694dde2a6e0f747",
+      "crc32": "f9c50506"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/wink.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/wink.bmp",
+      "bytes": 24630,
+      "sha256": "4ed559ab329d40c88ce5f1b56f34453735ce7c65ec8861174084de613e770c22",
+      "crc32": "adce518a"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/wink.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/wink.bmp",
+      "bytes": 1086,
+      "sha256": "f4cbf7a70413891031c3927c7687f88666210be44d9ce94671672b5ced2238ae",
+      "crc32": "be648191"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/呆呆.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/呆呆.bmp",
+      "bytes": 1086,
+      "sha256": "8ee979d585a614757102513ad3d6334e45e601e3d3a8d0989ccc8ba99ff0c5de",
+      "crc32": "e92445d7"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/哭.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/哭.bmp",
+      "bytes": 1086,
+      "sha256": "363f7f7010eff73fbd55581262003116934a8d102224b1f35118526565a84252",
+      "crc32": "04f6d651"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/喜欢.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/喜欢.bmp",
+      "bytes": 1086,
+      "sha256": "b3972ed734dd47e8e5dceeed4b1b3054147c2fa878120eb69fc9fb5c9dda7015",
+      "crc32": "0021865f"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/坏笑.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/坏笑.bmp",
+      "bytes": 1086,
+      "sha256": "e62a53f10e6533cd63c1adfbe2e7a8ef4b344b8ebed5606e9f54969cf210581e",
+      "crc32": "0d5f21be"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/失笑.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/失笑.bmp",
+      "bytes": 1086,
+      "sha256": "50194f6505d80164130ef7958d848161d1d12bd92d52c0becf2640f3be074853",
+      "crc32": "c8b0cccd"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/安逸.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/安逸.bmp",
+      "bytes": 1086,
+      "sha256": "6c9542c754aa3827d0f2aafbba9885aa2d35fca91727cfd88963e3e58733f823",
+      "crc32": "c7d3ed74"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/开心.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/开心.bmp",
+      "bytes": 1086,
+      "sha256": "41bb8be3bbf22e439a3fb84a97d2135c5de3a324fe49d97b3ad1f92a7c3918a2",
+      "crc32": "19a848ac"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/得意.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/得意.bmp",
+      "bytes": 1086,
+      "sha256": "a46cc19ae46fd34e185ca1b20ff64725a91242fd62cbd03e35040cab21b728e3",
+      "crc32": "6b399ec0"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/愤怒.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/愤怒.bmp",
+      "bytes": 1086,
+      "sha256": "c28518840e47fe525109926977aa29fd005194ad38603d7053baf5b480d97e41",
+      "crc32": "99da0655"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/搞怪.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/搞怪.bmp",
+      "bytes": 1086,
+      "sha256": "027e2b2989201280cc48bce550dacca518c766232fb0865cc702f17f8526d46f",
+      "crc32": "c5b84e89"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/无语.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/无语.bmp",
+      "bytes": 1086,
+      "sha256": "1102d50ee49eea54c390fb5b50c7f27e49afa10776b1ff71e0cc7baa7c90c5e2",
+      "crc32": "2cd29bb1"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/晕.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/晕.bmp",
+      "bytes": 1086,
+      "sha256": "b9a609924a94a034bc728f010ae9a66422a4a598dfedf6822b1e30aed86bed86",
+      "crc32": "7c259038"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/比耶.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/比耶.bmp",
+      "bytes": 1086,
+      "sha256": "9279c4219ba94cebec7b1309c33138d1653ffeddc9d75f2ed1dbde0a0b8d1bdf",
+      "crc32": "99b34ea4"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/灰心.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/灰心.bmp",
+      "bytes": 1086,
+      "sha256": "61bcd7eb86126019ceb8bdf8004338b52291bfc97d1f4f9e598aca7c742d9b13",
+      "crc32": "6e3c35fb"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/震惊.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/二值BMP/震惊.bmp",
+      "bytes": 1086,
+      "sha256": "5969f3f2d528a8e24a10372efcc33d12986bc4e51e09e54abb208289e3e2edf5",
+      "crc32": "db4188d5"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/呆.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/呆.bmp",
+      "bytes": 24630,
+      "sha256": "c63e61a9993610edd6426e95f604c023ce0df272363d19892e4d4d12a658808b",
+      "crc32": "748d05ce"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/呆呆.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/呆呆.bmp",
+      "bytes": 24630,
+      "sha256": "105385f135a0c918ed83877e8c8aa9a0382e319900f2f4b43c1688b2e155a934",
+      "crc32": "38797d11"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/哭.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/哭.bmp",
+      "bytes": 24630,
+      "sha256": "ffc3882fe7b5d353603257c997a50ecd3dbe4ec6d91d348ef0dde30056617220",
+      "crc32": "6c84124c"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/喜欢.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/喜欢.bmp",
+      "bytes": 24630,
+      "sha256": "f7a84148d04f4fa2d135a0569f86f5ca775f1756240256d65e028698b4e33923",
+      "crc32": "664889e8"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/坏笑.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/坏笑.bmp",
+      "bytes": 24630,
+      "sha256": "83c232963f7d1a68d1bdd8875ee9825f801dbc2c66684bbb2637b5eb1b32f838",
+      "crc32": "2a39760b"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/安逸.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/安逸.bmp",
+      "bytes": 24630,
+      "sha256": "f6fe49a52485f2971f2b28647ae2827660ad39c99e62408dd6864fe5ac2f76e2",
+      "crc32": "10577fd3"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/开心.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/开心.bmp",
+      "bytes": 1086,
+      "sha256": "bd6fa2424079ee4a32503b7671d30054fd21fecd97510e4a64513373b0128677",
+      "crc32": "e4190e24"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/得意.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/得意.bmp",
+      "bytes": 24630,
+      "sha256": "2a7d3b95bdea3bb9fe7031f4f6c7b20288f04e60c99b2b7f670decb18421d01f",
+      "crc32": "761b339f"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/愤怒.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/愤怒.bmp",
+      "bytes": 24630,
+      "sha256": "3f019f553419e456666bab94a7fd4613a97b5cb71e2da7bd5e77a2d4af7f405d",
+      "crc32": "db22115e"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/搞怪.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/搞怪.bmp",
+      "bytes": 24630,
+      "sha256": "7b5cd9e8c635b86e1e0907473f8fc160627a43745164b6abaca2f1f7104618b6",
+      "crc32": "0bd7d39e"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/无语.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/无语.bmp",
+      "bytes": 24630,
+      "sha256": "7e605f398251f36649e6d406e59b18bc1b5191bad34fea81ae0adacbd2e4110d",
+      "crc32": "e4e15db1"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/晕.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/晕.bmp",
+      "bytes": 24630,
+      "sha256": "e728a71403c22a0168885c6eedb2d2b599723c3b9af71fc3103195761560252e",
+      "crc32": "d57ad676"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/比耶.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/比耶.bmp",
+      "bytes": 24630,
+      "sha256": "257a5776a23f1603f709fbeb0c3ad08948c69026831c4591809e74fae65b331d",
+      "crc32": "1b5d3bc7"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/灰心.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/灰心.bmp",
+      "bytes": 24630,
+      "sha256": "c9ddb806aba8213485c951ef81359836d0ee74b1979921f27ad33764aeea3232",
+      "crc32": "f9b48399"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/2.stm32_dog源码/表情包/震惊.bmp",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/表情包/震惊.bmp",
+      "bytes": 1086,
+      "sha256": "50194f6505d80164130ef7958d848161d1d12bd92d52c0becf2640f3be074853",
+      "crc32": "c8b0cccd"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/3.天问软件+程序/曼波语音.hd",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/3.天问软件+程序/曼波语音.hd",
+      "bytes": 41330,
+      "sha256": "dc8c9c97011622d31df04ac1a3632e38257279640bccadc9dcbb7c9b45deda0f",
+      "crc32": "510d0fb4"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/4.固件+烧录软件(无需编译，直接烧录)/固件/Project.hex",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/4.固件+烧录软件(无需编译，直接烧录)/固件/Project.hex",
+      "bytes": 181086,
+      "sha256": "0e5484139c2c989cbdc37baabd033eb0a62d83f0dd6eba7eb530cb8a1ea288a0",
+      "crc32": "cbbe6c73"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/4.固件+烧录软件(无需编译，直接烧录)/烧录软件/FlyMcu.exe",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/4.固件+烧录软件(无需编译，直接烧录)/烧录软件/FlyMcu.exe",
+      "bytes": 2652672,
+      "sha256": "7cb6fcae532bb8f8710f992d16bfbd95113d8d6dafdf3e2e7e9c1fd4123f35c5",
+      "crc32": "fb038575"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/4.固件+烧录软件(无需编译，直接烧录)/烧录软件/FlyMcuConfig.ini",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/4.固件+烧录软件(无需编译，直接烧录)/烧录软件/FlyMcuConfig.ini",
+      "bytes": 1464,
+      "sha256": "94306c8a4413fe45bf9bf683cd691304298955c4730c68b90ea12d3810cc26c0",
+      "crc32": "a10d7cb1"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/4.固件+烧录软件(无需编译，直接烧录)/烧录软件/ProgramLogs.txt",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/4.固件+烧录软件(无需编译，直接烧录)/烧录软件/ProgramLogs.txt",
+      "bytes": 513,
+      "sha256": "fb57c84b81e2fd054ebeb21cfce5ea89ddbbae063bd03485bd7536ba7da0d588",
+      "crc32": "f821dec4"
+    },
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/5.原理图PCB/6-stm32曼波小狗.eprj2",
+      "saved_path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/5.原理图PCB/6-stm32曼波小狗.eprj2",
+      "bytes": 2949120,
+      "sha256": "bf35e6e14b44251c61a71c9f5ed5c9fb4ab33fc657827f5849d87600dcc243ce",
+      "crc32": "7875bcb9"
+    }
+  ],
+  "original_copy_hashes_verified": true,
+  "zip_crc_checked_on_full_read": true,
+  "executables_run": false,
+  "firmware_flashed": false,
+  "scope": "Originals preserved separately; top-level ZIP files fully extracted with legacy Chinese filename decoding; nested ZIPs retained and inspected separately; one large installer retained inside original ZIP only",
+  "archive_only_entries": [
+    {
+      "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+      "archive_entry": "曼波小狗开源资料/3.天问软件+程序/天问Block_AI_2026测试版.exe",
+      "saved_path": null,
+      "bytes": 1376006698,
+      "sha256": "b088957499446d34e93fd4cfd7c268110aa6f9fc4d2f9126247fececc4e576ce",
+      "crc32": "9e60f3a3",
+      "publication_note": "Original ZIP contains this installer unchanged; duplicated extracted installer is not separately published."
+    }
+  ]
+}

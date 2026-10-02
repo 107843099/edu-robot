@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ESP32 Tank</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #1a1a2e;
+    color: #eee;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    touch-action: manipulation;
+  }
+  header {
+    padding: 12px 16px;
+    background: #16213e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 8px;
+  }
+  header h1 { font-size: 1.1rem; font-weight: 600; }
+  #status {
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: #333;
+    white-space: nowrap;
+  }
+  #status.connected { background: #1b5e20; }
+  #status.disconnected { background: #b71c1c; }
+  .tabs {
+    display: flex;
+    gap: 8px;
+    padding: 12px 16px 0;
+    flex-shrink: 0;
+  }
+  .tab-btn {
+    flex: 1;
+    border: 1px solid #533483;
+    background: #16213e;
+    color: #aaa;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+  .tab-btn.active {
+    background: #533483;
+    color: #fff;
+  }
+  .panel { display: none; flex: 1; padding: 16px; }
+  .panel.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  #joystick-area {
+    position: relative;
+    width: min(70vw, 280px);
+    height: min(70vw, 280px);
+    border-radius: 50%;
+    background: #0f3460;
+    border: 3px solid #533483;
+    touch-action: none;
+  }
+  #joystick-knob {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #e94560, #c23152);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  #readout {
+    font-size: 0.95rem;
+    color: #aaa;
+    text-align: center;
+    line-height: 1.6;
+  }
+  .speed-row, .form-row {
+    width: min(92vw, 420px);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    touch-action: auto;
+  }
+  .speed-row label, .form-row label {
+    font-size: 0.85rem;
+    color: #aaa;
+    white-space: nowrap;
+    min-width: 3.5em;
+  }
+  .speed-row input[type=range], .form-row input[type=range] {
+    flex: 1;
+    accent-color: #e94560;
+  }
+  #speed-val, #step-speed-val {
+    font-size: 0.9rem;
+    color: #e94560;
+    min-width: 3em;
+    text-align: right;
+  }
+  .hint { font-size: 0.8rem; color: #666; text-align: center; padding: 0 16px 16px; }
+  .path-panel {
+    width: min(92vw, 420px);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  select, input[type=number] {
+    flex: 1;
+    background: #0f3460;
+    color: #eee;
+    border: 1px solid #533483;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+  input[type=number] { min-width: 0; }
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .btn {
+    flex: 1;
+    min-width: 90px;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 10px;
+    font-size: 0.95rem;
+    color: #fff;
+    background: #533483;
+  }
+  .btn:disabled { opacity: 0.45; }
+  .btn.primary { background: #e94560; }
+  .btn.danger { background: #b71c1c; }
+  .btn.ghost { background: #0f3460; border: 1px solid #533483; }
+  #path-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 42vh;
+    overflow: auto;
+    padding-right: 2px;
+  }
+  #path-list li {
+    background: #16213e;
+    border: 1px solid #533483;
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+  #path-list li.active-step {
+    border-color: #e94560;
+    box-shadow: 0 0 0 1px #e94560 inset;
+  }
+  #path-list .meta { color: #aaa; font-size: 0.8rem; margin-top: 2px; }
+  #path-list .del {
+    border: none;
+    background: transparent;
+    color: #e94560;
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+  #path-status {
+    font-size: 0.85rem;
+    color: #aaa;
+    text-align: center;
+    min-height: 1.2em;
+  }
+  .empty {
+    color: #666;
+    text-align: center;
+    padding: 20px 8px;
+    font-size: 0.9rem;
+  }
+  .check-row {
+    width: min(92vw, 420px);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #16213e;
+    border: 1px solid #533483;
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .check-row input {
+    width: 18px;
+    height: 18px;
+    accent-color: #e94560;
+  }
+  .check-row label {
+    flex: 1;
+    font-size: 0.95rem;
+  }
+  .check-row .desc {
+    display: block;
+    color: #888;
+    font-size: 0.75rem;
+    margin-top: 2px;
+  }
+  #calib-status {
+    font-size: 0.85rem;
+    color: #aaa;
+    text-align: center;
+    min-height: 1.2em;
+  }
+  .calib-tips {
+    width: min(92vw, 420px);
+    font-size: 0.8rem;
+    color: #888;
+    line-height: 1.55;
+    background: #0f3460;
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>ESP32 Tank</h1>
+  <span id="status" class="disconnected">未连接</span>
+</header>
+
+<div class="tabs">
+  <button class="tab-btn active" data-tab="manual" type="button">手动</button>
+  <button class="tab-btn" data-tab="path" type="button">轨迹</button>
+  <button class="tab-btn" data-tab="calib" type="button">校准</button>
+</div>
+
+<section id="panel-manual" class="panel active">
+  <div id="joystick-area">
+    <div id="joystick-knob"></div>
+  </div>
+  <div id="readout">左: 0% &nbsp; 右: 0%</div>
+  <div class="speed-row">
+    <label for="speed">速度</label>
+    <input type="range" id="speed" min="10" max="100" value="70" step="5">
+    <span id="speed-val">70%</span>
+  </div>
+</section>
+
+<section id="panel-path" class="panel">
+  <div class="path-panel">
+    <div class="form-row">
+      <label for="step-dir">方向</label>
+      <select id="step-dir">
+        <option value="forward">前进</option>
+        <option value="backward">后退</option>
+        <option value="left">左转</option>
+        <option value="right">右转</option>
+        <option value="stop">停止</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label for="step-speed">速度</label>
+      <input type="range" id="step-speed" min="10" max="100" value="60" step="5">
+      <span id="step-speed-val">60%</span>
+    </div>
+    <div class="form-row">
+      <label for="step-time">时间</label>
+      <input type="number" id="step-time" min="0.1" max="60" step="0.1" value="1.0">
+      <span style="color:#aaa;font-size:0.85rem;min-width:1.5em;">秒</span>
+    </div>
+    <div class="btn-row">
+      <button class="btn ghost" id="btn-add" type="button">添加步骤</button>
+      <button class="btn ghost" id="btn-clear" type="button">清空</button>
+      <button class="btn ghost" id="btn-save-path" type="button">保存到NVS</button>
+    </div>
+    <ul id="path-list"><li class="empty">暂无轨迹步骤</li></ul>
+    <div class="check-row">
+      <input type="checkbox" id="path-loop">
+      <label for="path-loop">循环执行
+        <span class="desc">勾选后按次数重复整段轨迹，点停止结束</span>
+      </label>
+    </div>
+    <div class="form-row">
+      <label for="path-loop-count">次数</label>
+      <input type="number" id="path-loop-count" min="0" max="9999" step="1" value="0">
+      <span style="color:#aaa;font-size:0.8rem;min-width:4.5em;">0=无限</span>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="btn-run" type="button">执行轨迹</button>
+      <button class="btn danger" id="btn-stop-path" type="button" disabled>停止</button>
+    </div>
+    <div id="path-status"></div>
+  </div>
+</section>
+
+<section id="panel-calib" class="panel">
+  <div class="path-panel">
+    <div class="calib-tips">
+      焊接时未区分电机正负极时，可用这里纠正方向，无需重焊。<br>
+      建议：先点「测试前进」，看实际运动，再勾选对应选项，直到前进/转向正确。
+    </div>
+    <div class="check-row">
+      <input type="checkbox" id="calib-inv-l">
+      <label for="calib-inv-l">反转左电机
+        <span class="desc">单侧前后反了时勾选</span>
+      </label>
+    </div>
+    <div class="check-row">
+      <input type="checkbox" id="calib-inv-r">
+      <label for="calib-inv-r">反转右电机
+        <span class="desc">单侧前后反了时勾选</span>
+      </label>
+    </div>
+    <div class="check-row">
+      <input type="checkbox" id="calib-swap">
+      <label for="calib-swap">交换左右通道
+        <span class="desc">前进变成原地转/左右反了时勾选</span>
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="btn-calib-save" type="button">保存校准</button>
+      <button class="btn ghost" id="btn-calib-reset" type="button">重置</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn ghost" id="btn-test-fwd" type="button">测试前进</button>
+      <button class="btn ghost" id="btn-test-left" type="button">测试左转</button>
+      <button class="btn danger" id="btn-test-stop" type="button">停止</button>
+    </div>
+    <div id="calib-status"></div>
+  </div>
+</section>
+
+<p class="hint">手动 / 轨迹 / 校准 · http://tank.local</p>
+
+<script>
+const area = document.getElementById('joystick-area');
+const knob = document.getElementById('joystick-knob');
+const statusEl = document.getElementById('status');
+const readout = document.getElementById('readout');
+const speedSlider = document.getElementById('speed');
+const speedVal = document.getElementById('speed-val');
+const pathListEl = document.getElementById('path-list');
+const pathStatusEl = document.getElementById('path-status');
+const stepDirEl = document.getElementById('step-dir');
+const stepSpeedEl = document.getElementById('step-speed');
+const stepSpeedVal = document.getElementById('step-speed-val');
+const stepTimeEl = document.getElementById('step-time');
+const btnAdd = document.getElementById('btn-add');
+const btnClear = document.getElementById('btn-clear');
+const btnSavePath = document.getElementById('btn-save-path');
+const btnRun = document.getElementById('btn-run');
+const btnStopPath = document.getElementById('btn-stop-path');
+const pathLoopEl = document.getElementById('path-loop');
+const pathLoopCountEl = document.getElementById('path-loop-count');
+const calibInvL = document.getElementById('calib-inv-l');
+const calibInvR = document.getElementById('calib-inv-r');
+const calibSwap = document.getElementById('calib-swap');
+const calibStatusEl = document.getElementById('calib-status');
+const btnCalibSave = document.getElementById('btn-calib-save');
+const btnCalibReset = document.getElementById('btn-calib-reset');
+const btnTestFwd = document.getElementById('btn-test-fwd');
+const btnTestLeft = document.getElementById('btn-test-left');
+const btnTestStop = document.getElementById('btn-test-stop');
+
+const DIR_LABELS = {
+  forward: '前进',
+  backward: '后退',
+  left: '左转',
+  right: '右转',
+  stop: '停止',
+};
+
+let ws = null;
+let active = false;
+let sendTimer = null;
+let leftPct = 0, rightPct = 0;
+let speedScale = 70;
+let pathSteps = [];
+let pathRunning = false;
+let pathAbort = false;
+let pathKeepAlive = null;
+let pathCurrentLeft = 0;
+let pathCurrentRight = 0;
+let calibTestTimer = null;
+
+function connect() {
+  const proto = location.protocol === 'https:' ? 'wss:' : 'ws:';
+  ws = new WebSocket(proto + '//' + location.host + '/ws');
+
+  ws.onopen = () => {
+    statusEl.textContent = '已连接';
+    statusEl.className = 'connected';
+    sendSpeed(speedScale);
+    loadCalib();
+    loadPath();
+  };
+  ws.onclose = () => {
+    statusEl.textContent = '未连接';
+    statusEl.className = 'disconnected';
+    if (pathRunning) stopPath('连接断开，轨迹已中止');
+    setTimeout(connect, 2000);
+  };
+  ws.onerror = () => ws.close();
+}
+
+function sendDrive(l, r) {
+  if (ws && ws.readyState === WebSocket.OPEN) {
+    ws.send(JSON.stringify({ left: l, right: r }));
+  }
+}
+
+function sendStop() {
+  if (ws && ws.readyState === WebSocket.OPEN) {
+    ws.send(JSON.stringify({ stop: true }));
+  }
+}
+
+function sendSpeed(v) {
+  speedScale = v;
+  speedVal.textContent = v + '%';
+  if (ws && ws.readyState === WebSocket.OPEN) {
+    ws.send(JSON.stringify({ speed: v }));
+  }
+}
+
+speedSlider.addEventListener('input', () => sendSpeed(parseInt(speedSlider.value, 10)));
+stepSpeedEl.addEventListener('input', () => {
+  stepSpeedVal.textContent = stepSpeedEl.value + '%';
+});
+
+document.querySelectorAll('.tab-btn').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    if (pathRunning) return;
+    document.querySelectorAll('.tab-btn').forEach((b) => b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach((p) => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+function pctFromJoystick(dx, dy, radius) {
+  const throttle = Math.round(-dy / radius * 100);
+  const turn = Math.round(dx / radius * 100);
+  let left = throttle - turn;
+  let right = throttle + turn;
+  const max = Math.max(Math.abs(left), Math.abs(right), 100);
+  if (max > 100) { left = Math.round(left / max * 100); right = Math.round(right / max * 100); }
+  return [left, right];
+}
+
+function moveKnob(clientX, clientY) {
+  const rect = area.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  const radius = rect.width / 2 - 30;
+
+  let dx = clientX - cx;
+  let dy = clientY - cy;
+  const dist = Math.hypot(dx, dy);
+  if (dist > radius) { dx = dx / dist * radius; dy = dy / dist * radius; }
+
+  knob.style.left = (50 + dx / radius * 50) + '%';
+  knob.style.top = (50 + dy / radius * 50) + '%';
+  knob.style.transform = 'translate(-50%, -50%)';
+
+  [leftPct, rightPct] = pctFromJoystick(dx, dy, radius);
+  readout.textContent = `左: ${leftPct}%   右: ${rightPct}%`;
+}
+
+function resetKnob() {
+  knob.style.left = '50%';
+  knob.style.top = '50%';
+  leftPct = 0; rightPct = 0;
+  readout.textContent = '左: 0%   右: 0%';
+}
+
+function startSendLoop() {
+  if (sendTimer) return;
+  sendTimer = setInterval(() => {
+    if (active) sendDrive(leftPct, rightPct);
+  }, 50);
+}
+
+function stopSendLoop() {
+  if (sendTimer) { clearInterval(sendTimer); sendTimer = null; }
+  sendStop();
+}
+
+function onStart(e) {
+  if (pathRunning) return;
+  e.preventDefault();
+  active = true;
+  startSendLoop();
+  const t = e.touches ? e.touches[0] : e;
+  moveKnob(t.clientX, t.clientY);
+}
+
+function onMove(e) {
+  if (!active || pathRunning) return;
+  e.preventDefault();
+  const t = e.touches ? e.touches[0] : e;
+  moveKnob(t.clientX, t.clientY);
+}
+
+function onEnd() {
+  if (!active) return;
+  active = false;
+  resetKnob();
+  stopSendLoop();
+}
+
+area.addEventListener('touchstart', onStart, { passive: false });
+area.addEventListener('touchmove', onMove, { passive: false });
+area.addEventListener('touchend', onEnd);
+area.addEventListener('touchcancel', onEnd);
+area.addEventListener('mousedown', onStart);
+window.addEventListener('mousemove', onMove);
+window.addEventListener('mouseup', onEnd);
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    onEnd();
+    if (pathRunning) stopPath('页面隐藏，轨迹已中止');
+  }
+});
+
+function dirToDrive(dir, speed) {
+  const s = Math.max(0, Math.min(100, speed));
+  switch (dir) {
+    case 'forward': return [s, s];
+    case 'backward': return [-s, -s];
+    case 'left': return [-s, s];
+    case 'right': return [s, -s];
+    case 'stop':
+    default: return [0, 0];
+  }
+}
+
+function renderPathList(activeIndex = -1) {
+  if (!pathSteps.length) {
+    pathListEl.innerHTML = '<li class="empty">暂无轨迹步骤</li>';
+    return;
+  }
+  pathListEl.innerHTML = pathSteps.map((step, i) => `
+    <li class="${i === activeIndex ? 'active-step' : ''}" data-index="${i}">
+      <div>
+        <div>${i + 1}. ${DIR_LABELS[step.dir] || step.dir}</div>
+        <div class="meta">速度 ${step.speed}% · ${step.time.toFixed(1)} 秒</div>
+      </div>
+      <button class="del" type="button" data-del="${i}" ${pathRunning ? 'disabled' : ''}>删除</button>
+    </li>
+  `).join('');
+}
+
+function setPathControls(running) {
+  pathRunning = running;
+  btnAdd.disabled = running;
+  btnClear.disabled = running;
+  btnSavePath.disabled = running;
+  btnRun.disabled = running || pathSteps.length === 0;
+  btnStopPath.disabled = !running;
+  stepDirEl.disabled = running;
+  stepSpeedEl.disabled = running;
+  stepTimeEl.disabled = running;
+  pathLoopEl.disabled = running;
+  pathLoopCountEl.disabled = running;
+  document.querySelectorAll('.tab-btn').forEach((b) => { b.disabled = running; });
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function startPathKeepAlive() {
+  stopPathKeepAlive();
+  pathKeepAlive = setInterval(() => {
+    if (!pathRunning) return;
+    if (pathCurrentLeft === 0 && pathCurrentRight === 0) {
+      sendStop();
+    } else {
+      sendDrive(pathCurrentLeft, pathCurrentRight);
+    }
+  }, 80);
+}
+
+function stopPathKeepAlive() {
+  if (pathKeepAlive) {
+    clearInterval(pathKeepAlive);
+    pathKeepAlive = null;
+  }
+}
+
+function stopPath(msg) {
+  pathAbort = true;
+  stopPathKeepAlive();
+  pathCurrentLeft = 0;
+  pathCurrentRight = 0;
+  sendStop();
+  setPathControls(false);
+  renderPathList();
+  pathStatusEl.textContent = msg || '已停止';
+}
+
+async function runPath() {
+  if (!pathSteps.length || pathRunning) return;
+  if (!ws || ws.readyState !== WebSocket.OPEN) {
+    pathStatusEl.textContent = '未连接，无法执行';
+    return;
+  }
+
+  const loopEnabled = pathLoopEl.checked;
+  let loopCount = parseInt(pathLoopCountEl.value, 10);
+  if (!Number.isFinite(loopCount) || loopCount < 0) loopCount = 0;
+  // 未勾选循环：只跑 1 轮；勾选且次数为 0：无限循环
+  const maxRounds = loopEnabled ? (loopCount === 0 ? Infinity : loopCount) : 1;
+
+  onEnd();
+  pathAbort = false;
+  setPathControls(true);
+  startPathKeepAlive();
+
+  let round = 0;
+  while (round < maxRounds) {
+    if (pathAbort) return;
+    round++;
+    for (let i = 0; i < pathSteps.length; i++) {
+      if (pathAbort) return;
+      const step = pathSteps[i];
+      const [l, r] = dirToDrive(step.dir, step.speed);
+      pathCurrentLeft = l;
+      pathCurrentRight = r;
+      renderPathList(i);
+
+      const roundLabel = maxRounds === Infinity
+        ? `第 ${round} 轮`
+        : `第 ${round}/${maxRounds} 轮`;
+      pathStatusEl.textContent =
+        `${roundLabel} · 步骤 ${i + 1}/${pathSteps.length} · ${DIR_LABELS[step.dir]} ${step.time.toFixed(1)}s`;
+
+      sendSpeed(100);
+      if (l === 0 && r === 0) sendStop();
+      else sendDrive(l, r);
+
+      const endAt = Date.now() + Math.round(step.time * 1000);
+      while (Date.now() < endAt) {
+        if (pathAbort) return;
+        await sleep(50);
+      }
+    }
+  }
+
+  stopPathKeepAlive();
+  pathCurrentLeft = 0;
+  pathCurrentRight = 0;
+  sendStop();
+  sendSpeed(parseInt(speedSlider.value, 10));
+  setPathControls(false);
+  renderPathList();
+  pathStatusEl.textContent = loopEnabled
+    ? `轨迹循环完成（共 ${round} 轮）`
+    : '轨迹执行完成';
+}
+
+btnAdd.addEventListener('click', () => {
+  const time = parseFloat(stepTimeEl.value);
+  if (!Number.isFinite(time) || time < 0.1 || time > 60) {
+    pathStatusEl.textContent = '时间需在 0.1 ~ 60 秒';
+    return;
+  }
+  if (pathSteps.length >= 20) {
+    pathStatusEl.textContent = '最多 20 步，请先删除部分步骤';
+    return;
+  }
+  pathSteps.push({
+    dir: stepDirEl.value,
+    speed: parseInt(stepSpeedEl.value, 10),
+    time,
+  });
+  renderPathList();
+  setPathControls(false);
+  savePathToDevice(`已添加步骤 ${pathSteps.length}，已写入 NVS`);
+});
+
+btnClear.addEventListener('click', () => {
+  if (pathRunning) return;
+  pathSteps = [];
+  renderPathList();
+  setPathControls(false);
+  savePathToDevice('轨迹已清空并写入 NVS');
+});
+
+btnRun.addEventListener('click', () => { runPath(); });
+btnStopPath.addEventListener('click', () => { stopPath('用户停止'); });
+
+pathListEl.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-del]');
+  if (!btn || pathRunning) return;
+  const idx = parseInt(btn.dataset.del, 10);
+  pathSteps.splice(idx, 1);
+  renderPathList();
+  setPathControls(false);
+  savePathToDevice('已删除步骤并写入 NVS');
+});
+
+pathLoopEl.addEventListener('change', () => {
+  if (!pathRunning) savePathToDevice('循环设置已写入 NVS');
+});
+pathLoopCountEl.addEventListener('change', () => {
+  if (!pathRunning) savePathToDevice('循环次数已写入 NVS');
+});
+
+btnSavePath.addEventListener('click', () => {
+  if (!pathRunning) savePathToDevice('轨迹已手动保存到 NVS');
+});
+
+async function loadPath() {
+  try {
+    const res = await fetch('/api/path', { cache: 'no-store' });
+    if (!res.ok) throw new Error('http ' + res.status);
+    const data = await res.json();
+    pathSteps = Array.isArray(data.steps)
+      ? data.steps.map((s) => ({
+          dir: s.dir || 'forward',
+          speed: Math.max(10, Math.min(100, parseInt(s.speed, 10) || 60)),
+          time: Math.max(0.1, Math.min(60, Number(s.time) || 1)),
+        }))
+      : [];
+    pathLoopEl.checked = !!data.loop;
+    pathLoopCountEl.value = String(Number.isFinite(data.loop_count) ? data.loop_count : 0);
+    renderPathList();
+    setPathControls(false);
+    pathStatusEl.textContent = pathSteps.length
+      ? `已从 NVS 加载 ${pathSteps.length} 步轨迹`
+      : '设备中暂无保存的轨迹';
+  } catch (err) {
+    pathStatusEl.textContent = '读取轨迹失败';
+  }
+}
+
+async function savePathToDevice(okMsg) {
+  try {
+    const res = await fetch('/api/path', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        loop: pathLoopEl.checked,
+        loop_count: parseInt(pathLoopCountEl.value, 10) || 0,
+        steps: pathSteps,
+      }),
+    });
+    if (!res.ok) throw new Error('http ' + res.status);
+    pathStatusEl.textContent = okMsg || '轨迹已保存到 NVS';
+  } catch (err) {
+    pathStatusEl.textContent = '保存到 NVS 失败';
+  }
+}
+
+async function loadCalib() {
+  try {
+    const res = await fetch('/api/calib', { cache: 'no-store' });
+    if (!res.ok) throw new Error('http ' + res.status);
+    const data = await res.json();
+    calibInvL.checked = !!data.invert_left;
+    calibInvR.checked = !!data.invert_right;
+    calibSwap.checked = !!data.swap_lr;
+    calibStatusEl.textContent = '已从设备读取校准';
+  } catch (err) {
+    calibStatusEl.textContent = '读取校准失败，可手动设置后保存';
+  }
+}
+
+function sendCalib(payload) {
+  if (ws && ws.readyState === WebSocket.OPEN) {
+    ws.send(JSON.stringify(payload));
+    return true;
+  }
+  return false;
+}
+
+function saveCalib() {
+  const ok = sendCalib({
+    calib: true,
+    invert_left: calibInvL.checked,
+    invert_right: calibInvR.checked,
+    swap_lr: calibSwap.checked,
+  });
+  calibStatusEl.textContent = ok
+    ? '校准已保存到设备（断电保留）'
+    : '未连接，保存失败';
+}
+
+function clearCalibTest() {
+  if (calibTestTimer) {
+    clearTimeout(calibTestTimer);
+    calibTestTimer = null;
+  }
+}
+
+async function runCalibTest(left, right, label) {
+  if (pathRunning) return;
+  if (!ws || ws.readyState !== WebSocket.OPEN) {
+    calibStatusEl.textContent = '未连接，无法测试';
+    return;
+  }
+  onEnd();
+  clearCalibTest();
+  sendSpeed(50);
+  sendDrive(left, right);
+  calibStatusEl.textContent = `测试中：${label}（约 0.8 秒）`;
+  const keep = setInterval(() => sendDrive(left, right), 80);
+  calibTestTimer = setTimeout(() => {
+    clearInterval(keep);
+    sendStop();
+    sendSpeed(parseInt(speedSlider.value, 10));
+    calibStatusEl.textContent = `测试结束：${label}。对照实际动作再调整选项。`;
+    calibTestTimer = null;
+  }, 800);
+}
+
+btnCalibSave.addEventListener('click', saveCalib);
+btnCalibReset.addEventListener('click', () => {
+  calibInvL.checked = false;
+  calibInvR.checked = false;
+  calibSwap.checked = false;
+  saveCalib();
+});
+btnTestFwd.addEventListener('click', () => runCalibTest(60, 60, '前进'));
+btnTestLeft.addEventListener('click', () => runCalibTest(-50, 50, '左转'));
+btnTestStop.addEventListener('click', () => {
+  clearCalibTest();
+  sendStop();
+  calibStatusEl.textContent = '已停止';
+});
+
+[calibInvL, calibInvR, calibSwap].forEach((el) => {
+  el.addEventListener('change', saveCalib);
+});
+
+renderPathList();
+setPathControls(false);
+connect();
+</script>
+</body>
+</html>

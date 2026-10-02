@@ -1,0 +1,87 @@
+*************************** START ****************************
+Chip: ESP32C3
+Download mode: uart
+Start time: 20260212-22:05
+Connect baud: 115200
+Com:COM9
+connecting...
+manufacturer_id: 0x46
+device_id: 0x4016
+com closed
+Total use time: 3 s
+Download result: PASS
+*************************** END ****************************
+
+*************************** START ****************************
+Chip: ESP32C3
+Download mode: uart
+Start time: 20260212-22:06
+Connect baud: 115200
+Com:COM9
+*************************** START ****************************
+Chip: ESP32C3
+Download mode: uart
+Start time: 20260212-22:06
+Connect baud: 115200
+Com:COM9
+serial port open error
+*************************** START ****************************
+Chip: ESP32C3
+Download mode: uart
+Start time: 20260212-22:07
+Connect baud: 115200
+Com:COM9
+connecting...
+manufacturer_id: 0x46
+device_id: 0x4016
+fs:0x200200
+address/file: 0 C:\Users\PLL\Desktop\每逢佳节瘦三斤的固件2.0\xiaoche\flash_download_tool\dl_temp\bin_tmp\downloadPanel1\xiaoche.bin
+Wrote 4194304 bytes (769722 compressed) at 0x00000000 in 6.8 seconds (effective 4902.9 kbit/s)...
+File: C:\Users\PLL\Desktop\每逢佳节瘦三斤的固件2.0\xiaoche\flash_download_tool\dl_temp\bin_tmp\downloadPanel1\xiaoche.bin
+File  md5: 95b4a8b9cac9229994b6318758780f11
+Flash md5: 95b4a8b9cac9229994b6318758780f11
+Hash of data verified.
+
+Leaving...
+com closed
+Total use time: 12 s
+Download result: PASS
+*************************** END ****************************
+
+*************************** START ****************************
+Chip: ESP32C3
+Download mode: uart
+Start time: 20260418-16:29
+Connect baud: 115200
+Com:COM9
+connecting...
+manufacturer_id: 0x46
+device_id: 0x4016
+com closed
+Total use time: 3 s
+Download result: PASS
+*************************** END ****************************
+
+*************************** START ****************************
+Chip: ESP32C3
+Download mode: uart
+Start time: 20260418-16:29
+Connect baud: 115200
+Com:COM9
+connecting...
+manufacturer_id: 0x46
+device_id: 0x4016
+fs:0x200200
+address/file: 0 C:\Users\PLL\Desktop\每逢佳节瘦三斤的固件-群控3.1\xiaoche\flash_download_tool\dl_temp\bin_tmp\downloadPanel1\QUNKONG2.2.bin
+Wrote 4194304 bytes (813032 compressed) at 0x00000000 in 6.7 seconds (effective 4984.3 kbit/s)...
+File: C:\Users\PLL\Desktop\每逢佳节瘦三斤的固件-群控3.1\xiaoche\flash_download_tool\dl_temp\bin_tmp\downloadPanel1\QUNKONG2.2.bin
+File  md5: 33d60e5730ba2aaa7adc3e858888b737
+Flash md5: 33d60e5730ba2aaa7adc3e858888b737
+Hash of data verified.
+
+Leaving...
+com closed
+Total use time: 12 s
+Download result: PASS
+*************************** END ****************************
+

@@ -18,5 +18,40 @@
     "gitmodules_files": [],
     "status": "downloaded",
     "download_method": "GitHub commit archive snapshot, no commit history"
+  },
+  {
+    "source_type": "user-provided local folder",
+    "date": "2026-10-03",
+    "manifest": "本地资料来源与校验.json",
+    "original_files": [
+      {
+        "original_path": "曼波机器狗开源资料/曼波小狗开源资料.zip",
+        "saved_path": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+        "bytes": 1378186051,
+        "sha256": "d73db51305ca58ff2be748dd73cdf18f22a74935ad1a966f4d6186f199bd83ac"
+      },
+      {
+        "original_path": "曼波机器狗开源资料/烧录教程/9月28日.mp4",
+        "saved_path": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/烧录教程/9月28日.mp4",
+        "bytes": 1056270446,
+        "sha256": "128ce841d8c70d69a1667220b1eb250cc89b112b380e75b9495aac01d2a848e5"
+      }
+    ],
+    "public_extracted_files": 300,
+    "archive_only_entries": [
+      {
+        "archive": "机器人开发参考库/02_曼波小狗/原始资料/曼波机器狗开源资料/曼波小狗开源资料.zip",
+        "archive_entry": "曼波小狗开源资料/3.天问软件+程序/天问Block_AI_2026测试版.exe",
+        "saved_path": null,
+        "bytes": 1376006698,
+        "sha256": "b088957499446d34e93fd4cfd7c268110aa6f9fc4d2f9126247fececc4e576ce",
+        "crc32": "9e60f3a3",
+        "publication_note": "Original ZIP contains this installer unchanged; duplicated extracted installer is not separately published."
+      }
+    ],
+    "private_only_files": [],
+    "github_commit": null,
+    "license_status": "not supplied for the complete local bundle",
+    "physical_test": false
   }
 ]

@@ -1,0 +1,502 @@
+{
+  "date": "2026-10-03",
+  "scope": "All provided Python scripts parsed as AST; no network tests, downloads or script execution. AST index is a navigation aid, not full runtime validation.",
+  "rows": [
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/test_gequbao_play.py",
+      "lines": 111,
+      "imports": [
+        "json",
+        "re",
+        "ssl",
+        "urllib.parse",
+        "urllib.request"
+      ],
+      "definitions": [
+        "fetch"
+      ],
+      "url_hosts": [
+        "www.gequbao.com"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/test_slider.py",
+      "lines": 74,
+      "imports": [
+        "json",
+        "ssl",
+        "sys",
+        "urllib.parse",
+        "urllib.request"
+      ],
+      "definitions": [],
+      "url_hosts": [
+        "slider.kz"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/test_all_m3u8.py",
+      "lines": 118,
+      "imports": [
+        "re",
+        "socket",
+        "ssl",
+        "urllib.error",
+        "urllib.request"
+      ],
+      "definitions": [
+        "get",
+        "rel_url",
+        "classify"
+      ],
+      "url_hosts": [
+        "ngcdn001.cnr.cn",
+        "ngcdn003.cnr.cn",
+        "ngcdn004.cnr.cn",
+        "ngcdn016.cnr.cn",
+        "ngcdn023.cnr.cn",
+        "sk.cri.cn",
+        "stream.hndt.com"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/analyze_bili_deep2.py",
+      "lines": 114,
+      "imports": [
+        "re",
+        "socket",
+        "struct",
+        "urllib.request"
+      ],
+      "definitions": [
+        "get",
+        "rel"
+      ],
+      "url_hosts": [
+        "live.bilibili.com"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/server.py",
+      "lines": 459,
+      "imports": [
+        "argparse",
+        "asyncio",
+        "fastapi",
+        "fastapi.middleware.cors",
+        "fastapi.responses",
+        "hashlib",
+        "mimetypes",
+        "os",
+        "pathlib",
+        "re",
+        "shutil",
+        "socket",
+        "struct",
+        "subprocess",
+        "sys",
+        "typing",
+        "uvicorn"
+      ],
+      "definitions": [
+        "MusicManager",
+        "iter_faststart",
+        "health",
+        "list_songs",
+        "search",
+        "get_song",
+        "get_lyrics_api",
+        "play_song",
+        "rescan",
+        "stats",
+        "main",
+        "__init__",
+        "_scan",
+        "_normalize_for_search",
+        "_extract_info",
+        "search",
+        "list_all",
+        "get_song",
+        "get_lyrics",
+        "get_file_path",
+        "get_faststart_order",
+        "rescan"
+      ],
+      "url_hosts": [],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/grab_and_test.py",
+      "lines": 53,
+      "imports": [
+        "re",
+        "socket",
+        "urllib.error",
+        "urllib.request"
+      ],
+      "definitions": [],
+      "url_hosts": [
+        "iptv-org.github.io"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/test_hndt2.py",
+      "lines": 87,
+      "imports": [
+        "re",
+        "socket",
+        "ssl",
+        "urllib.error",
+        "urllib.request"
+      ],
+      "definitions": [
+        "get",
+        "HTTP10Handler",
+        "http_request"
+      ],
+      "url_hosts": [
+        "stream.hndt.com"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/test_cnr.py",
+      "lines": 73,
+      "imports": [
+        "socket",
+        "urllib.request"
+      ],
+      "definitions": [
+        "test"
+      ],
+      "url_hosts": [
+        "ngcdn001.cnr.cn",
+        "ngcdn003.cnr.cn",
+        "ngcdn004.cnr.cn",
+        "ngcdn016.cnr.cn",
+        "www.cnr.cn"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/convert_to_mp3.py",
+      "lines": 251,
+      "imports": [
+        "argparse",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys"
+      ],
+      "definitions": [
+        "find_ffmpeg",
+        "get_audio_files",
+        "convert_file",
+        "format_size",
+        "main"
+      ],
+      "url_hosts": [],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/test_hndt.py",
+      "lines": 71,
+      "imports": [
+        "socket",
+        "ssl",
+        "urllib.error",
+        "urllib.request"
+      ],
+      "definitions": [
+        "get",
+        "fetch",
+        "test_one"
+      ],
+      "url_hosts": [
+        "ngcdn001.cnr.cn",
+        "stream.hndt.com",
+        "www.hndt.com"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/grab_radio_sources.py",
+      "lines": 57,
+      "imports": [
+        "re",
+        "urllib.request"
+      ],
+      "definitions": [
+        "fetch"
+      ],
+      "url_hosts": [
+        "iptv-org.github.io"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/analyze_bili_init.py",
+      "lines": 82,
+      "imports": [
+        "re",
+        "socket",
+        "struct",
+        "urllib.request"
+      ],
+      "definitions": [
+        "get",
+        "rel",
+        "walk"
+      ],
+      "url_hosts": [
+        "live.bilibili.com"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/test_source.py",
+      "lines": 61,
+      "imports": [
+        "json",
+        "re",
+        "ssl",
+        "urllib.parse",
+        "urllib.request"
+      ],
+      "definitions": [
+        "test_source"
+      ],
+      "url_hosts": [
+        "api.uomg.com",
+        "music.163.com",
+        "www.baidu.com",
+        "www.gequbao.com",
+        "zj.v.api.aa1.cn"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/analyze_bili_deep.py",
+      "lines": 171,
+      "imports": [
+        "re",
+        "socket",
+        "struct",
+        "urllib.request"
+      ],
+      "definitions": [
+        "get",
+        "rel",
+        "children"
+      ],
+      "url_hosts": [
+        "live.bilibili.com"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/download_lyrics.py",
+      "lines": 349,
+      "imports": [
+        "argparse",
+        "base64",
+        "hashlib",
+        "json",
+        "os",
+        "re",
+        "requests",
+        "sys",
+        "time"
+      ],
+      "definitions": [
+        "LyricFetcher",
+        "get_music_files",
+        "save_lyric",
+        "print_banner",
+        "print_table",
+        "main",
+        "__init__",
+        "search",
+        "get_lyric",
+        "_get_netease_lyric",
+        "_get_qqmusic_lyric"
+      ],
+      "url_hosts": [
+        "c.y.qq.com",
+        "music.163.com"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/test_apis3.py",
+      "lines": 119,
+      "imports": [
+        "json",
+        "re",
+        "ssl",
+        "urllib.parse",
+        "urllib.request"
+      ],
+      "definitions": [],
+      "url_hosts": [
+        "api.maoermusic.com",
+        "maoermusic.com",
+        "mp3juice.ing",
+        "music-5c4o.vercel.app",
+        "music.163.com",
+        "music.unblock.workers.dev",
+        "myfreemp3.fun",
+        "slider.kz"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/analyze_bili_fmp4.py",
+      "lines": 123,
+      "imports": [
+        "re",
+        "socket",
+        "struct",
+        "urllib.request"
+      ],
+      "definitions": [
+        "get",
+        "rel",
+        "parse_box"
+      ],
+      "url_hosts": [
+        "live.bilibili.com"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/download_music.py",
+      "lines": 260,
+      "imports": [
+        "hashlib",
+        "json",
+        "os",
+        "random",
+        "re",
+        "ssl",
+        "sys",
+        "time",
+        "urllib.parse",
+        "urllib.request"
+      ],
+      "definitions": [
+        "get_headers",
+        "search_kugou",
+        "get_kugou_mp3_url",
+        "download_mp3",
+        "interactive",
+        "clean_name"
+      ],
+      "url_hosts": [
+        "kugou.com",
+        "mobilecdn.kugou.com",
+        "trackercdn.kugou.com",
+        "www.baidu.com"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/test_apis.py",
+      "lines": 74,
+      "imports": [
+        "json",
+        "re",
+        "ssl",
+        "urllib.parse",
+        "urllib.request"
+      ],
+      "definitions": [],
+      "url_hosts": [
+        "api.uomg.com",
+        "www.gequbao.com",
+        "zj.v.api.aa1.cn"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/test_live_streams.py",
+      "lines": 130,
+      "imports": [
+        "re",
+        "socket",
+        "urllib.error",
+        "urllib.request"
+      ],
+      "definitions": [
+        "get",
+        "rel",
+        "classify",
+        "analyze_flv"
+      ],
+      "url_hosts": [
+        "live.bilibili.com"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/test_apis2.py",
+      "lines": 97,
+      "imports": [
+        "json",
+        "re",
+        "ssl",
+        "urllib.parse",
+        "urllib.request"
+      ],
+      "definitions": [],
+      "url_hosts": [
+        "www.gequbao.com"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/test_batch_m3u8.py",
+      "lines": 94,
+      "imports": [
+        "re",
+        "socket",
+        "urllib.error",
+        "urllib.request"
+      ],
+      "definitions": [
+        "get",
+        "rel",
+        "classify"
+      ],
+      "url_hosts": [
+        "live.hoolo.tv",
+        "live.iqilu.com",
+        "live.nanjingtv.com.cn",
+        "live.sctv.com",
+        "live.szmg.com.cn",
+        "media.qtv.com.cn",
+        "ngcdn001.cnr.cn",
+        "ngcdn002.cnr.cn",
+        "sk.cri.cn",
+        "www.cnr.cn"
+      ],
+      "parsed": true
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/analyze_flv_douyin.py",
+      "lines": 65,
+      "imports": [
+        "socket",
+        "urllib.request"
+      ],
+      "definitions": [],
+      "url_hosts": [],
+      "parsed": true
+    }
+  ]
+}

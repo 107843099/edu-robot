@@ -1,12 +1,12 @@
 {
-  "project_folders": 17,
+  "project_folders": 19,
   "original_repositories_present": 14,
   "requested_main_repositories_present": 16,
   "downloaded_snapshots": 76,
   "distinct_repositories": 75,
   "source_files": 46583,
-  "authored_markdown_docs": 65,
-  "local_links_checked": 1240,
+  "authored_markdown_docs": 76,
+  "local_links_checked": 1354,
   "lfs_files_hash_verified": 81,
   "local_attachment_audits": [
     {
@@ -35,5 +35,37 @@
     "one-for-all/sesame-simulator"
   ],
   "errors": [],
-  "verification_scope": "File and source-version checks, HF inference resource hashes, local attachment static analysis, fake-serial probes, selected Tiny host checks and Needle SDK/offline inference evidence. No firmware compilation, model training or physical robot tests"
+  "local_robot_bundle_audits": [
+    {
+      "folder": "02_曼波小狗",
+      "original_files_received": 2,
+      "public_original_files": 2,
+      "public_extracted_files": 300,
+      "public_files_sha256_verified": 302,
+      "archive_only_entries": 1,
+      "private_only_originals": 0,
+      "physical_test": false
+    },
+    {
+      "folder": "18_桌面小坦克",
+      "original_files_received": 1,
+      "public_original_files": 1,
+      "public_extracted_files": 143,
+      "public_files_sha256_verified": 144,
+      "archive_only_entries": 0,
+      "private_only_originals": 0,
+      "physical_test": false
+    },
+    {
+      "folder": "19_每逢佳节瘦三斤固件生态",
+      "original_files_received": 6,
+      "public_original_files": 5,
+      "public_extracted_files": 325,
+      "public_files_sha256_verified": 330,
+      "archive_only_entries": 0,
+      "private_only_originals": 1,
+      "physical_test": false
+    }
+  ],
+  "verification_scope": "File and source-version checks, HF inference resource hashes, local attachment static analysis, fake-serial probes, selected Tiny host checks and Needle SDK/offline inference evidence. Selected tank C controller compiled for host with mock motors and music indexing checked with synthetic files. Local public originals and extracted files hash-verified, archive-only installer checked by ZIP metadata. No full firmware compilation, model training or physical robot tests"
 }
