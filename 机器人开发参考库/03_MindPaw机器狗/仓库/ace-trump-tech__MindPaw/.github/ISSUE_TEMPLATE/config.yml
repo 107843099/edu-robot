@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Troubleshooting and support
+    url: https://github.com/ace-trump-tech/MindPaw/blob/main/SUPPORT.md
+    about: Read the hardware, firmware, and Gateway troubleshooting paths first.
+  - name: Security report
+    url: https://github.com/ace-trump-tech/MindPaw/security/advisories/new
+    about: Never publish API keys or safety vulnerabilities in a public Issue.

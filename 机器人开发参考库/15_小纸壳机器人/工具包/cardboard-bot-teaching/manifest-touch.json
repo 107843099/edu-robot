@@ -1,0 +1,30 @@
+{
+  "name": "cardboard-bot 触摸模块测试",
+  "version": "0.3",
+  "new_install_prompt_erase": false,
+  "new_install_improv_wait_time": 0,
+  "builds": [
+    {
+      "chipFamily": "ESP32-C3",
+      "improv": false,
+      "parts": [
+        {
+          "path": "firmware/teaching/05-touch/bootloader.bin",
+          "offset": 0
+        },
+        {
+          "path": "firmware/teaching/05-touch/partitions.bin",
+          "offset": 32768
+        },
+        {
+          "path": "firmware/teaching/05-touch/boot_app0.bin",
+          "offset": 57344
+        },
+        {
+          "path": "firmware/teaching/05-touch/firmware.bin",
+          "offset": 65536
+        }
+      ]
+    }
+  ]
+}

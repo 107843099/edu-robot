@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindPaw AI 聊天</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background: linear-gradient(135deg, #16213e, #0f3460);
+            padding: 16px 20px;
+            text-align: center;
+            border-bottom: 2px solid #e94560;
+        }
+        .header h1 { font-size: 20px; color: #e94560; }
+        .header .sub { font-size: 12px; color: #888; margin-top: 4px; }
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 16px;
+            background: #16213e;
+            font-size: 12px;
+            color: #aaa;
+            border-bottom: 1px solid #333;
+        }
+        .status-dot {
+            display: inline-block;
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        .dot-online { background: #4caf50; }
+        .dot-offline { background: #f44336; }
+        .chat-box {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .msg {
+            max-width: 85%;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 14px;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+        .msg.user {
+            align-self: flex-end;
+            background: #e94560;
+            color: #fff;
+            border-bottom-right-radius: 4px;
+        }
+        .msg.robot {
+            align-self: flex-start;
+            background: #16213e;
+            color: #ddd;
+            border-bottom-left-radius: 4px;
+            border: 1px solid #333;
+        }
+        .msg.robot .robot-icon { color: #e94560; margin-right: 6px; }
+        .msg.typing {
+            align-self: flex-start;
+            background: #16213e;
+            color: #888;
+            font-style: italic;
+            border: 1px dashed #444;
+        }
+        .msg.system {
+            align-self: center;
+            background: #333;
+            color: #ff9800;
+            font-size: 12px;
+            padding: 6px 12px;
+            border-radius: 6px;
+        }
+        .input-area {
+            display: flex;
+            gap: 8px;
+            padding: 12px 16px;
+            background: #16213e;
+            border-top: 1px solid #333;
+        }
+        .input-area input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 1px solid #444;
+            border-radius: 24px;
+            background: #1a1a2e;
+            color: #eee;
+            font-size: 14px;
+            outline: none;
+        }
+        .input-area input:focus { border-color: #e94560; }
+        .input-area button {
+            width: 44px; height: 44px;
+            border: none;
+            border-radius: 50%;
+            background: #e94560;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .input-area button:active { background: #c73652; }
+        .input-area button:disabled { background: #555; cursor: not-allowed; }
+        .nav-back {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            color: #888;
+            text-decoration: none;
+            font-size: 13px;
+            border-top: 1px solid #333;
+        }
+        .nav-back:hover { color: #e94560; }
+        .clear-btn {
+            background: none;
+            border: 1px solid #555;
+            color: #aaa;
+            padding: 2px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 11px;
+        }
+        .clear-btn:hover { border-color: #e94560; color: #e94560; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 MindPaw AI 聊天</h1>
+        <div class="sub">和 MindPaw 智能对话</div>
+    </div>
+    <div class="status-bar">
+        <span id="statusText"><span class="status-dot dot-offline"></span>检查中...</span>
+        <button class="clear-btn" onclick="clearHistory()">清除对话</button>
+    </div>
+    <div class="chat-box" id="chatBox">
+        <div class="msg robot">
+            <span class="robot-icon">🐕</span> 你好！我是MindPaw机器狗，有什么想聊的吗？
+        </div>
+    </div>
+    <div class="input-area">
+        <input type="text" id="msgInput" placeholder="输入消息..." onkeydown="if(event.key==='Enter')sendMessage()">
+        <button id="sendBtn" onclick="sendMessage()">➤</button>
+    </div>
+    <a class="nav-back" href="/home.html">← 返回主页</a>
+
+    <script>
+        const chatBox = document.getElementById('chatBox');
+        const msgInput = document.getElementById('msgInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const statusText = document.getElementById('statusText');
+        let isWaiting = false;
+        let pollTimer = null;
+        let activeRequestId = '';
+
+        // 检查 AI 状态
+        async function checkStatus() {
+            try {
+                const resp = await fetch('/aiStatus');
+                const data = await resp.json();
+                if (data.enabled) {
+                    statusText.innerHTML = '<span class="status-dot dot-online"></span>AI 在线' +
+                        (data.busy ? ' (思考中...)' : '');
+                } else {
+                    statusText.innerHTML = '<span class="status-dot dot-offline"></span>AI 未配置';
+                }
+            } catch(e) {
+                statusText.innerHTML = '<span class="status-dot dot-offline"></span>网络错误';
+            }
+        }
+        setInterval(checkStatus, 3000);
+        checkStatus();
+
+        // 发送消息
+        async function sendMessage() {
+            const text = msgInput.value.trim();
+            if (!text || isWaiting) return;
+
+            msgInput.value = '';
+            addMessage(text, 'user');
+            addMessage('思考中...', 'typing');
+            isWaiting = true;
+            sendBtn.disabled = true;
+
+            try {
+                const resp = await fetch('/aitalk', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                    body: 'text=' + encodeURIComponent(text)
+                });
+                const data = await resp.json();
+
+                if (data.reply) {
+                    // 直接返回了回复（如错误提示）
+                    removeTyping();
+                    addMessage(data.reply, 'robot');
+                    isWaiting = false;
+                    sendBtn.disabled = false;
+                } else if (data.status === 'queued') {
+                    activeRequestId = data.request_id || '';
+                    // 排队等待，开始轮询
+                    pollForReply();
+                }
+            } catch(e) {
+                removeTyping();
+                addMessage('网络错误，请重试', 'system');
+                isWaiting = false;
+                sendBtn.disabled = false;
+            }
+        }
+
+        // 轮询 AI 回复
+        function pollForReply() {
+            let attempts = 0;
+            const maxAttempts = 30; // 15秒超时
+            pollTimer = setInterval(async () => {
+                attempts++;
+                try {
+                    const resp = await fetch('/aiReply');
+                    const data = await resp.json();
+                    if (data.request_id === activeRequestId &&
+                        (data.status === 'completed' || data.status === 'failed') &&
+                        data.reply && data.reply.length > 0) {
+                        clearInterval(pollTimer);
+                        removeTyping();
+                        addMessage(data.reply, 'robot');
+                        isWaiting = false;
+                        sendBtn.disabled = false;
+                        return;
+                    }
+                } catch(e) {}
+                if (attempts >= maxAttempts) {
+                    clearInterval(pollTimer);
+                    removeTyping();
+                    addMessage('回复超时，请重试', 'system');
+                    isWaiting = false;
+                    sendBtn.disabled = false;
+                }
+            }, 500);
+        }
+
+        // 移除"思考中..."消息
+        function removeTyping() {
+            const msgs = chatBox.querySelectorAll('.msg.typing');
+            msgs.forEach(m => m.remove());
+        }
+
+        // 添加消息
+        function addMessage(text, type) {
+            const div = document.createElement('div');
+            div.className = 'msg ' + type;
+            if (type === 'robot') {
+                const icon = document.createElement('span');
+                icon.className = 'robot-icon';
+                icon.textContent = '🐕';
+                div.appendChild(icon);
+                div.appendChild(document.createTextNode(' ' + text));
+            } else if (type === 'typing') {
+                div.textContent = '⏳ ' + text;
+            } else {
+                div.textContent = text;
+            }
+            chatBox.appendChild(div);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        // 清除历史
+        function clearHistory() {
+            fetch('/aiClearHistory', {
+                method: 'POST'
+            }).then(() => {
+                activeRequestId = '';
+            });
+            // 页面内清空
+            chatBox.innerHTML = '';
+            addMessage('🐕 对话已清除，重新开始吧！', 'robot');
+        }
+    </script>
+</body>
+</html>

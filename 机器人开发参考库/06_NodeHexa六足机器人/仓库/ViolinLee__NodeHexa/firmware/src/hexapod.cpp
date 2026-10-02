@@ -1,0 +1,283 @@
+#include <ArduinoJson.h>
+#include <SPIFFS.h>
+
+#include "hexapod.h"
+#include "servo.h"
+#include "debug.h"
+#include "robot.h"
+
+namespace hexapod {
+
+    HexapodClass Hexapod;
+
+#ifndef ROBOT_MODEL_NODEQUADMINI
+    // 默认机型：六足 Hexapod
+    RobotBase* Robot = &Hexapod;
+#endif
+
+    HexapodClass::HexapodClass(): 
+        legs_{{0}, {1}, {2}, {3}, {4}, {5}}, 
+        movement_{MOVEMENT_STANDBY},
+        mode_{MOVEMENT_STANDBY}
+    {
+
+    }
+
+    void HexapodClass::init(bool setting, bool isReset) {
+        Servo::init();
+
+        calibrationLoad();
+        movement_.snapToMode(MOVEMENT_STANDBY);
+        mode_ = MOVEMENT_STANDBY;
+
+        if (isReset)
+            forceResetAllLegTippos();
+
+        // default to standby mode
+        if (!setting)
+            processMovement(MOVEMENT_STANDBY);
+
+        LOG_INFO("Hexapod init done.");
+    }
+
+    void HexapodClass::processMovement(MovementMode mode, int elapsed) {
+        if (mode_ != mode) {
+            mode_ = mode;
+            movement_.setMode(mode_);
+        }
+
+        auto& location = movement_.next(elapsed);
+        for(int i=0;i<6;i++) {
+            legs_[i].moveTip(location.get(i));
+        }
+    }
+
+    bool HexapodClass::supportsSingleLegControl() const {
+        return true;
+    }
+
+    bool HexapodClass::beginSingleLegControl(int legIndex, Point3D& standbyTip) {
+        if (legIndex < 0 || legIndex >= 6) {
+            return false;
+        }
+
+        const auto& table = getMovementTable(MOVEMENT_STANDBY);
+        if (!table.table || table.length <= 0) {
+            return false;
+        }
+
+        movement_.snapToMode(MOVEMENT_STANDBY);
+        mode_ = MOVEMENT_STANDBY;
+
+        standbyTip = table.table[0].get(legIndex);
+        return true;
+    }
+
+    bool HexapodClass::applySingleLegControl(int legIndex, const Point3D& targetTip) {
+        if (legIndex < 0 || legIndex >= 6) {
+            return false;
+        }
+
+        const auto& table = getMovementTable(MOVEMENT_STANDBY);
+        if (!table.table || table.length <= 0) {
+            return false;
+        }
+
+        for (int i = 0; i < 6; ++i) {
+            const Point3D& tip = (i == legIndex) ? targetTip : table.table[0].get(i);
+            legs_[i].moveTip(tip);
+        }
+        return true;
+    }
+
+    bool HexapodClass::singleLegWorldToLocal(int legIndex, const Point3D& worldTip, Point3D& localTip) {
+        if (legIndex < 0 || legIndex >= 6) {
+            return false;
+        }
+        legs_[legIndex].translateToLocal(worldTip, localTip);
+        return true;
+    }
+
+    bool HexapodClass::singleLegLocalToWorld(int legIndex, const Point3D& localTip, Point3D& worldTip) {
+        if (legIndex < 0 || legIndex >= 6) {
+            return false;
+        }
+        legs_[legIndex].translateToWorld(localTip, worldTip);
+        return true;
+    }
+
+    void HexapodClass::endSingleLegControl() {
+        const auto& table = getMovementTable(MOVEMENT_STANDBY);
+        if (!table.table || table.length <= 0) {
+            return;
+        }
+
+        movement_.snapToMode(MOVEMENT_STANDBY);
+        mode_ = MOVEMENT_STANDBY;
+        for (int i = 0; i < 6; ++i) {
+            legs_[i].moveTip(table.table[0].get(i));
+        }
+    }
+
+    void HexapodClass::setMovementSpeed(float speed) {
+        // 受限于舵机频率(50hz->20ms)，速度控制只能是离散的(1/n)
+        movement_.setSpeed(speed);
+        char buffer[100]; 
+        snprintf(buffer, sizeof(buffer), "运动速度已设置为: %.2f (范围: %.1f - %.1f)", 
+                 speed, config::minSpeed, config::maxSpeed);
+        LOG_INFO(buffer);
+    }
+
+    void HexapodClass::setMovementSpeedLevel(SpeedLevel level) {
+        if (level < SPEED_SLOWEST || level > SPEED_FAST) {
+            LOG_INFO("错误: 无效的速度档位");
+            return;
+        }
+        
+        float speed = speedLevelMultipliers[level];
+        setMovementSpeed(speed);
+        
+        const char* levelNames[] = {"慢速", "中速", "快速", "最快"};
+        char buffer[100];
+        snprintf(buffer, sizeof(buffer), "速度档位已设置为: %s (%.2f)", levelNames[level], speed);
+        LOG_INFO(buffer);
+    }
+
+    float HexapodClass::getMovementSpeed() const {
+        return movement_.getSpeed();
+    }
+
+    float HexapodClass::getMovementCycleDurationMs(MovementMode mode) const {
+        float speed = getMovementSpeed();
+        if (speed < config::minSpeed) {
+            speed = config::minSpeed;
+        }
+        const auto& table = getMovementTable(mode);
+        return static_cast<float>(table.length) * (static_cast<float>(table.stepDuration) / speed);
+    }
+
+    void HexapodClass::calibrationSave() {
+        // {"leg1": [0, 0, 0], ..., "leg6: [0, 0, 0]"}
+
+        StaticJsonDocument<512> doc;
+
+        for(int i=0;i<6;i++) {
+            char leg[5];
+            sprintf(leg, "leg%d", i);
+            JsonArray legData = doc.createNestedArray(leg);
+            for(int j=0; j<3; j++) {
+                int offset;
+                legs_[i].get(j)->getParameter(offset);
+                
+                Serial.println(offset);
+                legData.add((short)offset);
+            }
+        }
+
+        String output;
+        serializeJson(doc, output);
+        Serial.println(output);
+
+        File file = SPIFFS.open(calibrationFilePath, FILE_WRITE);
+        if (!file) {
+            Serial.println("Failed to open file for writing");
+            return;
+        }
+
+        if (serializeJson(doc, file) == 0) {
+            Serial.println("Failed to write to file");
+        }
+
+        file.close();
+    }
+
+    void HexapodClass::calibrationGet(int legIndex, int partIndex, int& offset) {
+        if (legIndex < 0 || legIndex >= 6 || partIndex < 0 || partIndex >= 3) {
+            offset = 0;
+            return;
+        }
+        legs_[legIndex].get(partIndex)->getParameter(offset);
+    }
+
+    void HexapodClass::calibrationSet(int legIndex, int partIndex, int offset) {
+        if (legIndex < 0 || legIndex >= 6 || partIndex < 0 || partIndex >= 3) {
+            return;
+        }
+        char buffer[100]; 
+        snprintf(buffer, sizeof(buffer), "腿部关节舵机校准: 腿部索引[%d] 关节索引[%d] 偏移量[%d]", legIndex, partIndex, offset);
+        LOG_INFO(buffer);
+
+        legs_[legIndex].get(partIndex)->setParameter(offset, false);
+    }
+
+    void HexapodClass::calibrationSet(CalibrationData&  calibrationData) {
+        calibrationSet(calibrationData.legIndex, calibrationData.partIndex, calibrationData.offset);
+    }
+
+    void HexapodClass::calibrationTest(int legIndex, int partIndex, float angle) {
+        if (legIndex < 0 || legIndex >= 6 || partIndex < 0 || partIndex >= 3) {
+            return;
+        }
+        legs_[legIndex].get(partIndex)->setAngle(angle);
+    }
+
+    void HexapodClass::calibrationTestAllLeg(float angle) {
+        for(int i=0; i<6; i++) {
+            for(int j=0; j<3; j++) {
+                calibrationTest(i, j, angle);
+            }
+        }
+    }
+
+    void HexapodClass::calibrationLoad() {
+        File file = SPIFFS.open(calibrationFilePath, FILE_READ);
+        if (!file) {
+            Serial.println("[Warn] Failed to open file for reading. Skipping calibration parameters loading!!!");
+            return;
+        }
+
+        StaticJsonDocument<512> doc;
+        DeserializationError error = deserializeJson(doc, file);
+        if (error) {
+            Serial.print("Failed to read file, using default configuration: ");
+            Serial.println(error.c_str());
+            file.close();
+            return;
+        }
+        LOG_INFO("Read Servo Motors Calibration Data:");
+        serializeJson(doc, Serial);
+        Serial.println();
+
+        for (int i = 0; i < 6; i++) {
+            char leg[5];
+            sprintf(leg, "leg%d", i);
+            JsonArray legData = doc[leg];
+            if (legData.isNull() || legData.size() < 3) {
+                continue;
+            }
+            for (int j = 0; j < 3; j++) {
+                int param = legData[j];
+                // 上电加载校准参数时不要立刻输出 PWM（否则会先打一帧 angle_=0 的位置，造成关节“抽搐一下”）。
+                // 等后续 standby/动作下发时再统一 setAngle。
+                legs_[i].get(j)->setParameter(param, false);
+            }
+        }
+
+        file.close();
+    }
+
+    void HexapodClass::clearOffset() {
+        for(int i=0; i<6; i++) {
+            for(int j=0; j<3; j++) {
+                legs_[i].get(j)->setParameter(0, true);
+            }
+        }
+    }
+
+    void HexapodClass::forceResetAllLegTippos() {
+        for(int i=0; i<6; i++) {
+            legs_[i].forceResetTipPosition();
+        }
+    }
+
+}

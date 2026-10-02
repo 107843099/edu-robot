@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-02",
+  "isolated_component_execution": true,
+  "real_serial_access": false,
+  "installer_started": false,
+  "firmware_executed": false,
+  "checks": 7,
+  "rows": [
+    {
+      "name": "完整系统身份可被屏幕步骤错误接受",
+      "assertion": true,
+      "evidence": {
+        "matched": true,
+        "robot": false,
+        "step": "display"
+      }
+    },
+    {
+      "name": "教学步骤错误ID会被拒绝",
+      "assertion": true,
+      "evidence": {
+        "matched": false
+      }
+    },
+    {
+      "name": "教学断开发送STOP",
+      "assertion": true,
+      "evidence": {
+        "sent": [
+          "STOP"
+        ]
+      }
+    },
+    {
+      "name": "完整系统断开不发送停止",
+      "assertion": true,
+      "evidence": {
+        "sent": []
+      }
+    },
+    {
+      "name": "急停状态微调被网页阻止",
+      "assertion": true,
+      "evidence": {
+        "sent": []
+      }
+    },
+    {
+      "name": "缺少能力标记时默认回中被网页阻止",
+      "assertion": true,
+      "evidence": {
+        "sent": []
+      }
+    },
+    {
+      "name": "两轴当前及目标角度可解析",
+      "assertion": true,
+      "evidence": {
+        "panCurrent": 90,
+        "panTarget": 92,
+        "tiltCurrent": 91
+      }
+    }
+  ]
+}

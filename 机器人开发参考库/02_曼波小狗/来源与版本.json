@@ -1,0 +1,22 @@
+[
+  {
+    "robot_id": 2,
+    "folder": "02_曼波小狗",
+    "repo": "RussellCooper-DJZ/manbo-robot-dog",
+    "url": "https://github.com/RussellCooper-DJZ/manbo-robot-dog",
+    "purpose": "主项目 GitHub 版本",
+    "requested_branch": null,
+    "branch": "master",
+    "commit": "9a3d315cfe50a62d8e6221cccf2aea696f96aedc",
+    "downloaded_at": "2026-10-02T09:48:25+08:00",
+    "relative_path": "02_曼波小狗/仓库/RussellCooper-DJZ__manbo-robot-dog",
+    "file_count": 157,
+    "unpacked_bytes": 2605114,
+    "archive_sha256": "e3a152ec853271aee736baba4ccb453bb50cf1d6ac52bd4998cdd9f3e5117bb6",
+    "archive_url": "https://codeload.github.com/RussellCooper-DJZ/manbo-robot-dog/zip/9a3d315cfe50a62d8e6221cccf2aea696f96aedc",
+    "lfs_pointers": [],
+    "gitmodules_files": [],
+    "status": "downloaded",
+    "download_method": "GitHub commit archive snapshot, no commit history"
+  }
+]

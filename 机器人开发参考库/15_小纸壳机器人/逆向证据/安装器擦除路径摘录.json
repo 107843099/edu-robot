@@ -1,0 +1,114 @@
+[
+  {
+    "file": "vendor/esp-web-tools/install-dialog-CQzvAv3p.js",
+    "pattern": "_renderDashboardNoImprov()",
+    "character_offset": 259367,
+    "line": 491,
+    "context": "\"===this._state?[e,t]=this._renderAskErase():\"ERROR\"===this._state?[e,t]=this._renderError(this._error):\"DASHBOARD\"===this._state?[e,t,i]=this._client?this._renderDashboard():this._renderDashboardNoImprov():\"PROVISION\"===this._state?[e,t]=this._renderProvision():\"LOGS\"===this._state&&([e,t]=this._renderLogs()),o`\n      <ew-dialog\n        open\n        .heading=${e}        @cancel=${this._preventDefault}\n        @closed=${this._handleClose}\n   "
+  },
+  {
+    "file": "vendor/esp-web-tools/install-dialog-CQzvAv3p.js",
+    "pattern": "_renderDashboardNoImprov()",
+    "character_offset": 263479,
+    "line": 599,
+    "context": "              ${oi}\n                  <div slot=\"headline\">Erase User Data</div>\n                </ew-list-item>\n              `:\"\"}\n        </ew-list>\n      </div>\n    `,[e,t,!0]}_renderDashboardNoImprov(){const e=this._manifest.name;let t;return t=o`\n      <div slot=\"content\">\n        <ew-list>\n          <ew-list-item\n            type=\"button\"\n            @click=${()=>{this._manifest.new_install_prompt_erase?this._state=\"ASK_ERASE\":this._st"
+  },
+  {
+    "file": "vendor/esp-web-tools/install-dialog-CQzvAv3p.js",
+    "pattern": "this._manifest.new_install_prompt_erase?this._state=\"ASK_ERASE\":this._startInstall(!0)",
+    "character_offset": 260890,
+    "line": 533,
+    "context": "em>\n          ${this._isSameVersion?\"\":o`\n                <ew-list-item\n                  type=\"button\"\n                  @click=${()=>{this._isSameFirmware?this._startInstall(!1):this._manifest.new_install_prompt_erase?this._state=\"ASK_ERASE\":this._startInstall(!0)}}\n                >\n                  ${Qt}\n                  <div slot=\"headline\">\n                    ${this._isSameFirmware?`Update ${this._manifest.name}`:`Install ${this._manifest.name}`}\n                  </div>\n                </ew-"
+  },
+  {
+    "file": "vendor/esp-web-tools/install-dialog-CQzvAv3p.js",
+    "pattern": "this._manifest.new_install_prompt_erase?this._state=\"ASK_ERASE\":this._startInstall(!0)",
+    "character_offset": 263673,
+    "line": 604,
+    "context": "rdNoImprov(){const e=this._manifest.name;let t;return t=o`\n      <div slot=\"content\">\n        <ew-list>\n          <ew-list-item\n            type=\"button\"\n            @click=${()=>{this._manifest.new_install_prompt_erase?this._state=\"ASK_ERASE\":this._startInstall(!0)}}\n          >\n            ${Qt}\n            <div slot=\"headline\">${`Install ${this._manifest.name}`}</div>\n          </ew-list-item>\n          <ew-list-item\n            type=\"button\"\n            @click=${async()=>{this._client=void 0,this."
+  },
+  {
+    "file": "vendor/esp-web-tools/install-dialog-CQzvAv3p.js",
+    "pattern": "_startInstall(e){",
+    "character_offset": 275684,
+    "line": 822,
+    "context": "tate=\"ERROR\",this._error=\"Serial port is not ready. Close any other application using it and try again.\"):(this._client=null,this.logger.error(\"Improv initialization failed.\",e))}}_startInstall(e){this._state=\"INSTALL\",this._installErase=e,this._installConfirmed=!1}async _confirmInstall(){this._installConfirmed=!0,this._installState=void 0,this._client&&await this._closeClientWithoutEvents(this._client),this._client=void 0;let closeT"
+  },
+  {
+    "file": "vendor/esp-web-tools/install-dialog-CQzvAv3p.js",
+    "pattern": "this._installErase",
+    "character_offset": 258680,
+    "line": 491,
+    "context": "b Tools 10.1.0 by Open Home Foundation; https://esphome.github.io/esp-web-tools/\");class ja extends r{constructor(){super(...arguments),this.logger=console,this._state=\"DASHBOARD\",this._installErase=!1,this._installConfirmed=!1,this._provisionForce=!1,this._wasProvisioned=!1,this._busy=!1,this._selectedSsid=null,this._bodyOverflow=null,this._handleDisconnect=()=>{this._state=\"ERROR\",this._error=\"Disconnected\"}}render(){if(!this.port)r"
+  },
+  {
+    "file": "vendor/esp-web-tools/install-dialog-CQzvAv3p.js",
+    "pattern": "this._installErase",
+    "character_offset": 266323,
+    "line": 663,
+    "context": "      `:\"\"}\n        </div>\n        <div slot=\"actions\">\n          <ew-text-button\n            @click=${()=>{this._state=\"DASHBOARD\"}}\n          >\n            ${this._installState&&this._installErase?\"Skip\":\"Back\"}\n          </ew-text-button>\n          <ew-text-button @click=${this._doProvision}>Connect</ew-text-button>\n        </div>\n      `}else{i=void 0;const e=!this._wasProvisioned&&(void 0!==this._client.nextUrl||\"home_assistant_d"
+  },
+  {
+    "file": "vendor/esp-web-tools/install-dialog-CQzvAv3p.js",
+    "pattern": "this._installErase",
+    "character_offset": 269308,
+    "line": 740,
+    "context": "is.shadowRoot.querySelector(\"ew-checkbox\");this._startInstall(e.checked)}}\n        >\n          Next\n        </ew-text-button>\n      </div>\n    `]}_renderInstall(){let e,t;const i=!this._installErase&&this._isSameFirmware;if(!this._installConfirmed&&this._isSameVersion)e=\"Erase User Data\",t=o`\n        <div slot=\"content\">\n          Do you want to reset your device and erase all user data from your\n          device?\n        </div>\n     "
+  },
+  {
+    "file": "vendor/esp-web-tools/install-dialog-CQzvAv3p.js",
+    "pattern": "this._installErase",
+    "character_offset": 270829,
+    "line": 765,
+    "context": ".icon=${\"🎉\"}\n          label=\"Installation complete!\"\n        ></ewt-page-message>\n\n        <div slot=\"actions\">\n          <ew-text-button\n            @click=${()=>{this._state=i&&this._installErase?\"PROVISION\":\"DASHBOARD\"}}\n          >\n            Next\n          </ew-text-button>\n        </div>\n      `}else\"error\"===this._installState.state&&(e=\"Installation failed\",t=o`\n        <ewt-page-message\n          slot=\"content\"\n          .i"
+  },
+  {
+    "file": "vendor/esp-web-tools/install-dialog-CQzvAv3p.js",
+    "pattern": "this._installErase",
+    "character_offset": 271798,
+    "line": 789,
+    "context": "     ${this._info.firmware}&nbsp;${this._info.version}.<br /><br />`:\"\"}\n          Do you want to ${r}\n          ${this._manifest.name}&nbsp;${this._manifest.version}?\n          ${this._installErase?o`<br /><br />All data on the device will be erased.`:\"\"}\n        </div>\n        <div slot=\"actions\">\n          <ew-text-button\n            @click=${()=>{this._state=\"DASHBOARD\"}}\n          >\n            Back\n          </ew-text-button>\n  "
+  },
+  {
+    "file": "vendor/esp-web-tools/install-dialog-CQzvAv3p.js",
+    "pattern": "this._installErase",
+    "character_offset": 275723,
+    "line": 822,
+    "context": "s not ready. Close any other application using it and try again.\"):(this._client=null,this.logger.error(\"Improv initialization failed.\",e))}}_startInstall(e){this._state=\"INSTALL\",this._installErase=e,this._installConfirmed=!1}async _confirmInstall(){this._installConfirmed=!0,this._installState=void 0,this._client&&await this._closeClientWithoutEvents(this._client),this._client=void 0;let closeTimer;try{await Promise.race([this.port.c"
+  },
+  {
+    "file": "vendor/esp-web-tools/install-dialog-CQzvAv3p.js",
+    "pattern": "this._installErase",
+    "character_offset": 279680,
+    "line": 822,
+    "context": "((()=>this._initialize(!0))).then((()=>this.requestUpdate())):\"error\"===e.state&&xe(100).then((()=>this.port.open({baudRate:115200})))}),this.port,this.manifestPath,this._manifest,this._installErase)}async _doProvision(){var e;this._busy=!0,this._wasProvisioned=this._client.state===li.PROVISIONED;const t=null===this._selectedSsid?this.shadowRoot.querySelector(\"ew-filled-text-field[name=ssid]\").value:this._selectedSsid,i=(null===(e=thi"
+  },
+  {
+    "file": "vendor/esp-web-tools/install-dialog-CQzvAv3p.js",
+    "pattern": "eraseFlash()",
+    "character_offset": 250601,
+    "line": 491,
+    "context": "await this.readReg(l);return await this.writeReg(a,p),await this.writeReg(n,u),g}async readFlashId(){const e=new Uint8Array(0);return await this.runSpiflashCommand(159,e,24)}async eraseFlash(){this.info(\"Erasing flash (this may take a while)...\");let e=new Date;const t=e.getTime(),i=await this.checkCommand(\"erase flash\",this.ESP_ERASE_FLASH,void 0,void 0,this.CHIP_ERASE_TIMEOUT);e=new Date;const r=e.getTime();return this.info(\"C"
+  },
+  {
+    "file": "vendor/esp-web-tools/install-dialog-CQzvAv3p.js",
+    "pattern": "eraseFlash()",
+    "character_offset": 255224,
+    "line": 491,
+    "context": "th;i++)if(e.fileArray[i].data.length+e.fileArray[i].address>t)throw new ui(`File ${i+1} doesn't fit in the available flash`)}let t,i;!0===this.IS_STUB&&!0===e.eraseAll&&await this.eraseFlash();for(let r=0;r<e.fileArray.length;r++){if(this.debug(\"Data Length \"+e.fileArray[r].data.length),t=e.fileArray[r].data,this.debug(\"Image Length \"+t.length),0===t.length){this.debug(\"Warning: File is empty\");continue}t=this.ui8ToBstr(qa(this."
+  },
+  {
+    "file": "vendor/esp-web-tools/install-dialog-CQzvAv3p.js",
+    "pattern": "eraseFlash()",
+    "character_offset": 278518,
+    "line": 822,
+    "context": "),void await l.disconnect()}n({state:\"preparing\",message:\"Installation prepared\",details:{done:!0}}),o&&(n({state:\"erasing\",message:\"Erasing device...\",details:{done:!1}}),await d.eraseFlash(),n({state:\"erasing\",message:\"Device erased\",details:{done:!0}})),n({state:\"writing\",message:\"Writing progress: 0%\",details:{bytesTotal:u,bytesWritten:0,percentage:0}});let f=0;try{await d.writeFlash({fileArray:p,flashSize:\"keep\",flashMode:\""
+  },
+  {
+    "file": "vendor/esp-web-tools/install-dialog-CQzvAv3p.js",
+    "pattern": "eraseAll:!1",
+    "character_offset": 278793,
+    "line": 822,
+    "context": ",message:\"Writing progress: 0%\",details:{bytesTotal:u,bytesWritten:0,percentage:0}});let f=0;try{await d.writeFlash({fileArray:p,flashSize:\"keep\",flashMode:\"keep\",flashFreq:\"keep\",eraseAll:!1,compress:!0,reportProgress:(e,t,i)=>{const r=t/i*p[e].data.length,o=Math.floor((f+r)/u*100);t!==i?n({state:\"writing\",message:`Writing progress: ${o}%`,details:{bytesTotal:u,bytesWritten:f+t,percentage:o}}):f+=r}})}catch(e){return n({state:"
+  }
+]

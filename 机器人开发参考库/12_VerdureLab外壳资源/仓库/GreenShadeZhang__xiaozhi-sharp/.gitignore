@@ -1,0 +1,16 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.vs
+/XiaoZhiSharp/bin
+/XiaoZhiSharp/obj
+/XiaoZhiSharp_ConsoleApp/bin
+/XiaoZhiSharp_ConsoleApp/obj
+/XiaoZhiSharp_MauiBlazorApp/bin
+/XiaoZhiSharp_MauiBlazorApp/obj
+/XiaoZhiSharp_MauiApp/obj
+/XiaoZhiSharp_MauiApp/bin
+/DuoDuo/obj
+/DuoDuo/bin
+*.user

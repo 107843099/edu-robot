@@ -1,0 +1,38 @@
+import os
+from building import *
+
+CPPDEFINES = ['_LIBCPP_HAS_THREAD_API_EXTERNAL']
+PKG_XIAOZHI_USING_AEC = 1
+ALLOW_VAD_WHEN_SPEAKING = 1
+STOP_SPEAKER_WHEN_DETECTED_MIC_VOICE = 0
+
+if (PKG_XIAOZHI_USING_AEC == 1):
+    CPPDEFINES += ['PKG_XIAOZHI_USING_AEC']
+if (ALLOW_VAD_WHEN_SPEAKING == 1):
+    CPPDEFINES += ['ALLOW_VAD_WHEN_SPEAKING']
+if (STOP_SPEAKER_WHEN_DETECTED_MIC_VOICE == 1):
+    CPPDEFINES += ['STOP_SPEAKER_WHEN_DETECTED_MIC_VOICE']
+
+
+CPPDEFINES += ['MBEDTLS_PLATFORM_MEMORY']
+
+cwd     = GetCurrentDir()
+CPPPATH = [cwd]
+libpath = [cwd + '/kws']
+CPPPATH += [cwd + '/kws']
+# Add source code
+src = Glob('*.c')
+src = src + Glob('./mcp/*.cc') 
+src = src + Glob('./iot/*.cc')  
+src = src + Glob('./kws/*.c')
+src = src + Glob('./weather/*.c') 
+#src = src + Glob('./board/*.cc') 
+#SrcRemove(src, 'xiaozhi.c')
+
+group = DefineGroup('Applications', src, depend = [''], CPPDEFINES = CPPDEFINES, 
+    CPPPATH = CPPPATH,
+    LIBS = ['libetasr_watch_sifli567'],
+    LIBPATH = libpath)
+
+Return('group')
+

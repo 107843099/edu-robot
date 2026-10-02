@@ -1,0 +1,33 @@
+name: Hardware or wiring change
+description: Propose a PCB, component, power, wiring, or 3D-model change.
+title: "[hardware] "
+body:
+  - type: input
+    id: component
+    attributes:
+      label: Affected component or file
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Problem and proposed change
+      description: Explain the electrical or mechanical trade-off and compatibility impact.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Measurements or test evidence
+      description: Include voltage/current readings, dimensions, photos, simulation, or a reproducible test.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I tested or reviewed the change with a current-limited supply and a power cutoff plan.
+          required: true
+        - label: I checked the affected component's datasheet and license.
+          required: true

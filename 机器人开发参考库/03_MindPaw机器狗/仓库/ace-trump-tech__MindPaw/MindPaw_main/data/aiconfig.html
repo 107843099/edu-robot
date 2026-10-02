@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindPaw AI 配置</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .card {
+            background: #16213e;
+            border-radius: 16px;
+            padding: 24px;
+            width: 100%;
+            max-width: 420px;
+            border: 1px solid #333;
+        }
+        h1 {
+            font-size: 22px;
+            color: #e94560;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 small { display: block; font-size: 13px; color: #888; margin-top: 4px; font-weight: normal; }
+        .field {
+            margin-bottom: 18px;
+        }
+        .field label {
+            display: block;
+            font-size: 13px;
+            color: #aaa;
+            margin-bottom: 6px;
+        }
+        .field input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #444;
+            border-radius: 10px;
+            background: #1a1a2e;
+            color: #eee;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .field input:focus { border-color: #e94560; }
+        .field .hint {
+            font-size: 11px;
+            color: #666;
+            margin-top: 4px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .btn:active { opacity: 0.8; }
+        .btn-primary {
+            background: #e94560;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .btn-secondary {
+            background: #333;
+            color: #aaa;
+            border: 1px solid #555;
+        }
+        .btn-success {
+            background: #4caf50;
+            color: #fff;
+        }
+        .status-msg {
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 14px;
+            font-size: 13px;
+            display: none;
+        }
+        .status-msg.ok { background: #1b3a2b; color: #4caf50; display: block; }
+        .status-msg.err { background: #3a1b1b; color: #f44336; display: block; }
+        .status-msg.info { background: #1b2a3a; color: #2196f3; display: block; }
+        .nav-back {
+            display: block;
+            text-align: center;
+            padding: 14px;
+            color: #888;
+            text-decoration: none;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+        .nav-back:hover { color: #e94560; }
+        .info-box {
+            background: #1a1a2e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 12px;
+            color: #999;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🧠 AI 配置
+            <small>豆包 / 火山引擎推理 API</small>
+        </h1>
+
+        <div class="info-box">
+            <strong>如何获取？</strong><br>
+            1. 访问 火山引擎方舟平台<br>
+            2. 创建推理接入点 (Endpoint)<br>
+            3. 获取 API Key 和 Endpoint ID
+        </div>
+
+        <div class="field">
+            <label>API Key</label>
+            <input type="password" id="apiKey" placeholder="请输入 API Key">
+            <div class="hint">火山引擎的 API 密钥</div>
+        </div>
+
+        <div class="field">
+            <label>推理端点 ID (Endpoint)</label>
+            <input type="text" id="endpointId" placeholder="例如: ep-2025xxxx-xxxxx">
+            <div class="hint">方舟平台的推理接入点 ID</div>
+        </div>
+
+        <div class="field">
+            <label>AI Gateway 地址（可选）</label>
+            <input type="url" id="baseUrl" placeholder="例如: http://192.168.4.2:8000/v1/chat/completions">
+            <div class="hint">留空直连豆包；填写后通过独立 ai-infra 网关转发</div>
+        </div>
+
+        <div class="field">
+            <label>🛰️ 流式 3D 重建网关地址（2.0 新增）</label>
+            <input type="url" id="reconUrl" placeholder="例如: http://192.168.4.2:8001">
+            <div class="hint">留空关闭感知层；填写后启用流式 3D 重建并自动避障</div>
+        </div>
+
+        <div class="field">
+            <label>感知层推流帧率（2.0 新增）</label>
+            <input type="number" id="reconFps" min="1" max="10" value="5">
+            <div class="hint">建议 3–8。明亮环境可用 8 FPS，弱光降到 3 FPS</div>
+        </div>
+
+        <button class="btn btn-primary" onclick="saveConfig()">💾 保存配置</button>
+        <button class="btn btn-secondary" onclick="testConnection()">🔌 测试连接</button>
+
+        <div id="statusMsg" class="status-msg"></div>
+    </div>
+
+    <a class="nav-back" href="/setting.html">← 返回设置</a>
+
+    <script>
+        // 加载现有配置
+        async function loadConfig() {
+            try {
+                // 通过 aiStatus 获取配置状态
+                const resp = await fetch('/aiStatus');
+                const data = await resp.json();
+                if (data.baseUrl && !data.baseUrl.includes('ark.cn-beijing.volces.com')) {
+                    document.getElementById('baseUrl').value = data.baseUrl;
+                }
+            } catch(e) {}
+        }
+        loadConfig();
+
+        // 保存配置
+        async function saveConfig() {
+            const apiKey = document.getElementById('apiKey').value.trim();
+            const endpointId = document.getElementById('endpointId').value.trim();
+            const baseUrl = document.getElementById('baseUrl').value.trim();
+            const statusEl = document.getElementById('statusMsg');
+
+            if (!apiKey || !endpointId) {
+                statusEl.className = 'status-msg err';
+                statusEl.textContent = '⚠️ 请填写 API Key 和 推理端点 ID';
+                return;
+            }
+
+            statusEl.className = 'status-msg info';
+            statusEl.textContent = '⏳ 正在保存...';
+
+            try {
+                const resp = await fetch('/aiConfig', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: 'apiKey=' + encodeURIComponent(apiKey) +
+                          '&endpointId=' + encodeURIComponent(endpointId) +
+                          '&baseUrl=' + encodeURIComponent(baseUrl)
+                });
+                const data = await resp.json();
+                if (data.status === 'ok') {
+                    statusEl.className = 'status-msg ok';
+                    statusEl.textContent = '✅ AI 配置保存成功！机器狗已连接上 AI 大脑';
+                } else {
+                    statusEl.className = 'status-msg err';
+                    statusEl.textContent = '❌ 保存失败: ' + (data.error || '未知错误');
+                }
+            } catch(e) {
+                statusEl.className = 'status-msg err';
+                statusEl.textContent = '❌ 网络错误: ' + e.message;
+            }
+        }
+
+        // 测试连接
+        async function testConnection() {
+            const apiKey = document.getElementById('apiKey').value.trim();
+            const endpointId = document.getElementById('endpointId').value.trim();
+            const baseUrl = document.getElementById('baseUrl').value.trim();
+            const statusEl = document.getElementById('statusMsg');
+
+            if (!apiKey || !endpointId) {
+                statusEl.className = 'status-msg err';
+                statusEl.textContent = '⚠️ 请先填写 API Key 和 推理端点 ID';
+                return;
+            }
+
+            // 先保存，再测试
+            await saveConfig();
+
+            statusEl.className = 'status-msg info';
+            statusEl.textContent = '⏳ 正在测试 AI 连接，发送测试消息...';
+
+            try {
+                const resp = await fetch('/aitalk', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                    body: 'text=你好，请回复一句话'
+                });
+                const data = await resp.json();
+
+                if (data.reply) {
+                    statusEl.className = 'status-msg ok';
+                    statusEl.textContent = '✅ 回复: ' + data.reply;
+                } else if (data.status === 'queued') {
+                    statusEl.className = 'status-msg info';
+                    statusEl.textContent = '⏳ 测试消息已发送，请到聊天页面查看回复';
+                    // 5秒后检查回复
+                    setTimeout(async () => {
+                        try {
+                            const replyResp = await fetch('/aiReply');
+                            const replyData = await replyResp.json();
+                            if (replyData.reply) {
+                                statusEl.className = 'status-msg ok';
+                                statusEl.textContent = '✅ AI 回复: ' + replyData.reply;
+                            }
+                        } catch(e) {}
+                    }, 5000);
+                }
+            } catch(e) {
+                statusEl.className = 'status-msg err';
+                statusEl.textContent = '❌ 测试失败: ' + e.message;
+            }
+        }
+    </script>
+</body>
+</html>

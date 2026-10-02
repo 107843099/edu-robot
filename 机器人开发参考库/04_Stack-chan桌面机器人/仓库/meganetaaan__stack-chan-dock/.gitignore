@@ -1,0 +1,10 @@
+.gradle/
+.gradle-user-home/
+.idea/
+.kotlin/
+.toolchains/
+local.properties
+**/build/
+*.iml
+apps/android-local-voice/app/libs/*.aar
+!apps/android-local-voice/app/libs/README.md

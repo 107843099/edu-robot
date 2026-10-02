@@ -1,0 +1,112 @@
+[
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image1.jpg",
+    "caption": "图 1 机器人及核心模块总览。来源 S2，00:45 画面。作者图示包含屏幕、触摸模块、左右检测模块、双舵机、供电模块和主控板。",
+    "paragraph_index": 6
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image2.jpg",
+    "caption": "图 2 纸板与工具清单。来源 S2，约 02:34 / 03:32。两种纸板为可选方案，胶枪与泡棉胶也按原图标为选择关系。",
+    "paragraph_index": 80
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image3.jpg",
+    "caption": "图 3 作者材料清单第 1 页。来源 U1，用户提供原图；规格按图记录。",
+    "paragraph_index": 86
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image4.jpg",
+    "caption": "图 4 作者材料清单第 2 页。来源 U2。原图左列接头为早期误标，已按 S5 作者评论更正为母对母，见本页表格。",
+    "paragraph_index": 95
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image5.jpg",
+    "caption": "图 5 作者材料清单第 3 页。来源 U3，用户提供原图。",
+    "paragraph_index": 102
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image6.jpg",
+    "caption": "图 6 示例模型尺寸。来源 S3，约 00:59 / 03:27。底座宽与长有字幕确认；头部两条水平边应按图辨认方向。",
+    "paragraph_index": 108
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image7.jpg",
+    "caption": "图 7 双舵机与头部支架的连接示意。来源 S3，约 03:00。蓝色模型是电子件示意，真实孔距应以实物为准。",
+    "paragraph_index": 114
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image8.jpg",
+    "caption": "图 8 底座隔板与分区。来源 S3，约 02:30。隔板位置与真实板件尺寸应一起核对。",
+    "paragraph_index": 118
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image9.jpg",
+    "caption": "图 9 用户提供的作者 A4 裁切模板。来源 U5。缩放展示，尺寸单位未在原图中明确印出。",
+    "paragraph_index": 123
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image10.jpg",
+    "caption": "图 10 纸模板与钢尺辅助裁切。来源 S4，00:20 / 02:18。本截图不能用作等比例打印模板。",
+    "paragraph_index": 136
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image11.jpg",
+    "caption": "图 11 裁切和预成形后的纸板零件。来源 S4，02:12 / 02:18。可对照头壳、底座、卷筒状身体、四肢和小连接件。",
+    "paragraph_index": 139
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image12.jpg",
+    "caption": "图 12 ESP32-C3 两种供电模式原图。来源 U4。图中模块印有输入 6V–30V，仍需核对实际购买型号；该范围不是开发板输入范围。",
+    "paragraph_index": 150
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image13.jpg",
+    "caption": "图 13 作者的模块调试页面与四步流程。来源 S5，01:40 / 06:16。按一个模块通过后再进入下一项。",
+    "paragraph_index": 156
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image14.jpg",
+    "caption": "图 14 红外测试页面中的下载模式操作。来源 S5，03:40。顶部提醒安装时关闭外部电源，仅保留 USB 连接。",
+    "paragraph_index": 165
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image15.jpg",
+    "caption": "图 15 双舵机实际组合。来源 S6，04:00 / 09:47。对照前文三维模型，可以看清舵盘与连接件的相对关系。",
+    "paragraph_index": 180
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image16.jpg",
+    "caption": "图 16 从头部向身体和底座整理连线。来源 S6，06:00。最终固定前保留可检查与可拆装的空间。",
+    "paragraph_index": 183
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image17.jpg",
+    "caption": "图 17 完整系统的校准页面。来源 S6，08:05 / 09:47，作者工具 V0.3。可见默认中位、自定义中位、方向微调、保存、正常运行与急停等控件。",
+    "paragraph_index": 190
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image18.jpg",
+    "caption": "图 18 完成后的触摸表情演示。来源 S6，约 09:40 / 09:47。最终仍应复查重启姿态、左右响应、触摸响应与机械安全范围。",
+    "paragraph_index": 196
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image19.png",
+    "caption": "图 19 3D 说明书的 X-Ray 视图。来源 S7，00:18 / 00:39，手机展示区裁切。用于理解布局，不能替代清晰的引脚表。",
+    "paragraph_index": 202
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image20.png",
+    "caption": "图 20 作者的迷你游戏机面包板原型。来源 A1，视频区域裁切；材料规格以正文表格为准。",
+    "paragraph_index": 246
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image21.png",
+    "caption": "图 21 桌面智能体的零件实拍。来源 A2a。主控与功放型号可从丝印核对，其余未给出的规格仍保留为待确认。",
+    "paragraph_index": 256
+  },
+  {
+    "image": "/Users/kehanfu/Library/Mobile Documents/com~apple~CloudDocs/硕士：机器人相关/香港培训类创业相关/机器人开发参考库/15_小纸壳机器人/图片/image22.jpg",
+    "caption": "图 22 毛坯游戏机。来源 O1，实际打开的笔记画面。可对照摇杆、屏幕与开放式电路结构；这不是完整接线图。",
+    "paragraph_index": 322
+  }
+]

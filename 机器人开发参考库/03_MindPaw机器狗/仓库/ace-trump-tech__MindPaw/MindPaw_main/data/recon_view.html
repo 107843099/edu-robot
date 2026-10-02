@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindPaw 2.0 — 实时 3D 重建</title>
+    <style>
+        body { margin:0; background:#0a0a14; color:#eee; font-family:'Segoe UI',sans-serif; overflow:hidden; }
+        #canvas { position:absolute; top:0; left:0; width:100vw; height:100vh; }
+        #hud {
+            position:absolute; top:16px; left:16px; padding:14px 18px;
+            background:rgba(20,20,40,0.75); border:1px solid #333;
+            border-radius:10px; font-size:13px; line-height:1.6;
+            min-width:200px;
+        }
+        #hud .title { color:#e94560; font-size:15px; font-weight:bold; margin-bottom:6px; }
+        #hud .pill { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; margin-left:6px; }
+        .pill.safe { background:#1b3a2b; color:#4caf50; }
+        .pill.caution { background:#3a2e1b; color:#ff9800; }
+        .pill.stop { background:#3a1b1b; color:#f44336; }
+        #toolbar {
+            position:absolute; bottom:16px; right:16px; display:flex; gap:8px;
+        }
+        #toolbar button {
+            padding:8px 14px; background:#16213e; color:#eee;
+            border:1px solid #333; border-radius:8px; cursor:pointer;
+        }
+        #toolbar button:hover { border-color:#e94560; }
+        #status { position:absolute; bottom:16px; left:16px; font-size:12px; color:#888; }
+    </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div id="hud">
+    <div class="title">🐕 MindPaw 实时 3D 重建 <small style="font-size:11px; color:#888;">2.0</small></div>
+    <div>连接状态: <span id="connState">未连接</span></div>
+    <div>累计帧数: <span id="frameCount">0</span></div>
+    <div>最近障碍: <span id="nearest">—</span></div>
+    <div>位姿漂移: <span id="drift">—</span></div>
+    <div>决策: <span id="hazardPill" class="pill safe">SAFE</span></div>
+</div>
+<div id="toolbar">
+    <button onclick="resetView()">🔄 重置视角</button>
+    <button onclick="toggleTrajectory()">📐 显示/隐藏轨迹</button>
+</div>
+<div id="status">WebSocket: <code id="wsUrl">ws://&lt;host&gt;:8001/recon/stream</code></div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script>
+// ---------- three.js scene ----------
+const canvas = document.getElementById('canvas');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(window.devicePixelRatio);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0a0a14);
+
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.05, 100);
+camera.position.set(0, 0.3, 0.6);
+camera.lookAt(0, 0, 0);
+
+const gridHelper = new THREE.GridHelper(2, 10, 0x444466, 0x222244);
+scene.add(gridHelper);
+
+// 点云 (BufferGeometry, 容量 2000 点)
+const MAX_POINTS = 2000;
+const pointGeo = new THREE.BufferGeometry();
+const pointPos = new Float32Array(MAX_POINTS * 3);
+const pointCol = new Float32Array(MAX_POINTS * 3);
+pointGeo.setAttribute('position', new THREE.BufferAttribute(pointPos, 3));
+pointGeo.setAttribute('color', new THREE.BufferAttribute(pointCol, 3));
+pointGeo.setDrawRange(0, 0);
+const pointMat = new THREE.PointsMaterial({ size: 0.015, vertexColors: true, sizeAttenuation: true });
+const pointCloud = new THREE.Points(pointGeo, pointMat);
+scene.add(pointCloud);
+
+// 相机轨迹线
+const trajGeo = new THREE.BufferGeometry();
+const trajMat = new THREE.LineBasicMaterial({ color: 0xe94560 });
+const trajectory = new THREE.Line(trajGeo, trajMat);
+trajectory.visible = true;
+scene.add(trajectory);
+let trajPoints = [];
+
+// 鼠标控制 (OrbitControls 替代实现，避免再引一个 CDN)
+let isDragging = false, prevX = 0, prevY = 0;
+let yaw = 0, pitch = 0.3, dist = 0.8;
+canvas.addEventListener('mousedown', e => { isDragging = true; prevX = e.clientX; prevY = e.clientY; });
+window.addEventListener('mouseup', () => { isDragging = false; });
+window.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    yaw -= (e.clientX - prevX) * 0.005;
+    pitch -= (e.clientY - prevY) * 0.005;
+    pitch = Math.max(-1.4, Math.min(1.4, pitch));
+    prevX = e.clientX; prevY = e.clientY;
+});
+canvas.addEventListener('wheel', e => {
+    e.preventDefault();
+    dist *= (1 + e.deltaY * 0.001);
+    dist = Math.max(0.2, Math.min(5, dist));
+});
+function updateCamera() {
+    camera.position.x = dist * Math.cos(pitch) * Math.sin(yaw);
+    camera.position.y = dist * Math.sin(pitch);
+    camera.position.z = dist * Math.cos(pitch) * Math.cos(yaw);
+    camera.lookAt(0, 0, 0);
+}
+
+// HUD 元素
+const $ = id => document.getElementById(id);
+const connState = $('connState');
+const frameCount = $('frameCount');
+const nearestEl = $('nearest');
+const driftEl = $('drift');
+const hazardPill = $('hazardPill');
+let totalFrames = 0;
+
+function updateHazard(hazard, nearest, drift) {
+    totalFrames++;
+    frameCount.textContent = String(totalFrames);
+    nearestEl.textContent = nearest != null ? nearest.toFixed(2) + ' m' : '—';
+    driftEl.textContent = drift != null ? drift.toFixed(1) + ' cm' : '—';
+    hazardPill.className = 'pill ' + (hazard === 2 ? 'stop' : hazard === 1 ? 'caution' : 'safe');
+    hazardPill.textContent = hazard === 2 ? 'STOP' : hazard === 1 ? 'CAUTION' : 'SAFE';
+}
+
+function applyFrame(payload) {
+    const positions = payload.points || [];
+    const pose = payload.pose_w2c || [];
+    let n = Math.min(positions.length / 3, MAX_POINTS);
+    for (let i = 0; i < n; i++) {
+        pointPos[i*3] = positions[i*3];
+        pointPos[i*3+1] = positions[i*3+1];
+        pointPos[i*3+2] = positions[i*3+2];
+        // 颜色按 hazard 切换
+        const h = payload.hazard || 0;
+        if (h === 2) { pointCol[i*3]=1.0; pointCol[i*3+1]=0.2; pointCol[i*3+2]=0.2; }
+        else if (h === 1) { pointCol[i*3]=1.0; pointCol[i*3+1]=0.7; pointCol[i*3+2]=0.1; }
+        else { pointCol[i*3]=0.3; pointCol[i*3+1]=0.7; pointCol[i*3+2]=1.0; }
+    }
+    pointGeo.setDrawRange(0, n);
+    pointGeo.attributes.position.needsUpdate = true;
+    pointGeo.attributes.color.needsUpdate = true;
+
+    // 相机轨迹 (用 pose_w2c 的 translation 列)
+    if (pose.length === 16) {
+        trajPoints.push(new THREE.Vector3(pose[3], pose[7], pose[11]));
+        if (trajPoints.length > 500) trajPoints.shift();
+        trajGeo.setFromPoints(trajPoints);
+    }
+
+    updateHazard(payload.hazard, payload.nearest_m, payload.pose_drift_cm);
+}
+
+function resetView() {
+    yaw = 0; pitch = 0.3; dist = 0.8;
+    trajPoints = [];
+    totalFrames = 0;
+    frameCount.textContent = '0';
+    pointGeo.setDrawRange(0, 0);
+    trajGeo.setFromPoints([]);
+}
+function toggleTrajectory() { trajectory.visible = !trajectory.visible; }
+
+// ---------- WebSocket ----------
+// 解析当前 host，浏览器通过 :8001 的 WebSocket 订阅
+const host = window.location.hostname || '127.0.0.1';
+const tokenParam = new URLSearchParams(window.location.search).get('token') || '';
+const wsUrl = `ws://${host}:8001/recon/stream` + (tokenParam ? `?token=${encodeURIComponent(tokenParam)}` : '');
+$('wsUrl').textContent = wsUrl;
+
+let ws = null;
+let reconnectDelay = 1000;
+function connect() {
+    connState.textContent = '连接中…';
+    try {
+        ws = new WebSocket(wsUrl);
+    } catch (e) {
+        scheduleReconnect();
+        return;
+    }
+    ws.onopen = () => {
+        connState.textContent = '已连接';
+        reconnectDelay = 1000;
+    };
+    ws.onmessage = (ev) => {
+        try {
+            const msg = JSON.parse(ev.data);
+            if (msg.type === 'frame') applyFrame(msg);
+        } catch (e) { /* ignore */ }
+    };
+    ws.onclose = () => {
+        connState.textContent = '已断开，1s 后重试';
+        scheduleReconnect();
+    };
+    ws.onerror = () => {
+        connState.textContent = '连接错误';
+        try { ws.close(); } catch (e) {}
+    };
+}
+function scheduleReconnect() {
+    setTimeout(connect, reconnectDelay);
+    reconnectDelay = Math.min(reconnectDelay * 2, 10000);
+}
+
+// ---------- render loop ----------
+function render() {
+    requestAnimationFrame(render);
+    updateCamera();
+    renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+});
+
+connect();
+render();
+</script>
+</body>
+</html>

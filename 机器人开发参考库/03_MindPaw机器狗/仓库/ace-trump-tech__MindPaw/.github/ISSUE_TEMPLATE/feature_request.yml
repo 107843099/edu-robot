@@ -1,0 +1,32 @@
+name: Feature or research proposal
+description: Propose a user-facing feature or measurable AI Infra experiment.
+title: "[feature] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User or research problem
+      description: Describe who needs this and what currently fails.
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: Proposed design
+      description: Include protocol, hardware impact, fallback behavior, and safety boundaries.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Define measurable latency, reliability, motion, or reproducibility criteria.
+    validations:
+      required: true
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Author verification
+      options:
+        - label: I wrote this proposal myself and can discuss the trade-offs.
+          required: true

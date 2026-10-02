@@ -1,0 +1,56 @@
+[
+  {
+    "name": "nvs",
+    "type": 1,
+    "subtype": 2,
+    "offset": "0x9000",
+    "size": "0x5000",
+    "end_exclusive": "0xe000",
+    "flags": 0
+  },
+  {
+    "name": "otadata",
+    "type": 1,
+    "subtype": 0,
+    "offset": "0xe000",
+    "size": "0x2000",
+    "end_exclusive": "0x10000",
+    "flags": 0
+  },
+  {
+    "name": "app0",
+    "type": 0,
+    "subtype": 16,
+    "offset": "0x10000",
+    "size": "0x140000",
+    "end_exclusive": "0x150000",
+    "flags": 0
+  },
+  {
+    "name": "app1",
+    "type": 0,
+    "subtype": 17,
+    "offset": "0x150000",
+    "size": "0x140000",
+    "end_exclusive": "0x290000",
+    "flags": 0
+  },
+  {
+    "name": "spiffs",
+    "type": 1,
+    "subtype": 130,
+    "offset": "0x290000",
+    "size": "0x160000",
+    "end_exclusive": "0x3f0000",
+    "flags": 0
+  },
+  {
+    "name": "coredump",
+    "type": 1,
+    "subtype": 3,
+    "offset": "0x3f0000",
+    "size": "0x10000",
+    "end_exclusive": "0x400000",
+    "flags": 0
+  }
+]

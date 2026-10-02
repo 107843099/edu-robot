@@ -1,0 +1,9 @@
+/dts-v1/;
+/plugin/;
+
+&i2c7 {
+    status = "okay";
+    pinctrl-names = "default";
+    pinctrl-0 = <&i2c7m1_xfer>;
+    clock-frequency = <100000>;
+};

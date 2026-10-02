@@ -1,0 +1,6597 @@
+[
+  {
+    "step": "display",
+    "file_offset": "0x5",
+    "text": "#8@"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x30",
+    "text": "esp-idf: v4.4.7 38eeba213a"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x50",
+    "text": "arduino-lib-builder"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x70",
+    "text": "12:29:20"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x80",
+    "text": "Mar  5 2024"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x90",
+    "text": "v4.4.7-dirty"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x120",
+    "text": "ERR"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x128",
+    "text": "OFF"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x12c",
+    "text": "PAN  "
+  },
+  {
+    "step": "display",
+    "file_offset": "0x134",
+    "text": "TILT "
+  },
+  {
+    "step": "display",
+    "file_offset": "0x13c",
+    "text": "CFG: "
+  },
+  {
+    "step": "display",
+    "file_offset": "0x144",
+    "text": "C A/D W/S P T V Z"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x158",
+    "text": "SELF TEST"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x164",
+    "text": "OLED: "
+  },
+  {
+    "step": "display",
+    "file_offset": "0x16c",
+    "text": "IRL:  "
+  },
+  {
+    "step": "display",
+    "file_offset": "0x174",
+    "text": "IRR: "
+  },
+  {
+    "step": "display",
+    "file_offset": "0x17c",
+    "text": "TOUCH: "
+  },
+  {
+    "step": "display",
+    "file_offset": "0x184",
+    "text": "1 NORMAL 2 CAL"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x194",
+    "text": "HELLO"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1a0",
+    "text": "0.3"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1a4",
+    "text": "cardboard-bot"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1b4",
+    "text": "%s V%s"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1bc",
+    "text": "1 NORMAL, 2 CALIBRATION, 3 SELF_TEST"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1e4",
+    "text": "GLOBAL: X emergency stop (PWM detach), R resume (no auto-center)"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x228",
+    "text": "CAL: B default 90, C custom center, A/D pan -/+, W/S tilt +/-, P print, T telemetry"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x27c",
+    "text": "CAL: V save center, L load NVS, Z clear NVS"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x2a8",
+    "text": "Warning: test without the cardboard head first."
+  },
+  {
+    "step": "display",
+    "file_offset": "0x2d8",
+    "text": "OLED TEST 1/4"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x2e8",
+    "text": "screen is alive"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x2f8",
+    "text": "OLED TEST 2/4"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x308",
+    "text": "BORDER"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x310",
+    "text": "OLED TEST 3/4"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x320",
+    "text": "OLED TEST 4/4"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x330",
+    "text": "INVERT"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x338",
+    "text": "CB_TEST id=%s version=%s oled=%d running=%d result=%s"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x374",
+    "text": "PING"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x37c",
+    "text": "START "
+  },
+  {
+    "step": "display",
+    "file_offset": "0x384",
+    "text": "STOP"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x38c",
+    "text": "manual"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x394",
+    "text": "display"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x39c",
+    "text": "CB_TEST OLED_FAIL address=0x3C,0x3D"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x3c0",
+    "text": "SERVO_STOP reason=%s"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x3d8",
+    "text": "ready"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x417",
+    "text": "B[%6u][E][%s:%u] %s(): Unfinished Repeated Start transaction! Expected requestFrom, not beginTransmission! Clearing..."
+  },
+  {
+    "step": "display",
+    "file_offset": "0x490",
+    "text": "[%6u][E][%s:%u] %s(): Can't allocate memory for I2C_%d rxBuffer"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x4d4",
+    "text": "[%6u][E][%s:%u] %s(): Can't allocate memory for I2C_%d txBuffer"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x518",
+    "text": "[%6u][E][%s:%u] %s(): NULL RX buffer pointer"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x548",
+    "text": "[%6u][E][%s:%u] %s(): Bus already started in Slave Mode."
+  },
+  {
+    "step": "display",
+    "file_offset": "0x584",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/libraries/Wire/src/Wire.cpp"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x5d4",
+    "text": "[%6u][E][%s:%u] %s(): NULL TX buffer pointer"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x604",
+    "text": "[%6u][E][%s:%u] %s(): xSemaphoreCreateMutex failed"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x63c",
+    "text": "[%6u][E][%s:%u] %s(): could not acquire lock"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x66c",
+    "text": "[%6u][E][%s:%u] %s(): bus already initialized. change pins only when not."
+  },
+  {
+    "step": "display",
+    "file_offset": "0x6b8",
+    "text": "[%6u][E][%s:%u] %s(): Bus is in Slave Mode"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x6e8",
+    "text": "[%6u][E][%s:%u] %s(): no Default SDA Pin for Second Peripheral"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x72c",
+    "text": "[%6u][E][%s:%u] %s(): no Default SCL Pin for Second Peripheral"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x770",
+    "text": "endTransmission"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x780",
+    "text": "beginTransmission"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x794",
+    "text": "allocateWireBuffer"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x7a8",
+    "text": "initPins"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x7b4",
+    "text": "setClock"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x7c0",
+    "text": "end"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x7c4",
+    "text": "peek"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x7cc",
+    "text": "read"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x7d4",
+    "text": "begin"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x7dc",
+    "text": "write"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x7f7",
+    "text": "BN."
+  },
+  {
+    "step": "display",
+    "file_offset": "0x849",
+    "text": ">[O[>>kOk>"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x854",
+    "text": ">|>"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x859",
+    "text": "<~<"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x85e",
+    "text": "W}W"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x87b",
+    "text": "0H:"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x880",
+    "text": "&)y)&@"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x88d",
+    "text": "%?Z<"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x8b1",
+    "text": "j`````"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x8c2",
+    "text": " ~ "
+  },
+  {
+    "step": "display",
+    "file_offset": "0x8da",
+    "text": "08>80"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x900",
+    "text": "db6IV P"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x934",
+    "text": ">QIE>"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x93e",
+    "text": "rIIIF!AIM3"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x94d",
+    "text": "'EEE9<JII1A!"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x95c",
+    "text": "6III6FII)"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x984",
+    "text": ">A]YN|"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x98f",
+    "text": "III6>AAA\""
+  },
+  {
+    "step": "display",
+    "file_offset": "0x999",
+    "text": "AAA>"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x99e",
+    "text": "IIIA"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x9a7",
+    "text": ">AAQs"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x9b6",
+    "text": " @A?"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x9c1",
+    "text": "@@@@"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x9cf",
+    "text": ">AAA>"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x9d9",
+    "text": ">AQ!^"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x9e1",
+    "text": ")F&III2"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x9ed",
+    "text": "?@@@?"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x9f3",
+    "text": " @ "
+  },
+  {
+    "step": "display",
+    "file_offset": "0x9f7",
+    "text": "?@8@?c"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xa06",
+    "text": "aYIMC"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xa0d",
+    "text": "AAA"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xa16",
+    "text": "AAA"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xa1f",
+    "text": "@@@@@"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xa29",
+    "text": " TTx@"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xa2f",
+    "text": "(DD88DDD(8DD("
+  },
+  {
+    "step": "display",
+    "file_offset": "0xa3d",
+    "text": "8TTT"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xa52",
+    "text": "D}@"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xa56",
+    "text": " @@="
+  },
+  {
+    "step": "display",
+    "file_offset": "0xa6e",
+    "text": "x8DDD8"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xa83",
+    "text": "HTTT$"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xa8a",
+    "text": "?D$<@@ |"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xa93",
+    "text": " @ "
+  },
+  {
+    "step": "display",
+    "file_offset": "0xa97",
+    "text": "<@0@<D("
+  },
+  {
+    "step": "display",
+    "file_offset": "0xa9f",
+    "text": "(DL"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xaa5",
+    "text": "|DdTLD"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xabf",
+    "text": "<&#&<"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xac9",
+    "text": ":@@ z8TTUY!UUyA\"TTxB!UTx@ TUy@"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xaec",
+    "text": "9UUUY9TTTY9UTTX"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xafd",
+    "text": "E|A"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xb02",
+    "text": "E}B"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xb07",
+    "text": "E|@}"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xb10",
+    "text": "(%("
+  },
+  {
+    "step": "display",
+    "file_offset": "0xb14",
+    "text": "|TUE"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xb19",
+    "text": " TT|T|"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xb22",
+    "text": "I2III2:DDD:2JHH0:AA!z:B@ x"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xb40",
+    "text": "}=BBB==@@@=<$"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xb4e",
+    "text": "$$H~ICf+/"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xb64",
+    "text": " TTyA"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xb6b",
+    "text": "D}A0HHJ28@@\"z"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xb80",
+    "text": "1}&))/(&)))&0HM@ 8"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xca4",
+    "text": "8DD8D"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xcaa",
+    "text": "JJJ4~"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xcb8",
+    "text": "cUIAc8DD<"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xcc2",
+    "text": "@~ "
+  },
+  {
+    "step": "display",
+    "file_offset": "0xcd2",
+    "text": "*I*"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xcd9",
+    "text": "rL0JMM00HxH0"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xce6",
+    "text": "bZF=>III"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xcf3",
+    "text": "~*****DD_DD@QJD@@DJQ@"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xd19",
+    "text": "6$6"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xd3b",
+    "text": "<<<<"
+  },
+  {
+    "step": "display",
+    "file_offset": "0xd57",
+    "text": "BN."
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1053",
+    "text": "K[;"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1277",
+    "text": "Bt,"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x127b",
+    "text": "B,$"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x127f",
+    "text": "Bf("
+  },
+  {
+    "step": "display",
+    "file_offset": "0x128b",
+    "text": "B`%"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1293",
+    "text": "Bv%"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x12a3",
+    "text": "B[%6u][E][%s:%u] %s(): HW CDC RX Buffer error"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x12d4",
+    "text": "[%6u][E][%s:%u] %s(): HW CDC TX Buffer error"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1304",
+    "text": "[%6u][E][%s:%u] %s(): HW USB CDC failed to init interrupts"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1344",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/HWCDC.cpp"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1390",
+    "text": "[%6u][E][%s:%u] %s(): esp_event_loop_create failed"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x13c8",
+    "text": "arduino_hw_cdc_events"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x13e0",
+    "text": "ARDUINO_HW_CDC_EVENTS"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x13f8",
+    "text": "begin"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1400",
+    "text": "__pinMode"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x140c",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-gpio.c"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1460",
+    "text": "[%6u][E][%s:%u] %s(): Invalid pin selected"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1490",
+    "text": "[%6u][E][%s:%u] %s(): GPIO config failed"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x14bc",
+    "text": "i2cSlaveDeinit"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x14cc",
+    "text": "[%6u][E][%s:%u] %s(): Invalid port num: %u"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x14fc",
+    "text": "[%6u][E][%s:%u] %s(): Lock is not initialized! Did you call i2c_slave_init()?"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x154c",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-i2c-slave.c"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x15a4",
+    "text": "[%6u][E][%s:%u] %s(): rx_ring_buf_full"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x15d0",
+    "text": "i2cDeinit"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x15dc",
+    "text": "i2cWrite"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x15e8",
+    "text": "i2cSetClock"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x15f4",
+    "text": "[%6u][E][%s:%u] %s(): bus is not initialized"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1624",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-i2c.c"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1674",
+    "text": "[%6u][E][%s:%u] %s(): bus is already initialized"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x16a8",
+    "text": "[%6u][E][%s:%u] %s(): i2c_param_config failed"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x16d8",
+    "text": "[%6u][E][%s:%u] %s(): i2c_driver_install failed"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x170c",
+    "text": "i2cInit"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1714",
+    "text": "initArduino"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1720",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-misc.c"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1774",
+    "text": "[%6u][E][%s:%u] %s(): Failed to add loop task to WDT"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x17ac",
+    "text": "[%6u][E][%s:%u] %s(): OTA verification failed! Start rollback to the previous version ..."
+  },
+  {
+    "step": "display",
+    "file_offset": "0x180c",
+    "text": "[%6u][E][%s:%u] %s(): Failed to format the broken NVS partition!"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1850",
+    "text": "[%6u][E][%s:%u] %s(): Could not find NVS partition"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1888",
+    "text": "[%6u][E][%s:%u] %s(): Failed to initialize NVS! Error: %u"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x18c4",
+    "text": "neopixelWrite"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x18d7",
+    "text": "BD:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-rgb-led.c"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x192c",
+    "text": "[%6u][E][%s:%u] %s(): RGB LED driver initialization failed!"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x196c",
+    "text": "_rmtCheckTXnotRX"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1980",
+    "text": "[%6u][E][%s:%u] %s(): Can't write on a RX RMT Channel"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x19b8",
+    "text": "[%6u][E][%s:%u] %s(): Can't read on a TX RMT Channel"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x19f0",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-rmt.c"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1a40",
+    "text": "[%6u][E][%s:%u] %s():  -- Inavalid Argument"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1a70",
+    "text": "[%6u][E][%s:%u] %s():  -- Failed to get RMT ringbuffer handle"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1ab0",
+    "text": "[%6u][E][%s:%u] %s(): rmInit Failed - not enough channels"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1aec",
+    "text": "[%6u][E][%s:%u] %s(): RMT failed to initilize."
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1b27",
+    "text": "CrmtInit"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1b34",
+    "text": "loopTask"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1b40",
+    "text": "addApbChangeCallback"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1b58",
+    "text": "setCpuFrequencyMhz"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1b6c",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-cpu.c"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1bbc",
+    "text": "[%6u][E][%s:%u] %s(): Callback Object Malloc Failed"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1bf4",
+    "text": "[%6u][E][%s:%u] %s(): duplicate func=%8p arg=%8p"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1c28",
+    "text": "[%6u][E][%s:%u] %s(): Bad frequency: %u MHz! Options are: 240, 160, 80, %u, %u and %u MHz"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1c84",
+    "text": "[%6u][E][%s:%u] %s(): Bad frequency: %u MHz! Options are: 240, 160, 80, %u and %u MHz"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1cdc",
+    "text": "[%6u][E][%s:%u] %s(): CPU clock could not be set to %u MHz"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1d1c",
+    "text": "prvGetFreeSize"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1d2c",
+    "text": "prvCheckItemFitsDefault"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1d44",
+    "text": "prvCheckItemFitsByteBuffer"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1d60",
+    "text": "prvAcquireItemNoSplit"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1d78",
+    "text": "prvSendItemDoneNoSplit"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1d90",
+    "text": "prvCopyItemAllowSplit"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1da8",
+    "text": "prvCopyItemByteBuf"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1dbc",
+    "text": "prvGetItemDefault"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1dd0",
+    "text": "prvGetItemByteBuf"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1de4",
+    "text": "prvReturnItemDefault"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1dfc",
+    "text": "prvReturnItemByteBuf"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1e14",
+    "text": "prvReceiveGeneric"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1e28",
+    "text": "prvReceiveGenericFromISR"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1e44",
+    "text": "xRingbufferCreate"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1e58",
+    "text": "xRingbufferSend"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1e68",
+    "text": "xRingbufferSendFromISR"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1e80",
+    "text": "xRingbufferReceive"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1e94",
+    "text": "xRingbufferReceiveUpTo"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1eac",
+    "text": "xRingbufferReceiveUpToFromISR"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1ecc",
+    "text": "vRingbufferReturnItem"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1ee4",
+    "text": "vRingbufferReturnItemFromISR"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1f04",
+    "text": "vRingbufferDelete"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1f18",
+    "text": "xRingbufferGetCurFreeSize"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1f34",
+    "text": "vRingbufferGetInfo"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1f48",
+    "text": "( ( ( UBaseType_t ) ( pxRingbuffer->pucAcquire ) & (0x03) ) == 0 )"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1f8c",
+    "text": "pxRingbuffer->pucAcquire >= pxRingbuffer->pucHead && pxRingbuffer->pucAcquire < pxRingbuffer->pucTail"
+  },
+  {
+    "step": "display",
+    "file_offset": "0x1ff4",
+    "text": "xRemLen >= s"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x5",
+    "text": "#8@"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x30",
+    "text": "esp-idf: v4.4.7 38eeba213a"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x50",
+    "text": "arduino-lib-builder"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x70",
+    "text": "12:29:20"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x80",
+    "text": "Mar  5 2024"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x90",
+    "text": "v4.4.7-dirty"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xc3",
+    "text": "\"Jl"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x120",
+    "text": "ERR"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x128",
+    "text": "OFF"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x12c",
+    "text": "PAN  "
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x134",
+    "text": "TILT "
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x13c",
+    "text": "CFG: "
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x144",
+    "text": "C A/D W/S P T V Z"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x158",
+    "text": "SELF TEST"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x164",
+    "text": "OLED: "
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x16c",
+    "text": "IRL:  "
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x174",
+    "text": "IRR: "
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x17c",
+    "text": "TOUCH: "
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x184",
+    "text": "1 NORMAL 2 CAL"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x194",
+    "text": "HELLO"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1a0",
+    "text": "0.3"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1a4",
+    "text": "cardboard-bot"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1b4",
+    "text": "%s V%s"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1bc",
+    "text": "1 NORMAL, 2 CALIBRATION, 3 SELF_TEST"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1e4",
+    "text": "GLOBAL: X emergency stop (PWM detach), R resume (no auto-center)"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x228",
+    "text": "CAL: B default 90, C custom center, A/D pan -/+, W/S tilt +/-, P print, T telemetry"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x27c",
+    "text": "CAL: V save center, L load NVS, Z clear NVS"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x2a8",
+    "text": "Warning: test without the cardboard head first."
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x2d8",
+    "text": "CB_TEST id=%s version=%s oled=%d running=%d result=%s"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x314",
+    "text": "PING"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x31c",
+    "text": "START "
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x324",
+    "text": "STOP"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x32c",
+    "text": "manual"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x334",
+    "text": "IR TEST"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x33c",
+    "text": "LEFT : %s"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x348",
+    "text": "RIGHT: %s"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x354",
+    "text": "cover L / R / both"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x368",
+    "text": "infrared"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x374",
+    "text": "CB_TEST OLED_FAIL address=0x3C,0x3D"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x398",
+    "text": "SERVO_STOP reason=%s"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x3b0",
+    "text": "ready"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x3eb",
+    "text": "BH0"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x3ef",
+    "text": "B[%6u][E][%s:%u] %s(): Unfinished Repeated Start transaction! Expected requestFrom, not beginTransmission! Clearing..."
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x468",
+    "text": "[%6u][E][%s:%u] %s(): Can't allocate memory for I2C_%d rxBuffer"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x4ac",
+    "text": "[%6u][E][%s:%u] %s(): Can't allocate memory for I2C_%d txBuffer"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x4f0",
+    "text": "[%6u][E][%s:%u] %s(): NULL RX buffer pointer"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x520",
+    "text": "[%6u][E][%s:%u] %s(): Bus already started in Slave Mode."
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x55c",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/libraries/Wire/src/Wire.cpp"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x5ac",
+    "text": "[%6u][E][%s:%u] %s(): NULL TX buffer pointer"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x5dc",
+    "text": "[%6u][E][%s:%u] %s(): xSemaphoreCreateMutex failed"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x614",
+    "text": "[%6u][E][%s:%u] %s(): could not acquire lock"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x644",
+    "text": "[%6u][E][%s:%u] %s(): bus already initialized. change pins only when not."
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x690",
+    "text": "[%6u][E][%s:%u] %s(): Bus is in Slave Mode"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x6c0",
+    "text": "[%6u][E][%s:%u] %s(): no Default SDA Pin for Second Peripheral"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x704",
+    "text": "[%6u][E][%s:%u] %s(): no Default SCL Pin for Second Peripheral"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x748",
+    "text": "endTransmission"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x758",
+    "text": "beginTransmission"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x76c",
+    "text": "allocateWireBuffer"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x780",
+    "text": "initPins"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x78c",
+    "text": "setClock"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x798",
+    "text": "end"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x79c",
+    "text": "peek"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x7a4",
+    "text": "read"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x7ac",
+    "text": "begin"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x7b4",
+    "text": "write"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x821",
+    "text": ">[O[>>kOk>"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x82c",
+    "text": ">|>"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x831",
+    "text": "<~<"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x836",
+    "text": "W}W"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x853",
+    "text": "0H:"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x858",
+    "text": "&)y)&@"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x865",
+    "text": "%?Z<"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x889",
+    "text": "j`````"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x89a",
+    "text": " ~ "
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x8b2",
+    "text": "08>80"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x8d8",
+    "text": "db6IV P"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x90c",
+    "text": ">QIE>"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x916",
+    "text": "rIIIF!AIM3"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x925",
+    "text": "'EEE9<JII1A!"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x934",
+    "text": "6III6FII)"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x95c",
+    "text": ">A]YN|"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x967",
+    "text": "III6>AAA\""
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x971",
+    "text": "AAA>"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x976",
+    "text": "IIIA"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x97f",
+    "text": ">AAQs"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x98e",
+    "text": " @A?"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x999",
+    "text": "@@@@"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x9a7",
+    "text": ">AAA>"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x9b1",
+    "text": ">AQ!^"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x9b9",
+    "text": ")F&III2"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x9c5",
+    "text": "?@@@?"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x9cb",
+    "text": " @ "
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x9cf",
+    "text": "?@8@?c"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x9de",
+    "text": "aYIMC"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x9e5",
+    "text": "AAA"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x9ee",
+    "text": "AAA"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x9f7",
+    "text": "@@@@@"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xa01",
+    "text": " TTx@"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xa07",
+    "text": "(DD88DDD(8DD("
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xa15",
+    "text": "8TTT"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xa2a",
+    "text": "D}@"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xa2e",
+    "text": " @@="
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xa46",
+    "text": "x8DDD8"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xa5b",
+    "text": "HTTT$"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xa62",
+    "text": "?D$<@@ |"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xa6b",
+    "text": " @ "
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xa6f",
+    "text": "<@0@<D("
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xa77",
+    "text": "(DL"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xa7d",
+    "text": "|DdTLD"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xa97",
+    "text": "<&#&<"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xaa1",
+    "text": ":@@ z8TTUY!UUyA\"TTxB!UTx@ TUy@"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xac4",
+    "text": "9UUUY9TTTY9UTTX"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xad5",
+    "text": "E|A"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xada",
+    "text": "E}B"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xadf",
+    "text": "E|@}"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xae8",
+    "text": "(%("
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xaec",
+    "text": "|TUE"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xaf1",
+    "text": " TT|T|"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xafa",
+    "text": "I2III2:DDD:2JHH0:AA!z:B@ x"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xb18",
+    "text": "}=BBB==@@@=<$"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xb26",
+    "text": "$$H~ICf+/"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xb3c",
+    "text": " TTyA"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xb43",
+    "text": "D}A0HHJ28@@\"z"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xb58",
+    "text": "1}&))/(&)))&0HM@ 8"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xc7c",
+    "text": "8DD8D"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xc82",
+    "text": "JJJ4~"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xc90",
+    "text": "cUIAc8DD<"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xc9a",
+    "text": "@~ "
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xcaa",
+    "text": "*I*"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xcb1",
+    "text": "rL0JMM00HxH0"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xcbe",
+    "text": "bZF=>III"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xccb",
+    "text": "~*****DD_DD@QJD@@DJQ@"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xcf1",
+    "text": "6$6"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xd13",
+    "text": "<<<<"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0xd63",
+    "text": "BT\""
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x102b",
+    "text": "K[;"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1253",
+    "text": "Bt$"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x125b",
+    "text": "B\"&"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x125f",
+    "text": "Bb*"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1277",
+    "text": "BH0"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x127b",
+    "text": "B[%6u][E][%s:%u] %s(): HW CDC RX Buffer error"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x12ac",
+    "text": "[%6u][E][%s:%u] %s(): HW CDC TX Buffer error"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x12dc",
+    "text": "[%6u][E][%s:%u] %s(): HW USB CDC failed to init interrupts"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x131c",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/HWCDC.cpp"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1368",
+    "text": "[%6u][E][%s:%u] %s(): esp_event_loop_create failed"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x13a0",
+    "text": "arduino_hw_cdc_events"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x13b8",
+    "text": "ARDUINO_HW_CDC_EVENTS"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x13d0",
+    "text": "begin"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x13d8",
+    "text": "__pinMode"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x13e4",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-gpio.c"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1438",
+    "text": "[%6u][E][%s:%u] %s(): Invalid pin selected"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1468",
+    "text": "[%6u][E][%s:%u] %s(): GPIO config failed"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1494",
+    "text": "i2cSlaveDeinit"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x14a4",
+    "text": "[%6u][E][%s:%u] %s(): Invalid port num: %u"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x14d4",
+    "text": "[%6u][E][%s:%u] %s(): Lock is not initialized! Did you call i2c_slave_init()?"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1524",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-i2c-slave.c"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x157c",
+    "text": "[%6u][E][%s:%u] %s(): rx_ring_buf_full"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x15a8",
+    "text": "i2cDeinit"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x15b4",
+    "text": "i2cWrite"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x15c0",
+    "text": "i2cSetClock"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x15cc",
+    "text": "[%6u][E][%s:%u] %s(): bus is not initialized"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x15fc",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-i2c.c"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x164c",
+    "text": "[%6u][E][%s:%u] %s(): bus is already initialized"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1680",
+    "text": "[%6u][E][%s:%u] %s(): i2c_param_config failed"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x16b0",
+    "text": "[%6u][E][%s:%u] %s(): i2c_driver_install failed"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x16e4",
+    "text": "i2cInit"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x16ec",
+    "text": "initArduino"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x16f8",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-misc.c"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x174c",
+    "text": "[%6u][E][%s:%u] %s(): Failed to add loop task to WDT"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1784",
+    "text": "[%6u][E][%s:%u] %s(): OTA verification failed! Start rollback to the previous version ..."
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x17e4",
+    "text": "[%6u][E][%s:%u] %s(): Failed to format the broken NVS partition!"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1828",
+    "text": "[%6u][E][%s:%u] %s(): Could not find NVS partition"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1860",
+    "text": "[%6u][E][%s:%u] %s(): Failed to initialize NVS! Error: %u"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x189c",
+    "text": "neopixelWrite"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x18af",
+    "text": "BD:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-rgb-led.c"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1904",
+    "text": "[%6u][E][%s:%u] %s(): RGB LED driver initialization failed!"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1944",
+    "text": "_rmtCheckTXnotRX"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1958",
+    "text": "[%6u][E][%s:%u] %s(): Can't write on a RX RMT Channel"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1990",
+    "text": "[%6u][E][%s:%u] %s(): Can't read on a TX RMT Channel"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x19c8",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-rmt.c"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1a18",
+    "text": "[%6u][E][%s:%u] %s():  -- Inavalid Argument"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1a48",
+    "text": "[%6u][E][%s:%u] %s():  -- Failed to get RMT ringbuffer handle"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1a88",
+    "text": "[%6u][E][%s:%u] %s(): rmInit Failed - not enough channels"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1ac4",
+    "text": "[%6u][E][%s:%u] %s(): RMT failed to initilize."
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1aff",
+    "text": "CrmtInit"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1b0c",
+    "text": "loopTask"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1b18",
+    "text": "addApbChangeCallback"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1b30",
+    "text": "setCpuFrequencyMhz"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1b44",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-cpu.c"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1b94",
+    "text": "[%6u][E][%s:%u] %s(): Callback Object Malloc Failed"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1bcc",
+    "text": "[%6u][E][%s:%u] %s(): duplicate func=%8p arg=%8p"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1c00",
+    "text": "[%6u][E][%s:%u] %s(): Bad frequency: %u MHz! Options are: 240, 160, 80, %u, %u and %u MHz"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1c5c",
+    "text": "[%6u][E][%s:%u] %s(): Bad frequency: %u MHz! Options are: 240, 160, 80, %u and %u MHz"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1cb4",
+    "text": "[%6u][E][%s:%u] %s(): CPU clock could not be set to %u MHz"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1cf4",
+    "text": "prvGetFreeSize"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1d04",
+    "text": "prvCheckItemFitsDefault"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1d1c",
+    "text": "prvCheckItemFitsByteBuffer"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1d38",
+    "text": "prvAcquireItemNoSplit"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1d50",
+    "text": "prvSendItemDoneNoSplit"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1d68",
+    "text": "prvCopyItemAllowSplit"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1d80",
+    "text": "prvCopyItemByteBuf"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1d94",
+    "text": "prvGetItemDefault"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1da8",
+    "text": "prvGetItemByteBuf"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1dbc",
+    "text": "prvReturnItemDefault"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1dd4",
+    "text": "prvReturnItemByteBuf"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1dec",
+    "text": "prvReceiveGeneric"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1e00",
+    "text": "prvReceiveGenericFromISR"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1e1c",
+    "text": "xRingbufferCreate"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1e30",
+    "text": "xRingbufferSend"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1e40",
+    "text": "xRingbufferSendFromISR"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1e58",
+    "text": "xRingbufferReceive"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1e6c",
+    "text": "xRingbufferReceiveUpTo"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1e84",
+    "text": "xRingbufferReceiveUpToFromISR"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1ea4",
+    "text": "vRingbufferReturnItem"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1ebc",
+    "text": "vRingbufferReturnItemFromISR"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1edc",
+    "text": "vRingbufferDelete"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1ef0",
+    "text": "xRingbufferGetCurFreeSize"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1f0c",
+    "text": "vRingbufferGetInfo"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1f20",
+    "text": "( ( ( UBaseType_t ) ( pxRingbuffer->pucAcquire ) & (0x03) ) == 0 )"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1f64",
+    "text": "pxRingbuffer->pucAcquire >= pxRingbuffer->pucHead && pxRingbuffer->pucAcquire < pxRingbuffer->pucTail"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1fcc",
+    "text": "xRemLen >= sizeof(ItemHeader_t)"
+  },
+  {
+    "step": "infrared",
+    "file_offset": "0x1fec",
+    "text": "xReturn <= pxRingbuf"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x5",
+    "text": "$8@"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x30",
+    "text": "esp-idf: v4.4.7 38eeba213a"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x50",
+    "text": "arduino-lib-builder"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x70",
+    "text": "12:29:20"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x80",
+    "text": "Mar  5 2024"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x90",
+    "text": "v4.4.7-dirty"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xb8",
+    "text": "4zC"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xcb",
+    "text": "f{A"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x120",
+    "text": "0.3"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x124",
+    "text": "cardboard-bot"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x134",
+    "text": "%s V%s"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x13c",
+    "text": "1 NORMAL, 2 CALIBRATION, 3 SELF_TEST"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x164",
+    "text": "GLOBAL: X emergency stop (PWM detach), R resume (no auto-center)"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1a8",
+    "text": "CAL: B default 90, C custom center, A/D pan -/+, W/S tilt +/-, P print, T telemetry"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1fc",
+    "text": "CAL: V save center, L load NVS, Z clear NVS"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x228",
+    "text": "Warning: test without the cardboard head first."
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x258",
+    "text": "SERVO_ERROR reason=not_ready"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x278",
+    "text": "SERVO_STARTED already=1"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x290",
+    "text": "running"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x298",
+    "text": "SERVO_STARTED id=%s"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x2b0",
+    "text": "heartbeat"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x2bc",
+    "text": "complete"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x2c8",
+    "text": "DONE"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x2d0",
+    "text": "READY"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x2d8",
+    "text": "OLED ERROR"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x2e4",
+    "text": "RUNNING"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x2ec",
+    "text": "ANGLE: %d"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x2f8",
+    "text": "keep clear / STOP"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x30c",
+    "text": "send START from page"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x324",
+    "text": "no horn / no load"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x338",
+    "text": "CB_TEST id=%s version=%s oled=%d running=%d result=%s"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x374",
+    "text": "PING"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x37c",
+    "text": "START "
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x384",
+    "text": "STOP"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x38c",
+    "text": "manual"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x394",
+    "text": "servo_pan"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x3a0",
+    "text": "oled"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x3a8",
+    "text": "CB_TEST OLED_FAIL address=0x3C,0x3D"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x3cc",
+    "text": "SERVO_STOP reason=%s"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x3f4",
+    "text": "ready"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x427",
+    "text": "BZ2"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x433",
+    "text": "B[%6u][E][%s:%u] %s(): Unfinished Repeated Start transaction! Expected requestFrom, not beginTransmission! Clearing..."
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x4ac",
+    "text": "[%6u][E][%s:%u] %s(): Can't allocate memory for I2C_%d rxBuffer"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x4f0",
+    "text": "[%6u][E][%s:%u] %s(): Can't allocate memory for I2C_%d txBuffer"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x534",
+    "text": "[%6u][E][%s:%u] %s(): NULL RX buffer pointer"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x564",
+    "text": "[%6u][E][%s:%u] %s(): Bus already started in Slave Mode."
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x5a0",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/libraries/Wire/src/Wire.cpp"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x5f0",
+    "text": "[%6u][E][%s:%u] %s(): NULL TX buffer pointer"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x620",
+    "text": "[%6u][E][%s:%u] %s(): xSemaphoreCreateMutex failed"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x658",
+    "text": "[%6u][E][%s:%u] %s(): could not acquire lock"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x688",
+    "text": "[%6u][E][%s:%u] %s(): bus already initialized. change pins only when not."
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x6d4",
+    "text": "[%6u][E][%s:%u] %s(): Bus is in Slave Mode"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x704",
+    "text": "[%6u][E][%s:%u] %s(): no Default SDA Pin for Second Peripheral"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x748",
+    "text": "[%6u][E][%s:%u] %s(): no Default SCL Pin for Second Peripheral"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x78c",
+    "text": "endTransmission"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x79c",
+    "text": "beginTransmission"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x7b0",
+    "text": "allocateWireBuffer"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x7c4",
+    "text": "initPins"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x7d0",
+    "text": "setClock"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x7dc",
+    "text": "end"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x7e0",
+    "text": "peek"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x7e8",
+    "text": "read"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x7f0",
+    "text": "begin"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x7f8",
+    "text": "write"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x865",
+    "text": ">[O[>>kOk>"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x870",
+    "text": ">|>"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x875",
+    "text": "<~<"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x87a",
+    "text": "W}W"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x897",
+    "text": "0H:"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x89c",
+    "text": "&)y)&@"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x8a9",
+    "text": "%?Z<"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x8cd",
+    "text": "j`````"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x8de",
+    "text": " ~ "
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x8f6",
+    "text": "08>80"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x91c",
+    "text": "db6IV P"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x950",
+    "text": ">QIE>"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x95a",
+    "text": "rIIIF!AIM3"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x969",
+    "text": "'EEE9<JII1A!"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x978",
+    "text": "6III6FII)"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x9a0",
+    "text": ">A]YN|"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x9ab",
+    "text": "III6>AAA\""
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x9b5",
+    "text": "AAA>"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x9ba",
+    "text": "IIIA"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x9c3",
+    "text": ">AAQs"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x9d2",
+    "text": " @A?"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x9dd",
+    "text": "@@@@"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x9eb",
+    "text": ">AAA>"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x9f5",
+    "text": ">AQ!^"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x9fd",
+    "text": ")F&III2"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xa09",
+    "text": "?@@@?"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xa0f",
+    "text": " @ "
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xa13",
+    "text": "?@8@?c"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xa22",
+    "text": "aYIMC"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xa29",
+    "text": "AAA"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xa32",
+    "text": "AAA"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xa3b",
+    "text": "@@@@@"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xa45",
+    "text": " TTx@"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xa4b",
+    "text": "(DD88DDD(8DD("
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xa59",
+    "text": "8TTT"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xa6e",
+    "text": "D}@"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xa72",
+    "text": " @@="
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xa8a",
+    "text": "x8DDD8"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xa9f",
+    "text": "HTTT$"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xaa6",
+    "text": "?D$<@@ |"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xaaf",
+    "text": " @ "
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xab3",
+    "text": "<@0@<D("
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xabb",
+    "text": "(DL"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xac1",
+    "text": "|DdTLD"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xadb",
+    "text": "<&#&<"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xae5",
+    "text": ":@@ z8TTUY!UUyA\"TTxB!UTx@ TUy@"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xb08",
+    "text": "9UUUY9TTTY9UTTX"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xb19",
+    "text": "E|A"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xb1e",
+    "text": "E}B"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xb23",
+    "text": "E|@}"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xb2c",
+    "text": "(%("
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xb30",
+    "text": "|TUE"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xb35",
+    "text": " TT|T|"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xb3e",
+    "text": "I2III2:DDD:2JHH0:AA!z:B@ x"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xb5c",
+    "text": "}=BBB==@@@=<$"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xb6a",
+    "text": "$$H~ICf+/"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xb80",
+    "text": " TTyA"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xb87",
+    "text": "D}A0HHJ28@@\"z"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xb9c",
+    "text": "1}&))/(&)))&0HM@ 8"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xcc0",
+    "text": "8DD8D"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xcc6",
+    "text": "JJJ4~"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xcd4",
+    "text": "cUIAc8DD<"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xcde",
+    "text": "@~ "
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xcee",
+    "text": "*I*"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xcf5",
+    "text": "rL0JMM00HxH0"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xd02",
+    "text": "bZF=>III"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xd0f",
+    "text": "~*****DD_DD@QJD@@DJQ@"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xd35",
+    "text": "6$6"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xd57",
+    "text": "<<<<"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0xdab",
+    "text": "B@$"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x106f",
+    "text": "K[;"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x129f",
+    "text": "Bj("
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x12ab",
+    "text": "B6("
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x12b3",
+    "text": "BZ2"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x12bf",
+    "text": "B[%6u][E][%s:%u] %s(): HW CDC RX Buffer error"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x12f0",
+    "text": "[%6u][E][%s:%u] %s(): HW CDC TX Buffer error"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1320",
+    "text": "[%6u][E][%s:%u] %s(): HW USB CDC failed to init interrupts"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1360",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/HWCDC.cpp"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x13ac",
+    "text": "[%6u][E][%s:%u] %s(): esp_event_loop_create failed"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x13e4",
+    "text": "arduino_hw_cdc_events"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x13fc",
+    "text": "ARDUINO_HW_CDC_EVENTS"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1414",
+    "text": "begin"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x141c",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/WMath.cpp"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1468",
+    "text": "[%6u][E][%s:%u] %s(): map(): Invalid input range, min == max"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x14a8",
+    "text": "map"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x14ac",
+    "text": "__pinMode"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x14b8",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-gpio.c"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x150c",
+    "text": "[%6u][E][%s:%u] %s(): Invalid pin selected"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x153c",
+    "text": "[%6u][E][%s:%u] %s(): GPIO config failed"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1568",
+    "text": "i2cSlaveDeinit"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1578",
+    "text": "[%6u][E][%s:%u] %s(): Invalid port num: %u"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x15a8",
+    "text": "[%6u][E][%s:%u] %s(): Lock is not initialized! Did you call i2c_slave_init()?"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x15f8",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-i2c-slave.c"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1650",
+    "text": "[%6u][E][%s:%u] %s(): rx_ring_buf_full"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x167c",
+    "text": "i2cDeinit"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1688",
+    "text": "i2cWrite"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1694",
+    "text": "i2cSetClock"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x16a0",
+    "text": "[%6u][E][%s:%u] %s(): bus is not initialized"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x16d0",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-i2c.c"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1720",
+    "text": "[%6u][E][%s:%u] %s(): bus is already initialized"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1754",
+    "text": "[%6u][E][%s:%u] %s(): i2c_param_config failed"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1784",
+    "text": "[%6u][E][%s:%u] %s(): i2c_driver_install failed"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x17b8",
+    "text": "i2cInit"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x17c0",
+    "text": "ledcSetup"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x17cc",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-ledc.c"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1820",
+    "text": "[%6u][E][%s:%u] %s(): No more LEDC channels available! (maximum %u) or bit width too big (maximum %u)"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1888",
+    "text": "[%6u][E][%s:%u] %s(): ledc setup failed!"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x18b4",
+    "text": "initArduino"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x18c0",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-misc.c"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1914",
+    "text": "[%6u][E][%s:%u] %s(): Failed to add loop task to WDT"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x194c",
+    "text": "[%6u][E][%s:%u] %s(): OTA verification failed! Start rollback to the previous version ..."
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x19ac",
+    "text": "[%6u][E][%s:%u] %s(): Failed to format the broken NVS partition!"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x19f0",
+    "text": "[%6u][E][%s:%u] %s(): Could not find NVS partition"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1a28",
+    "text": "[%6u][E][%s:%u] %s(): Failed to initialize NVS! Error: %u"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1a64",
+    "text": "neopixelWrite"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1a77",
+    "text": "BD:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-rgb-led.c"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1acc",
+    "text": "[%6u][E][%s:%u] %s(): RGB LED driver initialization failed!"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1b0c",
+    "text": "_rmtCheckTXnotRX"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1b20",
+    "text": "[%6u][E][%s:%u] %s(): Can't write on a RX RMT Channel"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1b58",
+    "text": "[%6u][E][%s:%u] %s(): Can't read on a TX RMT Channel"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1b90",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-rmt.c"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1be0",
+    "text": "[%6u][E][%s:%u] %s():  -- Inavalid Argument"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1c10",
+    "text": "[%6u][E][%s:%u] %s():  -- Failed to get RMT ringbuffer handle"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1c50",
+    "text": "[%6u][E][%s:%u] %s(): rmInit Failed - not enough channels"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1c8c",
+    "text": "[%6u][E][%s:%u] %s(): RMT failed to initilize."
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1cc7",
+    "text": "CrmtInit"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1cd4",
+    "text": "loopTask"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1ce0",
+    "text": "addApbChangeCallback"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1cf8",
+    "text": "setCpuFrequencyMhz"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1d0c",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-cpu.c"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1d5c",
+    "text": "[%6u][E][%s:%u] %s(): Callback Object Malloc Failed"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1d94",
+    "text": "[%6u][E][%s:%u] %s(): duplicate func=%8p arg=%8p"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1dc8",
+    "text": "[%6u][E][%s:%u] %s(): Bad frequency: %u MHz! Options are: 240, 160, 80, %u, %u and %u MHz"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1e24",
+    "text": "[%6u][E][%s:%u] %s(): Bad frequency: %u MHz! Options are: 240, 160, 80, %u and %u MHz"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1e7c",
+    "text": "[%6u][E][%s:%u] %s(): CPU clock could not be set to %u MHz"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1ebc",
+    "text": "prvGetFreeSize"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1ecc",
+    "text": "prvCheckItemFitsDefault"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1ee4",
+    "text": "prvCheckItemFitsByteBuffer"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1f00",
+    "text": "prvAcquireItemNoSplit"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1f18",
+    "text": "prvSendItemDoneNoSplit"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1f30",
+    "text": "prvCopyItemAllowSplit"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1f48",
+    "text": "prvCopyItemByteBuf"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1f5c",
+    "text": "prvGetItemDefault"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1f70",
+    "text": "prvGetItemByteBuf"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1f84",
+    "text": "prvReturnItemDefault"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1f9c",
+    "text": "prvReturnItemByteBuf"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1fb4",
+    "text": "prvReceiveGeneric"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1fc8",
+    "text": "prvReceiveGenericFromISR"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1fe4",
+    "text": "xRingbufferCreate"
+  },
+  {
+    "step": "servo_pan",
+    "file_offset": "0x1ff8",
+    "text": "xRingbuf"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x5",
+    "text": "$8@"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x30",
+    "text": "esp-idf: v4.4.7 38eeba213a"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x50",
+    "text": "arduino-lib-builder"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x70",
+    "text": "12:29:20"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x80",
+    "text": "Mar  5 2024"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x90",
+    "text": "v4.4.7-dirty"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xb7",
+    "text": "1rI"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x120",
+    "text": "0.3"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x124",
+    "text": "cardboard-bot"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x134",
+    "text": "%s V%s"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x13c",
+    "text": "1 NORMAL, 2 CALIBRATION, 3 SELF_TEST"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x164",
+    "text": "GLOBAL: X emergency stop (PWM detach), R resume (no auto-center)"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1a8",
+    "text": "CAL: B default 90, C custom center, A/D pan -/+, W/S tilt +/-, P print, T telemetry"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1fc",
+    "text": "CAL: V save center, L load NVS, Z clear NVS"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x228",
+    "text": "Warning: test without the cardboard head first."
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x258",
+    "text": "SERVO_ERROR reason=not_ready"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x278",
+    "text": "SERVO_STARTED already=1"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x290",
+    "text": "running"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x298",
+    "text": "SERVO_STARTED id=%s"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x2b0",
+    "text": "heartbeat"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x2bc",
+    "text": "complete"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x2c8",
+    "text": "DONE"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x2d0",
+    "text": "READY"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x2d8",
+    "text": "OLED ERROR"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x2e4",
+    "text": "RUNNING"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x2ec",
+    "text": "ANGLE: %d"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x2f8",
+    "text": "keep clear / STOP"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x30c",
+    "text": "send START from page"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x324",
+    "text": "no horn / no load"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x338",
+    "text": "CB_TEST id=%s version=%s oled=%d running=%d result=%s"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x374",
+    "text": "PING"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x37c",
+    "text": "START "
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x384",
+    "text": "STOP"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x38c",
+    "text": "manual"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x394",
+    "text": "servo_tilt"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x3a0",
+    "text": "oled"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x3a8",
+    "text": "CB_TEST OLED_FAIL address=0x3C,0x3D"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x3cc",
+    "text": "SERVO_STOP reason=%s"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x3f4",
+    "text": "ready"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x427",
+    "text": "B\\2"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x433",
+    "text": "B[%6u][E][%s:%u] %s(): Unfinished Repeated Start transaction! Expected requestFrom, not beginTransmission! Clearing..."
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x4ac",
+    "text": "[%6u][E][%s:%u] %s(): Can't allocate memory for I2C_%d rxBuffer"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x4f0",
+    "text": "[%6u][E][%s:%u] %s(): Can't allocate memory for I2C_%d txBuffer"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x534",
+    "text": "[%6u][E][%s:%u] %s(): NULL RX buffer pointer"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x564",
+    "text": "[%6u][E][%s:%u] %s(): Bus already started in Slave Mode."
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x5a0",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/libraries/Wire/src/Wire.cpp"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x5f0",
+    "text": "[%6u][E][%s:%u] %s(): NULL TX buffer pointer"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x620",
+    "text": "[%6u][E][%s:%u] %s(): xSemaphoreCreateMutex failed"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x658",
+    "text": "[%6u][E][%s:%u] %s(): could not acquire lock"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x688",
+    "text": "[%6u][E][%s:%u] %s(): bus already initialized. change pins only when not."
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x6d4",
+    "text": "[%6u][E][%s:%u] %s(): Bus is in Slave Mode"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x704",
+    "text": "[%6u][E][%s:%u] %s(): no Default SDA Pin for Second Peripheral"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x748",
+    "text": "[%6u][E][%s:%u] %s(): no Default SCL Pin for Second Peripheral"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x78c",
+    "text": "endTransmission"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x79c",
+    "text": "beginTransmission"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x7b0",
+    "text": "allocateWireBuffer"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x7c4",
+    "text": "initPins"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x7d0",
+    "text": "setClock"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x7dc",
+    "text": "end"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x7e0",
+    "text": "peek"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x7e8",
+    "text": "read"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x7f0",
+    "text": "begin"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x7f8",
+    "text": "write"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x865",
+    "text": ">[O[>>kOk>"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x870",
+    "text": ">|>"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x875",
+    "text": "<~<"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x87a",
+    "text": "W}W"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x897",
+    "text": "0H:"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x89c",
+    "text": "&)y)&@"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x8a9",
+    "text": "%?Z<"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x8cd",
+    "text": "j`````"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x8de",
+    "text": " ~ "
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x8f6",
+    "text": "08>80"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x91c",
+    "text": "db6IV P"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x950",
+    "text": ">QIE>"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x95a",
+    "text": "rIIIF!AIM3"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x969",
+    "text": "'EEE9<JII1A!"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x978",
+    "text": "6III6FII)"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x9a0",
+    "text": ">A]YN|"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x9ab",
+    "text": "III6>AAA\""
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x9b5",
+    "text": "AAA>"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x9ba",
+    "text": "IIIA"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x9c3",
+    "text": ">AAQs"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x9d2",
+    "text": " @A?"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x9dd",
+    "text": "@@@@"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x9eb",
+    "text": ">AAA>"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x9f5",
+    "text": ">AQ!^"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x9fd",
+    "text": ")F&III2"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xa09",
+    "text": "?@@@?"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xa0f",
+    "text": " @ "
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xa13",
+    "text": "?@8@?c"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xa22",
+    "text": "aYIMC"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xa29",
+    "text": "AAA"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xa32",
+    "text": "AAA"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xa3b",
+    "text": "@@@@@"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xa45",
+    "text": " TTx@"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xa4b",
+    "text": "(DD88DDD(8DD("
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xa59",
+    "text": "8TTT"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xa6e",
+    "text": "D}@"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xa72",
+    "text": " @@="
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xa8a",
+    "text": "x8DDD8"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xa9f",
+    "text": "HTTT$"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xaa6",
+    "text": "?D$<@@ |"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xaaf",
+    "text": " @ "
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xab3",
+    "text": "<@0@<D("
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xabb",
+    "text": "(DL"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xac1",
+    "text": "|DdTLD"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xadb",
+    "text": "<&#&<"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xae5",
+    "text": ":@@ z8TTUY!UUyA\"TTxB!UTx@ TUy@"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xb08",
+    "text": "9UUUY9TTTY9UTTX"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xb19",
+    "text": "E|A"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xb1e",
+    "text": "E}B"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xb23",
+    "text": "E|@}"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xb2c",
+    "text": "(%("
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xb30",
+    "text": "|TUE"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xb35",
+    "text": " TT|T|"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xb3e",
+    "text": "I2III2:DDD:2JHH0:AA!z:B@ x"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xb5c",
+    "text": "}=BBB==@@@=<$"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xb6a",
+    "text": "$$H~ICf+/"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xb80",
+    "text": " TTyA"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xb87",
+    "text": "D}A0HHJ28@@\"z"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xb9c",
+    "text": "1}&))/(&)))&0HM@ 8"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xcc0",
+    "text": "8DD8D"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xcc6",
+    "text": "JJJ4~"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xcd4",
+    "text": "cUIAc8DD<"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xcde",
+    "text": "@~ "
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xcee",
+    "text": "*I*"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xcf5",
+    "text": "rL0JMM00HxH0"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xd02",
+    "text": "bZF=>III"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xd0f",
+    "text": "~*****DD_DD@QJD@@DJQ@"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xd35",
+    "text": "6$6"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xd57",
+    "text": "<<<<"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0xdab",
+    "text": "BB$"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x106f",
+    "text": "K[;"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x129f",
+    "text": "Bl("
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x12ab",
+    "text": "B8("
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x12b3",
+    "text": "B\\2"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x12bf",
+    "text": "B[%6u][E][%s:%u] %s(): HW CDC RX Buffer error"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x12f0",
+    "text": "[%6u][E][%s:%u] %s(): HW CDC TX Buffer error"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1320",
+    "text": "[%6u][E][%s:%u] %s(): HW USB CDC failed to init interrupts"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1360",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/HWCDC.cpp"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x13ac",
+    "text": "[%6u][E][%s:%u] %s(): esp_event_loop_create failed"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x13e4",
+    "text": "arduino_hw_cdc_events"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x13fc",
+    "text": "ARDUINO_HW_CDC_EVENTS"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1414",
+    "text": "begin"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x141c",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/WMath.cpp"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1468",
+    "text": "[%6u][E][%s:%u] %s(): map(): Invalid input range, min == max"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x14a8",
+    "text": "map"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x14ac",
+    "text": "__pinMode"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x14b8",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-gpio.c"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x150c",
+    "text": "[%6u][E][%s:%u] %s(): Invalid pin selected"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x153c",
+    "text": "[%6u][E][%s:%u] %s(): GPIO config failed"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1568",
+    "text": "i2cSlaveDeinit"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1578",
+    "text": "[%6u][E][%s:%u] %s(): Invalid port num: %u"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x15a8",
+    "text": "[%6u][E][%s:%u] %s(): Lock is not initialized! Did you call i2c_slave_init()?"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x15f8",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-i2c-slave.c"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1650",
+    "text": "[%6u][E][%s:%u] %s(): rx_ring_buf_full"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x167c",
+    "text": "i2cDeinit"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1688",
+    "text": "i2cWrite"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1694",
+    "text": "i2cSetClock"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x16a0",
+    "text": "[%6u][E][%s:%u] %s(): bus is not initialized"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x16d0",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-i2c.c"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1720",
+    "text": "[%6u][E][%s:%u] %s(): bus is already initialized"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1754",
+    "text": "[%6u][E][%s:%u] %s(): i2c_param_config failed"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1784",
+    "text": "[%6u][E][%s:%u] %s(): i2c_driver_install failed"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x17b8",
+    "text": "i2cInit"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x17c0",
+    "text": "ledcSetup"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x17cc",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-ledc.c"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1820",
+    "text": "[%6u][E][%s:%u] %s(): No more LEDC channels available! (maximum %u) or bit width too big (maximum %u)"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1888",
+    "text": "[%6u][E][%s:%u] %s(): ledc setup failed!"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x18b4",
+    "text": "initArduino"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x18c0",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-misc.c"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1914",
+    "text": "[%6u][E][%s:%u] %s(): Failed to add loop task to WDT"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x194c",
+    "text": "[%6u][E][%s:%u] %s(): OTA verification failed! Start rollback to the previous version ..."
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x19ac",
+    "text": "[%6u][E][%s:%u] %s(): Failed to format the broken NVS partition!"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x19f0",
+    "text": "[%6u][E][%s:%u] %s(): Could not find NVS partition"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1a28",
+    "text": "[%6u][E][%s:%u] %s(): Failed to initialize NVS! Error: %u"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1a64",
+    "text": "neopixelWrite"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1a77",
+    "text": "BD:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-rgb-led.c"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1acc",
+    "text": "[%6u][E][%s:%u] %s(): RGB LED driver initialization failed!"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1b0c",
+    "text": "_rmtCheckTXnotRX"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1b20",
+    "text": "[%6u][E][%s:%u] %s(): Can't write on a RX RMT Channel"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1b58",
+    "text": "[%6u][E][%s:%u] %s(): Can't read on a TX RMT Channel"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1b90",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-rmt.c"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1be0",
+    "text": "[%6u][E][%s:%u] %s():  -- Inavalid Argument"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1c10",
+    "text": "[%6u][E][%s:%u] %s():  -- Failed to get RMT ringbuffer handle"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1c50",
+    "text": "[%6u][E][%s:%u] %s(): rmInit Failed - not enough channels"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1c8c",
+    "text": "[%6u][E][%s:%u] %s(): RMT failed to initilize."
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1cc7",
+    "text": "CrmtInit"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1cd4",
+    "text": "loopTask"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1ce0",
+    "text": "addApbChangeCallback"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1cf8",
+    "text": "setCpuFrequencyMhz"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1d0c",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-cpu.c"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1d5c",
+    "text": "[%6u][E][%s:%u] %s(): Callback Object Malloc Failed"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1d94",
+    "text": "[%6u][E][%s:%u] %s(): duplicate func=%8p arg=%8p"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1dc8",
+    "text": "[%6u][E][%s:%u] %s(): Bad frequency: %u MHz! Options are: 240, 160, 80, %u, %u and %u MHz"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1e24",
+    "text": "[%6u][E][%s:%u] %s(): Bad frequency: %u MHz! Options are: 240, 160, 80, %u and %u MHz"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1e7c",
+    "text": "[%6u][E][%s:%u] %s(): CPU clock could not be set to %u MHz"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1ebc",
+    "text": "prvGetFreeSize"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1ecc",
+    "text": "prvCheckItemFitsDefault"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1ee4",
+    "text": "prvCheckItemFitsByteBuffer"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1f00",
+    "text": "prvAcquireItemNoSplit"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1f18",
+    "text": "prvSendItemDoneNoSplit"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1f30",
+    "text": "prvCopyItemAllowSplit"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1f48",
+    "text": "prvCopyItemByteBuf"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1f5c",
+    "text": "prvGetItemDefault"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1f70",
+    "text": "prvGetItemByteBuf"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1f84",
+    "text": "prvReturnItemDefault"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1f9c",
+    "text": "prvReturnItemByteBuf"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1fb4",
+    "text": "prvReceiveGeneric"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1fc8",
+    "text": "prvReceiveGenericFromISR"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1fe4",
+    "text": "xRingbufferCreate"
+  },
+  {
+    "step": "servo_tilt",
+    "file_offset": "0x1ff8",
+    "text": "xRingbuf"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x5",
+    "text": "#8@"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x30",
+    "text": "esp-idf: v4.4.7 38eeba213a"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x50",
+    "text": "arduino-lib-builder"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x70",
+    "text": "12:29:20"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x80",
+    "text": "Mar  5 2024"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x90",
+    "text": "v4.4.7-dirty"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xc1",
+    "text": "{;#:e"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x120",
+    "text": "0.3"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x124",
+    "text": "cardboard-bot"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x134",
+    "text": "%s V%s"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x13c",
+    "text": "1 NORMAL, 2 CALIBRATION, 3 SELF_TEST"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x164",
+    "text": "GLOBAL: X emergency stop (PWM detach), R resume (no auto-center)"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1a8",
+    "text": "CAL: B default 90, C custom center, A/D pan -/+, W/S tilt +/-, P print, T telemetry"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1fc",
+    "text": "CAL: V save center, L load NVS, Z clear NVS"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x228",
+    "text": "Warning: test without the cardboard head first."
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x258",
+    "text": "TOUCHED"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x260",
+    "text": "OPEN"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x268",
+    "text": "TOUCH TEST"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x274",
+    "text": "STATE: %s"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x280",
+    "text": "COUNT: %u"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x28c",
+    "text": "touch and release"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x2a0",
+    "text": "CB_TEST id=%s version=%s oled=%d running=%d result=%s"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x2dc",
+    "text": "PING"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x2e4",
+    "text": "START "
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x2ec",
+    "text": "STOP"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x2f4",
+    "text": "manual"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x2fc",
+    "text": "touch"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x304",
+    "text": "CB_TEST OLED_FAIL address=0x3C,0x3D"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x328",
+    "text": "SERVO_STOP reason=%s"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x340",
+    "text": "ready"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x37f",
+    "text": "B[%6u][E][%s:%u] %s(): Unfinished Repeated Start transaction! Expected requestFrom, not beginTransmission! Clearing..."
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x3f8",
+    "text": "[%6u][E][%s:%u] %s(): Can't allocate memory for I2C_%d rxBuffer"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x43c",
+    "text": "[%6u][E][%s:%u] %s(): Can't allocate memory for I2C_%d txBuffer"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x480",
+    "text": "[%6u][E][%s:%u] %s(): NULL RX buffer pointer"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x4b0",
+    "text": "[%6u][E][%s:%u] %s(): Bus already started in Slave Mode."
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x4ec",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/libraries/Wire/src/Wire.cpp"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x53c",
+    "text": "[%6u][E][%s:%u] %s(): NULL TX buffer pointer"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x56c",
+    "text": "[%6u][E][%s:%u] %s(): xSemaphoreCreateMutex failed"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x5a4",
+    "text": "[%6u][E][%s:%u] %s(): could not acquire lock"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x5d4",
+    "text": "[%6u][E][%s:%u] %s(): bus already initialized. change pins only when not."
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x620",
+    "text": "[%6u][E][%s:%u] %s(): Bus is in Slave Mode"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x650",
+    "text": "[%6u][E][%s:%u] %s(): no Default SDA Pin for Second Peripheral"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x694",
+    "text": "[%6u][E][%s:%u] %s(): no Default SCL Pin for Second Peripheral"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x6d8",
+    "text": "endTransmission"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x6e8",
+    "text": "beginTransmission"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x6fc",
+    "text": "allocateWireBuffer"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x710",
+    "text": "initPins"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x71c",
+    "text": "setClock"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x728",
+    "text": "end"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x72c",
+    "text": "peek"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x734",
+    "text": "read"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x73c",
+    "text": "begin"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x744",
+    "text": "write"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x75f",
+    "text": "B(2"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x7b1",
+    "text": ">[O[>>kOk>"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x7bc",
+    "text": ">|>"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x7c1",
+    "text": "<~<"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x7c6",
+    "text": "W}W"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x7e3",
+    "text": "0H:"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x7e8",
+    "text": "&)y)&@"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x7f5",
+    "text": "%?Z<"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x819",
+    "text": "j`````"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x82a",
+    "text": " ~ "
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x842",
+    "text": "08>80"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x868",
+    "text": "db6IV P"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x89c",
+    "text": ">QIE>"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x8a6",
+    "text": "rIIIF!AIM3"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x8b5",
+    "text": "'EEE9<JII1A!"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x8c4",
+    "text": "6III6FII)"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x8ec",
+    "text": ">A]YN|"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x8f7",
+    "text": "III6>AAA\""
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x901",
+    "text": "AAA>"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x906",
+    "text": "IIIA"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x90f",
+    "text": ">AAQs"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x91e",
+    "text": " @A?"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x929",
+    "text": "@@@@"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x937",
+    "text": ">AAA>"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x941",
+    "text": ">AQ!^"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x949",
+    "text": ")F&III2"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x955",
+    "text": "?@@@?"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x95b",
+    "text": " @ "
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x95f",
+    "text": "?@8@?c"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x96e",
+    "text": "aYIMC"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x975",
+    "text": "AAA"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x97e",
+    "text": "AAA"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x987",
+    "text": "@@@@@"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x991",
+    "text": " TTx@"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x997",
+    "text": "(DD88DDD(8DD("
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x9a5",
+    "text": "8TTT"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x9ba",
+    "text": "D}@"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x9be",
+    "text": " @@="
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x9d6",
+    "text": "x8DDD8"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x9eb",
+    "text": "HTTT$"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x9f2",
+    "text": "?D$<@@ |"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x9fb",
+    "text": " @ "
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x9ff",
+    "text": "<@0@<D("
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xa07",
+    "text": "(DL"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xa0d",
+    "text": "|DdTLD"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xa27",
+    "text": "<&#&<"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xa31",
+    "text": ":@@ z8TTUY!UUyA\"TTxB!UTx@ TUy@"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xa54",
+    "text": "9UUUY9TTTY9UTTX"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xa65",
+    "text": "E|A"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xa6a",
+    "text": "E}B"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xa6f",
+    "text": "E|@}"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xa78",
+    "text": "(%("
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xa7c",
+    "text": "|TUE"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xa81",
+    "text": " TT|T|"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xa8a",
+    "text": "I2III2:DDD:2JHH0:AA!z:B@ x"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xaa8",
+    "text": "}=BBB==@@@=<$"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xab6",
+    "text": "$$H~ICf+/"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xacc",
+    "text": " TTyA"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xad3",
+    "text": "D}A0HHJ28@@\"z"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xae8",
+    "text": "1}&))/(&)))&0HM@ 8"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xc0c",
+    "text": "8DD8D"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xc12",
+    "text": "JJJ4~"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xc20",
+    "text": "cUIAc8DD<"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xc2a",
+    "text": "@~ "
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xc3a",
+    "text": "*I*"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xc41",
+    "text": "rL0JMM00HxH0"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xc4e",
+    "text": "bZF=>III"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xc5b",
+    "text": "~*****DD_DD@QJD@@DJQ@"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xc81",
+    "text": "6$6"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xca3",
+    "text": "<<<<"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xcbf",
+    "text": "B(2"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0xfbb",
+    "text": "K[;"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x11df",
+    "text": "BN0"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x11e7",
+    "text": "B@,"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x11f3",
+    "text": "B:)"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x11fb",
+    "text": "BP)"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x120b",
+    "text": "B[%6u][E][%s:%u] %s(): HW CDC RX Buffer error"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x123c",
+    "text": "[%6u][E][%s:%u] %s(): HW CDC TX Buffer error"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x126c",
+    "text": "[%6u][E][%s:%u] %s(): HW USB CDC failed to init interrupts"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x12ac",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/HWCDC.cpp"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x12f8",
+    "text": "[%6u][E][%s:%u] %s(): esp_event_loop_create failed"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1330",
+    "text": "arduino_hw_cdc_events"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1348",
+    "text": "ARDUINO_HW_CDC_EVENTS"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1360",
+    "text": "begin"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1368",
+    "text": "__pinMode"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1374",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-gpio.c"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x13c8",
+    "text": "[%6u][E][%s:%u] %s(): Invalid pin selected"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x13f8",
+    "text": "[%6u][E][%s:%u] %s(): GPIO config failed"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1424",
+    "text": "i2cSlaveDeinit"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1434",
+    "text": "[%6u][E][%s:%u] %s(): Invalid port num: %u"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1464",
+    "text": "[%6u][E][%s:%u] %s(): Lock is not initialized! Did you call i2c_slave_init()?"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x14b4",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-i2c-slave.c"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x150c",
+    "text": "[%6u][E][%s:%u] %s(): rx_ring_buf_full"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1538",
+    "text": "i2cDeinit"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1544",
+    "text": "i2cWrite"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1550",
+    "text": "i2cSetClock"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x155c",
+    "text": "[%6u][E][%s:%u] %s(): bus is not initialized"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x158c",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-i2c.c"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x15dc",
+    "text": "[%6u][E][%s:%u] %s(): bus is already initialized"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1610",
+    "text": "[%6u][E][%s:%u] %s(): i2c_param_config failed"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1640",
+    "text": "[%6u][E][%s:%u] %s(): i2c_driver_install failed"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1674",
+    "text": "i2cInit"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x167c",
+    "text": "initArduino"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1688",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-misc.c"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x16dc",
+    "text": "[%6u][E][%s:%u] %s(): Failed to add loop task to WDT"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1714",
+    "text": "[%6u][E][%s:%u] %s(): OTA verification failed! Start rollback to the previous version ..."
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1774",
+    "text": "[%6u][E][%s:%u] %s(): Failed to format the broken NVS partition!"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x17b8",
+    "text": "[%6u][E][%s:%u] %s(): Could not find NVS partition"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x17f0",
+    "text": "[%6u][E][%s:%u] %s(): Failed to initialize NVS! Error: %u"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x182c",
+    "text": "neopixelWrite"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x183f",
+    "text": "BD:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-rgb-led.c"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1894",
+    "text": "[%6u][E][%s:%u] %s(): RGB LED driver initialization failed!"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x18d4",
+    "text": "_rmtCheckTXnotRX"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x18e8",
+    "text": "[%6u][E][%s:%u] %s(): Can't write on a RX RMT Channel"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1920",
+    "text": "[%6u][E][%s:%u] %s(): Can't read on a TX RMT Channel"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1958",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-rmt.c"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x19a8",
+    "text": "[%6u][E][%s:%u] %s():  -- Inavalid Argument"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x19d8",
+    "text": "[%6u][E][%s:%u] %s():  -- Failed to get RMT ringbuffer handle"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1a18",
+    "text": "[%6u][E][%s:%u] %s(): rmInit Failed - not enough channels"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1a54",
+    "text": "[%6u][E][%s:%u] %s(): RMT failed to initilize."
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1a8f",
+    "text": "CrmtInit"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1a9c",
+    "text": "loopTask"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1aa8",
+    "text": "addApbChangeCallback"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1ac0",
+    "text": "setCpuFrequencyMhz"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1ad4",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-cpu.c"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1b24",
+    "text": "[%6u][E][%s:%u] %s(): Callback Object Malloc Failed"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1b5c",
+    "text": "[%6u][E][%s:%u] %s(): duplicate func=%8p arg=%8p"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1b90",
+    "text": "[%6u][E][%s:%u] %s(): Bad frequency: %u MHz! Options are: 240, 160, 80, %u, %u and %u MHz"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1bec",
+    "text": "[%6u][E][%s:%u] %s(): Bad frequency: %u MHz! Options are: 240, 160, 80, %u and %u MHz"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1c44",
+    "text": "[%6u][E][%s:%u] %s(): CPU clock could not be set to %u MHz"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1c84",
+    "text": "prvGetFreeSize"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1c94",
+    "text": "prvCheckItemFitsDefault"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1cac",
+    "text": "prvCheckItemFitsByteBuffer"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1cc8",
+    "text": "prvAcquireItemNoSplit"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1ce0",
+    "text": "prvSendItemDoneNoSplit"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1cf8",
+    "text": "prvCopyItemAllowSplit"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1d10",
+    "text": "prvCopyItemByteBuf"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1d24",
+    "text": "prvGetItemDefault"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1d38",
+    "text": "prvGetItemByteBuf"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1d4c",
+    "text": "prvReturnItemDefault"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1d64",
+    "text": "prvReturnItemByteBuf"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1d7c",
+    "text": "prvReceiveGeneric"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1d90",
+    "text": "prvReceiveGenericFromISR"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1dac",
+    "text": "xRingbufferCreate"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1dc0",
+    "text": "xRingbufferSend"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1dd0",
+    "text": "xRingbufferSendFromISR"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1de8",
+    "text": "xRingbufferReceive"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1dfc",
+    "text": "xRingbufferReceiveUpTo"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1e14",
+    "text": "xRingbufferReceiveUpToFromISR"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1e34",
+    "text": "vRingbufferReturnItem"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1e4c",
+    "text": "vRingbufferReturnItemFromISR"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1e6c",
+    "text": "vRingbufferDelete"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1e80",
+    "text": "xRingbufferGetCurFreeSize"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1e9c",
+    "text": "vRingbufferGetInfo"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1eb0",
+    "text": "( ( ( UBaseType_t ) ( pxRingbuffer->pucAcquire ) & (0x03) ) == 0 )"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1ef4",
+    "text": "pxRingbuffer->pucAcquire >= pxRingbuffer->pucHead && pxRingbuffer->pucAcquire < pxRingbuffer->pucTail"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1f5c",
+    "text": "xRemLen >= sizeof(ItemHeader_t)"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1f7c",
+    "text": "xReturn <= pxRingbuffer->xSize"
+  },
+  {
+    "step": "touch",
+    "file_offset": "0x1f9c",
+    "text": "(pxRingbuffer->xItemsWaiting > 0) && ((pxRingbuffer->pucRead != pxRingbuffer->pucWrite) || (pxRingbu"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x5",
+    "text": "$8@"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x30",
+    "text": "esp-idf: v4.4.7 38eeba213a"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x50",
+    "text": "arduino-lib-builder"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x70",
+    "text": "12:29:20"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x80",
+    "text": "Mar  5 2024"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x90",
+    "text": "v4.4.7-dirty"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xc0",
+    "text": "*\\K\\Z"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x13c",
+    "text": "ERR"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x144",
+    "text": "OFF"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x148",
+    "text": "PAN  "
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x150",
+    "text": "TILT "
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x158",
+    "text": "CFG: "
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x160",
+    "text": "C A/D W/S P T V Z"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x174",
+    "text": "SELF TEST"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x180",
+    "text": "OLED: "
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x188",
+    "text": "IRL:  "
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x190",
+    "text": "IRR: "
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x198",
+    "text": "TOUCH: "
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1a0",
+    "text": "1 NORMAL 2 CAL"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1b0",
+    "text": "HELLO"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1bc",
+    "text": "OLED ERROR"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1c8",
+    "text": "run_mode=%s"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1d8",
+    "text": "NORMAL"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1e0",
+    "text": "SELF_TEST"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1ec",
+    "text": "CALIBRATION"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1f8",
+    "text": "0.3"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1fc",
+    "text": "cardboard-bot"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x20c",
+    "text": "%s V%s"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x214",
+    "text": "1 NORMAL, 2 CALIBRATION, 3 SELF_TEST"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x23c",
+    "text": "GLOBAL: X emergency stop (PWM detach), R resume (no auto-center)"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x280",
+    "text": "CAL: B default 90, C custom center, A/D pan -/+, W/S tilt +/-, P print, T telemetry"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x2d4",
+    "text": "CAL: V save center, L load NVS, Z clear NVS"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x300",
+    "text": "Warning: test without the cardboard head first."
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x330",
+    "text": "magic"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x338",
+    "text": "schema"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x340",
+    "text": "pan_c"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x348",
+    "text": "pan_min"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x350",
+    "text": "pan_max"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x358",
+    "text": "tilt_c"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x360",
+    "text": "tilt_min"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x36c",
+    "text": "tilt_max"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x378",
+    "text": "pan_rev"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x380",
+    "text": "tilt_rev"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x38c",
+    "text": "CB_ROBOT version=%s oled=%d mode=%s caps=default_center"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x3c8",
+    "text": "mode=%s oled=%d irL=%d irR=%d touch=%d stop=%s servos=%s config=%s"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x40c",
+    "text": "EMERGENCY_STOP active; PWM detached; send R to resume"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x444",
+    "text": "DEFAULT"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x44c",
+    "text": "active"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x454",
+    "text": "clear"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x45c",
+    "text": "disabled"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x468",
+    "text": "enabled"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x470",
+    "text": "mode=%s config=%s state=%s stop=%s servos=%s pan=%d/%d tilt=%d/%d irL=%d irR=%d touch=%d"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x4cc",
+    "text": "self-test telemetry=%s"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x4e4",
+    "text": "RESUME ignored; emergency stop inactive"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x50c",
+    "text": "RESUME unlocked; SELF_TEST keeps servo outputs disabled"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x544",
+    "text": "RESUME enabled; no auto-center; send C to center"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x578",
+    "text": "off"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x57c",
+    "text": "motion locked by EMERGENCY_STOP; send R before servo commands"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x5bc",
+    "text": "telemetry=%s"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x5cc",
+    "text": "calibration saved to NVS"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x5e8",
+    "text": "calibration save failed"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x600",
+    "text": "calibration loaded from %s"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x61c",
+    "text": "NVS cleared; defaults restored"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x63c",
+    "text": "NVS clear failed; defaults restored in RAM"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x668",
+    "text": "run_mode=%s calibration_source=%s"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x68c",
+    "text": "OLED init failed at 0x3C and 0x3D"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x6b0",
+    "text": "OLED ready at 0x%02X"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x6c8",
+    "text": "BOOT"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x6d0",
+    "text": "TRACK"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x6d8",
+    "text": "SEARCH"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x6e0",
+    "text": "PET"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x6e4",
+    "text": "ERROR"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x6ec",
+    "text": "IDLE"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xa08",
+    "text": "cardboard"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xa47",
+    "text": "BJO"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xa4b",
+    "text": "B[%6u][E][%s:%u] %s(): Unfinished Repeated Start transaction! Expected requestFrom, not beginTransmission! Clearing..."
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xac4",
+    "text": "[%6u][E][%s:%u] %s(): Can't allocate memory for I2C_%d rxBuffer"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xb08",
+    "text": "[%6u][E][%s:%u] %s(): Can't allocate memory for I2C_%d txBuffer"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xb4c",
+    "text": "[%6u][E][%s:%u] %s(): NULL RX buffer pointer"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xb7c",
+    "text": "[%6u][E][%s:%u] %s(): Bus already started in Slave Mode."
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xbb8",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/libraries/Wire/src/Wire.cpp"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xc08",
+    "text": "[%6u][E][%s:%u] %s(): NULL TX buffer pointer"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xc38",
+    "text": "[%6u][E][%s:%u] %s(): xSemaphoreCreateMutex failed"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xc70",
+    "text": "[%6u][E][%s:%u] %s(): could not acquire lock"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xca0",
+    "text": "[%6u][E][%s:%u] %s(): bus already initialized. change pins only when not."
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xcec",
+    "text": "[%6u][E][%s:%u] %s(): Bus is in Slave Mode"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xd1c",
+    "text": "[%6u][E][%s:%u] %s(): no Default SDA Pin for Second Peripheral"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xd60",
+    "text": "[%6u][E][%s:%u] %s(): no Default SCL Pin for Second Peripheral"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xda4",
+    "text": "endTransmission"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xdb4",
+    "text": "beginTransmission"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xdc8",
+    "text": "allocateWireBuffer"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xddc",
+    "text": "initPins"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xde8",
+    "text": "setClock"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xdf4",
+    "text": "end"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xdf8",
+    "text": "peek"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xe00",
+    "text": "read"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xe08",
+    "text": "begin"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xe10",
+    "text": "write"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xe33",
+    "text": "Bn\""
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xe3b",
+    "text": "Bh#"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xe3f",
+    "text": "Bj#"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xe47",
+    "text": "Br#"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xe4b",
+    "text": "Bz#"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xe4f",
+    "text": "Bp\""
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xe53",
+    "text": "Bh#"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xe6b",
+    "text": "Bl$"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xe7d",
+    "text": ">[O[>>kOk>"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xe88",
+    "text": ">|>"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xe8d",
+    "text": "<~<"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xe92",
+    "text": "W}W"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xeaf",
+    "text": "0H:"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xeb4",
+    "text": "&)y)&@"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xec1",
+    "text": "%?Z<"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xee5",
+    "text": "j`````"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xef6",
+    "text": " ~ "
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xf0e",
+    "text": "08>80"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xf34",
+    "text": "db6IV P"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xf68",
+    "text": ">QIE>"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xf72",
+    "text": "rIIIF!AIM3"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xf81",
+    "text": "'EEE9<JII1A!"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xf90",
+    "text": "6III6FII)"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xfb8",
+    "text": ">A]YN|"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xfc3",
+    "text": "III6>AAA\""
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xfcd",
+    "text": "AAA>"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xfd2",
+    "text": "IIIA"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xfdb",
+    "text": ">AAQs"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xfea",
+    "text": " @A?"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0xff5",
+    "text": "@@@@"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1003",
+    "text": ">AAA>"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x100d",
+    "text": ">AQ!^"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1015",
+    "text": ")F&III2"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1021",
+    "text": "?@@@?"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1027",
+    "text": " @ "
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x102b",
+    "text": "?@8@?c"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x103a",
+    "text": "aYIMC"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1041",
+    "text": "AAA"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x104a",
+    "text": "AAA"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1053",
+    "text": "@@@@@"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x105d",
+    "text": " TTx@"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1063",
+    "text": "(DD88DDD(8DD("
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1071",
+    "text": "8TTT"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1086",
+    "text": "D}@"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x108a",
+    "text": " @@="
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x10a2",
+    "text": "x8DDD8"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x10b7",
+    "text": "HTTT$"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x10be",
+    "text": "?D$<@@ |"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x10c7",
+    "text": " @ "
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x10cb",
+    "text": "<@0@<D("
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x10d3",
+    "text": "(DL"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x10d9",
+    "text": "|DdTLD"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x10f3",
+    "text": "<&#&<"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x10fd",
+    "text": ":@@ z8TTUY!UUyA\"TTxB!UTx@ TUy@"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1120",
+    "text": "9UUUY9TTTY9UTTX"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1131",
+    "text": "E|A"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1136",
+    "text": "E}B"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x113b",
+    "text": "E|@}"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1144",
+    "text": "(%("
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1148",
+    "text": "|TUE"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x114d",
+    "text": " TT|T|"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1156",
+    "text": "I2III2:DDD:2JHH0:AA!z:B@ x"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1174",
+    "text": "}=BBB==@@@=<$"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1182",
+    "text": "$$H~ICf+/"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1198",
+    "text": " TTyA"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x119f",
+    "text": "D}A0HHJ28@@\"z"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x11b4",
+    "text": "1}&))/(&)))&0HM@ 8"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x12d8",
+    "text": "8DD8D"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x12de",
+    "text": "JJJ4~"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x12ec",
+    "text": "cUIAc8DD<"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x12f6",
+    "text": "@~ "
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1306",
+    "text": "*I*"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x130d",
+    "text": "rL0JMM00HxH0"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x131a",
+    "text": "bZF=>III"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1327",
+    "text": "~*****DD_DD@QJD@@DJQ@"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x134d",
+    "text": "6$6"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x136f",
+    "text": "<<<<"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1383",
+    "text": "BB1"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1393",
+    "text": "Bn\""
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1397",
+    "text": "BX1"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x139b",
+    "text": "Bh#"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x139f",
+    "text": "Bj#"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x13a7",
+    "text": "Br#"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x13ab",
+    "text": "Bz#"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x13af",
+    "text": "Bp\""
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x13b3",
+    "text": "Bh#"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x13bb",
+    "text": "BV3"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x13bf",
+    "text": "B<:"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x13cb",
+    "text": "Bl$"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1687",
+    "text": "K[;"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x189f",
+    "text": "!D:/PlatformIO/packages/framework-arduinoespressif32/libraries/Preferences/src/Preferences.cpp"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1900",
+    "text": "[%6u][E][%s:%u] %s(): nvs_flash_init_partition failed: %s"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x193c",
+    "text": "[%6u][E][%s:%u] %s(): nvs_open failed: %s"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1968",
+    "text": "[%6u][E][%s:%u] %s(): nvs_erase_all fail: %s"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1998",
+    "text": "[%6u][E][%s:%u] %s(): nvs_commit fail: %s"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x19c4",
+    "text": "[%6u][E][%s:%u] %s(): nvs_set_i32 fail: %s %s"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x19f4",
+    "text": "[%6u][E][%s:%u] %s(): nvs_erase_key fail: %s %s"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1a28",
+    "text": "[%6u][E][%s:%u] %s(): nvs_commit fail: %s %s"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1a58",
+    "text": "[%6u][E][%s:%u] %s(): nvs_set_u32 fail: %s %s"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1a88",
+    "text": "[%6u][E][%s:%u] %s(): nvs_set_u8 fail: %s %s"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1ab8",
+    "text": "putUChar"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1ac4",
+    "text": "OTHER"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1acc",
+    "text": "begin"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1ad4",
+    "text": "clear"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1adc",
+    "text": "putInt"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1ae4",
+    "text": "putUInt"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1b03",
+    "text": "B:D"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1b1f",
+    "text": "BJO"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1b23",
+    "text": "B[%6u][E][%s:%u] %s(): HW CDC RX Buffer error"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1b54",
+    "text": "[%6u][E][%s:%u] %s(): HW CDC TX Buffer error"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1b84",
+    "text": "[%6u][E][%s:%u] %s(): HW USB CDC failed to init interrupts"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1bc4",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/HWCDC.cpp"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1c10",
+    "text": "[%6u][E][%s:%u] %s(): esp_event_loop_create failed"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1c48",
+    "text": "arduino_hw_cdc_events"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1c60",
+    "text": "ARDUINO_HW_CDC_EVENTS"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1c78",
+    "text": "begin"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1c80",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/WMath.cpp"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1ccc",
+    "text": "[%6u][E][%s:%u] %s(): map(): Invalid input range, min == max"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1d0c",
+    "text": "map"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1d10",
+    "text": "__pinMode"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1d1c",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-gpio.c"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1d70",
+    "text": "[%6u][E][%s:%u] %s(): Invalid pin selected"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1da0",
+    "text": "[%6u][E][%s:%u] %s(): GPIO config failed"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1dcc",
+    "text": "i2cSlaveDeinit"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1ddc",
+    "text": "[%6u][E][%s:%u] %s(): Invalid port num: %u"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1e0c",
+    "text": "[%6u][E][%s:%u] %s(): Lock is not initialized! Did you call i2c_slave_init()?"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1e5c",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-i2c-slave.c"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1eb4",
+    "text": "[%6u][E][%s:%u] %s(): rx_ring_buf_full"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1ee0",
+    "text": "i2cDeinit"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1eec",
+    "text": "i2cWrite"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1ef8",
+    "text": "i2cSetClock"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1f04",
+    "text": "[%6u][E][%s:%u] %s(): bus is not initialized"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1f34",
+    "text": "D:/PlatformIO/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-i2c.c"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1f84",
+    "text": "[%6u][E][%s:%u] %s(): bus is already initialized"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1fb8",
+    "text": "[%6u][E][%s:%u] %s(): i2c_param_config failed"
+  },
+  {
+    "step": "robot",
+    "file_offset": "0x1fe8",
+    "text": "[%6u][E][%s:%u] %s(): i2"
+  }
+]

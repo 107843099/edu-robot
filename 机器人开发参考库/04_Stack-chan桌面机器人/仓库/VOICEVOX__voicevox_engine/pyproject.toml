@@ -1,0 +1,93 @@
+[project]
+name = "voicevox_engine"
+version = "0.24.0" # TODO: できればversionを自動管理する
+requires-python = "==3.14.6"
+dependencies = [
+  "fastapi==0.140.7",
+  "jinja2==3.1.6", # NOTE: required by fastapi.templating.Jinja2Templates (fastapi's unmanaged dependency)
+  "kanalizer==0.1.1",
+  "numpy==2.5.1",
+  "platformdirs==4.11.0",
+  "pydantic==2.13.4",
+  "pyhwloc==3.0.1; sys_platform == 'linux' or sys_platform == 'win32'", # NOTE: macOSでは使っておらず、macOS wheelがないため依存するとビルドが必要になってしまう
+  "pyopenjtalk",
+  "python-multipart==0.0.32", # NOTE: required by fastapi.Form (fastapi's unmanaged dependency)
+  "pyworld==0.3.5",
+  "pyyaml==6.0.3",
+  "semver==3.0.4",
+  "setuptools<82", # NOTE: pyworldがpkg_resourcesを使っている。
+  "soundfile==0.14.0",
+  "soxr==1.1.0",
+  "starlette>=0.45.3",
+  "uvicorn==0.51.0",
+]
+
+[tool.uv]
+default-groups = []
+exclude-newer = "1 week"
+python-preference = "only-managed"
+
+[tool.uv.sources]
+pyopenjtalk = { git = "https://github.com/VOICEVOX/pyopenjtalk", rev = "74703b034dd90a1f199f49bb70bf3b66b1728a86" }
+
+[dependency-groups]
+build = [
+  "pyinstaller==6.21.0",
+]
+dev = [
+  "coveralls==4.1.0",
+  "httpx2==2.9.1", # NOTE: required by fastapi.testclient.TestClient (fastapi's unmanaged dependency)
+  "mypy==2.3.0",
+  "pip-audit==2.10.1",
+  "pre-commit==4.6.1",
+  "pytest==9.1.1",
+  "ruff==0.16.0",
+  "syrupy==5.5.3",
+  "types-pyyaml==6.0.12.20260724",
+  "typos==1.48.0",
+]
+licenses = [
+  "pip-licenses==5.5.5",
+]
+
+[tool.ruff]
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I", "W", "UP", "D", "D213", "PT", "NPY"]
+ignore = [
+  "E501", # line-too-long
+  "D400", # missing-trailing-period。日本語の「。」に対応していないため。
+  "D403", # first-word-uncapitalized。日本語とは無関係であるため。日英混合時の挙動に一貫性が無いため。
+]
+unfixable = [
+  "F401", # unused-import
+  "F841", # unused-variable
+]
+
+[tool.ruff.lint.per-file-ignores]
+"test/**/test_*.py" = ["D103"] # undocumented-public-function。pytest の対象 test_*() が D103 の対象になり、関数名から内容が自明でも docstring を強制されるため。
+
+[tool.ruff.lint.isort]
+known-first-party = ["voicevox_engine"]
+known-third-party = ["numpy"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.mypy]
+strict = true
+plugins = "pydantic.mypy"
+python_version = "3.14"
+ignore_missing_imports = true
+warn_unreachable = true
+
+[tool.typos.files]
+ignore-hidden = false
+extend-exclude = [".git", "tools/licenses"]
+
+[tool.typos.default.extend-words]
+datas = "datas" # PyInstaller's argument

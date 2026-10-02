@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>MindPaw</title>
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            height: 30px;
+            width: 300px;
+            margin-top: 20px;
+
+            padding: 10px 20px;
+            background-color: deepskyblue;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            text-decoration: none;
+            line-height: 2;
+            text-align: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: skyblue;
+            transform: translateY(2px);
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-motion {
+            background-color: #FF6B6B;
+        }
+        .btn-motion:hover {
+            background-color: #ff8e8e;
+        }
+        .btn-expression {
+            background-color: #51CF66;
+        }
+        .btn-expression:hover {
+            background-color: #69db7c;
+        }
+        .btn-network {
+            background-color: #339AF0;
+        }
+        .btn-network:hover {
+            background-color: #5ab0f5;
+        }
+        .logout-btn {
+            background-color: #868e96;
+        }
+        .logout-btn:hover {
+            background-color: #adb5bd;
+        }
+        .egg-link {
+            color: #ccc;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+        .egg-link:hover {
+            color: #999;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class='container'>
+    <h1>MindPaw 控制中心</h1>
+    <h3>科研汪汪汪</h3>
+    <p>一个耗时将近一月的桌面小玩具</p>
+    <p style="color: hotpink; font-size: 18px;">愿你天天开心！</p>
+    <input type='button'  style="height: 50px;width: 320px"  class='button btn-motion'  value="🏃 运动控制" onclick="window.location.href='./motion.html'">
+    <input type='button'  style="height: 50px;width: 320px"  class='button btn-expression'  value="😊 表情控制" onclick="window.location.href='./expression.html'">
+    <input type='button'  style="height: 50px;width: 320px"  class='button btn-network'  value="📶 联网功能" onclick="window.location.href='./network.html'">
+    <input type='button'  style="height: 50px; width: 320px"  class='button'  value="⚙ 配置" onclick="window.location.href='./setting.html'">
+        <input type='button'  style="height: 50px; width: 320px; background-color:#845ef7" class='button'  value="🛰️ 实时 3D 重建 (2.0)" onclick="window.location.href='./recon_view.html'">
+<input type='button'  style="height: 50px; width: 320px"  class='button logout-btn'  value="🔒 退出登录" onclick="window.location.href='./'">
+    <div class="egg-link" onclick="window.location.href='./egg.html'">这里咋还有一个按钮</div>
+</div>
+
+</body>
+</html>

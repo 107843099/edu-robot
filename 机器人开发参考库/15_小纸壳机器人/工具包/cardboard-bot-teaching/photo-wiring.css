@@ -1,0 +1,316 @@
+.photo-wiring-card {
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Keep each module phase visible as a single desktop workspace. */
+.page {
+  padding: 10px 0 12px;
+}
+
+.topbar {
+  min-height: 38px;
+}
+
+.topbar-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.step-nav {
+  margin: 10px 0;
+}
+
+.step-nav button {
+  min-height: 54px;
+}
+
+.step-card {
+  padding: 18px 22px 20px;
+}
+
+.workflow-head {
+  margin-bottom: 12px;
+}
+
+.workflow-title .number {
+  width: 38px;
+  height: 38px;
+}
+
+.workflow-title h2 {
+  font-size: clamp(1.45rem, 2.5vw, 1.9rem);
+}
+
+.phase-nav {
+  margin-bottom: 14px;
+}
+
+.phase-tab {
+  min-height: 40px;
+}
+
+.phase-tab::after {
+  top: 19px;
+}
+
+.phase-no {
+  width: 28px;
+  height: 28px;
+}
+
+.phase-panel {
+  min-height: 0;
+}
+
+.phase-heading {
+  margin-bottom: 8px;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+}
+
+.safety-strip {
+  margin: 6px 0 10px;
+  padding: 9px 12px;
+}
+
+.social-name {
+  color: #000;
+  font-size: .88rem;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.photo-diagram {
+  margin: 0;
+}
+
+.photo-zoom-trigger {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 8px 10px;
+  border: 0;
+  background: #fff;
+  cursor: zoom-in;
+}
+
+.photo-diagram img {
+  display: block;
+  width: auto;
+  max-width: 52%;
+  max-height: 48vh;
+  height: auto;
+  border-radius: 10px;
+}
+
+.photo-diagram figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  color: #40504a;
+  background: #edf4ee;
+  font-size: .82rem;
+  line-height: 1.35;
+}
+
+.phase-actions {
+  margin-top: 12px;
+  padding-top: 10px;
+}
+
+.calibration-controls {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.calibration-flow {
+  margin: 6px 0;
+}
+
+.calibration-flow span {
+  padding: 5px 3px;
+}
+
+.calibration-state {
+  margin: 5px 0 2px;
+  padding: 6px 10px;
+  line-height: 1.35;
+}
+
+.calibration-group {
+  margin-top: 6px;
+}
+
+.calibration-group > strong {
+  margin-bottom: 3px;
+}
+
+.calibration-grid {
+  gap: 5px;
+}
+
+.calibration-grid .secondary-action {
+  min-height: 38px;
+  padding: 8px 10px;
+}
+
+.calibration-controls .troubleshooting {
+  margin-top: 8px;
+}
+
+.photo-diagram figcaption span {
+  flex: 0 0 auto;
+  color: #69736f;
+  font-size: .74rem;
+}
+
+.photo-intro {
+  padding: 15px 16px;
+  color: #40504a;
+  background: #edf4ee;
+  font-weight: 750;
+}
+
+.photo-wiring-complete .photo-intro {
+  padding: 8px 12px;
+  font-size: .82rem;
+}
+
+.photo-accordion details {
+  border-top: 1px solid #dcded9;
+}
+
+.photo-accordion summary {
+  padding: 15px 17px;
+  color: #18352e;
+  background: #fff;
+  font-weight: 800;
+}
+
+.photo-wiring-complete .photo-accordion summary {
+  padding: 8px 12px;
+  font-size: .84rem;
+}
+
+.photo-wiring-complete .photo-diagram img {
+  max-width: 34%;
+  max-height: 28vh;
+}
+
+.photo-accordion details[open] summary {
+  background: #f7f2ea;
+}
+
+.photo-accordion .photo-diagram {
+  border-top: 1px solid #eceeeb;
+}
+
+body.photo-lightbox-open {
+  overflow: hidden;
+}
+
+.photo-lightbox[hidden] {
+  display: none;
+}
+
+.photo-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  padding: 20px;
+  place-items: center;
+  background: rgba(10, 16, 14, .9);
+  cursor: zoom-out;
+}
+
+.photo-lightbox-panel {
+  position: relative;
+  display: grid;
+  max-width: 96vw;
+  max-height: 96vh;
+  place-items: center;
+  cursor: default;
+}
+
+.photo-lightbox-panel img {
+  display: block;
+  max-width: 94vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, .45);
+}
+
+.photo-lightbox-panel p {
+  margin-top: 8px;
+  color: #fff;
+  font-size: .78rem;
+}
+
+.photo-lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  z-index: 1;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  place-items: center;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  background: #18352e;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
+  font: 700 26px/1 sans-serif;
+  cursor: pointer;
+}
+
+@media (max-width: 620px) {
+  .page {
+    padding: 6px 0 10px;
+  }
+
+  .step-nav {
+    margin: 8px 0;
+  }
+
+  .step-nav button {
+    min-height: 48px;
+  }
+
+  .step-card {
+    padding: 14px;
+  }
+
+  .workflow-head {
+    margin-bottom: 8px;
+  }
+
+  .phase-nav {
+    margin-bottom: 8px;
+  }
+
+  .photo-diagram img {
+    max-width: 70%;
+    max-height: 42vh;
+  }
+
+  .photo-wiring-complete .photo-diagram img {
+    max-width: 58%;
+    max-height: 26vh;
+  }
+
+  .photo-diagram figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+  }
+}

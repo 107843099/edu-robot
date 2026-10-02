@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "firmware_project": "MindPaw_main",
+  "board": "nodemcuv2 / ESP8266",
+  "source_of_truth": {
+    "firmware": "MindPaw_main/platformio.ini",
+    "wiring": "MindPaw_main/PIN_WIRING.md",
+    "schematic": "SCH&PCB/MindPaw_SCH&PCB.epro2",
+    "assembly": "Docs/05_Assembly_Guide.md"
+  },
+  "required_paths": [
+    "MindPaw_main/platformio.ini",
+    "MindPaw_main/src/main.cpp",
+    "MindPaw_main/src/streaming_recon.h",
+    "MindPaw_main/src/streaming_recon.cpp",
+    "MindPaw_main/PIN_WIRING.md",
+    "SCH&PCB/MindPaw_SCH&PCB.epro2",
+    "3Dmodel/body.stl",
+    "3Dmodel/bottom.stl",
+    "3Dmodel/foot.stl",
+    "Docs/01_Hardware_Guide.md",
+    "Docs/04_Firmware_Flashing.md",
+    "Docs/05_Assembly_Guide.md",
+    "Docs/09_Streaming_Recon.md",
+    "ai-infra/gateway/app.py",
+    "ai-infra/recon/__init__.py",
+    "ai-infra/recon/service.py",
+    "ai-infra/recon/pipeline.py",
+    "ai-infra/recon/kv_cache.py",
+    "ai-infra/recon/heads.py",
+    "ai-infra/recon/backbone_student.py",
+    "ai-infra/recon/mock_recon.py",
+    "ai-infra/recon/schemas.py",
+    "ai-infra/recon/tests/test_pipeline.py",
+    "ai-infra/recon/README.md"
+  ]
+}

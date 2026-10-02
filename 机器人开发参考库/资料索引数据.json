@@ -1,0 +1,631 @@
+[
+  {
+    "facts": "8 个舵机，每腿 2 个自由度；BOM 列 MG90S 与 SSD1306 OLED。手工搭建和分线板版本的 ESP32 型号不同，须按硬件版本选固件。资料含固件、CAD、材料表和姿势编辑器。",
+    "experiment": "先复现站立、挥手与表情切换，再让学生改一个关键帧；记录中位校准、供电与实际动作偏差。",
+    "limits": "抽查步行动作采用固定角度与延时，不能据此认定具备动态平衡或自主导航。麦克风、摄像头和 IMU 不属于所查核心 BOM 的标配。",
+    "license": "根目录 Apache-2.0；外链的仿真、机器学习与 Companion 项目另行核查。作者材料价不作为当前交付预算。",
+    "borrow": [
+      "外观与结构：低矮身体、前置表情屏和外露腿部，便于观察动作；我们可重新设计头壳与装饰，让机构共用而角色不同。",
+      "代码与工具：动作序列、表情位图和网页控制分开组织。Sesame Studio 用姿势与关键帧生成 C++，很适合转成可视化动作课程。",
+      "交互思路：先定义有限的动作名称，再把按钮、语音或传感输入映射到同一动作接口。"
+    ],
+    "id": 1,
+    "title": "Sesame 芝麻机器人",
+    "tag": "四足宠物与动作创作  ·  建议顺序 B",
+    "summary": "小型四足、屏幕表情与可编辑动作组成一个完整角色，适合研究怎样让简单机构具有可辨认的动作和性格。它属于四足机器人。",
+    "sources": [
+      [
+        "项目与图片来源",
+        "https://github.com/dorianborian/sesame-robot"
+      ],
+      [
+        "材料表",
+        "https://github.com/dorianborian/sesame-robot/blob/main/hardware/bom/README.md"
+      ],
+      [
+        "许可",
+        "https://github.com/dorianborian/sesame-robot/blob/main/LICENSE"
+      ]
+    ],
+    "code": [
+      [
+        "动作序列",
+        "https://github.com/dorianborian/sesame-robot/blob/main/firmware/movement-sequences.h"
+      ],
+      [
+        "Sesame Studio",
+        "https://github.com/dorianborian/sesame-robot/tree/main/software/sesame-studio"
+      ]
+    ],
+    "image": "机器人开发参考库/01_芝麻机器人/图片/参考图.png",
+    "image_caption": "Dorian Todd 项目实物图  来源为仓库 README"
+  },
+  {
+    "facts": "RussellCooper-DJZ 仓库当前为 STM32F103C8T6 与 4 路舵机，含动作、OLED 和语音子项目；Herobrine 页面列 5 个 SG90、ASR Pro 与 OLED。后者说明 HEX 功能完整，所给源码删去部分动作。",
+    "experiment": "选定其中一套资料，先测单舵机、动作停止与表情同步，再补传感器。若选 Herobrine 路线，把缺少的表演动作列为自行开发内容。",
+    "limits": "Russell 旧文档的 8 舵机扩展不代表当前 4 路固件；机械资料仍需补齐。两项目的引脚、舵机数、完整源码范围都不能互换。",
+    "license": "Russell 根 LICENSE 为 MIT；Herobrine 页面为 CC BY-NC 4.0，外壳另在 MakerWorld，不能以 GitHub 的 MIT 代替硬件平台的授权。",
+    "borrow": [
+      "程序：Russell 的动作表与任务划分可用于研究“语音命令—动作编号—目标角度与时长”的执行过程。",
+      "外观与集成：Herobrine 的屏幕脸、矩形身体和 PCB 布局可用于比较显示、供电与舵机怎样安排空间。",
+      "互动：把表情和动作组成可解释的角色状态；体力或开心值可作行为变量，不把它们当作真实情绪理解。"
+    ],
+    "id": 2,
+    "title": "曼波小狗 两个来源分别参考",
+    "tag": "STM32 动作与屏幕宠物  ·  建议顺序 B",
+    "summary": "两个链接都可用于研究桌面宠物，但本次未确认它们同源或接口兼容。应分开保存固件、接线、结构和许可，避免把一个项目的实物配上另一个项目的代码。",
+    "sources": [
+      [
+        "Russell GitHub",
+        "https://github.com/RussellCooper-DJZ/manbo-robot-dog"
+      ],
+      [
+        "Herobrine 项目与图片",
+        "https://oshwhub.com/herobrine/stm32-mambo-robot-dog"
+      ],
+      [
+        "GitHub 许可",
+        "https://github.com/RussellCooper-DJZ/manbo-robot-dog/blob/master/LICENSE"
+      ]
+    ],
+    "code": [
+      [
+        "动作任务",
+        "https://github.com/RussellCooper-DJZ/manbo-robot-dog/blob/master/User/ActionTask.c"
+      ],
+      [
+        "硬件平台外壳入口",
+        "https://makerworld.com.cn/zh/models/1937892-stm32man-bo-ji-qi-ren-wai-ke"
+      ]
+    ],
+    "image": "机器人开发参考库/02_曼波小狗/图片/参考图.png",
+    "image_caption": "Herobrine 立创项目实物  仅对应该项目"
+  },
+  {
+    "facts": "基础为 ESP8266／ESP12F、4 舵机与 OLED；仓库有 Arduino／PlatformIO 工程、网页、PCB 工程及 STL。手势模型源码标明权重未训练，三维重建模块默认使用 mock，未附预训练权重。",
+    "experiment": "只选一个输入、一个动作和一组表情形成最小闭环；逐项核对引脚与真实器件，再决定是否保留进阶模型模块。",
+    "limits": "文档存在引脚复用及摄像头型号不一致，需统一硬件配置。手势、重建和响应时间不能当作已通过实机测试的功能；PAD 等数值是角色设计变量。",
+    "license": "软件 MIT；硬件与 STL 为 CC BY-NC 4.0；原创文档为 CC BY 4.0，以具体文件声明为准。硬件不作为默认可商用的复制基础。",
+    "borrow": [
+      "软件：研究情绪变量、动作表情映射和多输入处理怎样分层，以便在自研程序中保留清晰的输入与输出。",
+      "系统：将可选云端能力放入网关，基础动作留在设备端，便于控制网络依赖与故障范围。",
+      "界面：网页动作面板与配置页可作为教师调试工具的参考；模型输出先作结构与参数检查。"
+    ],
+    "id": 3,
+    "title": "MindPaw 机器狗",
+    "tag": "行为状态与可选 AI 模块  ·  建议顺序 C",
+    "summary": "适合拆读交互与网关的模块划分。项目功能描述较丰富，但实际源码中存在模型占位和模拟数据，选型时应从基础控制逐项验证。",
+    "sources": [
+      [
+        "项目",
+        "https://github.com/ace-trump-tech/MindPaw"
+      ],
+      [
+        "分范围许可",
+        "https://github.com/ace-trump-tech/MindPaw/blob/main/CONTENT-LICENSE.md"
+      ],
+      [
+        "软件许可",
+        "https://github.com/ace-trump-tech/MindPaw/blob/main/LICENSE"
+      ]
+    ],
+    "code": [
+      [
+        "手势模型现状",
+        "https://github.com/ace-trump-tech/MindPaw/blob/main/MindPaw_main/src/gesture_nn.cpp"
+      ],
+      [
+        "重建模块",
+        "https://github.com/ace-trump-tech/MindPaw/blob/main/ai-infra/recon/README.md"
+      ],
+      [
+        "接线说明",
+        "https://github.com/ace-trump-tech/MindPaw/blob/main/MindPaw_main/PIN_WIRING.md"
+      ]
+    ]
+  },
+  {
+    "facts": "M5Stack 体系，当前 develop 分支含 Moddable 固件、JavaScript／TypeScript MOD、浏览器烧录与编辑工具。v0、v1 和当前 M5StackChan CoreS3 的硬件配置应分别识别。",
+    "experiment": "固定一种支持的硬件和固件版本，运行一个 MOD，再修改触发、表情与动作；比较屏幕预览和真机表现。",
+    "limits": "当前默认分支为 develop，API 会变化。SG90、XL330 与商品套装不可按同一材料表采购；烧录社区固件会替换出厂固件。",
+    "license": "仓库 Apache-2.0；角色衍生另有 GUIDELINE，保留作者与来源信息，并分别核对代码、结构与角色的使用条件。",
+    "borrow": [
+      "表达方式：用注视、点头和动作节奏表达角色意图，适合在少量关节上验证互动体验。",
+      "软件结构：宿主固件提供 motion、face、audio 等能力，MOD 承载具体互动内容；可以参考这种分层开发不同课程任务。",
+      "学生工具：表情编辑、积木编辑和模拟器提供从设计到设备运行的流程参考，值得与现有 AI 创作平台对照。"
+    ],
+    "id": 4,
+    "title": "Stack-chan 桌面摇头机器人",
+    "tag": "桌面互动与开发工具  ·  建议顺序 A",
+    "summary": "用表情屏与双轴头部动作表达注意、回应和情绪，是近期桌面机器人与学生创作工具的重要参考。原清单中的两条链接合并在此。",
+    "sources": [
+      [
+        "项目",
+        "https://github.com/stack-chan/stack-chan"
+      ],
+      [
+        "图片及 v0 结构",
+        "https://github.com/stack-chan/stack-chan/blob/develop/case/README.md"
+      ],
+      [
+        "许可",
+        "https://github.com/stack-chan/stack-chan/blob/develop/LICENSE"
+      ],
+      [
+        "角色指南",
+        "https://github.com/stack-chan/stack-chan/blob/develop/GUIDELINE.md"
+      ]
+    ],
+    "code": [
+      [
+        "固件 API",
+        "https://github.com/stack-chan/stack-chan/blob/develop/firmware/docs/api.md"
+      ],
+      [
+        "浏览器工具代码",
+        "https://github.com/stack-chan/stack-chan/tree/develop/web"
+      ]
+    ],
+    "image": "机器人开发参考库/04_Stack-chan桌面机器人/图片/参考图.jpg",
+    "image_caption": "Stack-chan v0 结构示例  与当前商品 CoreS3 配置不同"
+  },
+  {
+    "facts": "ESP32-S3、4 个微型舵机与 SH1106 OLED。主要代码集中在 AlbertMicro.ino，提供 STL；可通过 BLE UART／串口控制，并有信息屏界面。",
+    "experiment": "先做站姿、摆动和停止，观察动作中能否及时响应新命令；以相同的小功能范围重建自己的可维护实现。",
+    "limits": "4 舵机机构不能与高自由度四足等同。源码中部分姿态含循环延时；未见完整 PCB、系统化材料表或实机可靠性验证。",
+    "license": "本次在仓库与主源码中未发现许可或授权声明。研究思路可继续；原代码及 STL 直接纳入产品前需补核授权，不能套用同作者 AlbertPro 的 MIT。",
+    "borrow": [
+      "外观：几何机身和大面积脸部让角色易识别，外壳改造可以围绕比例、颜色与装饰展开。",
+      "行为：将眼睛、姿态和步态参数联系起来，让同一种事件产生连贯的屏幕与身体反馈。",
+      "教学：轻量工程便于拆解，适合围绕幅度、相位、限位和插值设计可观察的小实验。"
+    ],
+    "id": 5,
+    "title": "AlbertMicro 机器小狗",
+    "tag": "少关节桌宠与简洁外观  ·  建议顺序 B",
+    "summary": "几何外壳、屏幕眼睛与四条简单摆腿构成轻量桌宠，可用于研究少量器件怎样形成清晰的角色表达。",
+    "sources": [
+      [
+        "项目及图片来源",
+        "https://github.com/thinking0things/AlbertMicro"
+      ]
+    ],
+    "code": [
+      [
+        "主要代码",
+        "https://github.com/thinking0things/AlbertMicro/blob/main/AlbertMicro.ino"
+      ],
+      [
+        "结构文件",
+        "https://github.com/thinking0things/AlbertMicro/tree/main/stl_files"
+      ]
+    ],
+    "image": "机器人开发参考库/05_AlbertMicro机器小狗/图片/参考图.png",
+    "image_caption": "AlbertMicro 官方装配图  来源为 thinking0things 仓库"
+  },
+  {
+    "facts": "ESP32 NodeMCU-32S 与 PCA9685，六腿各三关节；有机械、六足 PCB、固件和网页资料。同仓还含 NodeQuadMini 四足子项目，其 PCB 未公开。",
+    "experiment": "先搭一条腿，验证方向、中位、范围与足端轨迹；再增加其余腿，记录供电与校准工作量。",
+    "limits": "装配和线束量明显增加；可选图传与小智扩展不是所有版本的默认能力。README 中超声波用于按需诊断，不应写成已接入自主运动决策。",
+    "license": "README 声明 GPL-3.0，但本次未发现根 LICENSE；记录为“声明存在，完整许可文件与范围待补核”。",
+    "borrow": [
+      "结构：将单腿作为可重复装配、调试和替换的模块；先保存连杆尺寸和零位，再组合整机。",
+      "程序：构型接口、运动、动作序列、通信与电源管理分开组织，便于在不同机型间保留公共逻辑。",
+      "教学工具：逐关节校准、参数保存与足端实验，可对应“单舵机—单腿—步态—指令控制”的进阶课程。"
+    ],
+    "id": 6,
+    "title": "NodeHexa 六足机器人",
+    "tag": "六足运动与关节校准  ·  建议顺序 C",
+    "summary": "中央机身、模块化六腿与可视化控制适合做进阶运动学平台。对我们的价值主要是从单腿校准逐步扩展到整机的工程流程。",
+    "sources": [
+      [
+        "项目及图片来源",
+        "https://github.com/ViolinLee/NodeHexa"
+      ],
+      [
+        "硬件范围",
+        "https://github.com/ViolinLee/NodeHexa/blob/master/hardware/README.md"
+      ]
+    ],
+    "code": [
+      [
+        "固件参考",
+        "https://github.com/ViolinLee/NodeHexa/blob/master/FIRMWARE_REFERENCE.md"
+      ],
+      [
+        "机械目录",
+        "https://github.com/ViolinLee/NodeHexa/tree/master/mechanism"
+      ]
+    ],
+    "image": "机器人开发参考库/06_NodeHexa六足机器人/图片/参考图.jpg",
+    "image_caption": "NodeHexa 六足展示图  与同仓四足子项目分开理解"
+  },
+  {
+    "facts": "Nougat、Mochi 和 Macaroon 三种 18 自由度机型，ESP32 与两个 PCA9685；不同机型的尺寸、舵机和供电配置分别记录。资料包含打印件、装配说明、共用固件和 Python 路径工具。",
+    "experiment": "先选一个机型和一套材料表，运行单腿轨迹、校准与停止；再测试完整步态和上位机掉线后的行为。",
+    "limits": "18 舵机的峰值电流、间隙、校准与备件都要单独考虑。不同遥控模式需要协调输出控制；旧 Pico 固件已标为不维护。",
+    "license": "根 LICENSE 为 GPL-3.0；复用与分发按相应条款处理，配套上位机和遥控器另有自己的许可。",
+    "borrow": [
+      "外观与系列：Mochi 的圆顶与分色腿部形成角色；在自有外观中可以沿用按机型管理尺寸参数的方法。",
+      "算法与固件：由上位机生成运动路径，再由设备查表执行，把复杂计算和实时控制任务分开。",
+      "开发流程：网页校准、WiFi 姿态串流与设备配置读取，有利于比较虚拟姿态和真实动作。"
+    ],
+    "id": 7,
+    "title": "RookiDroid Hexapod 六足机器人",
+    "tag": "系列化六足与上位机联动  ·  建议顺序 C",
+    "summary": "一个固件支持多种六足造型，适合研究怎样通过结构参数、动作生成工具和校准流程支撑产品系列。",
+    "sources": [
+      [
+        "项目",
+        "https://github.com/rookidroid/hexapod"
+      ],
+      [
+        "Mochi 及图片来源",
+        "https://github.com/rookidroid/hexapod/blob/main/robots/mochi/README.md"
+      ],
+      [
+        "许可",
+        "https://github.com/rookidroid/hexapod/blob/main/LICENSE"
+      ]
+    ],
+    "code": [
+      [
+        "共用固件",
+        "https://github.com/rookidroid/hexapod/tree/main/software/hexapod_esp32"
+      ],
+      [
+        "路径生成器",
+        "https://github.com/rookidroid/hexapod/tree/main/software/path_tool"
+      ]
+    ],
+    "image": "机器人开发参考库/07_RookiDroid六足机器人/图片/参考图.jpg",
+    "image_caption": "Mochi 六足实物图  来源为 RookiDroid 机型说明"
+  },
+  {
+    "facts": "程序按应用状态、音频、显示、协议和板级适配组织；设备能力通过 MCP 工具接口提供。唤醒、摄像头等能力依板型与构建配置而定，离线唤醒不等于离线完成大模型对话。",
+    "experiment": "先在明确支持的开发板上调通语音和状态显示，再增加一个动作工具；验证断网、重复调用及恢复后的行为。",
+    "limits": "所查当前说明要求 ESP-IDF 6.0.1 或以上，旧教程环境不能直接套用。客户端、后端服务、模型和音色分别核查；本次未验证云服务费用、账号条件或课堂并发。",
+    "license": "本仓库 MIT，保留版权与许可。第三方后端、音频及图像资源、外壳与硬件资料各自登记来源。",
+    "borrow": [
+      "程序架构：把语音、网络和显示做成共享基础，更换机器人外观时主要调整板级配置和动作层。",
+      "交互设计：将监听、思考、说话与闲置状态映射到不同表情和动作，让孩子知道机器人正在做什么。",
+      "执行方式：给模型提供有限、可校验的动作工具，例如点头或挥手；动作层检查参数与时间，再控制执行器。"
+    ],
+    "id": 8,
+    "title": "小智 xiaozhi-esp32",
+    "tag": "语音与设备交互底座  ·  建议顺序 A",
+    "summary": "小智的参考价值在于可适配多种硬件的语音交互与通信架构。它没有唯一外观，可以服务桌面伙伴、机器狗或其他角色。",
+    "sources": [
+      [
+        "原项目",
+        "https://github.com/78/xiaozhi-esp32"
+      ],
+      [
+        "中文说明",
+        "https://github.com/78/xiaozhi-esp32/blob/main/README_zh.md"
+      ],
+      [
+        "许可",
+        "https://github.com/78/xiaozhi-esp32/blob/main/LICENSE"
+      ]
+    ],
+    "code": [
+      [
+        "程序目录",
+        "https://github.com/78/xiaozhi-esp32/tree/main/main"
+      ],
+      [
+        "设备 MCP 工具",
+        "https://github.com/78/xiaozhi-esp32/blob/main/main/mcp_server.cc"
+      ],
+      [
+        "自定义板指南",
+        "https://github.com/78/xiaozhi-esp32/blob/main/docs/custom-board_zh.md"
+      ]
+    ]
+  },
+  {
+    "facts": "ESP32-S3，4 舵机基础动作、增加双臂为 6 舵机；文档含材料、装配、烧录和调试。设备源码另在 txp666/xiaozhi-esp32 的 otto-robot 板级目录。",
+    "experiment": "先做中位校准和一个摆动，再加入表情及语音指令；将装配步骤与可修改参数整理成教师任务卡。",
+    "limits": "文档与当前固件的 MCP 工具名称有差异，必须固定版本。双足动作受装配、摩擦和电源影响；shanmaotech.cn 本次未能稳定访问，关联由项目站链接确认。",
+    "license": "文档站 MIT；固件根许可 MIT，但运动模块 oscillator.cc 文件头有 GPL 标记，不能概括为全套纯 MIT。硬件及外壳另核。",
+    "borrow": [
+      "动作：以周期、幅度和相位组织舞蹈与摆动，可转成参数变化的数学和编程实验。",
+      "工具：网页烧录、舵机微调与动作调试，可减少教师重复安装工具和逐台配置的工作。",
+      "课程：按语音意图、工具参数、动作队列与执行器分层，让学生解释命令怎样变成真实动作。"
+    ],
+    "id": 9,
+    "title": "Otto 闪猫侠与教学文档",
+    "tag": "简单双足与 AI 动作教学  ·  建议顺序 B",
+    "summary": "用户提供的是闪猫侠 Otto AI 文档生态，承认受原始 Otto DIY 启发。可同时研究装配说明、动作调试与语音控制，但不把它和全球 Otto DIY 原项目直接等同。",
+    "sources": [
+      [
+        "文档仓",
+        "https://github.com/txp666/ottodiy-docs"
+      ],
+      [
+        "项目站",
+        "https://ottodiy.tech/"
+      ],
+      [
+        "关联官网",
+        "https://shanmaotech.cn/"
+      ],
+      [
+        "图片来源",
+        "https://github.com/txp666/ottodiy-docs/blob/main/docs/intro.md"
+      ]
+    ],
+    "code": [
+      [
+        "设备固件",
+        "https://github.com/txp666/xiaozhi-esp32/tree/main/main/boards/otto-robot"
+      ],
+      [
+        "GPL 标记文件",
+        "https://github.com/txp666/xiaozhi-esp32/blob/main/main/boards/otto-robot/oscillator.cc"
+      ],
+      [
+        "文档许可",
+        "https://github.com/txp666/ottodiy-docs/blob/main/LICENSE"
+      ]
+    ],
+    "image": "机器人开发参考库/09_Otto闪猫侠机器人/图片/参考图.png",
+    "image_caption": "官方文档中的一种外观渲染  装饰并非所有版本默认配件"
+  },
+  {
+    "facts": "README 提供 ESP32 C3／S3 Supermini 路线、1.28 英寸屏幕和音频组件，未列舵机。发布仓主要为 bin、docs；可编译源码在作者小智仓库的 emo-dot 分支，外壳及 PCB 另有来源。",
+    "experiment": "在一套选定的屏幕与音频硬件上验证表情、触摸和语音，重新画自己的外壳；记录配网、烧录和装配用时。",
+    "limits": "脚形外壳不代表具有行走能力。作者历史价格未包括本项目全部采购、打印、装配与返修费用；固件分区和板型需严格匹配。",
+    "license": "EMO-Dot 发布仓未见根 LICENSE；配套固件 emo-dot 分支为 MIT。MIT 不自动覆盖外链模型、PCB 或照片，直接采用前分别确认。",
+    "borrow": [
+      "外观：让屏幕轮廓成为脸部的一部分，结合比例和固定脚座形成角色，不必先增加机械复杂度。",
+      "装配：研究卡扣与少紧固件设计，减少课堂装配步骤；在新壳体中保留拆装与检修空间。",
+      "产品配置：对照 C3 与 S3 两套配置，研究基础互动与语音唤醒需求如何影响主控选择。"
+    ],
+    "id": 10,
+    "title": "EMO-Dot 小豆机器人",
+    "tag": "低复杂度桌面角色与圆屏外壳  ·  建议顺序 A",
+    "summary": "圆屏、圆润身体和固定支脚构成易识别的桌面角色。用户提出的“成本低”值得作为选型线索，但应重新核算完整材料与交付成本。",
+    "sources": [
+      [
+        "项目及图片来源",
+        "https://github.com/M-D-777/EMO-Dot"
+      ],
+      [
+        "固件源码",
+        "https://github.com/M-D-777/xiaozhi-esp32/tree/emo-dot"
+      ],
+      [
+        "固件许可",
+        "https://github.com/M-D-777/xiaozhi-esp32/blob/emo-dot/LICENSE"
+      ]
+    ],
+    "code": [
+      [
+        "C3 板级目录",
+        "https://github.com/M-D-777/xiaozhi-esp32/tree/emo-dot/main/boards/emo-dot-c3-1.28"
+      ],
+      [
+        "S3 板级目录",
+        "https://github.com/M-D-777/xiaozhi-esp32/tree/emo-dot/main/boards/emo-dot-s3-1.28"
+      ]
+    ],
+    "image": "机器人开发参考库/10_EMO-Dot小豆机器人/图片/参考图.jpg",
+    "image_caption": "原项目宣传图  图中历史价格不作为本报告成本结论"
+  },
+  {
+    "facts": "作者方案为 6 自由度，主板采用 STM32F405，包含圆屏、USB 通信与改造舵机。仓库分别提供电路、主控及舵机固件、SDK、Unity 工具和 CAD。",
+    "experiment": "先研究 USB 显示与一个舵机的独立控制，再实现短动作和表情联动；高阶阶段才验证整机机构。",
+    "limits": "定制舵机、紧凑打印和总线调试增加复刻难度；上位机说明偏 Windows。语音扩展来自第三方，不能写成本体已经具备的独立 AI 能力。",
+    "license": "根 LICENSE 为 GPL-3.0。分发适用的修改或衍生软件时需处理对应源码等义务；角色造型与第三方素材的权利另行判断。",
+    "borrow": [
+      "机械：研究紧凑手臂和舵机安装方式；将角度回传与控制协议作为进阶机电专题。",
+      "表现：把表情设计成进入、循环和退出阶段，让说话、等待与动作切换更连贯。",
+      "工具：参考从底层通信 SDK 到动画编辑器的分层，避免让每个角色程序重复处理硬件通信。"
+    ],
+    "id": 11,
+    "title": "ElectronBot 类人桌面机器人",
+    "tag": "精细动作与机电系统  ·  建议顺序 C",
+    "summary": "圆脸、双臂与躯干动作带来较丰富的表现力，适合研究紧凑机构、舵机反馈和动作编辑。它是连接电脑的桌面机器人，不是自主双足行走平台。",
+    "sources": [
+      [
+        "项目及图片来源",
+        "https://github.com/peng-zhihui/ElectronBot"
+      ],
+      [
+        "许可",
+        "https://github.com/peng-zhihui/ElectronBot/blob/main/LICENSE"
+      ]
+    ],
+    "code": [
+      [
+        "固件",
+        "https://github.com/peng-zhihui/ElectronBot/tree/main/2.Firmware"
+      ],
+      [
+        "软件工具",
+        "https://github.com/peng-zhihui/ElectronBot/tree/main/3.Software"
+      ],
+      [
+        "机械模型",
+        "https://github.com/peng-zhihui/ElectronBot/tree/main/4.CAD-Model"
+      ]
+    ],
+    "image": "机器人开发参考库/11_ElectronBot类人桌面机器人/图片/参考图.jpg",
+    "image_caption": "稚晖君 ElectronBot 外观参考  来源为原仓库"
+  },
+  {
+    "facts": "提供 STL、多份 Fusion 360 f3z 原始模型及局部装配资料，包含 EMO、鸭子和移动底盘外壳等。EMO V2 说明兼容 OttoRobot 主板，并有按钮、耳部和脚间距调整。",
+    "experiment": "选一个与现有硬件接近的模型，先测屏幕和主板安装尺寸，再做自己的外壳修改与一轮试装。",
+    "limits": "壳体变化会影响重心、关节活动、音频开孔和检修。可打印不代表与新主板兼容；整个仓库也不对应同一主控或一套运动固件。",
+    "license": "根目录 MIT；README 明确模型商用须注明作者出处。保留许可、版权与署名，并分别判断第三方角色与标识的使用范围。",
+    "borrow": [
+      "外观：让面罩、耳部、配色和按键造型可替换，形成多个角色；保留原创造型与自己的视觉语言。",
+      "结构：利用原始 CAD 学习分件、安装柱、屏幕保护和 USB 接口位置，比只观察成品照片更有开发价值。",
+      "课程：让学生在固定内部尺寸下改变一个结构或交互细节，形成有约束的设计任务。"
+    ],
+    "id": 12,
+    "title": "VerdureLab 外壳与结构资源",
+    "tag": "外观系列与可改模型  ·  建议顺序 A",
+    "summary": "这是一组适配不同开源硬件的外壳与装饰资源，适合为后续产品和课程建立造型参考库。应按具体目录找到对应的电路和固件。",
+    "sources": [
+      [
+        "项目",
+        "https://github.com/maker-community/VerdureLab"
+      ],
+      [
+        "EMO V2 与图片来源",
+        "https://github.com/maker-community/VerdureLab/blob/main/verdure-emo-v2/README.md"
+      ],
+      [
+        "许可",
+        "https://github.com/maker-community/VerdureLab/blob/main/LICENSE"
+      ]
+    ],
+    "code": [
+      [
+        "EMO V2 模型",
+        "https://github.com/maker-community/VerdureLab/tree/main/verdure-emo-v2"
+      ],
+      [
+        "鸭子外壳",
+        "https://github.com/maker-community/VerdureLab/tree/main/verdure-duck"
+      ]
+    ],
+    "image": "机器人开发参考库/12_VerdureLab外壳资源/图片/参考图.jpg",
+    "image_caption": "VerdureLab EMO V2 实物示例  来源为该子目录说明"
+  },
+  {
+    "facts": "Arduino UNO Q，Linux 与 STM32 分工；15 个总线舵机，其中腿部 10、头颈 4、嘴 1。硬件仓提供打印结构、PCB 源文件、BOM 和装配指南，项目明确继承 Microduck 上游。",
+    "experiment": "先核对打印与电气材料，做单舵机和头颈原型；准备腿部运动时，再核对模型参数、策略与实物机构。",
+    "limits": "打印参数、部分电池定义和复刻验证仍有待完善项。硬件仓不含完整运行程序，仿真策略也不能直接证明真机稳定行走。",
+    "license": "硬件 LICENSING.md 明确尚无最终顶层许可证，复制范围需确认；运行仓未识别根许可，RL 仓为 Apache-2.0，仍需保留上游范围。",
+    "borrow": [
+      "角色表达：把脖子、头和嘴的表现与行走分开，可以先验证固定底座上的鸭头互动。",
+      "控制结构：参考 Linux 处理策略、MCU 处理执行器的分工，保留底层状态与命令边界。",
+      "工程工具：独立舵机编号、零位校准与传感反馈记录，适合后续多关节平台的调试流程。"
+    ],
+    "id": 13,
+    "title": "XGO-Duck 赛博鸭子",
+    "tag": "拟生结构与双足运动  ·  建议顺序 C",
+    "summary": "鸭形双足和可动脖颈、头嘴提供鲜明表现力，可作为未来进阶运动项目。用户提供的是硬件仓，运行与训练代码在配套仓库。",
+    "sources": [
+      [
+        "硬件项目及图片",
+        "https://github.com/LuwuDynamics/xgoduck_hardware"
+      ],
+      [
+        "许可现状",
+        "https://github.com/LuwuDynamics/xgoduck_hardware/blob/master/LICENSING.md"
+      ],
+      [
+        "上游记录",
+        "https://github.com/LuwuDynamics/xgoduck_hardware/blob/master/UPSTREAM.md"
+      ]
+    ],
+    "code": [
+      [
+        "PCB 与电路",
+        "https://github.com/LuwuDynamics/xgoduck_hardware/tree/master/PCBA"
+      ],
+      [
+        "运行程序",
+        "https://github.com/LuwuDynamics/xgoduck_runtime_arduino"
+      ],
+      [
+        "训练与导出",
+        "https://github.com/LuwuDynamics/xgoduck_rl"
+      ]
+    ],
+    "image": "机器人开发参考库/13_XGO-Duck赛博鸭子/图片/参考图.png",
+    "image_caption": "LuwuDynamics XGO-Duck 原型实物图  来源为硬件仓"
+  },
+  {
+    "facts": "官方规格列 22 自由度与 RK3576 等硬件；本次确认仓库包含仿真模型、动作任务、训练／回放／导出脚本和 Rust 运行状态机。不能仅凭 mesh 文件认定完整制造 CAD、PCB 已开放。",
+    "experiment": "先在仿真中跑一个动作任务，阅读观测量与动作定义；确认硬件部署条件后再安排真实电机实验。",
+    "limits": "官方指南明确 RKNN 板上推理和 1 kHz 真机电机总线尚未验证。图中是仿真渲染，不能作为整机已完成端到端实测的证据。",
+    "license": "自有材料 Apache-2.0，NOTICE 列第三方资产与依赖；Rockchip SDK 和外部内容另按各自条款，生成内容不自动获得全部权利。",
+    "borrow": [
+      "动作内容：将行走、跳跃、舞蹈和手势按任务组织，便于独立研究和比较训练结果。",
+      "平台：把控制策略、输入映射与内容包分开，可用于设想后续可下载任务的教学机器人。",
+      "研发流程：明确记录仿真完成、板上推理和真实电机控制的不同状态，为进阶项目设定可验证目标。"
+    ],
+    "id": 14,
+    "title": "Jumper 螃蟹机器人",
+    "tag": "仿真训练与控制架构  ·  建议顺序 C",
+    "summary": "螃蟹形态、钳形前肢和动作任务库适合研究多关节角色。当前最有参考价值的是仿真、策略和部署的组织方法，真机成熟度需单独判断。",
+    "sources": [
+      [
+        "项目",
+        "https://github.com/KingKongRobotics/jumper"
+      ],
+      [
+        "项目状态",
+        "https://github.com/KingKongRobotics/jumper/blob/main/docs/PROJECT_GUIDE.md"
+      ],
+      [
+        "许可",
+        "https://github.com/KingKongRobotics/jumper/blob/main/LICENSE"
+      ],
+      [
+        "第三方声明",
+        "https://github.com/KingKongRobotics/jumper/blob/main/NOTICE"
+      ]
+    ],
+    "code": [
+      [
+        "动作任务",
+        "https://github.com/KingKongRobotics/jumper/tree/main/tasks/jumper"
+      ],
+      [
+        "部署程序",
+        "https://github.com/KingKongRobotics/jumper/tree/main/deploy"
+      ],
+      [
+        "图片来源",
+        "https://github.com/KingKongRobotics/jumper/blob/main/docs/media/jumper.png"
+      ]
+    ],
+    "image": "机器人开发参考库/14_Jumper螃蟹机器人/图片/参考图.png",
+    "image_caption": "Jumper 仿真渲染图  非实物照片"
+  },
+  {
+    "id": 15,
+    "title": "小纸壳机器人",
+    "tag": "纸板双轴桌面原型 · 第一版优先候选",
+    "summary": "纸板外壳、OLED表情、双红外和触摸组成的双轴桌面机器人。来自用户提供指南与V0.3本地工具，当前没有确认的完整公开源码仓。",
+    "facts": "ESP32-C3、128×64 SSD1306、2个SG90、2个数字红外、TTP223。80个工具包文件、24个发布bin和6个镜像校验；含网页源码，不含C/C++源工程。",
+    "experiment": "按六步清单做模块测试，双舵机默认90°装盘与自定义中位，记录断电重启、供电、线束与实物运动。",
+    "limits": "未刷写或实机验证；安装器可能整片擦除；完整系统关闭页面不急停；模板单位和原始打印比例仍待确认。",
+    "license": "vendor许可不覆盖作者自有网页、固件、模板与图片，整体条款待补。",
+    "borrow": [
+      "纸板展开、折叠与可替换外观的学生创作。",
+      "分模块测试、校准记录、输入—状态—表情—动作分层。",
+      "后续参考芝麻电脑对话和小智音频板，接口与运动固件需单独适配。"
+    ],
+    "sources": [
+      [
+        "提供指南",
+        "机器人开发参考库/15_小纸壳机器人/原始资料/Made_by_Z_纸板机器人图文复刻指南 (1).docx"
+      ],
+      [
+        "原始V0.3包",
+        "机器人开发参考库/15_小纸壳机器人/原始资料/小纸壳机器人模块测试工具-V0.3.zip"
+      ]
+    ],
+    "code": [
+      [
+        "网页串口控制",
+        "机器人开发参考库/15_小纸壳机器人/工具包/cardboard-bot-teaching/test-connection.js"
+      ],
+      [
+        "逆向分析",
+        "机器人开发参考库/15_小纸壳机器人/逆向分析与自研迁移方案.md"
+      ]
+    ],
+    "image": "机器人开发参考库/15_小纸壳机器人/图片/image1.jpg",
+    "image_caption": "提供指南图1模块示意，未实物复刻",
+    "source_kind": "user_provided_local_files",
+    "folder": "15_小纸壳机器人"
+  }
+]

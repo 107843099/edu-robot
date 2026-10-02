@@ -1,0 +1,544 @@
+﻿@page "/"
+@implements IDisposable
+@inject XiaoZhi_AgentService XiaoZhiAgent
+@inject IJSRuntime JS
+
+<div class="app-container">
+    <!-- 主内容区域 -->
+    @if (currentPage == "chat")
+    {
+        <!-- 聊天页面 -->
+        <div class="chat-container">
+            <!-- 顶部状态栏 -->
+            <div class="status-bar">
+                <div class="title">小智AI助手</div>
+                <div class="connection-status">
+                    <span class="status-indicator @(XiaoZhiAgent.IsConnected ? "" : "disconnected")"></span>
+                    <span>连接状态：@(XiaoZhiAgent.IsConnected ? "已连接" : "未连接") @XiaoZhiAgent.Agent.ConnectState.ToString()</span>
+                </div>
+                <div class="clear-chat">
+                    <button class="clear-chat-button" @onclick="ClearChat" title="清空聊天记录">
+                        🗑️
+                    </button>
+                </div>
+            </div>
+
+            <!-- 聊天消息区域 -->
+            <div class="chat-messages" @ref="messagesContainer">
+                <!-- AI表情动画背景 -->
+                <div class="emotion-background">
+                    @switch (XiaoZhiAgent.Emotion.ToLower())
+                    {
+                        case "happy":
+                        case "excited":
+                            <video class="emotion-video" autoplay muted loop playsinline src="/facebot/excited.mp4"></video>
+                            break;
+                        case "sad":
+                            <video class="emotion-video" autoplay muted loop playsinline src="/facebot/sad.mp4"></video>
+                            break;
+                        case "surprised":
+                        case "surprise":
+                            <video class="emotion-video" autoplay muted loop playsinline src="/facebot/surprised.mp4"></video>
+                            break;
+                        case "angry":
+                            <video class="emotion-video" autoplay muted loop playsinline src="/facebot/angry.mp4"></video>
+                            break;
+                        case "laughing":
+                            <video class="emotion-video" autoplay muted loop playsinline src="/facebot/laughing.mp4"></video>
+                            break;
+                        case "pleased":
+                            <video class="emotion-video" autoplay muted loop playsinline src="/facebot/pleased.mp4"></video>
+                            break;
+                        case "loading":
+                            <video class="emotion-video" autoplay muted loop playsinline src="/facebot/loading.mp4"></video>
+                            break;
+                        case "typing":
+                            <video class="emotion-video" autoplay muted loop playsinline src="/facebot/typing.mp4"></video>
+                            break;
+                        case "voice":
+                            <video class="emotion-video" autoplay muted loop playsinline src="/facebot/voice.mp4"></video>
+                            break;
+                        default:
+                            <video class="emotion-video" autoplay muted loop playsinline src="/facebot/normal.mp4"></video>
+                            break;
+                    }
+                </div>
+
+                <!-- 消息内容 -->
+                <div class="messages-content" @onscroll="HandleScroll">
+                    <!-- 欢迎消息 -->
+                    @if (XiaoZhiAgent.ChatHistory.Count == 0)
+                    {
+                        <div class="welcome-message">
+                            <h3>欢迎使用小智AI助手！</h3>
+                            <ul>
+                                <li>• 输入文字或点击🎤语音对话</li>
+                                <li>• 支持实时语音识别和AI回复</li>
+                            </ul>
+                        </div>
+                    }
+
+                    <!-- 聊天历史记录 -->
+                    @foreach (var message in XiaoZhiAgent.ChatHistory)
+                    {
+                        <div class="message-time">@message.Timestamp.ToString("HH:mm")</div>
+                        <div class="message-bubble @(message.IsUser ? "user" : "assistant")">
+                            @message.Content
+                        </div>
+                    }
+                    
+                    <!-- 当前正在输入的消息（如果有） -->
+                    @if (!string.IsNullOrEmpty(XiaoZhiAgent.QuestionMessae) && 
+                         (XiaoZhiAgent.ChatHistory.Count == 0 || 
+                          !XiaoZhiAgent.ChatHistory.Any(m => m.IsUser && m.Content == XiaoZhiAgent.QuestionMessae)))
+                    {
+                        <div class="message-time">@DateTime.Now.ToString("HH:mm")</div>
+                        <div class="message-bubble user">
+                            @XiaoZhiAgent.QuestionMessae
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(XiaoZhiAgent.AnswerMessae) && 
+                         (XiaoZhiAgent.ChatHistory.Count == 0 || 
+                          !XiaoZhiAgent.ChatHistory.Any(m => !m.IsUser && m.Content == XiaoZhiAgent.AnswerMessae)))
+                    {
+                        <div class="message-time">@DateTime.Now.ToString("HH:mm")</div>
+                        <div class="message-bubble assistant">
+                            @XiaoZhiAgent.AnswerMessae
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <!-- 滚动到底部按钮 -->
+            <button class="scroll-to-bottom-button" @onclick="ForceScrollToBottom" title="滚动到最新消息">
+                ↓
+            </button>
+
+            <!-- 录音状态显示区域 -->
+            <div class="recording-status">
+                <div class="status-info">
+                    <!-- 录音状态 -->
+                    <div class="recording-indicator @(XiaoZhiAgent.IsRecording ? "active" : "")">
+                        <span class="recording-dot @(XiaoZhiAgent.IsRecording ? "active" : "")"></span>
+                        <span>@(XiaoZhiAgent.IsRecording ? "录音中" : "待机")</span>
+                    </div>
+
+                    <!-- VAD状态 -->
+                    <div class="vad-status @GetVadStatusClass()">
+                        VAD: @XiaoZhiAgent.VadCounter
+                    </div>
+
+                    <!-- 音频强度显示 -->
+                    <div class="audio-level">
+                        <span class="audio-level-label">音量</span>
+                        <div class="audio-level-bar">
+                            <div class="audio-level-fill" style="width: @(XiaoZhiAgent.AudioLevel * 100)%"></div>
+                        </div>
+                    </div>
+
+                    <!-- 情绪状态显示 -->
+                    <div class="emotion-status">
+                        <span class="emotion-label">情绪: @XiaoZhiAgent.Emotion</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 输入区域 -->
+            <div class="input-area">
+                <input type="text" class="text-input" placeholder="输入消息..." 
+                       @bind="txtValue" @onkeypress="@HandleKeyPress" />
+                
+                <div class="action-buttons">
+                    @if (XiaoZhiAgent.IsRecording)
+                    {
+                        <button class="action-button stop" @onclick="StopRecording" title="停止录音">
+                            ⏹
+                        </button>
+                    }
+                    else
+                    {
+                        <button class="action-button" @onclick="StartRecording" title="开始录音">
+                            🎤
+                        </button>
+                    }
+                    
+                    <button class="action-button" @onclick="StopChat" title="打断对话">
+                        ⏸
+                    </button>
+                </div>
+
+                <button class="send-button" @onclick="SendText" disabled="@string.IsNullOrWhiteSpace(txtValue)">
+                    ➤
+                </button>
+            </div>
+        </div>
+    }
+    else if (currentPage == "settings")
+    {
+        <!-- 设置页面 -->
+        <Settings />
+    }
+
+    <!-- 底部导航栏 -->
+    <div class="bottom-navigation">
+        <button class="nav-item @(currentPage == "chat" ? "active" : "")" @onclick="SwitchToChat">
+            <span class="nav-icon">💬</span>
+            <span class="nav-label">聊天</span>
+        </button>
+        
+        <button class="nav-item @(currentPage == "settings" ? "active" : "")" @onclick="SwitchToSettings">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-label">设置</span>
+        </button>
+    </div>
+</div>
+
+@code {
+    private string currentPage = "chat"; // 当前页面：chat 或 settings
+    private string txtValue = string.Empty;
+    private System.Timers.Timer _timer = new System.Timers.Timer(100) { Enabled = true }; // 更频繁的更新以显示音频强度
+    private ElementReference messagesContainer;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _timer.Elapsed += Timer_Elapsed;
+    }
+
+    private void SwitchPage(string page)
+    {
+        currentPage = page;
+        StateHasChanged();
+    }
+
+    private void SwitchToChat()
+    {
+        currentPage = "chat";
+        StateHasChanged();
+    }
+
+    private void SwitchToSettings()
+    {
+        currentPage = "settings";
+        StateHasChanged();
+    }
+
+    private async void Timer_Elapsed(object sender, EventArgs args)
+    {
+        await Task.Factory.StartNew(() =>
+        {
+            InvokeAsync(() => { StateHasChanged(); return Task.CompletedTask; });
+        });
+    }
+
+    // 跟踪上一次消息数量，用于判断是否有新消息
+    private int previousMessageCount = 0;
+    private bool userIsScrolling = false;
+    private DateTime lastScrollTime = DateTime.MinValue;
+    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        // 自动滚动到底部的条件：
+        // 1. 首次渲染
+        // 2. 有新消息且用户没有主动滚动（或最后滚动时间已超过3秒）
+        if (currentPage == "chat" && (
+            firstRender || 
+            (XiaoZhiAgent.ChatHistory.Count > previousMessageCount && 
+             (!userIsScrolling || (DateTime.Now - lastScrollTime).TotalSeconds > 3))
+        ))
+        {
+            await ScrollToBottom();
+            previousMessageCount = XiaoZhiAgent.ChatHistory.Count;
+        }
+    }
+
+    private async Task ScrollToBottom()
+    {
+        try
+        {
+            await Task.Delay(100); // 等待DOM更新
+            
+            // 使用JS互操作滚动到底部
+            await JS.InvokeVoidAsync("scrollToBottom", messagesContainer);
+        }
+        catch
+        {
+            // 忽略错误
+        }
+    }
+    
+    // 强制滚动到底部（用于发送新消息时）
+    private async Task ForceScrollToBottom()
+    {
+        try
+        {
+            await Task.Delay(100); // 等待DOM更新
+            
+            // 直接滚动到底部，不检查条件
+            await JS.InvokeVoidAsync("forceScrollToBottom", messagesContainer);
+        }
+        catch
+        {
+            // 忽略错误
+        }
+    }
+
+    private async Task HandleKeyPress(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter" && !string.IsNullOrWhiteSpace(txtValue))
+        {
+            await SendText();
+        }
+    }
+
+    private async Task SendText()
+    {
+        if (!string.IsNullOrWhiteSpace(txtValue))
+        {
+            var message = txtValue.Trim();
+            txtValue = string.Empty; // 清空输入框
+            await XiaoZhiAgent.Agent.ChatMessage(message);
+            
+            // 用户发送消息后，强制滚动到底部
+            userIsScrolling = false;
+            await ForceScrollToBottom();
+        }
+    }
+
+    private async Task StartRecording()
+    {
+        try
+        {
+            await XiaoZhiAgent.Agent.StartRecording("auto");
+            
+            // 开始录音时，强制滚动到底部
+            userIsScrolling = false;
+            await ForceScrollToBottom();
+        }
+        catch (Exception ex)
+        {
+            // 处理录音启动错误
+            Console.WriteLine($"启动录音时出错: {ex.Message}");
+        }
+    }
+
+    private async Task StopRecording()
+    {
+        try
+        {
+            await XiaoZhiAgent.Agent.StopRecording();
+        }
+        catch (Exception ex)
+        {
+            // 处理录音停止错误
+            Console.WriteLine($"停止录音时出错: {ex.Message}");
+        }
+    }
+
+    private async Task StopChat()
+    {
+        try
+        {
+            await XiaoZhiAgent.Agent.ChatAbort();
+        }
+        catch (Exception ex)
+        {
+            // 处理打断对话错误
+            Console.WriteLine($"打断对话时出错: {ex.Message}");
+        }
+    }
+    
+    private void ClearChat()
+    {
+        XiaoZhiAgent.ClearChatHistory();
+        StateHasChanged();
+    }
+
+    // 处理滚动事件
+    private void HandleScroll(EventArgs args)
+    {
+        userIsScrolling = true;
+        lastScrollTime = DateTime.Now;
+        
+        // 3秒后重置滚动状态
+        _ = Task.Run(async () => {
+            await Task.Delay(3000);
+            userIsScrolling = false;
+        });
+    }
+
+    private string GetVadStatusClass()
+    {
+        if (XiaoZhiAgent.VadCounter > 0 && XiaoZhiAgent.VadCounter < 10)
+        {
+            return "active";
+        }
+        return string.Empty;
+    }
+
+    void IDisposable.Dispose()
+    {
+        _timer?.Close();
+        _timer?.Dispose();
+    }
+}
+
+<style>
+    /* 聊天容器样式 */
+    .chat-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    /* 聊天消息区域 */
+    .chat-messages {
+        flex: 1;
+        overflow: hidden;
+        position: relative;
+        background-color: #f5f5f5;
+    }
+
+    /* 消息内容区域 */
+    .messages-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto; /* 允许垂直滚动 */
+        padding: 15px;
+        z-index: 10;
+        -webkit-overflow-scrolling: touch; /* 在iOS上提供平滑滚动 */
+    }
+
+    /* 消息气泡样式 */
+    .message-bubble {
+        max-width: 80%;
+        padding: 10px 15px;
+        border-radius: 18px;
+        margin-bottom: 10px;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    /* 用户消息样式 */
+    .message-bubble.user {
+        background-color: #dcf8c6;
+        margin-left: auto;
+        border-bottom-right-radius: 5px;
+    }
+
+    /* 助手消息样式 */
+    .message-bubble.assistant {
+        background-color: white;
+        margin-right: auto;
+        border-bottom-left-radius: 5px;
+    }
+
+    /* 消息时间样式 */
+    .message-time {
+        font-size: 0.75rem;
+        color: #999;
+        text-align: center;
+        margin: 5px 0;
+    }
+    
+    /* 顶部状态栏样式 */
+    .status-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+        background-color: #4a89dc;
+        color: white;
+    }
+    
+    /* 清除聊天按钮 */
+    .clear-chat-button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        padding: 5px;
+        opacity: 0.8;
+        transition: opacity 0.2s;
+    }
+    
+    .clear-chat-button:hover {
+        opacity: 1;
+    }
+    
+    /* 滚动到底部按钮 */
+    .scroll-to-bottom-button {
+        position: absolute;
+        bottom: 70px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #4a89dc;
+        color: white;
+        font-size: 20px;
+        border: none;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+    }
+    
+    .scroll-to-bottom-button:hover {
+        opacity: 1;
+    }
+    
+    /* 添加JS滚动函数 */
+    ::deep script {
+        display: none;
+    }
+</style>
+
+<!-- 添加JS滚动函数 -->
+<script>
+    window.scrollToBottom = function (element) {
+        if (element) {
+            const messageContent = element.querySelector('.messages-content');
+            if (messageContent) {
+                // 检查是否已经在底部附近（距离底部20px以内）
+                const isNearBottom = messageContent.scrollHeight - messageContent.scrollTop - messageContent.clientHeight < 20;
+                
+                // 如果是首次加载或者已经在底部附近，才自动滚动到底部
+                if (isNearBottom) {
+                    messageContent.scrollTop = messageContent.scrollHeight;
+                }
+            }
+        }
+    }
+    
+    window.forceScrollToBottom = function (element) {
+        if (element) {
+            const messageContent = element.querySelector('.messages-content');
+            if (messageContent) {
+                // 直接滚动到底部，不检查条件
+                messageContent.scrollTop = messageContent.scrollHeight;
+            }
+        }
+    }
+    
+    window.isUserAtBottom = function (element) {
+        if (element) {
+            const messageContent = element.querySelector('.messages-content');
+            if (messageContent) {
+                // 检查是否在底部附近（距离底部20px以内）
+                return messageContent.scrollHeight - messageContent.scrollTop - messageContent.clientHeight < 20;
+            }
+        }
+        return true;
+    }
+</script>

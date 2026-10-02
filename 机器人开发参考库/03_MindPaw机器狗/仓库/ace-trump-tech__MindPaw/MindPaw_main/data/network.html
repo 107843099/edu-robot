@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>联网功能</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; text-align: center; }
+        h1 { text-align: center; }
+        button {
+            display: inline-block; height: auto; width: auto; margin-top: 20px;
+            padding: 10px 20px; background-color: deepskyblue; color: #fff;
+            border: none; border-radius: 20px; text-decoration: none; line-height: 2;
+            text-align: center; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: skyblue; transform: translateY(2px);
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        .button-grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; justify-content: center; align-content: center; text-align: center; margin: 20px; }
+        .button-grid1 { display: grid; border-radius: 20px; grid-template-columns: repeat(1, 1fr); justify-content: center; align-content: center; text-align: center; margin: 10px; }
+        .back-btn { background-color: #868e96; }
+        .back-btn:hover { background-color: #adb5bd; }
+    </style>
+    <script>
+        function sendCommand(action) {
+            fetch(`/${action}`)
+                .then(response => response.text())
+                .catch(() => alert('发送失败，请检查设备连接'));
+        }
+    </script>
+</head>
+<body>
+<div class='container'>
+    <h1>📶 联网功能</h1>
+    <div class="button-grid1" style="background-color: orange">
+        <div class="button-grid2">
+            <button onclick="sendCommand('time')" style="padding: 25px 40px; font-size: 16px;">🕐 时间</button>
+            <button onclick="sendCommand('weather')" style="padding: 25px 40px; font-size: 16px;">🌤 天气</button>
+        </div>
+    </div>
+    <button class="back-btn" onclick="window.location.href='./home.html'">🔙 返回主页</button>
+</div>
+</body>
+</html>

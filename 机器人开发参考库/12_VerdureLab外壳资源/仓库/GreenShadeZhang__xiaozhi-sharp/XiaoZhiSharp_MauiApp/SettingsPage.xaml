@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Converters="clr-namespace:XiaoZhiSharp_MauiApp.Converters"
+             x:Class="XiaoZhiSharp_MauiApp.SettingsPage"
+             Title="设置">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            
+            <!-- 页面标题 -->
+            <VerticalStackLayout Spacing="5">
+                <Label Text="🔧 连接设置" FontSize="24" FontAttributes="Bold"/>
+                <Label Text="配置小智AI服务器连接参数" TextColor="Gray" FontSize="14"/>
+            </VerticalStackLayout>
+
+            <!-- 服务器URL设置 -->
+            <Frame BackgroundColor="White" Padding="15" CornerRadius="10" HasShadow="True">
+                <VerticalStackLayout Spacing="10">
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="🌐" FontSize="24"/>
+                        <VerticalStackLayout>
+                            <Label Text="服务器URL" FontAttributes="Bold"/>
+                            <Label Text="WebSocket服务器连接地址" FontSize="12" TextColor="Gray"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                    <Entry Text="{Binding ServerUrl}" Placeholder="wss://api.tenclass.net/xiaozhi/v1/"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- MAC地址设置 -->
+            <Frame BackgroundColor="White" Padding="15" CornerRadius="10" HasShadow="True">
+                <VerticalStackLayout Spacing="10">
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="🏷️" FontSize="24"/>
+                        <VerticalStackLayout>
+                            <Label Text="MAC地址" FontAttributes="Bold"/>
+                            <Label Text="设备唯一标识符" FontSize="12" TextColor="Gray"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                    <Entry Text="{Binding DeviceId}" Placeholder="06:FB:BE:44:2D:29"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- OTA地址设置 -->
+            <Frame BackgroundColor="White" Padding="15" CornerRadius="10" HasShadow="True">
+                <VerticalStackLayout Spacing="10">
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="🔄" FontSize="24"/>
+                        <VerticalStackLayout>
+                            <Label Text="OTA地址" FontAttributes="Bold"/>
+                            <Label Text="设备更新和配置服务器地址" FontSize="12" TextColor="Gray"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                    <Entry Text="{Binding OtaUrl}" Placeholder="https://api.tenclass.net/xiaozhi/ota/"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- OTA状态信息 -->
+            <Frame BackgroundColor="White" Padding="15" CornerRadius="10" HasShadow="True">
+                <VerticalStackLayout Spacing="10">
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="📊" FontSize="24"/>
+                        <VerticalStackLayout>
+                            <Label Text="OTA状态信息" FontAttributes="Bold"/>
+                            <Label Text="设备连接和配置状态" FontSize="12" TextColor="Gray"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                    
+                    <BoxView HeightRequest="1" BackgroundColor="#e0e0e0" Margin="0,5"/>
+                    
+                    <!-- 状态信息列表 -->
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*" RowSpacing="8">
+                        <Label Grid.Row="0" Grid.Column="0" Text="连接状态:" FontAttributes="Bold"/>
+                        <Label Grid.Row="0" Grid.Column="1" 
+                               TextColor="{Binding IsConnected, Converter={StaticResource BoolToColorConverter}, ConverterParameter='#51cf66;#ff6b6b'}">
+                            <Label.Text>
+                                <MultiBinding StringFormat="{}{0}">
+                                    <Binding Path="IsConnected" Converter="{StaticResource BoolToStringConverter}" ConverterParameter="✅ 已连接;❌ 未连接"/>
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label>
+                        
+                        <Label Grid.Row="1" Grid.Column="0" Text="OTA状态:" FontAttributes="Bold"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding OtaStatus}"/>
+                        
+                        <Label Grid.Row="2" Grid.Column="0" Text="当前版本:" FontAttributes="Bold"/>
+                        <Label Grid.Row="2" Grid.Column="1" Text="{Binding CurrentVersion}"/>
+                        
+                        <Label Grid.Row="3" Grid.Column="0" Text="最新版本:" FontAttributes="Bold" 
+                               IsVisible="{Binding LatestVersion, Converter={StaticResource StringToBoolConverter}}"/>
+                        <Label Grid.Row="3" Grid.Column="1" Text="{Binding LatestVersion}" 
+                               IsVisible="{Binding LatestVersion, Converter={StaticResource StringToBoolConverter}}"/>
+                        
+                        <!-- 验证状态 -->
+                        <Label Grid.Row="4" Grid.Column="0" Text="验证状态:" FontAttributes="Bold"/>
+                        <HorizontalStackLayout Grid.Row="4" Grid.Column="1" Spacing="10">
+                            <Label Text="{Binding ActivationStatus}" FontAttributes="Bold"
+                                   TextColor="{Binding IsActivated, Converter={StaticResource BoolToColorConverter}, ConverterParameter='#51cf66;#ff9500'}"/>
+                            <Label Text="{Binding ActivationCode, StringFormat='(验证码: {0})'}" 
+                                   IsVisible="{Binding ShowActivationCode}"
+                                   TextColor="#339af0" FontAttributes="Bold"/>
+                        </HorizontalStackLayout>
+                        
+                        <Label Grid.Row="5" Grid.Column="0" Text="激活消息:" FontAttributes="Bold" 
+                               IsVisible="{Binding ActivationMessage, Converter={StaticResource StringToBoolConverter}}"/>
+                        <Label Grid.Row="5" Grid.Column="1" Text="{Binding ActivationMessage}" FontSize="12"
+                               IsVisible="{Binding ActivationMessage, Converter={StaticResource StringToBoolConverter}}"/>
+                        
+                        <Label Grid.Row="6" Grid.Column="0" Text="最后检查:" FontAttributes="Bold" 
+                               IsVisible="{Binding LastOtaCheckTime, Converter={StaticResource NullToBoolConverter}}"/>
+                        <Label Grid.Row="6" Grid.Column="1" Text="{Binding LastOtaCheckTime, StringFormat='{0:yyyy-MM-dd HH:mm:ss}'}" 
+                               IsVisible="{Binding LastOtaCheckTime, Converter={StaticResource NullToBoolConverter}}"/>
+                    </Grid>
+                    
+                    <Button Text="🔄 手动检查OTA" BackgroundColor="#339af0" TextColor="White" 
+                            Clicked="OnManualOtaCheckClicked" Margin="0,10,0,0"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- VAD阈值设置 -->
+            <Frame BackgroundColor="White" Padding="15" CornerRadius="10" HasShadow="True">
+                <VerticalStackLayout Spacing="10">
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="🎙️" FontSize="24"/>
+                        <VerticalStackLayout>
+                            <Label Text="VAD阈值" FontAttributes="Bold"/>
+                            <Label Text="语音活动检测阈值 (毫秒)" FontSize="12" TextColor="Gray"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                    <Entry Text="{Binding VadThreshold}" Keyboard="Numeric" Placeholder="40"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- 高级VAD设置 -->
+            <Frame BackgroundColor="White" Padding="15" CornerRadius="10" HasShadow="True">
+                <VerticalStackLayout Spacing="15">
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="🎛️" FontSize="24"/>
+                        <VerticalStackLayout>
+                            <Label Text="高级VAD设置" FontAttributes="Bold"/>
+                            <Label Text="自适应语音检测参数" FontSize="12" TextColor="Gray"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                    
+                    <BoxView HeightRequest="1" BackgroundColor="#e0e0e0" Margin="0,5"/>
+                    
+                    <!-- 启用VAD开关 -->
+                    <Grid ColumnDefinitions="*,Auto">
+                        <HorizontalStackLayout Grid.Column="0" Spacing="10">
+                            <Label Text="启用智能VAD" VerticalOptions="Center" FontSize="14"/>
+                            <Label Text="(自适应噪音检测)" FontSize="12" TextColor="Gray" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                        <Switch Grid.Column="1" IsToggled="{Binding UseVAD}" VerticalOptions="Center"/>
+                    </Grid>
+                    
+                    <!-- 能量阈值 -->
+                    <VerticalStackLayout Spacing="5" IsVisible="{Binding UseVAD}">
+                        <Label Text="{Binding VadEnergyThreshold, StringFormat='能量阈值: {0:F3}'}" FontSize="14"/>
+                        <Slider Minimum="0.005" Maximum="0.05" Value="{Binding VadEnergyThreshold}"/>
+                        <Label Text="较低值在安静环境下更灵敏，较高值适合嘈杂环境" FontSize="11" TextColor="Gray"/>
+                    </VerticalStackLayout>
+                    
+                    <!-- 静音帧数 -->
+                    <VerticalStackLayout Spacing="5" IsVisible="{Binding UseVAD}">
+                        <Label Text="{Binding VadSilenceFrames, StringFormat='静音帧数: {0}'}" FontSize="14"/>
+                        <Slider Minimum="10" Maximum="50" Value="{Binding VadSilenceFrames}"/>
+                        <Label Text="检测到多少静音帧后结束录音（每帧60ms）" FontSize="11" TextColor="Gray"/>
+                    </VerticalStackLayout>
+                    
+                    <!-- TTS冷却时间 -->
+                    <VerticalStackLayout Spacing="5" IsVisible="{Binding UseVAD}">
+                        <Label Text="{Binding TtsCooldownTime, StringFormat='TTS冷却时间: {0:F1}秒'}" FontSize="14"/>
+                        <Slider Minimum="0.3" Maximum="2.0" Value="{Binding TtsCooldownTime}"/>
+                        <Label Text="播放结束后的冷却时间，避免回音干扰" FontSize="11" TextColor="Gray"/>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- 调试模式设置 -->
+            <Frame BackgroundColor="White" Padding="15" CornerRadius="10" HasShadow="True">
+                <Grid ColumnDefinitions="*,Auto">
+                    <HorizontalStackLayout Grid.Column="0" Spacing="10">
+                        <Label Text="🐛" FontSize="24"/>
+                        <VerticalStackLayout>
+                            <Label Text="调试模式" FontAttributes="Bold"/>
+                            <Label Text="启用调试日志输出" FontSize="12" TextColor="Gray"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                    <Switch Grid.Column="1" IsToggled="{Binding IsDebugMode}" VerticalOptions="Center"/>
+                </Grid>
+            </Frame>
+
+            <!-- 调试日志显示 -->
+            <Frame BackgroundColor="White" Padding="15" CornerRadius="10" HasShadow="True" 
+                   IsVisible="{Binding IsDebugMode}">
+                <VerticalStackLayout Spacing="10">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <HorizontalStackLayout Grid.Column="0" Spacing="10">
+                            <Label Text="📋" FontSize="24"/>
+                            <VerticalStackLayout>
+                                <Label Text="调试日志" FontAttributes="Bold"/>
+                                <Label Text="{Binding DebugLogs.Count, StringFormat='共 {0} 条日志'}" FontSize="12" TextColor="Gray"/>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                        <Button Grid.Column="1" Text="🗑️ 清空" BackgroundColor="Transparent" 
+                                TextColor="#ff6b6b" Clicked="OnClearLogsClicked"/>
+                    </Grid>
+                    
+                    <ScrollView HeightRequest="200" BackgroundColor="#f5f5f5">
+                        <CollectionView x:Name="DebugLogsCollectionView">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame BackgroundColor="White" Padding="8,4" Margin="5,2" BorderColor="Transparent" CornerRadius="4">
+                                        <Label Text="{Binding}" FontSize="12" LineBreakMode="WordWrap" TextColor="#333333"/>
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </ScrollView>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- 操作按钮 -->
+            <Grid ColumnDefinitions="*,*,*" ColumnSpacing="10" Margin="0,10">
+                <Button Grid.Column="0" Text="💾 保存设置" BackgroundColor="#51cf66" TextColor="White" 
+                        Clicked="OnSaveSettingsClicked"/>
+                <Button Grid.Column="1" Text="🔄 应用并重连" BackgroundColor="#339af0" TextColor="White" 
+                        Clicked="OnApplySettingsClicked"/>
+                <Button Grid.Column="2" Text="🔄 恢复默认" BackgroundColor="#ff6b6b" TextColor="White" 
+                        Clicked="OnResetSettingsClicked"/>
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- 转换器 -->
+            <Converters:BoolToStringConverter x:Key="BoolToStringConverter"/>
+            <Converters:BoolToColorConverter x:Key="BoolToColorConverter"/>
+            <Converters:StringToBoolConverter x:Key="StringToBoolConverter"/>
+            <Converters:NullToBoolConverter x:Key="NullToBoolConverter"/>
+            <Converters:IntToSecondsConverter x:Key="IntToSecondsConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+</ContentPage> 

@@ -1,0 +1,25 @@
+services:
+  mindpaw-ai-gateway:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    restart: unless-stopped
+
+  mindpaw-recon:                      # 2.0: 流式 3D 重建感知层
+    build: .
+    command: ["uvicorn", "recon.service:app", "--host", "0.0.0.0", "--port", "8001"]
+    ports:
+      - "8001:8001"
+    env_file:
+      - .env
+    environment:
+      # 2.0 默认走 mock backbone；放 ONNX 后改这两个变量即可启用真实模型
+      - RECON_WEIGHTS=${RECON_WEIGHTS:-}
+      - RECON_USE_GPU=${RECON_USE_GPU:-false}
+      - GATEWAY_TOKEN=${GATEWAY_TOKEN:-}
+    volumes:
+      # weights/ 允许运行时挂载自定义 ONNX，不影响镜像
+      - ./recon/weights:/app/recon/weights
+    restart: unless-stopped

@@ -1,0 +1,731 @@
+[
+  {
+    "path": "library/map-sources/authored/park-pump-track/assets/asphalt_surface.obj",
+    "oid_sha256": "6d5ce6c3de5588002bdf734f2277276b1b169449a4565833f9afaef7b8489b2d",
+    "expected_size": 271653,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/map-sources/authored/park-pump-track/assets/asphalt_surface.obj",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:6d5ce6c3de5588002bdf734f2277276b1b169449a4565833f9afaef7b8489b2d\nsize 271653\n",
+    "status": "materialized",
+    "actual_size": 271653
+  },
+  {
+    "path": "library/map-sources/authored/park-pump-track/assets/crest_marks.obj",
+    "oid_sha256": "d71aea1a84f23c2e30a43618a7b60865a8434b33f4615812bdcd487c123e3f3a",
+    "expected_size": 1172,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/map-sources/authored/park-pump-track/assets/crest_marks.obj",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:d71aea1a84f23c2e30a43618a7b60865a8434b33f4615812bdcd487c123e3f3a\nsize 1172\n",
+    "status": "materialized",
+    "actual_size": 1172
+  },
+  {
+    "path": "library/map-sources/authored/park-pump-track/assets/edge_inner.obj",
+    "oid_sha256": "e18b998a50813892cffa3da747b2d48ec5bc7905f0ec38ccbde4d6a034c5f411",
+    "expected_size": 44860,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/map-sources/authored/park-pump-track/assets/edge_inner.obj",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:e18b998a50813892cffa3da747b2d48ec5bc7905f0ec38ccbde4d6a034c5f411\nsize 44860\n",
+    "status": "materialized",
+    "actual_size": 44860
+  },
+  {
+    "path": "library/map-sources/authored/park-pump-track/assets/edge_outer.obj",
+    "oid_sha256": "9926ba50ec8543f83b329a145da36765c2d7bc70161fc859a28ca3e6aba85124",
+    "expected_size": 44860,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/map-sources/authored/park-pump-track/assets/edge_outer.obj",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:9926ba50ec8543f83b329a145da36765c2d7bc70161fc859a28ca3e6aba85124\nsize 44860\n",
+    "status": "materialized",
+    "actual_size": 44860
+  },
+  {
+    "path": "library/map-sources/authored/park-pump-track/assets/grass_surface.obj",
+    "oid_sha256": "c62193bbdf6cb44c562dcdb7fff8df4972cf9a58177c5b5d80e248b6875b7056",
+    "expected_size": 457948,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/map-sources/authored/park-pump-track/assets/grass_surface.obj",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:c62193bbdf6cb44c562dcdb7fff8df4972cf9a58177c5b5d80e248b6875b7056\nsize 457948\n",
+    "status": "materialized",
+    "actual_size": 457948
+  },
+  {
+    "path": "library/map-sources/authored/park-pump-track/assets/lap_center.obj",
+    "oid_sha256": "0930e38470d09068dc8e5b784589fce24beeefa027d35a5aa211773340156d9d",
+    "expected_size": 44860,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/map-sources/authored/park-pump-track/assets/lap_center.obj",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:0930e38470d09068dc8e5b784589fce24beeefa027d35a5aa211773340156d9d\nsize 44860\n",
+    "status": "materialized",
+    "actual_size": 44860
+  },
+  {
+    "path": "library/map-sources/authored/park-pump-track/assets/terrain.png",
+    "oid_sha256": "28e1de769d44b46ff7fa5adfe95419eb3a59229c1e2afe3701a9e8d9d205150b",
+    "expected_size": 12568,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/map-sources/authored/park-pump-track/assets/terrain.png",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:28e1de769d44b46ff7fa5adfe95419eb3a59229c1e2afe3701a9e8d9d205150b\nsize 12568\n",
+    "status": "materialized",
+    "actual_size": 12568
+  },
+  {
+    "path": "library/map-sources/authored/switchback-slopes/assets/ramp_0.obj",
+    "oid_sha256": "e25740a4c58f9e8c8deb1dd179a14e646c20f5a37cbf724888d60bcee5b192d5",
+    "expected_size": 234,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/map-sources/authored/switchback-slopes/assets/ramp_0.obj",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:e25740a4c58f9e8c8deb1dd179a14e646c20f5a37cbf724888d60bcee5b192d5\nsize 234\n",
+    "status": "materialized",
+    "actual_size": 234
+  },
+  {
+    "path": "library/map-sources/authored/switchback-slopes/assets/ramp_1.obj",
+    "oid_sha256": "1558292ad4769f9ce66101bf16dc0d8a13ea8b75ed1ebdf326d0b82ed8c53b77",
+    "expected_size": 234,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/map-sources/authored/switchback-slopes/assets/ramp_1.obj",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:1558292ad4769f9ce66101bf16dc0d8a13ea8b75ed1ebdf326d0b82ed8c53b77\nsize 234\n",
+    "status": "materialized",
+    "actual_size": 234
+  },
+  {
+    "path": "library/map-sources/authored/switchback-slopes/assets/ramp_2.obj",
+    "oid_sha256": "b126e8a13668d67e00e859fa43026767a57c03586733a5c8e380be8cb5f53434",
+    "expected_size": 234,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/map-sources/authored/switchback-slopes/assets/ramp_2.obj",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:b126e8a13668d67e00e859fa43026767a57c03586733a5c8e380be8cb5f53434\nsize 234\n",
+    "status": "materialized",
+    "actual_size": 234
+  },
+  {
+    "path": "library/maps/bedroom.map",
+    "oid_sha256": "43651554501d072acd9e37331df55035d78293879431ebe225fa13a285f686ae",
+    "expected_size": 12158515,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/maps/bedroom.map",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:43651554501d072acd9e37331df55035d78293879431ebe225fa13a285f686ae\nsize 12158515\n",
+    "status": "materialized",
+    "actual_size": 12158515
+  },
+  {
+    "path": "library/maps/home.map",
+    "oid_sha256": "b9a59095891af378aa55c40b42b664c330e79c86076024e852d58b1b1361a6b0",
+    "expected_size": 12057219,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/maps/home.map",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:b9a59095891af378aa55c40b42b664c330e79c86076024e852d58b1b1361a6b0\nsize 12057219\n",
+    "status": "materialized",
+    "actual_size": 12057219
+  },
+  {
+    "path": "library/maps/litter.map",
+    "oid_sha256": "9498f82a982720c6e49035e9501bf0ae52e165efbbc5537be58028a8ea95cbf7",
+    "expected_size": 11905034,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/maps/litter.map",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:9498f82a982720c6e49035e9501bf0ae52e165efbbc5537be58028a8ea95cbf7\nsize 11905034\n",
+    "status": "materialized",
+    "actual_size": 11905034
+  },
+  {
+    "path": "library/maps/mine.map",
+    "oid_sha256": "b1c3f6348213eee116347c70ed659d5d37d8ebc4cf2f7da82a5caf9203c88f6a",
+    "expected_size": 11342932,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/maps/mine.map",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:b1c3f6348213eee116347c70ed659d5d37d8ebc4cf2f7da82a5caf9203c88f6a\nsize 11342932\n",
+    "status": "materialized",
+    "actual_size": 11342932
+  },
+  {
+    "path": "library/maps/narrow-bridge.map",
+    "oid_sha256": "fe24341b34f8faab3e6c1b9e59ee94147f6b6d1f0b9c66eb8bbb6f6093a0c4dc",
+    "expected_size": 9199796,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/maps/narrow-bridge.map",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:fe24341b34f8faab3e6c1b9e59ee94147f6b6d1f0b9c66eb8bbb6f6093a0c4dc\nsize 9199796\n",
+    "status": "materialized",
+    "actual_size": 9199796
+  },
+  {
+    "path": "library/maps/park-pump-track.map",
+    "oid_sha256": "0952cc76b29537ce3df4cd07442f3fe3037484262ff3040591aafdf7d00d65c7",
+    "expected_size": 9529970,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/maps/park-pump-track.map",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:0952cc76b29537ce3df4cd07442f3fe3037484262ff3040591aafdf7d00d65c7\nsize 9529970\n",
+    "status": "materialized",
+    "actual_size": 9529970
+  },
+  {
+    "path": "library/maps/pingpong.map",
+    "oid_sha256": "6fd9a3093d94d5035dbd808ae8e28040bd83f026851e1f28d69905862e1b83bc",
+    "expected_size": 12223904,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/maps/pingpong.map",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:6fd9a3093d94d5035dbd808ae8e28040bd83f026851e1f28d69905862e1b83bc\nsize 12223904\n",
+    "status": "materialized",
+    "actual_size": 12223904
+  },
+  {
+    "path": "library/maps/plaza.map",
+    "oid_sha256": "b2fba86ca8a0dbab15176da2bb3767fa838f294137c89c8340c51bb6b6d0e099",
+    "expected_size": 11506845,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/maps/plaza.map",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:b2fba86ca8a0dbab15176da2bb3767fa838f294137c89c8340c51bb6b6d0e099\nsize 11506845\n",
+    "status": "materialized",
+    "actual_size": 11506845
+  },
+  {
+    "path": "library/maps/pouring.map",
+    "oid_sha256": "de8ab93bb05afc0187c18bb8ed8bb53f58818985de56352f8c2eedeab3a15903",
+    "expected_size": 11340115,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/maps/pouring.map",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:de8ab93bb05afc0187c18bb8ed8bb53f58818985de56352f8c2eedeab3a15903\nsize 11340115\n",
+    "status": "materialized",
+    "actual_size": 11340115
+  },
+  {
+    "path": "library/maps/shelf-maze.map",
+    "oid_sha256": "a716dd6a80a12e82e3e0b8e5d56c29ecaba3ce8cc7a88d7f7b3e7dea039891b4",
+    "expected_size": 9235513,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/maps/shelf-maze.map",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:a716dd6a80a12e82e3e0b8e5d56c29ecaba3ce8cc7a88d7f7b3e7dea039891b4\nsize 9235513\n",
+    "status": "materialized",
+    "actual_size": 9235513
+  },
+  {
+    "path": "library/maps/soccer.map",
+    "oid_sha256": "de2852bcdbc43e7d3c61299270d3698c22883a7038fd7290c554f27b2f24ffeb",
+    "expected_size": 11518516,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/maps/soccer.map",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:de2852bcdbc43e7d3c61299270d3698c22883a7038fd7290c554f27b2f24ffeb\nsize 11518516\n",
+    "status": "materialized",
+    "actual_size": 11518516
+  },
+  {
+    "path": "library/maps/switchback-slopes.map",
+    "oid_sha256": "72d02aee0cad18ed749504bd45d69291371d792dc86a882a40947203651f9a25",
+    "expected_size": 9264142,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/maps/switchback-slopes.map",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:72d02aee0cad18ed749504bd45d69291371d792dc86a882a40947203651f9a25\nsize 9264142\n",
+    "status": "materialized",
+    "actual_size": 9264142
+  },
+  {
+    "path": "library/maps/warehouse.map",
+    "oid_sha256": "77041bde302dc358cd80b0cfa156d6bb060012dd5f5c1ce3730c760c077c12b2",
+    "expected_size": 11370782,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/maps/warehouse.map",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:77041bde302dc358cd80b0cfa156d6bb060012dd5f5c1ce3730c760c077c12b2\nsize 11370782\n",
+    "status": "materialized",
+    "actual_size": 11370782
+  },
+  {
+    "path": "library/skins/bee-a-v1.skin",
+    "oid_sha256": "69482941f0e278abc8cf698ded838fc530251081ed4c0d3f3d7c515a7abc32b0",
+    "expected_size": 10892216,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/skins/bee-a-v1.skin",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:69482941f0e278abc8cf698ded838fc530251081ed4c0d3f3d7c515a7abc32b0\nsize 10892216\n",
+    "status": "materialized",
+    "actual_size": 10892216
+  },
+  {
+    "path": "library/skins/doraemon-v1.skin",
+    "oid_sha256": "7dc092f627da7f09ee669b17fc220303153aa82ce380b3f446f472309a10fe53",
+    "expected_size": 11086734,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/skins/doraemon-v1.skin",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:7dc092f627da7f09ee669b17fc220303153aa82ce380b3f446f472309a10fe53\nsize 11086734\n",
+    "status": "materialized",
+    "actual_size": 11086734
+  },
+  {
+    "path": "library/skins/fly-emerald-v1.skin",
+    "oid_sha256": "12bd6ce9f70a6d539c29976964d69e460a5ff44605e65b1b0b75b7963c720464",
+    "expected_size": 11108353,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/skins/fly-emerald-v1.skin",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:12bd6ce9f70a6d539c29976964d69e460a5ff44605e65b1b0b75b7963c720464\nsize 11108353\n",
+    "status": "materialized",
+    "actual_size": 11108353
+  },
+  {
+    "path": "library/skins/future-turret-v1.skin",
+    "oid_sha256": "6aafe94f03f2cfdfac27303717936e5f7d6514f02319d725d3a8d3d4c0606df4",
+    "expected_size": 10976575,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/skins/future-turret-v1.skin",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:6aafe94f03f2cfdfac27303717936e5f7d6514f02319d725d3a8d3d4c0606df4\nsize 10976575\n",
+    "status": "materialized",
+    "actual_size": 10976575
+  },
+  {
+    "path": "library/skins/jumper-original.skin",
+    "oid_sha256": "778e134ed0e857752a24e2e258278de94f68a62669b535cbafd9e563af818ca4",
+    "expected_size": 9137287,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/skins/jumper-original.skin",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:778e134ed0e857752a24e2e258278de94f68a62669b535cbafd9e563af818ca4\nsize 9137287\n",
+    "status": "materialized",
+    "actual_size": 9137287
+  },
+  {
+    "path": "library/skins/ladybug-b-v1.skin",
+    "oid_sha256": "da3e200a6ed0dd20f3606d7ec44306f44f9ec88eea11edcd58575ef91f618f4e",
+    "expected_size": 10796623,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/skins/ladybug-b-v1.skin",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:da3e200a6ed0dd20f3606d7ec44306f44f9ec88eea11edcd58575ef91f618f4e\nsize 10796623\n",
+    "status": "materialized",
+    "actual_size": 10796623
+  },
+  {
+    "path": "library/skins/lucky-cat-c-v1.skin",
+    "oid_sha256": "4c4e55b448054b9129146cdca77a1177bfbf969789094b1c0f6eb431414b2868",
+    "expected_size": 10942128,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/skins/lucky-cat-c-v1.skin",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:4c4e55b448054b9129146cdca77a1177bfbf969789094b1c0f6eb431414b2868\nsize 10942128\n",
+    "status": "materialized",
+    "actual_size": 10942128
+  },
+  {
+    "path": "library/skins/mecha-tripo-v3.skin",
+    "oid_sha256": "f21a3e5b571bd8f51ebeb08e79a1ba65b504e40a0dd30ee7422b4df513bda80e",
+    "expected_size": 11242581,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/skins/mecha-tripo-v3.skin",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:f21a3e5b571bd8f51ebeb08e79a1ba65b504e40a0dd30ee7422b4df513bda80e\nsize 11242581\n",
+    "status": "materialized",
+    "actual_size": 11242581
+  },
+  {
+    "path": "library/skins/mr-krabs-narrow-v2.skin",
+    "oid_sha256": "3452505d489ba1c5e8e28016d2cb13220595879d2e51731d0178d8478815878a",
+    "expected_size": 11693154,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/skins/mr-krabs-narrow-v2.skin",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:3452505d489ba1c5e8e28016d2cb13220595879d2e51731d0178d8478815878a\nsize 11693154\n",
+    "status": "materialized",
+    "actual_size": 11693154
+  },
+  {
+    "path": "library/skins/orchid-mantis-d-v1.skin",
+    "oid_sha256": "50ee31e0d896bc6a5b85e89be6fb3e1a16840bae69074a0217767c44b058dc0b",
+    "expected_size": 11176578,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/skins/orchid-mantis-d-v1.skin",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:50ee31e0d896bc6a5b85e89be6fb3e1a16840bae69074a0217767c44b058dc0b\nsize 11176578\n",
+    "status": "materialized",
+    "actual_size": 11176578
+  },
+  {
+    "path": "library/skins/pharaoh-b-v1.skin",
+    "oid_sha256": "ce327f08c6802883725d36b2ccc326ac4d1e1bec5a939f3e4e3c68db6ce9049d",
+    "expected_size": 11174131,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/skins/pharaoh-b-v1.skin",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:ce327f08c6802883725d36b2ccc326ac4d1e1bec5a939f3e4e3c68db6ce9049d\nsize 11174131\n",
+    "status": "materialized",
+    "actual_size": 11174131
+  },
+  {
+    "path": "library/skins/pirate-a-v1.skin",
+    "oid_sha256": "c220cba430c73fd94fe6f1d0f04e2b7abe96f66e2e79972b95d90ca75396336a",
+    "expected_size": 11077437,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/skins/pirate-a-v1.skin",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:c220cba430c73fd94fe6f1d0f04e2b7abe96f66e2e79972b95d90ca75396336a\nsize 11077437\n",
+    "status": "materialized",
+    "actual_size": 11077437
+  },
+  {
+    "path": "library/skins/raphael-turtle-v1.skin",
+    "oid_sha256": "d4128cdad2855c5f1f91bf1cfe9d274481d59351cfb261a9b029064bc0514290",
+    "expected_size": 11087774,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/skins/raphael-turtle-v1.skin",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:d4128cdad2855c5f1f91bf1cfe9d274481d59351cfb261a9b029064bc0514290\nsize 11087774\n",
+    "status": "materialized",
+    "actual_size": 11087774
+  },
+  {
+    "path": "library/skins/snoopy-v8.skin",
+    "oid_sha256": "c85d5c8f26df360ce0f61ba8008e9c8f1d0dd4acd8e1952fde0743c8d68459ab",
+    "expected_size": 11093061,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/skins/snoopy-v8.skin",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:c85d5c8f26df360ce0f61ba8008e9c8f1d0dd4acd8e1952fde0743c8d68459ab\nsize 11093061\n",
+    "status": "materialized",
+    "actual_size": 11093061
+  },
+  {
+    "path": "library/skins/spiderman-v3.skin",
+    "oid_sha256": "1826f6f005c11019d6006a5382a78dfca1e4f2dee9f322d3c3d8bd56d0652985",
+    "expected_size": 11026624,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/skins/spiderman-v3.skin",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:1826f6f005c11019d6006a5382a78dfca1e4f2dee9f322d3c3d8bd56d0652985\nsize 11026624\n",
+    "status": "materialized",
+    "actual_size": 11026624
+  },
+  {
+    "path": "library/skins/warm-sand-ranger-integrated-v2.skin",
+    "oid_sha256": "7a9804ae937cb4e32df25a8243936b1ffb264516029c01e5c6581fb2950131a7",
+    "expected_size": 11104877,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/library/skins/warm-sand-ranger-integrated-v2.skin",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:7a9804ae937cb4e32df25a8243936b1ffb264516029c01e5c6581fb2950131a7\nsize 11104877\n",
+    "status": "materialized",
+    "actual_size": 11104877
+  },
+  {
+    "path": "platforms/bundles/original-robot-v1.platform.zip",
+    "oid_sha256": "2ba248b68398b4beeabec246ebfba424def769bfb5fe9749ca21b86ac7975984",
+    "expected_size": 22953549,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/platforms/bundles/original-robot-v1.platform.zip",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:2ba248b68398b4beeabec246ebfba424def769bfb5fe9749ca21b86ac7975984\nsize 22953549\n",
+    "status": "materialized",
+    "actual_size": 22953549
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LF_finger_grip_insert_link.stl",
+    "oid_sha256": "cf5faec0faa0693b191d89ef58c427e562e983dcb47a6c3eed2f135e0d500c18",
+    "expected_size": 115284,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LF_finger_grip_insert_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:cf5faec0faa0693b191d89ef58c427e562e983dcb47a6c3eed2f135e0d500c18\nsize 115284\n",
+    "status": "materialized",
+    "actual_size": 115284
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LF_finger_link.stl",
+    "oid_sha256": "29f8b316d6d3df884bda9a1e19b8f7a6ffc2dcada28c3f52bd560710ea4473b9",
+    "expected_size": 408184,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LF_finger_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:29f8b316d6d3df884bda9a1e19b8f7a6ffc2dcada28c3f52bd560710ea4473b9\nsize 408184\n",
+    "status": "materialized",
+    "actual_size": 408184
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LF_finger_tip_link.stl",
+    "oid_sha256": "a557c0a840392724c0f544d19299ca6e55651f75143d7d9fce79afe11ae07da8",
+    "expected_size": 706784,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LF_finger_tip_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:a557c0a840392724c0f544d19299ca6e55651f75143d7d9fce79afe11ae07da8\nsize 706784\n",
+    "status": "materialized",
+    "actual_size": 706784
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LF_forearm_link.stl",
+    "oid_sha256": "e7b2d8f16bb5efa514c8170e15f093ec0dbca345672534386f0b77b7ff455e4e",
+    "expected_size": 450584,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LF_forearm_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:e7b2d8f16bb5efa514c8170e15f093ec0dbca345672534386f0b77b7ff455e4e\nsize 450584\n",
+    "status": "materialized",
+    "actual_size": 450584
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LF_palm_grip_insert_link.stl",
+    "oid_sha256": "db76fb24837159e3b141420ea5b5b1f2dc8ba2e366a6edeb44f344c0e060795a",
+    "expected_size": 128384,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LF_palm_grip_insert_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:db76fb24837159e3b141420ea5b5b1f2dc8ba2e366a6edeb44f344c0e060795a\nsize 128384\n",
+    "status": "materialized",
+    "actual_size": 128384
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LF_palm_link.stl",
+    "oid_sha256": "0a69f36298ed1f64b782668b6d0266ccc4b4299593f0071e76333e6577efc177",
+    "expected_size": 754084,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LF_palm_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:0a69f36298ed1f64b782668b6d0266ccc4b4299593f0071e76333e6577efc177\nsize 754084\n",
+    "status": "materialized",
+    "actual_size": 754084
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LF_palm_pad_b_link.stl",
+    "oid_sha256": "3acff9d1d21951868df1e0b170c88153e9605861bc3193eb82d8516607abb20e",
+    "expected_size": 287384,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LF_palm_pad_b_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:3acff9d1d21951868df1e0b170c88153e9605861bc3193eb82d8516607abb20e\nsize 287384\n",
+    "status": "materialized",
+    "actual_size": 287384
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LF_palm_pad_f_link.stl",
+    "oid_sha256": "bd1f4af5c9d4b0a67836a423027d3bd83a913ce9cefe4ee6b276f7ee99c4520f",
+    "expected_size": 296784,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LF_palm_pad_f_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:bd1f4af5c9d4b0a67836a423027d3bd83a913ce9cefe4ee6b276f7ee99c4520f\nsize 296784\n",
+    "status": "materialized",
+    "actual_size": 296784
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LF_shoulder_link.stl",
+    "oid_sha256": "2565d7fd191af7356479053ce6ba0b1aa4d6c12a1f10ecef13b82690644c9cb2",
+    "expected_size": 753784,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LF_shoulder_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:2565d7fd191af7356479053ce6ba0b1aa4d6c12a1f10ecef13b82690644c9cb2\nsize 753784\n",
+    "status": "materialized",
+    "actual_size": 753784
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LF_upper_arm_link.stl",
+    "oid_sha256": "f8a5eee25c2e251f7b00e8667150cd01e92bcdd2e31287b2022a972199490abc",
+    "expected_size": 605584,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LF_upper_arm_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:f8a5eee25c2e251f7b00e8667150cd01e92bcdd2e31287b2022a972199490abc\nsize 605584\n",
+    "status": "materialized",
+    "actual_size": 605584
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LM_calf_link.stl",
+    "oid_sha256": "42883897518fd83e09892b3215a8a8564a5bff9cc48602316a1d282d77fbc28d",
+    "expected_size": 717984,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LM_calf_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:42883897518fd83e09892b3215a8a8564a5bff9cc48602316a1d282d77fbc28d\nsize 717984\n",
+    "status": "materialized",
+    "actual_size": 717984
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LM_foot_tip_link.stl",
+    "oid_sha256": "364dcfdbf94243f914272f024e6cd1cad95799ab427b38e0235bdadfd10193fc",
+    "expected_size": 96784,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LM_foot_tip_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:364dcfdbf94243f914272f024e6cd1cad95799ab427b38e0235bdadfd10193fc\nsize 96784\n",
+    "status": "materialized",
+    "actual_size": 96784
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LM_hip_link.stl",
+    "oid_sha256": "a8f14193f1ffa7c177dbecb349b00a461393de7d444d9bd3771b1370fc14298e",
+    "expected_size": 658484,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LM_hip_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:a8f14193f1ffa7c177dbecb349b00a461393de7d444d9bd3771b1370fc14298e\nsize 658484\n",
+    "status": "materialized",
+    "actual_size": 658484
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LM_thigh_link.stl",
+    "oid_sha256": "4724f8aa3248794f7e783a94dc3379dbf04a21dcef2f8c956c29f16652b5b012",
+    "expected_size": 450584,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LM_thigh_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:4724f8aa3248794f7e783a94dc3379dbf04a21dcef2f8c956c29f16652b5b012\nsize 450584\n",
+    "status": "materialized",
+    "actual_size": 450584
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LR_calf_link.stl",
+    "oid_sha256": "65345119ca4fe8fffea9d0eaf13f1b01509b805eaeb4d17957ecebf82a0e066f",
+    "expected_size": 717984,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LR_calf_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:65345119ca4fe8fffea9d0eaf13f1b01509b805eaeb4d17957ecebf82a0e066f\nsize 717984\n",
+    "status": "materialized",
+    "actual_size": 717984
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LR_foot_tip_link.stl",
+    "oid_sha256": "a9f78dcf40dfa524087764fb2d7604b3411128426dc64bc412ada199c36294a9",
+    "expected_size": 96784,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LR_foot_tip_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:a9f78dcf40dfa524087764fb2d7604b3411128426dc64bc412ada199c36294a9\nsize 96784\n",
+    "status": "materialized",
+    "actual_size": 96784
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LR_hip_link.stl",
+    "oid_sha256": "341240e34b243160b564471f1510b993b7247f87acbcb284b65135cd3e37e3c4",
+    "expected_size": 658484,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LR_hip_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:341240e34b243160b564471f1510b993b7247f87acbcb284b65135cd3e37e3c4\nsize 658484\n",
+    "status": "materialized",
+    "actual_size": 658484
+  },
+  {
+    "path": "robots/jumper/meshes/visual/LR_thigh_link.stl",
+    "oid_sha256": "7b08f377b6712838b90c2225afb2c719111452223554bb08fb503058675db6a0",
+    "expected_size": 450584,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/LR_thigh_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:7b08f377b6712838b90c2225afb2c719111452223554bb08fb503058675db6a0\nsize 450584\n",
+    "status": "materialized",
+    "actual_size": 450584
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RF_finger_grip_insert_link.stl",
+    "oid_sha256": "bbaff916342d374f7f78c1f03ca71e8dc235174b5d4651e7e2df4e6dc2ca01da",
+    "expected_size": 115284,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RF_finger_grip_insert_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:bbaff916342d374f7f78c1f03ca71e8dc235174b5d4651e7e2df4e6dc2ca01da\nsize 115284\n",
+    "status": "materialized",
+    "actual_size": 115284
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RF_finger_link.stl",
+    "oid_sha256": "618b0e23e3f3e7bc8c4d2425692d2580308f721c3062b6479d349defafd26ec4",
+    "expected_size": 408184,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RF_finger_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:618b0e23e3f3e7bc8c4d2425692d2580308f721c3062b6479d349defafd26ec4\nsize 408184\n",
+    "status": "materialized",
+    "actual_size": 408184
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RF_finger_tip_link.stl",
+    "oid_sha256": "16ab474a946915080faa128e6c2f98766e262f3ca8baccd91330e33ef5e2350a",
+    "expected_size": 706784,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RF_finger_tip_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:16ab474a946915080faa128e6c2f98766e262f3ca8baccd91330e33ef5e2350a\nsize 706784\n",
+    "status": "materialized",
+    "actual_size": 706784
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RF_forearm_link.stl",
+    "oid_sha256": "af869fb7e3e1a9a4e41acd7187598aac8101276d40ce4e9c9c3da427022d6096",
+    "expected_size": 450584,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RF_forearm_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:af869fb7e3e1a9a4e41acd7187598aac8101276d40ce4e9c9c3da427022d6096\nsize 450584\n",
+    "status": "materialized",
+    "actual_size": 450584
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RF_palm_grip_insert_link.stl",
+    "oid_sha256": "f3299e00de883e90b8a2f69fd70f1aa291edc9c87f33c051a50d3f4a3040c4d8",
+    "expected_size": 128384,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RF_palm_grip_insert_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:f3299e00de883e90b8a2f69fd70f1aa291edc9c87f33c051a50d3f4a3040c4d8\nsize 128384\n",
+    "status": "materialized",
+    "actual_size": 128384
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RF_palm_link.stl",
+    "oid_sha256": "9d74629431797a8472c24e36c8b79e629c28190b490b6a79e28743183d92f33e",
+    "expected_size": 754084,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RF_palm_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:9d74629431797a8472c24e36c8b79e629c28190b490b6a79e28743183d92f33e\nsize 754084\n",
+    "status": "materialized",
+    "actual_size": 754084
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RF_palm_pad_b_link.stl",
+    "oid_sha256": "793bc432bc333286093f1a5ba5e69b806c4d129a24829757e3b0c7c1ff48bbef",
+    "expected_size": 296784,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RF_palm_pad_b_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:793bc432bc333286093f1a5ba5e69b806c4d129a24829757e3b0c7c1ff48bbef\nsize 296784\n",
+    "status": "materialized",
+    "actual_size": 296784
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RF_palm_pad_f_link.stl",
+    "oid_sha256": "1f777ecee4bcde201aa7614c44af7ad026400819c4735687934c6122ccafebec",
+    "expected_size": 287384,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RF_palm_pad_f_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:1f777ecee4bcde201aa7614c44af7ad026400819c4735687934c6122ccafebec\nsize 287384\n",
+    "status": "materialized",
+    "actual_size": 287384
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RF_shoulder_link.stl",
+    "oid_sha256": "f0a00584b81b67ea041220a80fa46d56a5f0af93f509fdb941dde89f707a36d5",
+    "expected_size": 753784,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RF_shoulder_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:f0a00584b81b67ea041220a80fa46d56a5f0af93f509fdb941dde89f707a36d5\nsize 753784\n",
+    "status": "materialized",
+    "actual_size": 753784
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RF_upper_arm_link.stl",
+    "oid_sha256": "3e40d4a4e96d7cca0fa5540d1a08dfb6ef53f0b0302d0adce72e440429c0a5ce",
+    "expected_size": 605584,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RF_upper_arm_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:3e40d4a4e96d7cca0fa5540d1a08dfb6ef53f0b0302d0adce72e440429c0a5ce\nsize 605584\n",
+    "status": "materialized",
+    "actual_size": 605584
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RM_calf_link.stl",
+    "oid_sha256": "18972e56b4f0fd023907bde4e08ecd37b8c7d0b46d906eaf9b34b4caa3dd7f78",
+    "expected_size": 669384,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RM_calf_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:18972e56b4f0fd023907bde4e08ecd37b8c7d0b46d906eaf9b34b4caa3dd7f78\nsize 669384\n",
+    "status": "materialized",
+    "actual_size": 669384
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RM_foot_tip_link.stl",
+    "oid_sha256": "d0e1306ebf0c47412d86dcce89923d3b7a41defecf8bc956bf67634a6202440b",
+    "expected_size": 96784,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RM_foot_tip_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:d0e1306ebf0c47412d86dcce89923d3b7a41defecf8bc956bf67634a6202440b\nsize 96784\n",
+    "status": "materialized",
+    "actual_size": 96784
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RM_hip_link.stl",
+    "oid_sha256": "f0c70f361ecdca1835a9c94b42389ffbf25f0475daded643dac65e61609bfb39",
+    "expected_size": 658484,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RM_hip_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:f0c70f361ecdca1835a9c94b42389ffbf25f0475daded643dac65e61609bfb39\nsize 658484\n",
+    "status": "materialized",
+    "actual_size": 658484
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RM_thigh_link.stl",
+    "oid_sha256": "e441e75bf98ac85066f56aafc89ec440f04cea6d647cfdab56b2c2e416e545d3",
+    "expected_size": 450584,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RM_thigh_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:e441e75bf98ac85066f56aafc89ec440f04cea6d647cfdab56b2c2e416e545d3\nsize 450584\n",
+    "status": "materialized",
+    "actual_size": 450584
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RR_calf_link.stl",
+    "oid_sha256": "61a2343865b7bc2982c876b0c682b608c083a6d543b1c33c8c16e08600e8060c",
+    "expected_size": 717984,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RR_calf_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:61a2343865b7bc2982c876b0c682b608c083a6d543b1c33c8c16e08600e8060c\nsize 717984\n",
+    "status": "materialized",
+    "actual_size": 717984
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RR_foot_tip_link.stl",
+    "oid_sha256": "dfd85194297519dc276d98647e34f1ed88fca2dd06e6d639ce4753cd839d868d",
+    "expected_size": 96784,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RR_foot_tip_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:dfd85194297519dc276d98647e34f1ed88fca2dd06e6d639ce4753cd839d868d\nsize 96784\n",
+    "status": "materialized",
+    "actual_size": 96784
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RR_hip_link.stl",
+    "oid_sha256": "15cb10d1ef80ecbd9ab5515cd2b4ccf67fb9e350fa938cc31dedb3881c95b803",
+    "expected_size": 658484,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RR_hip_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:15cb10d1ef80ecbd9ab5515cd2b4ccf67fb9e350fa938cc31dedb3881c95b803\nsize 658484\n",
+    "status": "materialized",
+    "actual_size": 658484
+  },
+  {
+    "path": "robots/jumper/meshes/visual/RR_thigh_link.stl",
+    "oid_sha256": "fee24f277a740042a758754c3e81efb805045984698aadd4a3baed557f9cb083",
+    "expected_size": 450584,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/RR_thigh_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:fee24f277a740042a758754c3e81efb805045984698aadd4a3baed557f9cb083\nsize 450584\n",
+    "status": "materialized",
+    "actual_size": 450584
+  },
+  {
+    "path": "robots/jumper/meshes/visual/base_link.stl",
+    "oid_sha256": "0c1bd088c12db6ace677238800f81bd270a04270891dee934a3ed8b46dfcd68f",
+    "expected_size": 3801984,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/base_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:0c1bd088c12db6ace677238800f81bd270a04270891dee934a3ed8b46dfcd68f\nsize 3801984\n",
+    "status": "materialized",
+    "actual_size": 3801984
+  },
+  {
+    "path": "robots/jumper/meshes/visual/camera_link.stl",
+    "oid_sha256": "02fb606f9630c1c2d6e33ebc99ab27be12bd88664805845f5b72bbb1355f20ae",
+    "expected_size": 32484,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/camera_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:02fb606f9630c1c2d6e33ebc99ab27be12bd88664805845f5b72bbb1355f20ae\nsize 32484\n",
+    "status": "materialized",
+    "actual_size": 32484
+  },
+  {
+    "path": "robots/jumper/meshes/visual/display_module_link.stl",
+    "oid_sha256": "c019dd2abf703c94dc2dbf693acce85e8b62ee9ada1af21a0786afd00bd94b2e",
+    "expected_size": 42534,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/display_module_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:c019dd2abf703c94dc2dbf693acce85e8b62ee9ada1af21a0786afd00bd94b2e\nsize 42534\n",
+    "status": "materialized",
+    "actual_size": 42534
+  },
+  {
+    "path": "robots/jumper/meshes/visual/tof_sensor_link.stl",
+    "oid_sha256": "4813e253c3b471319254a330f06715473f388f3b91dc7fb8da097cec9724aafd",
+    "expected_size": 104484,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/tof_sensor_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:4813e253c3b471319254a330f06715473f388f3b91dc7fb8da097cec9724aafd\nsize 104484\n",
+    "status": "materialized",
+    "actual_size": 104484
+  },
+  {
+    "path": "robots/jumper/meshes/visual/upper_shell_link.stl",
+    "oid_sha256": "25cadf3b3a05f56de945468858315a867f4d3c9b5967911c9e395d81f3176fc9",
+    "expected_size": 907284,
+    "url": "https://media.githubusercontent.com/media/KingKongRobotics/jumper-design/918d192857fcea1678c2a40b339501004a94d838/robots/jumper/meshes/visual/upper_shell_link.stl",
+    "original_pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:25cadf3b3a05f56de945468858315a867f4d3c9b5967911c9e395d81f3176fc9\nsize 907284\n",
+    "status": "materialized",
+    "actual_size": 907284
+  }
+]

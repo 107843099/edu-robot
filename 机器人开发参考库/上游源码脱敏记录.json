@@ -1,0 +1,12 @@
+[
+  {
+    "file": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/robo8080__AI_StackChan2/M5Unified_AI_StackChan/src/WebVoiceVoxTTS.cpp",
+    "reason": "Remove a hard-coded provider credential before public republication. Non-secret test fixtures and PEM header parsing were retained.",
+    "original_file_sha256": "0b6dec4a1c85604ce275f616e24d4e0c84c2ef76396d11159190b534d30c0595",
+    "published_file_sha256": "fa2cfbd1868de59646b71a637f31d0315d74108578c40721f4a072ccc34ee24b",
+    "replacement": "YOUR_API_KEY",
+    "upstream": "robo8080/AI_StackChan2",
+    "upstream_snapshot_reference": "See 04_Stack-chan桌面机器人/来源与版本.json",
+    "original_preserved_locally_outside_commit": true
+  }
+]

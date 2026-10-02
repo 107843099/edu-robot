@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Made_by_Z_纸板机器人图文复刻指南 (1).docx",
+    "original_path": "机器人开发参考库/15_小纸壳机器人/原始资料/Made_by_Z_纸板机器人图文复刻指南 (1).docx",
+    "saved_path": "机器人开发参考库/15_小纸壳机器人/原始资料/Made_by_Z_纸板机器人图文复刻指南 (1).docx",
+    "bytes": 5520812,
+    "sha256": "bc52c3eeb6d234f6925ebc4d2ad0f68b46cf0b846de6484a570f5745e0331d32",
+    "source_kind": "user_provided_local_file",
+    "review_date": "2026-10-02",
+    "executed": false,
+    "execution_note": "Original startup scripts, installer and firmware not run. Isolated TestConnection methods were tested with fake serial objects; see reverse evidence.",
+    "original_source_note": "User-provided local attachment. The canonical original is preserved in 原始资料; source paths are relative to the repository root."
+  },
+  {
+    "name": "小纸壳机器人模块测试工具-V0.3.zip",
+    "original_path": "机器人开发参考库/15_小纸壳机器人/原始资料/小纸壳机器人模块测试工具-V0.3.zip",
+    "saved_path": "机器人开发参考库/15_小纸壳机器人/原始资料/小纸壳机器人模块测试工具-V0.3.zip",
+    "bytes": 3495242,
+    "sha256": "01c3af11a182afb9cae58f5dae86ac370878dba4813897383199c291c69b6d8e",
+    "source_kind": "user_provided_local_file",
+    "review_date": "2026-10-02",
+    "executed": false,
+    "execution_note": "Original startup scripts, installer and firmware not run. Isolated TestConnection methods were tested with fake serial objects; see reverse evidence.",
+    "original_source_note": "User-provided local attachment. The canonical original is preserved in 原始资料; source paths are relative to the repository root."
+  }
+]

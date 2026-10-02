@@ -1,0 +1,87 @@
+name: test
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, macos-latest, windows-latest]
+
+    steps:
+      - name: <Setup> Check out the repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: <Setup> Prepare Python Runtime / Python Dependencies
+        uses: ./.github/actions/prepare_python
+        with:
+          dependency-group: dev
+
+      - name: <Test> Validate uv.lock
+        run: |
+          uv lock
+          git diff --exit-code
+
+      - name: <Test> Check linting
+        run: uv run ruff check
+
+      - name: <Test> Check formatting
+        run: uv run ruff format --check
+
+      - name: <Test> Check typing
+        run: uv run mypy .
+
+      - name: <Test> Test codes and coverage
+        run: uv run coverage run --omit=test/* -m pytest
+
+      - name: <Deploy> Submit coverage results to Coveralls
+        if: runner.os == 'Linux'
+        # Coveralls へのアップロードが失敗しても CI は継続させる
+        run: uv run coveralls --service=github || echo "::warning::Coveralls failed, but continuing"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: <Test> Check licenses
+        run: OUTPUT_LICENSE_JSON_PATH=/dev/null bash tools/create_venv_and_generate_licenses.bash
+
+      - name: <Test> Test names by checking typo
+        if: runner.os == 'Linux'
+        run: uv run typos
+
+  lint-builders:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: <Setup> Check out the repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: <Setup> Install ShellCheck
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y shellcheck
+
+      - name: <Test> Check shell files
+        run: git ls-files | grep -E '\.(bash|sh)' | xargs shellcheck
+
+      - name: <Test> Check workflow files
+        run: |
+          curl -fLO --retry 3 --retry-delay 5 \
+              "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz"
+          echo "8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8  actionlint_1.7.12_linux_amd64.tar.gz" | sha256sum --check
+          tar -xzf actionlint_1.7.12_linux_amd64.tar.gz actionlint
+          ./actionlint
+
+      - name: <Test> Check pinact
+        uses: suzuki-shunsuke/pinact-action@896d595f299e71d65b9d28349d6956abe144390a # v3.0.0
+        with:
+          fix: false
+          min_age: "7"

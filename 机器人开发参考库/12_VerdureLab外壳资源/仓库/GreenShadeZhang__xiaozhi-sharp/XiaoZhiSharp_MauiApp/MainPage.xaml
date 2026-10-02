@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Converters="clr-namespace:XiaoZhiSharp_MauiApp.Converters"
+             x:Class="XiaoZhiSharp_MauiApp.MainPage"
+             Title="小智AI助手">
+
+    <!-- 根Grid，包含主内容和底部导航 -->
+    <Grid RowDefinitions="*,Auto">
+        
+        <!-- 主内容区域 -->
+        <Grid Grid.Row="0" RowDefinitions="Auto,*,Auto,Auto">
+            
+            <!-- 顶部状态栏 -->
+            <Grid Grid.Row="0" BackgroundColor="#4a89dc" Padding="10" ColumnDefinitions="*,Auto,Auto">
+                <Label Grid.Column="0" Text="小智AI助手" FontSize="18" TextColor="White" VerticalOptions="Center"/>
+                <Frame Grid.Column="1" BackgroundColor="#33ffffff" Padding="8,4" CornerRadius="12" BorderColor="Transparent">
+                    <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
+                        <Ellipse WidthRequest="10" HeightRequest="10" 
+                                 Fill="{Binding IsConnected, Converter={StaticResource BoolToColorConverter}, ConverterParameter='#51cf66;#ff6b6b'}" 
+                                 StrokeThickness="0">
+                            <Ellipse.Shadow>
+                                <Shadow Brush="{Binding IsConnected, Converter={StaticResource BoolToColorConverter}, ConverterParameter='#51cf66;#ff6b6b'}" 
+                                        Radius="5" Opacity="0.8"/>
+                            </Ellipse.Shadow>
+                        </Ellipse>
+                        <Label Text="{Binding IsConnected, Converter={StaticResource BoolToStringConverter}, ConverterParameter='已连接;未连接'}" 
+                               TextColor="White" FontSize="13" FontAttributes="Bold"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Button Grid.Column="2" Text="🗑️" BackgroundColor="Transparent" TextColor="White" 
+                        Clicked="OnClearChatClicked" ToolTipProperties.Text="清空聊天记录"/>
+            </Grid>
+
+            <!-- 聊天消息区域 -->
+            <ScrollView x:Name="ChatScrollView" Grid.Row="1" BackgroundColor="#f5f5f5">
+                <VerticalStackLayout x:Name="ChatMessagesLayout" Padding="15" Spacing="10">
+                    <!-- 欢迎消息 -->
+                    <Frame x:Name="WelcomeFrame" BackgroundColor="White" Padding="15" CornerRadius="10" HasShadow="True">
+                        <VerticalStackLayout>
+                            <Label Text="欢迎使用小智AI助手！" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Text="• 输入文字或点击🎤语音对话" Margin="0,10,0,0"/>
+                            <Label Text="• 支持实时语音识别和AI回复"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                    
+                    <!-- 聊天消息将动态添加到这里 -->
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <!-- 录音状态显示区域 -->
+            <Grid Grid.Row="2" BackgroundColor="White" Padding="10" ColumnDefinitions="Auto,Auto,*,Auto">
+                <!-- 录音状态 -->
+                <HorizontalStackLayout Grid.Column="0" Spacing="5">
+                    <Ellipse WidthRequest="8" HeightRequest="8" 
+                             Fill="{Binding IsRecording, Converter={StaticResource BoolToColorConverter}, ConverterParameter='#ff6b6b;#999999'}" />
+                    <Label Text="{Binding IsRecording, Converter={StaticResource BoolToStringConverter}, ConverterParameter='录音中;待机'}" 
+                           FontSize="12"/>
+                </HorizontalStackLayout>
+
+                <!-- VAD状态 -->
+                <Label Grid.Column="1" Text="{Binding VadCounter, StringFormat='VAD: {0}'}" 
+                       FontSize="12" Margin="10,0,0,0"
+                       TextColor="{Binding VadCounter, Converter={StaticResource IntToColorConverter}}"/>
+
+                <!-- 音频强度显示 -->
+                <Grid Grid.Column="2" Margin="10,0">
+                    <ProgressBar Progress="{Binding AudioLevel}" BackgroundColor="#e0e0e0" ProgressColor="#4a89dc"/>
+                </Grid>
+
+                <!-- 情绪状态 -->
+                <Label Grid.Column="3" Text="{Binding Emotion, StringFormat='情绪: {0}'}" FontSize="12"/>
+            </Grid>
+
+            <!-- 输入区域 -->
+            <Grid Grid.Row="3" BackgroundColor="White" Padding="10" ColumnDefinitions="*,Auto,Auto,Auto,Auto">
+                <Entry x:Name="MessageEntry" Grid.Column="0" Placeholder="输入消息..." 
+                       Completed="OnMessageSendClicked" Margin="0,0,10,0"/>
+                
+                <!-- 录音按钮 -->
+                <Button Grid.Column="1" 
+                        Text="{Binding IsRecording, Converter={StaticResource BoolToStringConverter}, ConverterParameter='⏹;🎤'}"
+                        BackgroundColor="#4a89dc" TextColor="White" CornerRadius="25"
+                        WidthRequest="50" HeightRequest="50"
+                        Clicked="OnRecordingButtonClicked"
+                        ToolTipProperties.Text="{Binding IsRecording, Converter={StaticResource BoolToStringConverter}, ConverterParameter='停止录音;开始录音'}"/>
+                
+                <!-- 摄像头按钮 -->
+                <Button Grid.Column="2" Text="📷" BackgroundColor="#ff9800" TextColor="White" 
+                        CornerRadius="25" WidthRequest="50" HeightRequest="50" Margin="5,0"
+                        Clicked="OnCameraButtonClicked" ToolTipProperties.Text="拍照识别"/>
+                
+                <!-- 打断按钮 -->
+                <Button Grid.Column="3" Text="⏸" BackgroundColor="#ff6b6b" TextColor="White" 
+                        CornerRadius="25" WidthRequest="50" HeightRequest="50" Margin="5,0"
+                        Clicked="OnStopChatClicked" ToolTipProperties.Text="打断对话"/>
+                
+                <!-- 发送按钮 -->
+                <Button Grid.Column="4" Text="➤" BackgroundColor="#51cf66" TextColor="White" 
+                        CornerRadius="25" WidthRequest="50" HeightRequest="50"
+                        Clicked="OnMessageSendClicked" 
+                        IsEnabled="{Binding Source={x:Reference MessageEntry}, Path=Text.Length, Converter={StaticResource IntToBoolConverter}}"
+                        ToolTipProperties.Text="发送消息"/>
+            </Grid>
+        </Grid>
+
+        <!-- 底部导航栏 -->
+        <Grid Grid.Row="1" HeightRequest="60" BackgroundColor="#f8f8f8" 
+              ColumnDefinitions="*,*" Padding="0">
+            <Border Grid.Column="0" StrokeThickness="0" BackgroundColor="#f8f8f8">
+                <Grid>
+                    <Label Text="💬" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,-10,0,0"/>
+                    <Label Text="聊天" FontSize="12" HorizontalOptions="Center" 
+                           VerticalOptions="End" Margin="0,0,0,8" TextColor="#4a89dc"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnChatPageClicked"/>
+                </Border.GestureRecognizers>
+            </Border>
+            
+            <Border Grid.Column="1" StrokeThickness="0" BackgroundColor="#f8f8f8">
+                <Grid>
+                    <Label Text="⚙️" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,-10,0,0"/>
+                    <Label Text="设置" FontSize="12" HorizontalOptions="Center" 
+                           VerticalOptions="End" Margin="0,0,0,8" TextColor="Gray"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSettingsPageClicked"/>
+                </Border.GestureRecognizers>
+            </Border>
+        </Grid>
+    </Grid>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- 转换器 -->
+            <Converters:BoolToStringConverter x:Key="BoolToStringConverter"/>
+            <Converters:BoolToColorConverter x:Key="BoolToColorConverter"/>
+            <Converters:IntToBoolConverter x:Key="IntToBoolConverter"/>
+            <Converters:IntToColorConverter x:Key="IntToColorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+</ContentPage>

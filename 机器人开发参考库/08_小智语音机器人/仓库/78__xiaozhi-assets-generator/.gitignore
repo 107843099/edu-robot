@@ -1,0 +1,5 @@
+build/
+node_modules/
+spiffs_assets/
+package-lock.json
+dist/

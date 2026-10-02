@@ -1,0 +1,436 @@
+@page "/settings"
+@inject XiaoZhi_AgentService XiaoZhiAgent
+@implements IDisposable
+
+<div class="settings-container">
+    <!-- 页面标题 -->
+    <div class="settings-header">
+        <h2>🔧 连接设置</h2>
+        <p class="settings-subtitle">配置小智AI服务器连接参数</p>
+    </div>
+
+    <!-- 设置项列表 -->
+    <div class="settings-content">
+        <!-- 服务器URL设置 -->
+        <div class="setting-group">
+            <div class="setting-header">
+                <div class="setting-icon">🌐</div>
+                <div class="setting-info">
+                    <h3>服务器URL</h3>
+                    <p>WebSocket服务器连接地址</p>
+                </div>
+            </div>
+            <div class="setting-input">
+                <input type="text" class="input-field" @bind="XiaoZhiAgent.ServerUrl" 
+                       placeholder="wss://api.tenclass.net/xiaozhi/v1/" />
+            </div>
+        </div>
+
+        <!-- MAC地址设置 -->
+        <div class="setting-group">
+            <div class="setting-header">
+                <div class="setting-icon">🏷️</div>
+                <div class="setting-info">
+                    <h3>MAC地址</h3>
+                    <p>设备唯一标识符</p>
+                </div>
+            </div>
+            <div class="setting-input">
+                <input type="text" class="input-field" @bind="XiaoZhiAgent.DeviceId" 
+                       placeholder="06:FB:BE:44:2D:29" />
+            </div>
+        </div>
+
+        <!-- OTA地址设置 -->
+        <div class="setting-group">
+            <div class="setting-header">
+                <div class="setting-icon">🔄</div>
+                <div class="setting-info">
+                    <h3>OTA地址</h3>
+                    <p>设备更新和配置服务器地址</p>
+                </div>
+            </div>
+            <div class="setting-input">
+                <input type="text" class="input-field" @bind="XiaoZhiAgent.OtaUrl" 
+                       placeholder="https://api.tenclass.net/xiaozhi/ota/" />
+            </div>
+        </div>
+
+        <!-- OTA状态信息 -->
+        <div class="setting-group ota-status-group">
+            <div class="setting-header">
+                <div class="setting-icon">📊</div>
+                <div class="setting-info">
+                    <h3>OTA状态信息</h3>
+                    <p>设备连接和配置状态</p>
+                </div>
+            </div>
+            <div class="ota-status-content">
+                <div class="status-row">
+                    <span class="status-label">连接状态:</span>
+                    <span class="status-value @(XiaoZhiAgent.IsConnected ? "connected" : "disconnected")">
+                        @(XiaoZhiAgent.IsConnected ? "✅ 已连接" : "❌ 未连接")
+                    </span>
+                </div>
+                
+                <div class="status-row">
+                    <span class="status-label">OTA状态:</span>
+                    <span class="status-value">@XiaoZhiAgent.OtaStatus</span>
+                </div>
+
+                @if (XiaoZhiAgent.LastOtaCheckTime.HasValue)
+                {
+                    <div class="status-row">
+                        <span class="status-label">最后检查:</span>
+                        <span class="status-value">@XiaoZhiAgent.LastOtaCheckTime?.ToString("yyyy-MM-dd HH:mm:ss")</span>
+                    </div>
+                }
+
+                @if (!string.IsNullOrEmpty(XiaoZhiAgent.ActivationCode))
+                {
+                    <div class="status-row">
+                        <span class="status-label">激活码:</span>
+                        <span class="status-value activation-code">@XiaoZhiAgent.ActivationCode</span>
+                    </div>
+                }
+
+                @if (!string.IsNullOrEmpty(XiaoZhiAgent.ActivationMessage))
+                {
+                    <div class="status-row">
+                        <span class="status-label">激活消息:</span>
+                        <span class="status-value">@XiaoZhiAgent.ActivationMessage</span>
+                    </div>
+                }
+
+                <!-- 版本信息区域 -->
+                <div class="status-row version-info">
+                    <span class="status-label">当前版本:</span>
+                    <span class="status-value">@XiaoZhiAgent.CurrentVersion</span>
+                </div>
+
+                @if (!string.IsNullOrEmpty(XiaoZhiAgent.LatestVersion))
+                {
+                    <div class="status-row version-info">
+                        <span class="status-label">最新版本:</span>
+                        <span class="status-value">@XiaoZhiAgent.LatestVersion</span>
+                    </div>
+                    
+                    <div class="status-row version-info">
+                        <span class="status-label">更新状态:</span>
+                        <span class="status-value @(XiaoZhiAgent.NeedUpdate ? "update-needed" : "up-to-date")">
+                            @(XiaoZhiAgent.NeedUpdate ? "⚠️ 需要更新" : "✅ 已是最新")
+                        </span>
+                    </div>
+                }
+
+                @if (!string.IsNullOrEmpty(XiaoZhiAgent.FirmwareVersion))
+                {
+                    <div class="status-row">
+                        <span class="status-label">固件版本:</span>
+                        <span class="status-value">@XiaoZhiAgent.FirmwareVersion</span>
+                    </div>
+                }
+
+                @if (!string.IsNullOrEmpty(XiaoZhiAgent.FirmwareUrl))
+                {
+                    <div class="status-row">
+                        <span class="status-label">固件下载:</span>
+                        <span class="status-value firmware-url">
+                            <a href="@XiaoZhiAgent.FirmwareUrl" target="_blank">🔗 下载更新</a>
+                        </span>
+                    </div>
+                }
+
+                @if (XiaoZhiAgent.ServerTime.HasValue)
+                {
+                    <div class="status-row">
+                        <span class="status-label">服务器时间:</span>
+                        <span class="status-value">@XiaoZhiAgent.ServerTime?.ToString("yyyy-MM-dd HH:mm:ss")</span>
+                    </div>
+                }
+
+                @if (!string.IsNullOrEmpty(XiaoZhiAgent.MqttEndpoint))
+                {
+                    <div class="status-row">
+                        <span class="status-label">MQTT服务器:</span>
+                        <span class="status-value">@XiaoZhiAgent.MqttEndpoint</span>
+                    </div>
+                }
+
+                <div class="ota-actions">
+                    <button class="ota-check-button" @onclick="ManualOtaCheck">
+                        🔄 手动检查OTA
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- VAD阈值设置 -->
+        <div class="setting-group">
+            <div class="setting-header">
+                <div class="setting-icon">🎙️</div>
+                <div class="setting-info">
+                    <h3>VAD阈值</h3>
+                    <p>语音活动检测阈值 (毫秒)</p>
+                </div>
+            </div>
+            <div class="setting-input">
+                <input type="number" class="input-field" @bind="XiaoZhiAgent.VadThreshold" 
+                       min="10" max="100" placeholder="40" />
+            </div>
+        </div>
+
+        <!-- 调试模式设置 -->
+        <div class="setting-group">
+            <div class="setting-header">
+                <div class="setting-icon">🐛</div>
+                <div class="setting-info">
+                    <h3>调试模式</h3>
+                    <p>启用调试日志输出</p>
+                </div>
+            </div>
+            <div class="setting-toggle">
+                <label class="toggle-switch">
+                    <input type="checkbox" @bind="XiaoZhiAgent.IsDebugMode" />
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- 调试日志显示 -->
+        @if (XiaoZhiAgent.IsDebugMode)
+        {
+            <div class="setting-group debug-logs-group">
+                <div class="setting-header">
+                    <div class="setting-icon">📋</div>
+                    <div class="setting-info">
+                        <h3>调试日志</h3>
+                        <p>实时消息和OTA状态日志</p>
+                    </div>
+                </div>
+                <div class="debug-logs-content">
+                    <div class="logs-header">
+                        <span class="logs-count">共 @XiaoZhiAgent.DebugLogs.Count 条日志</span>
+                        <button class="clear-logs-button" @onclick="ClearLogs">
+                            🗑️ 清空日志
+                        </button>
+                    </div>
+                    <div class="logs-container">
+                        @if (XiaoZhiAgent.DebugLogs.Count == 0)
+                        {
+                            <div class="no-logs">暂无日志信息</div>
+                        }
+                        else
+                        {
+                            @foreach (var log in XiaoZhiAgent.DebugLogs.Reverse())
+                            {
+                                <div class="log-entry">@log</div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- 操作按钮 -->
+    <div class="settings-actions">
+        <button class="settings-action-button save" @onclick="SaveSettings" disabled="@isSaving">
+            @if (isSaving)
+            {
+                <span class="loading-spinner"></span>
+                <span>保存中...</span>
+            }
+            else
+            {
+                <span>💾 保存设置</span>
+            }
+        </button>
+        
+        <button class="settings-action-button apply" @onclick="ApplySettings" disabled="@isApplying">
+            @if (isApplying)
+            {
+                <span class="loading-spinner"></span>
+                <span>应用中...</span>
+            }
+            else
+            {
+                <span>🔄 应用并重连</span>
+            }
+        </button>
+        
+        <button class="settings-action-button reset" @onclick="ResetSettings">
+            🔄 恢复默认
+        </button>
+    </div>
+
+    <!-- 状态提示 -->
+    @if (!string.IsNullOrEmpty(statusMessage))
+    {
+        <div class="status-message @statusType">
+            @statusMessage
+        </div>
+    }
+</div>
+
+@code {
+    private bool isSaving = false;
+    private bool isApplying = false;
+    private string statusMessage = "";
+    private string statusType = "";
+    private Timer? refreshTimer;
+
+    protected override void OnInitialized()
+    {
+        // 启动定时器，每秒刷新一次界面（仅在调试模式下）
+        refreshTimer = new Timer(async _ =>
+        {
+            if (XiaoZhiAgent.IsDebugMode)
+            {
+                await InvokeAsync(StateHasChanged);
+            }
+        }, null, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(1));
+    }
+
+    public void Dispose()
+    {
+        refreshTimer?.Dispose();
+    }
+
+    private async Task SaveSettings()
+    {
+        isSaving = true;
+        statusMessage = "";
+        
+        try
+        {
+            XiaoZhiAgent.SaveSettings();
+            statusMessage = "设置已保存成功！";
+            statusType = "success";
+            
+            // 3秒后清除消息
+            await Task.Delay(3000);
+            statusMessage = "";
+        }
+        catch (Exception ex)
+        {
+            statusMessage = $"保存失败: {ex.Message}";
+            statusType = "error";
+        }
+        finally
+        {
+            isSaving = false;
+        }
+    }
+
+    private async Task ApplySettings()
+    {
+        isApplying = true;
+        statusMessage = "";
+        
+        try
+        {
+            await XiaoZhiAgent.ApplySettings();
+            statusMessage = "设置已应用，连接已重新建立！";
+            statusType = "success";
+            
+            // 3秒后清除消息
+            await Task.Delay(3000);
+            statusMessage = "";
+        }
+        catch (Exception ex)
+        {
+            statusMessage = $"应用失败: {ex.Message}";
+            statusType = "error";
+        }
+        finally
+        {
+            isApplying = false;
+        }
+    }
+
+    private async Task ResetSettings()
+    {
+        XiaoZhiAgent.ResetSettings();
+        
+        statusMessage = "设置已恢复为默认值";
+        statusType = "info";
+        
+        StateHasChanged();
+        
+        // 3秒后清除消息
+        await Task.Delay(3000);
+        statusMessage = "";
+        StateHasChanged();
+    }
+
+    private async Task ManualOtaCheck()
+    {
+        statusMessage = "正在进行OTA检查...";
+        statusType = "info";
+        StateHasChanged();
+        
+        try
+        {
+            await XiaoZhiAgent.ManualOtaCheck();
+            statusMessage = "OTA检查完成";
+            statusType = "success";
+        }
+        catch (Exception ex)
+        {
+            statusMessage = $"OTA检查失败: {ex.Message}";
+            statusType = "error";
+        }
+        
+        StateHasChanged();
+        
+        // 3秒后清除消息
+        await Task.Delay(3000);
+        statusMessage = "";
+        StateHasChanged();
+    }
+
+    private void ClearLogs()
+    {
+        XiaoZhiAgent.ClearDebugLogs();
+        statusMessage = "调试日志已清空";
+        statusType = "info";
+        StateHasChanged();
+        
+        // 3秒后清除消息
+        _ = Task.Run(async () =>
+        {
+            await Task.Delay(3000);
+            statusMessage = "";
+            await InvokeAsync(StateHasChanged);
+        });
+    }
+} 
+
+<style>
+    /* 版本信息样式 */
+    .version-info {
+        padding: 8px 0;
+        border-bottom: 1px dashed #eaeaea;
+    }
+    
+    .update-needed {
+        color: #ff6b6b;
+        font-weight: bold;
+    }
+    
+    .up-to-date {
+        color: #51cf66;
+        font-weight: bold;
+    }
+    
+    .firmware-url a {
+        color: #339af0;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .firmware-url a:hover {
+        text-decoration: underline;
+    }
+</style> 

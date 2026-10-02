@@ -1,0 +1,25 @@
+{
+  "project_folders": 15,
+  "original_repositories_present": 14,
+  "downloaded_snapshots": 67,
+  "distinct_repositories": 66,
+  "source_files": 44630,
+  "authored_markdown_docs": 54,
+  "local_links_checked": 1050,
+  "lfs_files_hash_verified": 81,
+  "local_attachment_audits": [
+    {
+      "folder": "15_小纸壳机器人",
+      "source_files_verified": 2,
+      "archive_files_verified": 80,
+      "release_files_verified": 24,
+      "isolated_serial_probes": 7,
+      "physical_tests": false
+    }
+  ],
+  "known_unavailable_entries": [
+    "one-for-all/sesame-simulator"
+  ],
+  "errors": [],
+  "verification_scope": "File and source-version checks; local attachment static analysis and isolated fake-serial probes. No firmware compilation, model training or physical robot tests"
+}

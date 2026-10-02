@@ -1,0 +1,30 @@
+{
+  "name": "cardboard-bot 屏幕测试",
+  "version": "0.3",
+  "new_install_prompt_erase": false,
+  "new_install_improv_wait_time": 0,
+  "builds": [
+    {
+      "chipFamily": "ESP32-C3",
+      "improv": false,
+      "parts": [
+        {
+          "path": "firmware/teaching/01-display/bootloader.bin",
+          "offset": 0
+        },
+        {
+          "path": "firmware/teaching/01-display/partitions.bin",
+          "offset": 32768
+        },
+        {
+          "path": "firmware/teaching/01-display/boot_app0.bin",
+          "offset": 57344
+        },
+        {
+          "path": "firmware/teaching/01-display/firmware.bin",
+          "offset": 65536
+        }
+      ]
+    }
+  ]
+}

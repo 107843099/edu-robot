@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>MindPaw</title>
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button {
+            display: inline-block;
+            height: auto;
+            width: auto;
+            margin-top: 20px;
+
+            padding: 10px 20px;
+            background-color: deepskyblue;
+            color: #fff;
+            border: none;
+            border-radius: 20px; /* 添加圆角 */
+            text-decoration: none;
+            line-height: 2; /* 通过调整line-height的值来调整文字的垂直位置 */
+            text-align: center; /* 文字居中 */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* 添加立体感 */
+            transition: all 0.3s ease; /* 添加过渡效果 */
+        }
+
+        button:hover {
+            background-color: skyblue; /* 鼠标悬停时的背景颜色 */
+            transform: translateY(2px); /* 点击效果 */
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* 添加更多立体感 */
+        }
+        .button-grid3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+            margin: 20px;
+        }
+        .button-grid2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+            margin: 20px;
+        } .button-grid1 {
+              display: grid;
+              border-radius: 20px; /* 添加圆角 */
+              grid-template-columns: repeat(1, 1fr);
+              justify-content: center;
+              align-content: center;
+              text-align: center;
+              margin: 10px;
+
+          }
+
+    </style>
+    <script>
+        // 简化 AJAX 请求函数
+        function sendCommand(action) {
+            fetch(`/${action}`)
+                .then(response => response.text())
+                .catch(() => alert('发送失败，请检查设备连接'));
+        }
+
+        function refreshState(url, displayElementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(displayElementId).innerText = data;
+                });
+        }
+
+        function setRefreshInterval(url, displayElementId) {
+            setInterval(() => refreshState(url, displayElementId), 1000);
+        }
+
+        const states = [
+            { url: '/batteryVoltage', displayId: 'batteryVoltageDisplay' },
+            { url: '/batteryPercentage', displayId: 'batteryPercentageDisplay' },
+        ];
+
+        states.forEach(state => setRefreshInterval(state.url, state.displayId));
+
+    </script>
+</head>
+<body>
+<div class='container'>
+    <h1>MindPaw 遥控台</h1>
+    <p>本项目基于ESP8266主控开发</p >
+    <div class="button-grid2" style="display: flex; justify-content: center;">
+        <button style="margin-right: 70px"><p>电压：<span id="batteryVoltageDisplay">0</span></p></button>
+        <button style="margin-left: 70px"><p>电量：<span id="batteryPercentageDisplay">0</span></p></button>
+    </div>
+    <!-- 运动控制 -->
+    <div class="button-grid1" style="background-color: papayawhip">
+        <h3>运动控制</h3>
+        <div class="button-grid1"style="display: flex; justify-content: center;">
+            <button  onclick="sendCommand('front')">↑</button>
+        </div>
+        <div class="button-grid2" style="display: flex; justify-content: center;">
+            <button  onclick="sendCommand('left')" style="margin-right: 70px">←</button>
+            <button  onclick="sendCommand('right')" style="margin-left: 70px">→</button>
+        </div>
+        <div class="button-grid1" style="display: flex; justify-content: center;">
+            <button  onclick="sendCommand('back')">↓</button>
+        </div>
+        <div  class="button-grid3">
+            <button onclick="sendCommand('toplefthand')">抬左手</button>
+            <button onclick="sendCommand('toprighthand')">抬右手</button>
+            <button onclick="sendCommand('sitdown')">坐下</button>
+            <button onclick="sendCommand('lie')">趴下</button>
+
+            <button onclick="sendCommand('free')">自由模式开</button>
+            <button onclick="sendCommand('offfree')">自由模式关</button>
+        </div>
+        <div  class="button-grid1">
+            <button onclick="sendCommand('sleep')">回收</button>
+            </div>
+    </div>
+
+    <!-- 表情控制 -->
+    <div class="button-grid1" style="background-color: limegreen">
+        <h3>表情控制</h3>
+        <div class="button-grid3" >
+            <button onclick="sendCommand('histate')">开心</button>
+            <button onclick="sendCommand('angrystate')">生气</button>
+            <button onclick="sendCommand('sickstate')">难受</button>
+            <button onclick="sendCommand('dowhatstate')">好奇</button>
+            <button onclick="sendCommand('lovestate')">喜欢</button>
+            <button onclick="sendCommand('errorstate')">错误</button>
+            <button onclick="sendCommand('yunstate')">晕</button>
+            <button onclick="sendCommand('edastate')">嘉立创LOGO</button>
+        </div>
+    </div>
+
+    <!-- 联网功能 -->
+    <div class="button-grid1" style="background-color: orange">
+        <h3>联网功能</h3>
+        <div class="button-grid2">
+            <button onclick="sendCommand('time')">时间</button>
+            <button onclick="sendCommand('weather')">天气</button>
+
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

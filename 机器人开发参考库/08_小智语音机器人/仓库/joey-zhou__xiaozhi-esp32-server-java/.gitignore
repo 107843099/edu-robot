@@ -1,0 +1,41 @@
+# 忽略编译和构建目录
+target/
+/lib/
+/com/
+usr/
+node_modules/
+out/
+gen/
+dist/
+avatar/
+# 忽略特定格式的文件
+/uploads/
+/audio/
+/data/
+/models/
+*.zip
+/logs/
+*.tmp
+*.swp
+*.swo
+*.pid
+.vite
+
+# 忽略 IDE 相关文件
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# 忽略 Maven 和 Gradle 缓存
+.gradle/
+
+.vscode/
+datasets/
+.cursorrules
+.cursor/
+.DS_Store
+CLAUDE.md
+
+# Docker 本地配置，按 .env.example 复制生成
+.env

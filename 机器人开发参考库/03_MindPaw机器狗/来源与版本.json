@@ -1,0 +1,22 @@
+[
+  {
+    "robot_id": 3,
+    "folder": "03_MindPaw机器狗",
+    "repo": "ace-trump-tech/MindPaw",
+    "url": "https://github.com/ace-trump-tech/MindPaw",
+    "purpose": "主项目",
+    "requested_branch": null,
+    "branch": "main",
+    "commit": "21c549252a60126a80874738626f1b8c36efc38c",
+    "downloaded_at": "2026-10-02T09:48:25+08:00",
+    "relative_path": "03_MindPaw机器狗/仓库/ace-trump-tech__MindPaw",
+    "file_count": 116,
+    "unpacked_bytes": 4681103,
+    "archive_sha256": "edf20a9e1b6ab4174115e1fc2f813a0baf149dc1da0acc055b06776403e34e9e",
+    "archive_url": "https://codeload.github.com/ace-trump-tech/MindPaw/zip/21c549252a60126a80874738626f1b8c36efc38c",
+    "lfs_pointers": [],
+    "gitmodules_files": [],
+    "status": "downloaded",
+    "download_method": "GitHub commit archive snapshot, no commit history"
+  }
+]

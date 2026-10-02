@@ -1,0 +1,281 @@
+{
+    "success": true,
+    "message": "Tools list fetched successfully",
+    "data": {
+        "tools": [
+            {
+                "name": "self.get_device_status",
+                "description": "Provides the real-time information of the device, including the current status of the audio speaker, screen, battery, network, etc.\nUse this tool for: \n1. Answering questions about current condition (e.g. what is the current volume of the audio speaker?)\n2. As the first step to control the device (e.g. turn up / down the volume of the audio speaker, etc.)",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {}
+                }
+            },
+            {
+                "name": "self.audio_speaker.set_volume",
+                "description": "Set the volume of the audio speaker. If the current volume is unknown, you must call `self.get_device_status` tool first and then call this tool.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "volume": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 100
+                        }
+                    },
+                    "required": [
+                        "volume"
+                    ]
+                }
+            },
+            {
+                "name": "self.screen.set_brightness",
+                "description": "Set the brightness of the screen.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "brightness": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 100
+                        }
+                    },
+                    "required": [
+                        "brightness"
+                    ]
+                }
+            },
+            {
+                "name": "self.screen.set_theme",
+                "description": "Set the theme of the screen. The theme can be `light` or `dark`.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "theme": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "theme"
+                    ]
+                }
+            },
+            {
+                "name": "self.get_system_info",
+                "description": "Get the system information",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {}
+                },
+                "annotations": {
+                    "audience": [
+                        "user"
+                    ]
+                }
+            },
+            {
+                "name": "self.reboot",
+                "description": "Reboot the system",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {}
+                },
+                "annotations": {
+                    "audience": [
+                        "user"
+                    ]
+                }
+            },
+            {
+                "name": "self.upgrade_firmware",
+                "description": "Upgrade firmware from a specific URL. This will download and install the firmware, then reboot the device.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "url": {
+                            "type": "string",
+                            "default": "The URL of the firmware binary file to download and install"
+                        }
+                    }
+                },
+                "annotations": {
+                    "audience": [
+                        "user"
+                    ]
+                }
+            },
+            {
+                "name": "self.screen.get_info",
+                "description": "Information about the screen, including width, height, etc.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {}
+                },
+                "annotations": {
+                    "audience": [
+                        "user"
+                    ]
+                }
+            },
+            {
+                "name": "self.screen.preview_image",
+                "description": "Preview an image on the screen",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "url": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "url"
+                    ]
+                },
+                "annotations": {
+                    "audience": [
+                        "user"
+                    ]
+                }
+            },
+            {
+                "name": "self.assets.set_download_url",
+                "description": "Set the download url for the assets",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "url": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "url"
+                    ]
+                },
+                "annotations": {
+                    "audience": [
+                        "user"
+                    ]
+                }
+            }
+        ]
+    }
+}
+
+
+{
+    "success": true,
+    "message": "Tools called successfully",
+    "data": {
+        "version": 2,
+        "language": "zh-CN",
+        "flash_size": 16777216,
+        "minimum_free_heap_size": "7812904",
+        "mac_address": "10:20:ba:01:54:6c",
+        "uuid": "931a76b7-c798-4511-adde-784e8a62d8dc",
+        "chip_model_name": "esp32s3",
+        "chip_info": {
+            "model": 9,
+            "cores": 2,
+            "revision": 2,
+            "features": 18
+        },
+        "application": {
+            "name": "xiaozhi",
+            "version": "2.0.1",
+            "compile_time": "Sep 12 2025T19:19:19Z",
+            "idf_version": "v5.5-dirty",
+            "elf_sha256": "de8e819b03845eff32433469ee390039ecb505e8b856b86b3d33cb8d142fa081"
+        },
+        "partition_table": [
+            {
+                "label": "nvs",
+                "type": 1,
+                "subtype": 2,
+                "address": 36864,
+                "size": 16384
+            },
+            {
+                "label": "otadata",
+                "type": 1,
+                "subtype": 0,
+                "address": 53248,
+                "size": 8192
+            },
+            {
+                "label": "phy_init",
+                "type": 1,
+                "subtype": 1,
+                "address": 61440,
+                "size": 4096
+            },
+            {
+                "label": "ota_0",
+                "type": 0,
+                "subtype": 16,
+                "address": 131072,
+                "size": 4128768
+            },
+            {
+                "label": "ota_1",
+                "type": 0,
+                "subtype": 17,
+                "address": 4259840,
+                "size": 4128768
+            },
+            {
+                "label": "assets",
+                "type": 1,
+                "subtype": 130,
+                "address": 8388608,
+                "size": 8388608
+            }
+        ],
+        "ota": {
+            "label": "ota_0"
+        },
+        "board": {
+            "type": "jiuchuan-s3",
+            "name": "jiuchuan-s3",
+            "ssid": "KFC",
+            "rssi": -52,
+            "channel": 1,
+            "ip": "192.168.2.167",
+            "mac": "10:20:ba:01:54:6c"
+        }
+    }
+}
+
+
+{
+    "success": true,
+    "message": "Tools called successfully",
+    "data": {
+        "audio_speaker": {
+            "volume": 40
+        },
+        "screen": {
+            "brightness": 1,
+            "theme": "dark"
+        },
+        "battery": {
+            "level": 91,
+            "charging": false
+        },
+        "network": {
+            "type": "wifi",
+            "ssid": "KFC",
+            "signal": "strong"
+        }
+    }
+}
+
+
+{
+    "success": true,
+    "message": "Tools called successfully",
+    "data": {
+        "width": 240,
+        "height": 320,
+        "monochrome": false
+    }
+}

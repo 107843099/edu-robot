@@ -1,0 +1,11 @@
+fastapi==0.115.6
+httpx==0.28.1
+uvicorn[standard]==0.34.0
+pydantic==2.10.5
+python-multipart==0.0.30      # 2.0: /recon/frame multipart 上传
+wsproto==1.2.0                # 2.0: WebSocket 支持 (uvicorn[standard] 已带，留作显式声明)
+
+# 2.0: 流式 3D 重建感知层
+numpy==2.2.0
+onnxruntime==1.20.1
+Pillow>=10.0.0

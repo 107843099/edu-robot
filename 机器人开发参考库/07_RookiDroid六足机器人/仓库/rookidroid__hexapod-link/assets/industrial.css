@@ -1,0 +1,1245 @@
+/* =============================================
+   HEXAPOD LINK — INDUSTRIAL THEME (LIGHT / DARK)
+
+   Every colour that differs between the themes is a token on :root. The dark
+   values override them when <html> carries data-theme="dark"; the attribute is
+   set by hexapod_link.py and the navbar theme toggle (pages/shared.py).
+   ============================================= */
+
+/* Fonts are bundled locally (assets/fonts) rather than pulled from Google
+   Fonts, so the desktop build renders correctly with no network. Both
+   families are SIL Open Font License 1.1. Latin subset only.
+   Paths are relative to this file, which keeps them correct under any
+   Dash requests_pathname_prefix. */
+
+@font-face {
+    font-family: 'Chakra Petch';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/chakra-petch-400-latin.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Chakra Petch';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('fonts/chakra-petch-500-latin.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Chakra Petch';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('fonts/chakra-petch-600-latin.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Chakra Petch';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('fonts/chakra-petch-700-latin.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/ibm-plex-mono-400-latin.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('fonts/ibm-plex-mono-500-latin.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('fonts/ibm-plex-mono-600-latin.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('fonts/ibm-plex-mono-700-latin.woff2') format('woff2');
+}
+
+/* ---- CSS Variables ---- */
+:root {
+    --ind-bg: #e5e7eb; /* Concrete grey */
+    --ind-surface: #f9fafb; /* Off-white machinery */
+    --ind-surface-alt: #ffffff;
+    --ind-border: #4b5563; /* Heavy grey */
+    --ind-border-light: #9ca3af;
+    --ind-accent: #ea580c; /* Warning orange */
+    --ind-accent-alt: #ca8a04; /* Industrial yellow */
+    --ind-text: #111827; /* Near black */
+    --ind-text-muted: #4b5563;
+    --ind-hover: #f3f4f6; /* Hovered nav links and secondary buttons */
+    --ind-input-bg: #f3f4f6;
+    --ind-input-focus-bg: #ffffff;
+    --ind-outline: #111827; /* Heavy outline on the solid buttons */
+    --ind-stripe: #111827; /* Dark band of the hazard stripe */
+    --ind-alert-text: #9a3412;
+    --ind-alert-bg: #fff7ed;
+
+    --font-heading: 'Chakra Petch', sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    
+    --shadow-hard: 4px 4px 0px rgba(17, 24, 39, 0.15);
+    --shadow-hover: 6px 6px 0px rgba(17, 24, 39, 0.2);
+    --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-drawer: -4px 0 16px rgba(0, 0, 0, 0.18);
+}
+
+/* Night shift: the same machinery under low light. Gunmetal plates, light
+   text, and the warning orange lifted a step so it still reads on dark. The 3D
+   plot is a dark CAD view in both themes and does not change. */
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --ind-bg: #0f141b;
+    --ind-surface: #18202a;
+    --ind-surface-alt: #1f2833;
+    --ind-border: #64748b;
+    --ind-border-light: #3b4655;
+    --ind-accent: #f97316;
+    --ind-accent-alt: #eab308;
+    --ind-text: #e5e7eb;
+    --ind-text-muted: #9ca3af;
+    --ind-hover: #2a3441;
+    --ind-input-bg: #111820;
+    --ind-input-focus-bg: #0b1016;
+    --ind-outline: #05070a;
+    --ind-stripe: #05070a;
+    --ind-alert-text: #fdba74;
+    --ind-alert-bg: rgba(249, 115, 22, 0.12);
+
+    --shadow-hard: 4px 4px 0px rgba(0, 0, 0, 0.45);
+    --shadow-hover: 6px 6px 0px rgba(0, 0, 0, 0.55);
+    --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.5);
+    --shadow-drawer: -4px 0 16px rgba(0, 0, 0, 0.6);
+}
+
+/* ---- Global Reset ---- */
+body {
+    font-family: var(--font-heading);
+    background: var(--ind-bg);
+    color: var(--ind-text);
+    overflow-x: hidden;
+}
+
+/* ---- Animations ---- */
+@keyframes mechanicalSlide {
+    0%   { transform: translateY(-10px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+#page-content {
+    animation: mechanicalSlide 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+/* ===========================================
+   PAGE LAYOUT — one screenful, one scrollbar
+
+   From `lg` up the app is a fixed-height console: the plot fills whatever
+   height is left beside the navbar, and the only thing that scrolls is the
+   control panel, inside its own column.
+
+   The nowrap is what makes that work. A Bootstrap row wraps, and a wrapping
+   flex line is as tall as its tallest item -- the panel -- not as tall as its
+   container, so the row grew past the viewport, the whole page took the
+   scrollbar and the plot was pushed off the bottom. The `min-height: 0` on the
+   columns is the other half: flex items refuse to shrink below their content
+   until told they may.
+
+   Below `lg` the columns stack, so the page scrolls as a whole and the plot
+   keeps a workable height of its own instead of collapsing.
+   =========================================== */
+
+.page-row {
+    min-height: 0;
+}
+
+.page-plot .graph-container {
+    min-height: 0;
+}
+
+@media (min-width: 992px) {
+    #page-content {
+        overflow: hidden;
+    }
+
+    .page-row {
+        flex-wrap: nowrap;
+        height: 100%;
+    }
+
+    /* Only while the row is clamped to the viewport: stacked, the columns are
+       supposed to be as tall as their content. */
+    .page-row > [class*="col-"] {
+        min-height: 0;
+    }
+
+    .page-panel {
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .page-plot {
+        min-height: 70vh;
+    }
+}
+
+/* A page that is taller than the shell brings its own scroll region, since
+   above `lg` the shell itself does not scroll. See make_scrollable_page(). */
+.page-scroll {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+/* ===========================================
+   NAVBAR — Control Panel Header
+   =========================================== */
+
+.ind-navbar {
+    background: var(--ind-surface) !important;
+    border-bottom: 4px solid var(--ind-accent);
+    box-shadow: var(--shadow-soft);
+    padding: 0.8rem 0;
+}
+
+/* Hazard striping effect on navbar bottom */
+.ind-navbar::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: repeating-linear-gradient(
+      45deg,
+      var(--ind-accent),
+      var(--ind-accent) 10px,
+      var(--ind-stripe) 10px,
+      var(--ind-stripe) 20px
+    );
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+}
+
+.ind-navbar .navbar-brand {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--ind-text) !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--font-heading);
+}
+
+.ind-navbar .navbar-brand::before {
+    content: '⚙ ';
+    color: var(--ind-accent);
+}
+
+/* Release stamp beside the brand: small, muted, and in its original case. */
+.ind-navbar .navbar-version {
+    margin-left: 0.6rem;
+    padding: 0.1rem 0.4rem;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: none;
+    vertical-align: middle;
+    color: var(--ind-text-muted);
+    border: 1px solid var(--ind-border-light);
+}
+
+.ind-navbar .nav-link {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--ind-text-muted) !important;
+    letter-spacing: 0.3px;
+    padding: 0.4rem 0.8rem;
+    margin: 0 0.2rem;
+    border: 2px solid transparent;
+    transition: all 0.1s ease;
+}
+
+.ind-navbar .nav-link:hover {
+    color: var(--ind-text) !important;
+    border-color: var(--ind-border-light);
+    background: var(--ind-hover);
+}
+
+/* Below `lg` there is no room for brand, links and status button on one line.
+   The links drop to a row of their own under the other two, rather than the
+   status button being pushed off on its own. */
+@media (max-width: 991.98px) {
+    .ind-navbar .container-fluid {
+        flex-wrap: wrap;
+        row-gap: 0.4rem;
+    }
+
+    .ind-navbar .navbar-nav {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .ind-navbar .nav-link {
+        padding: 0.25rem 0.6rem;
+        margin: 0;
+    }
+
+    .ind-navbar .nav-item:first-child .nav-link {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .ind-navbar .navbar-brand {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+
+    .ind-status-btn {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem 0.25rem 0.5rem;
+    }
+
+    /* Otherwise the status button no longer fits beside the brand and drops
+       onto a line of its own. */
+    .ind-navbar .navbar-version {
+        display: none;
+    }
+}
+
+/* ===========================================
+   CARDS — Control Modules
+   =========================================== */
+
+.ind-card,
+.glass-panel-light,
+.card {
+    background: var(--ind-surface-alt) !important;
+    border: 2px solid var(--ind-border) !important;
+    border-radius: 0 !important; /* Sharp corners */
+    box-shadow: var(--shadow-hard);
+    color: var(--ind-text);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    position: relative;
+}
+
+.ind-card::before, .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: var(--ind-border);
+}
+
+.ind-card:hover,
+.card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* The page panel fills an overflow-clipped region, so the lift above would push
+   its top edge out of view. The sections inside it keep the lift: the panel's
+   padding leaves them room to move. */
+.page-panel:hover {
+    transform: none;
+    box-shadow: var(--shadow-hard);
+}
+
+.ind-card .card-body,
+.card .card-body {
+    padding: 1.25rem;
+}
+
+/* Card section headers */
+.card h6,
+.card label,
+.ind-card h6,
+.ind-card label {
+    color: var(--ind-text) !important;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 2px solid var(--ind-border-light);
+    padding-bottom: 4px;
+    display: inline-block;
+}
+
+/* ===========================================
+   FORM INPUTS
+   =========================================== */
+
+input[type="number"],
+.form-control {
+    font-family: var(--font-mono) !important;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background: var(--ind-input-bg) !important;
+    border: 2px solid var(--ind-border-light) !important;
+    border-radius: 0 !important;
+    color: var(--ind-text) !important;
+    padding: 0.4rem 0.6rem;
+    box-shadow: inset 2px 2px 0px rgba(0,0,0,0.05);
+}
+
+input[type="number"]:focus,
+.form-control:focus {
+    border-color: var(--ind-accent) !important;
+    background: var(--ind-input-focus-bg) !important;
+    outline: none !important;
+    box-shadow: inset 2px 2px 0px rgba(0,0,0,0.05), 0 0 0 2px rgba(234, 88, 12, 0.2) !important;
+}
+
+/* ===========================================
+   LABELS & BADGES
+   =========================================== */
+
+.badge {
+    font-family: var(--font-mono) !important;
+    font-size: 0.7rem;
+    border-radius: 0;
+    padding: 0.3em 0.6em;
+    font-weight: 700;
+    border: 1px solid var(--ind-border);
+}
+
+/* ===========================================
+   PLOTLY GRAPH CONTAINER
+   =========================================== */
+
+.graph-container {
+    background: #111827; /* Dark CAD background */
+    border: 4px solid var(--ind-border);
+    border-radius: 0;
+    padding: 4px;
+    box-shadow: var(--shadow-hard);
+    position: relative;
+}
+
+/* Screw/rivet details on corners */
+.graph-container::after {
+    content: '';
+    position: absolute;
+    top: 8px; left: 8px; width: 6px; height: 6px; background: #374151; border-radius: 50%;
+    box-shadow: calc(100% - 16px) 0 #374151, 0 calc(100% - 16px) #374151, calc(100% - 16px) calc(100% - 16px) #374151;
+    pointer-events: none;
+}
+
+.modebar {
+    opacity: 0.8;
+}
+
+/* ===========================================
+   LANDING PAGE
+   =========================================== */
+
+/* ===========================================
+   HOME — console hub
+
+   Reuses the plate-and-hard-shadow language of the cards. The one new idea is
+   the state chip, which shares its modifier names with the navbar readout
+   (.is-offline / .is-online / .is-streaming / .is-fault) so both are driven
+   from the same link status.
+   =========================================== */
+
+.landing {
+    padding-top: 0.5rem;
+}
+
+.ind-hero-title {
+    color: var(--ind-text);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+    border-bottom: 4px solid var(--ind-accent);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.ind-hero-hr {
+    border: none;
+    height: 4px;
+    background: var(--ind-border-light);
+    margin: 1.25rem 0;
+}
+
+.landing-lede {
+    color: var(--ind-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+/* The plot is the hero image, so it needs a height of its own -- nothing else
+   on this page constrains it. */
+.landing-stage {
+    height: 380px;
+}
+
+@media (max-width: 991.98px) {
+    .landing-stage {
+        height: 300px;
+    }
+}
+
+/* ---- Link state ---- */
+
+.landing-link-panel {
+    border-top: 2px solid var(--ind-border-light);
+    padding-top: 1rem;
+}
+
+.landing-status-label {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--ind-text-muted);
+}
+
+.landing-state {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 2px 10px;
+    border: 2px solid var(--ind-border);
+    border-left-width: 6px;
+    background: var(--ind-surface);
+    color: var(--ind-text);
+}
+
+.landing-state.is-offline { border-left-color: var(--ind-text-muted); }
+.landing-state.is-online  { border-left-color: #16a34a; }
+.landing-state.is-fault   { border-left-color: #dc2626; }
+
+.landing-state.is-streaming {
+    border-left-color: var(--ind-accent);
+    animation: status-led-pulse 1s steps(1, end) infinite;
+}
+
+.landing-status-line {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+/* ---- Tool cards ---- */
+
+.landing-section-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    color: var(--ind-text);
+    border-bottom: 4px solid var(--ind-accent);
+    display: inline-block;
+    padding-bottom: 4px;
+    margin-bottom: 1rem;
+}
+
+.tool-link {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+}
+
+.tool-card {
+    background: var(--ind-surface-alt);
+    border: 2px solid var(--ind-border);
+    box-shadow: var(--shadow-hard);
+    padding: 1.25rem 1rem 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.1s ease, box-shadow 0.1s ease,
+                border-color 0.1s ease;
+}
+
+.tool-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--ind-accent);
+}
+
+.tool-index {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--ind-accent);
+    letter-spacing: 1px;
+}
+
+.tool-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    color: var(--ind-text);
+    font-size: 1.15rem;
+    border-bottom: 2px solid var(--ind-border-light);
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+}
+
+.tool-desc {
+    color: var(--ind-text-muted);
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: 0.75rem;
+}
+
+/* What this page does to the hardware, which is not the same as what it draws
+   on screen -- worth its own line rather than buried in the description. */
+.tool-hardware {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.3px;
+    color: var(--ind-accent);
+    border-top: 2px solid var(--ind-border-light);
+    padding-top: 8px;
+}
+
+.tool-hardware.is-sim-only {
+    color: var(--ind-text-muted);
+}
+
+/* ---- Build guide and safety ---- */
+
+.build-link {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.build-card {
+    background: var(--ind-surface-alt);
+    border: 2px solid var(--ind-border);
+    box-shadow: var(--shadow-hard);
+    padding: 1.25rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    transition: transform 0.1s ease, box-shadow 0.1s ease,
+                border-color 0.1s ease;
+}
+
+.build-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--ind-accent);
+}
+
+.build-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    color: var(--ind-text);
+    font-size: 1.15rem;
+    margin-bottom: 4px;
+}
+
+.build-desc {
+    color: var(--ind-text-muted);
+    line-height: 1.5;
+}
+
+/* Leaves the app, so it says where it goes rather than just underlining. */
+.build-cue {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    background: var(--ind-accent);
+    padding: 6px 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.safety-callout {
+    background: var(--ind-surface-alt);
+    border: 2px solid var(--ind-border);
+    border-left: 6px solid var(--ind-accent);
+    box-shadow: var(--shadow-hard);
+    padding: 1rem 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.safety-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    color: var(--ind-accent);
+    margin-bottom: 0.5rem;
+}
+
+.safety-list {
+    color: var(--ind-text-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+    padding-left: 1.2rem;
+}
+
+/* ===========================================
+   BUTTONS — Machine Controls
+
+   Every dbc.Button, restyled to match the cards and the navbar status button:
+   square, heavy border, hard offset shadow, lifting on hover and pressing flat
+   on click. Colours go through Bootstrap's own --bs-btn-* variables, so the
+   hover, active and disabled states all follow without restating them.
+   Link buttons (the drawer's ✕) are text, not machinery, and are left alone.
+   =========================================== */
+
+.btn:not(.btn-link) {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    border-width: 2px;
+    border-radius: 0;
+    box-shadow: var(--shadow-hard);
+    transition: transform 0.1s ease, box-shadow 0.1s ease,
+                background-color 0.1s ease, border-color 0.1s ease;
+}
+
+.btn:not(.btn-link):hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn:not(.btn-link):active {
+    transform: translate(0, 0);
+    box-shadow: none;
+}
+
+.btn:not(.btn-link):disabled,
+.btn:not(.btn-link).disabled {
+    box-shadow: none;
+    transform: none;
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--ind-accent);
+    --bs-btn-border-color: var(--ind-outline);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #c2410c;
+    --bs-btn-hover-border-color: var(--ind-outline);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #9a3412;
+    --bs-btn-active-border-color: var(--ind-outline);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--ind-accent);
+    --bs-btn-disabled-border-color: var(--ind-outline);
+    --bs-btn-focus-shadow-rgb: 234, 88, 12;
+}
+
+.btn-secondary,
+.btn-outline-secondary {
+    --bs-btn-color: var(--ind-text);
+    --bs-btn-bg: var(--ind-surface-alt);
+    --bs-btn-border-color: var(--ind-border);
+    --bs-btn-hover-color: var(--ind-text);
+    --bs-btn-hover-bg: var(--ind-hover);
+    --bs-btn-hover-border-color: var(--ind-text);
+    --bs-btn-active-color: var(--ind-text);
+    --bs-btn-active-bg: var(--ind-bg);
+    --bs-btn-active-border-color: var(--ind-text);
+    --bs-btn-disabled-color: var(--ind-text-muted);
+    --bs-btn-disabled-bg: var(--ind-surface-alt);
+    --bs-btn-disabled-border-color: var(--ind-border-light);
+    --bs-btn-focus-shadow-rgb: 75, 85, 99;
+}
+
+/* Same green and red as the ONLINE and FAULT indicators. */
+.btn-success {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #16a34a;
+    --bs-btn-border-color: var(--ind-outline);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #15803d;
+    --bs-btn-hover-border-color: var(--ind-outline);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #166534;
+    --bs-btn-active-border-color: var(--ind-outline);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #16a34a;
+    --bs-btn-disabled-border-color: var(--ind-outline);
+    --bs-btn-focus-shadow-rgb: 22, 163, 74;
+}
+
+.btn-danger {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #dc2626;
+    --bs-btn-border-color: var(--ind-outline);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #b91c1c;
+    --bs-btn-hover-border-color: var(--ind-outline);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #991b1b;
+    --bs-btn-active-border-color: var(--ind-outline);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #dc2626;
+    --bs-btn-disabled-border-color: var(--ind-outline);
+    --bs-btn-focus-shadow-rgb: 220, 38, 38;
+}
+
+/* ===========================================
+   GLOBAL DRAWER — app-wide robot controls
+
+   Slid out of view rather than hidden with `display: none`, so its widgets
+   stay mounted (Dash callbacks keep firing) and its sliders still measure a
+   real width before the drawer is ever opened.
+   =========================================== */
+
+.global-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 420px;
+    max-width: 92vw;
+    z-index: 1045;
+    padding: 1rem;
+    overflow-y: auto;
+    background: var(--ind-bg);
+    border-left: 4px solid var(--ind-accent);
+    box-shadow: var(--shadow-drawer);
+    transform: translateX(105%);
+    visibility: hidden;
+    transition: transform 0.2s ease, visibility 0.2s ease;
+}
+
+.global-drawer-open {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+.global-drawer h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* ===========================================
+   OFFLINE SECTIONS — controls with no robot to act on
+
+   Streaming a pose and running a gait both need an open session, so while the
+   link is down those controls are greyed out and made inert. Only the controls
+   carry this class: the heading, the blurb and the status line above them stay
+   at full strength, because they are what says why the rest is greyed out.
+   =========================================== */
+
+.robot-section-controls {
+    transition: opacity 0.15s ease, filter 0.15s ease;
+}
+
+.robot-section-controls.is-offline {
+    opacity: 0.4;
+    filter: grayscale(1);
+    /* Belt and braces with the widgets' own `disabled` flags -- this also
+       catches the radio and checklist items, which have no single disabled
+       switch of their own. */
+    pointer-events: none;
+    user-select: none;
+}
+
+/* ===========================================
+   STATUS BUTTON — link readout and drawer handle
+
+   Same plate-and-hard-shadow treatment as the cards. The state modifier
+   (.is-offline / .is-online / .is-streaming / .is-fault) colours the LED and
+   the left accent bar; the label itself stays legible in every state.
+   =========================================== */
+
+.ind-status-btn {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    color: var(--ind-text);
+    background: var(--ind-surface-alt);
+    border: 2px solid var(--ind-border);
+    border-radius: 0;
+    box-shadow: var(--shadow-hard);
+    padding: 0.35rem 0.9rem 0.35rem 0.75rem;
+    border-left-width: 6px;
+    border-left-color: var(--ind-text-muted);
+    transition: transform 0.1s ease, box-shadow 0.1s ease,
+                border-left-color 0.1s ease;
+}
+
+.ind-status-btn::after {
+    content: '●';
+    margin-left: 0.5rem;
+    color: var(--ind-text-muted);
+}
+
+.ind-status-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.ind-status-btn:active {
+    transform: translate(0, 0);
+    box-shadow: none;
+}
+
+.ind-status-btn.is-online {
+    border-left-color: #16a34a;
+}
+
+.ind-status-btn.is-online::after {
+    color: #16a34a;
+}
+
+.ind-status-btn.is-streaming {
+    border-left-color: var(--ind-accent);
+}
+
+.ind-status-btn.is-streaming::after {
+    color: var(--ind-accent);
+    animation: status-led-pulse 1s steps(1, end) infinite;
+}
+
+.ind-status-btn.is-fault {
+    border-left-color: #dc2626;
+}
+
+.ind-status-btn.is-fault::after {
+    color: #dc2626;
+}
+
+@keyframes status-led-pulse {
+    50% { opacity: 0.25; }
+}
+
+/* Right-hand end of the navbar: theme toggle, then the status button. */
+.navbar-actions {
+    display: flex;
+    align-items: stretch;
+    gap: 0.6rem;
+    margin-left: auto;
+}
+
+/* Theme toggle: a square plate in the status button's style, showing the icon
+   of the theme it switches to. */
+.ind-theme-btn {
+    min-width: 2.4rem;
+    font-size: 1.1rem;
+    line-height: 1;
+    color: var(--ind-text);
+    background: var(--ind-surface-alt);
+    border: 2px solid var(--ind-border);
+    border-radius: 0;
+    box-shadow: var(--shadow-hard);
+    transition: transform 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
+}
+
+.ind-theme-btn:hover {
+    color: var(--ind-accent);
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.ind-theme-btn:active {
+    transform: translate(0, 0);
+    box-shadow: none;
+}
+
+/* ===========================================
+   SIDEBAR FIELDS
+
+   The sidebar is a third of the window above `lg` and the full width below
+   it, so how much room a control gets has little to do with the viewport.
+   Every block here sizes itself from the width it is given -- wrapping,
+   auto-fill grids, full-width sliders -- instead of from Bootstrap column
+   counts, so there are no per-widget breakpoints to keep in step.
+   =========================================== */
+
+/* Dash's own components read their colours from these. Scoped to the two
+   places that hold controls, so nothing else in the app changes. */
+.page-panel,
+.global-drawer,
+.page-scroll {
+    --Dash-Fill-Interactive-Strong: var(--ind-accent);
+    --Dash-Fill-Interactive-Weak: rgba(234, 88, 12, 0.15);
+    --Dash-Fill-Primary-Hover: #c2410c;
+    --Dash-Fill-Primary-Active: #9a3412;
+    --Dash-Stroke-Strong: var(--ind-border);
+    --Dash-Stroke-Weak: var(--ind-border-light);
+    --Dash-Text-Strong: var(--ind-text);
+    --Dash-Text-Primary: var(--ind-text);
+    --Dash-Text-Weak: var(--ind-text-muted);
+    --Dash-Fill-Inverse-Strong: var(--ind-surface-alt);
+}
+
+/* The `.ind-card label` rule styles section headers; the labels that belong
+   to a checkbox, radio or switch are part of their control and keep to one
+   line beside it. */
+.ind-card label.form-check-label,
+.ind-card label.dash-options-list-option {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+.ind-card label.dash-options-list-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+}
+
+.ind-card .dash-options-list-option-checkbox {
+    accent-color: var(--ind-accent);
+}
+
+/* Field captions: a quiet one-line label over its control. More specific
+   than the `.ind-card label` section-header rule, which they must not look
+   like. */
+.ind-card label.ind-field-label,
+.ind-field-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: var(--ind-text-muted) !important;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* A run of fields inside one card, e.g. Translate / Rotate. */
+.ind-group-header {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--ind-text);
+    background: var(--ind-bg);
+    padding: 4px 8px;
+    border-left: 4px solid var(--ind-accent);
+    margin: 0.25rem 0 0.75rem;
+}
+
+/* Label, then the slider with its value box: always the same two rows. */
+.ind-slider-field {
+    margin-bottom: 1rem;
+}
+
+.ind-slider-field .dash-slider-container {
+    width: 100%;
+    gap: 0.75rem;
+}
+
+/* The direct-input box. Dash hides it once the slider is under 300px wide,
+   which in this sidebar is most of the time; the value is half of what the
+   field shows, so it stays. A fixed width -- room for "-178.5" -- keeps the
+   track from changing length as the value changes. */
+.ind-slider-field .dash-slider-container .dash-range-slider-input {
+    display: block;
+    box-sizing: border-box;
+    height: auto;
+    max-width: none;
+    width: 7ch !important;
+    flex: 0 0 auto;
+    font-family: var(--font-mono) !important;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    font-size: 0.85rem;
+    padding: 0.2rem 0.35rem;
+}
+
+.ind-slider-field .dash-slider-mark {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--ind-text-muted);
+}
+
+/* Label-above number inputs, as many to a row as fit. */
+.ind-field-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr));
+    gap: 0.25rem 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* One input per leg and joint; joint names once, in the header. */
+.ind-joint-grid {
+    --bs-table-bg: transparent;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.ind-joint-grid th,
+.ind-joint-grid td {
+    padding: 0.15rem 0.2rem;
+}
+
+/* "J1 coxia" wraps to "J1" over "coxia" when the columns are narrow; all
+   three columns are the same width, so they always wrap together. */
+.ind-joint-grid thead th {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--ind-text-muted);
+    vertical-align: bottom;
+}
+
+/* Row labels. Sized on the header cell too: a fixed-layout table takes its
+   column widths from the first row. */
+.ind-joint-grid tr > th:first-child {
+    width: 5.5rem;
+}
+
+.ind-joint-grid tbody th {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-left: 3px solid var(--ind-accent);
+    padding-left: 0.4rem;
+}
+
+/* Sized so "-178.5", the widest value a joint takes, fits in the narrowest
+   column the side-by-side layout below allows. */
+.ind-joint-grid input {
+    width: 100%;
+    min-width: 0;
+    padding-inline: 0.2rem;
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+/* Spinner arrows eat a third of an input this narrow. */
+.ind-joint-grid input::-webkit-outer-spin-button,
+.ind-joint-grid input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.ind-joint-grid input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Kinematics: a Left and a Right block, side by side when both fit with a
+   full value in every input, left above right when they do not. The basis
+   is that width -- "L1" plus three inputs of "-178.5" -- so the wrap happens
+   exactly when the values would start to clip. */
+.ind-joint-sides {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.75rem;
+}
+
+.ind-joint-sides > .ind-joint-side {
+    flex: 1 1 12rem;
+    min-width: 0;
+}
+
+/* Two characters ("L1"); the group header above already carries the side
+   and the accent bar. */
+.ind-joint-side .ind-joint-grid tr > th:first-child {
+    width: 1.75rem;
+}
+
+.ind-joint-side .ind-joint-grid tbody th {
+    border-left: none;
+    padding-left: 0.1rem;
+}
+
+.ind-joint-side .ind-joint-grid th,
+.ind-joint-side .ind-joint-grid td {
+    padding-inline: 0.1rem;
+}
+
+/* A read-only value in a joint grid (the solved IK angles): the same box
+   as an input, minus the field look. */
+.ind-readout {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    padding: 0.2rem 0.3rem;
+    background: var(--ind-bg);
+    white-space: nowrap;
+}
+
+/* Solver warnings. Wraps, unlike the code block it replaced. */
+.ind-alert {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--ind-alert-text);
+    background: var(--ind-alert-bg);
+    border-left: 4px solid var(--ind-accent);
+    padding: 0.5rem 0.75rem;
+    /* Solver messages put their list of legs on a line of its own. */
+    white-space: pre-line;
+}
+
+/* A main control and a button that share a line while both fit, and stack
+   (both full width) when they do not. */
+.ind-wrap-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ind-wrap-row > .ind-wrap-main {
+    flex: 1 1 11rem;
+    min-width: 0;
+}
+
+.ind-wrap-row > .ind-wrap-side {
+    flex: 1 1 6rem;
+}
+
+/* ===========================================
+   SCROLLBAR
+   =========================================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--ind-bg);
+    border-left: 1px solid var(--ind-border-light);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--ind-border);
+    border: 1px solid var(--ind-bg);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--ind-accent);
+}

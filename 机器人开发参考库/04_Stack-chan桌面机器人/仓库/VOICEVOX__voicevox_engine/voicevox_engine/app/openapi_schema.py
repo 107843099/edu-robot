@@ -1,0 +1,48 @@
+"""OpenAPI schema の設定"""
+
+from typing import Any
+
+from fastapi import FastAPI
+from fastapi.routing import APIRoute
+from pydantic import BaseModel
+
+from voicevox_engine.library.model import BaseLibraryInfo, VvlibManifest
+
+
+def simplify_operation_ids(route: APIRoute) -> str:
+    """operation ID を簡略化してAPIクライアントで生成される関数名をシンプルにする。"""
+    return route.name
+
+
+def configure_openapi_schema(app: FastAPI, manage_library: bool | None) -> FastAPI:
+    """自動生成された OpenAPI schema へカスタム属性を追加する。"""
+    original_openapi = app.openapi
+
+    # BaseLibraryInfo/VvlibManifestモデルはAPIとして表には出ないが、エディタ側で利用したいので、手動で追加する
+    # ref: https://fastapi.tiangolo.com/advanced/extending-openapi/#modify-the-openapi-schema
+    def custom_openapi() -> Any:
+        if app.openapi_schema is not None:
+            return app.openapi_schema
+
+        openapi_schema = original_openapi()
+
+        if manage_library:
+            additional_models: list[type[BaseModel]] = [
+                BaseLibraryInfo,
+                VvlibManifest,
+            ]
+            for model in additional_models:
+                # ref_templateを指定しない場合、definitionsを参照してしまうので、手動で指定する
+                schema = model.model_json_schema(
+                    ref_template="#/components/schemas/{model}"
+                )
+                # definitionsは既存のモデルを重複して定義するため、不要なので削除
+                if "$defs" in schema:
+                    del schema["$defs"]
+                openapi_schema["components"]["schemas"][schema["title"]] = schema
+        app.openapi_schema = openapi_schema
+        return openapi_schema
+
+    app.openapi = custom_openapi  # type: ignore[method-assign]
+
+    return app

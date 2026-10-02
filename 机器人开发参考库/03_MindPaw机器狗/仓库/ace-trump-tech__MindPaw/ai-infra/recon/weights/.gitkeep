@@ -1,0 +1,6 @@
+# Drop student ONNX here as `student.onnx`.
+# See ../README.md for the download / training instructions.
+#
+# We do NOT bundle model weights in the repo. The service degrades to the
+# deterministic mock backbone (`mock_recon.py`) when this file is absent so
+# the end-to-end link still works on machines without a GPU.

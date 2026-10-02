@@ -1,0 +1,58 @@
+[
+  {
+    "source_repo": "78/xiaozhi-sf32",
+    "source_commit": "1d3ef641ace47fae68227e9173647fd5db01f6f5",
+    "path": "sdk",
+    "url": "../../OpenSiFli/SiFli-SDK.git",
+    "commit": "0d2de1480f735e05017c41436e655a1688063881",
+    "note": "已阅读并留存固定版本 SDK README；通用工具链需按构建文档另行获取",
+    "status": "generic_sdk_not_downloaded"
+  },
+  {
+    "source_repo": "hackers365/xiaozhi-esp32-server-golang",
+    "source_commit": "21f1a2e71ff383723f1464ea9b137016e6feab8d",
+    "path": "asr_server",
+    "url": "https://github.com/hackers365/asr_server.git",
+    "commit": "bac6c49b3b4a84d0f13be06a5d575ff0efa5565b",
+    "note": "固定提交快照另存；未写入上游源码的子模块目录",
+    "local_snapshot": "08_小智语音机器人/仓库/hackers365__asr_server__bac6c49b3b4a",
+    "status": "matching_commit_downloaded_separately"
+  },
+  {
+    "source_repo": "peng-zhihui/Dummy-Robot",
+    "source_commit": "84453f1391c4442b5387a799571b7f67418afa2d",
+    "path": "0.SubModules/Peak",
+    "url": "git@github.com:peng-zhihui/Peak.git",
+    "commit": "c7a90eda10683c1fb92665297bd86d3de2400d43",
+    "note": "固定提交快照另存；未写入上游源码的子模块目录",
+    "local_snapshot": "11_ElectronBot类人桌面机器人/仓库/peng-zhihui__Peak__c7a90eda1068",
+    "status": "matching_commit_downloaded_separately"
+  },
+  {
+    "source_repo": "peng-zhihui/Peak",
+    "source_commit": "7605edc702c3f4d4328144f9258c52ea8cff6218",
+    "path": "LVGL.Simulator/lvgl",
+    "url": "https://github.com/lvgl/lvgl",
+    "commit": null,
+    "note": ".gitmodules 声明路径在当前树中未解析到有效 gitlink；不能据此声称源码缺失",
+    "status": "no_active_gitlink_at_declared_path"
+  },
+  {
+    "source_repo": "peng-zhihui/Peak",
+    "source_commit": "7605edc702c3f4d4328144f9258c52ea8cff6218",
+    "path": "LVGL.Simulator/lv_examples",
+    "url": "https://github.com/lvgl/lv_examples",
+    "commit": null,
+    "note": ".gitmodules 声明路径在当前树中未解析到有效 gitlink；不能据此声称源码缺失",
+    "status": "no_active_gitlink_at_declared_path"
+  },
+  {
+    "source_repo": "peng-zhihui/Peak",
+    "source_commit": "7605edc702c3f4d4328144f9258c52ea8cff6218",
+    "path": "LVGL.Simulator/lv_drivers",
+    "url": "https://github.com/lvgl/lv_drivers",
+    "commit": null,
+    "note": ".gitmodules 声明路径在当前树中未解析到有效 gitlink；不能据此声称源码缺失",
+    "status": "no_active_gitlink_at_declared_path"
+  }
+]

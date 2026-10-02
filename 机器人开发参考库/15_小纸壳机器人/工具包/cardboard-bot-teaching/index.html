@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f0e7">
+  <meta name="description" content="cardboard-bot 零基础分步测试与一键刷机">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231d2a27'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-size='18' fill='%23f6f0e7'%3E%2B%3C/text%3E%3C/svg%3E">
+  <title>cardboard-bot · 实物接线版</title>
+  <script type="module" src="./vendor/esp-web-tools/install-button.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f0e7;
+      --ink: #1d2a27;
+      --muted: #66716d;
+      --line: rgba(29, 42, 39, .14);
+      --accent: #e86d4e;
+      --accent-dark: #bc4f37;
+      --mint: #cfe6d7;
+      --card: rgba(255, 252, 247, .9);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    .step-nav { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-bottom: 18px; }
+    .step-nav button { border: 1px solid var(--line); border-radius: 16px; background: var(--card); color: var(--ink); padding: 14px 8px; font: inherit; font-size: .85rem; cursor: pointer; }
+    .step-nav button span { display: block; color: var(--accent-dark); font-size: .75rem; margin-bottom: 5px; }
+    .step-nav button[aria-current="step"] { background: var(--ink); color: white; }
+    .step-nav button[aria-current="step"] span { color: #ffd2ac; }
+    button:disabled { opacity: .5; cursor: not-allowed; }
+    button:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .info-block svg { width: 100%; height: auto; font-size: 13px; font-family: inherit; fill: var(--ink); }
+    .info-block ol { padding-left: 20px; margin: 8px 0; }
+    .info-block li + li { margin-top: 6px; }
+    .info-block details, .observed { display: block; margin: 14px 0; font-size: .88rem; line-height: 1.6; }
+    summary { cursor: pointer; font-weight: 700; }
+    .observed input { accent-color: #287559; }
+    .troubleshooting { margin-top: 18px; }
+    .stop-action { background: #f4d2c8; }
+    esp-web-install-button { margin-top: 14px; }
+    @media (max-width: 760px) { .step-nav { grid-template-columns: repeat(3, 1fr); } }
+    body { margin: 0; min-width: 320px; color: var(--ink); background: radial-gradient(circle at 10% 5%, rgba(232,109,78,.17), transparent 26rem), radial-gradient(circle at 92% 86%, rgba(116,177,139,.18), transparent 25rem), var(--paper); }
+    .page { width: min(1060px, calc(100% - 32px)); margin: 0 auto; padding: 22px 0 44px; }
+    .topbar, .brand, .version, .chips, .card-title, .action-row, .footer { display: flex; align-items: center; }
+    .topbar { justify-content: space-between; gap: 16px; }
+    .brand { gap: 10px; color: var(--ink); font-weight: 850; text-decoration: none; }
+    .brand-mark { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 10px; color: var(--paper); background: var(--ink); }
+    .version { min-height: 30px; padding: 0 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: rgba(255,252,247,.58); font-size: .76rem; font-weight: 750; }
+    .hero { max-width: 790px; padding: 66px 0 36px; }
+    .eyebrow, .side-label { color: var(--accent-dark); font-size: .72rem; font-weight: 850; letter-spacing: .13em; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: clamp(2.2rem, 6vw, 4.7rem); letter-spacing: -.07em; line-height: 1; }
+
+
+
+    .steps { display: grid; gap: 16px; }
+    .step-card, .side-card { border: 1px solid var(--line); border-radius: 24px; background: var(--card); box-shadow: 0 18px 52px rgba(61,48,32,.07); }
+    .step-card { padding: clamp(20px, 3vw, 30px); }
+    .card-title { gap: 14px; }
+    .number { display: grid; flex: 0 0 auto; width: 44px; height: 44px; place-items: center; border-radius: 14px; color: var(--paper); background: var(--accent); font-size: .78rem; font-weight: 850; }
+    h2 { font-size: 1.35rem; letter-spacing: -.04em; }
+    .card-title p { margin-top: 4px; color: var(--muted); line-height: 1.5; }
+    .card-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr); gap: 18px; margin-top: 22px; }
+    .info-block { padding: 16px; border-radius: 16px; background: rgba(207,230,215,.28); }
+    .info-block + .info-block { margin-top: 10px; }
+    .info-label { margin-bottom: 8px; color: #3b7050; font-size: .72rem; font-weight: 850; letter-spacing: .08em; }
+    .info-block p, .info-block li { color: #495652; font-size: .88rem; line-height: 1.6; }
+    .info-block ul { margin: 0; padding-left: 19px; }
+    .wires { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+    .wires li { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px dashed rgba(29,42,39,.13); }
+    .wires li:last-child { border-bottom: 0; }
+    code { padding: 2px 5px; border-radius: 5px; color: #40504a; background: rgba(29,42,39,.08); font-size: .82em; }
+    .install-box { margin-top: 16px; }
+    esp-web-install-button { display: block; --esp-tools-button-color: var(--accent); --esp-tools-button-text-color: #fff; --esp-tools-button-border-radius: 14px; }
+    .install-action, .secondary-action { width: 100%; padding: 13px 15px; border: 0; border-radius: 14px; color: #fff; background: var(--accent); cursor: pointer; font: inherit; font-weight: 800; text-align: left; }
+    .install-action:hover, .secondary-action:hover { background: var(--accent-dark); }
+    .secondary-action { color: var(--ink); background: var(--mint); text-align: center; }
+    .secondary-action:disabled { opacity: .45; cursor: not-allowed; }
+    .action-row { gap: 8px; margin-top: 10px; }
+    .action-row .secondary-action { flex: 1; }
+    .calibration-controls { margin-top: 12px; padding: 14px; border: 1px solid rgba(40,117,89,.2); border-radius: 16px; background: rgba(207,230,215,.2); }
+    .calibration-controls ol { margin: 8px 0 12px; padding-left: 20px; color: #495652; font-size: .82rem; line-height: 1.55; }
+    .calibration-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 8px; }
+    .calibration-grid .secondary-action { min-height: 48px; text-align: center; }
+    .calibration-state { margin: 8px 0 4px; padding: 10px 12px; border-radius: 11px; color: #40504a; background: rgba(255,255,255,.68); font-size: .8rem; line-height: 1.55; }
+    .emergency-action { color: #702c20; background: #f4d2c8; }
+    .save-action { background: #f0dfb6; }
+    .slot-message, .status { display: block; margin-top: 10px; padding: 10px 12px; border-radius: 11px; color: #7d3b2c; background: #fff1eb; font-size: .8rem; line-height: 1.5; }
+    .status { color: #40504a; background: rgba(207,230,215,.52); }
+    .status.error { color: #7d3b2c; background: #fff1eb; }
+    .note { margin-top: 10px; color: var(--muted); font-size: .76rem; line-height: 1.55; }
+    .side-card { margin-top: 18px; padding: 20px; }
+
+
+
+    .side-card p { margin-top: 8px; color: var(--muted); font-size: .88rem; line-height: 1.65; }
+    .safety { background: rgba(207,230,215,.48); }
+    .safety .side-label { color: #3b7050; }
+    .footer { justify-content: space-between; gap: 12px; margin-top: 24px; color: var(--muted); font-size: .76rem; }
+    .footer a { color: inherit; }
+    @media (max-width: 760px) { .page { width: min(100% - 24px, 620px); } .hero { padding: 48px 0 28px; } .card-grid { grid-template-columns: 1fr; } .footer { align-items: flex-start; flex-direction: column; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+  </style>
+  <link rel="stylesheet" href="./teaching-page.css">
+  <link rel="stylesheet" href="./photo-wiring.css">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="./教学使用说明.md" aria-label="打开小纸壳机器人说明"><span class="brand-mark" aria-hidden="true">▦</span><span>小纸壳机器人</span><span class="brand-sub">模块调试页面</span></a>
+      <span class="topbar-meta"><span class="social-name">@Made by Z</span><span class="version">V0.3</span></span>
+    </header>
+    <main>
+      <section id="steps" class="steps" aria-label="六步测试与刷机"></section>
+    </main>
+  </div>
+  <script type="module" src="./photo-wiring.js"></script>
+</body>
+</html>

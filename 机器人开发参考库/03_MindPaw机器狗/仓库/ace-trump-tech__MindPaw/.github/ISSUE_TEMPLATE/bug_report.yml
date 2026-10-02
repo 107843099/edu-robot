@@ -1,0 +1,56 @@
+name: Reproducible hardware or software problem
+description: Report a verified firmware, hardware, documentation, or Gateway failure.
+title: "[bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        AI may assist with search or formatting, but the author must personally reproduce the problem. Do not include API keys or personal data.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - ESP8266 firmware
+        - AI Gateway
+        - wiring or power
+        - PCB or 3D model
+        - documentation
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Hardware and software revision
+      description: Board/module variant, firmware commit, or Gateway image tag.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Include the exact commands, wiring, power source, and steps.
+    validations:
+      required: true
+  - type: textarea
+    id: expected_actual
+    attributes:
+      label: Expected and actual result
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs and evidence
+      description: Include serial output, Gateway response, photos, or a minimal test. Redact secrets.
+    validations:
+      required: true
+  - type: checkboxes
+    id: attestation
+    attributes:
+      label: Author verification
+      options:
+        - label: I personally ran this reproduction and can answer follow-up questions.
+          required: true
+        - label: I searched existing Issues and this is not a duplicate.
+          required: true

@@ -1,0 +1,38 @@
+name: "Prepare Python"
+description: "Python ランタイムと依存パッケージをインストールし、Python バージョンを出力する"
+
+inputs:
+  dependency-group:
+    description: "uv の依存パッケージインストール時に指定するグループ"
+    required: false
+
+runs:
+  using: "composite"
+  steps:
+    - name: <Setup> Install uv
+      uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+      with:
+        activate-environment: true
+
+    - name: <Setup> Install Python dependencies
+      run: |
+        args=()
+        if [[ -n "${{ inputs.dependency-group }}" ]]; then
+          args+=(--group "${{ inputs.dependency-group }}")
+        fi
+
+        # NOTE: macOSでインストールするwheelのバージョンを制限する
+        # `MACOSX_DEPLOYMENT_TARGET`だけではランナーのmacOS向けwheelが選ばれるため、`--python-platform`も指定する
+        case "$RUNNER_OS,$RUNNER_ARCH" in
+          macOS,X64)
+            args+=(--python-platform x86_64-apple-darwin)
+            export MACOSX_DEPLOYMENT_TARGET="13.0"
+            ;;
+          macOS,ARM64)
+            args+=(--python-platform aarch64-apple-darwin)
+            export MACOSX_DEPLOYMENT_TARGET="13.0"
+            ;;
+        esac
+
+        uv sync "${args[@]}"
+      shell: bash

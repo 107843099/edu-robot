@@ -1,0 +1,402 @@
+[
+  {
+    "path": "工具包/cardboard-bot-teaching/README.md",
+    "bytes": 5720,
+    "sha256": "f1a7ba257acc3483944b31994ac5e3a3d0f5ddc7f26a1e55a88953f298d82e4b"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/assets/board/esp32-c3-supermini.png",
+    "bytes": 170769,
+    "sha256": "02283bd7534c42374eafb5172495571fe6a7af517751b7d294c7a1761f366ff6"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/assets/wiring/display.jpg",
+    "bytes": 497869,
+    "sha256": "c56c34ca1281e5e51ead23c4b7d8a6fbeb3742ecfc7defe7a01ffd0cf1b7ecf3"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/assets/wiring/infrared.jpg",
+    "bytes": 590024,
+    "sha256": "55db5cbc30c8879a206dda2e911f2942f40b75bbe9de0db7665348348a7c22dd"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/assets/wiring/servos.jpg",
+    "bytes": 640478,
+    "sha256": "0abe14a6f27fcbeb2e47e1fa87955fc1ecc0b68804c3dc54d7b5bdee09784684"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/assets/wiring/touch.jpg",
+    "bytes": 543131,
+    "sha256": "8b8ca444936fa9d1694cead39e86954d136127bb99cdf3d4f48ac3587c9846f2"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/device-status.js",
+    "bytes": 2935,
+    "sha256": "72c25bfd88e1409e4e901aa50c65a64005bc0fef5ebad8ef4ee4170ec3d3ca49"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/01-display/boot_app0.bin",
+    "bytes": 8192,
+    "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/01-display/bootloader.bin",
+    "bytes": 13248,
+    "sha256": "30d47ab1f344cfa69f6b2f718ffa72fc7baea6db047eaabefea162db29e6821c"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/01-display/firmware.bin",
+    "bytes": 287808,
+    "sha256": "60b38c15179892526efc31f3354cc3eb25bf49c6aed46aecd39a6eaa6071386b"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/01-display/partitions.bin",
+    "bytes": 3072,
+    "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/02-infrared/boot_app0.bin",
+    "bytes": 8192,
+    "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/02-infrared/bootloader.bin",
+    "bytes": 13248,
+    "sha256": "30d47ab1f344cfa69f6b2f718ffa72fc7baea6db047eaabefea162db29e6821c"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/02-infrared/firmware.bin",
+    "bytes": 287936,
+    "sha256": "d91f87956e05b1e15ee30cec6cd440bf56bbc09d8e7f0812987497a62b096f2b"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/02-infrared/partitions.bin",
+    "bytes": 3072,
+    "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/03-servo-pan/boot_app0.bin",
+    "bytes": 8192,
+    "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/03-servo-pan/bootloader.bin",
+    "bytes": 13248,
+    "sha256": "30d47ab1f344cfa69f6b2f718ffa72fc7baea6db047eaabefea162db29e6821c"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/03-servo-pan/firmware.bin",
+    "bytes": 295344,
+    "sha256": "9745dff1e8ed4c071c1b0c1c34be25e6eb94ed8889584ff0e8443b266bbb8a28"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/03-servo-pan/partitions.bin",
+    "bytes": 3072,
+    "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/04-servo-tilt/boot_app0.bin",
+    "bytes": 8192,
+    "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/04-servo-tilt/bootloader.bin",
+    "bytes": 13248,
+    "sha256": "30d47ab1f344cfa69f6b2f718ffa72fc7baea6db047eaabefea162db29e6821c"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/04-servo-tilt/firmware.bin",
+    "bytes": 295344,
+    "sha256": "10f549ab9a0558aac4d89bcf6c0fdce28119a5a88d9901e7e2d2fe581775960d"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/04-servo-tilt/partitions.bin",
+    "bytes": 3072,
+    "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/05-touch/boot_app0.bin",
+    "bytes": 8192,
+    "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/05-touch/bootloader.bin",
+    "bytes": 13248,
+    "sha256": "30d47ab1f344cfa69f6b2f718ffa72fc7baea6db047eaabefea162db29e6821c"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/05-touch/firmware.bin",
+    "bytes": 288896,
+    "sha256": "2671a3f0df5cce1310af9789f89b2241f86d35123242417cbffe2ab6d9fc1c4b"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/05-touch/partitions.bin",
+    "bytes": 3072,
+    "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/06-robot/boot_app0.bin",
+    "bytes": 8192,
+    "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/06-robot/bootloader.bin",
+    "bytes": 13248,
+    "sha256": "30d47ab1f344cfa69f6b2f718ffa72fc7baea6db047eaabefea162db29e6821c"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/06-robot/firmware.bin",
+    "bytes": 315136,
+    "sha256": "b988dc6e63728966779a2bb66052160d47bece8dab499a021638d709280cff06"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/firmware/teaching/06-robot/partitions.bin",
+    "bytes": 3072,
+    "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/manifest-display.json",
+    "bytes": 718,
+    "sha256": "616f05c9e005b7ea58ae2218840767d77a44c59210bd6928e99aabdf25e35640"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/manifest-infrared.json",
+    "bytes": 725,
+    "sha256": "4cdbccaffb6887b0a5e62c8615de71986da0dd67a96a3fbc59ebc9d4e95d523a"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/manifest-servo-pan.json",
+    "bytes": 732,
+    "sha256": "391ad3ce55659986e3c1a58feb0051dec720245fe8213ba8853ac6ea463ba3b7"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/manifest-servo-tilt.json",
+    "bytes": 736,
+    "sha256": "6e6e6d9ba3b7cebd1f8ff1690f973bbbccf3aa7ede62559955d179dec97ea166"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/manifest-touch.json",
+    "bytes": 716,
+    "sha256": "e62bef86d651c6e9539b064091caf1d356ebbba195cace6f7c665b580bd97097"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/manifest.json",
+    "bytes": 710,
+    "sha256": "7c017d537eb96c12948b4fef2ba1eb2eefc21f434290d37f0017bee29868c230"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/offline-use.txt",
+    "bytes": 967,
+    "sha256": "557df72c36560f07c369fa37ed8e6341efe44d76e0385d0dc6ec762ee0feb167"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/photo-wiring.css",
+    "bytes": 4531,
+    "sha256": "56524ca695c67c31b18065008e8c006b63fe20c207474cb1a462f49971bf6905"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/photo-wiring.js",
+    "bytes": 4521,
+    "sha256": "efe0e6a8f4d54080b39b0d1ac813740f9f7d7928e85bd4ec7633c9fbebe345b5"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/release.json",
+    "bytes": 6911,
+    "sha256": "85bcd0843a3ad5b98c8eb1145407e69bbb83227f3caa629d14a2295b7b564429"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/start-offline-installer.cmd",
+    "bytes": 323,
+    "sha256": "4086f486da4794d84841f5389d03fc7be646f2c88be7268468a184a1fa566b2b"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/start-offline-installer.ps1",
+    "bytes": 4994,
+    "sha256": "01925b530e4b63b9bd7ccfb7b88e0eaba84bff89877daf0c6409d4a915b0bf48"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/teaching-flow.js",
+    "bytes": 25480,
+    "sha256": "2b5f9666ab0d00ab22788d9c078cbae64118053516ee8044be557a372498ef55"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/teaching-page.css",
+    "bytes": 13931,
+    "sha256": "aad9ca19abecc3149f2bb319130d225c487ef616d26f23e99f8c640f1b2ee297"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/teaching-page.js",
+    "bytes": 17505,
+    "sha256": "a736b942e95e3a1a58dc315ac5f3628f7e8059d8e1b5b1ba7c44bf20c4da9211"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/test-connection.js",
+    "bytes": 12421,
+    "sha256": "017790a071b869ce3b292ac66b49995fb9dfea6dceba2344e333296cdf01014a"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/LICENSE",
+    "bytes": 11357,
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/README.md",
+    "bytes": 1488,
+    "sha256": "73dcb6e3fdb9d94a989122bbea187492da39006a1341fd9b0bb490ef450b32dc"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/esp32-DlivVhIs.js",
+    "bytes": 2644,
+    "sha256": "6aed90a7a4e46a15d725d56d068a802e577cbb861292256fe3ac7877c48095de"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/esp32c2-B8k8_i-D.js",
+    "bytes": 1826,
+    "sha256": "5ee68b2b874bdb8a231879ad865fa49c21147c3c783dd6c3722a41a99bc84880"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/esp32c3-CgdtzNJE.js",
+    "bytes": 1933,
+    "sha256": "41fbadf930fc91346b833a671a89c494fb5307e4dcb1f758221b99b9f9dc9f87"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/esp32c5-CFQToUlC.js",
+    "bytes": 3065,
+    "sha256": "bde2cb3f82c5d810b117e011a8990031ff9c14dcece98f36f20071efb52f7dbd"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/esp32c6-C6rrFJso.js",
+    "bytes": 1492,
+    "sha256": "3d814217bff71130e0bf47616848fa4b0669c954cc862a49b5a8bfa2e5145845"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/esp32c61-BUPwzLDb.js",
+    "bytes": 2907,
+    "sha256": "c28b44cedbaf1e6eeb65abe921600ccd1428ea487684dde8727832983f4ff45b"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/esp32h2-IsK8MXMR.js",
+    "bytes": 1443,
+    "sha256": "db7c50a1da787f6b3d8f73d90eddce6c0217f3a357d2a70bd823c43cbed406bd"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/esp32p4-DD6i9EGh.js",
+    "bytes": 4506,
+    "sha256": "99770f5ac6ff4f8e7fb11ef83201fe4597dd6015ed1c81f5142dbb61d18e609f"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/esp32s2-Bl3uMkxu.js",
+    "bytes": 5585,
+    "sha256": "20dcc1572f524eab1acad9a37a0e23b76f17f0ea7fe59088fee7b9b237ea6167"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/esp32s3-vxLttl29.js",
+    "bytes": 3375,
+    "sha256": "f4cedeb91f806411cbf5a6b01a6c1d84d591f52f3752f04745055d95be1187dc"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/esp8266-Dk4lBEaC.js",
+    "bytes": 1915,
+    "sha256": "48d19c6a224321ed398b8afa0c6368dc8ed7a0ded4e20d230510d42a527d040b"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/index-BaUGegDD.js",
+    "bytes": 6163,
+    "sha256": "5f5b11becf25365ae8ac6c7c9d044fa0cea89714b8201c05d95a18d7427f0edd"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/install-button.js",
+    "bytes": 3108,
+    "sha256": "b1072c6fd893f161717874f5edb273bf56f520206cfbef6ad28123434ee1b390"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/install-dialog-CQzvAv3p.js",
+    "bytes": 284673,
+    "sha256": "a6f9ce507348db03e79e496305f6f5037f8420cd1cad58d534cbb3f274258d51"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/rom-B2LvkjpK.js",
+    "bytes": 52,
+    "sha256": "df3be616f45de367a8d14a7c4ef849772cfe3e6b2ad33092a5afdde6eac62bfd"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/stub_flasher_32-BLbsWvxO.js",
+    "bytes": 5150,
+    "sha256": "57581b04181316599594acb500b7a36316e9861f244508fb3c9efe0ccad9f27e"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/stub_flasher_32c2-wLQhZItC.js",
+    "bytes": 4954,
+    "sha256": "dae20b50bc4b5d54982204fd86f7aace42c8e2a0953938e0fe3516fc544a4cd2"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/stub_flasher_32c3-DmSvHQKL.js",
+    "bytes": 5606,
+    "sha256": "3f37f501942572fdec58c8cc3550ad558c931a9469b3e65fb88c9b016c1a39a7"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/stub_flasher_32c5-BwEHy6UZ.js",
+    "bytes": 5498,
+    "sha256": "3e29b4e870a9d03e61fb0d51cace7440b5e01cec00f2fa7dafc31ac7b4417207"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/stub_flasher_32c6-ZuxjUVr4.js",
+    "bytes": 5502,
+    "sha256": "8c936767aafb82e5e1e61cc965ace311f89182b1335737f1cd3bf2ac7573f014"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/stub_flasher_32c61-DeKkw9vN.js",
+    "bytes": 5502,
+    "sha256": "7720d8b83e696520fa80e46829b0e5aa6ea88596dee6d448a5b1d8d8fef55715"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/stub_flasher_32h2-CZ4EIL3w.js",
+    "bytes": 5502,
+    "sha256": "a6724fc931e0bb9153c9b104cfe128b66ab0e71e405c10d529951debb31387d8"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/stub_flasher_32p4-BvuBbdjO.js",
+    "bytes": 5354,
+    "sha256": "6c3431d13d635384bbfbe70c612a67b8f89aad3a36c3b6498a2fe4ede573f8a6"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/stub_flasher_32s2-CrsP1231.js",
+    "bytes": 6374,
+    "sha256": "61bf5c06933184007050bb9fa6c93d0577e42208b5212cda7e806ac614b0e14a"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/stub_flasher_32s3-CiJyd6Fk.js",
+    "bytes": 7622,
+    "sha256": "7c05cb1dc75da8ebca5199e53de474e037f82ce5bf1978330a35354e40e87494"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/stub_flasher_8266-CQFcqJ_a.js",
+    "bytes": 12254,
+    "sha256": "7ca214be908aacff37fd937188f55042c9aeae8af30da7141d634ef68778fc79"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/vendor/esp-web-tools/styles-B7oMzmOl.js",
+    "bytes": 59209,
+    "sha256": "c1bfbc17850fafba1afac66d6ba6b8e3d5ed8e0cbfcbff616c0a27eef5119bdc"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/教学使用说明.md",
+    "bytes": 2831,
+    "sha256": "29d29510900f2886e50f782438543f60a4ff227e3f90f5e922091898ea096f25"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/index.html",
+    "bytes": 8728,
+    "sha256": "800dd6f652f6154f452645ba7295abcd2cf58dfe4e026b5c2611577f70a08303"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/index-photo.html",
+    "bytes": 8728,
+    "sha256": "800dd6f652f6154f452645ba7295abcd2cf58dfe4e026b5c2611577f70a08303"
+  },
+  {
+    "path": "工具包/cardboard-bot-teaching/index-simple.html",
+    "bytes": 8896,
+    "sha256": "944f0f87cdf423e75b2bcfcb2b40ec5d3e3b240403019ee2da2725aa9a4913e4"
+  }
+]

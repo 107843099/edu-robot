@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-02",
+  "source_files_verified": 2,
+  "archive_files_verified": 80,
+  "release_files_verified": 24,
+  "manifests_verified": 6,
+  "application_images_verified": 6,
+  "embedded_c_cpp_source_files": 0,
+  "instruction_decoding_performed": true,
+  "errors": [],
+  "scope": "File checks, image decoding, string and selected RISC-V instruction analysis only. No serial I/O, flashing, firmware execution or physical tests."
+}

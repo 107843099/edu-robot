@@ -1,0 +1,21 @@
+{
+  "file": "firmware/teaching/06-robot/firmware.bin",
+  "offset": "0x120",
+  "order": [
+    "pan_center",
+    "pan_min",
+    "pan_max",
+    "tilt_center",
+    "tilt_min",
+    "tilt_max"
+  ],
+  "values": [
+    90,
+    30,
+    150,
+    90,
+    60,
+    120
+  ],
+  "interpretation": "Data cross-checked with the copy and validation routines; not physical travel limits."
+}

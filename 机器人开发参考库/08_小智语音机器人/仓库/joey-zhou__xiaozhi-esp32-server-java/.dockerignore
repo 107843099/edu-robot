@@ -1,0 +1,39 @@
+# 版本控制 / IDE
+.git/
+.github/
+.idea/
+.vscode/
+.windsurf/
+.claude/
+
+# 各模块构建产物
+**/target/
+**/node_modules/
+
+# 前端（由 Dockerfile-web 单独构建）
+web/
+
+# 文档引擎（不需要进入 server 构建）
+document_engine/
+
+# 运行时产物
+audio/
+avatar/
+uploads/
+logs/
+data/
+
+# 本地下载的模型/原生库与交付物：构建时由 scripts/download_*.sh 重新下载，不需要从上下文带入
+models/
+lib/
+delivery/
+delivery.zip
+
+# 架构审计输出，与镜像构建无关
+outputs/
+
+# 杂项
+*.md
+*.log
+.DS_Store
+*.iml

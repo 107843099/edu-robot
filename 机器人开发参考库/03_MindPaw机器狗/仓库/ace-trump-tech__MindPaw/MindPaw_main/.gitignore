@@ -1,0 +1,3 @@
+# MindPaw_main 专用 .gitignore
+# 根目录已有全局规则，这里只加项目特定规则
+.pio/

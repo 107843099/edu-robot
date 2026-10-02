@@ -1,0 +1,24 @@
+# Large media / checkpoints — only the showcase files are tracked
+RL/models/*.pth
+!RL/models/parallel_ppo_best.pth
+!RL/models/nn_ppo_ddtheta_best.pth
+RL/movies/*
+!RL/movies/albert_day.mp4
+!RL/movies/albert_night.mp4
+!RL/movies/albert_learning.mp4
+RL/plots/*
+!RL/plots/parallel_ppo_results.png
+
+# Generated
+RL/textures/
+RL/export/
+RL/upload/
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store

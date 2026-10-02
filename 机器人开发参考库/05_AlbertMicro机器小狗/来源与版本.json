@@ -1,0 +1,42 @@
+[
+  {
+    "robot_id": 5,
+    "folder": "05_AlbertMicro机器小狗",
+    "repo": "thinking0things/AlbertMicro",
+    "url": "https://github.com/thinking0things/AlbertMicro",
+    "purpose": "主项目",
+    "requested_branch": null,
+    "branch": "main",
+    "commit": "8d0ae147e967c798469a551c1dc49da781fc5587",
+    "downloaded_at": "2026-10-02T09:48:28+08:00",
+    "relative_path": "05_AlbertMicro机器小狗/仓库/thinking0things__AlbertMicro",
+    "file_count": 5,
+    "unpacked_bytes": 1749368,
+    "archive_sha256": "fa89368901a6e22ee524d842646c274eafcba32f01faba4e49a7dd49478cbc84",
+    "archive_url": "https://codeload.github.com/thinking0things/AlbertMicro/zip/8d0ae147e967c798469a551c1dc49da781fc5587",
+    "lfs_pointers": [],
+    "gitmodules_files": [],
+    "status": "downloaded",
+    "download_method": "GitHub commit archive snapshot, no commit history"
+  },
+  {
+    "robot_id": 5,
+    "folder": "05_AlbertMicro机器小狗",
+    "repo": "thinking0things/AlbertPro",
+    "url": "https://github.com/thinking0things/AlbertPro",
+    "purpose": "同作者进阶四足",
+    "requested_branch": null,
+    "branch": "main",
+    "commit": "7ff19d4e6b9ab0bdcc38189dd02eabebddbf6d15",
+    "downloaded_at": "2026-10-02T09:48:32+08:00",
+    "relative_path": "05_AlbertMicro机器小狗/仓库/thinking0things__AlbertPro",
+    "file_count": 49,
+    "unpacked_bytes": 64788861,
+    "archive_sha256": "0649eb1ef9a0885b2b2ded2ad9120c136a4d3c17287d439cc9579c9aec1483a1",
+    "archive_url": "https://codeload.github.com/thinking0things/AlbertPro/zip/7ff19d4e6b9ab0bdcc38189dd02eabebddbf6d15",
+    "lfs_pointers": [],
+    "gitmodules_files": [],
+    "status": "downloaded",
+    "download_method": "GitHub commit archive snapshot, no commit history"
+  }
+]
