@@ -10,8 +10,8 @@
   "dependency_records": 24,
   "new_common_library_snapshots": 7,
   "common_library_files_checked": 195,
-  "authored_markdown_files_checked": 82,
-  "local_links_checked": 1031,
+  "authored_markdown_files_checked": 84,
+  "local_links_checked": 1060,
   "errors": [],
   "validation_scope": [
     "card/JSON consistency",

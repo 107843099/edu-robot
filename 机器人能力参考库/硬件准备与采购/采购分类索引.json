@@ -1,0 +1,419 @@
+{
+  "date": "2026-10-03",
+  "reference_commit": "f0b34aaac5d3892108685012b5c026256d813118",
+  "classification": {
+    "A": "通用开发及当前桌面首版必需，先扣除已确认库存",
+    "B": "指定功能/原构型被选定后必需，内部替代方案按需选择"
+  },
+  "primary_document": "机器人能力参考库/硬件准备与采购/README.md",
+  "project_document": "机器人能力参考库/硬件准备与采购/项目硬件增量表.md",
+  "a_items": [
+    {
+      "id": "A01",
+      "name": "稳定匹配供电",
+      "condition": "外接5V约3A是两微型舵机台架起点，不是其他项目统一规格",
+      "inventory_status": "needs_verification_or_purchase"
+    },
+    {
+      "id": "A02",
+      "name": "USB数据线",
+      "condition": "下载与日志时必需",
+      "inventory_status": "inventory_not_reported"
+    },
+    {
+      "id": "A03",
+      "name": "接线与供电分配",
+      "condition": "杜邦线、电源线、匹配端子/接头及活动轴线束",
+      "inventory_status": "inventory_not_reported"
+    },
+    {
+      "id": "A04",
+      "name": "舵机电源开关",
+      "condition": "用于直接切断舵机电源，按实际额定电流选择",
+      "inventory_status": "inventory_not_reported"
+    },
+    {
+      "id": "A05",
+      "name": "触摸输入与感应区",
+      "condition": "当前首版需要摸头回应时采用TTP223+铜箔",
+      "inventory_status": "planned_purchase"
+    },
+    {
+      "id": "A06",
+      "name": "两轴定位机构",
+      "condition": "两只位置式舵机、舵盘、螺丝和连接/固定件",
+      "inventory_status": "owned_quantity_and_compatibility_unknown"
+    },
+    {
+      "id": "A07",
+      "name": "主控与显示",
+      "condition": "已确认开发板；屏驱动/分辨率待确认",
+      "inventory_status": "owned_verification_required"
+    },
+    {
+      "id": "A08",
+      "name": "绝缘与固定",
+      "condition": "试验及可拆装配所需绝缘/固定材料",
+      "inventory_status": "inventory_not_reported"
+    }
+  ],
+  "b_groups": [
+    {
+      "id": "B01",
+      "name": "机器人自身语音",
+      "condition": "需要在机器人上收音/发声",
+      "component_candidates": [
+        "兼容I2S麦克风模块",
+        "兼容I2S功放模块",
+        "匹配喇叭",
+        "配套线材与供电"
+      ],
+      "project_ids": [
+        1,
+        4,
+        8,
+        9,
+        10,
+        12,
+        15,
+        16,
+        19
+      ],
+      "limitations": "电脑承担语音时可以先复用电脑音频；设备音频需匹配板级配置"
+    },
+    {
+      "id": "B02",
+      "name": "自身运动输入",
+      "condition": "需要倾斜/摇晃/拿起检测",
+      "component_candidates": [
+        "MPU6050或BMI160，选一种"
+      ],
+      "project_ids": [
+        15
+      ],
+      "limitations": "建议功能扩展，不是纸壳原包标配；原XGO IMU型号按其BOM单独核对"
+    },
+    {
+      "id": "B03",
+      "name": "外部接近/左右输入",
+      "condition": "需要距离或左右遮挡",
+      "component_candidates": [
+        "HC-SR04及Echo电平转换",
+        "或合适红外避障模块2个",
+        "或小型ToF模块"
+      ],
+      "project_ids": [
+        15,
+        18,
+        19
+      ],
+      "limitations": "互为按需求选择的方案；单个距离值不判断方向，寻线与避障不可自动互换"
+    },
+    {
+      "id": "B04",
+      "name": "轮式/履带底盘",
+      "condition": "需要真实移动",
+      "component_candidates": [
+        "两个匹配减速电机",
+        "双H桥驱动",
+        "轮子/履带与机械传动",
+        "匹配电源与分配"
+      ],
+      "project_ids": [
+        12,
+        18,
+        19
+      ],
+      "limitations": "驱动板按原方案选择；需要轮速反馈时另加编码器"
+    },
+    {
+      "id": "B05",
+      "name": "更多关节与专用平台",
+      "condition": "选择完整多关节原构型",
+      "component_candidates": [
+        "按原BOM匹配舵机/执行器",
+        "驱动通道或反馈总线",
+        "主控/接口板",
+        "关节件与负载电源"
+      ],
+      "project_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        11,
+        13,
+        14,
+        16
+      ],
+      "limitations": "按项目硬件增量表，不能仅按通道数替代机械/反馈/电压匹配"
+    },
+    {
+      "id": "B06",
+      "name": "电池独立运行",
+      "condition": "脱离台架/电脑供电",
+      "component_candidates": [
+        "确认电池组",
+        "匹配转换/稳压",
+        "开关和按需电压监测",
+        "按电池化学体系匹配充电方案"
+      ],
+      "project_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        18,
+        19
+      ],
+      "limitations": "五号电池盒未确认节数与类型，不自动选升压/降压；第17项为主机配套软件"
+    },
+    {
+      "id": "B07",
+      "name": "彩屏或视觉",
+      "condition": "需要彩色角色或相机功能",
+      "component_candidates": [
+        "匹配彩屏及驱动",
+        "或匹配摄像头和开发板接口适配"
+      ],
+      "project_ids": [
+        4,
+        10,
+        11,
+        12,
+        15
+      ],
+      "limitations": "彩屏与视觉是两种可选功能，不应一起列为必买；相机扩展非19项共同标配"
+    }
+  ],
+  "recommended_accessories": [
+    "万用表",
+    "470-1000uF、至少10V电解电容作为供电试验备件",
+    "电阻包",
+    "按钮",
+    "洞洞板与排针",
+    "按需焊接工具"
+  ],
+  "projects": [
+    {
+      "project_id": 1,
+      "name": "01_芝麻机器人",
+      "source_document": "机器人开发参考库/01_芝麻机器人/README.md",
+      "reference_note": "8舵机",
+      "procurement_groups": [
+        "B01",
+        "B05",
+        "B06"
+      ]
+    },
+    {
+      "project_id": 2,
+      "name": "02_曼波小狗",
+      "source_document": "机器人开发参考库/02_曼波小狗/README.md",
+      "reference_note": "曼波版本4或5舵机，原STM32",
+      "procurement_groups": [
+        "B05",
+        "B06"
+      ]
+    },
+    {
+      "project_id": 3,
+      "name": "03_MindPaw机器狗",
+      "source_document": "机器人开发参考库/03_MindPaw机器狗/README.md",
+      "reference_note": "4舵机，原ESP8266",
+      "procurement_groups": [
+        "B05",
+        "B06"
+      ]
+    },
+    {
+      "project_id": 4,
+      "name": "04_Stack-chan桌面机器人",
+      "source_document": "机器人开发参考库/04_Stack-chan桌面机器人/README.md",
+      "reference_note": "M5Stack与双轴；板级显示/音频",
+      "procurement_groups": [
+        "B01",
+        "B05",
+        "B06",
+        "B07"
+      ]
+    },
+    {
+      "project_id": 5,
+      "name": "05_AlbertMicro机器小狗",
+      "source_document": "机器人开发参考库/05_AlbertMicro机器小狗/README.md",
+      "reference_note": "4舵机，S3和SH1106",
+      "procurement_groups": [
+        "B05",
+        "B06"
+      ]
+    },
+    {
+      "project_id": 6,
+      "name": "06_NodeHexa六足机器人",
+      "source_document": "机器人开发参考库/06_NodeHexa六足机器人/README.md",
+      "reference_note": "18舵机，多通道驱动",
+      "procurement_groups": [
+        "B05",
+        "B06"
+      ]
+    },
+    {
+      "project_id": 7,
+      "name": "07_RookiDroid六足机器人",
+      "source_document": "机器人开发参考库/07_RookiDroid六足机器人/README.md",
+      "reference_note": "18舵机，双PCA9685",
+      "procurement_groups": [
+        "B05",
+        "B06"
+      ]
+    },
+    {
+      "project_id": 8,
+      "name": "08_小智语音机器人",
+      "source_document": "机器人开发参考库/08_小智语音机器人/README.md",
+      "reference_note": "小智音频板级配置",
+      "procurement_groups": [
+        "B01",
+        "B06"
+      ]
+    },
+    {
+      "project_id": 9,
+      "name": "09_Otto闪猫侠机器人",
+      "source_document": "机器人开发参考库/09_Otto闪猫侠机器人/README.md",
+      "reference_note": "4或6舵机",
+      "procurement_groups": [
+        "B01",
+        "B05",
+        "B06"
+      ]
+    },
+    {
+      "project_id": 10,
+      "name": "10_EMO-Dot小豆机器人",
+      "source_document": "机器人开发参考库/10_EMO-Dot小豆机器人/README.md",
+      "reference_note": "圆屏固定支脚",
+      "procurement_groups": [
+        "B01",
+        "B06",
+        "B07"
+      ]
+    },
+    {
+      "project_id": 11,
+      "name": "11_ElectronBot类人桌面机器人",
+      "source_document": "机器人开发参考库/11_ElectronBot类人桌面机器人/README.md",
+      "reference_note": "STM32F405和6自由度定制反馈舵机",
+      "procurement_groups": [
+        "B05",
+        "B06",
+        "B07"
+      ]
+    },
+    {
+      "project_id": 12,
+      "name": "12_VerdureLab外壳资源",
+      "source_document": "机器人开发参考库/12_VerdureLab外壳资源/README.md",
+      "reference_note": "外壳档案，Rover等子路线另选",
+      "procurement_groups": [
+        "B01",
+        "B04",
+        "B06",
+        "B07"
+      ]
+    },
+    {
+      "project_id": 13,
+      "name": "13_XGO-Duck赛博鸭子",
+      "source_document": "机器人开发参考库/13_XGO-Duck赛博鸭子/README.md",
+      "reference_note": "UNO Q，15总线舵机，IMU",
+      "procurement_groups": [
+        "B05",
+        "B06"
+      ]
+    },
+    {
+      "project_id": 14,
+      "name": "14_Jumper螃蟹机器人",
+      "source_document": "机器人开发参考库/14_Jumper螃蟹机器人/README.md",
+      "reference_note": "RK3576，22关节，制造与部署待核对",
+      "procurement_groups": [
+        "B05",
+        "B06"
+      ]
+    },
+    {
+      "project_id": 15,
+      "name": "15_小纸壳机器人",
+      "source_document": "机器人开发参考库/15_小纸壳机器人/README.md",
+      "reference_note": "2舵机+摸头，S3改版需移植",
+      "procurement_groups": [
+        "B01",
+        "B02",
+        "B03",
+        "B06",
+        "B07"
+      ]
+    },
+    {
+      "project_id": 16,
+      "name": "16_TinyEngineer桌面编程机器人",
+      "source_document": "机器人开发参考库/16_TinyEngineer桌面编程机器人/README.md",
+      "reference_note": "原5SG90+PCA+128x32OLED+I2S输出",
+      "procurement_groups": [
+        "B01",
+        "B05",
+        "B06"
+      ]
+    },
+    {
+      "project_id": 17,
+      "name": "17_Needle端侧模型",
+      "source_document": "机器人开发参考库/17_Needle端侧模型/README.md",
+      "reference_note": "主机/移动/边缘软件配套，无新增通用机器人硬件必需",
+      "procurement_groups": []
+    },
+    {
+      "project_id": 18,
+      "name": "18_桌面小坦克",
+      "source_document": "机器人开发参考库/18_桌面小坦克/README.md",
+      "reference_note": "S3，双3V/150减速比N20，TB6612",
+      "procurement_groups": [
+        "B03",
+        "B04",
+        "B06"
+      ]
+    },
+    {
+      "project_id": 19,
+      "name": "19_每逢佳节瘦三斤固件生态",
+      "source_document": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/README.md",
+      "reference_note": "按C3/S3子项目分别确认",
+      "procurement_groups": [
+        "B01",
+        "B03",
+        "B04",
+        "B06"
+      ]
+    }
+  ],
+  "physical_verification": false,
+  "purchase_rule": "unknown/null不等于缺少；原机构舵机数为目标总数，扣除匹配的已确认库存后才是缺口；其他项目电源需要重新按负载计算。"
+}

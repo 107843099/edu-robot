@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-03",
+  "evidence": "本次用户文字说明，未实物测量",
+  "items": [
+    {
+      "id": "esp32",
+      "name": "ESP32-S3 N16R8开发板",
+      "status": "owned",
+      "quantity_confirmed": 1,
+      "details": {
+        "usb": true,
+        "headers": true,
+        "exact_board_model": null,
+        "claimed_flash_mb": 16,
+        "claimed_psram_mb": 8
+      }
+    },
+    {
+      "id": "breadboard",
+      "name": "面包板",
+      "status": "owned",
+      "quantity_confirmed": null,
+      "details": {}
+    },
+    {
+      "id": "oled",
+      "name": "0.96寸四针屏",
+      "status": "owned",
+      "quantity_confirmed": 1,
+      "details": {
+        "interface": "四针，据描述预计I2C，丝印待核对",
+        "driver": null,
+        "resolution": null
+      }
+    },
+    {
+      "id": "sonar",
+      "name": "HC-SR04",
+      "status": "owned",
+      "quantity_confirmed": null,
+      "details": {
+        "echo_level_conversion_required_for_common_5v_module": true
+      }
+    },
+    {
+      "id": "sg90",
+      "name": "SG90舵机",
+      "status": "owned",
+      "quantity_confirmed": null,
+      "details": {
+        "position_or_continuous": null
+      }
+    },
+    {
+      "id": "mg90",
+      "name": "MG90舵机",
+      "status": "owned",
+      "quantity_confirmed": null,
+      "details": {
+        "exact_model": null,
+        "position_or_continuous": null
+      }
+    },
+    {
+      "id": "pca9685",
+      "name": "PCA9685A PWM板",
+      "status": "owned",
+      "quantity_confirmed": null,
+      "details": {
+        "exact_board_model": null,
+        "logic_supply_target_v": 3.3,
+        "servo_supply_target_v": 5
+      }
+    },
+    {
+      "id": "aa_holder",
+      "name": "五号电池盒",
+      "status": "owned",
+      "quantity_confirmed": null,
+      "details": {
+        "cell_count": null,
+        "chemistry": null,
+        "connection": null,
+        "loaded_voltage_v": null
+      }
+    },
+    {
+      "id": "touch",
+      "name": "TTP223模块",
+      "status": "planned_purchase",
+      "quantity_confirmed": null,
+      "details": {
+        "desired_mode": "按住有效，松开恢复"
+      }
+    },
+    {
+      "id": "mpu6050",
+      "name": "MPU6050模块",
+      "status": "planned_purchase",
+      "quantity_confirmed": null,
+      "details": {
+        "not_mandatory_for_basic_servo_motion": true,
+        "alternative_to": "bmi160"
+      }
+    },
+    {
+      "id": "bmi160",
+      "name": "BMI160模块",
+      "status": "planned_purchase",
+      "quantity_confirmed": null,
+      "details": {
+        "not_mandatory_for_basic_servo_motion": true,
+        "alternative_to": "mpu6050"
+      }
+    }
+  ],
+  "quantity_note": "null表示数量未说明；屏与开发板按用户单件描述记录1，不据此推断其他模块数量。",
+  "pending_questions": [
+    "五号电池盒节数、普通碱性或1.2V镍氢等电池类型",
+    "SG90、MG90各有几只，具体型号及是否位置式",
+    "屏幕驱动、分辨率和四针丝印",
+    "现有USB数据线、稳压电源、线材、舵盘固定件和万用表"
+  ]
+}
