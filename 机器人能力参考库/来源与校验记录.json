@@ -1,0 +1,601 @@
+{
+  "date": "2026-10-03",
+  "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+  "capability_cards": 52,
+  "project_coverage": 19,
+  "source_references_checked": 179,
+  "unique_source_files": 81,
+  "preset_collections": 12,
+  "preset_entries": 202,
+  "dependency_records": 24,
+  "new_common_library_snapshots": 7,
+  "common_library_files_checked": 195,
+  "authored_markdown_files_checked": 82,
+  "local_links_checked": 1031,
+  "errors": [],
+  "validation_scope": [
+    "card/JSON consistency",
+    "source symbol and exact line",
+    "fixed upstream commit links",
+    "original byte SHA256 and Git blob",
+    "decoded text SHA256",
+    "all new common library file hashes",
+    "19-project coverage",
+    "preset names and counts",
+    "authored local navigation"
+  ],
+  "not_performed": [
+    "target firmware compile",
+    "new physical robot tests",
+    "running upstream installers or services"
+  ],
+  "source_files": [
+    {
+      "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/src/FluxGarage_RoboEyes.h",
+      "git_blob": "56e4b91996db2aa1e55a8e0ccacde7bcb2a1598b",
+      "sha256_bytes": "04e098193efbf6656085429b85a20d40c1d56c1837e7ef500779f6557645a4d8",
+      "sha256_utf8": "db9361803f9108253d53ece92a748cd82c6c9735f23537fa6b34a6473f7062e3",
+      "upstream_commit": "b42f8e596535234932be3514ac7a813d4ced0046"
+    },
+    {
+      "path": "机器人开发参考库/05_AlbertMicro机器小狗/仓库/thinking0things__AlbertMicro/AlbertMicro.ino",
+      "git_blob": "7eed3a9ca8a7fb39330c207a934da47d9f97dc91",
+      "sha256_bytes": "bb297056233954a32fb6400bc6ae9a075200d3aa594dc86c2a418f8d11a0dc8d",
+      "sha256_utf8": "bb297056233954a32fb6400bc6ae9a075200d3aa594dc86c2a418f8d11a0dc8d",
+      "upstream_commit": "8d0ae147e967c798469a551c1dc49da781fc5587"
+    },
+    {
+      "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/lib/TinyEngineerExpressions/src/TinyEngineerExpressions.h",
+      "git_blob": "aaa96967304422ab9c62494118f247a5a4222120",
+      "sha256_bytes": "65985ca96aa35b26792d5fb092364197751ead7c20d6c603f48449654cf547ed",
+      "sha256_utf8": "65985ca96aa35b26792d5fb092364197751ead7c20d6c603f48449654cf547ed",
+      "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89"
+    },
+    {
+      "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot/firmware/face-bitmaps.h",
+      "git_blob": "bb26ed1c350582c32f3aebb1e6a31280683448d0",
+      "sha256_bytes": "722692894402d9eccf5c022ed7b4eb090c2de6b171b7872cedce55609dac1f06",
+      "sha256_utf8": "718a8d3e5befc3b7a2cc59e58baad72663fe9bd15d5949888d0008321a1b0ac4",
+      "upstream_commit": "d106cbc8e158c982f408db421134f23273c5f51f"
+    },
+    {
+      "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot/firmware/sesame-firmware-main.ino",
+      "git_blob": "92a1584675999c40ed69eef77c58d3985ffc82f4",
+      "sha256_bytes": "24a00b44091c686e1a6803028ce3108c95bcf8cc738061ebdb249fe4add96982",
+      "sha256_utf8": "ef1b7d0702580381d970f349c12c7094b8f4ff4574a8214e21d4783e166d1450",
+      "upstream_commit": "d106cbc8e158c982f408db421134f23273c5f51f"
+    },
+    {
+      "path": "机器人开发参考库/03_MindPaw机器狗/仓库/ace-trump-tech__MindPaw/MindPaw_main/src/main.cpp",
+      "git_blob": "7fe50333051f14542a4027c77319fa2c982793db",
+      "sha256_bytes": "ac0d83dea0d2081bedd1c574faf5d86206d57912d2f2e81918fb24654b18ccf2",
+      "sha256_utf8": "ac0d83dea0d2081bedd1c574faf5d86206d57912d2f2e81918fb24654b18ccf2",
+      "upstream_commit": "21c549252a60126a80874738626f1b8c36efc38c"
+    },
+    {
+      "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__m5stack-avatar/src/Avatar.h",
+      "git_blob": "58bb1bdda3411c88de3f383e72628226f5af75e9",
+      "sha256_bytes": "6196f979d89a2b560a5d526088d25101805f225902824f9c8b9c8c4789780fbf",
+      "sha256_utf8": "6196f979d89a2b560a5d526088d25101805f225902824f9c8b9c8c4789780fbf",
+      "upstream_commit": "7a90083edd9bbdc1a52ea13afe4d5c3b7fc7bfa8"
+    },
+    {
+      "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__m5stack-avatar/src/Expression.h",
+      "git_blob": "b0cbf87572a3f2789359d8e9d6cf1652451ccbe3",
+      "sha256_bytes": "12261c367b4167bb250ad40334e39f296323dd5c1dea5a3cd0a94f6ea68e1461",
+      "sha256_utf8": "12261c367b4167bb250ad40334e39f296323dd5c1dea5a3cd0a94f6ea68e1461",
+      "upstream_commit": "7a90083edd9bbdc1a52ea13afe4d5c3b7fc7bfa8"
+    },
+    {
+      "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__stack-chan/firmware/host/modules/ui/state/face-state.ts",
+      "git_blob": "4970dfaad395fa7f17e9fdc3006e54cf61a8d913",
+      "sha256_bytes": "62b6ebfaf112d098cfd9125b644aad26937337aab9f82574daef4cc1fe62d02e",
+      "sha256_utf8": "62b6ebfaf112d098cfd9125b644aad26937337aab9f82574daef4cc1fe62d02e",
+      "upstream_commit": "fe7be1005d2cf8732f365176a91c7177c8533591"
+    },
+    {
+      "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__stack-chan/firmware/docs/api.md",
+      "git_blob": "df39b3e94a31858b6d36d115e452e3cb55c33ed0",
+      "sha256_bytes": "b08070d85263691771bcea87fd75a402003644837f21fec3db74f330f1215cd2",
+      "sha256_utf8": "b08070d85263691771bcea87fd75a402003644837f21fec3db74f330f1215cd2",
+      "upstream_commit": "fe7be1005d2cf8732f365176a91c7177c8533591"
+    },
+    {
+      "path": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-esp32/main/display/lcd_display.cc",
+      "git_blob": "3462ac0e2b22c6ea73106313960fbe946d1575f9",
+      "sha256_bytes": "66103d8f56deed00e5598885353c4e56970298ba98c6f9b91ce7adb435ac2d2d",
+      "sha256_utf8": "66103d8f56deed00e5598885353c4e56970298ba98c6f9b91ce7adb435ac2d2d",
+      "upstream_commit": "d395220a83fb7a16ea5dc761c08a4816177cc880"
+    },
+    {
+      "path": "机器人开发参考库/10_EMO-Dot小豆机器人/仓库/M-D-777__esp32_s3_lvgl9_lottie_test/main/lv_example_lottie_1.c",
+      "git_blob": "727229fcb8ce4316b77fd28f18fb27737655bedd",
+      "sha256_bytes": "debf35b1ea3dd2853b3bc2ca04125994f7a01709ed600c2b1f4d8436fedd0ce8",
+      "sha256_utf8": "debf35b1ea3dd2853b3bc2ca04125994f7a01709ed600c2b1f4d8436fedd0ce8",
+      "upstream_commit": "6bc01cad2a59cf061ddaf23847235f8f93e0e9b6"
+    },
+    {
+      "path": "机器人开发参考库/02_曼波小狗/仓库/RussellCooper-DJZ__manbo-robot-dog/User/Mode.c",
+      "git_blob": "f0ee2c907c31d5f313345393faf105021409e02a",
+      "sha256_bytes": "257136ee4a65164f96f4700498ab8c748e60aca3e58f56e3c6ef9006b18bea0b",
+      "sha256_utf8": "f63a4983588e17d8eb29808a415b43ad552bc363761f965694dbc8f57af7b7cf",
+      "upstream_commit": "9a3d315cfe50a62d8e6221cccf2aea696f96aedc"
+    },
+    {
+      "path": "机器人开发参考库/02_曼波小狗/仓库/RussellCooper-DJZ__manbo-robot-dog/Hardware/OLED.h",
+      "git_blob": "ae477611473dce12f8ca12f7b6402e01d6ff6958",
+      "sha256_bytes": "e75f0995aaa097bf303ad72b64aafbb14830e7b2dc4f3073ea7f678459bdbf0a",
+      "sha256_utf8": "2ac48984b98de72adc20ec7f0dad09799181dcf7d9ed949d67358cd6d795457a",
+      "upstream_commit": "9a3d315cfe50a62d8e6221cccf2aea696f96aedc"
+    },
+    {
+      "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/txp666__otto-emoji-gif-component/src/otto_emoji_gif.c",
+      "git_blob": "bad509aea4c9ddeae50f782fff18295fb89ce0b6",
+      "sha256_bytes": "a067d66fe81ef1923a46a3dd6a9378dee39954f13a10957f18bbafb25280f13b",
+      "sha256_utf8": "a067d66fe81ef1923a46a3dd6a9378dee39954f13a10957f18bbafb25280f13b",
+      "upstream_commit": "970cf66906d7c30059faa2704e7002f06b8c3619"
+    },
+    {
+      "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/txp666__otto-emoji-gif-component/include/otto_emoji_gif.h",
+      "git_blob": "795bd0c1f459ec76fe3dd570231f1a8a419d8130",
+      "sha256_bytes": "e63bb3b1a0ba3eb1f49575bc6b5339b3f64981f33c24a725ff8cbbacb656dfbc",
+      "sha256_utf8": "e63bb3b1a0ba3eb1f49575bc6b5339b3f64981f33c24a725ff8cbbacb656dfbc",
+      "upstream_commit": "970cf66906d7c30059faa2704e7002f06b8c3619"
+    },
+    {
+      "path": "机器人开发参考库/11_ElectronBot类人桌面机器人/仓库/peng-zhihui__ElectronBot/3.Software/SDK/ElectronBotSDK-LowLevel/src/electron_low_level.h",
+      "git_blob": "6319ff4a2b020220472ffabd8b15b620025da05a",
+      "sha256_bytes": "429cc97090a6baaae4122128a137a18b21fc28513fe6bc0d11fbda61f6557968",
+      "sha256_utf8": "429cc97090a6baaae4122128a137a18b21fc28513fe6bc0d11fbda61f6557968",
+      "upstream_commit": "819927015323181a9a10e0184d64ad2bddfcb407"
+    },
+    {
+      "path": "机器人开发参考库/11_ElectronBot类人桌面机器人/仓库/peng-zhihui__ElectronBot/3.Software/SDK/ElectronBotSDK-Player/src/electron_player.cpp",
+      "git_blob": "a3e382754a46b2ab3af90d67bd58925d9741e01d",
+      "sha256_bytes": "162d06f785fb387811c542f8a8758b04e8b97cd836398b1b3e03acc596eabb24",
+      "sha256_utf8": "162d06f785fb387811c542f8a8758b04e8b97cd836398b1b3e03acc596eabb24",
+      "upstream_commit": "819927015323181a9a10e0184d64ad2bddfcb407"
+    },
+    {
+      "path": "机器人开发参考库/15_小纸壳机器人/README.md",
+      "git_blob": "545f2a45f2671450f188a42e65f98b9750b76e9a",
+      "sha256_bytes": "96986d82cd999907c78ca937190f26a38d603ade90933e5d166f1100506e134d",
+      "sha256_utf8": "96986d82cd999907c78ca937190f26a38d603ade90933e5d166f1100506e134d",
+      "upstream_commit": null
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/README.md",
+      "git_blob": "69308de98b204b0812d432370a3c4d50249adf5f",
+      "sha256_bytes": "7a821362c671f076d20e70b6ccbee0a76579e2bdfbd138dc4896aef149647f86",
+      "sha256_utf8": "7a821362c671f076d20e70b6ccbee0a76579e2bdfbd138dc4896aef149647f86",
+      "upstream_commit": null
+    },
+    {
+      "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/src/ESP32Servo.h",
+      "git_blob": "83e79f47f367128ae6e2ec968fc99dbd2e409b71",
+      "sha256_bytes": "5c75dbaf9b47eded2d4e42bf408741b42086cc29637052c622834e2b1248b51b",
+      "sha256_utf8": "5c75dbaf9b47eded2d4e42bf408741b42086cc29637052c622834e2b1248b51b",
+      "upstream_commit": "88be58c5eb07d89c057d9c5fd0bcbf63b1c7d283"
+    },
+    {
+      "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/Adafruit_PWMServoDriver.h",
+      "git_blob": "4237f6d7785ad33fdecc1c15a3d9d3684b57d7c0",
+      "sha256_bytes": "f50344e8b3791c8455c2ccba70dd9e8d359b1ac31cd5bbf3ff5a3dc836a8cb4b",
+      "sha256_utf8": "f50344e8b3791c8455c2ccba70dd9e8d359b1ac31cd5bbf3ff5a3dc836a8cb4b",
+      "upstream_commit": "a98850b815bf9696c8ffdc2a0f89d657c52dd44b"
+    },
+    {
+      "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/src/hardware/servo_wrapper.cpp",
+      "git_blob": "cdf369f4147a17352ea7bfccb3bf0ca29c810696",
+      "sha256_bytes": "c7579e666052310e442d9d187349e6dbf5a2dcb74464821dd4245808536895bf",
+      "sha256_utf8": "c7579e666052310e442d9d187349e6dbf5a2dcb74464821dd4245808536895bf",
+      "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89"
+    },
+    {
+      "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot/firmware/movement-sequences.h",
+      "git_blob": "5b34ce6c3ff0beb34bbd5ff3dfb7020ec756151d",
+      "sha256_bytes": "f77d713703e361dff2458f4fd02356ed397b8f47d83bd7a87587e8f6e899d2f1",
+      "sha256_utf8": "5af6a8cb291d930892d3080a8bf6fc7f5175930c8bc06b51578ebf2183b6daab",
+      "upstream_commit": "d106cbc8e158c982f408db421134f23273c5f51f"
+    },
+    {
+      "path": "机器人开发参考库/02_曼波小狗/仓库/RussellCooper-DJZ__manbo-robot-dog/User/ActionTask.h",
+      "git_blob": "e708be4ef98c71579072fd773691aea7e9fdffe0",
+      "sha256_bytes": "eaf1d23f10c90b97a8df457729335317d50aa1aefb014d806dd24b5f6d61f9c1",
+      "sha256_utf8": "eaf1d23f10c90b97a8df457729335317d50aa1aefb014d806dd24b5f6d61f9c1",
+      "upstream_commit": "9a3d315cfe50a62d8e6221cccf2aea696f96aedc"
+    },
+    {
+      "path": "机器人开发参考库/02_曼波小狗/仓库/RussellCooper-DJZ__manbo-robot-dog/User/ActionTask.c",
+      "git_blob": "02aad7c9ac28e8a58f9bacb09630919feffd8cdd",
+      "sha256_bytes": "891e3dd4fb6ff8abe2db20106ee06821d8f23813a83fbc733a65b76175adf367",
+      "sha256_utf8": "891e3dd4fb6ff8abe2db20106ee06821d8f23813a83fbc733a65b76175adf367",
+      "upstream_commit": "9a3d315cfe50a62d8e6221cccf2aea696f96aedc"
+    },
+    {
+      "path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/User/Mode.c",
+      "git_blob": "e83a1a08cbdb4846d9bd32d6ad3b7d354b08a6b5",
+      "sha256_bytes": "f1ba581fd3fa87379ef6bf37f7b5e46464ea971073aaa176d214609acc0b7e5c",
+      "sha256_utf8": "d657f6983e669db8bf10ca451056618689507718b7ec766828df84d8e4c914ba",
+      "upstream_commit": null
+    },
+    {
+      "path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/Movement.c",
+      "git_blob": "61734d38d50fd6039b16fbfd3e3bd9a36132c8f7",
+      "sha256_bytes": "3c952d65b9bfa8e9a6f864fddda6b322ca551b2044d994515064c691a034dd92",
+      "sha256_utf8": "3c295a548898a18b4196dea170c9bd6d9b2d3a648ffbfb799035254f3cc6890d",
+      "upstream_commit": null
+    },
+    {
+      "path": "机器人开发参考库/03_MindPaw机器狗/仓库/ace-trump-tech__MindPaw/MindPaw_main/src/motion_emotion.h",
+      "git_blob": "85ad444137040ddc5f35d84565773f2c40c12875",
+      "sha256_bytes": "cef9d6aac1194428164687c4e95d1f36e4c7dbdb98bd64c71e94577782f635a0",
+      "sha256_utf8": "cef9d6aac1194428164687c4e95d1f36e4c7dbdb98bd64c71e94577782f635a0",
+      "upstream_commit": "21c549252a60126a80874738626f1b8c36efc38c"
+    },
+    {
+      "path": "机器人开发参考库/03_MindPaw机器狗/仓库/ace-trump-tech__MindPaw/MindPaw_main/src/motion_emotion.cpp",
+      "git_blob": "b18d0aa421ced8503b41dab64b5e9b1b6171187f",
+      "sha256_bytes": "6983188ffef840e208f7d808d168cde94d719fd36bfcb7ffb9c9e9c0df59d8ff",
+      "sha256_utf8": "6983188ffef840e208f7d808d168cde94d719fd36bfcb7ffb9c9e9c0df59d8ff",
+      "upstream_commit": "21c549252a60126a80874738626f1b8c36efc38c"
+    },
+    {
+      "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__stack-chan/firmware/host/modules/motion/motion-controller.ts",
+      "git_blob": "45d4ed20a5a0fa83dc26d9eb7fede2d28214ff31",
+      "sha256_bytes": "dd5d8bd39f8c02e615953ab259eb9c785948741f633dec5c04f27cf57499a81b",
+      "sha256_utf8": "dd5d8bd39f8c02e615953ab259eb9c785948741f633dec5c04f27cf57499a81b",
+      "upstream_commit": "fe7be1005d2cf8732f365176a91c7177c8533591"
+    },
+    {
+      "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__stack-chan/firmware/mods/examples/look_around/mod.js",
+      "git_blob": "b26ad301b85913bc18a528081dda95547c9e27b7",
+      "sha256_bytes": "238bf2983ee9465366fad828152bbed68fc94dbba07f8a6c3955bd7be82a14b6",
+      "sha256_utf8": "238bf2983ee9465366fad828152bbed68fc94dbba07f8a6c3955bd7be82a14b6",
+      "upstream_commit": "fe7be1005d2cf8732f365176a91c7177c8533591"
+    },
+    {
+      "path": "机器人开发参考库/06_NodeHexa六足机器人/仓库/ViolinLee__NodeHexa/firmware/src/leg.cpp",
+      "git_blob": "59f5f0c810977d5d9d09e2b19ccd6e4e9b514e12",
+      "sha256_bytes": "31d2c961bae1c245f8213701da13b35c347197f70921d048d913070f10a60733",
+      "sha256_utf8": "31d2c961bae1c245f8213701da13b35c347197f70921d048d913070f10a60733",
+      "upstream_commit": "ba844a107de8dbb95bba51c2d5e870928d72cbd9"
+    },
+    {
+      "path": "机器人开发参考库/06_NodeHexa六足机器人/仓库/ViolinLee__NodeHexa/firmware/src/leg.h",
+      "git_blob": "ef6d46ff6824e63d1e30647f6d2fb6df87fff190",
+      "sha256_bytes": "c01b9fc4175abbfc647ed275c0f8e6581f1269e59ef26b0b03e68165281969ae",
+      "sha256_utf8": "c01b9fc4175abbfc647ed275c0f8e6581f1269e59ef26b0b03e68165281969ae",
+      "upstream_commit": "ba844a107de8dbb95bba51c2d5e870928d72cbd9"
+    },
+    {
+      "path": "机器人开发参考库/06_NodeHexa六足机器人/仓库/ViolinLee__NodeHexa/firmware/src/motion_controller.h",
+      "git_blob": "9234a2099b0f30b4f5dfc6d882ebf4c8cae14d7d",
+      "sha256_bytes": "e620a06c08ca92eaf07c9d1355fac9295d6d1edab823a7ab314b03334f2283f3",
+      "sha256_utf8": "e620a06c08ca92eaf07c9d1355fac9295d6d1edab823a7ab314b03334f2283f3",
+      "upstream_commit": "ba844a107de8dbb95bba51c2d5e870928d72cbd9"
+    },
+    {
+      "path": "机器人开发参考库/06_NodeHexa六足机器人/仓库/ViolinLee__NodeHexa/firmware/src/motion_controller.cpp",
+      "git_blob": "01e870833455c84507a7a318d5064fc8eb9157e0",
+      "sha256_bytes": "d1617abbb4fadf50a0443311695fa545a5237d7addc37bc8476470ab596c2e79",
+      "sha256_utf8": "d1617abbb4fadf50a0443311695fa545a5237d7addc37bc8476470ab596c2e79",
+      "upstream_commit": "ba844a107de8dbb95bba51c2d5e870928d72cbd9"
+    },
+    {
+      "path": "机器人开发参考库/07_RookiDroid六足机器人/仓库/rookidroid__hexapod/software/hexapod_esp32/realtime.ino",
+      "git_blob": "320f2ec0bdb1a974e6cd69aa1a45a67f0b0ea047",
+      "sha256_bytes": "638642254b3d6094c8fffafaaa7c9d0bd93206f2e12063bcb19f1d53d2378f94",
+      "sha256_utf8": "638642254b3d6094c8fffafaaa7c9d0bd93206f2e12063bcb19f1d53d2378f94",
+      "upstream_commit": "2c51f9e3bf3f5dbbe600a2a24182aa3e9837c60c"
+    },
+    {
+      "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/OttoDIY__OttoDIYLib/src/Otto.h",
+      "git_blob": "232b408923190b41a64f145f2826a2df461f46a3",
+      "sha256_bytes": "4c3adfed0d85422fd4a24b105e3128106830533b23238b4fd791efacac17462d",
+      "sha256_utf8": "4c3adfed0d85422fd4a24b105e3128106830533b23238b4fd791efacac17462d",
+      "upstream_commit": "f384c00a641e11c8741487320c6f1d82ad72e6d5"
+    },
+    {
+      "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/OttoDIY__OttoDIYLib/src/Oscillator.h",
+      "git_blob": "f54983b37afe2d0d7ea1f291c7e110721fc20ea6",
+      "sha256_bytes": "9da0c53806bd5810b6daa12d30801768799ccfc10b23bab5774bdaf1dc8cbc10",
+      "sha256_utf8": "9da0c53806bd5810b6daa12d30801768799ccfc10b23bab5774bdaf1dc8cbc10",
+      "upstream_commit": "f384c00a641e11c8741487320c6f1d82ad72e6d5"
+    },
+    {
+      "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/txp666__xiaozhi-esp32/main/boards/otto-robot/otto_movements.h",
+      "git_blob": "69b944e4ea73267158e529c587931a68eb3df646",
+      "sha256_bytes": "a342dbf7273cd4e138e6b268c35654cf6d3d36490cf3a47024ae13250d1d0c07",
+      "sha256_utf8": "a342dbf7273cd4e138e6b268c35654cf6d3d36490cf3a47024ae13250d1d0c07",
+      "upstream_commit": "becc84f58908d96a8aaeae046dcd22e099aad7e9"
+    },
+    {
+      "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/txp666__xiaozhi-esp32/main/boards/otto-robot/otto_controller.cc",
+      "git_blob": "ddecb949fb0c013cb40e6256ef06374016469ff5",
+      "sha256_bytes": "188d2728c29e92a0b2239e4fafb707c5bd3422a97bce87939b5278f6437c9162",
+      "sha256_utf8": "188d2728c29e92a0b2239e4fafb707c5bd3422a97bce87939b5278f6437c9162",
+      "upstream_commit": "becc84f58908d96a8aaeae046dcd22e099aad7e9"
+    },
+    {
+      "path": "机器人开发参考库/11_ElectronBot类人桌面机器人/仓库/peng-zhihui__ElectronBot/3.Software/SDK/ElectronBotSDK-LowLevel/src/electron_low_level.cpp",
+      "git_blob": "58b7d588cc970161d11637da582abae9c82b05f6",
+      "sha256_bytes": "a8eeb0e70de3a9903c36f22d428ed53fc6b63e5d0917588acd82365610739827",
+      "sha256_utf8": "a8eeb0e70de3a9903c36f22d428ed53fc6b63e5d0917588acd82365610739827",
+      "upstream_commit": "819927015323181a9a10e0184d64ad2bddfcb407"
+    },
+    {
+      "path": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__VerdureBuddyRover/firmware/esp32c3_kb_motor/esp32c3_kb_motor.ino",
+      "git_blob": "9265ed85acf0da0a7df6734240527dce9704873a",
+      "sha256_bytes": "32e4e11be33e34d349f39a14757088d63add6b6ccd8f36bfb7c700a8044b94b6",
+      "sha256_utf8": "32e4e11be33e34d349f39a14757088d63add6b6ccd8f36bfb7c700a8044b94b6",
+      "upstream_commit": "cf1c772dcc854ae5c19699eebb3970e1c3f64f34"
+    },
+    {
+      "path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/tank_control.c",
+      "git_blob": "8c8d58817d74e3d92d2b0f2ee782150d2e2c2f5a",
+      "sha256_bytes": "486da39cca2ce7e53bf6a58306f097a7257922b8a5dd075eefea6c2c41a86509",
+      "sha256_utf8": "98e0c3d6faa551e9dafaa6791625ddb6358b0bced3db03b985e66c926dc87f9d",
+      "upstream_commit": null
+    },
+    {
+      "path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/motor.h",
+      "git_blob": "9bb9ab11c093bf1be47405344369748edd3ad9f2",
+      "sha256_bytes": "b560cf21f8d5e8807de6124c995991b80d40a6aa3093d3a076fc53d496d566b8",
+      "sha256_utf8": "a60572801d50661a68edd547f31058b2747fbed64c21ab64a814b81190488d91",
+      "upstream_commit": null
+    },
+    {
+      "path": "机器人开发参考库/13_XGO-Duck赛博鸭子/仓库/LuwuDynamics__xgoduck_runtime_arduino/python/rl_core.py",
+      "git_blob": "e3314c4de021f82418f063ad6f6be9c427dad43f",
+      "sha256_bytes": "9c15c15534bd39b41c7f77f08a499e9180e7c3de1f4428f84bb6cd9375fed02a",
+      "sha256_utf8": "9c15c15534bd39b41c7f77f08a499e9180e7c3de1f4428f84bb6cd9375fed02a",
+      "upstream_commit": "8cdbbd84710d856581982c9eaf0d5e2970666232"
+    },
+    {
+      "path": "机器人开发参考库/13_XGO-Duck赛博鸭子/仓库/LuwuDynamics__xgoduck_runtime_arduino/python/policy.py",
+      "git_blob": "0c68287778835b8a78cde553237fb9f06f7f34db",
+      "sha256_bytes": "5132eb21cf97547e96ba0c0a7c4719dc38dc9b6f06e3bf726074b2f5c68d3f12",
+      "sha256_utf8": "5132eb21cf97547e96ba0c0a7c4719dc38dc9b6f06e3bf726074b2f5c68d3f12",
+      "upstream_commit": "8cdbbd84710d856581982c9eaf0d5e2970666232"
+    },
+    {
+      "path": "机器人开发参考库/14_Jumper螃蟹机器人/仓库/KingKongRobotics__jumper/deploy/fsm/src/layout.rs",
+      "git_blob": "32a011bd66175c01725b3982d6a29a64369aabee",
+      "sha256_bytes": "19a793bf7d9d99bb1935501e44686818c66d16126790597662f9b5216fb03959",
+      "sha256_utf8": "19a793bf7d9d99bb1935501e44686818c66d16126790597662f9b5216fb03959",
+      "upstream_commit": "7d3cc4bebd1efe951e0adc38c053d417260867c0"
+    },
+    {
+      "path": "机器人开发参考库/14_Jumper螃蟹机器人/仓库/KingKongRobotics__jumper/deploy/fsm/src/trajectory.rs",
+      "git_blob": "b714ea37b7b94386fe75ca44bcbdb8e908fddb7d",
+      "sha256_bytes": "306d0f968f727c7f3e5e693609993dabaf574382536647bcf2d38056da854316",
+      "sha256_utf8": "306d0f968f727c7f3e5e693609993dabaf574382536647bcf2d38056da854316",
+      "upstream_commit": "7d3cc4bebd1efe951e0adc38c053d417260867c0"
+    },
+    {
+      "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/src/animation/registry.cpp",
+      "git_blob": "169065ea1ac35437a4b9b11d00203dae1388d4c2",
+      "sha256_bytes": "b5799f434f4353ef16cf2305fc31a613ca4ad90eaed6c3766e4a18cba004d472",
+      "sha256_utf8": "b5799f434f4353ef16cf2305fc31a613ca4ad90eaed6c3766e4a18cba004d472",
+      "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89"
+    },
+    {
+      "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/src/animation/controller.cpp",
+      "git_blob": "c2c6fab6fa88d66fecafa12636ebcc2fbe666753",
+      "sha256_bytes": "24ea80fa83fe32625246a8b68ada78dcdef3e0de34f6152ad8333f398efab6a1",
+      "sha256_utf8": "24ea80fa83fe32625246a8b68ada78dcdef3e0de34f6152ad8333f398efab6a1",
+      "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89"
+    },
+    {
+      "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__m5stack-avatar/src/tasks/LipSync.h",
+      "git_blob": "90fc2812990a5488d0f94844684e2263474e4ef9",
+      "sha256_bytes": "187bc71d9294cca92286984330381281f2012b64fb6020c88598278b791233b2",
+      "sha256_utf8": "187bc71d9294cca92286984330381281f2012b64fb6020c88598278b791233b2",
+      "upstream_commit": "7a90083edd9bbdc1a52ea13afe4d5c3b7fc7bfa8"
+    },
+    {
+      "path": "机器人开发参考库/03_MindPaw机器狗/仓库/ace-trump-tech__MindPaw/MindPaw_main/src/doubao_config.h",
+      "git_blob": "14f7c6fc79eb2bd6382d0214fbceb267483c09d1",
+      "sha256_bytes": "e3ee9ebfd4d828b94f0ba7d9b46a884402e61e91af411c1c1ec9ec9fb6183cd0",
+      "sha256_utf8": "e3ee9ebfd4d828b94f0ba7d9b46a884402e61e91af411c1c1ec9ec9fb6183cd0",
+      "upstream_commit": "21c549252a60126a80874738626f1b8c36efc38c"
+    },
+    {
+      "path": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-esp32/main/application.cc",
+      "git_blob": "31de2051456cbea1be06d338ebb5c04df7966fe3",
+      "sha256_bytes": "6e2de7d86a482e1c9589be1835a022b08c481b124e3cf0e1395eae758d199457",
+      "sha256_utf8": "6e2de7d86a482e1c9589be1835a022b08c481b124e3cf0e1395eae758d199457",
+      "upstream_commit": "d395220a83fb7a16ea5dc761c08a4816177cc880"
+    },
+    {
+      "path": "机器人开发参考库/15_小纸壳机器人/工具包/cardboard-bot-teaching/test-connection.js",
+      "git_blob": "981709a1bda3444b47dd71159f86a0e904116767",
+      "sha256_bytes": "017790a071b869ce3b292ac66b49995fb9dfea6dceba2344e333296cdf01014a",
+      "sha256_utf8": "7119c1c99597863f0b485f6383c356a26d028ece9b110adc47ea2e5fe5c660a1",
+      "upstream_commit": null
+    },
+    {
+      "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-companion-app/sesame_companion.py",
+      "git_blob": "d7a9d8a3ad359f2b24b9cf0c43002591e3575795",
+      "sha256_bytes": "407cb6f8370fe42a85571a933efa8ea9c270f44a4ba3216efbdc1a32f2c79b53",
+      "sha256_utf8": "407cb6f8370fe42a85571a933efa8ea9c270f44a4ba3216efbdc1a32f2c79b53",
+      "upstream_commit": "86f82c137b9954445f55d249c966e8f9984bd87b"
+    },
+    {
+      "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/src/http/anim_handlers.cpp",
+      "git_blob": "0e45699976a5aec11d790fdb74291e0bc878643a",
+      "sha256_bytes": "ad5233feb139e98c2c40c5571af22b72cf44367ba97422a19e7a83431714c79f",
+      "sha256_utf8": "ad5233feb139e98c2c40c5571af22b72cf44367ba97422a19e7a83431714c79f",
+      "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89"
+    },
+    {
+      "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/src/http/routes.cpp",
+      "git_blob": "3ceae5019213e757010a1361174b2b5be0c0efdf",
+      "sha256_bytes": "30e269c80ae10649dc4ea0a1b140c27764826080e8ecb0a492b94ee1284b3157",
+      "sha256_utf8": "30e269c80ae10649dc4ea0a1b140c27764826080e8ecb0a492b94ee1284b3157",
+      "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89"
+    },
+    {
+      "path": "机器人开发参考库/17_Needle端侧模型/仓库/cactus-compute__needle/needle/agent/tools.py",
+      "git_blob": "c4d9bccaade6c8bf52f2c42e3db8c4e8af215efa",
+      "sha256_bytes": "bee31ef209021650d0ae1d149d9155e76c7eba3ba2c541c79ec0fc651c94c671",
+      "sha256_utf8": "bee31ef209021650d0ae1d149d9155e76c7eba3ba2c541c79ec0fc651c94c671",
+      "upstream_commit": "8881c1ceada54814465fa5edddc6599f32383985"
+    },
+    {
+      "path": "机器人开发参考库/17_Needle端侧模型/仓库/cactus-compute__needle/needle/__init__.py",
+      "git_blob": "e838d391487735de329da06afe8f47f094e75870",
+      "sha256_bytes": "5fc0281d98dcffb180be8280f556efab09fc6cc53cf5f55be45f78d5d18a28ed",
+      "sha256_utf8": "5fc0281d98dcffb180be8280f556efab09fc6cc53cf5f55be45f78d5d18a28ed",
+      "upstream_commit": "8881c1ceada54814465fa5edddc6599f32383985"
+    },
+    {
+      "path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/wifi_web_control.c",
+      "git_blob": "0b8c057a3a5d9d684b3b382806aea29d3d65f1d0",
+      "sha256_bytes": "d441e683e124228259705aaf76c8348140dcde59725eafd13cb15d9b9343cce9",
+      "sha256_utf8": "62955def844626e072e147ab621e5f955142696654b45a955b710602124ef578",
+      "upstream_commit": null
+    },
+    {
+      "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Adafruit_GFX.cpp",
+      "git_blob": "ae26bf118cf8dbe8e48c9ee47d680314f739320a",
+      "sha256_bytes": "5afa8ca16241a9a0cb354012dd00780c6c00620c345b810a9504cb77bfc698d5",
+      "sha256_utf8": "5afa8ca16241a9a0cb354012dd00780c6c00620c345b810a9504cb77bfc698d5",
+      "upstream_commit": "ac6d7c3869a693d406f77b9bfcd486b0673169f0"
+    },
+    {
+      "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/Adafruit_SSD1306.h",
+      "git_blob": "332f735b9a4e5b3f5bbb137b335417bd01d257a8",
+      "sha256_bytes": "89c5e18cc19a41bd47130e1a4dc344733ad2bb6b6ef6c4c43eeddaf9854db6a2",
+      "sha256_utf8": "89c5e18cc19a41bd47130e1a4dc344733ad2bb6b6ef6c4c43eeddaf9854db6a2",
+      "upstream_commit": "d94f699451d72286357cba7259055ffff2c2940b"
+    },
+    {
+      "path": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-esp32/main/assets.cc",
+      "git_blob": "ee491196fd2791543b38c9ace4c7ada85996944a",
+      "sha256_bytes": "33544937546944f34afffcf5c8a23ea902258f1823665019d691f6e77916e6c0",
+      "sha256_utf8": "33544937546944f34afffcf5c8a23ea902258f1823665019d691f6e77916e6c0",
+      "upstream_commit": "d395220a83fb7a16ea5dc761c08a4816177cc880"
+    },
+    {
+      "path": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-esp32/main/assets.h",
+      "git_blob": "7b8a2e89a28d4642855f1934093a3c659ffe9cec",
+      "sha256_bytes": "3c6358638230b8db781d41c33d058c22bcf10f454f0d7a97d577d01bef509c58",
+      "sha256_utf8": "3c6358638230b8db781d41c33d058c22bcf10f454f0d7a97d577d01bef509c58",
+      "upstream_commit": "d395220a83fb7a16ea5dc761c08a4816177cc880"
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/server.py",
+      "git_blob": "8532e7118b57aa20cdb73f4d16b0e57570032531",
+      "sha256_bytes": "1346faccbe0a1d110660cad7465d7c07d40b405fb36fe5c30d61599e463fe352",
+      "sha256_utf8": "acb8ce80c233a370366a80b8ef2d0f9aef0e51581082b50519abc7cff7d572de",
+      "upstream_commit": null
+    },
+    {
+      "path": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__VerdureLab/README.md",
+      "git_blob": "129f1308875c941dc2a2ad9d9267f23f87cd4e44",
+      "sha256_bytes": "fb5c34cb16076f2f95a138bdeab6bd318c6816c162ddacb0eca9dc22c05b3816",
+      "sha256_utf8": "fb5c34cb16076f2f95a138bdeab6bd318c6816c162ddacb0eca9dc22c05b3816",
+      "upstream_commit": "bcc1859dd35e7ad79ff4ea2a227f7ff26fb08ece"
+    },
+    {
+      "path": "机器人开发参考库/12_VerdureLab外壳资源/README.md",
+      "git_blob": "1efbcb4680e57a27043889b493150dc71aa3d2bb",
+      "sha256_bytes": "60b9510b0b362df089da225f75f9600334a60360734d5630f3f0ee639a5ca8dc",
+      "sha256_utf8": "60b9510b0b362df089da225f75f9600334a60360734d5630f3f0ee639a5ca8dc",
+      "upstream_commit": null
+    },
+    {
+      "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/配套生态与代码导读.md",
+      "git_blob": "bff5a17d5265682e6f0d0f18bcc63304453844e0",
+      "sha256_bytes": "30b9a7eac3ad4b20d5ac8336cb3646e98822b5df7374ef109aa1733f01613dc0",
+      "sha256_utf8": "30b9a7eac3ad4b20d5ac8336cb3646e98822b5df7374ef109aa1733f01613dc0",
+      "upstream_commit": null
+    },
+    {
+      "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/library.properties",
+      "git_blob": "a51efd1ad415716d885e20633a85286b2783fb3d",
+      "sha256_bytes": "69c8ebf974c278be43fcfd9025f38292fd2e0d62a50148f5145b13fc60528ede",
+      "sha256_utf8": "69c8ebf974c278be43fcfd9025f38292fd2e0d62a50148f5145b13fc60528ede",
+      "upstream_commit": "b42f8e596535234932be3514ac7a813d4ced0046"
+    },
+    {
+      "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/library.properties",
+      "git_blob": "d5c0c5d22b307221a2ee5266047f3f0a4a4706ab",
+      "sha256_bytes": "4aab11d6e25a01f654318fbe0923db8c45b32c77eedf81bcd717263979b3b4f4",
+      "sha256_utf8": "4aab11d6e25a01f654318fbe0923db8c45b32c77eedf81bcd717263979b3b4f4",
+      "upstream_commit": "88be58c5eb07d89c057d9c5fd0bcbf63b1c7d283"
+    },
+    {
+      "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/library.properties",
+      "git_blob": "3bbb3ffefd742ce3dd6e1bf579b15eeeed5b0895",
+      "sha256_bytes": "e6b702f2d0463216bf4b89d10c1701ae0de2aabbee42f7088054e9e21949cc31",
+      "sha256_utf8": "e6b702f2d0463216bf4b89d10c1701ae0de2aabbee42f7088054e9e21949cc31",
+      "upstream_commit": "ac6d7c3869a693d406f77b9bfcd486b0673169f0"
+    },
+    {
+      "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/library.properties",
+      "git_blob": "2817025f1ce051ed0ad477bc30050a89e5fae14e",
+      "sha256_bytes": "bfb5d85959c14de682a285496e3c905054a0b126b0ca2d7c1870307890e6bc9d",
+      "sha256_utf8": "bfb5d85959c14de682a285496e3c905054a0b126b0ca2d7c1870307890e6bc9d",
+      "upstream_commit": "d94f699451d72286357cba7259055ffff2c2940b"
+    },
+    {
+      "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SH110x/library.properties",
+      "git_blob": "48eb73dd3d1fbdb29547151cf625c8d21c8d6122",
+      "sha256_bytes": "c1e62541f9083082867cf3e5e5cfbd4a14604852add5c0ef910734efaae10086",
+      "sha256_utf8": "c1e62541f9083082867cf3e5e5cfbd4a14604852add5c0ef910734efaae10086",
+      "upstream_commit": "f29762e0c2de7d31364acb427b3b69efc7b8913e"
+    },
+    {
+      "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/library.properties",
+      "git_blob": "b3a72ca1cb5e6a8275238bec570f6628d57d8974",
+      "sha256_bytes": "66fafae140cee3e062bcbaf3114078a6b711e7994d59979dcd324eb94e81ae0d",
+      "sha256_utf8": "66fafae140cee3e062bcbaf3114078a6b711e7994d59979dcd324eb94e81ae0d",
+      "upstream_commit": "a98850b815bf9696c8ffdc2a0f89d657c52dd44b"
+    },
+    {
+      "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/library.properties",
+      "git_blob": "16154682810b3791636490ad2316157c157d4ebb",
+      "sha256_bytes": "1f1c13c18d84a15f71e8e833aeaf1ada2d505cc915485174167ea661ed085194",
+      "sha256_utf8": "1f1c13c18d84a15f71e8e833aeaf1ada2d505cc915485174167ea661ed085194",
+      "upstream_commit": "3b8364267c3ee6e16bad91bc2101aefbd5b5915f"
+    },
+    {
+      "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__m5stack-avatar/library.properties",
+      "git_blob": "5af5f7931265cd5deea71ae7c02a4b1a133fa7c6",
+      "sha256_bytes": "51f9b4f2955c7bda961c393243b947df48712ccf47c6a707caa818b26f3b2cd4",
+      "sha256_utf8": "51f9b4f2955c7bda961c393243b947df48712ccf47c6a707caa818b26f3b2cd4",
+      "upstream_commit": "7a90083edd9bbdc1a52ea13afe4d5c3b7fc7bfa8"
+    },
+    {
+      "path": "机器人开发参考库/03_MindPaw机器狗/仓库/ace-trump-tech__MindPaw/MindPaw_main/platformio.ini",
+      "git_blob": "a36463d18df9274eb4831a3fc3d554c6d799daec",
+      "sha256_bytes": "631dfdf343f0ebba8cc25fd886f095234523e3c7b80adc990e8d5c0d62c08dfe",
+      "sha256_utf8": "631dfdf343f0ebba8cc25fd886f095234523e3c7b80adc990e8d5c0d62c08dfe",
+      "upstream_commit": "21c549252a60126a80874738626f1b8c36efc38c"
+    },
+    {
+      "path": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-esp32/main/idf_component.yml",
+      "git_blob": "87c7179290b3778b828e5ef9d037a45f58298e94",
+      "sha256_bytes": "c65fc551423b7fa7854380973db3d66b0b116bcbe17fdec548ac978a7db74542",
+      "sha256_utf8": "c65fc551423b7fa7854380973db3d66b0b116bcbe17fdec548ac978a7db74542",
+      "upstream_commit": "d395220a83fb7a16ea5dc761c08a4816177cc880"
+    },
+    {
+      "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/txp666__xiaozhi-esp32/main/idf_component.yml",
+      "git_blob": "b4c7c3e6a8b659cd8e1701a4a7fa4683bafcd062",
+      "sha256_bytes": "d0de14b365fae4cf3b4a7321ca185d7f474c27221a1e337910f056c8297f5422",
+      "sha256_utf8": "d0de14b365fae4cf3b4a7321ca185d7f474c27221a1e337910f056c8297f5422",
+      "upstream_commit": "becc84f58908d96a8aaeae046dcd22e099aad7e9"
+    },
+    {
+      "path": "机器人开发参考库/14_Jumper螃蟹机器人/仓库/KingKongRobotics__jumper/README.md",
+      "git_blob": "92b2aa2dd6e3562689ad5df2d7fa908b39754659",
+      "sha256_bytes": "a7ad3bc47175698e110dcccf529b3df54fc6dca67276ab877966dca23a318689",
+      "sha256_utf8": "a7ad3bc47175698e110dcccf529b3df54fc6dca67276ab877966dca23a318689",
+      "upstream_commit": "7d3cc4bebd1efe951e0adc38c053d417260867c0"
+    }
+  ]
+}

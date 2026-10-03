@@ -1,0 +1,3592 @@
+{
+  "schema_version": "1.0",
+  "updated": "2026-10-03",
+  "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+  "path_base": "repository_root",
+  "count": 52,
+  "reuse_status": {
+    "original_context": "原环境可调用；新硬件需核对",
+    "portable_component": "可单独提取；需接入驱动",
+    "adaptation_required": "需要移植或配套运行环境",
+    "reference_only": "资料或二进制边界；没有完整可调用实现"
+  },
+  "evidence_note": "source lines anchor a symbol, not a whole implementation; sha256_utf8 hashes decoded UTF-8 text and git_blob identifies archived original bytes. New common libraries use full fixed-commit files.",
+  "capabilities": [
+    {
+      "id": "E01",
+      "title": "RoboEyes 参数化眼睛、眨眼与注视",
+      "category": "01_表情显示",
+      "project_ids": [
+        5,
+        15
+      ],
+      "tags": [
+        "眨眼",
+        "blink",
+        "注视",
+        "gaze",
+        "开心",
+        "困倦",
+        "OLED"
+      ],
+      "hardware": "Arduino＋Adafruit_GFX 单色屏；Albert 使用 SH1106 128×64",
+      "language": "C++",
+      "reuse_status": "portable_component",
+      "reuse_label": "可单独提取；需接入驱动",
+      "dependencies": [
+        "RoboEyes",
+        "Adafruit_GFX",
+        "SSD1306或SH110x"
+      ],
+      "sources": [
+        {
+          "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/src/FluxGarage_RoboEyes.h",
+          "symbol": "void setMood",
+          "line_start": 286,
+          "line_end": 316,
+          "sha256_utf8": "db9361803f9108253d53ece92a748cd82c6c9735f23537fa6b34a6473f7062e3",
+          "sha256_bytes": "04e098193efbf6656085429b85a20d40c1d56c1837e7ef500779f6557645a4d8",
+          "git_blob": "56e4b91996db2aa1e55a8e0ccacde7bcb2a1598b",
+          "baseline_commit": null,
+          "upstream_commit": "b42f8e596535234932be3514ac7a813d4ced0046",
+          "upstream_url": "https://github.com/FluxGarage/RoboEyes/blob/b42f8e596535234932be3514ac7a813d4ced0046/src/FluxGarage_RoboEyes.h#L286-L316",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/src/FluxGarage_RoboEyes.h",
+          "symbol": "void setAutoblinker",
+          "line_start": 367,
+          "line_end": 397,
+          "sha256_utf8": "db9361803f9108253d53ece92a748cd82c6c9735f23537fa6b34a6473f7062e3",
+          "sha256_bytes": "04e098193efbf6656085429b85a20d40c1d56c1837e7ef500779f6557645a4d8",
+          "git_blob": "56e4b91996db2aa1e55a8e0ccacde7bcb2a1598b",
+          "baseline_commit": null,
+          "upstream_commit": "b42f8e596535234932be3514ac7a813d4ced0046",
+          "upstream_url": "https://github.com/FluxGarage/RoboEyes/blob/b42f8e596535234932be3514ac7a813d4ced0046/src/FluxGarage_RoboEyes.h#L367-L397",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/05_AlbertMicro机器小狗/仓库/thinking0things__AlbertMicro/AlbertMicro.ino",
+          "symbol": "roboEyes.begin",
+          "line_start": 508,
+          "line_end": 538,
+          "sha256_utf8": "bb297056233954a32fb6400bc6ae9a075200d3aa594dc86c2a418f8d11a0dc8d",
+          "sha256_bytes": "bb297056233954a32fb6400bc6ae9a075200d3aa594dc86c2a418f8d11a0dc8d",
+          "git_blob": "7eed3a9ca8a7fb39330c207a934da47d9f97dc91",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "8d0ae147e967c798469a551c1dc49da781fc5587",
+          "upstream_url": "https://github.com/thinking0things/AlbertMicro/blob/8d0ae147e967c798469a551c1dc49da781fc5587/AlbertMicro.ino#L508-L538",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "不保存整套逐帧图片，而用眼睛宽高、圆角、眼睑和位置参数绘制形状。update() 按 millis() 限帧，drawEyes() 更新开合与位置并刷新屏幕；自动眨眼和随机游走由独立计时器驱动。AlbertMicro 在此之上切换情绪并持续调用 update()。",
+      "invocation": "创建 RoboEyes<具体显示类> 对象，传入已初始化的显示实例；begin(width,height,fps)，setMood(HAPPY)，setPosition(E)，setAutoblinker(ON,3,2)，在 loop 中 update()。blink()、anim_confused()、anim_laugh() 是已有入口。自动眨眼间隔与变化量单位为秒。",
+      "porting": "纸壳 OLED 原型可先单独接入这一库；确认 SSD1306 与 SH1106 驱动，调整眼睛宽高和间距。表情只接管屏幕；点头仍交给舵机层。新增快照 v1.1.2 与 Albert 当时使用版本不能等同。",
+      "limitations": "库为 GPL-3.0，保留许可。AlbertMicro 本体未找到整体许可证，不能借 RoboEyes 的许可推定它可任意复制。阻塞动作中的长 delay 会降低眨眼更新频率；本次没有真机刷新率验证。",
+      "physical_test": false,
+      "document": "机器人能力参考库/01_表情显示/E01_RoboEyes 参数化眼睛、眨眼与注视.md"
+    },
+    {
+      "id": "E02",
+      "title": "TinyEngineer 独立 16 种位图表情",
+      "category": "01_表情显示",
+      "project_ids": [
+        16,
+        15
+      ],
+      "tags": [
+        "位图",
+        "bitmap",
+        "哭泣",
+        "思考",
+        "单眼眨眼",
+        "表情库"
+      ],
+      "hardware": "纯 C++ 输出 128×32 单色帧；可适配 OLED",
+      "language": "C++",
+      "reuse_status": "portable_component",
+      "reuse_label": "可单独提取；需接入驱动",
+      "dependencies": [
+        "TinyEngineerExpressions",
+        "显示驱动"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/lib/TinyEngineerExpressions/src/TinyEngineerExpressions.h",
+          "symbol": "enum class Expression",
+          "line_start": 25,
+          "line_end": 55,
+          "sha256_utf8": "65985ca96aa35b26792d5fb092364197751ead7c20d6c603f48449654cf547ed",
+          "sha256_bytes": "65985ca96aa35b26792d5fb092364197751ead7c20d6c603f48449654cf547ed",
+          "git_blob": "aaa96967304422ab9c62494118f247a5a4222120",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+          "upstream_url": "https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/lib/TinyEngineerExpressions/src/TinyEngineerExpressions.h#L25-L55",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/lib/TinyEngineerExpressions/src/TinyEngineerExpressions.h",
+          "symbol": "bool render",
+          "line_start": 62,
+          "line_end": 66,
+          "sha256_utf8": "65985ca96aa35b26792d5fb092364197751ead7c20d6c603f48449654cf547ed",
+          "sha256_bytes": "65985ca96aa35b26792d5fb092364197751ead7c20d6c603f48449654cf547ed",
+          "git_blob": "aaa96967304422ab9c62494118f247a5a4222120",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+          "upstream_url": "https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/lib/TinyEngineerExpressions/src/TinyEngineerExpressions.h#L62-L66",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "独立库将枚举和经过整理的帧资产封装起来。每种表情 30 帧，每帧 100ms，循环 3 秒；render 按 elapsedMs 计算帧并把结果写入调用者缓冲区。它不拥有显示设备或计时器，适合从整机工程中单独取出。",
+      "invocation": "tiny_engineer::expressions::render(Expression::Happy, elapsedMs, buffer, sizeof(buffer)) 返回 bool。缓冲区至少 512 字节，128×32、逐行 MSB 在前，可交给 GFX drawBitmap。name() 将枚举转为名字。",
+      "porting": "提取 lib/TinyEngineerExpressions 的完整源码和资产头，不只复制声明。128×64 OLED 可在 y=16 居中；若要纵向拉伸，应另写尺寸转换。外部负责切换时重置动画起点，并选择刷新周期。",
+      "limitations": "独立示例 expression-demo 与整机默认 classic 眼睛不是同一显示路线。render 失败时不能把旧缓冲区当新帧。软件 MIT 与仓库结构文件许可范围分别核对。此前主机帧检查不等于 OLED 实物验证。",
+      "physical_test": false,
+      "document": "机器人能力参考库/01_表情显示/E02_TinyEngineer 独立 16 种位图表情.md"
+    },
+    {
+      "id": "E03",
+      "title": "芝麻 128×64 位图动画与说话表情",
+      "category": "01_表情显示",
+      "project_ids": [
+        1
+      ],
+      "tags": [
+        "位图",
+        "说话",
+        "talk_happy",
+        "循环",
+        "往返",
+        "boomerang"
+      ],
+      "hardware": "ESP32 Arduino＋SSD1306 128×64",
+      "language": "C++",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "ESP32Servo",
+        "Adafruit_GFX",
+        "Adafruit_SSD1306"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot/firmware/face-bitmaps.h",
+          "symbol": "#define FACE_LIST",
+          "line_start": 13,
+          "line_end": 43,
+          "sha256_utf8": "718a8d3e5befc3b7a2cc59e58baad72663fe9bd15d5949888d0008321a1b0ac4",
+          "sha256_bytes": "722692894402d9eccf5c022ed7b4eb090c2de6b171b7872cedce55609dac1f06",
+          "git_blob": "bb26ed1c350582c32f3aebb1e6a31280683448d0",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d106cbc8e158c982f408db421134f23273c5f51f",
+          "upstream_url": "https://github.com/dorianborian/sesame-robot/blob/d106cbc8e158c982f408db421134f23273c5f51f/firmware/face-bitmaps.h#L13-L43",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot/firmware/sesame-firmware-main.ino",
+          "symbol": "void setFace(",
+          "line_start": 197,
+          "line_end": 227,
+          "sha256_utf8": "ef1b7d0702580381d970f349c12c7094b8f4ff4574a8214e21d4783e166d1450",
+          "sha256_bytes": "24a00b44091c686e1a6803028ce3108c95bcf8cc738061ebdb249fe4add96982",
+          "git_blob": "92a1584675999c40ed69eef77c58d3985ffc82f4",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d106cbc8e158c982f408db421134f23273c5f51f",
+          "upstream_url": "https://github.com/dorianborian/sesame-robot/blob/d106cbc8e158c982f408db421134f23273c5f51f/firmware/sesame-firmware-main.ino#L197-L227",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot/firmware/sesame-firmware-main.ino",
+          "symbol": "void updateAnimatedFace(",
+          "line_start": 200,
+          "line_end": 230,
+          "sha256_utf8": "ef1b7d0702580381d970f349c12c7094b8f4ff4574a8214e21d4783e166d1450",
+          "sha256_bytes": "24a00b44091c686e1a6803028ce3108c95bcf8cc738061ebdb249fe4add96982",
+          "git_blob": "92a1584675999c40ed69eef77c58d3985ffc82f4",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d106cbc8e158c982f408db421134f23273c5f51f",
+          "upstream_url": "https://github.com/dorianborian/sesame-robot/blob/d106cbc8e158c982f408db421134f23273c5f51f/firmware/sesame-firmware-main.ino#L200-L230",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "FACE_LIST 将名字映射为最多六帧的 PROGMEM 位图组。setFace 重置帧索引，updateAnimatedFace 按 fps 推进；loop、once、boomerang 对应循环、单次和往返。updateFaceBitmap 清屏、drawBitmap 再 display。talk_* 是预先画好的说话帧，不是音素识别。",
+      "invocation": "整机内 setFace(\"happy\") 或 setFaceWithMode(\"talk_happy\", FACE_ANIM_LOOP)；待机使用 enterIdle()。远程入口见 C01。先在预设清单核对名字；上游保留了 defualt 拼写，固件另添加 default 别名。",
+      "porting": "可以提取 face-bitmaps.h＋FaceEntry/帧推进逻辑，再接自己的屏幕驱动。移植时保留 128×64 格式或离线转换，帧时间与舵机调度分离；不能只复制 setFace 而遗漏全局状态与动画结构。",
+      "limitations": "默认动画 fps=8；delayWithFace 会继续服务显示和 HTTP，但动作仍包含同步等待。说话表情播放时长由上层事件控制，没有嘴形与声音严格同步保证。",
+      "physical_test": false,
+      "document": "机器人能力参考库/01_表情显示/E03_芝麻 128×64 位图动画与说话表情.md"
+    },
+    {
+      "id": "E04",
+      "title": "MindPaw U8g2 位图表情与状态画面",
+      "category": "01_表情显示",
+      "project_ids": [
+        3
+      ],
+      "tags": [
+        "U8g2",
+        "XBM",
+        "开心",
+        "愤怒",
+        "困惑",
+        "天气",
+        "时钟"
+      ],
+      "hardware": "ESP8266 Arduino＋128×64 OLED",
+      "language": "C++",
+      "reuse_status": "adaptation_required",
+      "reuse_label": "需要移植或配套运行环境",
+      "dependencies": [
+        "U8g2",
+        "ArduinoJson",
+        "NTPClient"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/03_MindPaw机器狗/仓库/ace-trump-tech__MindPaw/MindPaw_main/src/main.cpp",
+          "symbol": "switch (emojiState)",
+          "line_start": 1760,
+          "line_end": 1790,
+          "sha256_utf8": "ac0d83dea0d2081bedd1c574faf5d86206d57912d2f2e81918fb24654b18ccf2",
+          "sha256_bytes": "ac0d83dea0d2081bedd1c574faf5d86206d57912d2f2e81918fb24654b18ccf2",
+          "git_blob": "7fe50333051f14542a4027c77319fa2c982793db",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "21c549252a60126a80874738626f1b8c36efc38c",
+          "upstream_url": "https://github.com/ace-trump-tech/MindPaw/blob/21c549252a60126a80874738626f1b8c36efc38c/MindPaw_main/src/main.cpp#L1760-L1790",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/03_MindPaw机器狗/仓库/ace-trump-tech__MindPaw/MindPaw_main/src/main.cpp",
+          "symbol": "u8g2.drawXBMP(0, 0, 128, 64, hi)",
+          "line_start": 1767,
+          "line_end": 1797,
+          "sha256_utf8": "ac0d83dea0d2081bedd1c574faf5d86206d57912d2f2e81918fb24654b18ccf2",
+          "sha256_bytes": "ac0d83dea0d2081bedd1c574faf5d86206d57912d2f2e81918fb24654b18ccf2",
+          "git_blob": "7fe50333051f14542a4027c77319fa2c982793db",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "21c549252a60126a80874738626f1b8c36efc38c",
+          "upstream_url": "https://github.com/ace-trump-tech/MindPaw/blob/21c549252a60126a80874738626f1b8c36efc38c/MindPaw_main/src/main.cpp#L1767-L1797",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "emojiState 分支选择 hi、angry、error、dowhat、love、sick、yun 等 XBM 资产，再通过 firstPage()/nextPage() 的分页绘制刷新。另有天气、网络、时间和 logo 画面。状态改变时清屏；这套实现主要是静态图案切换。",
+      "invocation": "沿主循环设置 emojiState 后，由原绘制分支刷新。drawXBMP 的位排列与 GFX drawBitmap 不同；移植应使用 drawXBitmap 或转换位序。Agent 的 expression 数字必须和这一 switch 对照，不能只依据提示词标签猜实际图案。",
+      "porting": "提取 image.cpp 对应数组和显示分支，改成单独渲染函数；保持天气/NTP 等页面与机器人表情的所有权关系。迁移到 ESP32 时改 U8g2 构造器和 I2C 引脚。",
+      "limitations": "U8g2 在工程声明为 ^2.36.2；不是 RoboEyes 的参数绘制，也不是连续 GIF。软件、STL 与文档许可不同，按原项目说明核对。",
+      "physical_test": false,
+      "document": "机器人能力参考库/01_表情显示/E04_MindPaw U8g2 位图表情与状态画面.md"
+    },
+    {
+      "id": "E05",
+      "title": "M5Stack Avatar 情绪、嘴巴与眼睛参数",
+      "category": "01_表情显示",
+      "project_ids": [
+        4
+      ],
+      "tags": [
+        "嘴巴",
+        "mouth",
+        "情绪",
+        "视线",
+        "自动眨眼",
+        "M5Stack"
+      ],
+      "hardware": "M5Stack ESP32 彩屏＋M5Unified",
+      "language": "C++",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "M5Stack_Avatar",
+        "M5Unified"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__m5stack-avatar/src/Avatar.h",
+          "symbol": "void setExpression",
+          "line_start": 75,
+          "line_end": 105,
+          "sha256_utf8": "6196f979d89a2b560a5d526088d25101805f225902824f9c8b9c8c4789780fbf",
+          "sha256_bytes": "6196f979d89a2b560a5d526088d25101805f225902824f9c8b9c8c4789780fbf",
+          "git_blob": "58bb1bdda3411c88de3f383e72628226f5af75e9",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "7a90083edd9bbdc1a52ea13afe4d5c3b7fc7bfa8",
+          "upstream_url": "https://github.com/stack-chan/m5stack-avatar/blob/7a90083edd9bbdc1a52ea13afe4d5c3b7fc7bfa8/src/Avatar.h#L75-L105",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__m5stack-avatar/src/Avatar.h",
+          "symbol": "void setMouthOpenRatio",
+          "line_start": 107,
+          "line_end": 137,
+          "sha256_utf8": "6196f979d89a2b560a5d526088d25101805f225902824f9c8b9c8c4789780fbf",
+          "sha256_bytes": "6196f979d89a2b560a5d526088d25101805f225902824f9c8b9c8c4789780fbf",
+          "git_blob": "58bb1bdda3411c88de3f383e72628226f5af75e9",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "7a90083edd9bbdc1a52ea13afe4d5c3b7fc7bfa8",
+          "upstream_url": "https://github.com/stack-chan/m5stack-avatar/blob/7a90083edd9bbdc1a52ea13afe4d5c3b7fc7bfa8/src/Avatar.h#L107-L137",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__m5stack-avatar/src/Expression.h",
+          "symbol": "enum class Expression",
+          "line_start": 9,
+          "line_end": 12,
+          "sha256_utf8": "12261c367b4167bb250ad40334e39f296323dd5c1dea5a3cd0a94f6ea68e1461",
+          "sha256_bytes": "12261c367b4167bb250ad40334e39f296323dd5c1dea5a3cd0a94f6ea68e1461",
+          "git_blob": "b0cbf87572a3f2789359d8e9d6cf1652451ccbe3",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "7a90083edd9bbdc1a52ea13afe4d5c3b7fc7bfa8",
+          "upstream_url": "https://github.com/stack-chan/m5stack-avatar/blob/7a90083edd9bbdc1a52ea13afe4d5c3b7fc7bfa8/src/Expression.h#L9-L12",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "Avatar 将眼睛、眉毛、嘴巴等面部部件组合绘制。Expression 枚举控制情绪，眼睛开合、左右视线、嘴巴比例、位置、缩放和旋转分别有 setter。绘制任务与表情参数可独立更新，不必预画所有帧。",
+      "invocation": "M5 初始化后创建 m5avatar::Avatar，init()；setExpression(m5avatar::Expression::Happy)，setMouthOpenRatio(0.5f)，setRightGaze()/setLeftGaze()。此版本没有凭空通用的 setGaze() 调用；按 Avatar.h 的真实签名传参。",
+      "porting": "已保存 v0.10.0 完整库，不重复下载。新 M5Stack 方案可以调用原库；纸壳单色 OLED 需要重写显示后端或转用 E01/E02。Mouth 比例适合由音量、TTS 开始结束或音频包状态驱动。",
+      "limitations": "本库 MIT；依赖 M5Unified。附带 LipSync.h 是旧 AquesTalk/M5Stack 路线，不能直接当成任意音频输入的兼容组件，见 I03。",
+      "physical_test": false,
+      "document": "机器人能力参考库/01_表情显示/E05_M5Stack Avatar 情绪、嘴巴与眼睛参数.md"
+    },
+    {
+      "id": "E06",
+      "title": "Stack-chan Moddable 面部状态与皮肤",
+      "category": "01_表情显示",
+      "project_ids": [
+        4
+      ],
+      "tags": [
+        "Piu",
+        "皮肤",
+        "face",
+        "emotion",
+        "颜色",
+        "呼吸"
+      ],
+      "hardware": "Moddable JavaScript/TypeScript＋Stack-chan 支持板",
+      "language": "TypeScript",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "Moddable",
+        "Piu"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__stack-chan/firmware/host/modules/ui/state/face-state.ts",
+          "symbol": "export const Emotion",
+          "line_start": 1,
+          "line_end": 31,
+          "sha256_utf8": "62b6ebfaf112d098cfd9125b644aad26937337aab9f82574daef4cc1fe62d02e",
+          "sha256_bytes": "62b6ebfaf112d098cfd9125b644aad26937337aab9f82574daef4cc1fe62d02e",
+          "git_blob": "4970dfaad395fa7f17e9fdc3006e54cf61a8d913",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "fe7be1005d2cf8732f365176a91c7177c8533591",
+          "upstream_url": "https://github.com/stack-chan/stack-chan/blob/fe7be1005d2cf8732f365176a91c7177c8533591/firmware/host/modules/ui/state/face-state.ts#L1-L31",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__stack-chan/firmware/host/modules/ui/state/face-state.ts",
+          "symbol": "export type FaceState",
+          "line_start": 62,
+          "line_end": 92,
+          "sha256_utf8": "62b6ebfaf112d098cfd9125b644aad26937337aab9f82574daef4cc1fe62d02e",
+          "sha256_bytes": "62b6ebfaf112d098cfd9125b644aad26937337aab9f82574daef4cc1fe62d02e",
+          "git_blob": "4970dfaad395fa7f17e9fdc3006e54cf61a8d913",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "fe7be1005d2cf8732f365176a91c7177c8533591",
+          "upstream_url": "https://github.com/stack-chan/stack-chan/blob/fe7be1005d2cf8732f365176a91c7177c8533591/firmware/host/modules/ui/state/face-state.ts#L62-L92",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__stack-chan/firmware/docs/api.md",
+          "symbol": "context.face",
+          "line_start": 58,
+          "line_end": 88,
+          "sha256_utf8": "b08070d85263691771bcea87fd75a402003644837f21fec3db74f330f1215cd2",
+          "sha256_bytes": "b08070d85263691771bcea87fd75a402003644837f21fec3db74f330f1215cd2",
+          "git_blob": "df39b3e94a31858b6d36d115e452e3cb55c33ed0",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "fe7be1005d2cf8732f365176a91c7177c8533591",
+          "upstream_url": "https://github.com/stack-chan/stack-chan/blob/fe7be1005d2cf8732f365176a91c7177c8533591/firmware/docs/api.md#L58-L88",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "FaceState 保存 mouth.open、左右 eye.open/gazeX/gazeY、breath、emotion 和 theme。运行时上下文改变这些状态，Piu face-view 和当前 skin 消费状态绘制；分发前可量化呼吸值，避免无意义的逐像素重绘。",
+      "invocation": "Mod 的 onContextCreated(context) 中用 context.face.setEmotion(...)，参数按 firmware/docs/api.md。Emotion 有 NEUTRAL、ANGRY、SAD、HAPPY、SLEEPY、DOUBTFUL、COLD、HOT；还可改颜色和切换皮肤。",
+      "porting": "保留 host 状态、UI skin 与 Mod 生命周期配套，不能仅把 .ts 文件粘进 Arduino。若只借设计，提取状态模型和情绪到几何参数的映射，再用目标屏幕实现 renderer。",
+      "limitations": "当前归档 develop 是 Moddable 路线；Arduino 的 M5Avatar 是另外一套接口与工具链。context 关闭时释放相关资源，避免遗留 Timer。",
+      "physical_test": false,
+      "document": "机器人能力参考库/01_表情显示/E06_Stack-chan Moddable 面部状态与皮肤.md"
+    },
+    {
+      "id": "E07",
+      "title": "小智 LCD 静态图与 GIF 表情播放器",
+      "category": "01_表情显示",
+      "project_ids": [
+        8,
+        9,
+        10
+      ],
+      "tags": [
+        "GIF",
+        "LVGL",
+        "表情资源",
+        "SetEmotion",
+        "彩屏"
+      ],
+      "hardware": "ESP-IDF＋LVGL LCD 显示分支",
+      "language": "C++",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "ESP-IDF",
+        "LVGL",
+        "esp_lvgl_port",
+        "xiaozhi-fonts"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-esp32/main/display/lcd_display.cc",
+          "symbol": "void LcdDisplay::SetEmotion",
+          "line_start": 1132,
+          "line_end": 1162,
+          "sha256_utf8": "66103d8f56deed00e5598885353c4e56970298ba98c6f9b91ce7adb435ac2d2d",
+          "sha256_bytes": "66103d8f56deed00e5598885353c4e56970298ba98c6f9b91ce7adb435ac2d2d",
+          "git_blob": "3462ac0e2b22c6ea73106313960fbe946d1575f9",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d395220a83fb7a16ea5dc761c08a4816177cc880",
+          "upstream_url": "https://github.com/78/xiaozhi-esp32/blob/d395220a83fb7a16ea5dc761c08a4816177cc880/main/display/lcd_display.cc#L1132-L1162",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-esp32/main/display/lcd_display.cc",
+          "symbol": "gif_controller_->Start()",
+          "line_start": 1063,
+          "line_end": 1093,
+          "sha256_utf8": "66103d8f56deed00e5598885353c4e56970298ba98c6f9b91ce7adb435ac2d2d",
+          "sha256_bytes": "66103d8f56deed00e5598885353c4e56970298ba98c6f9b91ce7adb435ac2d2d",
+          "git_blob": "3462ac0e2b22c6ea73106313960fbe946d1575f9",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d395220a83fb7a16ea5dc761c08a4816177cc880",
+          "upstream_url": "https://github.com/78/xiaozhi-esp32/blob/d395220a83fb7a16ea5dc761c08a4816177cc880/main/display/lcd_display.cc#L1063-L1093",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "LcdDisplay::SetEmotion 从当前主题的 EmojiCollection 找资源。停止旧 GIF 后区分静态图与 GIF；GIF 构造 LvglGif，注册帧回调更新 lv_image，然后开始播放。资源缺失时走字体图标或文本后备；UI 修改受 DisplayLockGuard 保护。",
+      "invocation": "原工程经 Board::GetInstance().GetDisplay()->SetEmotion(\"happy\") 进入具体显示实现。llm emotion 消息也是这一入口。GIF 命名必须存在于实际主题资源，不能任意新增字符串便期待画面出现。",
+      "porting": "为新彩屏机器人保留主题集合、GIF 解码器、LVGL 对象、资源打包及锁。单色 OLED 有独立显示路径，不能直接替换为 LCD 的 GIF 分支。先明确硬件板型和堆内存预算。",
+      "limitations": "归档主分支要求 IDF>=6.0.1、LVGL~9.5.0；Otto 分支要求 IDF>=5.5.2。新增7个 Arduino 通用库不提供 IDF 工具链，版本不能混用。",
+      "physical_test": false,
+      "document": "机器人能力参考库/01_表情显示/E07_小智 LCD 静态图与 GIF 表情播放器.md"
+    },
+    {
+      "id": "E08",
+      "title": "EMO 作者的 LVGL Lottie 动画实验",
+      "category": "01_表情显示",
+      "project_ids": [
+        10
+      ],
+      "tags": [
+        "Lottie",
+        "矢量动画",
+        "PSRAM",
+        "LVGL9"
+      ],
+      "hardware": "ESP32-S3＋PSRAM＋LVGL9",
+      "language": "C",
+      "reuse_status": "adaptation_required",
+      "reuse_label": "需要移植或配套运行环境",
+      "dependencies": [
+        "LVGL",
+        "Lottie/ThorVG"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/10_EMO-Dot小豆机器人/仓库/M-D-777__esp32_s3_lvgl9_lottie_test/main/lv_example_lottie_1.c",
+          "symbol": "lv_example_lottie_1",
+          "line_start": 15,
+          "line_end": 45,
+          "sha256_utf8": "debf35b1ea3dd2853b3bc2ca04125994f7a01709ed600c2b1f4d8436fedd0ce8",
+          "sha256_bytes": "debf35b1ea3dd2853b3bc2ca04125994f7a01709ed600c2b1f4d8436fedd0ce8",
+          "git_blob": "727229fcb8ce4316b77fd28f18fb27737655bedd",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "6bc01cad2a59cf061ddaf23847235f8f93e0e9b6",
+          "upstream_url": "https://github.com/M-D-777/esp32_s3_lvgl9_lottie_test/blob/6bc01cad2a59cf061ddaf23847235f8f93e0e9b6/main/lv_example_lottie_1.c#L15-L45",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/10_EMO-Dot小豆机器人/仓库/M-D-777__esp32_s3_lvgl9_lottie_test/main/lv_example_lottie_1.c",
+          "symbol": "lv_lottie_set_src_data",
+          "line_start": 27,
+          "line_end": 57,
+          "sha256_utf8": "debf35b1ea3dd2853b3bc2ca04125994f7a01709ed600c2b1f4d8436fedd0ce8",
+          "sha256_bytes": "debf35b1ea3dd2853b3bc2ca04125994f7a01709ed600c2b1f4d8436fedd0ce8",
+          "git_blob": "727229fcb8ce4316b77fd28f18fb27737655bedd",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "6bc01cad2a59cf061ddaf23847235f8f93e0e9b6",
+          "upstream_url": "https://github.com/M-D-777/esp32_s3_lvgl9_lottie_test/blob/6bc01cad2a59cf061ddaf23847235f8f93e0e9b6/main/lv_example_lottie_1.c#L27-L57",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "示例创建 lv_lottie 对象，给每个对象分配外部 RAM 绘制缓冲，再绑定 toast、robot、rocket、cuppa 等动画数据。120×120×4 字节加对齐空间用于一个 ARGB 画布，多个对象会累加内存占用。",
+      "invocation": "核心调用为 lv_lottie_create、lv_lottie_set_buffer、lv_lottie_set_src_data；必须在 LVGL Lottie 功能和渲染依赖已启用的工程里使用，并由 LVGL 的定时处理推进。",
+      "porting": "可用于 S3 彩屏表情设计和资源管线参考；先做单对象试验、检查 malloc 返回值，明确缩放与刷新预算。C3 的纸壳方案优先位图或几何眼睛，不沿用 PSRAM 分配。",
+      "limitations": "这是作者单独实验仓，不等同 EMO-Dot 已发布固件的正式渲染内核。库和动画资产分别保留原许可；未进行嵌入式编译或性能测量。",
+      "physical_test": false,
+      "document": "机器人能力参考库/01_表情显示/E08_EMO 作者的 LVGL Lottie 动画实验.md"
+    },
+    {
+      "id": "E09",
+      "title": "曼波 OLED 图案与动作联动",
+      "category": "01_表情显示",
+      "project_ids": [
+        2
+      ],
+      "tags": [
+        "曼波",
+        "BMP",
+        "OLED",
+        "动作表情",
+        "开心值",
+        "体力值"
+      ],
+      "hardware": "STM32F103＋软件 I2C OLED",
+      "language": "C",
+      "reuse_status": "adaptation_required",
+      "reuse_label": "需要移植或配套运行环境",
+      "dependencies": [
+        "STM32标准外设库",
+        "OLED驱动",
+        "SYN6288"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/02_曼波小狗/仓库/RussellCooper-DJZ__manbo-robot-dog/User/Mode.c",
+          "symbol": "void mode_forward",
+          "line_start": 38,
+          "line_end": 68,
+          "sha256_utf8": "f63a4983588e17d8eb29808a415b43ad552bc363761f965694dbc8f57af7b7cf",
+          "sha256_bytes": "257136ee4a65164f96f4700498ab8c748e60aca3e58f56e3c6ef9006b18bea0b",
+          "git_blob": "f0ee2c907c31d5f313345393faf105021409e02a",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "9a3d315cfe50a62d8e6221cccf2aea696f96aedc",
+          "upstream_url": "https://github.com/RussellCooper-DJZ/manbo-robot-dog/blob/9a3d315cfe50a62d8e6221cccf2aea696f96aedc/User/Mode.c#L38-L68",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/02_曼波小狗/仓库/RussellCooper-DJZ__manbo-robot-dog/User/Mode.c",
+          "symbol": "void mode_happiness",
+          "line_start": 418,
+          "line_end": 448,
+          "sha256_utf8": "f63a4983588e17d8eb29808a415b43ad552bc363761f965694dbc8f57af7b7cf",
+          "sha256_bytes": "257136ee4a65164f96f4700498ab8c748e60aca3e58f56e3c6ef9006b18bea0b",
+          "git_blob": "f0ee2c907c31d5f313345393faf105021409e02a",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "9a3d315cfe50a62d8e6221cccf2aea696f96aedc",
+          "upstream_url": "https://github.com/RussellCooper-DJZ/manbo-robot-dog/blob/9a3d315cfe50a62d8e6221cccf2aea696f96aedc/User/Mode.c#L418-L448",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/02_曼波小狗/仓库/RussellCooper-DJZ__manbo-robot-dog/Hardware/OLED.h",
+          "symbol": "OLED_ShowImage",
+          "line_start": 45,
+          "line_end": 64,
+          "sha256_utf8": "2ac48984b98de72adc20ec7f0dad09799181dcf7d9ed949d67358cd6d795457a",
+          "sha256_bytes": "e75f0995aaa097bf303ad72b64aafbb14830e7b2dc4f3073ea7f678459bdbf0a",
+          "git_blob": "ae477611473dce12f8ca12f7b6402e01d6ff6958",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "9a3d315cfe50a62d8e6221cccf2aea696f96aedc",
+          "upstream_url": "https://github.com/RussellCooper-DJZ/manbo-robot-dog/blob/9a3d315cfe50a62d8e6221cccf2aea696f96aedc/Hardware/OLED.h#L45-L64",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "Mode 函数先选择 BMP 图案，再调用运动函数、更新 previous_mode 和体力/开心变量。mode_happiness、mode_stamina 把数值、文字、TTS 和动作串起来。OLED_ShowImage 是将预存图案写入显示缓冲的入口。",
+      "invocation": "原模式内可用 OLED_ShowImage(0,0,128,64,BMP2)，刷新行为要按 OLED 实现确认。BMP1、BMP2 等是资源变量，不是稳定的语义枚举；完整模式包装包含 LED、TTS 和 Delay 依赖。",
+      "porting": "新机器人适合借鉴“事件→表情→动作→状态变化”的联动结构；把开心/体力更新与硬件行为解耦，给资源取明确语义名称。保留本地包与 GitHub 非阻塞版本两条路径的区别。",
+      "limitations": "这套模式包含长同步等待；不能把显示代码叫作通用异步动画库。部分源文件为 GBK，索引哈希按 UTF-8 解码文本另标明，原文件字节以 Git blob 为准。",
+      "physical_test": false,
+      "document": "机器人能力参考库/01_表情显示/E09_曼波 OLED 图案与动作联动.md"
+    },
+    {
+      "id": "E10",
+      "title": "Otto 的 21 个 GIF 表情资源",
+      "category": "01_表情显示",
+      "project_ids": [
+        9,
+        8
+      ],
+      "tags": [
+        "21表情",
+        "GIF资源",
+        "neutral",
+        "thinking",
+        "winking"
+      ],
+      "hardware": "ESP-IDF 资源组件；播放器需另接",
+      "language": "C",
+      "reuse_status": "portable_component",
+      "reuse_label": "可单独提取；需接入驱动",
+      "dependencies": [
+        "otto-emoji-gif-component",
+        "GIF播放器"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/txp666__otto-emoji-gif-component/src/otto_emoji_gif.c",
+          "symbol": "gif_names[]",
+          "line_start": 14,
+          "line_end": 32,
+          "sha256_utf8": "a067d66fe81ef1923a46a3dd6a9378dee39954f13a10957f18bbafb25280f13b",
+          "sha256_bytes": "a067d66fe81ef1923a46a3dd6a9378dee39954f13a10957f18bbafb25280f13b",
+          "git_blob": "bad509aea4c9ddeae50f782fff18295fb89ce0b6",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "970cf66906d7c30059faa2704e7002f06b8c3619",
+          "upstream_url": "https://github.com/txp666/otto-emoji-gif-component/blob/970cf66906d7c30059faa2704e7002f06b8c3619/src/otto_emoji_gif.c#L14-L32",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/txp666__otto-emoji-gif-component/include/otto_emoji_gif.h",
+          "symbol": "otto_emoji_gif_get_name",
+          "line_start": 23,
+          "line_end": 29,
+          "sha256_utf8": "e63bb3b1a0ba3eb1f49575bc6b5339b3f64981f33c24a725ff8cbbacb656dfbc",
+          "sha256_bytes": "e63bb3b1a0ba3eb1f49575bc6b5339b3f64981f33c24a725ff8cbbacb656dfbc",
+          "git_blob": "795bd0c1f459ec76fe3dd570231f1a8a419d8130",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "970cf66906d7c30059faa2704e7002f06b8c3619",
+          "upstream_url": "https://github.com/txp666/otto-emoji-gif-component/blob/970cf66906d7c30059faa2704e7002f06b8c3619/include/otto_emoji_gif.h#L23-L29",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "组件将 21 个具名 GIF 及元数据组织为 IDF 资源。名称表是 neutral、happy、laughing 等固定列表；get_count、get_name、get_version 提供资源查询。它本身没有完整的屏幕播放循环。",
+      "invocation": "使用 otto_emoji_gif_get_count() 和 otto_emoji_gif_get_name(i) 建立资源菜单，按组件 CMake 的嵌入方式取 GIF 字节，再交给原工程播放器。不能写一个 get_name 调用就认为 GIF 已被显示。",
+      "porting": "可在小智兼容 LCD 分支沿用相同情绪名，或者离线抽帧转换成纸壳 OLED 的单色帧。转换时保留时长、透明度处理、画幅与原资源许可。",
+      "limitations": "21 是此组件名称表的数量，不是所有小智板型通用表情数。C3/S3、静态/动态资源配置有条件区别，应核对 idf_component.yml 和显示实现。",
+      "physical_test": false,
+      "document": "机器人能力参考库/01_表情显示/E10_Otto 的 21 个 GIF 表情资源.md"
+    },
+    {
+      "id": "E11",
+      "title": "ElectronBot USB 屏幕帧与媒体播放",
+      "category": "01_表情显示",
+      "project_ids": [
+        11
+      ],
+      "tags": [
+        "USB屏幕",
+        "240×240",
+        "视频",
+        "OpenCV",
+        "双缓冲"
+      ],
+      "hardware": "Windows PC＋ElectronBot USB设备",
+      "language": "C++",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "ElectronLowLevel",
+        "OpenCV",
+        "USB驱动"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/11_ElectronBot类人桌面机器人/仓库/peng-zhihui__ElectronBot/3.Software/SDK/ElectronBotSDK-LowLevel/src/electron_low_level.h",
+          "symbol": "SetImageSrc",
+          "line_start": 23,
+          "line_end": 51,
+          "sha256_utf8": "429cc97090a6baaae4122128a137a18b21fc28513fe6bc0d11fbda61f6557968",
+          "sha256_bytes": "429cc97090a6baaae4122128a137a18b21fc28513fe6bc0d11fbda61f6557968",
+          "git_blob": "6319ff4a2b020220472ffabd8b15b620025da05a",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "819927015323181a9a10e0184d64ad2bddfcb407",
+          "upstream_url": "https://github.com/peng-zhihui/ElectronBot/blob/819927015323181a9a10e0184d64ad2bddfcb407/3.Software/SDK/ElectronBotSDK-LowLevel/src/electron_low_level.h#L23-L51",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/11_ElectronBot类人桌面机器人/仓库/peng-zhihui__ElectronBot/3.Software/SDK/ElectronBotSDK-Player/src/electron_player.cpp",
+          "symbol": "void ElectronPlayer::Play",
+          "line_start": 20,
+          "line_end": 50,
+          "sha256_utf8": "162d06f785fb387811c542f8a8758b04e8b97cd836398b1b3e03acc596eabb24",
+          "sha256_bytes": "162d06f785fb387811c542f8a8758b04e8b97cd836398b1b3e03acc596eabb24",
+          "git_blob": "a3e382754a46b2ab3af90d67bd58925d9741e01d",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "819927015323181a9a10e0184d64ad2bddfcb407",
+          "upstream_url": "https://github.com/peng-zhihui/ElectronBot/blob/819927015323181a9a10e0184d64ad2bddfcb407/3.Software/SDK/ElectronBotSDK-Player/src/electron_player.cpp#L20-L50",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "底层 SDK 使用 240×240×3 图像双缓冲，通过 USB 将图像与额外关节数据送给整机。Player 根据后缀读取静态图，视频由 OpenCV VideoCapture 和播放线程逐帧送入底层 Sync。",
+      "invocation": "底层顺序 Connect→SetImageSrc→Sync；Player 可 Play 图像/视频，仍需匹配 DLL、OpenCV 和 USB 驱动。表情素材是屏幕媒体，不是可直接运行在 ESP32 OLED 上的绘制算法。",
+      "porting": "可以借图像/动作同帧传输与桌面编排思路。若新机器人用 Wi-Fi，重写传输和资源压缩；若直接复刻 ElectronBot，先固定 Windows ABI、帧格式和 USB VID/PID。",
+      "limitations": "Player 的 SetPose 空实现、GetPose 返回默认值；运动必须走 M14 的实际底层接口。Stop 只改变播放状态，不能推定关闭舵机扭矩。",
+      "physical_test": false,
+      "document": "机器人能力参考库/01_表情显示/E11_ElectronBot USB 屏幕帧与媒体播放.md"
+    },
+    {
+      "id": "E12",
+      "title": "纸壳与作者 BIN 的表情源码边界",
+      "category": "01_表情显示",
+      "project_ids": [
+        15,
+        19,
+        10
+      ],
+      "tags": [
+        "闭源固件",
+        "BIN",
+        "纸壳",
+        "不可直接调用",
+        "缺口"
+      ],
+      "hardware": "特定 C3/S3 板型与作者成品固件",
+      "language": "二进制/文档",
+      "reuse_status": "reference_only",
+      "reuse_label": "资料或二进制边界；没有完整可调用实现",
+      "dependencies": [
+        "作者固件",
+        "板型资源"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/15_小纸壳机器人/README.md",
+          "symbol": "固件",
+          "line_start": 5,
+          "line_end": 35,
+          "sha256_utf8": "96986d82cd999907c78ca937190f26a38d603ade90933e5d166f1100506e134d",
+          "sha256_bytes": "96986d82cd999907c78ca937190f26a38d603ade90933e5d166f1100506e134d",
+          "git_blob": "545f2a45f2671450f188a42e65f98b9750b76e9a",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/README.md",
+          "symbol": "固件",
+          "line_start": 1,
+          "line_end": 31,
+          "sha256_utf8": "7a821362c671f076d20e70b6ccbee0a76579e2bdfbd138dc4896aef149647f86",
+          "sha256_bytes": "7a821362c671f076d20e70b6ccbee0a76579e2bdfbd138dc4896aef149647f86",
+          "git_blob": "69308de98b204b0812d432370a3c4d50249adf5f",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "已有指南、烧录镜像、测试网页和版本材料，可以确认屏幕与交互的外部表现；没有提供可提取的完整表情渲染 C++ 源码。BIN 不是一个带头文件、枚举和可链接 API 的表情库。EMO-Dot 的入口材料也不能自动等同作者实验仓全部实现。",
+      "invocation": "复刻原硬件可按指南和正确镜像使用；开发新表情则选择 E01/E02/E03 或小智显示源码建立自己的可维护工程。索引将这些材料标为 reference_only，禁止假定有可调用的 setEmotion SDK。",
+      "porting": "纸壳第一版可保留结构/接线/模块验收思路，并替换为独立 OLED 表情模块。先确认现有固件能否通过串口控制表情，不能从网页按钮或展示视频推出不存在的协议。",
+      "limitations": "记录外部行为、引脚证据、镜像版本和未提供源码的缺口；不声称恢复了固件内所有表情、动作或媒体格式。作者非商业说明与未明确许可的附件单独核对。",
+      "physical_test": false,
+      "document": "机器人能力参考库/01_表情显示/E12_纸壳与作者 BIN 的表情源码边界.md"
+    },
+    {
+      "id": "M01",
+      "title": "ESP32Servo 舵机角度与脉宽驱动",
+      "category": "02_动作与运动",
+      "project_ids": [
+        1,
+        5,
+        15
+      ],
+      "tags": [
+        "舵机",
+        "PWM",
+        "角度",
+        "微秒",
+        "ESP32",
+        "detach"
+      ],
+      "hardware": "ESP32 Arduino；芯片与 core 版本影响 PWM 后端",
+      "language": "C++",
+      "reuse_status": "portable_component",
+      "reuse_label": "可单独提取；需接入驱动",
+      "dependencies": [
+        "ESP32Servo",
+        "Arduino-ESP32"
+      ],
+      "sources": [
+        {
+          "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/src/ESP32Servo.h",
+          "symbol": "class Servo",
+          "line_start": 145,
+          "line_end": 175,
+          "sha256_utf8": "5c75dbaf9b47eded2d4e42bf408741b42086cc29637052c622834e2b1248b51b",
+          "sha256_bytes": "5c75dbaf9b47eded2d4e42bf408741b42086cc29637052c622834e2b1248b51b",
+          "git_blob": "83e79f47f367128ae6e2ec968fc99dbd2e409b71",
+          "baseline_commit": null,
+          "upstream_commit": "88be58c5eb07d89c057d9c5fd0bcbf63b1c7d283",
+          "upstream_url": "https://github.com/madhephaestus/ESP32Servo/blob/88be58c5eb07d89c057d9c5fd0bcbf63b1c7d283/src/ESP32Servo.h#L145-L175",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot/firmware/sesame-firmware-main.ino",
+          "symbol": "setPeriodHertz(50)",
+          "line_start": 740,
+          "line_end": 770,
+          "sha256_utf8": "ef1b7d0702580381d970f349c12c7094b8f4ff4574a8214e21d4783e166d1450",
+          "sha256_bytes": "24a00b44091c686e1a6803028ce3108c95bcf8cc738061ebdb249fe4add96982",
+          "git_blob": "92a1584675999c40ed69eef77c58d3985ffc82f4",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d106cbc8e158c982f408db421134f23273c5f51f",
+          "upstream_url": "https://github.com/dorianborian/sesame-robot/blob/d106cbc8e158c982f408db421134f23273c5f51f/firmware/sesame-firmware-main.ino#L740-L770",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot/firmware/sesame-firmware-main.ino",
+          "symbol": "void setServoAngle",
+          "line_start": 195,
+          "line_end": 225,
+          "sha256_utf8": "ef1b7d0702580381d970f349c12c7094b8f4ff4574a8214e21d4783e166d1450",
+          "sha256_bytes": "24a00b44091c686e1a6803028ce3108c95bcf8cc738061ebdb249fe4add96982",
+          "git_blob": "92a1584675999c40ed69eef77c58d3985ffc82f4",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d106cbc8e158c982f408db421134f23273c5f51f",
+          "upstream_url": "https://github.com/dorianborian/sesame-robot/blob/d106cbc8e158c982f408db421134f23273c5f51f/firmware/sesame-firmware-main.ino#L195-L225",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "Servo 把角度映射为脉宽，再用 ESP32 PWM 外设持续输出。attach 提供 pin 和可选微秒上下限，write 写角度，writeMicroseconds 直接给脉宽；setPeriodHertz 配周期。芝麻额外加 trim、0..180 限幅和每次 20ms 等待。",
+      "invocation": "在匹配 Arduino core 中 include <ESP32Servo.h>，Servo 对象 setPeriodHertz(50)、attach(pin,minUs,maxUs)、write(degrees)。detach() 是停止该 PWM 通道；write(90) 是目标角度，二者不同。",
+      "porting": "两舵机纸壳方案可以单独使用，先确认 GPIO、舵机中心、脉宽范围、安装方向和供电。芝麻 732..2929µs 是它的设定，不能作为所有 SG90 的默认边界。",
+      "limitations": "新增库版本 3.2.1，头文件声明 LGPL-2.1-or-later，原机器人 include 没锁定此提交。角度范围不等于实体关节无碰撞范围；电源与机械限制仍需目标硬件验证。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M01_ESP32Servo 舵机角度与脉宽驱动.md"
+    },
+    {
+      "id": "M02",
+      "title": "PCA9685 多通道舵机输出",
+      "category": "02_动作与运动",
+      "project_ids": [
+        6,
+        7,
+        16
+      ],
+      "tags": [
+        "PCA9685",
+        "16通道",
+        "I2C舵机",
+        "ticks",
+        "writeMicroseconds"
+      ],
+      "hardware": "Arduino＋PCA9685 PWM扩展板",
+      "language": "C++",
+      "reuse_status": "portable_component",
+      "reuse_label": "可单独提取；需接入驱动",
+      "dependencies": [
+        "Adafruit_PWMServoDriver",
+        "Adafruit_BusIO",
+        "Wire"
+      ],
+      "sources": [
+        {
+          "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/Adafruit_PWMServoDriver.h",
+          "symbol": "setPWMFreq",
+          "line_start": 85,
+          "line_end": 106,
+          "sha256_utf8": "f50344e8b3791c8455c2ccba70dd9e8d359b1ac31cd5bbf3ff5a3dc836a8cb4b",
+          "sha256_bytes": "f50344e8b3791c8455c2ccba70dd9e8d359b1ac31cd5bbf3ff5a3dc836a8cb4b",
+          "git_blob": "4237f6d7785ad33fdecc1c15a3d9d3684b57d7c0",
+          "baseline_commit": null,
+          "upstream_commit": "a98850b815bf9696c8ffdc2a0f89d657c52dd44b",
+          "upstream_url": "https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library/blob/a98850b815bf9696c8ffdc2a0f89d657c52dd44b/Adafruit_PWMServoDriver.h#L85-L106",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/Adafruit_PWMServoDriver.h",
+          "symbol": "writeMicroseconds",
+          "line_start": 91,
+          "line_end": 106,
+          "sha256_utf8": "f50344e8b3791c8455c2ccba70dd9e8d359b1ac31cd5bbf3ff5a3dc836a8cb4b",
+          "sha256_bytes": "f50344e8b3791c8455c2ccba70dd9e8d359b1ac31cd5bbf3ff5a3dc836a8cb4b",
+          "git_blob": "4237f6d7785ad33fdecc1c15a3d9d3684b57d7c0",
+          "baseline_commit": null,
+          "upstream_commit": "a98850b815bf9696c8ffdc2a0f89d657c52dd44b",
+          "upstream_url": "https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library/blob/a98850b815bf9696c8ffdc2a0f89d657c52dd44b/Adafruit_PWMServoDriver.h#L91-L106",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/src/hardware/servo_wrapper.cpp",
+          "symbol": "angleToPulse",
+          "line_start": 25,
+          "line_end": 55,
+          "sha256_utf8": "c7579e666052310e442d9d187349e6dbf5a2dcb74464821dd4245808536895bf",
+          "sha256_bytes": "c7579e666052310e442d9d187349e6dbf5a2dcb74464821dd4245808536895bf",
+          "git_blob": "cdf369f4147a17352ea7bfccb3bf0ca29c810696",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+          "upstream_url": "https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/src/hardware/servo_wrapper.cpp#L25-L55",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "PCA9685 将多路 PWM 输出从主控移到 I2C 芯片。setPWM 通道值为 12bit 周期计数，writeMicroseconds 换算微秒。TinyEngineer 自己把角度→微秒→4096周期计数，并将 OE 和 full-off 管理封装在 ServoWrapper。",
+      "invocation": "创建 Adafruit_PWMServoDriver(address)，begin()，setPWMFreq(50)，再 writeMicroseconds(channel,pulseUs) 或 setPWM(channel,on,off)。4096 full-on 与 full-off 使用位置不同，Tiny 源码明确不能用 (4096,0) 表示停止。",
+      "porting": "在多舵机平台沿用扩展板驱动，另写每关节角度→脉宽、trim 和限位映射。纸壳只有两舵机时可比较直接 PWM 与 PCA 的接线和资源成本。",
+      "limitations": "新参考库版本与 NodeHexa 声明 ^3.0.2、Tiny 未锁版本分别记录。驱动没有自动生成步态，也不知道腿的几何；原代码的 ticks、degree、µs 不能混传。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M02_PCA9685 多通道舵机输出.md"
+    },
+    {
+      "id": "M03",
+      "title": "芝麻 8 舵机姿势、舞蹈与步态",
+      "category": "02_动作与运动",
+      "project_ids": [
+        1
+      ],
+      "tags": [
+        "挥手",
+        "鞠躬",
+        "舞蹈",
+        "蠕动",
+        "四足",
+        "姿势表"
+      ],
+      "hardware": "8舵机芝麻机械构型",
+      "language": "C++",
+      "reuse_status": "adaptation_required",
+      "reuse_label": "需要移植或配套运行环境",
+      "dependencies": [
+        "ESP32Servo",
+        "芝麻显示与命令状态"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot/firmware/movement-sequences.h",
+          "symbol": "inline void runWavePose",
+          "line_start": 91,
+          "line_end": 121,
+          "sha256_utf8": "5af6a8cb291d930892d3080a8bf6fc7f5175930c8bc06b51578ebf2183b6daab",
+          "sha256_bytes": "f77d713703e361dff2458f4fd02356ed397b8f47d83bd7a87587e8f6e899d2f1",
+          "git_blob": "5b34ce6c3ff0beb34bbd5ff3dfb7020ec756151d",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d106cbc8e158c982f408db421134f23273c5f51f",
+          "upstream_url": "https://github.com/dorianborian/sesame-robot/blob/d106cbc8e158c982f408db421134f23273c5f51f/firmware/movement-sequences.h#L91-L121",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot/firmware/movement-sequences.h",
+          "symbol": "inline void runWalkPose",
+          "line_start": 326,
+          "line_end": 356,
+          "sha256_utf8": "5af6a8cb291d930892d3080a8bf6fc7f5175930c8bc06b51578ebf2183b6daab",
+          "sha256_bytes": "f77d713703e361dff2458f4fd02356ed397b8f47d83bd7a87587e8f6e899d2f1",
+          "git_blob": "5b34ce6c3ff0beb34bbd5ff3dfb7020ec756151d",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d106cbc8e158c982f408db421134f23273c5f51f",
+          "upstream_url": "https://github.com/dorianborian/sesame-robot/blob/d106cbc8e158c982f408db421134f23273c5f51f/firmware/movement-sequences.h#L326-L356",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot/firmware/sesame-firmware-main.ino",
+          "symbol": "bool pressingCheck",
+          "line_start": 206,
+          "line_end": 236,
+          "sha256_utf8": "ef1b7d0702580381d970f349c12c7094b8f4ff4574a8214e21d4783e166d1450",
+          "sha256_bytes": "24a00b44091c686e1a6803028ce3108c95bcf8cc738061ebdb249fe4add96982",
+          "git_blob": "92a1584675999c40ed69eef77c58d3985ffc82f4",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d106cbc8e158c982f408db421134f23273c5f51f",
+          "upstream_url": "https://github.com/dorianborian/sesame-robot/blob/d106cbc8e158c982f408db421134f23273c5f51f/firmware/sesame-firmware-main.ino#L206-L236",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "命名姿势以通道角度和 delayWithFace 串联，挥手、鞠躬等是写好的角度片段；行走与转向在关键帧间调用 pressingCheck，检查当前命令是否仍一致。动作同时设置相应位图表情，结束后常回站姿/待机。",
+      "invocation": "runWavePose、runBowPose、runDancePose、runWalkPose、runWalkBackward、runTurnLeft、runTurnRight 是实际函数。必须保留 ServoName 通道顺序、setServoAngle、显示辅助与 currentCommand；行走前当前命令应匹配检查字符串。",
+      "porting": "适合借动作编排和表情联动；新 4/2 舵机构型不能沿用这组8通道角度。移植前重新定义关节名、中心姿势及角度边界；若要并发语音，应把同步片段改为目标时间状态机。",
+      "limitations": "并非所有姿势都像行走一样检查中断。runStandPose 使用极端 0/180° 是原构型设定；不能默认新机器人可执行。STOP 清命令与物理断电不是同一功能。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M03_芝麻 8 舵机姿势、舞蹈与步态.md"
+    },
+    {
+      "id": "M04",
+      "title": "曼波 GitHub 非阻塞 ActionTask",
+      "category": "02_动作与运动",
+      "project_ids": [
+        2
+      ],
+      "tags": [
+        "动作队列",
+        "非阻塞",
+        "deadline",
+        "四舵机",
+        "抢占"
+      ],
+      "hardware": "STM32F103＋4舵机；GitHub 版本",
+      "language": "C",
+      "reuse_status": "portable_component",
+      "reuse_label": "可单独提取；需接入驱动",
+      "dependencies": [
+        "ActionTask",
+        "Servo驱动",
+        "毫秒时钟"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/02_曼波小狗/仓库/RussellCooper-DJZ__manbo-robot-dog/User/ActionTask.h",
+          "symbol": "ActionTask_RequestMotion",
+          "line_start": 33,
+          "line_end": 39,
+          "sha256_utf8": "eaf1d23f10c90b97a8df457729335317d50aa1aefb014d806dd24b5f6d61f9c1",
+          "sha256_bytes": "eaf1d23f10c90b97a8df457729335317d50aa1aefb014d806dd24b5f6d61f9c1",
+          "git_blob": "e708be4ef98c71579072fd773691aea7e9fdffe0",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "9a3d315cfe50a62d8e6221cccf2aea696f96aedc",
+          "upstream_url": "https://github.com/RussellCooper-DJZ/manbo-robot-dog/blob/9a3d315cfe50a62d8e6221cccf2aea696f96aedc/User/ActionTask.h#L33-L39",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/02_曼波小狗/仓库/RussellCooper-DJZ__manbo-robot-dog/User/ActionTask.c",
+          "symbol": "void ActionTask_Run",
+          "line_start": 346,
+          "line_end": 376,
+          "sha256_utf8": "891e3dd4fb6ff8abe2db20106ee06821d8f23813a83fbc733a65b76175adf367",
+          "sha256_bytes": "891e3dd4fb6ff8abe2db20106ee06821d8f23813a83fbc733a65b76175adf367",
+          "git_blob": "02aad7c9ac28e8a58f9bacb09630919feffd8cdd",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "9a3d315cfe50a62d8e6221cccf2aea696f96aedc",
+          "upstream_url": "https://github.com/RussellCooper-DJZ/manbo-robot-dog/blob/9a3d315cfe50a62d8e6221cccf2aea696f96aedc/User/ActionTask.c#L346-L376",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/02_曼波小狗/仓库/RussellCooper-DJZ__manbo-robot-dog/User/ActionTask.c",
+          "symbol": "void ActionTask_AbortToSafeStop",
+          "line_start": 451,
+          "line_end": 473,
+          "sha256_utf8": "891e3dd4fb6ff8abe2db20106ee06821d8f23813a83fbc733a65b76175adf367",
+          "sha256_bytes": "891e3dd4fb6ff8abe2db20106ee06821d8f23813a83fbc733a65b76175adf367",
+          "git_blob": "02aad7c9ac28e8a58f9bacb09630919feffd8cdd",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "9a3d315cfe50a62d8e6221cccf2aea696f96aedc",
+          "upstream_url": "https://github.com/RussellCooper-DJZ/manbo-robot-dog/blob/9a3d315cfe50a62d8e6221cccf2aea696f96aedc/User/ActionTask.c#L451-L473",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "动作脚本为 PoseStep 表：4 个 uint8 角度和 uint16 持续毫秒。任务实例保存脚本、步序和 deadline；Run(now_ms) 到期才应用下一步。HandleCommand 将字符指令映射到命名动作，避免每一步长 Delay 占住主循环。",
+      "invocation": "初始化舵机后 ActionTask_Init()；ActionTask_RequestMotion(ACTION_HELLO)，在主循环持续 ActionTask_Run(now_ms)。AbortToSafeStop() 让四个舵机回 90° 并清状态，不等于停止 PWM。动作名见预设清单。",
+      "porting": "纸壳可借时间驱动结构，把四角度表改为 pan/tilt 两通道。保持 tick 单调、正确处理 uint32 时间差及抢占策略；显示和串口仍在主循环刷新。",
+      "limitations": "这是 GitHub 中已有改进，不能反推本地收到的两个 HEX 对应此版本。MIT 范围仅能据 GitHub 项目声明判断，本地包未明确许可另记。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M04_曼波 GitHub 非阻塞 ActionTask.md"
+    },
+    {
+      "id": "M05",
+      "title": "曼波本地阻塞动作及语音映射",
+      "category": "02_动作与运动",
+      "project_ids": [
+        2
+      ],
+      "tags": [
+        "本地曼波",
+        "Delay",
+        "ASRPro",
+        "串口",
+        "动作字符"
+      ],
+      "hardware": "STM32F103＋4舵机＋ASRPro串口模块",
+      "language": "C/XML",
+      "reuse_status": "adaptation_required",
+      "reuse_label": "需要移植或配套运行环境",
+      "dependencies": [
+        "STM32标准外设库",
+        "Servo",
+        "Delay",
+        "ASRPro"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/User/Mode.c",
+          "symbol": "void mode_hello",
+          "line_start": 205,
+          "line_end": 235,
+          "sha256_utf8": "d657f6983e669db8bf10ca451056618689507718b7ec766828df84d8e4c914ba",
+          "sha256_bytes": "f1ba581fd3fa87379ef6bf37f7b5e46464ea971073aaa176d214609acc0b7e5c",
+          "git_blob": "e83a1a08cbdb4846d9bd32d6ad3b7d354b08a6b5",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/02_曼波小狗/本地资料/曼波小狗开源资料/曼波小狗开源资料/2.stm32_dog源码/Hardware/Movement.c",
+          "symbol": "void move_forward",
+          "line_start": 20,
+          "line_end": 50,
+          "sha256_utf8": "3c295a548898a18b4196dea170c9bd6d9b2d3a648ffbfb799035254f3cc6890d",
+          "sha256_bytes": "3c952d65b9bfa8e9a6f864fddda6b322ca551b2044d994515064c691a034dd92",
+          "git_blob": "61734d38d50fd6039b16fbfd3e3bd9a36132c8f7",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "本地 Mode/Movement 主要通过 Servo_SetAngle 和 Delay 执行动作，串口最新字符决定模式。ASRPro 识别词在外部语音模块转换成单字节，STM32 执行对应动作；不是主控内完整语音模型。",
+      "invocation": "可调用 move_forward、mode_hello 等原工程函数，但模式函数还处理 OLED、LED、TTS、体力和 previous_mode。迁移时先逐项对照 voice XML 输出字符与 main 接收分支。",
+      "porting": "已有对照文档发现部分语音输出缺少接收动作；采用 M04 的状态机前先补全映射。只借角度顺序时应把等待改为时间戳，保留实际舵机安装方向和中心差异。",
+      "limitations": "持续行走没有可靠断线超时，且动作中长等待会延迟新命令。77 个源码文件与 GitHub 一致、23 个不同的旧对照不意味着整体等价；HEX 精确源码对应仍未证实。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M05_曼波本地阻塞动作及语音映射.md"
+    },
+    {
+      "id": "M06",
+      "title": "MindPaw 正弦情感动作与离散动作",
+      "category": "02_动作与运动",
+      "project_ids": [
+        3
+      ],
+      "tags": [
+        "点头",
+        "摇头",
+        "安慰",
+        "庆祝",
+        "情感强度",
+        "振荡器"
+      ],
+      "hardware": "ESP8266 Arduino＋4舵机",
+      "language": "C++",
+      "reuse_status": "portable_component",
+      "reuse_label": "可单独提取；需接入驱动",
+      "dependencies": [
+        "Servo",
+        "MotionEmotion",
+        "EmotionAction"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/03_MindPaw机器狗/仓库/ace-trump-tech__MindPaw/MindPaw_main/src/motion_emotion.h",
+          "symbol": "struct OscillatorParams",
+          "line_start": 13,
+          "line_end": 43,
+          "sha256_utf8": "cef9d6aac1194428164687c4e95d1f36e4c7dbdb98bd64c71e94577782f635a0",
+          "sha256_bytes": "cef9d6aac1194428164687c4e95d1f36e4c7dbdb98bd64c71e94577782f635a0",
+          "git_blob": "85ad444137040ddc5f35d84565773f2c40c12875",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "21c549252a60126a80874738626f1b8c36efc38c",
+          "upstream_url": "https://github.com/ace-trump-tech/MindPaw/blob/21c549252a60126a80874738626f1b8c36efc38c/MindPaw_main/src/motion_emotion.h#L13-L43",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/03_MindPaw机器狗/仓库/ace-trump-tech__MindPaw/MindPaw_main/src/motion_emotion.cpp",
+          "symbol": "void MotionEmotion::trigger",
+          "line_start": 148,
+          "line_end": 178,
+          "sha256_utf8": "6983188ffef840e208f7d808d168cde94d719fd36bfcb7ffb9c9e9c0df59d8ff",
+          "sha256_bytes": "6983188ffef840e208f7d808d168cde94d719fd36bfcb7ffb9c9e9c0df59d8ff",
+          "git_blob": "b18d0aa421ced8503b41dab64b5e9b1b6171187f",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "21c549252a60126a80874738626f1b8c36efc38c",
+          "upstream_url": "https://github.com/ace-trump-tech/MindPaw/blob/21c549252a60126a80874738626f1b8c36efc38c/MindPaw_main/src/motion_emotion.cpp#L148-L178",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/03_MindPaw机器狗/仓库/ace-trump-tech__MindPaw/MindPaw_main/src/motion_emotion.cpp",
+          "symbol": "void MotionEmotion::loop",
+          "line_start": 273,
+          "line_end": 303,
+          "sha256_utf8": "6983188ffef840e208f7d808d168cde94d719fd36bfcb7ffb9c9e9c0df59d8ff",
+          "sha256_bytes": "6983188ffef840e208f7d808d168cde94d719fd36bfcb7ffb9c9e9c0df59d8ff",
+          "git_blob": "b18d0aa421ced8503b41dab64b5e9b1b6171187f",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "21c549252a60126a80874738626f1b8c36efc38c",
+          "upstream_url": "https://github.com/ace-trump-tech/MindPaw/blob/21c549252a60126a80874738626f1b8c36efc38c/MindPaw_main/src/motion_emotion.cpp#L273-L303",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/03_MindPaw机器狗/仓库/ace-trump-tech__MindPaw/MindPaw_main/src/motion_emotion.cpp",
+          "symbol": "void MotionEmotion::stop",
+          "line_start": 228,
+          "line_end": 258,
+          "sha256_utf8": "6983188ffef840e208f7d808d168cde94d719fd36bfcb7ffb9c9e9c0df59d8ff",
+          "sha256_bytes": "6983188ffef840e208f7d808d168cde94d719fd36bfcb7ffb9c9e9c0df59d8ff",
+          "git_blob": "b18d0aa421ced8503b41dab64b5e9b1b6171187f",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "21c549252a60126a80874738626f1b8c36efc38c",
+          "upstream_url": "https://github.com/ace-trump-tech/MindPaw/blob/21c549252a60126a80874738626f1b8c36efc38c/MindPaw_main/src/motion_emotion.cpp#L228-L258",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "两种执行路径：鞠躬/伸展/遮脸使用离散 MotionStep 表，舞蹈/点头/摇头/庆祝/安慰使用每通道独立正弦振荡。中心与振幅是度，frequency 是 Hz，phase 是弧度，durationMs 是毫秒。PAD 输入通过强度/速度缩放影响幅度、频率与时长。",
+      "invocation": "attach(s1,s2,s3,s4) 后 trigger(ACTION_NOD,1)；主循环不断 loop()。自定义动作可 triggerParametric(params,repeat)。setEmotionalIntensity(pleasure,arousal) 使用源码范围，再由原实现约束。stop() 清播放状态，没有自动回中或切断 PWM。",
+      "porting": "两舵机头部可借正弦公式和非阻塞计时，但重写通道数与预设：pitch 点头、yaw 摇头，不能把狗腿相位直接套到头部。任一时刻只允许一个控制器写同一舵机。",
+      "limitations": "原 main 检查 isPlaying() 暂停旧运动分支，防止两路争写。情感状态是软件参数模型；不把未训练手势权重或模拟 3D 重建当成熟感知组件。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M06_MindPaw 正弦情感动作与离散动作.md"
+    },
+    {
+      "id": "M07",
+      "title": "AlbertMicro 四舵机步态与插值",
+      "category": "02_动作与运动",
+      "project_ids": [
+        5
+      ],
+      "tags": [
+        "四足",
+        "gait",
+        "正弦步态",
+        "俯卧撑",
+        "gallop"
+      ],
+      "hardware": "ESP32 Arduino＋4舵机＋SH1106",
+      "language": "C++",
+      "reuse_status": "adaptation_required",
+      "reuse_label": "需要移植或配套运行环境",
+      "dependencies": [
+        "ESP32Servo",
+        "RoboEyes",
+        "ArduinoJson",
+        "BLE"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/05_AlbertMicro机器小狗/仓库/thinking0things__AlbertMicro/AlbertMicro.ino",
+          "symbol": "void moveUntilReachedAll",
+          "line_start": 321,
+          "line_end": 351,
+          "sha256_utf8": "bb297056233954a32fb6400bc6ae9a075200d3aa594dc86c2a418f8d11a0dc8d",
+          "sha256_bytes": "bb297056233954a32fb6400bc6ae9a075200d3aa594dc86c2a418f8d11a0dc8d",
+          "git_blob": "7eed3a9ca8a7fb39330c207a934da47d9f97dc91",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "8d0ae147e967c798469a551c1dc49da781fc5587",
+          "upstream_url": "https://github.com/thinking0things/AlbertMicro/blob/8d0ae147e967c798469a551c1dc49da781fc5587/AlbertMicro.ino#L321-L351",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/05_AlbertMicro机器小狗/仓库/thinking0things__AlbertMicro/AlbertMicro.ino",
+          "symbol": "void runGait",
+          "line_start": 423,
+          "line_end": 453,
+          "sha256_utf8": "bb297056233954a32fb6400bc6ae9a075200d3aa594dc86c2a418f8d11a0dc8d",
+          "sha256_bytes": "bb297056233954a32fb6400bc6ae9a075200d3aa594dc86c2a418f8d11a0dc8d",
+          "git_blob": "7eed3a9ca8a7fb39330c207a934da47d9f97dc91",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "8d0ae147e967c798469a551c1dc49da781fc5587",
+          "upstream_url": "https://github.com/thinking0things/AlbertMicro/blob/8d0ae147e967c798469a551c1dc49da781fc5587/AlbertMicro.ino#L423-L453",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/05_AlbertMicro机器小狗/仓库/thinking0things__AlbertMicro/AlbertMicro.ino",
+          "symbol": "void runPushups",
+          "line_start": 377,
+          "line_end": 407,
+          "sha256_utf8": "bb297056233954a32fb6400bc6ae9a075200d3aa594dc86c2a418f8d11a0dc8d",
+          "sha256_bytes": "bb297056233954a32fb6400bc6ae9a075200d3aa594dc86c2a418f8d11a0dc8d",
+          "git_blob": "7eed3a9ca8a7fb39330c207a934da47d9f97dc91",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "8d0ae147e967c798469a551c1dc49da781fc5587",
+          "upstream_url": "https://github.com/thinking0things/AlbertMicro/blob/8d0ae147e967c798469a551c1dc49da781fc5587/AlbertMicro.ino#L377-L407",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "动作层对4个舵机插值移动，期间更新 RoboEyes；runGait 依时间相位驱动腿部周期动作，方向/侧移通过不同参数组合。俯卧撑、摇摆、奔跑是写好的动作函数，并联动 HAPPY/ANGRY 表情。",
+      "invocation": "原工程命令处理 WALK/BACK/LEFT/RIGHT、SL/SR、STOP、PUSHUPS、SWING、GALLOP 等。直接函数调用依赖原 servo/trim/姿态全局变量；先沿 setup 初始化后再使用。",
+      "porting": "可以参考“四个周期通道＋动作前后插值”的组织；新机器人的腿长/中心/方向需重新标定。同步动作应拆成可推进任务，保证 BLE 指令与显示持续被处理。",
+      "limitations": "原主体未找到整体许可证，不把相关 AlbertPro 或 RoboEyes 许可套上。STOP 是将模式设为 idle，不意味着 detach 或断电。本次静态阅读没有验证步态稳定性。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M07_AlbertMicro 四舵机步态与插值.md"
+    },
+    {
+      "id": "M08",
+      "title": "Stack-chan 注视、避视与头部姿态",
+      "category": "02_动作与运动",
+      "project_ids": [
+        4
+      ],
+      "tags": [
+        "点头",
+        "摇头",
+        "lookAt",
+        "lookAway",
+        "注视目标",
+        "扭矩"
+      ],
+      "hardware": "Stack-chan Moddable＋其支持舵机驱动",
+      "language": "TypeScript/JavaScript",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "Moddable",
+        "motion-controller",
+        "舵机驱动"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__stack-chan/firmware/host/modules/motion/motion-controller.ts",
+          "symbol": "lookAt(",
+          "line_start": 143,
+          "line_end": 173,
+          "sha256_utf8": "dd5d8bd39f8c02e615953ab259eb9c785948741f633dec5c04f27cf57499a81b",
+          "sha256_bytes": "dd5d8bd39f8c02e615953ab259eb9c785948741f633dec5c04f27cf57499a81b",
+          "git_blob": "45d4ed20a5a0fa83dc26d9eb7fede2d28214ff31",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "fe7be1005d2cf8732f365176a91c7177c8533591",
+          "upstream_url": "https://github.com/stack-chan/stack-chan/blob/fe7be1005d2cf8732f365176a91c7177c8533591/firmware/host/modules/motion/motion-controller.ts#L143-L173",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__stack-chan/firmware/mods/examples/look_around/mod.js",
+          "symbol": "robot.motion.lookAt",
+          "line_start": 31,
+          "line_end": 34,
+          "sha256_utf8": "238bf2983ee9465366fad828152bbed68fc94dbba07f8a6c3955bd7be82a14b6",
+          "sha256_bytes": "238bf2983ee9465366fad828152bbed68fc94dbba07f8a6c3955bd7be82a14b6",
+          "git_blob": "b26ad301b85913bc18a528081dda95547c9e27b7",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "fe7be1005d2cf8732f365176a91c7177c8533591",
+          "upstream_url": "https://github.com/stack-chan/stack-chan/blob/fe7be1005d2cf8732f365176a91c7177c8533591/firmware/mods/examples/look_around/mod.js#L31-L34",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__stack-chan/firmware/docs/api.md",
+          "symbol": "setTorque",
+          "line_start": 57,
+          "line_end": 87,
+          "sha256_utf8": "b08070d85263691771bcea87fd75a402003644837f21fec3db74f330f1215cd2",
+          "sha256_bytes": "b08070d85263691771bcea87fd75a402003644837f21fec3db74f330f1215cd2",
+          "git_blob": "df39b3e94a31858b6d36d115e452e3cb55c33ed0",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "fe7be1005d2cf8732f365176a91c7177c8533591",
+          "upstream_url": "https://github.com/stack-chan/stack-chan/blob/fe7be1005d2cf8732f365176a91c7177c8533591/firmware/docs/api.md#L57-L87",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "motion-controller 将三维目标转为头部旋转，再交给驱动 applyRotation；lookAway 与 setPose 提供不同的姿态入口，setTorque 控制驱动力。示例按 Timer 周期随机看向周围目标。",
+      "invocation": "在 onContextCreated(robot) 中 robot.motion.lookAt([0.5,0,0])；坐标单位米，姿态角单位弧度。setPose 的结构和 time/callback 按当前类型定义使用；不能把 Arduino degree 数组直接传进来。",
+      "porting": "桌面头部机器人优先借“目标坐标→偏航/俯仰→驱动”的分层。纸壳 C3 可复用几何思路并换 ESP32Servo，但 Mod 生命周期、Timer 和串口驱动必须重接。",
+      "limitations": "注意旧 flat API 已被当前 context API 取代。几何尺寸、旋转方向和软限位由板型/驱动决定；0.5米目标并不承诺任何新构型的有效行程。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M08_Stack-chan 注视、避视与头部姿态.md"
+    },
+    {
+      "id": "M09",
+      "title": "NodeHexa 腿部正逆运动学",
+      "category": "02_动作与运动",
+      "project_ids": [
+        6
+      ],
+      "tags": [
+        "六足",
+        "IK",
+        "FK",
+        "足端坐标",
+        "三关节",
+        "余弦定理"
+      ],
+      "hardware": "18舵机六足＋PCA9685",
+      "language": "C++",
+      "reuse_status": "portable_component",
+      "reuse_label": "可单独提取；需接入驱动",
+      "dependencies": [
+        "NodeHexa Leg",
+        "Point3D",
+        "Servo驱动"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/06_NodeHexa六足机器人/仓库/ViolinLee__NodeHexa/firmware/src/leg.cpp",
+          "symbol": "void Leg::moveTip",
+          "line_start": 144,
+          "line_end": 174,
+          "sha256_utf8": "31d2c961bae1c245f8213701da13b35c347197f70921d048d913070f10a60733",
+          "sha256_bytes": "31d2c961bae1c245f8213701da13b35c347197f70921d048d913070f10a60733",
+          "git_blob": "59f5f0c810977d5d9d09e2b19ccd6e4e9b514e12",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "ba844a107de8dbb95bba51c2d5e870928d72cbd9",
+          "upstream_url": "https://github.com/ViolinLee/NodeHexa/blob/ba844a107de8dbb95bba51c2d5e870928d72cbd9/firmware/src/leg.cpp#L144-L174",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/06_NodeHexa六足机器人/仓库/ViolinLee__NodeHexa/firmware/src/leg.cpp",
+          "symbol": "Leg::_inverseKinematics",
+          "line_start": 193,
+          "line_end": 223,
+          "sha256_utf8": "31d2c961bae1c245f8213701da13b35c347197f70921d048d913070f10a60733",
+          "sha256_bytes": "31d2c961bae1c245f8213701da13b35c347197f70921d048d913070f10a60733",
+          "git_blob": "59f5f0c810977d5d9d09e2b19ccd6e4e9b514e12",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "ba844a107de8dbb95bba51c2d5e870928d72cbd9",
+          "upstream_url": "https://github.com/ViolinLee/NodeHexa/blob/ba844a107de8dbb95bba51c2d5e870928d72cbd9/firmware/src/leg.cpp#L193-L223",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/06_NodeHexa六足机器人/仓库/ViolinLee__NodeHexa/firmware/src/leg.h",
+          "symbol": "moveTipLocal",
+          "line_start": 26,
+          "line_end": 56,
+          "sha256_utf8": "c01b9fc4175abbfc647ed275c0f8e6581f1269e59ef26b0b03e68165281969ae",
+          "sha256_bytes": "c01b9fc4175abbfc647ed275c0f8e6581f1269e59ef26b0b03e68165281969ae",
+          "git_blob": "ef6d46ff6824e63d1e30647f6d2fb6df87fff190",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "ba844a107de8dbb95bba51c2d5e870928d72cbd9",
+          "upstream_url": "https://github.com/ViolinLee/NodeHexa/blob/ba844a107de8dbb95bba51c2d5e870928d72cbd9/firmware/src/leg.h#L26-L56",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "Leg 把世界足端坐标转换为腿局部坐标，再以 atan2 与余弦定理求三个关节角，最后 Servo.setAngle 写输出。IK 对三角函数输入限幅并避免接近零的半径；FK 将关节角反算足端位置。",
+      "invocation": "moveTip(worldPoint) 与 moveTipLocal(localPoint) 坐标系不同。输出角度为度；连杆长度和 Point3D 要遵守 robot_geometry/base 定义的同一长度尺度，不擅自把所有 Point 值称为米。",
+      "porting": "六足/三自由度腿复用时先设置关节原点、安装旋转、连杆长度、trim/反向和目标可达区。用于四足需重建几何与步态，纸壳两舵机头部无须引入完整腿部 IK。",
+      "limitations": "数值限幅会生成边界角度，不能代替碰撞和不可达目标判断。README GPL-3.0 声明与缺失根 LICENSE 的情况在原项目记录中标明，沿用前核对具体代码许可。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M09_NodeHexa 腿部正逆运动学.md"
+    },
+    {
+      "id": "M10",
+      "title": "NodeHexa 动作序列、步数与距离转换",
+      "category": "02_动作与运动",
+      "project_ids": [
+        6
+      ],
+      "tags": [
+        "动作队列",
+        "六足步态",
+        "距离",
+        "角度",
+        "cycles",
+        "8队列"
+      ],
+      "hardware": "NodeHexa ESP32 固件",
+      "language": "C++",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "MotionController",
+        "MovementMetrics",
+        "Robot"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/06_NodeHexa六足机器人/仓库/ViolinLee__NodeHexa/firmware/src/motion_controller.h",
+          "symbol": "class MotionController",
+          "line_start": 31,
+          "line_end": 61,
+          "sha256_utf8": "e620a06c08ca92eaf07c9d1355fac9295d6d1edab823a7ab314b03334f2283f3",
+          "sha256_bytes": "e620a06c08ca92eaf07c9d1355fac9295d6d1edab823a7ab314b03334f2283f3",
+          "git_blob": "9234a2099b0f30b4f5dfc6d882ebf4c8cae14d7d",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "ba844a107de8dbb95bba51c2d5e870928d72cbd9",
+          "upstream_url": "https://github.com/ViolinLee/NodeHexa/blob/ba844a107de8dbb95bba51c2d5e870928d72cbd9/firmware/src/motion_controller.h#L31-L61",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/06_NodeHexa六足机器人/仓库/ViolinLee__NodeHexa/firmware/src/motion_controller.cpp",
+          "symbol": "MotionController::convertToCycles",
+          "line_start": 158,
+          "line_end": 188,
+          "sha256_utf8": "d1617abbb4fadf50a0443311695fa545a5237d7addc37bc8476470ab596c2e79",
+          "sha256_bytes": "d1617abbb4fadf50a0443311695fa545a5237d7addc37bc8476470ab596c2e79",
+          "git_blob": "01e870833455c84507a7a318d5064fc8eb9157e0",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "ba844a107de8dbb95bba51c2d5e870928d72cbd9",
+          "upstream_url": "https://github.com/ViolinLee/NodeHexa/blob/ba844a107de8dbb95bba51c2d5e870928d72cbd9/firmware/src/motion_controller.cpp#L158-L188",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/06_NodeHexa六足机器人/仓库/ViolinLee__NodeHexa/firmware/src/motion_controller.cpp",
+          "symbol": "MotionController::clear",
+          "line_start": 58,
+          "line_end": 88,
+          "sha256_utf8": "d1617abbb4fadf50a0443311695fa545a5237d7addc37bc8476470ab596c2e79",
+          "sha256_bytes": "d1617abbb4fadf50a0443311695fa545a5237d7addc37bc8476470ab596c2e79",
+          "git_blob": "01e870833455c84507a7a318d5064fc8eb9157e0",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "ba844a107de8dbb95bba51c2d5e870928d72cbd9",
+          "upstream_url": "https://github.com/ViolinLee/NodeHexa/blob/ba844a107de8dbb95bba51c2d5e870928d72cbd9/firmware/src/motion_controller.cpp#L58-L88",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "Action 保存 mode、unit、value、speed、sequenceId；队列容量8。控制器根据 tick 估算周期完成度，Cycles/Steps/Distance/Angle 统一换算成目标周期数，结束时恢复原速度。Continuous 没有固定周期终点。",
+      "invocation": "enqueue(action)、enqueueSequence(...) 与 onLoopTick(elapsedMs) 配套。Action 单位 Distance 为米、Angle 为度；speed 要落在原 config 允许范围。clear() 清队列及活跃状态，具体最终姿态由原 Robot 行为决定。",
+      "porting": "可借“语义动作→单位转换→调度”的模型；移植到新底盘必须重新估计每周期距离/转角和时间，不把模型估算当编码器测距。固定8容量需处理 enqueue 失败。",
+      "limitations": "Distance/Angle 是依据 movement metrics 的开环换算，没有真实里程反馈保证。动作队列也不提供语言识别，需要串口/网络适配接入。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M10_NodeHexa 动作序列、步数与距离转换.md"
+    },
+    {
+      "id": "M11",
+      "title": "RookiDroid LUT 与 UDP 实时姿态接管",
+      "category": "02_动作与运动",
+      "project_ids": [
+        7
+      ],
+      "tags": [
+        "六足",
+        "UDP",
+        "实时姿态",
+        "slew",
+        "超时",
+        "控制所有权"
+      ],
+      "hardware": "ESP32＋18舵机原构型",
+      "language": "Arduino C++",
+      "reuse_status": "adaptation_required",
+      "reuse_label": "需要移植或配套运行环境",
+      "dependencies": [
+        "PCA9685",
+        "UDP协议",
+        "RealtimePose"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/07_RookiDroid六足机器人/仓库/rookidroid__hexapod/software/hexapod_esp32/realtime.ino",
+          "symbol": "void enterRealtimeMode",
+          "line_start": 31,
+          "line_end": 61,
+          "sha256_utf8": "638642254b3d6094c8fffafaaa7c9d0bd93206f2e12063bcb19f1d53d2378f94",
+          "sha256_bytes": "638642254b3d6094c8fffafaaa7c9d0bd93206f2e12063bcb19f1d53d2378f94",
+          "git_blob": "320f2ec0bdb1a974e6cd69aa1a45a67f0b0ea047",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "2c51f9e3bf3f5dbbe600a2a24182aa3e9837c60c",
+          "upstream_url": "https://github.com/rookidroid/hexapod/blob/2c51f9e3bf3f5dbbe600a2a24182aa3e9837c60c/software/hexapod_esp32/realtime.ino#L31-L61",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/07_RookiDroid六足机器人/仓库/rookidroid__hexapod/software/hexapod_esp32/realtime.ino",
+          "symbol": "void serviceRealtimePose",
+          "line_start": 79,
+          "line_end": 109,
+          "sha256_utf8": "638642254b3d6094c8fffafaaa7c9d0bd93206f2e12063bcb19f1d53d2378f94",
+          "sha256_bytes": "638642254b3d6094c8fffafaaa7c9d0bd93206f2e12063bcb19f1d53d2378f94",
+          "git_blob": "320f2ec0bdb1a974e6cd69aa1a45a67f0b0ea047",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "2c51f9e3bf3f5dbbe600a2a24182aa3e9837c60c",
+          "upstream_url": "https://github.com/rookidroid/hexapod/blob/2c51f9e3bf3f5dbbe600a2a24182aa3e9837c60c/software/hexapod_esp32/realtime.ino#L79-L109",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/07_RookiDroid六足机器人/仓库/rookidroid__hexapod/software/hexapod_esp32/realtime.ino",
+          "symbol": "void exitRealtimeMode",
+          "line_start": 56,
+          "line_end": 86,
+          "sha256_utf8": "638642254b3d6094c8fffafaaa7c9d0bd93206f2e12063bcb19f1d53d2378f94",
+          "sha256_bytes": "638642254b3d6094c8fffafaaa7c9d0bd93206f2e12063bcb19f1d53d2378f94",
+          "git_blob": "320f2ec0bdb1a974e6cd69aa1a45a67f0b0ea047",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "2c51f9e3bf3f5dbbe600a2a24182aa3e9837c60c",
+          "upstream_url": "https://github.com/rookidroid/hexapod/blob/2c51f9e3bf3f5dbbe600a2a24182aa3e9837c60c/software/hexapod_esp32/realtime.ino#L56-L86",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "预置 LUT 动作与外部实时姿态不能同时拥有输出。enterRealtimeMode 保留当前姿态并切换控制来源，serviceRealtimePose 消费最新姿态包，按 slew 限制每次变化；超时或退出后返回 LUT standby。共享包通过临界区同步。",
+      "invocation": "使用匹配 protocol.h 与 robot_config 的客户端发送目标；输出单位按原 PWM tick 表处理。HexapodLinkDash 先读 /robot_config，再按返回几何映射；remote-arcade 是另外的遥控器端。",
+      "porting": "值得借鉴最新包覆盖、接管/归还和超时恢复模式。新舵机控制器需要重写角度到 tick 转换、包布局和限幅，不直接把18个 degree 写入原包。",
+      "limitations": "one-shot snap 可直接跳变，不能等同全部姿态都有平滑保障。固件 GPL 范围与 MIT 配套界面/遥控器范围分开记录，实际 timeout 常量见 config.h。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M11_RookiDroid LUT 与 UDP 实时姿态接管.md"
+    },
+    {
+      "id": "M12",
+      "title": "Otto 四舵机周期步态与姿势",
+      "category": "02_动作与运动",
+      "project_ids": [
+        9
+      ],
+      "tags": [
+        "两足",
+        "Otto",
+        "moonwalker",
+        "摆动",
+        "跳跃",
+        "振荡器"
+      ],
+      "hardware": "Arduino Otto 四舵机构型",
+      "language": "C++",
+      "reuse_status": "portable_component",
+      "reuse_label": "可单独提取；需接入驱动",
+      "dependencies": [
+        "OttoDIYLib",
+        "Oscillator",
+        "Servo",
+        "EEPROM"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/OttoDIY__OttoDIYLib/src/Otto.h",
+          "symbol": "void walk",
+          "line_start": 55,
+          "line_end": 85,
+          "sha256_utf8": "4c3adfed0d85422fd4a24b105e3128106830533b23238b4fd791efacac17462d",
+          "sha256_bytes": "4c3adfed0d85422fd4a24b105e3128106830533b23238b4fd791efacac17462d",
+          "git_blob": "232b408923190b41a64f145f2826a2df461f46a3",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "f384c00a641e11c8741487320c6f1d82ad72e6d5",
+          "upstream_url": "https://github.com/OttoDIY/OttoDIYLib/blob/f384c00a641e11c8741487320c6f1d82ad72e6d5/src/Otto.h#L55-L85",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/OttoDIY__OttoDIYLib/src/Oscillator.h",
+          "symbol": "void SetPh",
+          "line_start": 31,
+          "line_end": 61,
+          "sha256_utf8": "9da0c53806bd5810b6daa12d30801768799ccfc10b23bab5774bdaf1dc8cbc10",
+          "sha256_bytes": "9da0c53806bd5810b6daa12d30801768799ccfc10b23bab5774bdaf1dc8cbc10",
+          "git_blob": "f54983b37afe2d0d7ea1f291c7e110721fc20ea6",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "f384c00a641e11c8741487320c6f1d82ad72e6d5",
+          "upstream_url": "https://github.com/OttoDIY/OttoDIYLib/blob/f384c00a641e11c8741487320c6f1d82ad72e6d5/src/Oscillator.h#L31-L61",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/OttoDIY__OttoDIYLib/src/Otto.h",
+          "symbol": "void home",
+          "line_start": 48,
+          "line_end": 78,
+          "sha256_utf8": "4c3adfed0d85422fd4a24b105e3128106830533b23238b4fd791efacac17462d",
+          "sha256_bytes": "4c3adfed0d85422fd4a24b105e3128106830533b23238b4fd791efacac17462d",
+          "git_blob": "232b408923190b41a64f145f2826a2df461f46a3",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "f384c00a641e11c8741487320c6f1d82ad72e6d5",
+          "upstream_url": "https://github.com/OttoDIY/OttoDIYLib/blob/f384c00a641e11c8741487320c6f1d82ad72e6d5/src/Otto.h#L48-L78",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "Otto 将四个舵机的振幅、中心偏移、周期和相位组织成步态。Oscillator 参数 A/O 是度，T 是毫秒，Ph 是弧度；walk/turn/moonwalker 等设置不同相位关系，并借 home 和 trim 标定支撑姿势。",
+      "invocation": "Otto 对象 init(YL,YR,RL,RR,load_calibration,Buzzer) 后调用 walk(steps,T,dir)、turn 等，签名见 Otto.h。matrix 嘴巴/音乐功能是额外依赖，不自动与 OLED 小智兼容。",
+      "porting": "复刻四舵机两足可沿原脚型/重心使用；加双臂应参考 M13 的6舵机分支。纸壳头部仅借振荡器概念，不能直接执行两足 gait。",
+      "limitations": "大量 Otto 上层动作会同步等待，必须评估语音并发。Oscillator 的源文件许可与项目/资源许可按各自声明保留；servo limiter 不代替机械限位。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M12_Otto 四舵机周期步态与姿势.md"
+    },
+    {
+      "id": "M13",
+      "title": "小智 Otto 六舵机与双臂动作",
+      "category": "02_动作与运动",
+      "project_ids": [
+        9
+      ],
+      "tags": [
+        "挥手",
+        "举手",
+        "害羞",
+        "广播体操",
+        "六舵机",
+        "动作序列"
+      ],
+      "hardware": "ESP-IDF Otto板型＋4腿/脚舵机＋可选2臂",
+      "language": "C++",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "otto_movements",
+        "ESP-IDF",
+        "板型PWM"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/txp666__xiaozhi-esp32/main/boards/otto-robot/otto_movements.h",
+          "symbol": "void HandsUp",
+          "line_start": 83,
+          "line_end": 113,
+          "sha256_utf8": "a342dbf7273cd4e138e6b268c35654cf6d3d36490cf3a47024ae13250d1d0c07",
+          "sha256_bytes": "a342dbf7273cd4e138e6b268c35654cf6d3d36490cf3a47024ae13250d1d0c07",
+          "git_blob": "69b944e4ea73267158e529c587931a68eb3df646",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "becc84f58908d96a8aaeae046dcd22e099aad7e9",
+          "upstream_url": "https://github.com/txp666/xiaozhi-esp32/blob/becc84f58908d96a8aaeae046dcd22e099aad7e9/main/boards/otto-robot/otto_movements.h#L83-L113",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/txp666__xiaozhi-esp32/main/boards/otto-robot/otto_movements.h",
+          "symbol": "void HandWave",
+          "line_start": 85,
+          "line_end": 115,
+          "sha256_utf8": "a342dbf7273cd4e138e6b268c35654cf6d3d36490cf3a47024ae13250d1d0c07",
+          "sha256_bytes": "a342dbf7273cd4e138e6b268c35654cf6d3d36490cf3a47024ae13250d1d0c07",
+          "git_blob": "69b944e4ea73267158e529c587931a68eb3df646",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "becc84f58908d96a8aaeae046dcd22e099aad7e9",
+          "upstream_url": "https://github.com/txp666/xiaozhi-esp32/blob/becc84f58908d96a8aaeae046dcd22e099aad7e9/main/boards/otto-robot/otto_movements.h#L85-L115",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/txp666__xiaozhi-esp32/main/boards/otto-robot/otto_controller.cc",
+          "symbol": "self.otto.servo_sequences",
+          "line_start": 669,
+          "line_end": 699,
+          "sha256_utf8": "188d2728c29e92a0b2239e4fafb707c5bd3422a97bce87939b5278f6437c9162",
+          "sha256_bytes": "188d2728c29e92a0b2239e4fafb707c5bd3422a97bce87939b5278f6437c9162",
+          "git_blob": "ddecb949fb0c013cb40e6256ef06374016469ff5",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "becc84f58908d96a8aaeae046dcd22e099aad7e9",
+          "upstream_url": "https://github.com/txp666/xiaozhi-esp32/blob/becc84f58908d96a8aaeae046dcd22e099aad7e9/main/boards/otto-robot/otto_controller.cc#L669-L699",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "OttoMovements 将基础四通道动作扩展到6通道，双臂 pin 可为 -1。双臂举起、挥手、风车、起飞、健身、问候、害羞与体操都有实际方法；controller 的动作任务和 MCP 注册负责排队。",
+      "invocation": "HandsUp、HandWave 等入口按头文件签名；远程统一 self.otto.action 的 action 参数调用。servo_sequences 支持 s/v/d 及振荡 a/o/ph/p/c；其中 ph 是度，会与经典 Oscillator 的弧度接口形成单位差异。",
+      "porting": "原 Otto 板型可用现成任务队列。若新纸壳只有两舵机，建立自己的 pan/tilt 名字到通道映射，不套 ll/rl/lf/rf/lh/rh。速度字段通常是动作周期毫秒，小值更快。",
+      "limitations": "Init 时可选手臂不等于实体都有6通道。README 举例可能出现超出文字约定的序列偏移，执行以代码约束为准；使用原有 stop 注册回调而非凭空假定 self.otto.home 独立工具存在。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M13_小智 Otto 六舵机与双臂动作.md"
+    },
+    {
+      "id": "M14",
+      "title": "ElectronBot 可用底层六关节接口",
+      "category": "02_动作与运动",
+      "project_ids": [
+        11
+      ],
+      "tags": [
+        "六关节",
+        "USB关节",
+        "SetJointAngles",
+        "姿态反馈"
+      ],
+      "hardware": "Windows PC＋ElectronBot USB驱动与六关节",
+      "language": "C++",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "ElectronLowLevel",
+        "USB驱动",
+        "OpenCV"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/11_ElectronBot类人桌面机器人/仓库/peng-zhihui__ElectronBot/3.Software/SDK/ElectronBotSDK-LowLevel/src/electron_low_level.cpp",
+          "symbol": "void ElectronLowLevel::SetJointAngles",
+          "line_start": 157,
+          "line_end": 186,
+          "sha256_utf8": "a8eeb0e70de3a9903c36f22d428ed53fc6b63e5d0917588acd82365610739827",
+          "sha256_bytes": "a8eeb0e70de3a9903c36f22d428ed53fc6b63e5d0917588acd82365610739827",
+          "git_blob": "58b7d588cc970161d11637da582abae9c82b05f6",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "819927015323181a9a10e0184d64ad2bddfcb407",
+          "upstream_url": "https://github.com/peng-zhihui/ElectronBot/blob/819927015323181a9a10e0184d64ad2bddfcb407/3.Software/SDK/ElectronBotSDK-LowLevel/src/electron_low_level.cpp#L157-L186",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/11_ElectronBot类人桌面机器人/仓库/peng-zhihui__ElectronBot/3.Software/SDK/ElectronBotSDK-LowLevel/src/electron_low_level.cpp",
+          "symbol": "void ElectronLowLevel::GetJointAngles",
+          "line_start": 179,
+          "line_end": 186,
+          "sha256_utf8": "a8eeb0e70de3a9903c36f22d428ed53fc6b63e5d0917588acd82365610739827",
+          "sha256_bytes": "a8eeb0e70de3a9903c36f22d428ed53fc6b63e5d0917588acd82365610739827",
+          "git_blob": "58b7d588cc970161d11637da582abae9c82b05f6",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "819927015323181a9a10e0184d64ad2bddfcb407",
+          "upstream_url": "https://github.com/peng-zhihui/ElectronBot/blob/819927015323181a9a10e0184d64ad2bddfcb407/3.Software/SDK/ElectronBotSDK-LowLevel/src/electron_low_level.cpp#L179-L186",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/11_ElectronBot类人桌面机器人/仓库/peng-zhihui__ElectronBot/3.Software/SDK/ElectronBotSDK-Player/src/electron_player.cpp",
+          "symbol": "void ElectronPlayer::SetPose",
+          "line_start": 56,
+          "line_end": 86,
+          "sha256_utf8": "162d06f785fb387811c542f8a8758b04e8b97cd836398b1b3e03acc596eabb24",
+          "sha256_bytes": "162d06f785fb387811c542f8a8758b04e8b97cd836398b1b3e03acc596eabb24",
+          "git_blob": "a3e382754a46b2ab3af90d67bd58925d9741e01d",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "819927015323181a9a10e0184d64ad2bddfcb407",
+          "upstream_url": "https://github.com/peng-zhihui/ElectronBot/blob/819927015323181a9a10e0184d64ad2bddfcb407/3.Software/SDK/ElectronBotSDK-Player/src/electron_player.cpp#L56-L86",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "SetJointAngles 把6个 float 与 enable 标志写入发送额外数据缓冲，Sync 才沿 USB 图像帧发送；GetJointAngles 从接收缓冲读6个 float。此函数未做通用角度限幅，范围由设备固件和机械构型决定。",
+      "invocation": "Connect 成功后 SetJointAngles(j1,j2,j3,j4,j5,j6,true)，再 Sync()；默认 enable=false，所以不能省略参数后便期待关节动作。读取反馈使用 float[6]。",
+      "porting": "可用于匹配 ElectronBot 的主机控制或借数据打包。新 ESP32 工程需重建 USB/串口/网络传输、关节映射与显式边界；不要直接照六个未知角度推新硬件。",
+      "limitations": "ElectronPlayer::SetPose 在归档中函数体为空；GetPose 返回默认结构。Player 名字不能证明其动作封装已实现。原 SDK Windows __declspec 和 USB DLL ABI 不是跨平台即用库。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M14_ElectronBot 可用底层六关节接口.md"
+    },
+    {
+      "id": "M15",
+      "title": "VerdureBuddyRover 双电机差速与 LED情绪",
+      "category": "02_动作与运动",
+      "project_ids": [
+        12
+      ],
+      "tags": [
+        "小车",
+        "差速",
+        "DRV8833",
+        "drive",
+        "转向",
+        "LED情绪"
+      ],
+      "hardware": "ESP32-C3 电机板＋DRV8833",
+      "language": "Arduino C++",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "Arduino-ESP32",
+        "UART命令解析"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__VerdureBuddyRover/firmware/esp32c3_kb_motor/esp32c3_kb_motor.ino",
+          "symbol": "void setMotor",
+          "line_start": 162,
+          "line_end": 192,
+          "sha256_utf8": "32e4e11be33e34d349f39a14757088d63add6b6ccd8f36bfb7c700a8044b94b6",
+          "sha256_bytes": "32e4e11be33e34d349f39a14757088d63add6b6ccd8f36bfb7c700a8044b94b6",
+          "git_blob": "9265ed85acf0da0a7df6734240527dce9704873a",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "cf1c772dcc854ae5c19699eebb3970e1c3f64f34",
+          "upstream_url": "https://github.com/maker-community/VerdureBuddyRover/blob/cf1c772dcc854ae5c19699eebb3970e1c3f64f34/firmware/esp32c3_kb_motor/esp32c3_kb_motor.ino#L162-L192",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__VerdureBuddyRover/firmware/esp32c3_kb_motor/esp32c3_kb_motor.ino",
+          "symbol": "void setDrive",
+          "line_start": 173,
+          "line_end": 203,
+          "sha256_utf8": "32e4e11be33e34d349f39a14757088d63add6b6ccd8f36bfb7c700a8044b94b6",
+          "sha256_bytes": "32e4e11be33e34d349f39a14757088d63add6b6ccd8f36bfb7c700a8044b94b6",
+          "git_blob": "9265ed85acf0da0a7df6734240527dce9704873a",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "cf1c772dcc854ae5c19699eebb3970e1c3f64f34",
+          "upstream_url": "https://github.com/maker-community/VerdureBuddyRover/blob/cf1c772dcc854ae5c19699eebb3970e1c3f64f34/firmware/esp32c3_kb_motor/esp32c3_kb_motor.ino#L173-L203",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__VerdureBuddyRover/firmware/esp32c3_kb_motor/esp32c3_kb_motor.ino",
+          "symbol": "void handleCommand",
+          "line_start": 362,
+          "line_end": 392,
+          "sha256_utf8": "32e4e11be33e34d349f39a14757088d63add6b6ccd8f36bfb7c700a8044b94b6",
+          "sha256_bytes": "32e4e11be33e34d349f39a14757088d63add6b6ccd8f36bfb7c700a8044b94b6",
+          "git_blob": "9265ed85acf0da0a7df6734240527dce9704873a",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "cf1c772dcc854ae5c19699eebb3970e1c3f64f34",
+          "upstream_url": "https://github.com/maker-community/VerdureBuddyRover/blob/cf1c772dcc854ae5c19699eebb3970e1c3f64f34/firmware/esp32c3_kb_motor/esp32c3_kb_motor.ino#L362-L392",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "两个 H 桥分别控制左右轮，setMotor 接受有符号 PWM，反转先归零并等待20ms。setDrive 组合双轮输出；handleCommand 将百分比 drive、forward/back、turn/spin、limit、stop 转为输出。板上灯可用 emotion 模式回应状态。",
+      "invocation": "原串口行命令如 drive 30 30、stop、status，以换行终止。drive 两轮百分比±100，经速度限制换算；motor 底层命令采用±255 PWM，不可混淆。LED/RGB 是灯效，不等于屏幕表情。",
+      "porting": "新轮式机器人可保留命令解析和驱动分层，改 GPIO、电机方向与供电。配套 Atom Echo S3R 语音板把 MCP 调用转串口，见 C07；不会只烧电机板便获得对话。",
+      "limitations": "GPIO 与 PWM 频率为原板设置；新版本 core API 需匹配。停止命令、串口断开与供电切断需要分清；这里只记录已读代码行为，不承诺未证实的自动断线停止。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M15_VerdureBuddyRover 双电机差速与 LED情绪.md"
+    },
+    {
+      "id": "M16",
+      "title": "桌面坦克混控、死区与爬升限速",
+      "category": "02_动作与运动",
+      "project_ids": [
+        18
+      ],
+      "tags": [
+        "坦克",
+        "TB6612",
+        "差速",
+        "死区",
+        "ramp",
+        "停车"
+      ],
+      "hardware": "ESP32 ESP-IDF＋双直流电机＋TB6612",
+      "language": "C",
+      "reuse_status": "portable_component",
+      "reuse_label": "可单独提取；需接入驱动",
+      "dependencies": [
+        "TankControl",
+        "DualMotor",
+        "ESP-IDF LEDC"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/tank_control.c",
+          "symbol": "void tank_drive_linear_angular",
+          "line_start": 44,
+          "line_end": 74,
+          "sha256_utf8": "98e0c3d6faa551e9dafaa6791625ddb6358b0bced3db03b985e66c926dc87f9d",
+          "sha256_bytes": "486da39cca2ce7e53bf6a58306f097a7257922b8a5dd075eefea6c2c41a86509",
+          "git_blob": "8c8d58817d74e3d92d2b0f2ee782150d2e2c2f5a",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/tank_control.c",
+          "symbol": "void tank_drive_percents",
+          "line_start": 68,
+          "line_end": 90,
+          "sha256_utf8": "98e0c3d6faa551e9dafaa6791625ddb6358b0bced3db03b985e66c926dc87f9d",
+          "sha256_bytes": "486da39cca2ce7e53bf6a58306f097a7257922b8a5dd075eefea6c2c41a86509",
+          "git_blob": "8c8d58817d74e3d92d2b0f2ee782150d2e2c2f5a",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/motor.h",
+          "symbol": "motor_brake",
+          "line_start": 49,
+          "line_end": 53,
+          "sha256_utf8": "a60572801d50661a68edd547f31058b2747fbed64c21ab64a814b81190488d91",
+          "sha256_bytes": "b560cf21f8d5e8807de6124c995991b80d40a6aa3093d3a076fc53d496d566b8",
+          "git_blob": "9bb9ab11c093bf1be47405344369748edd3ad9f2",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "linear/angular 先限幅，按左右=l±k*a 混控，饱和时归一化。百分比层每次调用爬升，添加死区后送 DualMotor；电机层设置方向与 PWM。默认 max_percent85、deadzone8，饱和值可能达到93%，不是严格85%的最终输出。",
+      "invocation": "tank_control_init(&tc) 与 dual_motor_init(...) 后 tank_drive_linear_angular(&tc,&motor,l,a) 或 tank_drive_percents。tank_stop 清状态并停车；motor_stop 为 coast，motor_brake 为短刹设计，实际 H 桥行为仍需硬件确认。",
+      "porting": "可单独提取 motor.c/h、tank_control.c/h 和 idf_compat.h，重新配置接线。ramp 是每次调用8个百分点，需要固定调度频率才能形成稳定时间意义。速度注释允许抽象单位，不能称为已校准m/s。",
+      "limitations": "原工程整体许可未明确，mdns 子组件许可不代表坦克主程序。已有主机算法检查不包括实际电机、PWM或制动。网络看门狗见 C08。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M16_桌面坦克混控、死区与爬升限速.md"
+    },
+    {
+      "id": "M17",
+      "title": "XGO-Duck 61维观测与14维策略动作",
+      "category": "02_动作与运动",
+      "project_ids": [
+        13
+      ],
+      "tags": [
+        "策略模型",
+        "ONNX",
+        "四足",
+        "头部",
+        "嘴巴",
+        "关节映射"
+      ],
+      "hardware": "Linux主机＋XGO-Duck MCU/IMU/15电机",
+      "language": "Python",
+      "reuse_status": "adaptation_required",
+      "reuse_label": "需要移植或配套运行环境",
+      "dependencies": [
+        "NumPy",
+        "onnxruntime",
+        "rl_core",
+        "wire协议"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/13_XGO-Duck赛博鸭子/仓库/LuwuDynamics__xgoduck_runtime_arduino/python/rl_core.py",
+          "symbol": "def build_obs",
+          "line_start": 142,
+          "line_end": 165,
+          "sha256_utf8": "9c15c15534bd39b41c7f77f08a499e9180e7c3de1f4428f84bb6cd9375fed02a",
+          "sha256_bytes": "9c15c15534bd39b41c7f77f08a499e9180e7c3de1f4428f84bb6cd9375fed02a",
+          "git_blob": "e3314c4de021f82418f063ad6f6be9c427dad43f",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "8cdbbd84710d856581982c9eaf0d5e2970666232",
+          "upstream_url": "https://github.com/LuwuDynamics/xgoduck_runtime_arduino/blob/8cdbbd84710d856581982c9eaf0d5e2970666232/python/rl_core.py#L142-L165",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/13_XGO-Duck赛博鸭子/仓库/LuwuDynamics__xgoduck_runtime_arduino/python/rl_core.py",
+          "symbol": "def action_to_deg",
+          "line_start": 159,
+          "line_end": 165,
+          "sha256_utf8": "9c15c15534bd39b41c7f77f08a499e9180e7c3de1f4428f84bb6cd9375fed02a",
+          "sha256_bytes": "9c15c15534bd39b41c7f77f08a499e9180e7c3de1f4428f84bb6cd9375fed02a",
+          "git_blob": "e3314c4de021f82418f063ad6f6be9c427dad43f",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "8cdbbd84710d856581982c9eaf0d5e2970666232",
+          "upstream_url": "https://github.com/LuwuDynamics/xgoduck_runtime_arduino/blob/8cdbbd84710d856581982c9eaf0d5e2970666232/python/rl_core.py#L159-L165",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/13_XGO-Duck赛博鸭子/仓库/LuwuDynamics__xgoduck_runtime_arduino/python/policy.py",
+          "symbol": "def infer",
+          "line_start": 88,
+          "line_end": 118,
+          "sha256_utf8": "5132eb21cf97547e96ba0c0a7c4719dc38dc9b6f06e3bf726074b2f5c68d3f12",
+          "sha256_bytes": "5132eb21cf97547e96ba0c0a7c4719dc38dc9b6f06e3bf726074b2f5c68d3f12",
+          "git_blob": "0c68287778835b8a78cde553237fb9f06f7f34db",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "8cdbbd84710d856581982c9eaf0d5e2970666232",
+          "upstream_url": "https://github.com/LuwuDynamics/xgoduck_runtime_arduino/blob/8cdbbd84710d856581982c9eaf0d5e2970666232/python/policy.py#L88-L118",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "build_obs 将角速度、重力、关节偏移/速度、上一动作、移动指令和头部参数组成61维。Policy 用 ONNX 推理14维并过滤，action_to_deg 按 home 和关节 ID 映射回15电机；嘴巴是额外电机，不由14维策略直接生成。",
+      "invocation": "Policy.load(本地onnx) 检查模型维度；infer(...) 后 action_to_deg(action)。必须保持 MOTOR_IDS 与 POLICY_IDS 的实际次序，关节偏移/速度涉及度→弧度换算。嘴巴限制0..30°是原机器设定。",
+      "porting": "对未来策略机器人可借观测契约、状态过滤和控制来源分离。更换机械形态需要重训/适配策略，不是拿 ONNX 配一个新舵机列表就可走路。",
+      "limitations": "软件、模型、硬件许可分别记录，模型上游可能含非商业限制。50Hz策略/100Hz MCU 是设计配置，不是本次实测；不能把部署推理称为已训练可适配任何机器人。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M17_XGO-Duck 61维观测与14维策略动作.md"
+    },
+    {
+      "id": "M18",
+      "title": "Jumper 按关节名称解析策略契约",
+      "category": "02_动作与运动",
+      "project_ids": [
+        14
+      ],
+      "tags": [
+        "22关节",
+        "20关节",
+        "layout.json",
+        "模型契约",
+        "RKNN"
+      ],
+      "hardware": "Jumper螃蟹机器人＋对应部署主机",
+      "language": "Rust/Python",
+      "reuse_status": "adaptation_required",
+      "reuse_label": "需要移植或配套运行环境",
+      "dependencies": [
+        "Rust FSM",
+        "serde",
+        "ONNX/RKNN导出资源"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/14_Jumper螃蟹机器人/仓库/KingKongRobotics__jumper/deploy/fsm/src/layout.rs",
+          "symbol": "pub struct Layout",
+          "line_start": 130,
+          "line_end": 160,
+          "sha256_utf8": "19a793bf7d9d99bb1935501e44686818c66d16126790597662f9b5216fb03959",
+          "sha256_bytes": "19a793bf7d9d99bb1935501e44686818c66d16126790597662f9b5216fb03959",
+          "git_blob": "32a011bd66175c01725b3982d6a29a64369aabee",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "7d3cc4bebd1efe951e0adc38c053d417260867c0",
+          "upstream_url": "https://github.com/KingKongRobotics/jumper/blob/7d3cc4bebd1efe951e0adc38c053d417260867c0/deploy/fsm/src/layout.rs#L130-L160",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/14_Jumper螃蟹机器人/仓库/KingKongRobotics__jumper/deploy/fsm/src/layout.rs",
+          "symbol": "pub fn load",
+          "line_start": 246,
+          "line_end": 276,
+          "sha256_utf8": "19a793bf7d9d99bb1935501e44686818c66d16126790597662f9b5216fb03959",
+          "sha256_bytes": "19a793bf7d9d99bb1935501e44686818c66d16126790597662f9b5216fb03959",
+          "git_blob": "32a011bd66175c01725b3982d6a29a64369aabee",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "7d3cc4bebd1efe951e0adc38c053d417260867c0",
+          "upstream_url": "https://github.com/KingKongRobotics/jumper/blob/7d3cc4bebd1efe951e0adc38c053d417260867c0/deploy/fsm/src/layout.rs#L246-L276",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/14_Jumper螃蟹机器人/仓库/KingKongRobotics__jumper/deploy/fsm/src/layout.rs",
+          "symbol": "pub fn attach_reference",
+          "line_start": 399,
+          "line_end": 429,
+          "sha256_utf8": "19a793bf7d9d99bb1935501e44686818c66d16126790597662f9b5216fb03959",
+          "sha256_bytes": "19a793bf7d9d99bb1935501e44686818c66d16126790597662f9b5216fb03959",
+          "git_blob": "32a011bd66175c01725b3982d6a29a64369aabee",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "7d3cc4bebd1efe951e0adc38c053d417260867c0",
+          "upstream_url": "https://github.com/KingKongRobotics/jumper/blob/7d3cc4bebd1efe951e0adc38c053d417260867c0/deploy/fsm/src/layout.rs#L399-L429",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "导出的 layout.json 定义观测/动作关节顺序、默认姿态、尺度、控制频率、限位和参考轨迹。Contract::load/from_str 按 joint_names 映射到实际总线次序，校验缺失关节、维度、home、限位完整性；原任务可有20维观测与22条线关节。",
+      "invocation": "Contract::load(path,&joint_names) 生成 obs_wire_idx/action_wire_idx，按返回映射构造输入和执行输出。若 layout 声明 reference，还需 attach_reference 及配套轨迹，不能仅载入权重。",
+      "porting": "值得借“模型与机械的显式契约”。新项目先建立命名关节配置和版本化资源包，再做适配；不能按数组索引硬拼，夹爪等额外关节会造成偏移。",
+      "limitations": "任务目录是训练环境、奖励和资源配置；不是直接供 C3 调用的 dance()。导出工具、模型、运行时和硬件全部匹配才可执行；本次没做训练或实体跳跃。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M18_Jumper 按关节名称解析策略契约.md"
+    },
+    {
+      "id": "M19",
+      "title": "Jumper 参考动作表与时间插值",
+      "category": "02_动作与运动",
+      "project_ids": [
+        14
+      ],
+      "tags": [
+        "参考轨迹",
+        "舞蹈",
+        "跳跃",
+        "录制动作",
+        "插值",
+        "q_cmd"
+      ],
+      "hardware": "Rust部署运行时＋配套轨迹JSON",
+      "language": "Rust",
+      "reuse_status": "portable_component",
+      "reuse_label": "可单独提取；需接入驱动",
+      "dependencies": [
+        "Trajectory",
+        "ReferenceSpec",
+        "layout契约"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/14_Jumper螃蟹机器人/仓库/KingKongRobotics__jumper/deploy/fsm/src/trajectory.rs",
+          "symbol": "pub fn parse",
+          "line_start": 157,
+          "line_end": 187,
+          "sha256_utf8": "306d0f968f727c7f3e5e693609993dabaf574382536647bcf2d38056da854316",
+          "sha256_bytes": "306d0f968f727c7f3e5e693609993dabaf574382536647bcf2d38056da854316",
+          "git_blob": "b714ea37b7b94386fe75ca44bcbdb8e908fddb7d",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "7d3cc4bebd1efe951e0adc38c053d417260867c0",
+          "upstream_url": "https://github.com/KingKongRobotics/jumper/blob/7d3cc4bebd1efe951e0adc38c053d417260867c0/deploy/fsm/src/trajectory.rs#L157-L187",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/14_Jumper螃蟹机器人/仓库/KingKongRobotics__jumper/deploy/fsm/src/trajectory.rs",
+          "symbol": "pub fn q_at_into",
+          "line_start": 306,
+          "line_end": 336,
+          "sha256_utf8": "306d0f968f727c7f3e5e693609993dabaf574382536647bcf2d38056da854316",
+          "sha256_bytes": "306d0f968f727c7f3e5e693609993dabaf574382536647bcf2d38056da854316",
+          "git_blob": "b714ea37b7b94386fe75ca44bcbdb8e908fddb7d",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "7d3cc4bebd1efe951e0adc38c053d417260867c0",
+          "upstream_url": "https://github.com/KingKongRobotics/jumper/blob/7d3cc4bebd1efe951e0adc38c053d417260867c0/deploy/fsm/src/trajectory.rs#L306-L336",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/14_Jumper螃蟹机器人/仓库/KingKongRobotics__jumper/deploy/fsm/src/trajectory.rs",
+          "symbol": "pub fn baseline_into",
+          "line_start": 316,
+          "line_end": 346,
+          "sha256_utf8": "306d0f968f727c7f3e5e693609993dabaf574382536647bcf2d38056da854316",
+          "sha256_bytes": "306d0f968f727c7f3e5e693609993dabaf574382536647bcf2d38056da854316",
+          "git_blob": "b714ea37b7b94386fe75ca44bcbdb8e908fddb7d",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "7d3cc4bebd1efe951e0adc38c053d417260867c0",
+          "upstream_url": "https://github.com/KingKongRobotics/jumper/blob/7d3cc4bebd1efe951e0adc38c053d417260867c0/deploy/fsm/src/trajectory.rs#L316-L346",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "Trajectory 区分实际达到的 q 与控制命令 q_cmd，两者可拥有不同帧率和长度。parse 按关节名称重排并校验；q_at_into 线性插值，baseline_into 使用控制命令的采样时刻和提前量。finished 判定动作结束而非无限循环最后姿势。",
+      "invocation": "使用 ReferenceSpec 配套表调用 Trajectory::parse(spec,text,wire)；传相对 go 时间（秒）采样。q 的 rec_hz 与 q_cmd 的 control_hz 不得互换；相位和四元数采用各自处理方式。",
+      "porting": "可借录制动作格式用于未来桌面动作编辑器，但应建立更简单的两舵机表，保留关节名字、单位、时间和结束策略。复制 Rust组件需要整个契约依赖，不能只取一张 q 表。",
+      "limitations": "夹爪、参考残差和 go 事件由任务决定。原训练/部署的 dance、jump 标签并不保证新机器人具有对应技能；轨迹到实体的限位、重心与动力学仍需重新验证。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M19_Jumper 参考动作表与时间插值.md"
+    },
+    {
+      "id": "M20",
+      "title": "TinyEngineer 舵机平滑、限位与释放输出",
+      "category": "02_动作与运动",
+      "project_ids": [
+        16,
+        15
+      ],
+      "tags": [
+        "平滑动作",
+        "soft limit",
+        "deg/s",
+        "PCA9685",
+        "释放扭矩"
+      ],
+      "hardware": "TinyEngineer C3＋PCA9685＋5舵机",
+      "language": "C++",
+      "reuse_status": "portable_component",
+      "reuse_label": "可单独提取；需接入驱动",
+      "dependencies": [
+        "ServoWrapper",
+        "settings",
+        "Adafruit_PWMServoDriver"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/src/hardware/servo_wrapper.cpp",
+          "symbol": "void ServoWrapper::setTarget",
+          "line_start": 148,
+          "line_end": 178,
+          "sha256_utf8": "c7579e666052310e442d9d187349e6dbf5a2dcb74464821dd4245808536895bf",
+          "sha256_bytes": "c7579e666052310e442d9d187349e6dbf5a2dcb74464821dd4245808536895bf",
+          "git_blob": "cdf369f4147a17352ea7bfccb3bf0ca29c810696",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+          "upstream_url": "https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/src/hardware/servo_wrapper.cpp#L148-L178",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/src/hardware/servo_wrapper.cpp",
+          "symbol": "void ServoWrapper::update",
+          "line_start": 181,
+          "line_end": 211,
+          "sha256_utf8": "c7579e666052310e442d9d187349e6dbf5a2dcb74464821dd4245808536895bf",
+          "sha256_bytes": "c7579e666052310e442d9d187349e6dbf5a2dcb74464821dd4245808536895bf",
+          "git_blob": "cdf369f4147a17352ea7bfccb3bf0ca29c810696",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+          "upstream_url": "https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/src/hardware/servo_wrapper.cpp#L181-L211",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/src/hardware/servo_wrapper.cpp",
+          "symbol": "void releaseAllServoOutputs",
+          "line_start": 239,
+          "line_end": 269,
+          "sha256_utf8": "c7579e666052310e442d9d187349e6dbf5a2dcb74464821dd4245808536895bf",
+          "sha256_bytes": "c7579e666052310e442d9d187349e6dbf5a2dcb74464821dd4245808536895bf",
+          "git_blob": "cdf369f4147a17352ea7bfccb3bf0ca29c810696",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+          "upstream_url": "https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/src/hardware/servo_wrapper.cpp#L239-L269",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "ServoWrapper 保存当前/目标角度，每次 update 根据时间差与 degree/sec 限制步长，再应用软件限位和 PWM 转换。normalized值映射到每关节配置区间；stop 仅将目标置为当前角。release 输出有独立逻辑与 PCA full-off/OE。",
+      "invocation": "servoAt(index).setTarget(degrees,speedDegS) 配 updateAllServos()；需要释放时 releaseAllServoOutputs()。setNormTarget 与 setTarget 单位不同，moveTo/servoMoveAllSmoothTo 存在同步路径，不能都叫非阻塞。",
+      "porting": "纸壳两舵机优先借目标/速度/update 和软限位，保留自己 pan/tilt 配置。改直接 ESP32Servo 输出时重写 writeAngle/release，而不移植全部5舵机配置。",
+      "limitations": "普通动作请求经过 I02 最短保持调度，不能作为紧急停止。释放 PWM 与电源断开、实体失去支撑分别评估；已有主机测试并未检查真实 PCA 接线。",
+      "physical_test": false,
+      "document": "机器人能力参考库/02_动作与运动/M20_TinyEngineer 舵机平滑、限位与释放输出.md"
+    },
+    {
+      "id": "I01",
+      "title": "芝麻待机眨眼与动作期间显示更新",
+      "category": "03_交互状态与调度",
+      "project_ids": [
+        1
+      ],
+      "tags": [
+        "待机",
+        "随机眨眼",
+        "双眨眼",
+        "服务循环"
+      ],
+      "hardware": "芝麻 Arduino主循环",
+      "language": "C++",
+      "reuse_status": "portable_component",
+      "reuse_label": "可单独提取；需接入驱动",
+      "dependencies": [
+        "face状态",
+        "millis",
+        "WebServer"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot/firmware/sesame-firmware-main.ino",
+          "symbol": "void updateIdleBlink",
+          "line_start": 204,
+          "line_end": 234,
+          "sha256_utf8": "ef1b7d0702580381d970f349c12c7094b8f4ff4574a8214e21d4783e166d1450",
+          "sha256_bytes": "24a00b44091c686e1a6803028ce3108c95bcf8cc738061ebdb249fe4add96982",
+          "git_blob": "92a1584675999c40ed69eef77c58d3985ffc82f4",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d106cbc8e158c982f408db421134f23273c5f51f",
+          "upstream_url": "https://github.com/dorianborian/sesame-robot/blob/d106cbc8e158c982f408db421134f23273c5f51f/firmware/sesame-firmware-main.ino#L204-L234",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot/firmware/sesame-firmware-main.ino",
+          "symbol": "void delayWithFace",
+          "line_start": 201,
+          "line_end": 231,
+          "sha256_utf8": "ef1b7d0702580381d970f349c12c7094b8f4ff4574a8214e21d4783e166d1450",
+          "sha256_bytes": "24a00b44091c686e1a6803028ce3108c95bcf8cc738061ebdb249fe4add96982",
+          "git_blob": "92a1584675999c40ed69eef77c58d3985ffc82f4",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d106cbc8e158c982f408db421134f23273c5f51f",
+          "upstream_url": "https://github.com/dorianborian/sesame-robot/blob/d106cbc8e158c982f408db421134f23273c5f51f/firmware/sesame-firmware-main.ino#L201-L231",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "enterIdle 设置静态待机，随机安排3..7秒后的眨眼，并以30%概率再做一次短间隔眨眼。delayWithFace 在等待舵机片段时持续推进表情、处理 HTTP/DNS，使同步动作期间仍能收到部分请求。",
+      "invocation": "主循环在 idle 状态调用 updateIdleBlink；动作结束 enterIdle。动作辅助使用 delayWithFace(ms)，如果移出整机，需用自己的服务函数替换 server.handleClient/DNS。",
+      "porting": "可以提取随机事件计时，适合纸壳闲置时有轻微生命感。更完整的方案将等待变成 nextDeadline，在主循环统一推进屏幕、舵机和网络。",
+      "limitations": "服务网络不意味着动作可任意抢占；很多姿势没有 pressingCheck。双眨眼是程序化表现，不代表真实情绪模型。",
+      "physical_test": false,
+      "document": "机器人能力参考库/03_交互状态与调度/I01_芝麻待机眨眼与动作期间显示更新.md"
+    },
+    {
+      "id": "I02",
+      "title": "TinyEngineer 表情与动作状态注册表",
+      "category": "03_交互状态与调度",
+      "project_ids": [
+        16
+      ],
+      "tags": [
+        "状态机",
+        "typing",
+        "reading",
+        "thinking",
+        "最短保持",
+        "pending"
+      ],
+      "hardware": "C3 Arduino＋Tiny五舵机显示系统",
+      "language": "C++",
+      "reuse_status": "portable_component",
+      "reuse_label": "可单独提取；需接入驱动",
+      "dependencies": [
+        "animation registry",
+        "eyes registry",
+        "settings",
+        "ServoWrapper"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/src/animation/registry.cpp",
+          "symbol": "kModes",
+          "line_start": 128,
+          "line_end": 158,
+          "sha256_utf8": "b5799f434f4353ef16cf2305fc31a613ca4ad90eaed6c3766e4a18cba004d472",
+          "sha256_bytes": "b5799f434f4353ef16cf2305fc31a613ca4ad90eaed6c3766e4a18cba004d472",
+          "git_blob": "169065ea1ac35437a4b9b11d00203dae1388d4c2",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+          "upstream_url": "https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/src/animation/registry.cpp#L128-L158",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/src/animation/controller.cpp",
+          "symbol": "void setAnimation",
+          "line_start": 85,
+          "line_end": 115,
+          "sha256_utf8": "24ea80fa83fe32625246a8b68ada78dcdef3e0de34f6152ad8333f398efab6a1",
+          "sha256_bytes": "24ea80fa83fe32625246a8b68ada78dcdef3e0de34f6152ad8333f398efab6a1",
+          "git_blob": "c2c6fab6fa88d66fecafa12636ebcc2fbe666753",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+          "upstream_url": "https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/src/animation/controller.cpp#L85-L115",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/src/animation/controller.cpp",
+          "symbol": "void updateAnimation",
+          "line_start": 147,
+          "line_end": 173,
+          "sha256_utf8": "24ea80fa83fe32625246a8b68ada78dcdef3e0de34f6152ad8333f398efab6a1",
+          "sha256_bytes": "24ea80fa83fe32625246a8b68ada78dcdef3e0de34f6152ad8333f398efab6a1",
+          "git_blob": "c2c6fab6fa88d66fecafa12636ebcc2fbe666753",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+          "upstream_url": "https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/src/animation/controller.cpp#L147-L173",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "ModeEntry 把同一状态的动作 start/update、眼睛 start/update 和 continuous 标志绑在一起。setAnimation 对换状态施加1秒最短保持，待执行状态仅保留最新 pending。重复持续状态刷新超时，不重新启动；超时转 attention。",
+      "invocation": "setAnimation(AnimationId::Thinking) 后循环 updateAnimation()，同时继续原 servo 和 eyes 更新。12个注册名可通过 HTTP或 IDE 钩子触发；none 会回 park，稳定后释放输出。",
+      "porting": "新机器人可复用注册表结构，替换各状态动作和眼睛实现。表达“思考”“完成”“错误”时应以实际事件触发，控制持续状态超时，避免每帧重启动画。",
+      "limitations": "1秒最短保持有意延迟普通状态切换；停止电机/舵机需独立即时路径。独立16表情库 E02 不等于这里12个状态，两张表用途不同。",
+      "physical_test": false,
+      "document": "机器人能力参考库/03_交互状态与调度/I02_TinyEngineer 表情与动作状态注册表.md"
+    },
+    {
+      "id": "I03",
+      "title": "M5Avatar 音量驱动嘴巴开合",
+      "category": "03_交互状态与调度",
+      "project_ids": [
+        4
+      ],
+      "tags": [
+        "lip sync",
+        "嘴巴",
+        "TTS",
+        "音量",
+        "说话同步"
+      ],
+      "hardware": "旧 M5Stack/AquesTalkTTS配套环境",
+      "language": "C++",
+      "reuse_status": "adaptation_required",
+      "reuse_label": "需要移植或配套运行环境",
+      "dependencies": [
+        "M5Stack_Avatar",
+        "AquesTalkTTS",
+        "FreeRTOS任务"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__m5stack-avatar/src/tasks/LipSync.h",
+          "symbol": "extern void lipSync",
+          "line_start": 18,
+          "line_end": 31,
+          "sha256_utf8": "187bc71d9294cca92286984330381281f2012b64fb6020c88598278b791233b2",
+          "sha256_bytes": "187bc71d9294cca92286984330381281f2012b64fb6020c88598278b791233b2",
+          "git_blob": "90fc2812990a5488d0f94844684e2263474e4ef9",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "7a90083edd9bbdc1a52ea13afe4d5c3b7fc7bfa8",
+          "upstream_url": "https://github.com/stack-chan/m5stack-avatar/blob/7a90083edd9bbdc1a52ea13afe4d5c3b7fc7bfa8/src/tasks/LipSync.h#L18-L31",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__m5stack-avatar/src/tasks/LipSync.h",
+          "symbol": "TTS.getLevel()",
+          "line_start": 22,
+          "line_end": 31,
+          "sha256_utf8": "187bc71d9294cca92286984330381281f2012b64fb6020c88598278b791233b2",
+          "sha256_bytes": "187bc71d9294cca92286984330381281f2012b64fb6020c88598278b791233b2",
+          "git_blob": "90fc2812990a5488d0f94844684e2263474e4ef9",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "7a90083edd9bbdc1a52ea13afe4d5c3b7fc7bfa8",
+          "upstream_url": "https://github.com/stack-chan/m5stack-avatar/blob/7a90083edd9bbdc1a52ea13afe4d5c3b7fc7bfa8/src/tasks/LipSync.h#L22-L31",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "任务无限循环读取 TTS.getLevel，将音量除以12000、上限1.0，传给 setMouthOpenRatio，每33ms等待一次。它是声音幅度的视觉近似，不按音素判断嘴形。",
+      "invocation": "原 DriveContext 提供 Avatar 指针，由原任务管理方式启动 lipSync。若使用其他 TTS/音频引擎，取对应幅度或 RMS 转0..1，再调 Avatar 的嘴巴 setter。",
+      "porting": "纸壳可使用“音量/播放状态→嘴巴比例”思路，但要换自己的屏幕 renderer。没有音量时，用播放起止启停 talk_* 帧，不标称精确同步。",
+      "limitations": "这个头文件还 include AquesTalkTTS 与旧 M5Core2/M5Stack，和当前库声明 M5Unified 的依赖不能机械拼装。停止任务/归零嘴巴是上层职责。",
+      "physical_test": false,
+      "document": "机器人能力参考库/03_交互状态与调度/I03_M5Avatar 音量驱动嘴巴开合.md"
+    },
+    {
+      "id": "I04",
+      "title": "MindPaw Agent 响应到动作、表情和强度",
+      "category": "03_交互状态与调度",
+      "project_ids": [
+        3
+      ],
+      "tags": [
+        "情绪联动",
+        "AgentResponse",
+        "PAD",
+        "动作白名单"
+      ],
+      "hardware": "MindPaw主控＋外部Agent服务",
+      "language": "C++/JSON",
+      "reuse_status": "adaptation_required",
+      "reuse_label": "需要移植或配套运行环境",
+      "dependencies": [
+        "ArduinoJson",
+        "MotionEmotion",
+        "EmotionEngine"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/03_MindPaw机器狗/仓库/ace-trump-tech__MindPaw/MindPaw_main/src/main.cpp",
+          "symbol": "dispatchAgentResponse",
+          "line_start": 116,
+          "line_end": 146,
+          "sha256_utf8": "ac0d83dea0d2081bedd1c574faf5d86206d57912d2f2e81918fb24654b18ccf2",
+          "sha256_bytes": "ac0d83dea0d2081bedd1c574faf5d86206d57912d2f2e81918fb24654b18ccf2",
+          "git_blob": "7fe50333051f14542a4027c77319fa2c982793db",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "21c549252a60126a80874738626f1b8c36efc38c",
+          "upstream_url": "https://github.com/ace-trump-tech/MindPaw/blob/21c549252a60126a80874738626f1b8c36efc38c/MindPaw_main/src/main.cpp#L116-L146",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/03_MindPaw机器狗/仓库/ace-trump-tech__MindPaw/MindPaw_main/src/doubao_config.h",
+          "symbol": "struct AgentResponse",
+          "line_start": 49,
+          "line_end": 79,
+          "sha256_utf8": "e3ee9ebfd4d828b94f0ba7d9b46a884402e61e91af411c1c1ec9ec9fb6183cd0",
+          "sha256_bytes": "e3ee9ebfd4d828b94f0ba7d9b46a884402e61e91af411c1c1ec9ec9fb6183cd0",
+          "git_blob": "14f7c6fc79eb2bd6382d0214fbceb267483c09d1",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "21c549252a60126a80874738626f1b8c36efc38c",
+          "upstream_url": "https://github.com/ace-trump-tech/MindPaw/blob/21c549252a60126a80874738626f1b8c36efc38c/MindPaw_main/src/doubao_config.h#L49-L79",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/03_MindPaw机器狗/仓库/ace-trump-tech__MindPaw/MindPaw_main/src/main.cpp",
+          "symbol": "motionEmotion.isPlaying()",
+          "line_start": 1696,
+          "line_end": 1726,
+          "sha256_utf8": "ac0d83dea0d2081bedd1c574faf5d86206d57912d2f2e81918fb24654b18ccf2",
+          "sha256_bytes": "ac0d83dea0d2081bedd1c574faf5d86206d57912d2f2e81918fb24654b18ccf2",
+          "git_blob": "7fe50333051f14542a4027c77319fa2c982793db",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "21c549252a60126a80874738626f1b8c36efc38c",
+          "upstream_url": "https://github.com/ace-trump-tech/MindPaw/blob/21c549252a60126a80874738626f1b8c36efc38c/MindPaw_main/src/main.cpp#L1696-L1726",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "AgentResponse 包含 action、expression、melody、repeat、emotion，dispatch 将动作11..18交给 MotionEmotion，旧1..10走既有分支。PAD强度先影响运动参数；同一主循环检查情感动作播放状态，避免旧控制器同时写舵机。",
+      "invocation": "不要把 LLM 的任意字符串或数字直接写 PWM；沿原 parser 和枚举解析，再映射到有限函数。expression 的含义必须核对 E04 的画面 switch。",
+      "porting": "可以借响应结构和单一输出所有者，给纸壳定义有限 express/motion enum、次数和持续时长。语音后端仍在外部服务，主控只执行已定义能力。",
+      "limitations": "提示词允许的动作不保证全部具备同等中断性；旧路径与新振荡器不同。模型生成数字需检查范围/字段，固定预设比任意角度更易复用。",
+      "physical_test": false,
+      "document": "机器人能力参考库/03_交互状态与调度/I04_MindPaw Agent 响应到动作、表情和强度.md"
+    },
+    {
+      "id": "I05",
+      "title": "小智听、说、待机与 emotion 事件调度",
+      "category": "03_交互状态与调度",
+      "project_ids": [
+        8,
+        9,
+        10
+      ],
+      "tags": [
+        "语音状态",
+        "Listening",
+        "Speaking",
+        "Schedule",
+        "emotion"
+      ],
+      "hardware": "匹配小智 ESP-IDF板型＋音频服务＋后端",
+      "language": "C++",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "Application",
+        "DeviceStateMachine",
+        "AudioService",
+        "Display"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-esp32/main/application.cc",
+          "symbol": "bool Application::SetDeviceState",
+          "line_start": 59,
+          "line_end": 89,
+          "sha256_utf8": "6e2de7d86a482e1c9589be1835a022b08c481b124e3cf0e1395eae758d199457",
+          "sha256_bytes": "6e2de7d86a482e1c9589be1835a022b08c481b124e3cf0e1395eae758d199457",
+          "git_blob": "31de2051456cbea1be06d338ebb5c04df7966fe3",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d395220a83fb7a16ea5dc761c08a4816177cc880",
+          "upstream_url": "https://github.com/78/xiaozhi-esp32/blob/d395220a83fb7a16ea5dc761c08a4816177cc880/main/application.cc#L59-L89",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-esp32/main/application.cc",
+          "symbol": "auto emotion = cJSON_GetObjectItem(root, \"emotion\")",
+          "line_start": 671,
+          "line_end": 701,
+          "sha256_utf8": "6e2de7d86a482e1c9589be1835a022b08c481b124e3cf0e1395eae758d199457",
+          "sha256_bytes": "6e2de7d86a482e1c9589be1835a022b08c481b124e3cf0e1395eae758d199457",
+          "git_blob": "31de2051456cbea1be06d338ebb5c04df7966fe3",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d395220a83fb7a16ea5dc761c08a4816177cc880",
+          "upstream_url": "https://github.com/78/xiaozhi-esp32/blob/d395220a83fb7a16ea5dc761c08a4816177cc880/main/application.cc#L671-L701",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-esp32/main/application.cc",
+          "symbol": "void Application::SetListeningMode",
+          "line_start": 1183,
+          "line_end": 1213,
+          "sha256_utf8": "6e2de7d86a482e1c9589be1835a022b08c481b124e3cf0e1395eae758d199457",
+          "sha256_bytes": "6e2de7d86a482e1c9589be1835a022b08c481b124e3cf0e1395eae758d199457",
+          "git_blob": "31de2051456cbea1be06d338ebb5c04df7966fe3",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d395220a83fb7a16ea5dc761c08a4816177cc880",
+          "upstream_url": "https://github.com/78/xiaozhi-esp32/blob/d395220a83fb7a16ea5dc761c08a4816177cc880/main/application.cc#L1183-L1213",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "Application 把语音通道、播放队列、VAD和设备状态组织起来。TTS消息转 speaking/listening/idle；llm emotion 通过 Schedule 在应用线程更新 display。听说状态和表情是相互关联但不同的状态，不依靠动作函数里长等待实现。",
+      "invocation": "扩展原板型时沿 SetDeviceState/SetListeningMode 与调度回调接入；音频结束依队列/播放状态判断，不能收到 tts stop 就立刻假定所有样本播放完毕。",
+      "porting": "纸壳对话版本可继承当前支持板型，新增两舵机动作执行层，把 speaking事件映射为说话动画、listening映射为注视。动作结束也回报状态，不阻塞音频服务。",
+      "limitations": "后端 ASR/LLM/TTS 并未因此成为芯片上离线全功能模型。08主分支与09分支 API/IDF版本差异见依赖表，不能仅复制 application.cc。",
+      "physical_test": false,
+      "document": "机器人能力参考库/03_交互状态与调度/I05_小智听、说、待机与 emotion 事件调度.md"
+    },
+    {
+      "id": "I06",
+      "title": "纸壳 Web Serial 模块验收与整机命令",
+      "category": "03_交互状态与调度",
+      "project_ids": [
+        15
+      ],
+      "tags": [
+        "串口",
+        "Web Serial",
+        "校准",
+        "pan",
+        "tilt",
+        "验收"
+      ],
+      "hardware": "浏览器支持 Web Serial＋USB115200串口",
+      "language": "JavaScript",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "TestConnection",
+        "TextEncoder",
+        "Web Serial"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/15_小纸壳机器人/工具包/cardboard-bot-teaching/test-connection.js",
+          "symbol": "class TestConnection",
+          "line_start": 3,
+          "line_end": 33,
+          "sha256_utf8": "7119c1c99597863f0b485f6383c356a26d028ece9b110adc47ea2e5fe5c660a1",
+          "sha256_bytes": "017790a071b869ce3b292ac66b49995fb9dfea6dceba2344e333296cdf01014a",
+          "git_blob": "981709a1bda3444b47dd71159f86a0e904116767",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/15_小纸壳机器人/工具包/cardboard-bot-teaching/test-connection.js",
+          "symbol": "async robotCommand",
+          "line_start": 171,
+          "line_end": 201,
+          "sha256_utf8": "7119c1c99597863f0b485f6383c356a26d028ece9b110adc47ea2e5fe5c660a1",
+          "sha256_bytes": "017790a071b869ce3b292ac66b49995fb9dfea6dceba2344e333296cdf01014a",
+          "git_blob": "981709a1bda3444b47dd71159f86a0e904116767",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/15_小纸壳机器人/工具包/cardboard-bot-teaching/test-connection.js",
+          "symbol": "async disconnect",
+          "line_start": 215,
+          "line_end": 245,
+          "sha256_utf8": "7119c1c99597863f0b485f6383c356a26d028ece9b110adc47ea2e5fe5c660a1",
+          "sha256_bytes": "017790a071b869ce3b292ac66b49995fb9dfea6dceba2344e333296cdf01014a",
+          "git_blob": "981709a1bda3444b47dd71159f86a0e904116767",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "TestConnection 管理串口写链，UTF-8命令以换行结尾；模块模式发送 PING/START/STOP，整机模式发送1/2/B/C/A/D/W/S/V/X/R及问号心跳。网页解析 CB_TEST与位置状态，区分校准、正常与中心设置。",
+      "invocation": "115200串口；A/D 水平、W/S 垂直每次1°，V保存中心，X停止 PWM，R恢复 PWM但不自动回中心。必须等待对应模式/响应再开始，避免将模块固件命令发给完整机器人固件。",
+      "porting": "第一版复刻保留这一验收工具；后续自己的固件应定义带版本/板型/能力的明确握手与 ACK，而非仅根据串口字符串判定所有功能存在。",
+      "limitations": "disconnect 对模块会发送 STOP，对完整机器人不会，关闭网页不等于整机紧停。先前模拟检查发现部分身份判定不严谨；串口网页调用证据不等于完整固件源码。",
+      "physical_test": false,
+      "document": "机器人能力参考库/03_交互状态与调度/I06_纸壳 Web Serial 模块验收与整机命令.md"
+    },
+    {
+      "id": "I07",
+      "title": "停止、回中、保持和释放的语义对照",
+      "category": "03_交互状态与调度",
+      "project_ids": [
+        1,
+        2,
+        3,
+        5,
+        9,
+        11,
+        15,
+        16,
+        18
+      ],
+      "tags": [
+        "停止",
+        "stop",
+        "回中",
+        "释放",
+        "detach",
+        "刹车",
+        "紧停"
+      ],
+      "hardware": "跨项目；调用必须匹配各控制器",
+      "language": "多语言",
+      "reuse_status": "adaptation_required",
+      "reuse_label": "需要移植或配套运行环境",
+      "dependencies": [
+        "各项目动作控制器与驱动"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/02_曼波小狗/仓库/RussellCooper-DJZ__manbo-robot-dog/User/ActionTask.c",
+          "symbol": "void ActionTask_AbortToSafeStop",
+          "line_start": 451,
+          "line_end": 473,
+          "sha256_utf8": "891e3dd4fb6ff8abe2db20106ee06821d8f23813a83fbc733a65b76175adf367",
+          "sha256_bytes": "891e3dd4fb6ff8abe2db20106ee06821d8f23813a83fbc733a65b76175adf367",
+          "git_blob": "02aad7c9ac28e8a58f9bacb09630919feffd8cdd",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "9a3d315cfe50a62d8e6221cccf2aea696f96aedc",
+          "upstream_url": "https://github.com/RussellCooper-DJZ/manbo-robot-dog/blob/9a3d315cfe50a62d8e6221cccf2aea696f96aedc/User/ActionTask.c#L451-L473",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/03_MindPaw机器狗/仓库/ace-trump-tech__MindPaw/MindPaw_main/src/motion_emotion.cpp",
+          "symbol": "void MotionEmotion::stop",
+          "line_start": 228,
+          "line_end": 258,
+          "sha256_utf8": "6983188ffef840e208f7d808d168cde94d719fd36bfcb7ffb9c9e9c0df59d8ff",
+          "sha256_bytes": "6983188ffef840e208f7d808d168cde94d719fd36bfcb7ffb9c9e9c0df59d8ff",
+          "git_blob": "b18d0aa421ced8503b41dab64b5e9b1b6171187f",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "21c549252a60126a80874738626f1b8c36efc38c",
+          "upstream_url": "https://github.com/ace-trump-tech/MindPaw/blob/21c549252a60126a80874738626f1b8c36efc38c/MindPaw_main/src/motion_emotion.cpp#L228-L258",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/src/hardware/servo_wrapper.cpp",
+          "symbol": "void ServoWrapper::stop",
+          "line_start": 173,
+          "line_end": 203,
+          "sha256_utf8": "c7579e666052310e442d9d187349e6dbf5a2dcb74464821dd4245808536895bf",
+          "sha256_bytes": "c7579e666052310e442d9d187349e6dbf5a2dcb74464821dd4245808536895bf",
+          "git_blob": "cdf369f4147a17352ea7bfccb3bf0ca29c810696",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+          "upstream_url": "https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/src/hardware/servo_wrapper.cpp#L173-L203",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/motor.h",
+          "symbol": "void motor_stop",
+          "line_start": 52,
+          "line_end": 53,
+          "sha256_utf8": "a60572801d50661a68edd547f31058b2747fbed64c21ab64a814b81190488d91",
+          "sha256_bytes": "b560cf21f8d5e8807de6124c995991b80d40a6aa3093d3a076fc53d496d566b8",
+          "git_blob": "9bb9ab11c093bf1be47405344369748edd3ad9f2",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/15_小纸壳机器人/工具包/cardboard-bot-teaching/test-connection.js",
+          "symbol": "async disconnect",
+          "line_start": 215,
+          "line_end": 245,
+          "sha256_utf8": "7119c1c99597863f0b485f6383c356a26d028ece9b110adc47ea2e5fe5c660a1",
+          "sha256_bytes": "017790a071b869ce3b292ac66b49995fb9dfea6dceba2344e333296cdf01014a",
+          "git_blob": "981709a1bda3444b47dd71159f86a0e904116767",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "同名 stop 不能统一解释：曼波回90°，MindPaw只清播放状态，Tiny stop保持当前目标而 release另设，坦克 coast与brake分开，ElectronPlayer只停止播放标志；纸壳整机 X停止PWM而 disconnect未发送X。",
+      "invocation": "每次选择能力时同时查看停止入口、是否回姿态、是否停PWM、是否停供电、是否清队列、是否有断线超时。把这些字段写进新项目控制器接口再绑定真实函数。",
+      "porting": "新纸壳应提供即时 cancel_motion 与明确的 release_output/return_center，不让普通动画最短保持阻止停止。轮式底盘使用对应H桥停车策略；腿式不能直接照轮式断输出。",
+      "limitations": "这里是复用时的语义对照，不是已实现的统一安全SDK。无物理急停、实体电源切断或真机验证的功能不能因文档归类便称为具备。",
+      "physical_test": false,
+      "document": "机器人能力参考库/03_交互状态与调度/I07_停止、回中、保持和释放的语义对照.md"
+    },
+    {
+      "id": "C01",
+      "title": "芝麻 HTTP 动作与表情接口",
+      "category": "04_通信与工具调用",
+      "project_ids": [
+        1
+      ],
+      "tags": [
+        "HTTP",
+        "远程控制",
+        "api/command",
+        "JSON",
+        "face"
+      ],
+      "hardware": "芝麻固件网络服务＋局域网客户端",
+      "language": "HTTP/C++",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "WebServer",
+        "WiFi"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot/firmware/sesame-firmware-main.ino",
+          "symbol": "void handleApiCommand",
+          "line_start": 210,
+          "line_end": 240,
+          "sha256_utf8": "ef1b7d0702580381d970f349c12c7094b8f4ff4574a8214e21d4783e166d1450",
+          "sha256_bytes": "24a00b44091c686e1a6803028ce3108c95bcf8cc738061ebdb249fe4add96982",
+          "git_blob": "92a1584675999c40ed69eef77c58d3985ffc82f4",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d106cbc8e158c982f408db421134f23273c5f51f",
+          "upstream_url": "https://github.com/dorianborian/sesame-robot/blob/d106cbc8e158c982f408db421134f23273c5f51f/firmware/sesame-firmware-main.ino#L210-L240",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot/firmware/sesame-firmware-main.ino",
+          "symbol": "server.on(\"/api/command\"",
+          "line_start": 719,
+          "line_end": 749,
+          "sha256_utf8": "ef1b7d0702580381d970f349c12c7094b8f4ff4574a8214e21d4783e166d1450",
+          "sha256_bytes": "24a00b44091c686e1a6803028ce3108c95bcf8cc738061ebdb249fe4add96982",
+          "git_blob": "92a1584675999c40ed69eef77c58d3985ffc82f4",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d106cbc8e158c982f408db421134f23273c5f51f",
+          "upstream_url": "https://github.com/dorianborian/sesame-robot/blob/d106cbc8e158c982f408db421134f23273c5f51f/firmware/sesame-firmware-main.ino#L719-L749",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "固件注册 POST /api/command 和状态接口。命令体包含 command/face 等，处理器更新 currentCommand 或切换表情；主循环选择已实现的运动。face-only 与动作请求分别有处理路径。",
+      "invocation": "文档示例可 POST {\"face\":\"happy\"}，或 {\"command\":\"wave\"}；主机IP使用真实设备地址。原处理器采用字符串搜索式解析，调用端应生成简单字段和预设白名单。",
+      "porting": "可作为纸壳外部控制协议参考，但新固件应正式解析JSON、区分ACK/完成事件、限制命令长度和次数，并实现断线策略。显示与动作是否同时执行需依原分支确认。",
+      "limitations": "原命令白名单与姿势函数名不完全同形。不要把函数runWalkPose写成HTTP命令名，应该用注册/分派中的 forward。本次未向真实设备发送请求。",
+      "physical_test": false,
+      "document": "机器人能力参考库/04_通信与工具调用/C01_芝麻 HTTP 动作与表情接口.md"
+    },
+    {
+      "id": "C02",
+      "title": "芝麻同作者语音、LLM 与机器人桥接",
+      "category": "04_通信与工具调用",
+      "project_ids": [
+        1
+      ],
+      "tags": [
+        "语音对话",
+        "芝麻配套",
+        "ASR",
+        "TTS",
+        "Gemini",
+        "LLM"
+      ],
+      "hardware": "电脑Python＋麦克风扬声器＋芝麻HTTP",
+      "language": "Python",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "SpeechRecognition",
+        "pyttsx3",
+        "requests",
+        "可选LLM/TTS后端"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-companion-app/sesame_companion.py",
+          "symbol": "class VoiceInterface",
+          "line_start": 161,
+          "line_end": 191,
+          "sha256_utf8": "407cb6f8370fe42a85571a933efa8ea9c270f44a4ba3216efbdc1a32f2c79b53",
+          "sha256_bytes": "407cb6f8370fe42a85571a933efa8ea9c270f44a4ba3216efbdc1a32f2c79b53",
+          "git_blob": "d7a9d8a3ad359f2b24b9cf0c43002591e3575795",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "86f82c137b9954445f55d249c966e8f9984bd87b",
+          "upstream_url": "https://github.com/dorianborian/sesame-companion-app/blob/86f82c137b9954445f55d249c966e8f9984bd87b/sesame_companion.py#L161-L191",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-companion-app/sesame_companion.py",
+          "symbol": "class SesameRobotController",
+          "line_start": 443,
+          "line_end": 473,
+          "sha256_utf8": "407cb6f8370fe42a85571a933efa8ea9c270f44a4ba3216efbdc1a32f2c79b53",
+          "sha256_bytes": "407cb6f8370fe42a85571a933efa8ea9c270f44a4ba3216efbdc1a32f2c79b53",
+          "git_blob": "d7a9d8a3ad359f2b24b9cf0c43002591e3575795",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "86f82c137b9954445f55d249c966e8f9984bd87b",
+          "upstream_url": "https://github.com/dorianborian/sesame-companion-app/blob/86f82c137b9954445f55d249c966e8f9984bd87b/sesame_companion.py#L443-L473",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-companion-app/sesame_companion.py",
+          "symbol": "def process_input",
+          "line_start": 631,
+          "line_end": 661,
+          "sha256_utf8": "407cb6f8370fe42a85571a933efa8ea9c270f44a4ba3216efbdc1a32f2c79b53",
+          "sha256_bytes": "407cb6f8370fe42a85571a933efa8ea9c270f44a4ba3216efbdc1a32f2c79b53",
+          "git_blob": "d7a9d8a3ad359f2b24b9cf0c43002591e3575795",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "86f82c137b9954445f55d249c966e8f9984bd87b",
+          "upstream_url": "https://github.com/dorianborian/sesame-companion-app/blob/86f82c137b9954445f55d249c966e8f9984bd87b/sesame_companion.py#L631-L661",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "电脑应用识别语音，生成带动作/情绪约束的模型请求，再由 RobotController POST到机器人。TTS 从电脑播放，并通过线程/表情循环让机器人显示 talk_*；Local LLM与Gemini是可选后端。",
+      "invocation": "原应用设置机器人地址和对应服务配置后，沿 process_input入口使用。AVAILABLE_COMMANDS与表情列表是配套协议，应和固件版本核对。不要把主机类误当能在ESP32 import的库。",
+      "porting": "纸壳第一版若先用电脑作为语音大脑，可保留电脑ASR/LLM/TTS，替换RobotController为串口适配器。之后再迁移小智云端对话；新增适配器需要开发，当前没有提供。",
+      "limitations": "recognize_google 使用在线识别，即使选择Local LLM也不是完整离线。动作分支可能传face=None，说话表情另线程驱动；不能保证任意动作与任意表情都原子同步。",
+      "physical_test": false,
+      "document": "机器人能力参考库/04_通信与工具调用/C02_芝麻同作者语音、LLM 与机器人桥接.md"
+    },
+    {
+      "id": "C03",
+      "title": "TinyEngineer HTTP 与外部事件到动画",
+      "category": "04_通信与工具调用",
+      "project_ids": [
+        16
+      ],
+      "tags": [
+        "IDE事件",
+        "HTTP",
+        "anim",
+        "thinking",
+        "typing",
+        "auth"
+      ],
+      "hardware": "电脑事件钩子＋Tiny C3网络固件",
+      "language": "JavaScript/HTTP/C++",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "WebServer",
+        "animation controller",
+        "Node/Python钩子"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/src/http/anim_handlers.cpp",
+          "symbol": "void handleAnimPost",
+          "line_start": 30,
+          "line_end": 53,
+          "sha256_utf8": "ad5233feb139e98c2c40c5571af22b72cf44367ba97422a19e7a83431714c79f",
+          "sha256_bytes": "ad5233feb139e98c2c40c5571af22b72cf44367ba97422a19e7a83431714c79f",
+          "git_blob": "0e45699976a5aec11d790fdb74291e0bc878643a",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+          "upstream_url": "https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/src/http/anim_handlers.cpp#L30-L53",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/src/http/routes.cpp",
+          "symbol": "/anim",
+          "line_start": 6,
+          "line_end": 36,
+          "sha256_utf8": "30e269c80ae10649dc4ea0a1b140c27764826080e8ecb0a492b94ee1284b3157",
+          "sha256_bytes": "30e269c80ae10649dc4ea0a1b140c27764826080e8ecb0a492b94ee1284b3157",
+          "git_blob": "3ceae5019213e757010a1361174b2b5be0c0efdf",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+          "upstream_url": "https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/src/http/routes.cpp#L6-L36",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "HTTP处理器从 name 参数解析 AnimationId，再交给状态控制器。电脑侧IDE/助手事件映射为 typing/reading/thinking等动画；持续状态需要刷新，结束时回none或相应完成状态。",
+      "invocation": "向设备 POST /anim?name=thinking，再用 GET /anim查询；启用token时遵守源码认证方式。setAnimation仍可能因1秒保持进入pending，不是请求即完成。",
+      "porting": "可直接在原固件上连接电脑事件；纸壳可复用事件名与路由模式，替换动作/眼睛注册表和硬件。把状态协议和IDE供应商事件转换分开。",
+      "limitations": "默认空token不提供访问限制。原代码不是通用LLM动作协议；n8n/YOVA关联项目需要另接适配，不因同作者便自动连通。",
+      "physical_test": false,
+      "document": "机器人能力参考库/04_通信与工具调用/C03_TinyEngineer HTTP 与外部事件到动画.md"
+    },
+    {
+      "id": "C04",
+      "title": "Needle 端侧工具提案与 schema",
+      "category": "04_通信与工具调用",
+      "project_ids": [
+        17
+      ],
+      "tags": [
+        "工具调用",
+        "tool calling",
+        "schema",
+        "自然语言",
+        "端侧模型"
+      ],
+      "hardware": "支持的电脑/移动原生运行时＋对应模型与ABI",
+      "language": "Python",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "needle 3.1.0",
+        "原生引擎",
+        "模型权重",
+        "tool schema"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/17_Needle端侧模型/仓库/cactus-compute__needle/needle/agent/tools.py",
+          "symbol": "def tool(",
+          "line_start": 173,
+          "line_end": 180,
+          "sha256_utf8": "bee31ef209021650d0ae1d149d9155e76c7eba3ba2c541c79ec0fc651c94c671",
+          "sha256_bytes": "bee31ef209021650d0ae1d149d9155e76c7eba3ba2c541c79ec0fc651c94c671",
+          "git_blob": "c4d9bccaade6c8bf52f2c42e3db8c4e8af215efa",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "8881c1ceada54814465fa5edddc6599f32383985",
+          "upstream_url": "https://github.com/cactus-compute/needle/blob/8881c1ceada54814465fa5edddc6599f32383985/needle/agent/tools.py#L173-L180",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/17_Needle端侧模型/仓库/cactus-compute__needle/needle/agent/tools.py",
+          "symbol": "def build_schema",
+          "line_start": 120,
+          "line_end": 150,
+          "sha256_utf8": "bee31ef209021650d0ae1d149d9155e76c7eba3ba2c541c79ec0fc651c94c671",
+          "sha256_bytes": "bee31ef209021650d0ae1d149d9155e76c7eba3ba2c541c79ec0fc651c94c671",
+          "git_blob": "c4d9bccaade6c8bf52f2c42e3db8c4e8af215efa",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "8881c1ceada54814465fa5edddc6599f32383985",
+          "upstream_url": "https://github.com/cactus-compute/needle/blob/8881c1ceada54814465fa5edddc6599f32383985/needle/agent/tools.py#L120-L150",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/17_Needle端侧模型/仓库/cactus-compute__needle/needle/__init__.py",
+          "symbol": "def complete(",
+          "line_start": 266,
+          "line_end": 296,
+          "sha256_utf8": "5fc0281d98dcffb180be8280f556efab09fc6cc53cf5f55be45f78d5d18a28ed",
+          "sha256_bytes": "5fc0281d98dcffb180be8280f556efab09fc6cc53cf5f55be45f78d5d18a28ed",
+          "git_blob": "e838d391487735de329da06afe8f47f094e75870",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "8881c1ceada54814465fa5edddc6599f32383985",
+          "upstream_url": "https://github.com/cactus-compute/needle/blob/8881c1ceada54814465fa5edddc6599f32383985/needle/__init__.py#L266-L296",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "@tool与build_schema 根据签名、注解、docstring和Field约束构造JSONSchema。Needle.complete生成function_calls提案，不自动执行Python函数。模型、generation、原生共享库与token/工具索引配套决定是否可推理。",
+      "invocation": "在支持环境给有限工具schema创建Needle，complete(文本)后读取函数名/arguments，检查白名单、枚举与范围，再由自己的机器人dispatcher调用实际固件接口。",
+      "porting": "可将E01/M06/C01等稳定能力包装为set_expression或nod提案工具；这些工具是待建适配器名字，不是库中自带机器人功能。先从少量枚举和固定次数开始。",
+      "limitations": "SDK为Apache-2.0；模型/原生运行资源另核对。C3不是当前Python/原生ABI目标。已有离线主机试验不证明中文识别效果，也不证明机器人动作被执行。",
+      "physical_test": false,
+      "document": "机器人能力参考库/04_通信与工具调用/C04_Needle 端侧工具提案与 schema.md"
+    },
+    {
+      "id": "C05",
+      "title": "Needle run 自动执行与 complete 的区别",
+      "category": "04_通信与工具调用",
+      "project_ids": [
+        17
+      ],
+      "tags": [
+        "自动执行",
+        "run",
+        "dispatcher",
+        "function_calls",
+        "工具函数"
+      ],
+      "hardware": "Needle Python原生运行环境",
+      "language": "Python",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "Needle",
+        "Python可调用工具"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/17_Needle端侧模型/仓库/cactus-compute__needle/needle/__init__.py",
+          "symbol": "def run(",
+          "line_start": 326,
+          "line_end": 356,
+          "sha256_utf8": "5fc0281d98dcffb180be8280f556efab09fc6cc53cf5f55be45f78d5d18a28ed",
+          "sha256_bytes": "5fc0281d98dcffb180be8280f556efab09fc6cc53cf5f55be45f78d5d18a28ed",
+          "git_blob": "e838d391487735de329da06afe8f47f094e75870",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "8881c1ceada54814465fa5edddc6599f32383985",
+          "upstream_url": "https://github.com/cactus-compute/needle/blob/8881c1ceada54814465fa5edddc6599f32383985/needle/__init__.py#L326-L356",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/17_Needle端侧模型/仓库/cactus-compute__needle/needle/__init__.py",
+          "symbol": "def reset(",
+          "line_start": 371,
+          "line_end": 401,
+          "sha256_utf8": "5fc0281d98dcffb180be8280f556efab09fc6cc53cf5f55be45f78d5d18a28ed",
+          "sha256_bytes": "5fc0281d98dcffb180be8280f556efab09fc6cc53cf5f55be45f78d5d18a28ed",
+          "git_blob": "e838d391487735de329da06afe8f47f094e75870",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "8881c1ceada54814465fa5edddc6599f32383985",
+          "upstream_url": "https://github.com/cactus-compute/needle/blob/8881c1ceada54814465fa5edddc6599f32383985/needle/__init__.py#L371-L401",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "run 在complete之后循环处理 function_calls，将注册的Python函数按arguments真实调用，并把结果喂回下一轮。complete只返回提案；@tool只加schema元数据。这三个层级不能因都叫工具调用而混为一谈。",
+      "invocation": "需要自动执行时只注册已确定、有限参数的函数；机器人开发通常先complete，再经过显式dispatcher。函数内必须处理连接失败、命令结果、忙状态与停止，run不替你补齐硬件协议。",
+      "porting": "若要Codex快速复用，先从能力索引获取原函数签名和单位，再编写最薄的网络/串口适配。模型的动作名与固件预设白名单一一对应，避免生成任意角度或GPIO。",
+      "limitations": "run可触发外部效果；原代码的strict工具名检查不是完整动作权限/参数/时序系统。reset/close管理会话与引擎资源，不等同停止实体机器人。",
+      "physical_test": false,
+      "document": "机器人能力参考库/04_通信与工具调用/C05_Needle run 自动执行与 complete 的区别.md"
+    },
+    {
+      "id": "C06",
+      "title": "小智 Otto MCP 22动作与校准工具",
+      "category": "04_通信与工具调用",
+      "project_ids": [
+        9
+      ],
+      "tags": [
+        "MCP",
+        "self.otto.action",
+        "steps",
+        "speed",
+        "trim"
+      ],
+      "hardware": "Otto分支 ESP-IDF主控＋小智MCP协议",
+      "language": "C++/JSON",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "McpServer",
+        "OttoController",
+        "动作任务",
+        "NVS"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/txp666__xiaozhi-esp32/main/boards/otto-robot/otto_controller.cc",
+          "symbol": "self.otto.action",
+          "line_start": 533,
+          "line_end": 563,
+          "sha256_utf8": "188d2728c29e92a0b2239e4fafb707c5bd3422a97bce87939b5278f6437c9162",
+          "sha256_bytes": "188d2728c29e92a0b2239e4fafb707c5bd3422a97bce87939b5278f6437c9162",
+          "git_blob": "ddecb949fb0c013cb40e6256ef06374016469ff5",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "becc84f58908d96a8aaeae046dcd22e099aad7e9",
+          "upstream_url": "https://github.com/txp666/xiaozhi-esp32/blob/becc84f58908d96a8aaeae046dcd22e099aad7e9/main/boards/otto-robot/otto_controller.cc#L533-L563",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/txp666__xiaozhi-esp32/main/boards/otto-robot/otto_controller.cc",
+          "symbol": "self.otto.stop",
+          "line_start": 708,
+          "line_end": 738,
+          "sha256_utf8": "188d2728c29e92a0b2239e4fafb707c5bd3422a97bce87939b5278f6437c9162",
+          "sha256_bytes": "188d2728c29e92a0b2239e4fafb707c5bd3422a97bce87939b5278f6437c9162",
+          "git_blob": "ddecb949fb0c013cb40e6256ef06374016469ff5",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "becc84f58908d96a8aaeae046dcd22e099aad7e9",
+          "upstream_url": "https://github.com/txp666/xiaozhi-esp32/blob/becc84f58908d96a8aaeae046dcd22e099aad7e9/main/boards/otto-robot/otto_controller.cc#L708-L738",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/txp666__xiaozhi-esp32/main/boards/otto-robot/otto_controller.cc",
+          "symbol": "self.otto.servo_sequences",
+          "line_start": 669,
+          "line_end": 699,
+          "sha256_utf8": "188d2728c29e92a0b2239e4fafb707c5bd3422a97bce87939b5278f6437c9162",
+          "sha256_bytes": "188d2728c29e92a0b2239e4fafb707c5bd3422a97bce87939b5278f6437c9162",
+          "git_blob": "ddecb949fb0c013cb40e6256ef06374016469ff5",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "becc84f58908d96a8aaeae046dcd22e099aad7e9",
+          "upstream_url": "https://github.com/txp666/xiaozhi-esp32/blob/becc84f58908d96a8aaeae046dcd22e099aad7e9/main/boards/otto-robot/otto_controller.cc#L669-L699",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "注册表把22个action名映射到有限ActionType并QueueAction执行。还有servo_sequences、stop及trim保存等工具；Property约束steps、speed、amount、arm_swing、dir。MCP仅暴露实际注册项。",
+      "invocation": "调用self.otto.action，arguments包含action与需要的参数。steps1..100，speed100..3000是毫秒周期、越小越快；amount/arm_swing0..170，dir为1/-1/0。回中使用action=\"home\"，不能据文档文字假定存在独立self.otto.home。",
+      "porting": "纸壳可以沿AddTool注册有限pan/tilt预设，但需自己的执行器、软限位和即时停止路径。不要把LLM输出直接传给servo_sequences，先有可验证的有限动作集合。",
+      "limitations": "工具名以源码注册表为准，中文描述不是API。stop回调涉及任务和回姿态，需保持原实现上下文；trim范围-50..50并保存NVS，不适用于所有新舵机。",
+      "physical_test": false,
+      "document": "机器人能力参考库/04_通信与工具调用/C06_小智 Otto MCP 22动作与校准工具.md"
+    },
+    {
+      "id": "C07",
+      "title": "Rover UART 命令、ACK 与异步状态",
+      "category": "04_通信与工具调用",
+      "project_ids": [
+        12
+      ],
+      "tags": [
+        "UART",
+        "MCP桥接",
+        "OK",
+        "ERR",
+        "EVT",
+        "电机板"
+      ],
+      "hardware": "Atom Echo S3R语音板＋C3电机板",
+      "language": "串口文本/Arduino",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "Rover固件",
+        "匹配小智板型分支"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__VerdureBuddyRover/firmware/esp32c3_kb_motor/esp32c3_kb_motor.ino",
+          "symbol": "void handleCommand",
+          "line_start": 362,
+          "line_end": 392,
+          "sha256_utf8": "32e4e11be33e34d349f39a14757088d63add6b6ccd8f36bfb7c700a8044b94b6",
+          "sha256_bytes": "32e4e11be33e34d349f39a14757088d63add6b6ccd8f36bfb7c700a8044b94b6",
+          "git_blob": "9265ed85acf0da0a7df6734240527dce9704873a",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "cf1c772dcc854ae5c19699eebb3970e1c3f64f34",
+          "upstream_url": "https://github.com/maker-community/VerdureBuddyRover/blob/cf1c772dcc854ae5c19699eebb3970e1c3f64f34/firmware/esp32c3_kb_motor/esp32c3_kb_motor.ino#L362-L392",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__VerdureBuddyRover/firmware/esp32c3_kb_motor/esp32c3_kb_motor.ino",
+          "symbol": "EVT",
+          "line_start": 10,
+          "line_end": 40,
+          "sha256_utf8": "32e4e11be33e34d349f39a14757088d63add6b6ccd8f36bfb7c700a8044b94b6",
+          "sha256_bytes": "32e4e11be33e34d349f39a14757088d63add6b6ccd8f36bfb7c700a8044b94b6",
+          "git_blob": "9265ed85acf0da0a7df6734240527dce9704873a",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "cf1c772dcc854ae5c19699eebb3970e1c3f64f34",
+          "upstream_url": "https://github.com/maker-community/VerdureBuddyRover/blob/cf1c772dcc854ae5c19699eebb3970e1c3f64f34/firmware/esp32c3_kb_motor/esp32c3_kb_motor.ino#L10-L40",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__VerdureBuddyRover/firmware/esp32c3_kb_motor/esp32c3_kb_motor.ino",
+          "symbol": "OK",
+          "line_start": 358,
+          "line_end": 388,
+          "sha256_utf8": "32e4e11be33e34d349f39a14757088d63add6b6ccd8f36bfb7c700a8044b94b6",
+          "sha256_bytes": "32e4e11be33e34d349f39a14757088d63add6b6ccd8f36bfb7c700a8044b94b6",
+          "git_blob": "9265ed85acf0da0a7df6734240527dce9704873a",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "cf1c772dcc854ae5c19699eebb3970e1c3f64f34",
+          "upstream_url": "https://github.com/maker-community/VerdureBuddyRover/blob/cf1c772dcc854ae5c19699eebb3970e1c3f64f34/firmware/esp32c3_kb_motor/esp32c3_kb_motor.ino#L358-L388",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "电机板接收换行文本命令并返回OK/ERR；电量等EVT是异步事件。语音主板的匹配分支将MCP工具转串口，处理返回状态。不能把收到任意一行都当作刚发送命令的ACK。",
+      "invocation": "先ping/status确认固件，再发送drive、forward、turn、stop等原命令。命令百分比与motor底层PWM不同，LED emotion另用灯效参数。",
+      "porting": "纸壳双板方案可复用“语音板负责协议/模型，执行板负责驱动”的划分，自己建立命令编号、超时和忙/完成通知。沿原分支对照实际串口引脚和波特率。",
+      "limitations": "原驱动反转20ms等待可能影响响应；尚不能据已读片段保证串口断开自动停车。是否有自动停止必须通过目标固件验证。",
+      "physical_test": false,
+      "document": "机器人能力参考库/04_通信与工具调用/C07_Rover UART 命令、ACK 与异步状态.md"
+    },
+    {
+      "id": "C08",
+      "title": "坦克 WebSocket、路径回放与超时停车",
+      "category": "04_通信与工具调用",
+      "project_ids": [
+        18
+      ],
+      "tags": [
+        "WebSocket",
+        "500ms",
+        "断线",
+        "心跳",
+        "路径回放",
+        "NVS"
+      ],
+      "hardware": "ESP-IDF网络固件＋浏览器控制台",
+      "language": "C/JavaScript",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "esp_http_server",
+        "cJSON",
+        "FreeRTOS",
+        "NVS"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/wifi_web_control.c",
+          "symbol": "static esp_err_t ws_handler",
+          "line_start": 784,
+          "line_end": 814,
+          "sha256_utf8": "62955def844626e072e147ab621e5f955142696654b45a955b710602124ef578",
+          "sha256_bytes": "d441e683e124228259705aaf76c8348140dcde59725eafd13cb15d9b9343cce9",
+          "git_blob": "0b8c057a3a5d9d684b3b382806aea29d3d65f1d0",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/wifi_web_control.c",
+          "symbol": "static void watchdog_task(void *arg)",
+          "line_start": 119,
+          "line_end": 149,
+          "sha256_utf8": "62955def844626e072e147ab621e5f955142696654b45a955b710602124ef578",
+          "sha256_bytes": "d441e683e124228259705aaf76c8348140dcde59725eafd13cb15d9b9343cce9",
+          "git_blob": "0b8c057a3a5d9d684b3b382806aea29d3d65f1d0",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/18_桌面小坦克/本地资料/桌面坦克开源资料/桌面坦克开源资料/2.ESP32源码/esp32_tank/main/wifi_web_control.c",
+          "symbol": "CONFIG_TANK_CMD_TIMEOUT_MS",
+          "line_start": 1191,
+          "line_end": 1221,
+          "sha256_utf8": "62955def844626e072e147ab621e5f955142696654b45a955b710602124ef578",
+          "sha256_bytes": "d441e683e124228259705aaf76c8348140dcde59725eafd13cb15d9b9343cce9",
+          "git_blob": "0b8c057a3a5d9d684b3b382806aea29d3d65f1d0",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "/ws 将收到的控制消息交给固件处理；命令时间戳由看门狗监视。配置默认超时500ms、任务周期100ms，超过时停车，但配网与未记录首条命令有例外。浏览器路径按Date.now计时，并发80ms心跳保持控制。",
+      "invocation": "消息内容为 {\"left\":30,\"right\":30}、{\"stop\":true} 或 {\"speed\":70}，不是 {linear,angular} JSON；解析器采用字符串查找。路径保存接口虽把steps写NVS，动作回放仍在浏览器；浏览器关闭不等于主控继续自主执行。",
+      "porting": "新轮式机器人可复用超时停车和时间戳设计；分开keepalive与改变目标，确保停止独立处理。路径部署到主控需要新增任务，不在现有行为内。",
+      "limitations": "一些速度/校准消息也更新时间戳，故超时不是严格“最后移动命令”。公开私钥已脱敏，HTTPS复刻需自己的证书；整体许可未明确。",
+      "physical_test": false,
+      "document": "机器人能力参考库/04_通信与工具调用/C08_坦克 WebSocket、路径回放与超时停车.md"
+    },
+    {
+      "id": "A01",
+      "title": "GFX 位图格式与显示驱动选择",
+      "category": "05_媒体与资源",
+      "project_ids": [
+        1,
+        3,
+        5,
+        15,
+        16
+      ],
+      "tags": [
+        "drawBitmap",
+        "drawXBitmap",
+        "SSD1306",
+        "SH1106",
+        "位序",
+        "framebuffer"
+      ],
+      "hardware": "Arduino Adafruit_GFX兼容屏幕",
+      "language": "C++",
+      "reuse_status": "portable_component",
+      "reuse_label": "可单独提取；需接入驱动",
+      "dependencies": [
+        "Adafruit_GFX",
+        "Adafruit_SSD1306",
+        "Adafruit_SH110x",
+        "Adafruit_BusIO"
+      ],
+      "sources": [
+        {
+          "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Adafruit_GFX.cpp",
+          "symbol": "void Adafruit_GFX::drawBitmap",
+          "line_start": 974,
+          "line_end": 1004,
+          "sha256_utf8": "5afa8ca16241a9a0cb354012dd00780c6c00620c345b810a9504cb77bfc698d5",
+          "sha256_bytes": "5afa8ca16241a9a0cb354012dd00780c6c00620c345b810a9504cb77bfc698d5",
+          "git_blob": "ae26bf118cf8dbe8e48c9ee47d680314f739320a",
+          "baseline_commit": null,
+          "upstream_commit": "ac6d7c3869a693d406f77b9bfcd486b0673169f0",
+          "upstream_url": "https://github.com/adafruit/Adafruit-GFX-Library/blob/ac6d7c3869a693d406f77b9bfcd486b0673169f0/Adafruit_GFX.cpp#L974-L1004",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Adafruit_GFX.cpp",
+          "symbol": "void Adafruit_GFX::drawXBitmap",
+          "line_start": 1108,
+          "line_end": 1138,
+          "sha256_utf8": "5afa8ca16241a9a0cb354012dd00780c6c00620c345b810a9504cb77bfc698d5",
+          "sha256_bytes": "5afa8ca16241a9a0cb354012dd00780c6c00620c345b810a9504cb77bfc698d5",
+          "git_blob": "ae26bf118cf8dbe8e48c9ee47d680314f739320a",
+          "baseline_commit": null,
+          "upstream_commit": "ac6d7c3869a693d406f77b9bfcd486b0673169f0",
+          "upstream_url": "https://github.com/adafruit/Adafruit-GFX-Library/blob/ac6d7c3869a693d406f77b9bfcd486b0673169f0/Adafruit_GFX.cpp#L1108-L1138",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/Adafruit_SSD1306.h",
+          "symbol": "void display",
+          "line_start": 152,
+          "line_end": 182,
+          "sha256_utf8": "89c5e18cc19a41bd47130e1a4dc344733ad2bb6b6ef6c4c43eeddaf9854db6a2",
+          "sha256_bytes": "89c5e18cc19a41bd47130e1a4dc344733ad2bb6b6ef6c4c43eeddaf9854db6a2",
+          "git_blob": "332f735b9a4e5b3f5bbb137b335417bd01d257a8",
+          "baseline_commit": null,
+          "upstream_commit": "d94f699451d72286357cba7259055ffff2c2940b",
+          "upstream_url": "https://github.com/adafruit/Adafruit_SSD1306/blob/d94f699451d72286357cba7259055ffff2c2940b/Adafruit_SSD1306.h#L152-L182",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "GFX提供几何和位图绘制，不直接代表屏幕控制器。drawBitmap逐行MSB在前；XBM低位在前，需drawXBitmap。SSD1306/SH110x管理控制器和显存传输，display把缓冲区送屏。",
+      "invocation": "先明确OLED型号、分辨率、I2C地址和reset脚，使用匹配驱动begin。帧循环clearDisplay→drawBitmap/drawXBitmap→display。Tiny128×32帧在128×64屏居中，芝麻为128×64；不要把page式OLED内存布局误当行式位图。",
+      "porting": "资源与渲染分离后可以跨项目借图案；转换要确认位序、宽度补齐、黑白极性、透明覆盖与帧时长。屏幕替换应改变驱动，而非到处修改表情逻辑。",
+      "limitations": "下载的Adafruit库包含原BSD/MIT许可和完整例子；GFX不能自动播放GIF。I2C带宽、芯片RAM和总线争用需目标机测试。",
+      "physical_test": false,
+      "document": "机器人能力参考库/05_媒体与资源/A01_GFX 位图格式与显示驱动选择.md"
+    },
+    {
+      "id": "A02",
+      "title": "小智资源打包与主题版本配套",
+      "category": "05_媒体与资源",
+      "project_ids": [
+        8,
+        9,
+        10
+      ],
+      "tags": [
+        "assets.bin",
+        "字体",
+        "唤醒词",
+        "主题",
+        "资源包"
+      ],
+      "hardware": "小智 ESP-IDF分区与资源加载环境",
+      "language": "Python/C++",
+      "reuse_status": "adaptation_required",
+      "reuse_label": "需要移植或配套运行环境",
+      "dependencies": [
+        "Assets",
+        "assets-generator",
+        "字体与资源组件"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-esp32/main/assets.cc",
+          "symbol": "bool Assets::Apply",
+          "line_start": 53,
+          "line_end": 83,
+          "sha256_utf8": "33544937546944f34afffcf5c8a23ea902258f1823665019d691f6e77916e6c0",
+          "sha256_bytes": "33544937546944f34afffcf5c8a23ea902258f1823665019d691f6e77916e6c0",
+          "git_blob": "ee491196fd2791543b38c9ace4c7ada85996944a",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d395220a83fb7a16ea5dc761c08a4816177cc880",
+          "upstream_url": "https://github.com/78/xiaozhi-esp32/blob/d395220a83fb7a16ea5dc761c08a4816177cc880/main/assets.cc#L53-L83",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-esp32/main/assets.h",
+          "symbol": "class Assets",
+          "line_start": 31,
+          "line_end": 61,
+          "sha256_utf8": "3c6358638230b8db781d41c33d058c22bcf10f454f0d7a97d577d01bef509c58",
+          "sha256_bytes": "3c6358638230b8db781d41c33d058c22bcf10f454f0d7a97d577d01bef509c58",
+          "git_blob": "7b8a2e89a28d4642855f1934093a3c659ffe9cec",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "d395220a83fb7a16ea5dc761c08a4816177cc880",
+          "upstream_url": "https://github.com/78/xiaozhi-esp32/blob/d395220a83fb7a16ea5dc761c08a4816177cc880/main/assets.h#L31-L61",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "资源包不是固件代码；Assets加载并应用字体、表情、唤醒模型等数据到相应显示/音频路径。主题根据资源集合查名字；同名资源与显示组件格式必须匹配。配套assets-generator负责构建资源镜像。",
+      "invocation": "沿已有资源生成仓README的输入约定、分区大小和固件资源版本生成assets.bin，再由匹配固件加载。SetEmotion只能找到已装入主题的资源，单改字符串没有新增图片。",
+      "porting": "后续开发应把固件提交、资源清单、分区布局、字体、表情名和生成器版本一起记录。纸壳低内存版本先选少量帧，避免照搬彩屏字体/动图包。",
+      "limitations": "不同板型资源大小、PSRAM与解码器配置不同；不把所有来源的assets.bin视为通用包。本次仅静态分析，没有生成/烧录新镜像。",
+      "physical_test": false,
+      "document": "机器人能力参考库/05_媒体与资源/A02_小智资源打包与主题版本配套.md"
+    },
+    {
+      "id": "A03",
+      "title": "作者配套本地音乐检索与HTTP流服务",
+      "category": "05_媒体与资源",
+      "project_ids": [
+        19
+      ],
+      "tags": [
+        "音乐",
+        "MP3",
+        "歌词",
+        "FastAPI",
+        "检索",
+        "HTTP流"
+      ],
+      "hardware": "电脑/服务器Python＋匹配机器人音乐客户端",
+      "language": "Python",
+      "reuse_status": "original_context",
+      "reuse_label": "原环境可调用；新硬件需核对",
+      "dependencies": [
+        "FastAPI",
+        "uvicorn",
+        "MusicManager"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/server.py",
+          "symbol": "class MusicManager",
+          "line_start": 69,
+          "line_end": 99,
+          "sha256_utf8": "acb8ce80c233a370366a80b8ef2d0f9aef0e51581082b50519abc7cff7d572de",
+          "sha256_bytes": "1346faccbe0a1d110660cad7465d7c07d40b405fb36fe5c30d61599e463fe352",
+          "git_blob": "8532e7118b57aa20cdb73f4d16b0e57570032531",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/server.py",
+          "symbol": "@app.get(\"/api/search\")",
+          "line_start": 313,
+          "line_end": 343,
+          "sha256_utf8": "acb8ce80c233a370366a80b8ef2d0f9aef0e51581082b50519abc7cff7d572de",
+          "sha256_bytes": "1346faccbe0a1d110660cad7465d7c07d40b405fb36fe5c30d61599e463fe352",
+          "git_blob": "8532e7118b57aa20cdb73f4d16b0e57570032531",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料/本地音乐服务器-配套支持小智四足机器人/music_server/server.py",
+          "symbol": "@app.post(\"/api/rescan\")",
+          "line_start": 370,
+          "line_end": 400,
+          "sha256_utf8": "acb8ce80c233a370366a80b8ef2d0f9aef0e51581082b50519abc7cff7d572de",
+          "sha256_bytes": "1346faccbe0a1d110660cad7465d7c07d40b405fb36fe5c30d61599e463fe352",
+          "git_blob": "8532e7118b57aa20cdb73f4d16b0e57570032531",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "MusicManager递归扫描mp3/flac/aac/wav/m4a，将文件名和路径转为可检索条目，用相对路径MD5前12字符做ID；歌词按basename匹配。FastAPI提供list/search/song/lyrics/play/stats，文件作为HTTP流返回。",
+      "invocation": "GET /api/search?keyword=...查询，GET /api/play/{song_id}播放；重新扫描用POST /api/rescan。客户端需要实现音乐获取和解码，源码包提到的app_musicplayer.h未提供，单启动服务器不能赋予任意小智固件播放功能。",
+      "porting": "可作为原型音频素材服务，接有限播放工具与字幕/表情事件。路径ID不是内容哈希，重命名会改变ID；本地文件格式仍需机器人解码器支持。",
+      "limitations": "服务默认0.0.0.0:8888、CORS*且无认证；部署配置按实际环境处理。M4A重排moov未修正所有偏移，不当作通用修复算法。项目整体许可未明确。",
+      "physical_test": false,
+      "document": "机器人能力参考库/05_媒体与资源/A03_作者配套本地音乐检索与HTTP流服务.md"
+    },
+    {
+      "id": "A04",
+      "title": "Verdure 外壳与能力来源分层",
+      "category": "05_媒体与资源",
+      "project_ids": [
+        12
+      ],
+      "tags": [
+        "外壳",
+        "3D打印",
+        "资源边界",
+        "OTTO",
+        "模块化"
+      ],
+      "hardware": "各外壳适配的原板型",
+      "language": "CAD/Markdown",
+      "reuse_status": "reference_only",
+      "reuse_label": "资料或二进制边界；没有完整可调用实现",
+      "dependencies": [
+        "结构模型",
+        "所链接的独立固件"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__VerdureLab/README.md",
+          "symbol": "外壳",
+          "line_start": 2,
+          "line_end": 32,
+          "sha256_utf8": "fb5c34cb16076f2f95a138bdeab6bd318c6816c162ddacb0eca9dc22c05b3816",
+          "sha256_bytes": "fb5c34cb16076f2f95a138bdeab6bd318c6816c162ddacb0eca9dc22c05b3816",
+          "git_blob": "129f1308875c941dc2a2ad9d9267f23f87cd4e44",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": "bcc1859dd35e7ad79ff4ea2a227f7ff26fb08ece",
+          "upstream_url": "https://github.com/maker-community/VerdureLab/blob/bcc1859dd35e7ad79ff4ea2a227f7ff26fb08ece/README.md#L2-L32",
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/12_VerdureLab外壳资源/README.md",
+          "symbol": "固件",
+          "line_start": 3,
+          "line_end": 33,
+          "sha256_utf8": "60b9510b0b362df089da225f75f9600334a60360734d5630f3f0ee639a5ca8dc",
+          "sha256_bytes": "60b9510b0b362df089da225f75f9600334a60360734d5630f3f0ee639a5ca8dc",
+          "git_blob": "1efbcb4680e57a27043889b493150dc71aa3d2bb",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "VerdureLab自身侧重板型外壳、形象替换和模块结构；它链接的Rover、小智或Otto固件才提供具体动作/表情。相同外观可能搭不同控制板，外壳目录不等于行为源码。",
+      "invocation": "按外壳适配说明找显示窗口、板尺寸、连接件、舵机/电机空间，再进入对应固件库。轮式动作可看M15/C07，Otto动作看M12/M13，小智表情看E07。",
+      "porting": "后续机器人复用时分别选择结构、显示、动作、语音模块，并记录它们的板型匹配。Codex只从外壳名不能推断可调用的动作函数。",
+      "limitations": "模型、图片、文档和代码许可可能不同；不能将某个子项目软件许可证套在全部外壳素材。本项没有新增虚构的表情或动作实现。",
+      "physical_test": false,
+      "document": "机器人能力参考库/05_媒体与资源/A04_Verdure 外壳与能力来源分层.md"
+    },
+    {
+      "id": "A05",
+      "title": "作者固件版本、板型与非源码材料",
+      "category": "05_媒体与资源",
+      "project_ids": [
+        19
+      ],
+      "tags": [
+        "C3mini",
+        "S3",
+        "固件版本",
+        "非商业",
+        "缺少源码"
+      ],
+      "hardware": "收到的特定作者固件和配套结构",
+      "language": "BIN/Markdown",
+      "reuse_status": "reference_only",
+      "reuse_label": "资料或二进制边界；没有完整可调用实现",
+      "dependencies": [
+        "镜像",
+        "板型接线",
+        "配套音乐服务"
+      ],
+      "sources": [
+        {
+          "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/README.md",
+          "symbol": "C3",
+          "line_start": 3,
+          "line_end": 33,
+          "sha256_utf8": "7a821362c671f076d20e70b6ccbee0a76579e2bdfbd138dc4896aef149647f86",
+          "sha256_bytes": "7a821362c671f076d20e70b6ccbee0a76579e2bdfbd138dc4896aef149647f86",
+          "git_blob": "69308de98b204b0812d432370a3c4d50249adf5f",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        },
+        {
+          "path": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/配套生态与代码导读.md",
+          "symbol": "固件",
+          "line_start": 1,
+          "line_end": 29,
+          "sha256_utf8": "30b9a7eac3ad4b20d5ac8336cb3646e98822b5df7374ef109aa1733f01613dc0",
+          "sha256_bytes": "30b9a7eac3ad4b20d5ac8336cb3646e98822b5df7374ef109aa1733f01613dc0",
+          "git_blob": "bff5a17d5265682e6f0d0f18bcc63304453844e0",
+          "baseline_commit": "51d543adf5c2bedeebd11557350d67066613a33b",
+          "upstream_commit": null,
+          "upstream_url": null,
+          "license_scope": "以该源文件、所属仓库 LICENSE/NOTICE 和资源说明为准，代码、模型、结构文件可能不同。"
+        }
+      ],
+      "implementation": "各镜像按板型、版本、唤醒方式和显示能力归档。C3mini不同版本的动画/手动唤醒设置不同；S3、四足或其他镜像不能互换。除了音乐服务器等配套，未收到完整嵌入式工程。",
+      "invocation": "复刻时按现有版本说明配对接线/镜像；后续独立开发从开放源码库选能力，不从BIN猜造可import函数。略懂BIN公开仅保留哈希与说明，原镜像未上传。",
+      "porting": "可借作者的板型矩阵和演示功能拆解需求，给新工程建立可追踪preset/协议/资源包。需要源码接口时优先小智、Tiny或独立通用库。",
+      "limitations": "不声称逆向恢复全部表情、动作或编译配置。非商业说明、整体许可未明确与脱敏记录保留；不把商业课程使用权默认视为已获得。",
+      "physical_test": false,
+      "document": "机器人能力参考库/05_媒体与资源/A05_作者固件版本、板型与非源码材料.md"
+    }
+  ]
+}

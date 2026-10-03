@@ -58,3 +58,13 @@ README 声明 GPL-3.0，但本次未发现根 LICENSE；记录为“声明存在
 - [硬件范围](https://github.com/ViolinLee/NodeHexa/blob/master/hardware/README.md)
 
 整理日期为 2026-10-02 香港时间。源码版本以本夹来源与版本记录为准，作者历史成本不是当前香港交付预算。
+
+## 可复用能力索引
+
+表情、动作、库与真实调用入口已另存能力库；原环境和移植要求分别记录。
+
+- [M02 PCA9685 多通道舵机输出](<../../%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E5%BA%93/02_%E5%8A%A8%E4%BD%9C%E4%B8%8E%E8%BF%90%E5%8A%A8/M02_PCA9685%20%E5%A4%9A%E9%80%9A%E9%81%93%E8%88%B5%E6%9C%BA%E8%BE%93%E5%87%BA.md>)
+- [M09 NodeHexa 腿部正逆运动学](<../../%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E5%BA%93/02_%E5%8A%A8%E4%BD%9C%E4%B8%8E%E8%BF%90%E5%8A%A8/M09_NodeHexa%20%E8%85%BF%E9%83%A8%E6%AD%A3%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6.md>)
+- [M10 NodeHexa 动作序列、步数与距离转换](<../../%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E5%BA%93/02_%E5%8A%A8%E4%BD%9C%E4%B8%8E%E8%BF%90%E5%8A%A8/M10_NodeHexa%20%E5%8A%A8%E4%BD%9C%E5%BA%8F%E5%88%97%E3%80%81%E6%AD%A5%E6%95%B0%E4%B8%8E%E8%B7%9D%E7%A6%BB%E8%BD%AC%E6%8D%A2.md>)
+
+[库与版本](<../../%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E5%BA%93/%E5%BA%93%E4%B8%8E%E4%BE%9D%E8%B5%96%E6%B8%85%E5%8D%95.md>) · [调用示例与移植路线](<../../%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E5%BA%93/%E8%B0%83%E7%94%A8%E7%A4%BA%E4%BE%8B%E4%B8%8E%E7%A7%BB%E6%A4%8D%E8%B7%AF%E7%BA%BF.md>)

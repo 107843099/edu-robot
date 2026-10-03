@@ -1,0 +1,977 @@
+[
+  {
+    "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/LICENSE.txt",
+    "bytes": 35149,
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/README.md",
+    "bytes": 4340,
+    "sha256": "c3c151fa2fe2c58abd3257796392219a7a3c98321532b2befc196f6046e7b580"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/examples/i2c_SH1106_Basics/i2c_SH1106_Basics.ino",
+    "bytes": 3969,
+    "sha256": "a3f88a213fcdc6a50dbe5fb8a6beecef16e0c59d4f6188e9df54bceb419eaa2c"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/examples/i2c_SSD1306_AnimationSequences/i2c_SSD1306_AnimationSequences.ino",
+    "bytes": 3286,
+    "sha256": "6a1c67e4c80368c9357124b6d09959c76611d72ea40d7e1fc14804847e5f8037"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/examples/i2c_SSD1306_Basics/i2c_SSD1306_Basics.ino",
+    "bytes": 3684,
+    "sha256": "742034f13401e66bad5878e18180d53f3560f8a3b28301238e0d97e8ebf5a32e"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/examples/i2c_SSD1306_ConfigurationBoard/i2c_SSD1306_ConfigurationBoard.ino",
+    "bytes": 10436,
+    "sha256": "5d350b072f6011ee24fe782e689327456d91ac787eec90e8403d1f8ea96aeb56"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/examples/i2c_SSD1306_DHT22-TemperatureSensor/i2c_SSD1306_DHT22-TemperatureSensor.ino",
+    "bytes": 5588,
+    "sha256": "1acef121020b5deb1e32eecfdc29469dd7fab17585bcb9a8d2344423e73ec004"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/examples/i2c_SSD1306_SensorPlayground/i2c_SSD1306_SensorPlayground.ino",
+    "bytes": 2291,
+    "sha256": "b90556d73387518940dfefb00b9dfe5ec4c8be2dce79b49eef755fc93ed58441"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/examples/spi_SSD1306_AnimationSequences/spi_SSD1306_AnimationSequences.ino",
+    "bytes": 3549,
+    "sha256": "f89ed1627e40b49fcb6995a3808f708c7d26844afdcbad7f25af7fbeea82b638"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/examples/spi_SSD1306_Basics/spi_SSD1306_Basics.ino",
+    "bytes": 3901,
+    "sha256": "c22ba9eeab356e15b43be6a732c8c847e5104d55cef230eb26199b6ad11b839e"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/examples/spi_SSD1322_Basics/spi_SSD1322_Basics.ino",
+    "bytes": 3840,
+    "sha256": "9d7c9dfcfd4cc9baebb9b7dbb6beffc84e609cf8a39e352fcecd8ab34be1f4e4"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/keywords.txt",
+    "bytes": 1305,
+    "sha256": "0d806399cbba995b769432ff8f7ffbf59b32c8aed245abed999b70c7b76512b5"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/library.properties",
+    "bytes": 578,
+    "sha256": "69c8ebf974c278be43fcfd9025f38292fd2e0d62a50148f5145b13fc60528ede"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/FluxGarage__RoboEyes/src/FluxGarage_RoboEyes.h",
+    "bytes": 25968,
+    "sha256": "04e098193efbf6656085429b85a20d40c1d56c1837e7ef500779f6557645a4d8"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/.gitignore",
+    "bytes": 10,
+    "sha256": "ed2ca94d5f8a581498c574ed381ed3f4ea28b1af7892881a356fa0dbc54a57bc"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/AddDoxygenToGHPages.sh",
+    "bytes": 624,
+    "sha256": "5fae32aae14efbdaf0da8a0062ec5e711fa038d5cd5e35e1e52d9e73a56cf258"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/README.md",
+    "bytes": 5389,
+    "sha256": "4321944176c9d5c9cad55e1490b1eb497671c4d0919dec6cf00d5ddc5e7d4e1f"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/doxy.doxyfile",
+    "bytes": 106279,
+    "sha256": "787c49d13dcf4e6a5094c979c4db8a281c1d4ba878efe2b2234f60e98d827fde"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/examples/AllOutputsSimultaneous/AllOutputsSimultaneous.ino",
+    "bytes": 2479,
+    "sha256": "cf938dc51676234693763ef9ba028bb8ee8773f3979fe0cf73603e1df0219ff3"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/examples/Knob/Knob.ino",
+    "bytes": 4645,
+    "sha256": "218c2ccbc6d818a29ffc1ae9b209e28efb6e370e976db122eee3f6ed83d76fd0"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/examples/Multiple-Servo-Example-Arduino/Multiple-Servo-Example-Arduino.ino",
+    "bytes": 5422,
+    "sha256": "3ab8fae2ccc49b9e2dfd83b1ce1c56a700ec85900eae547b09a7061534a30232"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/examples/PWMExample/PWMExample.ino",
+    "bytes": 1029,
+    "sha256": "9a907716fc45fe5e2457e406ddda34ebc12d8c5a1d2e1ffaa5b51d87d4a3d87c"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/examples/Sweep/Sweep.ino",
+    "bytes": 3773,
+    "sha256": "3fb7ce310106737b123eb1950af06174a500dc546b06282b14a5743542806823"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/examples/ToneExample/ToneExample.ino",
+    "bytes": 366,
+    "sha256": "a1faf7c8981d8353144942dc491f86965e7142585bb4ec0a882c290588f34f7e"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/examples/analogWriteExample/analogWriteExample.ino",
+    "bytes": 2726,
+    "sha256": "d0924ca2e24bd59533754cceb2d22308dcbfc87720da83fc61932cdb6b679e27"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/keywords.txt",
+    "bytes": 635,
+    "sha256": "4b347f7c11184c6630cbefd3f5aecfb9ed02e1aa4a6252adbfc2d20a7787c47c"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/library.properties",
+    "bytes": 809,
+    "sha256": "4aab11d6e25a01f654318fbe0923db8c45b32c77eedf81bcd717263979b3b4f4"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/src/ESP32PWM.cpp",
+    "bytes": 19574,
+    "sha256": "003b6c33bca8c6b2bc7722b487f13f2e711381c4cb3b1a2dc7396dfddfe95627"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/src/ESP32PWM.h",
+    "bytes": 6451,
+    "sha256": "c50cea78f89a8df2b95cd0bc222a630d0bcf9387e2a914f7fa67095cefcceb7b"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/src/ESP32Servo.cpp",
+    "bytes": 8933,
+    "sha256": "98ff2e1068345c2426b6afff5fbb4250978376bddcc6150664c2e63786ce6176"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/madhephaestus__ESP32Servo/src/ESP32Servo.h",
+    "bytes": 8068,
+    "sha256": "5c75dbaf9b47eded2d4e42bf408741b42086cc29637052c622834e2b1248b51b"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/.clang-format",
+    "bytes": 6692,
+    "sha256": "2cabe8f1e6ad606c466800e23977fb90f778bfaaaf6ee86371cc34e8806f1da1"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/.github/ISSUE_TEMPLATE.md",
+    "bytes": 2624,
+    "sha256": "60387287586189ad227cf94cea78ae09939007ad7cb01572b8ebcd148cb86aee"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/.github/PULL_REQUEST_TEMPLATE.md",
+    "bytes": 1415,
+    "sha256": "750454b578623fc9db1fb59060c702a1eb1fe0bc9b12153d79b9dd48dd530596"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/.github/workflows/githubci.yml",
+    "bytes": 913,
+    "sha256": "92753d4fae2229da28f6e35ba92963efe541a42245d1239572fa1df849841461"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/.gitignore",
+    "bytes": 112,
+    "sha256": "4f4379e5842048665af5783c81921085a19017e95ecc7361c3f53cc9bd179f1b"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Adafruit_GFX.cpp",
+    "bytes": 102797,
+    "sha256": "5afa8ca16241a9a0cb354012dd00780c6c00620c345b810a9504cb77bfc698d5"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Adafruit_GFX.h",
+    "bytes": 18022,
+    "sha256": "e4ace04cbed4499c0e2a80df33b381c87ce98689d98da82712f0748bf7359171"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Adafruit_GrayOLED.cpp",
+    "bytes": 15424,
+    "sha256": "03ea5c79bf86d8c7a7118dee264341fac0ecc0c5ecdc57eee47dea1981f9edd6"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Adafruit_GrayOLED.h",
+    "bytes": 3920,
+    "sha256": "27c451c21b6d16bef0fb6b94527dfe1d738a9445de4b351f75f24cc360c4e0ad"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Adafruit_SPITFT.cpp",
+    "bytes": 99447,
+    "sha256": "b5982e2ebb558b29a9c76a9bb694193208b46fdafa7d8ea105eb168b0fe9dcb5"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Adafruit_SPITFT.h",
+    "bytes": 25059,
+    "sha256": "23901ed7ab3953816d13471c4016763b25983fa0400448589f06376d53be1b10"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Adafruit_SPITFT_Macros.h",
+    "bytes": 329,
+    "sha256": "c6f1e4e0cc97b98e85bb0c863954d41f72d3bd31874b03a57faa9ae4f8984f6d"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/CMakeLists.txt",
+    "bytes": 370,
+    "sha256": "719d4bf7cc03c5e1c3227d6786980ac2e2491f8dd98baa055bf3e55820f80e35"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeMono12pt7b.h",
+    "bytes": 13799,
+    "sha256": "21f369cca12e929a6cc26c740b64d2e9bb40ebf8f20c5b878f064d4ebb3d36de"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeMono18pt7b.h",
+    "bytes": 24117,
+    "sha256": "f09df516cb487de3d2e0f36d9c45ffe4ea4bfc938735d10b47ff641842618688"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeMono24pt7b.h",
+    "bytes": 40387,
+    "sha256": "c9a03fb1fad357e68f7487da819b083711d7c3d11201635da5ed12a6a83821a2"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeMono9pt7b.h",
+    "bytes": 9702,
+    "sha256": "6bef1a38a049113ee9f4c7874ba3a164631e74d608df117491bcfb60fec56ec3"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeMonoBold12pt7b.h",
+    "bytes": 15460,
+    "sha256": "0739083a428d8120ac0818e0585717f46b2183f08530f9b83813f1447febc611"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeMonoBold18pt7b.h",
+    "bytes": 28745,
+    "sha256": "0c89a48671074e834b9c00d2347cb4e433799b8bfcde9eade8979a07d5bedda4"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeMonoBold24pt7b.h",
+    "bytes": 47645,
+    "sha256": "660733c0f5bdf2afc72472af94404bc59dc2eebe7e9787f064ba7756a594ce38"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeMonoBold9pt7b.h",
+    "bytes": 10813,
+    "sha256": "8cfea064cff367cf3e6a89cd2400ffdb731271f88a5016fb619dcd79b7dad733"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeMonoBoldOblique12pt7b.h",
+    "bytes": 17082,
+    "sha256": "e7d8dc059aca726294f1dbc6eb4826e13261059434d426bc717cba629cd4b61a"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeMonoBoldOblique18pt7b.h",
+    "bytes": 31586,
+    "sha256": "97083aec2726a168deafb4766377187dceb8fe6e52382b242730c3ec34cc8f8f"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeMonoBoldOblique24pt7b.h",
+    "bytes": 52988,
+    "sha256": "b30c44c9aa6edc573c1b587ac0dc56388c62d05114cb76510a0f78e4ded86d18"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeMonoBoldOblique9pt7b.h",
+    "bytes": 11829,
+    "sha256": "77e4c898599042277d04d3004feffd39b18c89d1a93f5cba65ff7506e25dd6ea"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeMonoOblique12pt7b.h",
+    "bytes": 15329,
+    "sha256": "cd07c68d1dd9ecb2654a66fbb1aeb0117f779844cc079f99678cf9c3dabf04fe"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeMonoOblique18pt7b.h",
+    "bytes": 26771,
+    "sha256": "d80a751b9b2a60178699602ee042006b944263175494d53d1a404d2968a1a508"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeMonoOblique24pt7b.h",
+    "bytes": 45474,
+    "sha256": "f7f878d3b47231b43c9dd07d57100dd0364abfdb8953a25fd85b107da7ab0d1f"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeMonoOblique9pt7b.h",
+    "bytes": 10635,
+    "sha256": "8bbee06061722f180fe53e8813857dfd00cf404630c60283c4407f6f7700ac89"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSans12pt7b.h",
+    "bytes": 17025,
+    "sha256": "0e15e376ec314ac1399613e2466288d795501a467d4e7860e852976997cd7850"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSans18pt7b.h",
+    "bytes": 30893,
+    "sha256": "b6cc5607b838fcb422ef5c5925439b54061ab63eda1e00767d0c0bf3ee0b429f"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSans24pt7b.h",
+    "bytes": 51823,
+    "sha256": "e3cde750f607f1db3bd6c6d2d92e5cfd36a9a20d49df90d6a13b6eee7a490747"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSans9pt7b.h",
+    "bytes": 11733,
+    "sha256": "feacaaf7df57be67d483ed35a7aeb59402ad8c9736e456e3f044e62eaf3a9314"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSansBold12pt7b.h",
+    "bytes": 18348,
+    "sha256": "50b008dd06cf02fc3e46d872781f3bebb2009f09f80ca791e67138ef51d58630"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSansBold18pt7b.h",
+    "bytes": 33022,
+    "sha256": "4b3a67ee0d2fd5bce431a256cc77c0acd53f8cce4e0d0619a7a2695a7fbee970"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSansBold24pt7b.h",
+    "bytes": 56169,
+    "sha256": "ce00fb926f7d718b253dde1cbdd2f18c509c748ecec608c0ddc639ce188e9a54"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSansBold9pt7b.h",
+    "bytes": 12269,
+    "sha256": "a833751a8153c442afaadc16de2699e9a0163264c1df2ef30f3b5bbdba2b93ed"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSansBoldOblique12pt7b.h",
+    "bytes": 20593,
+    "sha256": "6cf7dc07ecc478acb2822e067b05be5834331f0751bd2aba030a3d38e001a6de"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSansBoldOblique18pt7b.h",
+    "bytes": 38016,
+    "sha256": "b6cd1ab0683ca218a93b22c499e750300c1d4c101ac4566db84a6fa28d236f30"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSansBoldOblique24pt7b.h",
+    "bytes": 64465,
+    "sha256": "4fed61aa9cd99eb0a492f10e8aa01287db136e24235fb195f75412ae2e1db0ab"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSansBoldOblique9pt7b.h",
+    "bytes": 13802,
+    "sha256": "399a69c387df1a8cd84987f9d2b9a015443e18bf1d819b74b5bf66af6aed3ebc"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSansOblique12pt7b.h",
+    "bytes": 19475,
+    "sha256": "c3ae703940f3f08bf4ccbcbb24cae7771720ab8b9b8ca74d390edd99a9659688"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSansOblique18pt7b.h",
+    "bytes": 35968,
+    "sha256": "9d03873e93cc61fcbed21128c22c37e2d93a470165280a0822dbbf331eefa122"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSansOblique24pt7b.h",
+    "bytes": 60416,
+    "sha256": "d41e526b2d677bc32edcc5e5b674a07be7a08048375ad69d3651717de3cb7753"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSansOblique9pt7b.h",
+    "bytes": 13184,
+    "sha256": "1ddc19a4b495408ba0d0c7efb48904d9c3459c62ab722aa54b99d283fa5cd0d4"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSerif12pt7b.h",
+    "bytes": 16208,
+    "sha256": "d9e664a614eeda7ea7942b0fd85e2715d28747a712f346377c47efcbab99aed9"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSerif18pt7b.h",
+    "bytes": 29170,
+    "sha256": "498cd6591b04cc27c0306979016a059ed284f44338375143e99a0c6fa1000171"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSerif24pt7b.h",
+    "bytes": 48958,
+    "sha256": "c6cbb427f51e1ffe1f4cfe89e1f2c2317edbe0a5a8c3b517eb02719721e27c57"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSerif9pt7b.h",
+    "bytes": 11296,
+    "sha256": "330670dc6c05b39915dc47bd5b1e272a44f2bf18108eca799649d2ac7368839a"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSerifBold12pt7b.h",
+    "bytes": 17115,
+    "sha256": "e1aa2959eb408b289cff144996efd7bf2d6b08e5eebde8dbb80792aaee8dbfeb"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSerifBold18pt7b.h",
+    "bytes": 31666,
+    "sha256": "4fbfb1faa143e09b570e95c434c0821a07994529bec579fd22bfd9f9baad3780"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSerifBold24pt7b.h",
+    "bytes": 54298,
+    "sha256": "e66cb62a26127b5776848167c9cb406ebc51c480123eb313e6fc9f2e38c62460"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSerifBold9pt7b.h",
+    "bytes": 11765,
+    "sha256": "61ebd809fca54d93b4195289be5f4e837cfe41f7998cff66b5fa2c09c5916b3f"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSerifBoldItalic12pt7b.h",
+    "bytes": 18806,
+    "sha256": "c4587d3d064b6ee43cdc27c4fbe1828cf0bf531dc19ff692d177f71b358d2277"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSerifBoldItalic18pt7b.h",
+    "bytes": 34638,
+    "sha256": "ec0ca5a439493bded92a41534644c9db51298bcda976362880ae6ee933aea0a5"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSerifBoldItalic24pt7b.h",
+    "bytes": 56852,
+    "sha256": "98cc662d98016e0e69125f4e0da5bce9a364490eccb008c73bf9ed313df9831a"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSerifBoldItalic9pt7b.h",
+    "bytes": 12830,
+    "sha256": "96aec072db8f36a223d055521f1f04f6c9a1aa64395a974464d00e80e5ed67ea"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSerifItalic12pt7b.h",
+    "bytes": 17178,
+    "sha256": "587bc04736886112a06d1bc4fbafc242c4a24de032acb42d9fda43596e2dcbcd"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSerifItalic18pt7b.h",
+    "bytes": 30788,
+    "sha256": "86cdd8f59ca0b47508a6e858f84e796adf735c0a8355e2f52784ad526033cdff"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSerifItalic24pt7b.h",
+    "bytes": 52612,
+    "sha256": "3af05ccf96780dc26b9154b7871528e3c8c7e09f82b6b00e17d9dfb5020478f8"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/FreeSerifItalic9pt7b.h",
+    "bytes": 11781,
+    "sha256": "ee4f79365a5ec0dcac844c497cbb484cc6d46d6c2391b3ebad58eec8e4ea0620"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/Org_01.h",
+    "bytes": 9394,
+    "sha256": "6366cd58da1ab53f7b27d68f85463d3db207c88b7a01f97132f8c6a8c3be4451"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/Picopixel.h",
+    "bytes": 9089,
+    "sha256": "035c01e6d48efdfef1e4de6152d0d03910210e449236506ec7c8f71799073363"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/Tiny3x3a2pt7b.h",
+    "bytes": 5684,
+    "sha256": "96fe2267efcd0f9086c735ad594fe9798b868b9198720af9bf18cc929d96f474"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/Fonts/TomThumb.h",
+    "bytes": 20296,
+    "sha256": "a2b89525189e738feb2eba5288f9f6c7ece0b171d603468c4c585372a3342723"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/README.md",
+    "bytes": 4772,
+    "sha256": "6890f42a55c06828629738cb9b015f813a108a85d30013a3b1a77c4a7d0140a1"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/component.mk",
+    "bytes": 31,
+    "sha256": "65a8bc94954334982bc226826da72647027c1bcc85447804e1fbab7f23228ab7"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/examples/GFXcanvas/GFXcanvas.ino",
+    "bytes": 3671,
+    "sha256": "8bc2d443ee94aea3b445e293da18093859e88024d94dfcf8fb33d9c668e3db64"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/examples/GFXcanvas/GFXcanvasSerialDemo.cpp",
+    "bytes": 2094,
+    "sha256": "9cd57fa49ed5a66e1227e729fd2848e5e519cd86e1563efbb907e7b3aaa4af09"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/examples/GFXcanvas/GFXcanvasSerialDemo.h",
+    "bytes": 2408,
+    "sha256": "c1bfa43f9e35f3488c091734eefd8c6994db9445488e5e3c035a983f31423221"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/examples/mock_ili9341/mock_ili9341.ino",
+    "bytes": 9790,
+    "sha256": "552db5228c974f0c7b2c48d9502ddfa109ede4fe46a91539b38fbe8c16236455"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/fontconvert/Makefile",
+    "bytes": 236,
+    "sha256": "a39d6a4413c7d8d5c394cd9e52c8ad8553a8afc71be3fd426e496a77ec88c17a"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/fontconvert/bdf2adafruit.py",
+    "bytes": 4487,
+    "sha256": "eb03983ee15e821888ad4c8f321ffaba8b9346f3d09f6624ab4597d200dcc9ce"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/fontconvert/fontconvert.c",
+    "bytes": 10270,
+    "sha256": "42e70906d68e4a7bced1c47a7bb12d2a86c29484eeb564f76449ea7a9b6c3ba1"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/fontconvert/fontconvert_win.md",
+    "bytes": 3831,
+    "sha256": "76bf8de4bfb5f86fff8d2f80b0f32bcbf401642430b00a6c121112d270e598f1"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/fontconvert/makefonts.sh",
+    "bytes": 1221,
+    "sha256": "ccc786b8fb5077bd6d1948778620469cbbfa83f3f3b17cef1436cd22c71cf662"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/gfxfont.h",
+    "bytes": 1108,
+    "sha256": "4e1b06371217d63102bac242d4a3ec8dcaff93cd34b4241bbc39eda521a1be11"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/glcdfont.c",
+    "bytes": 9064,
+    "sha256": "bd6d60ecb9cc350a83f209d7c62de2fe5f6ce3402d5598cde2988b5b44e83e02"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/library.properties",
+    "bytes": 412,
+    "sha256": "e6b702f2d0463216bf4b89d10c1701ae0de2aabbee42f7088054e9e21949cc31"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-GFX-Library/license.txt",
+    "bytes": 1344,
+    "sha256": "3e7bede50526352926c2283e640f2823d9f9f2165d1852044c4fb1bbac283106"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/.DS_Store",
+    "bytes": 6148,
+    "sha256": "f358ca8adee1aa0788b59db351499a0f76bc835a2729752c5fcc619db4e5529f"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/.github/ISSUE_TEMPLATE.md",
+    "bytes": 2624,
+    "sha256": "60387287586189ad227cf94cea78ae09939007ad7cb01572b8ebcd148cb86aee"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/.github/PULL_REQUEST_TEMPLATE.md",
+    "bytes": 1415,
+    "sha256": "750454b578623fc9db1fb59060c702a1eb1fe0bc9b12153d79b9dd48dd530596"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/.github/workflows/githubci.yml",
+    "bytes": 756,
+    "sha256": "edeef425247475d607379ebd64695658271fb3b824c9f257138691a956c7455e"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/.gitignore",
+    "bytes": 77,
+    "sha256": "33c4c0c8418ac71de54902492d59326cba7938e48cbbc0550f369dfe0ea7c847"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/Adafruit_SSD1306.cpp",
+    "bytes": 45961,
+    "sha256": "ddbd788bfaf97dd3b5ba5ee67eb62ab51652cbe86e34c2e7d24d5e074bb34bdd"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/Adafruit_SSD1306.h",
+    "bytes": 9042,
+    "sha256": "89c5e18cc19a41bd47130e1a4dc344733ad2bb6b6ef6c4c43eeddaf9854db6a2"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/CMakeLists.txt",
+    "bytes": 315,
+    "sha256": "470e043da72e14b051ab7f5ba5d33aa28f18ec387d8707f85867a5aaa80d4405"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/README.md",
+    "bytes": 4439,
+    "sha256": "b098cb53f4810301ab31d26d3cc0c24310c960c66d7c40453a91be81dc2e5103"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/component.mk",
+    "bytes": 31,
+    "sha256": "65a8bc94954334982bc226826da72647027c1bcc85447804e1fbab7f23228ab7"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/examples/OLED_featherwing/OLED_featherwing.ino",
+    "bytes": 2485,
+    "sha256": "966b36d0c4c460e501134cd9ee96b76789fcfbfdd5acdadfb846f52d126182dd"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/examples/ssd1306_128x32_i2c/ssd1306_128x32_i2c.ino",
+    "bytes": 12019,
+    "sha256": "d2bf9015549240b045cd0e1b3f53b55a5df3ef597d250ba77ce5fbc0c80dfa49"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/examples/ssd1306_128x32_spi/ssd1306_128x32_spi.ino",
+    "bytes": 11961,
+    "sha256": "319e74a91c9dda78a95d9db6715f34335a3b5114fb9da5cdaa0cc58ca8aca87c"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/examples/ssd1306_128x64_i2c/ssd1306_128x64_i2c.ino",
+    "bytes": 12019,
+    "sha256": "cdd2e1f790a6fb2eb1f1d0addd1d82611aa8ff288e3ff7f41c5910fac69e2084"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/examples/ssd1306_128x64_spi/ssd1306_128x64_spi.ino",
+    "bytes": 11962,
+    "sha256": "3e14c5421101924fdf81c04ce8517760224755dd314ace8396c3514d3eb19a1b"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/examples/ssd1306_64x32_i2c/ssd1306_64x32_i2c.ino",
+    "bytes": 12018,
+    "sha256": "fcc72174fe3d8ed58d52530c093f8f7dca773e2a9f081ca6a8ad71d2bd943321"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/library.properties",
+    "bytes": 363,
+    "sha256": "bfb5d85959c14de682a285496e3c905054a0b126b0ca2d7c1870307890e6bc9d"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/license.txt",
+    "bytes": 1499,
+    "sha256": "4b6bb6d827e9da638841bf575c6068b83aaaf0d9508e892d3ea27e2525b070e8"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/scripts/Makefile",
+    "bytes": 601,
+    "sha256": "d37ea677edb9ca9e7e3b1f30a1a05f897465068578da25d49dca58e5f404e2d9"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/scripts/make_splash.py",
+    "bytes": 939,
+    "sha256": "1208aa2074ee98429cf1aaecc33e473dc3e16c105fd179a91bea9fdcd2d5a735"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/scripts/splash1.png",
+    "bytes": 471,
+    "sha256": "6e5f25c215470eb73ef7d3e5f37c4175f028ea4fe1b04c58aabfa9ac445fd29f"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/scripts/splash2.png",
+    "bytes": 417,
+    "sha256": "f7d0ba6519b9913f4ed71a8975ce9f0816020ee775373f0c145073f1c32f5169"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SSD1306/splash.h",
+    "bytes": 13813,
+    "sha256": "01d79e7b12ba9e2f29f967803bb85b037ad8981b2b2f7d3997db51811d47177d"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SH110x/.github/ISSUE_TEMPLATE.md",
+    "bytes": 2624,
+    "sha256": "60387287586189ad227cf94cea78ae09939007ad7cb01572b8ebcd148cb86aee"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SH110x/.github/PULL_REQUEST_TEMPLATE.md",
+    "bytes": 1415,
+    "sha256": "750454b578623fc9db1fb59060c702a1eb1fe0bc9b12153d79b9dd48dd530596"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SH110x/.github/workflows/githubci.yml",
+    "bytes": 759,
+    "sha256": "dab4f0521768d308153dfcb015873a90099b7475d7f3f068ddc6fd4a09853b00"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SH110x/.gitignore",
+    "bytes": 77,
+    "sha256": "33c4c0c8418ac71de54902492d59326cba7938e48cbbc0550f369dfe0ea7c847"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SH110x/Adafruit_SH1106G.cpp",
+    "bytes": 7645,
+    "sha256": "264a9c03c82a9ebbd391e5b097c11170a05601225800c87db9d8d70a1a340e71"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SH110x/Adafruit_SH1107.cpp",
+    "bytes": 8192,
+    "sha256": "206bec82b881e3d2631f77df22d50984ccdbcba1ae99f7f8621f0dbede45077b"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SH110x/Adafruit_SH110X.cpp",
+    "bytes": 9346,
+    "sha256": "03db6d4ed8c982b71fc8055669fbd9a0364b860ba78b7d428eed76e1f44226b2"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SH110x/Adafruit_SH110X.h",
+    "bytes": 5444,
+    "sha256": "9c77ef1bdcad6983cb5f4d0ee00d68c65d38f3dfa4b3f36488b1bcbc458928c2"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SH110x/README.md",
+    "bytes": 1491,
+    "sha256": "ded73f0dc7f6be353d020c29fdaa1b89bdd56ba58c43e269b246ed3893852475"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SH110x/examples/OLED_QTPY_SH1106/SH1106_128x64_SPi_QTPY/SH1106_128x64_SPi_QTPY.ino",
+    "bytes": 9476,
+    "sha256": "644d6f525609cbf84f9004a84a2845fbec21fe48700f2127f3b9b156ec40a689"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SH110x/examples/OLED_QTPY_SH1106/SH1106_128x64_i2c_QTPY/SH1106_128x64_i2c_QTPY.ino",
+    "bytes": 10180,
+    "sha256": "e176ea94d52bc0d0b035c85e3137b9020147cd419b2f63738ae2b08f594a444f"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SH110x/examples/OLED_featherwing/OLED_featherwing.ino",
+    "bytes": 2204,
+    "sha256": "026e69bf99a9a85123de3206a67154881960939c3b1c333604d9b173e8a53db9"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SH110x/examples/SH1107_128x128/SH1107_128x128.ino",
+    "bytes": 11025,
+    "sha256": "d17098dc4a30d0f1925d8846d6f9a02793531b6877e3cbb2c7624aa0294d6cd2"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SH110x/library.properties",
+    "bytes": 401,
+    "sha256": "c1e62541f9083082867cf3e5e5cfbd4a14604852add5c0ef910734efaae10086"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SH110x/license.txt",
+    "bytes": 1498,
+    "sha256": "97aa18e424d9deaaec2474fa21ffa9d2eba547515a263c00c01f5fb17d2d054f"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_SH110x/splash.h",
+    "bytes": 15195,
+    "sha256": "2d4cab5968d1f2a97ec480c38e579dffa3da02361eb307515a8a89e5481b60b1"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/.clang-format",
+    "bytes": 381,
+    "sha256": "c4c973b6dcde56e85f95f398ab3ad9b7997e9583e64fad107797f432fd5d256f"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/.github/ISSUE_TEMPLATE.md",
+    "bytes": 2624,
+    "sha256": "60387287586189ad227cf94cea78ae09939007ad7cb01572b8ebcd148cb86aee"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/.github/PULL_REQUEST_TEMPLATE.md",
+    "bytes": 1415,
+    "sha256": "750454b578623fc9db1fb59060c702a1eb1fe0bc9b12153d79b9dd48dd530596"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/.github/workflows/githubci.yml",
+    "bytes": 1013,
+    "sha256": "fe10690ae3f2c0611adb04f9eca56edabe186b3c90bc72bf853343300f8dda63"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/.gitignore",
+    "bytes": 67,
+    "sha256": "b18f3453bba95833b579804925e175fe08e814515a947a9de23146f89f76871b"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/Adafruit_PWMServoDriver.cpp",
+    "bytes": 10965,
+    "sha256": "09dd03aceade839d940887b2b02058a8e147ed9afe77d3c6901364afeda91058"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/Adafruit_PWMServoDriver.h",
+    "bytes": 4229,
+    "sha256": "f50344e8b3791c8455c2ccba70dd9e8d359b1ac31cd5bbf3ff5a3dc836a8cb4b"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/README.md",
+    "bytes": 948,
+    "sha256": "74acf3f640b678ce40b9b5a9004952bd086267f7816a793896228ce9f6a42a70"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/examples/gpiotest/gpiotest.ino",
+    "bytes": 1713,
+    "sha256": "5d4841c6140971f89a31e893e614ae9f1d51916f08b7557927979371fcb47fba"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/examples/oscillator/oscillator.ino",
+    "bytes": 4401,
+    "sha256": "8b647fdacacffca724cdda0a87767f42ad5dfa5afeaf34edd51559d599b026bd"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/examples/pwmtest/pwmtest.ino",
+    "bytes": 2792,
+    "sha256": "cb458b067eaf49de1dc893a4741520677fe09e3069c4b9b95283aaf9a0212dfc"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/examples/servo/servo.ino",
+    "bytes": 4682,
+    "sha256": "7cf427340604eda4de31e5efe4c811755bba9ef6602767b04e8e3054e8813196"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/keywords.txt",
+    "bytes": 682,
+    "sha256": "5348ad00526d6c0c3e18211bcb8134f4d1b48599e12b1ffdcbe3a72e2d04b894"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/library.properties",
+    "bytes": 325,
+    "sha256": "66fafae140cee3e062bcbaf3114078a6b711e7994d59979dcd324eb94e81ae0d"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit-PWM-Servo-Driver-Library/license.txt",
+    "bytes": 1499,
+    "sha256": "4b6bb6d827e9da638841bf575c6068b83aaaf0d9508e892d3ea27e2525b070e8"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/.clang-format",
+    "bytes": 6815,
+    "sha256": "2f94fd8d9bfa98f3c75a1ee6d7ae4e30eec3c179502c6ba2ba9f05af22b68bbe"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/.github/ISSUE_TEMPLATE.md",
+    "bytes": 2624,
+    "sha256": "60387287586189ad227cf94cea78ae09939007ad7cb01572b8ebcd148cb86aee"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/.github/PULL_REQUEST_TEMPLATE.md",
+    "bytes": 1415,
+    "sha256": "750454b578623fc9db1fb59060c702a1eb1fe0bc9b12153d79b9dd48dd530596"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/.github/workflows/githubci.yml",
+    "bytes": 887,
+    "sha256": "cacc78cfe9b34227cbadd29b5c5e8fe5e6a1d2c105f33aa7790a3c8e70a29f8e"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/Adafruit_BusIO_Register.cpp",
+    "bytes": 12495,
+    "sha256": "9a0af578ea07956296834f4505e5b134ad7e1cc22ac9c9d84a640a07a94f870b"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/Adafruit_BusIO_Register.h",
+    "bytes": 3802,
+    "sha256": "91560f9fc1b8cda42ab039ccdfe0abf92bf09c425a6142ff54af099809b9d47a"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/Adafruit_GenericDevice.cpp",
+    "bytes": 3301,
+    "sha256": "c26d9c1207c3626fb95884f01cc1f8179fcd7c2c6b0583fff25187c4f2c814d2"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/Adafruit_GenericDevice.h",
+    "bytes": 2268,
+    "sha256": "b12c364e359a0aba6aabc440bc64e375b825214a2835fa1bf38ac709f9e25546"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/Adafruit_I2CDevice.cpp",
+    "bytes": 9404,
+    "sha256": "317c342821f1df676a0e034f65685b4d6bf240d2ab8dcea91d18f1e063326d37"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/Adafruit_I2CDevice.h",
+    "bytes": 1139,
+    "sha256": "88b843d7a44e3f974950d883649e5682f21d9f8ce135daff3a42d015f7cd27e7"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/Adafruit_I2CRegister.h",
+    "bytes": 252,
+    "sha256": "8318d1f65d5468742c0aa48bd50a7e3bd4ddf02e3eba11bc01ad50cf9c20bc67"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/Adafruit_SPIDevice.cpp",
+    "bytes": 14297,
+    "sha256": "f846ee438eee41bef174c6dbe1f689f7ccbbd732ca4261c7b9e9337b1e5d08b5"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/Adafruit_SPIDevice.h",
+    "bytes": 5515,
+    "sha256": "58ff1433718cef7317638403160d5dd918d92c0f7b4204fb08ad401751d74508"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/CMakeLists.txt",
+    "bytes": 383,
+    "sha256": "388cb8134d21bca989fa8efc48f6e8f7960805a14bfef75ae0d23ee8dcef97cd"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/LICENSE",
+    "bytes": 1085,
+    "sha256": "86e9fafdb50d2a85d8fef369b4635b5a1b89160603e5b1f95484df0804b49508"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/README.md",
+    "bytes": 525,
+    "sha256": "7857d55466e3f419a4f99829968fb94ef270b816152592eb6c561e880daa6e3e"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/component.mk",
+    "bytes": 31,
+    "sha256": "65a8bc94954334982bc226826da72647027c1bcc85447804e1fbab7f23228ab7"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/examples/genericdevice_uartregtest/.uno.test.skip",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/examples/genericdevice_uartregtest/genericdevice_uartregtest.ino",
+    "bytes": 6283,
+    "sha256": "fd481a405762d0126b24e43e7bd4a325d0b2d872e135b517a9b5066b740fa85a"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/examples/genericdevice_uarttest/.uno.test.skip",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/examples/genericdevice_uarttest/genericdevice_uarttest.ino",
+    "bytes": 2676,
+    "sha256": "86e41d2c599b41c7fd211020bc9a6ee253a6d903af0a6ab029c84e6d351c44eb"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/examples/i2c_address_detect/i2c_address_detect.ino",
+    "bytes": 465,
+    "sha256": "89cf0ee48c931364bea41cf3dab036342ae4c835d02626f7635b576c130a4c12"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/examples/i2c_readwrite/i2c_readwrite.ino",
+    "bytes": 1086,
+    "sha256": "1cc8df8ea7c9c27c3d337b3d84993af3b1463699bc5fd198a81a6a869fff3a39"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/examples/i2c_registers/i2c_registers.ino",
+    "bytes": 1075,
+    "sha256": "a49021363dd14caed7250bd37414062614a22819364ae2cd2e4a5fb7ee7f29c9"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/examples/i2corspi_register/i2corspi_register.ino",
+    "bytes": 1039,
+    "sha256": "2f6f8a11ecb2cd0bda15aafe93a91ca92814fc4b3693d5978255b1c45d5c6912"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/examples/spi_modetest/spi_modetest.ino",
+    "bytes": 805,
+    "sha256": "acd3f3fe9c85a8cb022230e8cc1c3b66e7d363a9a0a456dc176adedf7c548c22"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/examples/spi_readwrite/spi_readwrite.ino",
+    "bytes": 963,
+    "sha256": "3a0955fa5c28452ecfe51fcb699ce15667b9556e32426cfe120d02ae1ea6aad1"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/examples/spi_register_bits/spi_register_bits.ino",
+    "bytes": 9090,
+    "sha256": "9149aa505c8b3239d27d7bb9fae6f50a86956234e8b6e10c49bedb823c6332d6"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/examples/spi_registers/spi_registers.ino",
+    "bytes": 991,
+    "sha256": "8b65414c766bf25a7b7aeda67f5bc00fe09c18bb443828068e2ad7a96931457a"
+  },
+  {
+    "path": "机器人能力参考库/通用库源码/adafruit__Adafruit_BusIO/library.properties",
+    "bytes": 340,
+    "sha256": "1f1c13c18d84a15f71e8e833aeaf1ada2d505cc915485174167ea661ed085194"
+  }
+]

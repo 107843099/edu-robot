@@ -64,3 +64,13 @@ VerdureLab EMO V2 实物示例  来源为该子目录说明。原图出处见下
 - [许可](https://github.com/maker-community/VerdureLab/blob/main/LICENSE)
 
 整理日期为 2026-10-02 香港时间。源码版本以本夹来源与版本记录为准，作者历史成本不是当前香港交付预算。
+
+## 可复用能力索引
+
+表情、动作、库与真实调用入口已另存能力库；原环境和移植要求分别记录。
+
+- [M15 VerdureBuddyRover 双电机差速与 LED情绪](<../../%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E5%BA%93/02_%E5%8A%A8%E4%BD%9C%E4%B8%8E%E8%BF%90%E5%8A%A8/M15_VerdureBuddyRover%20%E5%8F%8C%E7%94%B5%E6%9C%BA%E5%B7%AE%E9%80%9F%E4%B8%8E%20LED%E6%83%85%E7%BB%AA.md>)
+- [C07 Rover UART 命令、ACK 与异步状态](<../../%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E5%BA%93/04_%E9%80%9A%E4%BF%A1%E4%B8%8E%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/C07_Rover%20UART%20%E5%91%BD%E4%BB%A4%E3%80%81ACK%20%E4%B8%8E%E5%BC%82%E6%AD%A5%E7%8A%B6%E6%80%81.md>)
+- [A04 Verdure 外壳与能力来源分层](<../../%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E5%BA%93/05_%E5%AA%92%E4%BD%93%E4%B8%8E%E8%B5%84%E6%BA%90/A04_Verdure%20%E5%A4%96%E5%A3%B3%E4%B8%8E%E8%83%BD%E5%8A%9B%E6%9D%A5%E6%BA%90%E5%88%86%E5%B1%82.md>)
+
+[库与版本](<../../%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E5%BA%93/%E5%BA%93%E4%B8%8E%E4%BE%9D%E8%B5%96%E6%B8%85%E5%8D%95.md>) · [调用示例与移植路线](<../../%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E5%BA%93/%E8%B0%83%E7%94%A8%E7%A4%BA%E4%BE%8B%E4%B8%8E%E7%A7%BB%E6%A4%8D%E8%B7%AF%E7%BA%BF.md>)

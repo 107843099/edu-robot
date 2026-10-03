@@ -40,3 +40,12 @@ Needle SDK、needle-environments及两个HF资源带Apache-2.0许可。Cactus主
 Cactus包含旧版Needle结构与通用移动推理代码；它不等于已核实的Needle3 `.cact`运行时源码。cq-convert实际是Gemma相关TurboQuant-H固定量化研究；depth-over-specialization实际是多模态对比编码器实验。名称相近、同组织或README提及不构成兼容证明。
 
 [配套与源码导读](<配套生态与代码导读.md>) · [模型及资源分析](<模型与运行资源分析.md>) · [机器人接入与验证方案](<机器人接入与验证方案.md>) · [逐仓阅读记录](<仓库阅读记录.md>) · [来源与版本](<来源与版本.json>) · [运行资源下载清单](<运行资源下载记录.json>) · [组织配套核查](<作者配套核查.json>) · [返回总览](<../00_项目总览.md>)
+
+## 可复用能力索引
+
+表情、动作、库与真实调用入口已另存能力库；原环境和移植要求分别记录。
+
+- [C04 Needle 端侧工具提案与 schema](<../../%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E5%BA%93/04_%E9%80%9A%E4%BF%A1%E4%B8%8E%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/C04_Needle%20%E7%AB%AF%E4%BE%A7%E5%B7%A5%E5%85%B7%E6%8F%90%E6%A1%88%E4%B8%8E%20schema.md>)
+- [C05 Needle run 自动执行与 complete 的区别](<../../%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E5%BA%93/04_%E9%80%9A%E4%BF%A1%E4%B8%8E%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/C05_Needle%20run%20%E8%87%AA%E5%8A%A8%E6%89%A7%E8%A1%8C%E4%B8%8E%20complete%20%E7%9A%84%E5%8C%BA%E5%88%AB.md>)
+
+[库与版本](<../../%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E5%BA%93/%E5%BA%93%E4%B8%8E%E4%BE%9D%E8%B5%96%E6%B8%85%E5%8D%95.md>) · [调用示例与移植路线](<../../%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E5%BA%93/%E8%B0%83%E7%94%A8%E7%A4%BA%E4%BE%8B%E4%B8%8E%E7%A7%BB%E6%A4%8D%E8%B7%AF%E7%BA%BF.md>)

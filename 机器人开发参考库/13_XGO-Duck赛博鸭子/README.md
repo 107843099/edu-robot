@@ -62,3 +62,11 @@ LuwuDynamics XGO-Duck 原型实物图  来源为硬件仓。原图出处见下�
 - [上游记录](https://github.com/LuwuDynamics/xgoduck_hardware/blob/master/UPSTREAM.md)
 
 整理日期为 2026-10-02 香港时间。源码版本以本夹来源与版本记录为准，作者历史成本不是当前香港交付预算。
+
+## 可复用能力索引
+
+表情、动作、库与真实调用入口已另存能力库；原环境和移植要求分别记录。
+
+- [M17 XGO-Duck 61维观测与14维策略动作](<../../%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E5%BA%93/02_%E5%8A%A8%E4%BD%9C%E4%B8%8E%E8%BF%90%E5%8A%A8/M17_XGO-Duck%2061%E7%BB%B4%E8%A7%82%E6%B5%8B%E4%B8%8E14%E7%BB%B4%E7%AD%96%E7%95%A5%E5%8A%A8%E4%BD%9C.md>)
+
+[库与版本](<../../%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E5%BA%93/%E5%BA%93%E4%B8%8E%E4%BE%9D%E8%B5%96%E6%B8%85%E5%8D%95.md>) · [调用示例与移植路线](<../../%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E5%BA%93/%E8%B0%83%E7%94%A8%E7%A4%BA%E4%BE%8B%E4%B8%8E%E7%A7%BB%E6%A4%8D%E8%B7%AF%E7%BA%BF.md>)
