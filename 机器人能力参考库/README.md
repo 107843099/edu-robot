@@ -12,6 +12,22 @@
 
 机器入口：[能力索引](<能力索引.json>) · [依赖JSON](<库与依赖清单.json>) · [预设JSON](<表情动作预设清单.json>) · [来源和校验](<来源与校验记录.json>)。路径统一相对仓库根目录，来源记录固定上游提交、符号行、Git blob与解码文本哈希。
 
+## 优先候选与原GitHub来源
+
+| 需求 | 原来源与实现方式 | 本库入口 |
+|---|---|---|
+| 参数化眼睛、眨眼与注视 | [thinking0things/AlbertMicro](https://github.com/thinking0things/AlbertMicro/blob/8d0ae147e967c798469a551c1dc49da781fc5587/AlbertMicro.ino)；[FluxGarage/RoboEyes](https://github.com/FluxGarage/RoboEyes)；Albert用RoboEyes驱动SH1106 128×64；确认自己的屏驱动再接入 | [E01](<01_表情显示/E01_RoboEyes 参数化眼睛、眨眼与注视.md>) |
+| 另一套现成位图表情 | [jamro/tiny-engineer](https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/lib/TinyEngineerExpressions/src/TinyEngineerExpressions.h)；独立16种、128×32、30帧/种；调整现有屏的显示区域 | [E02](<01_表情显示/E02_TinyEngineer 独立 16 种位图表情.md>) |
+| PCA双轴平滑、限位 | [jamro/tiny-engineer](https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/src/hardware/servo_wrapper.cpp)；原5轴通过PCA、校准映射和限速；提取头/颈两轴，重配通道和范围 | [M20](<02_动作与运动/M20_TinyEngineer 舵机平滑、限位与释放输出.md>) |
+| 直接GPIO舵机输出的替代路线 | [madhephaestus/ESP32Servo](https://github.com/madhephaestus/ESP32Servo)；[thinking0things/AlbertMicro](https://github.com/thinking0things/AlbertMicro/blob/8d0ae147e967c798469a551c1dc49da781fc5587/AlbertMicro.ino)；原代码输出脉宽/角度；与PCA路线择一，不为两个方案重复采购 | [M01](<02_动作与运动/M01_ESP32Servo 舵机角度与脉宽驱动.md>) |
+| 电脑对话后触发表情/动作 | [dorianborian/sesame-companion-app](https://github.com/dorianborian/sesame-companion-app/blob/86f82c137b9954445f55d249c966e8f9984bd87b/sesame_companion.py)；电脑ASR/LLM/TTS经HTTP控制芝麻；给自研S3命令写适配，首版可复用电脑音频 | [C02](<04_通信与工具调用/C02_芝麻同作者语音、LLM 与机器人桥接.md>) |
+| 后续机身收音与播音 | [78/xiaozhi-esp32](https://github.com/78/xiaozhi-esp32/blob/d395220a83fb7a16ea5dc761c08a4816177cc880/main/boards/bread-compact-wifi/config.h)；[78/xiaozhi-esp32](https://github.com/78/xiaozhi-esp32/blob/d395220a83fb7a16ea5dc761c08a4816177cc880/main/application.cc)；原板级I²S/显示与听说状态；选board并加兼容音频件，动作接口另适配 | [I05](<03_交互状态与调度/I05_小智听、说、待机与 emotion 事件调度.md>) |
+| 等待、思考、完成、错误联动 | [jamro/tiny-engineer](https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/src/animation/registry.cpp)；原状态名组合表情、关节和音效；映射课程任务，现有主仓没有Codex专用钩子 | [I02](<03_交互状态与调度/I02_TinyEngineer 表情与动作状态注册表.md>) |
+
+纸壳模块测试、小坦克控制和作者媒体配套来自用户本地资料，上游GitHub未确认。完整19项与配套版本见[项目来源JSON](<项目来源与复用索引.json>)；固定实现、符号和哈希见能力卡，硬件增量见[采购README](<硬件准备与采购/README.md>)。迁移用途属于建议，不是已经完成集成。
+
+来源导航更新于2026-10-11；原52张卡保持各自记录的代码基线。
+
 ## 复用等级
 
 - `original_context`：原环境可调用；新硬件需核对。

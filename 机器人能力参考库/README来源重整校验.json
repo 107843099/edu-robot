@@ -1,0 +1,284 @@
+{
+  "updated": "2026-10-11",
+  "baseline_commit": "aa9dc291185f7d8885ffc0c7bf9499dbe6bb42a0",
+  "scope": "本轮README组织、来源映射、固定文件链接、JSON一致性；不是对全部上游项目重新验证。",
+  "checks": {
+    "project_count": 19,
+    "project_snapshots": 76,
+    "local_links": 187,
+    "fixed_github_file_links": 61,
+    "markdown_tables": 11,
+    "hardware_source_files": 13,
+    "hardware_source_byte_hashes": 13
+  },
+  "errors": [],
+  "hardware_sources": [
+    {
+      "id": "G01_BOM",
+      "kind": "github_original",
+      "repo": "dorianborian/sesame-robot",
+      "fixed_commit": "d106cbc8e158c982f408db421134f23273c5f51f",
+      "upstream_path": "hardware/bom/README.md",
+      "url": "https://github.com/dorianborian/sesame-robot/blob/d106cbc8e158c982f408db421134f23273c5f51f/hardware/bom/README.md",
+      "local_path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot/hardware/bom/README.md",
+      "supports": "8个位置式MG90S、SSD1306、数据线、开关、线材、绝缘、不同版本电源",
+      "archived_git_blob": "b6e58230c592244426e600f48b63b95012e0bbcf"
+    },
+    {
+      "id": "G16_POWER",
+      "kind": "github_original",
+      "repo": "jamro/tiny-engineer",
+      "fixed_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+      "upstream_path": "docs/hardware/power.md",
+      "url": "https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/docs/hardware/power.md",
+      "local_path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/docs/hardware/power.md",
+      "supports": "5V舵机/音频与3.3V逻辑分供、共地、原负载余量；不证明用户3A台架已验收",
+      "archived_git_blob": "a1e1bc6120e87f9385154d82c534e4ffcbac41f8"
+    },
+    {
+      "id": "G16_PINS",
+      "kind": "github_original",
+      "repo": "jamro/tiny-engineer",
+      "fixed_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+      "upstream_path": "docs/hardware/pinout.md",
+      "url": "https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/docs/hardware/pinout.md",
+      "local_path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/docs/hardware/pinout.md",
+      "supports": "PCA0-4五轴、128x32屏与MAX98357A输出；不是用户S3接线表",
+      "archived_git_blob": "5e228e90509f2bc786ee9b5024573cca99e7b532"
+    },
+    {
+      "id": "G16_SERVO",
+      "kind": "github_original",
+      "repo": "jamro/tiny-engineer",
+      "fixed_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+      "upstream_path": "src/hardware/servo_wrapper.cpp",
+      "url": "https://github.com/jamro/tiny-engineer/blob/d71eb42a7abd98d81aae17472f35ba9d55ef5c89/src/hardware/servo_wrapper.cpp",
+      "local_path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/src/hardware/servo_wrapper.cpp",
+      "supports": "PCA驱动、校准映射、平滑和限位",
+      "archived_git_blob": "cdf369f4147a17352ea7bfccb3bf0ca29c810696"
+    },
+    {
+      "id": "G05_SOURCE",
+      "kind": "github_original",
+      "repo": "thinking0things/AlbertMicro",
+      "fixed_commit": "8d0ae147e967c798469a551c1dc49da781fc5587",
+      "upstream_path": "AlbertMicro.ino",
+      "url": "https://github.com/thinking0things/AlbertMicro/blob/8d0ae147e967c798469a551c1dc49da781fc5587/AlbertMicro.ino",
+      "local_path": "机器人开发参考库/05_AlbertMicro机器小狗/仓库/thinking0things__AlbertMicro/AlbertMicro.ino",
+      "supports": "SH1106/RoboEyes与4路ESP32Servo",
+      "archived_git_blob": "7eed3a9ca8a7fb39330c207a934da47d9f97dc91"
+    },
+    {
+      "id": "G08_CONFIG",
+      "kind": "github_original",
+      "repo": "78/xiaozhi-esp32",
+      "fixed_commit": "d395220a83fb7a16ea5dc761c08a4816177cc880",
+      "upstream_path": "main/boards/bread-compact-wifi/config.h",
+      "url": "https://github.com/78/xiaozhi-esp32/blob/d395220a83fb7a16ea5dc761c08a4816177cc880/main/boards/bread-compact-wifi/config.h",
+      "local_path": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-esp32/main/boards/bread-compact-wifi/config.h",
+      "supports": "该board I2S、显示选项和GPIO；不单凭config确定INMP441型号",
+      "archived_git_blob": "c1910d4d6232a5629ce12b785440845088636696"
+    },
+    {
+      "id": "G08_CAM",
+      "kind": "github_original",
+      "repo": "78/xiaozhi-esp32",
+      "fixed_commit": "d395220a83fb7a16ea5dc761c08a4816177cc880",
+      "upstream_path": "main/boards/bread-compact-wifi-s3cam/README.md",
+      "url": "https://github.com/78/xiaozhi-esp32/blob/d395220a83fb7a16ea5dc761c08a4816177cc880/main/boards/bread-compact-wifi-s3cam/README.md",
+      "local_path": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-esp32/main/boards/bread-compact-wifi-s3cam/README.md",
+      "supports": "特定S3CAM板、OV2640和USB19/20占用",
+      "archived_git_blob": "80727682e34c10697fc9c12eb30597791f370d9a"
+    },
+    {
+      "id": "G01_VOICE",
+      "kind": "github_original",
+      "repo": "dorianborian/sesame-companion-app",
+      "fixed_commit": "86f82c137b9954445f55d249c966e8f9984bd87b",
+      "upstream_path": "sesame_companion.py",
+      "url": "https://github.com/dorianborian/sesame-companion-app/blob/86f82c137b9954445f55d249c966e8f9984bd87b/sesame_companion.py",
+      "local_path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-companion-app/sesame_companion.py",
+      "supports": "电脑ASR/模型/TTS与HTTP桥接",
+      "archived_git_blob": "d7a9d8a3ad359f2b24b9cf0c43002591e3575795"
+    },
+    {
+      "id": "G12_ROVER",
+      "kind": "github_original",
+      "repo": "maker-community/VerdureBuddyRover",
+      "fixed_commit": "cf1c772dcc854ae5c19699eebb3970e1c3f64f34",
+      "upstream_path": "firmware/esp32c3_kb_motor/esp32c3_kb_motor.ino",
+      "url": "https://github.com/maker-community/VerdureBuddyRover/blob/cf1c772dcc854ae5c19699eebb3970e1c3f64f34/firmware/esp32c3_kb_motor/esp32c3_kb_motor.ino",
+      "local_path": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__VerdureBuddyRover/firmware/esp32c3_kb_motor/esp32c3_kb_motor.ino",
+      "supports": "C3、双电机DRV8833、BQ27220、UART",
+      "archived_git_blob": "9265ed85acf0da0a7df6734240527dce9704873a"
+    },
+    {
+      "id": "G13_HARDWARE",
+      "kind": "github_original",
+      "repo": "LuwuDynamics/xgoduck_hardware",
+      "fixed_commit": "703bfd274071cb545b1ed6f512f3c81cf91e447b",
+      "upstream_path": "readme.md",
+      "url": "https://github.com/LuwuDynamics/xgoduck_hardware/blob/703bfd274071cb545b1ed6f512f3c81cf91e447b/readme.md",
+      "local_path": "机器人开发参考库/13_XGO-Duck赛博鸭子/仓库/LuwuDynamics__xgoduck_hardware/readme.md",
+      "supports": "UNO Q、15个Feetech1910、QMI8658A",
+      "archived_git_blob": "d0cf5c8e9517ca54913b9ab8fb49376a57510726"
+    },
+    {
+      "id": "G10_README",
+      "kind": "github_original",
+      "repo": "M-D-777/EMO-Dot",
+      "fixed_commit": "25884f58f25d9d931ca3dbf9d5c18221d9ae237c",
+      "upstream_path": "README.md",
+      "url": "https://github.com/M-D-777/EMO-Dot/blob/25884f58f25d9d931ca3dbf9d5c18221d9ae237c/README.md",
+      "local_path": "机器人开发参考库/10_EMO-Dot小豆机器人/仓库/M-D-777__EMO-Dot/README.md",
+      "supports": "C3/S3、1.28寸屏与音频，脚为固定造型",
+      "archived_git_blob": "31093202fc90d3033546917ce0eef65540cc95aa"
+    },
+    {
+      "id": "G06_README",
+      "kind": "github_original",
+      "repo": "ViolinLee/NodeHexa",
+      "fixed_commit": "ba844a107de8dbb95bba51c2d5e870928d72cbd9",
+      "upstream_path": "README.md",
+      "url": "https://github.com/ViolinLee/NodeHexa/blob/ba844a107de8dbb95bba51c2d5e870928d72cbd9/README.md",
+      "local_path": "机器人开发参考库/06_NodeHexa六足机器人/仓库/ViolinLee__NodeHexa/README.md",
+      "supports": "六足/PCA、左右驱动板不同地址",
+      "archived_git_blob": "6cf5ae529f042e875e3f56c5cfba9a0ba5982f82"
+    },
+    {
+      "id": "G07_README",
+      "kind": "github_original",
+      "repo": "rookidroid/hexapod",
+      "fixed_commit": "2c51f9e3bf3f5dbbe600a2a24182aa3e9837c60c",
+      "upstream_path": "README.md",
+      "url": "https://github.com/rookidroid/hexapod/blob/2c51f9e3bf3f5dbbe600a2a24182aa3e9837c60c/README.md",
+      "local_path": "机器人开发参考库/07_RookiDroid六足机器人/仓库/rookidroid__hexapod/README.md",
+      "supports": "18DOF三机型，机械和舵机配置各异",
+      "archived_git_blob": "e04229e0f9512e8f06654fa5b83580562fa84721"
+    }
+  ],
+  "not_performed": [
+    "本轮固件构建/烧录",
+    "真机接线、动作和供电验收",
+    "更新上游快照",
+    "修改原52能力卡或综合Word"
+  ],
+  "local_scope_note": "现有四轴设计指南及其截图保留本地，本轮公开文档不新增其导航或素材；原9个文档/索引路径与本校验记录是此次发布范围。",
+  "files_checked": [
+    "机器人能力参考库/项目来源与复用索引.json",
+    "README.md",
+    "机器人开发参考库/README.md",
+    "机器人能力参考库/README.md",
+    "机器人能力参考库/给Codex的检索与复用说明.md",
+    "AGENTS.md",
+    "机器人能力参考库/硬件准备与采购/README.md",
+    "机器人能力参考库/硬件准备与采购/项目硬件增量表.md",
+    "机器人能力参考库/硬件准备与采购/采购分类索引.json"
+  ],
+  "hardware_source_bytes": [
+    {
+      "source_id": "G01_BOM",
+      "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot/hardware/bom/README.md",
+      "fixed_commit": "d106cbc8e158c982f408db421134f23273c5f51f",
+      "git_blob": "b6e58230c592244426e600f48b63b95012e0bbcf",
+      "sha256_bytes": "04a3a816e0d9891ee0cbb8519f3d5758d8c031685ae472c0a819943adeba6f55",
+      "bytes": 7807
+    },
+    {
+      "source_id": "G16_POWER",
+      "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/docs/hardware/power.md",
+      "fixed_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+      "git_blob": "a1e1bc6120e87f9385154d82c534e4ffcbac41f8",
+      "sha256_bytes": "82fc5d61a075e71a35131270d5a452f0e9c22682599f8f66783be09ded7cd47e",
+      "bytes": 3464
+    },
+    {
+      "source_id": "G16_PINS",
+      "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/docs/hardware/pinout.md",
+      "fixed_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+      "git_blob": "5e228e90509f2bc786ee9b5024573cca99e7b532",
+      "sha256_bytes": "06b149d5b4ad80d7ddab6afbbb4243af0f589abd2d9a4227f873e86a54de6929",
+      "bytes": 3215
+    },
+    {
+      "source_id": "G16_SERVO",
+      "path": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer/src/hardware/servo_wrapper.cpp",
+      "fixed_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+      "git_blob": "cdf369f4147a17352ea7bfccb3bf0ca29c810696",
+      "sha256_bytes": "c7579e666052310e442d9d187349e6dbf5a2dcb74464821dd4245808536895bf",
+      "bytes": 12319
+    },
+    {
+      "source_id": "G05_SOURCE",
+      "path": "机器人开发参考库/05_AlbertMicro机器小狗/仓库/thinking0things__AlbertMicro/AlbertMicro.ino",
+      "fixed_commit": "8d0ae147e967c798469a551c1dc49da781fc5587",
+      "git_blob": "7eed3a9ca8a7fb39330c207a934da47d9f97dc91",
+      "sha256_bytes": "bb297056233954a32fb6400bc6ae9a075200d3aa594dc86c2a418f8d11a0dc8d",
+      "bytes": 18414
+    },
+    {
+      "source_id": "G08_CONFIG",
+      "path": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-esp32/main/boards/bread-compact-wifi/config.h",
+      "fixed_commit": "d395220a83fb7a16ea5dc761c08a4816177cc880",
+      "git_blob": "c1910d4d6232a5629ce12b785440845088636696",
+      "sha256_bytes": "d75a03b0da3c56659a77ae5d087d815ee5f718903a88f944cabca978535944a0",
+      "bytes": 1433
+    },
+    {
+      "source_id": "G08_CAM",
+      "path": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-esp32/main/boards/bread-compact-wifi-s3cam/README.md",
+      "fixed_commit": "d395220a83fb7a16ea5dc761c08a4816177cc880",
+      "git_blob": "80727682e34c10697fc9c12eb30597791f370d9a",
+      "sha256_bytes": "61d08a5c2d9dcb7bbb50e1083526ce0a012f418f418775421e24ee9d65fb0968",
+      "bytes": 572
+    },
+    {
+      "source_id": "G01_VOICE",
+      "path": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-companion-app/sesame_companion.py",
+      "fixed_commit": "86f82c137b9954445f55d249c966e8f9984bd87b",
+      "git_blob": "d7a9d8a3ad359f2b24b9cf0c43002591e3575795",
+      "sha256_bytes": "407cb6f8370fe42a85571a933efa8ea9c270f44a4ba3216efbdc1a32f2c79b53",
+      "bytes": 37398
+    },
+    {
+      "source_id": "G12_ROVER",
+      "path": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__VerdureBuddyRover/firmware/esp32c3_kb_motor/esp32c3_kb_motor.ino",
+      "fixed_commit": "cf1c772dcc854ae5c19699eebb3970e1c3f64f34",
+      "git_blob": "9265ed85acf0da0a7df6734240527dce9704873a",
+      "sha256_bytes": "32e4e11be33e34d349f39a14757088d63add6b6ccd8f36bfb7c700a8044b94b6",
+      "bytes": 22991
+    },
+    {
+      "source_id": "G13_HARDWARE",
+      "path": "机器人开发参考库/13_XGO-Duck赛博鸭子/仓库/LuwuDynamics__xgoduck_hardware/readme.md",
+      "fixed_commit": "703bfd274071cb545b1ed6f512f3c81cf91e447b",
+      "git_blob": "d0cf5c8e9517ca54913b9ab8fb49376a57510726",
+      "sha256_bytes": "a3ed8b3e1bbec2c27028a8f4dd37deb0030bf3a4b7bb5655677fce3ff93bc7a1",
+      "bytes": 9198
+    },
+    {
+      "source_id": "G10_README",
+      "path": "机器人开发参考库/10_EMO-Dot小豆机器人/仓库/M-D-777__EMO-Dot/README.md",
+      "fixed_commit": "25884f58f25d9d931ca3dbf9d5c18221d9ae237c",
+      "git_blob": "31093202fc90d3033546917ce0eef65540cc95aa",
+      "sha256_bytes": "49163de2a7fa980e75a739fb985b89d64508f06892fdefd897ba55ce1407e795",
+      "bytes": 7113
+    },
+    {
+      "source_id": "G06_README",
+      "path": "机器人开发参考库/06_NodeHexa六足机器人/仓库/ViolinLee__NodeHexa/README.md",
+      "fixed_commit": "ba844a107de8dbb95bba51c2d5e870928d72cbd9",
+      "git_blob": "6cf5ae529f042e875e3f56c5cfba9a0ba5982f82",
+      "sha256_bytes": "0e2ed77710f99a6608022637c135e468fa2e1a6331a0bd2a6ce08021680bb2ea",
+      "bytes": 12232
+    },
+    {
+      "source_id": "G07_README",
+      "path": "机器人开发参考库/07_RookiDroid六足机器人/仓库/rookidroid__hexapod/README.md",
+      "fixed_commit": "2c51f9e3bf3f5dbbe600a2a24182aa3e9837c60c",
+      "git_blob": "e04229e0f9512e8f06654fa5b83580562fa84721",
+      "sha256_bytes": "a657f6850c8ea5b03795ed8f4573a0bad2b9d370a135078aecb4e7aea5adbc88",
+      "bytes": 3664
+    }
+  ]
+}

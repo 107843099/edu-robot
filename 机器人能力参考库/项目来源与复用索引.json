@@ -1,0 +1,1191 @@
+{
+  "schema_version": "1.0",
+  "updated": "2026-10-11",
+  "archived_source_baseline": "aa9dc291185f7d8885ffc0c7bf9499dbe6bb42a0",
+  "path_base": "repository_root",
+  "project_count": 19,
+  "project_snapshot_count": 76,
+  "distinct_project_repositories": 75,
+  "scope": "对应README总览；符号/行号/哈希见能力索引.json；通用库快照另外统计。",
+  "origin_rule": "edu-robot是整理归档地址，不自动成为原作者地址；同作者独立项目不自动构成已集成插件。",
+  "projects": [
+    {
+      "project_id": 1,
+      "name": "芝麻机器人",
+      "folder": "01_芝麻机器人",
+      "readme": "机器人开发参考库/01_芝麻机器人/README.md",
+      "primary_github": "dorianborian/sesame-robot",
+      "origin_kind": "github",
+      "origin_repositories": [
+        {
+          "repo": "dorianborian/sesame-companion-app",
+          "github_url": "https://github.com/dorianborian/sesame-companion-app",
+          "role": "同作者对话与桌面控制配套",
+          "branch": "main",
+          "fixed_commit": "86f82c137b9954445f55d249c966e8f9984bd87b",
+          "fixed_tree_url": "https://github.com/dorianborian/sesame-companion-app/tree/86f82c137b9954445f55d249c966e8f9984bd87b",
+          "local_snapshot": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-companion-app"
+        },
+        {
+          "repo": "dorianborian/sesame-robot",
+          "github_url": "https://github.com/dorianborian/sesame-robot",
+          "role": "主项目",
+          "branch": "main",
+          "fixed_commit": "d106cbc8e158c982f408db421134f23273c5f51f",
+          "fixed_tree_url": "https://github.com/dorianborian/sesame-robot/tree/d106cbc8e158c982f408db421134f23273c5f51f",
+          "local_snapshot": "机器人开发参考库/01_芝麻机器人/仓库/dorianborian__sesame-robot"
+        },
+        {
+          "repo": "lukehollis/sesame-ml",
+          "github_url": "https://github.com/lukehollis/sesame-ml",
+          "role": "主 README 指向的第三方机器学习配套",
+          "branch": "main",
+          "fixed_commit": "a3910f67b4aeb9ca9080a1ba1ffa971e53e35a18",
+          "fixed_tree_url": "https://github.com/lukehollis/sesame-ml/tree/a3910f67b4aeb9ca9080a1ba1ffa971e53e35a18",
+          "local_snapshot": "机器人开发参考库/01_芝麻机器人/仓库/lukehollis__sesame-ml"
+        }
+      ],
+      "local_source_records": [],
+      "featured_related_repositories": [
+        "dorianborian/sesame-companion-app",
+        "lukehollis/sesame-ml"
+      ],
+      "reusable_content": "128×64表情、8舵机姿势序列、网页控制与电脑对话桥",
+      "adaptation_boundary": "原8轴；电脑承担语音。S3/现有屏可作移植基础，PCA输出另适配。",
+      "capability_ids": [
+        "E03",
+        "M03",
+        "C01",
+        "C02"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/01_表情显示/E03_芝麻 128×64 位图动画与说话表情.md",
+        "机器人能力参考库/02_动作与运动/M03_芝麻 8 舵机姿势、舞蹈与步态.md",
+        "机器人能力参考库/04_通信与工具调用/C01_芝麻 HTTP 动作与表情接口.md",
+        "机器人能力参考库/04_通信与工具调用/C02_芝麻同作者语音、LLM 与机器人桥接.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 2,
+      "name": "曼波小狗",
+      "folder": "02_曼波小狗",
+      "readme": "机器人开发参考库/02_曼波小狗/README.md",
+      "primary_github": "RussellCooper-DJZ/manbo-robot-dog",
+      "origin_kind": "github_and_local",
+      "origin_repositories": [
+        {
+          "repo": "RussellCooper-DJZ/manbo-robot-dog",
+          "github_url": "https://github.com/RussellCooper-DJZ/manbo-robot-dog",
+          "role": "主项目 GitHub 版本",
+          "branch": "master",
+          "fixed_commit": "9a3d315cfe50a62d8e6221cccf2aea696f96aedc",
+          "fixed_tree_url": "https://github.com/RussellCooper-DJZ/manbo-robot-dog/tree/9a3d315cfe50a62d8e6221cccf2aea696f96aedc",
+          "local_snapshot": "机器人开发参考库/02_曼波小狗/仓库/RussellCooper-DJZ__manbo-robot-dog"
+        }
+      ],
+      "local_source_records": [
+        "机器人开发参考库/02_曼波小狗/本地资料来源与校验.json"
+      ],
+      "featured_related_repositories": [],
+      "reusable_content": "四舵机动作任务、OLED图案、语音指令到动作编号",
+      "adaptation_boundary": "GitHub/本地4轴与Herobrine立创5轴分开；STM32改S3需移植。",
+      "capability_ids": [
+        "E09",
+        "M04",
+        "M05"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/01_表情显示/E09_曼波 OLED 图案与动作联动.md",
+        "机器人能力参考库/02_动作与运动/M04_曼波 GitHub 非阻塞 ActionTask.md",
+        "机器人能力参考库/02_动作与运动/M05_曼波本地阻塞动作及语音映射.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 3,
+      "name": "MindPaw机器狗",
+      "folder": "03_MindPaw机器狗",
+      "readme": "机器人开发参考库/03_MindPaw机器狗/README.md",
+      "primary_github": "ace-trump-tech/MindPaw",
+      "origin_kind": "github",
+      "origin_repositories": [
+        {
+          "repo": "ace-trump-tech/MindPaw",
+          "github_url": "https://github.com/ace-trump-tech/MindPaw",
+          "role": "主项目",
+          "branch": "main",
+          "fixed_commit": "21c549252a60126a80874738626f1b8c36efc38c",
+          "fixed_tree_url": "https://github.com/ace-trump-tech/MindPaw/tree/21c549252a60126a80874738626f1b8c36efc38c",
+          "local_snapshot": "机器人开发参考库/03_MindPaw机器狗/仓库/ace-trump-tech__MindPaw"
+        }
+      ],
+      "local_source_records": [],
+      "featured_related_repositories": [],
+      "reusable_content": "表情、情绪参数、正弦动作和外部Agent网关分层",
+      "adaptation_boundary": "原ESP8266、4轴；有模型占位和模拟数据，进阶AI逐项验证。",
+      "capability_ids": [
+        "E04",
+        "M06",
+        "I04"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/01_表情显示/E04_MindPaw U8g2 位图表情与状态画面.md",
+        "机器人能力参考库/02_动作与运动/M06_MindPaw 正弦情感动作与离散动作.md",
+        "机器人能力参考库/03_交互状态与调度/I04_MindPaw Agent 响应到动作、表情和强度.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 4,
+      "name": "Stack-chan桌面机器人",
+      "folder": "04_Stack-chan桌面机器人",
+      "readme": "机器人开发参考库/04_Stack-chan桌面机器人/README.md",
+      "primary_github": "stack-chan/stack-chan",
+      "origin_kind": "github",
+      "origin_repositories": [
+        {
+          "repo": "VOICEVOX/voicevox_engine",
+          "github_url": "https://github.com/VOICEVOX/voicevox_engine",
+          "role": "ChatGPT MOD 示例配套语音合成服务",
+          "branch": "master",
+          "fixed_commit": "bfa9303947090b5e91e9917a43b997a5e27683a8",
+          "fixed_tree_url": "https://github.com/VOICEVOX/voicevox_engine/tree/bfa9303947090b5e91e9917a43b997a5e27683a8",
+          "local_snapshot": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/VOICEVOX__voicevox_engine"
+        },
+        {
+          "repo": "meganetaaan/moddable-scservo",
+          "github_url": "https://github.com/meganetaaan/moddable-scservo",
+          "role": "原作者串行舵机驱动",
+          "branch": "main",
+          "fixed_commit": "08c8ba164ae4255f004528b11f7c5d1e2607a6e1",
+          "fixed_tree_url": "https://github.com/meganetaaan/moddable-scservo/tree/08c8ba164ae4255f004528b11f7c5d1e2607a6e1",
+          "local_snapshot": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/meganetaaan__moddable-scservo"
+        },
+        {
+          "repo": "meganetaaan/simple-stt-server",
+          "github_url": "https://github.com/meganetaaan/simple-stt-server",
+          "role": "示例使用的语音识别服务",
+          "branch": "master",
+          "fixed_commit": "0448f4edae275d0dfab31a43d559a69cbaa55f64",
+          "fixed_tree_url": "https://github.com/meganetaaan/simple-stt-server/tree/0448f4edae275d0dfab31a43d559a69cbaa55f64",
+          "local_snapshot": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/meganetaaan__simple-stt-server"
+        },
+        {
+          "repo": "meganetaaan/stack-chan-dock",
+          "github_url": "https://github.com/meganetaaan/stack-chan-dock",
+          "role": "原作者充电底座",
+          "branch": "develop",
+          "fixed_commit": "20b212b18ec5b350b10cc2f4564df12b5dd29ca1",
+          "fixed_tree_url": "https://github.com/meganetaaan/stack-chan-dock/tree/20b212b18ec5b350b10cc2f4564df12b5dd29ca1",
+          "local_snapshot": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/meganetaaan__stack-chan-dock"
+        },
+        {
+          "repo": "mongonta0716/stack-chan-tester",
+          "github_url": "https://github.com/mongonta0716/stack-chan-tester",
+          "role": "社区舵机与板卡测试工具",
+          "branch": "main",
+          "fixed_commit": "0f3a7fc1013a2003f3e75a82d22630cc852a2269",
+          "fixed_tree_url": "https://github.com/mongonta0716/stack-chan-tester/tree/0f3a7fc1013a2003f3e75a82d22630cc852a2269",
+          "local_snapshot": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/mongonta0716__stack-chan-tester"
+        },
+        {
+          "repo": "robo8080/AI_StackChan2",
+          "github_url": "https://github.com/robo8080/AI_StackChan2",
+          "role": "主 README 指向的社区语音 AI 实现",
+          "branch": "main",
+          "fixed_commit": "3022de6ab2330611c4359d74d5d4b59f422618e7",
+          "fixed_tree_url": "https://github.com/robo8080/AI_StackChan2/tree/3022de6ab2330611c4359d74d5d4b59f422618e7",
+          "local_snapshot": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/robo8080__AI_StackChan2"
+        },
+        {
+          "repo": "robo8080/AI_StackChan2_README",
+          "github_url": "https://github.com/robo8080/AI_StackChan2_README",
+          "role": "AI StackChan2 使用说明配套",
+          "branch": "main",
+          "fixed_commit": "19e395d9fa64ef0ceb587523445f003ee39e3268",
+          "fixed_tree_url": "https://github.com/robo8080/AI_StackChan2_README/tree/19e395d9fa64ef0ceb587523445f003ee39e3268",
+          "local_snapshot": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/robo8080__AI_StackChan2_README"
+        },
+        {
+          "repo": "stack-chan/m5stack-avatar",
+          "github_url": "https://github.com/stack-chan/m5stack-avatar",
+          "role": "同组织表情渲染库",
+          "branch": "master",
+          "fixed_commit": "7a90083edd9bbdc1a52ea13afe4d5c3b7fc7bfa8",
+          "fixed_tree_url": "https://github.com/stack-chan/m5stack-avatar/tree/7a90083edd9bbdc1a52ea13afe4d5c3b7fc7bfa8",
+          "local_snapshot": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__m5stack-avatar"
+        },
+        {
+          "repo": "stack-chan/stack-chan",
+          "github_url": "https://github.com/stack-chan/stack-chan",
+          "role": "主项目",
+          "branch": "develop",
+          "fixed_commit": "fe7be1005d2cf8732f365176a91c7177c8533591",
+          "fixed_tree_url": "https://github.com/stack-chan/stack-chan/tree/fe7be1005d2cf8732f365176a91c7177c8533591",
+          "local_snapshot": "机器人开发参考库/04_Stack-chan桌面机器人/仓库/stack-chan__stack-chan"
+        }
+      ],
+      "local_source_records": [],
+      "featured_related_repositories": [
+        "stack-chan/m5stack-avatar",
+        "robo8080/AI_StackChan2"
+      ],
+      "reusable_content": "双轴注视/点头、Avatar脸部、MOD与音频动作分工",
+      "adaptation_boundary": "M5Stack的Moddable/Arduino路线不同；普通S3/OLED需驱动适配。",
+      "capability_ids": [
+        "E05",
+        "E06",
+        "M08",
+        "I03"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/01_表情显示/E05_M5Stack Avatar 情绪、嘴巴与眼睛参数.md",
+        "机器人能力参考库/01_表情显示/E06_Stack-chan Moddable 面部状态与皮肤.md",
+        "机器人能力参考库/02_动作与运动/M08_Stack-chan 注视、避视与头部姿态.md",
+        "机器人能力参考库/03_交互状态与调度/I03_M5Avatar 音量驱动嘴巴开合.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 5,
+      "name": "AlbertMicro机器小狗",
+      "folder": "05_AlbertMicro机器小狗",
+      "readme": "机器人开发参考库/05_AlbertMicro机器小狗/README.md",
+      "primary_github": "thinking0things/AlbertMicro",
+      "origin_kind": "github",
+      "origin_repositories": [
+        {
+          "repo": "thinking0things/AlbertMicro",
+          "github_url": "https://github.com/thinking0things/AlbertMicro",
+          "role": "主项目",
+          "branch": "main",
+          "fixed_commit": "8d0ae147e967c798469a551c1dc49da781fc5587",
+          "fixed_tree_url": "https://github.com/thinking0things/AlbertMicro/tree/8d0ae147e967c798469a551c1dc49da781fc5587",
+          "local_snapshot": "机器人开发参考库/05_AlbertMicro机器小狗/仓库/thinking0things__AlbertMicro"
+        },
+        {
+          "repo": "thinking0things/AlbertPro",
+          "github_url": "https://github.com/thinking0things/AlbertPro",
+          "role": "同作者进阶四足",
+          "branch": "main",
+          "fixed_commit": "7ff19d4e6b9ab0bdcc38189dd02eabebddbf6d15",
+          "fixed_tree_url": "https://github.com/thinking0things/AlbertPro/tree/7ff19d4e6b9ab0bdcc38189dd02eabebddbf6d15",
+          "local_snapshot": "机器人开发参考库/05_AlbertMicro机器小狗/仓库/thinking0things__AlbertPro"
+        }
+      ],
+      "local_source_records": [],
+      "featured_related_repositories": [
+        "thinking0things/AlbertPro"
+      ],
+      "reusable_content": "RoboEyes眼睛、4轴摆腿、插值、BLE/串口控制",
+      "adaptation_boundary": "原S3/SH1106；先确认屏驱动，Pro是独立8轴训练路线。",
+      "capability_ids": [
+        "E01",
+        "M07"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/01_表情显示/E01_RoboEyes 参数化眼睛、眨眼与注视.md",
+        "机器人能力参考库/02_动作与运动/M07_AlbertMicro 四舵机步态与插值.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 6,
+      "name": "NodeHexa六足机器人",
+      "folder": "06_NodeHexa六足机器人",
+      "readme": "机器人开发参考库/06_NodeHexa六足机器人/README.md",
+      "primary_github": "ViolinLee/NodeHexa",
+      "origin_kind": "github",
+      "origin_repositories": [
+        {
+          "repo": "SmallpTsai/hexapod-v2-7697",
+          "github_url": "https://github.com/SmallpTsai/hexapod-v2-7697",
+          "role": "NodeHexa 与 PiHexa 的运动学上游",
+          "branch": "master",
+          "fixed_commit": "32d53914d916c4cb263d9942b8edd1a50e70cc82",
+          "fixed_tree_url": "https://github.com/SmallpTsai/hexapod-v2-7697/tree/32d53914d916c4cb263d9942b8edd1a50e70cc82",
+          "local_snapshot": "机器人开发参考库/06_NodeHexa六足机器人/仓库/SmallpTsai__hexapod-v2-7697"
+        },
+        {
+          "repo": "ViolinLee/NodeHexa",
+          "github_url": "https://github.com/ViolinLee/NodeHexa",
+          "role": "主项目 含 NodeQuadMini",
+          "branch": "master",
+          "fixed_commit": "ba844a107de8dbb95bba51c2d5e870928d72cbd9",
+          "fixed_tree_url": "https://github.com/ViolinLee/NodeHexa/tree/ba844a107de8dbb95bba51c2d5e870928d72cbd9",
+          "local_snapshot": "机器人开发参考库/06_NodeHexa六足机器人/仓库/ViolinLee__NodeHexa"
+        },
+        {
+          "repo": "ViolinLee/PiHexa18",
+          "github_url": "https://github.com/ViolinLee/PiHexa18",
+          "role": "同作者前序 Python 六足",
+          "branch": "master",
+          "fixed_commit": "f172d685d946afddd1e42a4611edb766458bb9d0",
+          "fixed_tree_url": "https://github.com/ViolinLee/PiHexa18/tree/f172d685d946afddd1e42a4611edb766458bb9d0",
+          "local_snapshot": "机器人开发参考库/06_NodeHexa六足机器人/仓库/ViolinLee__PiHexa18"
+        }
+      ],
+      "local_source_records": [],
+      "featured_related_repositories": [
+        "ViolinLee/PiHexa18",
+        "SmallpTsai/hexapod-v2-7697"
+      ],
+      "reusable_content": "腿部正逆运动学、校准、动作序列与Web/UART",
+      "adaptation_boundary": "六足18轴，左右驱动板地址不同；同仓四足参数不共用。",
+      "capability_ids": [
+        "M09",
+        "M10"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/02_动作与运动/M09_NodeHexa 腿部正逆运动学.md",
+        "机器人能力参考库/02_动作与运动/M10_NodeHexa 动作序列、步数与距离转换.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 7,
+      "name": "RookiDroid六足机器人",
+      "folder": "07_RookiDroid六足机器人",
+      "readme": "机器人开发参考库/07_RookiDroid六足机器人/README.md",
+      "primary_github": "rookidroid/hexapod",
+      "origin_kind": "github",
+      "origin_repositories": [
+        {
+          "repo": "mithi/hexapod-robot-simulator",
+          "github_url": "https://github.com/mithi/hexapod-robot-simulator",
+          "role": "Hexapod Link 的仿真上游",
+          "branch": "master",
+          "fixed_commit": "35d83a83880e633ce13489d14ab1b19048332f51",
+          "fixed_tree_url": "https://github.com/mithi/hexapod-robot-simulator/tree/35d83a83880e633ce13489d14ab1b19048332f51",
+          "local_snapshot": "机器人开发参考库/07_RookiDroid六足机器人/仓库/mithi__hexapod-robot-simulator"
+        },
+        {
+          "repo": "rookidroid/hexapod",
+          "github_url": "https://github.com/rookidroid/hexapod",
+          "role": "主项目",
+          "branch": "main",
+          "fixed_commit": "2c51f9e3bf3f5dbbe600a2a24182aa3e9837c60c",
+          "fixed_tree_url": "https://github.com/rookidroid/hexapod/tree/2c51f9e3bf3f5dbbe600a2a24182aa3e9837c60c",
+          "local_snapshot": "机器人开发参考库/07_RookiDroid六足机器人/仓库/rookidroid__hexapod"
+        },
+        {
+          "repo": "rookidroid/hexapod-link",
+          "github_url": "https://github.com/rookidroid/hexapod-link",
+          "role": "上位机与模拟器配套",
+          "branch": "master",
+          "fixed_commit": "0b4f709217f0c66299f25f78b23aec6fd60314a6",
+          "fixed_tree_url": "https://github.com/rookidroid/hexapod-link/tree/0b4f709217f0c66299f25f78b23aec6fd60314a6",
+          "local_snapshot": "机器人开发参考库/07_RookiDroid六足机器人/仓库/rookidroid__hexapod-link"
+        },
+        {
+          "repo": "rookidroid/remote-arcade",
+          "github_url": "https://github.com/rookidroid/remote-arcade",
+          "role": "实体遥控器配套",
+          "branch": "main",
+          "fixed_commit": "26b1c153b366081a0fdc2e306f5302df32025350",
+          "fixed_tree_url": "https://github.com/rookidroid/remote-arcade/tree/26b1c153b366081a0fdc2e306f5302df32025350",
+          "local_snapshot": "机器人开发参考库/07_RookiDroid六足机器人/仓库/rookidroid__remote-arcade"
+        }
+      ],
+      "local_source_records": [],
+      "featured_related_repositories": [
+        "rookidroid/hexapod-link",
+        "rookidroid/remote-arcade"
+      ],
+      "reusable_content": "18轴路径查表、UDP姿态串流、仿真和遥控",
+      "adaptation_boundary": "原双PCA9685；三机型的舵机、尺寸和电源分别选择。",
+      "capability_ids": [
+        "M11"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/02_动作与运动/M11_RookiDroid LUT 与 UDP 实时姿态接管.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 8,
+      "name": "小智语音机器人",
+      "folder": "08_小智语音机器人",
+      "readme": "机器人开发参考库/08_小智语音机器人/README.md",
+      "primary_github": "78/xiaozhi-esp32",
+      "origin_kind": "github",
+      "origin_repositories": [
+        {
+          "repo": "100askTeam/xiaozhi-linux",
+          "github_url": "https://github.com/100askTeam/xiaozhi-linux",
+          "role": "README 列出的 Linux 客户端",
+          "branch": "master",
+          "fixed_commit": "9eff7f419122d2ba0a7ec70bd669edfc72dd9066",
+          "fixed_tree_url": "https://github.com/100askTeam/xiaozhi-linux/tree/9eff7f419122d2ba0a7ec70bd669edfc72dd9066",
+          "local_snapshot": "机器人开发参考库/08_小智语音机器人/仓库/100askTeam__xiaozhi-linux"
+        },
+        {
+          "repo": "78/xiaozhi-assets-generator",
+          "github_url": "https://github.com/78/xiaozhi-assets-generator",
+          "role": "同作者角色资产打包工具",
+          "branch": "main",
+          "fixed_commit": "55517b40d724014faff00f941ca700cbf9d14b51",
+          "fixed_tree_url": "https://github.com/78/xiaozhi-assets-generator/tree/55517b40d724014faff00f941ca700cbf9d14b51",
+          "local_snapshot": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-assets-generator"
+        },
+        {
+          "repo": "78/xiaozhi-esp32",
+          "github_url": "https://github.com/78/xiaozhi-esp32",
+          "role": "主项目",
+          "branch": "main",
+          "fixed_commit": "d395220a83fb7a16ea5dc761c08a4816177cc880",
+          "fixed_tree_url": "https://github.com/78/xiaozhi-esp32/tree/d395220a83fb7a16ea5dc761c08a4816177cc880",
+          "local_snapshot": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-esp32"
+        },
+        {
+          "repo": "78/xiaozhi-sf32",
+          "github_url": "https://github.com/78/xiaozhi-sf32",
+          "role": "同作者 SiFli 芯片客户端",
+          "branch": "main",
+          "fixed_commit": "1d3ef641ace47fae68227e9173647fd5db01f6f5",
+          "fixed_tree_url": "https://github.com/78/xiaozhi-sf32/tree/1d3ef641ace47fae68227e9173647fd5db01f6f5",
+          "local_snapshot": "机器人开发参考库/08_小智语音机器人/仓库/78__xiaozhi-sf32"
+        },
+        {
+          "repo": "AnimeAIChat/xiaozhi-server-go",
+          "github_url": "https://github.com/AnimeAIChat/xiaozhi-server-go",
+          "role": "README 列出的 Go 自建语音后端",
+          "branch": "main",
+          "fixed_commit": "0b1575cb5d43035bdf53063ad644131130e4768b",
+          "fixed_tree_url": "https://github.com/AnimeAIChat/xiaozhi-server-go/tree/0b1575cb5d43035bdf53063ad644131130e4768b",
+          "local_snapshot": "机器人开发参考库/08_小智语音机器人/仓库/AnimeAIChat__xiaozhi-server-go"
+        },
+        {
+          "repo": "QuecPython/solution-xiaozhiAI",
+          "github_url": "https://github.com/QuecPython/solution-xiaozhiAI",
+          "role": "README 列出的 QuecPython 客户端",
+          "branch": "master",
+          "fixed_commit": "afc111a6425b1e25a2b32e243d824da018ad2209",
+          "fixed_tree_url": "https://github.com/QuecPython/solution-xiaozhiAI/tree/afc111a6425b1e25a2b32e243d824da018ad2209",
+          "local_snapshot": "机器人开发参考库/08_小智语音机器人/仓库/QuecPython__solution-xiaozhiAI"
+        },
+        {
+          "repo": "TOM88812/xiaozhi-android-client",
+          "github_url": "https://github.com/TOM88812/xiaozhi-android-client",
+          "role": "README 列出的 Android 客户端",
+          "branch": "main",
+          "fixed_commit": "30a0c80446a3a88772945244739c0e69b79c647c",
+          "fixed_tree_url": "https://github.com/TOM88812/xiaozhi-android-client/tree/30a0c80446a3a88772945244739c0e69b79c647c",
+          "local_snapshot": "机器人开发参考库/08_小智语音机器人/仓库/TOM88812__xiaozhi-android-client"
+        },
+        {
+          "repo": "hackers365/asr_server",
+          "github_url": "https://github.com/hackers365/asr_server",
+          "role": "Go 服务端固定版本的 ASR 子模块",
+          "branch": "pinned-commit",
+          "fixed_commit": "bac6c49b3b4a84d0f13be06a5d575ff0efa5565b",
+          "fixed_tree_url": "https://github.com/hackers365/asr_server/tree/bac6c49b3b4a84d0f13be06a5d575ff0efa5565b",
+          "local_snapshot": "机器人开发参考库/08_小智语音机器人/仓库/hackers365__asr_server__bac6c49b3b4a"
+        },
+        {
+          "repo": "hackers365/xiaozhi-esp32-server-golang",
+          "github_url": "https://github.com/hackers365/xiaozhi-esp32-server-golang",
+          "role": "README 列出的另一 Go 自建语音后端",
+          "branch": "main",
+          "fixed_commit": "21f1a2e71ff383723f1464ea9b137016e6feab8d",
+          "fixed_tree_url": "https://github.com/hackers365/xiaozhi-esp32-server-golang/tree/21f1a2e71ff383723f1464ea9b137016e6feab8d",
+          "local_snapshot": "机器人开发参考库/08_小智语音机器人/仓库/hackers365__xiaozhi-esp32-server-golang"
+        },
+        {
+          "repo": "huangjunsen0406/py-xiaozhi",
+          "github_url": "https://github.com/huangjunsen0406/py-xiaozhi",
+          "role": "README 列出的电脑 Python 客户端",
+          "branch": "main",
+          "fixed_commit": "9bfc807d368cccac71af8d9f7042ab6b5af92030",
+          "fixed_tree_url": "https://github.com/huangjunsen0406/py-xiaozhi/tree/9bfc807d368cccac71af8d9f7042ab6b5af92030",
+          "local_snapshot": "机器人开发参考库/08_小智语音机器人/仓库/huangjunsen0406__py-xiaozhi"
+        },
+        {
+          "repo": "joey-zhou/xiaozhi-esp32-server-java",
+          "github_url": "https://github.com/joey-zhou/xiaozhi-esp32-server-java",
+          "role": "README 列出的 Java 自建语音后端",
+          "branch": "main",
+          "fixed_commit": "b2ff4d316ba65417f2400258d5be9b245df4f795",
+          "fixed_tree_url": "https://github.com/joey-zhou/xiaozhi-esp32-server-java/tree/b2ff4d316ba65417f2400258d5be9b245df4f795",
+          "local_snapshot": "机器人开发参考库/08_小智语音机器人/仓库/joey-zhou__xiaozhi-esp32-server-java"
+        },
+        {
+          "repo": "xinnan-tech/xiaozhi-esp32-server",
+          "github_url": "https://github.com/xinnan-tech/xiaozhi-esp32-server",
+          "role": "README 列出的 Python 自建语音后端",
+          "branch": "main",
+          "fixed_commit": "87c6df77b0220ddbd8fc804f984f83f69f3225e5",
+          "fixed_tree_url": "https://github.com/xinnan-tech/xiaozhi-esp32-server/tree/87c6df77b0220ddbd8fc804f984f83f69f3225e5",
+          "local_snapshot": "机器人开发参考库/08_小智语音机器人/仓库/xinnan-tech__xiaozhi-esp32-server"
+        }
+      ],
+      "local_source_records": [],
+      "featured_related_repositories": [
+        "78/xiaozhi-assets-generator",
+        "xinnan-tech/xiaozhi-esp32-server"
+      ],
+      "reusable_content": "听/说/待机状态、网络语音、表情资源和工具调用",
+      "adaptation_boundary": "多板型工程；音频/显示/GPIO按所选board配置，服务器另配。",
+      "capability_ids": [
+        "E07",
+        "I05"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/01_表情显示/E07_小智 LCD 静态图与 GIF 表情播放器.md",
+        "机器人能力参考库/03_交互状态与调度/I05_小智听、说、待机与 emotion 事件调度.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 9,
+      "name": "Otto闪猫侠机器人",
+      "folder": "09_Otto闪猫侠机器人",
+      "readme": "机器人开发参考库/09_Otto闪猫侠机器人/README.md",
+      "primary_github": "txp666/ottodiy-docs",
+      "origin_kind": "github",
+      "origin_repositories": [
+        {
+          "repo": "OttoDIY/OttoDIYLib",
+          "github_url": "https://github.com/OttoDIY/OttoDIYLib",
+          "role": "Otto 动作库上游",
+          "branch": "main",
+          "fixed_commit": "f384c00a641e11c8741487320c6f1d82ad72e6d5",
+          "fixed_tree_url": "https://github.com/OttoDIY/OttoDIYLib/tree/f384c00a641e11c8741487320c6f1d82ad72e6d5",
+          "local_snapshot": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/OttoDIY__OttoDIYLib"
+        },
+        {
+          "repo": "txp666/OTTO_ESP32",
+          "github_url": "https://github.com/txp666/OTTO_ESP32",
+          "role": "同作者早期 Otto 动作库",
+          "branch": "main",
+          "fixed_commit": "b6ee68bf4b219ec9d4e466f2a7bd42795ebdb7a1",
+          "fixed_tree_url": "https://github.com/txp666/OTTO_ESP32/tree/b6ee68bf4b219ec9d4e466f2a7bd42795ebdb7a1",
+          "local_snapshot": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/txp666__OTTO_ESP32"
+        },
+        {
+          "repo": "txp666/otto-emoji-gif-component",
+          "github_url": "https://github.com/txp666/otto-emoji-gif-component",
+          "role": "表情资源组件",
+          "branch": "main",
+          "fixed_commit": "970cf66906d7c30059faa2704e7002f06b8c3619",
+          "fixed_tree_url": "https://github.com/txp666/otto-emoji-gif-component/tree/970cf66906d7c30059faa2704e7002f06b8c3619",
+          "local_snapshot": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/txp666__otto-emoji-gif-component"
+        },
+        {
+          "repo": "txp666/ottodiy-docs",
+          "github_url": "https://github.com/txp666/ottodiy-docs",
+          "role": "主项目文档站",
+          "branch": "main",
+          "fixed_commit": "8d4824d0b6deea87efa5cfd16a762416f9d55c6c",
+          "fixed_tree_url": "https://github.com/txp666/ottodiy-docs/tree/8d4824d0b6deea87efa5cfd16a762416f9d55c6c",
+          "local_snapshot": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/txp666__ottodiy-docs"
+        },
+        {
+          "repo": "txp666/xiaozhi-esp32",
+          "github_url": "https://github.com/txp666/xiaozhi-esp32",
+          "role": "设备完整固件配套",
+          "branch": "main",
+          "fixed_commit": "becc84f58908d96a8aaeae046dcd22e099aad7e9",
+          "fixed_tree_url": "https://github.com/txp666/xiaozhi-esp32/tree/becc84f58908d96a8aaeae046dcd22e099aad7e9",
+          "local_snapshot": "机器人开发参考库/09_Otto闪猫侠机器人/仓库/txp666__xiaozhi-esp32"
+        }
+      ],
+      "local_source_records": [],
+      "featured_related_repositories": [
+        "OttoDIY/OttoDIYLib",
+        "txp666/xiaozhi-esp32"
+      ],
+      "reusable_content": "四轴周期步态、六轴双臂版、GIF和教学文档",
+      "adaptation_boundary": "文档、动作库、小智固件不同仓；4/6轴版本分别采购。",
+      "capability_ids": [
+        "E10",
+        "M12",
+        "M13"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/01_表情显示/E10_Otto 的 21 个 GIF 表情资源.md",
+        "机器人能力参考库/02_动作与运动/M12_Otto 四舵机周期步态与姿势.md",
+        "机器人能力参考库/02_动作与运动/M13_小智 Otto 六舵机与双臂动作.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 10,
+      "name": "EMO-Dot小豆机器人",
+      "folder": "10_EMO-Dot小豆机器人",
+      "readme": "机器人开发参考库/10_EMO-Dot小豆机器人/README.md",
+      "primary_github": "M-D-777/EMO-Dot",
+      "origin_kind": "github",
+      "origin_repositories": [
+        {
+          "repo": "M-D-777/EMO-Dot",
+          "github_url": "https://github.com/M-D-777/EMO-Dot",
+          "role": "主项目发布资料",
+          "branch": "main",
+          "fixed_commit": "25884f58f25d9d931ca3dbf9d5c18221d9ae237c",
+          "fixed_tree_url": "https://github.com/M-D-777/EMO-Dot/tree/25884f58f25d9d931ca3dbf9d5c18221d9ae237c",
+          "local_snapshot": "机器人开发参考库/10_EMO-Dot小豆机器人/仓库/M-D-777__EMO-Dot"
+        },
+        {
+          "repo": "M-D-777/esp32_s3_lvgl9_lottie_test",
+          "github_url": "https://github.com/M-D-777/esp32_s3_lvgl9_lottie_test",
+          "role": "同作者动画实验",
+          "branch": "main",
+          "fixed_commit": "6bc01cad2a59cf061ddaf23847235f8f93e0e9b6",
+          "fixed_tree_url": "https://github.com/M-D-777/esp32_s3_lvgl9_lottie_test/tree/6bc01cad2a59cf061ddaf23847235f8f93e0e9b6",
+          "local_snapshot": "机器人开发参考库/10_EMO-Dot小豆机器人/仓库/M-D-777__esp32_s3_lvgl9_lottie_test"
+        },
+        {
+          "repo": "M-D-777/xiaozhi-esp32",
+          "github_url": "https://github.com/M-D-777/xiaozhi-esp32",
+          "role": "小豆设备固件分支",
+          "branch": "emo-dot",
+          "fixed_commit": "04e156decdc99a64bfa27c5681294da804b8da23",
+          "fixed_tree_url": "https://github.com/M-D-777/xiaozhi-esp32/tree/04e156decdc99a64bfa27c5681294da804b8da23",
+          "local_snapshot": "机器人开发参考库/10_EMO-Dot小豆机器人/仓库/M-D-777__xiaozhi-esp32"
+        }
+      ],
+      "local_source_records": [],
+      "featured_related_repositories": [
+        "M-D-777/xiaozhi-esp32",
+        "M-D-777/esp32_s3_lvgl9_lottie_test"
+      ],
+      "reusable_content": "圆屏角色、语音状态、独立S3 Lottie实验",
+      "adaptation_boundary": "主仓多为BIN/说明，源码在emo-dot分支；固定支脚不含行走。",
+      "capability_ids": [
+        "E08"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/01_表情显示/E08_EMO 作者的 LVGL Lottie 动画实验.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 11,
+      "name": "ElectronBot类人桌面机器人",
+      "folder": "11_ElectronBot类人桌面机器人",
+      "readme": "机器人开发参考库/11_ElectronBot类人桌面机器人/README.md",
+      "primary_github": "peng-zhihui/ElectronBot",
+      "origin_kind": "github",
+      "origin_repositories": [
+        {
+          "repo": "jinsonli/ElectronBot-Voice",
+          "github_url": "https://github.com/jinsonli/ElectronBot-Voice",
+          "role": "主 README 指向的第三方语音扩展",
+          "branch": "main",
+          "fixed_commit": "d8cac34eb103d32db7299c05a1a69c4e1a189c95",
+          "fixed_tree_url": "https://github.com/jinsonli/ElectronBot-Voice/tree/d8cac34eb103d32db7299c05a1a69c4e1a189c95",
+          "local_snapshot": "机器人开发参考库/11_ElectronBot类人桌面机器人/仓库/jinsonli__ElectronBot-Voice"
+        },
+        {
+          "repo": "maker-community/ElectronBot-Peripheral",
+          "github_url": "https://github.com/maker-community/ElectronBot-Peripheral",
+          "role": "Otto 文档指向的 ElectronBot 外设开发",
+          "branch": "main",
+          "fixed_commit": "2f545c891c494cff85b43ca4270a4c75a6ed9fc8",
+          "fixed_tree_url": "https://github.com/maker-community/ElectronBot-Peripheral/tree/2f545c891c494cff85b43ca4270a4c75a6ed9fc8",
+          "local_snapshot": "机器人开发参考库/11_ElectronBot类人桌面机器人/仓库/maker-community__ElectronBot-Peripheral"
+        },
+        {
+          "repo": "peng-zhihui/CycloidAcuratorNano",
+          "github_url": "https://github.com/peng-zhihui/CycloidAcuratorNano",
+          "role": "同作者微型摆线减速器",
+          "branch": "main",
+          "fixed_commit": "d8fc82dedc05ae4f6cdc5aa2a3174b4212884158",
+          "fixed_tree_url": "https://github.com/peng-zhihui/CycloidAcuratorNano/tree/d8fc82dedc05ae4f6cdc5aa2a3174b4212884158",
+          "local_snapshot": "机器人开发参考库/11_ElectronBot类人桌面机器人/仓库/peng-zhihui__CycloidAcuratorNano"
+        },
+        {
+          "repo": "peng-zhihui/Dummy-Robot",
+          "github_url": "https://github.com/peng-zhihui/Dummy-Robot",
+          "role": "同作者机械臂参考",
+          "branch": "main",
+          "fixed_commit": "84453f1391c4442b5387a799571b7f67418afa2d",
+          "fixed_tree_url": "https://github.com/peng-zhihui/Dummy-Robot/tree/84453f1391c4442b5387a799571b7f67418afa2d",
+          "local_snapshot": "机器人开发参考库/11_ElectronBot类人桌面机器人/仓库/peng-zhihui__Dummy-Robot"
+        },
+        {
+          "repo": "peng-zhihui/ElectronBot",
+          "github_url": "https://github.com/peng-zhihui/ElectronBot",
+          "role": "主项目",
+          "branch": "main",
+          "fixed_commit": "819927015323181a9a10e0184d64ad2bddfcb407",
+          "fixed_tree_url": "https://github.com/peng-zhihui/ElectronBot/tree/819927015323181a9a10e0184d64ad2bddfcb407",
+          "local_snapshot": "机器人开发参考库/11_ElectronBot类人桌面机器人/仓库/peng-zhihui__ElectronBot"
+        },
+        {
+          "repo": "peng-zhihui/Peak",
+          "github_url": "https://github.com/peng-zhihui/Peak",
+          "role": "Dummy 子模块与图形界面参考",
+          "branch": "main",
+          "fixed_commit": "7605edc702c3f4d4328144f9258c52ea8cff6218",
+          "fixed_tree_url": "https://github.com/peng-zhihui/Peak/tree/7605edc702c3f4d4328144f9258c52ea8cff6218",
+          "local_snapshot": "机器人开发参考库/11_ElectronBot类人桌面机器人/仓库/peng-zhihui__Peak"
+        },
+        {
+          "repo": "peng-zhihui/Peak",
+          "github_url": "https://github.com/peng-zhihui/Peak",
+          "role": "Dummy 固定版本的 Peak 子模块",
+          "branch": "pinned-commit",
+          "fixed_commit": "c7a90eda10683c1fb92665297bd86d3de2400d43",
+          "fixed_tree_url": "https://github.com/peng-zhihui/Peak/tree/c7a90eda10683c1fb92665297bd86d3de2400d43",
+          "local_snapshot": "机器人开发参考库/11_ElectronBot类人桌面机器人/仓库/peng-zhihui__Peak__c7a90eda1068"
+        },
+        {
+          "repo": "unlir/XDrive",
+          "github_url": "https://github.com/unlir/XDrive",
+          "role": "Dummy 配套步进电机驱动",
+          "branch": "master",
+          "fixed_commit": "e4aa58dee0e93b95732da67f50cc17c3a567b961",
+          "fixed_tree_url": "https://github.com/unlir/XDrive/tree/e4aa58dee0e93b95732da67f50cc17c3a567b961",
+          "local_snapshot": "机器人开发参考库/11_ElectronBot类人桌面机器人/仓库/unlir__XDrive"
+        }
+      ],
+      "local_source_records": [],
+      "featured_related_repositories": [
+        "jinsonli/ElectronBot-Voice",
+        "maker-community/ElectronBot-Peripheral"
+      ],
+      "reusable_content": "6关节反馈、USB底层SDK、圆屏帧和上位机",
+      "adaptation_boundary": "原STM32F405/改造反馈舵机，SG90不能直接替代；SetPose为空实现。",
+      "capability_ids": [
+        "E11",
+        "M14"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/01_表情显示/E11_ElectronBot USB 屏幕帧与媒体播放.md",
+        "机器人能力参考库/02_动作与运动/M14_ElectronBot 可用底层六关节接口.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 12,
+      "name": "VerdureLab外壳与配套",
+      "folder": "12_VerdureLab外壳资源",
+      "readme": "机器人开发参考库/12_VerdureLab外壳资源/README.md",
+      "primary_github": "maker-community/VerdureLab",
+      "origin_kind": "github",
+      "origin_repositories": [
+        {
+          "repo": "GreenShadeZhang/xiaozhi-sharp",
+          "github_url": "https://github.com/GreenShadeZhang/xiaozhi-sharp",
+          "role": "Verdure Assistant 引用的 CSharp 小智客户端",
+          "branch": "main",
+          "fixed_commit": "051fe36c62d6c74638412fc24ce85c7d7ac55710",
+          "fixed_tree_url": "https://github.com/GreenShadeZhang/xiaozhi-sharp/tree/051fe36c62d6c74638412fc24ce85c7d7ac55710",
+          "local_snapshot": "机器人开发参考库/12_VerdureLab外壳资源/仓库/GreenShadeZhang__xiaozhi-sharp"
+        },
+        {
+          "repo": "maker-community/PiWiFiAP",
+          "github_url": "https://github.com/maker-community/PiWiFiAP",
+          "role": "树莓派配网配套",
+          "branch": "master",
+          "fixed_commit": "64b820f72d523efb43741b0a226b13d3390f9473",
+          "fixed_tree_url": "https://github.com/maker-community/PiWiFiAP/tree/64b820f72d523efb43741b0a226b13d3390f9473",
+          "local_snapshot": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__PiWiFiAP"
+        },
+        {
+          "repo": "maker-community/VerdiBot",
+          "github_url": "https://github.com/maker-community/VerdiBot",
+          "role": "同组织树莓派桌面机器人",
+          "branch": "main",
+          "fixed_commit": "b85e25099cd85a62f89a3751ee36ce63b9798787",
+          "fixed_tree_url": "https://github.com/maker-community/VerdiBot/tree/b85e25099cd85a62f89a3751ee36ce63b9798787",
+          "local_snapshot": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__VerdiBot"
+        },
+        {
+          "repo": "maker-community/Verdure.Assistant",
+          "github_url": "https://github.com/maker-community/Verdure.Assistant",
+          "role": "VerdiBot 对话软件",
+          "branch": "master",
+          "fixed_commit": "98a8bcbc927b1a86c6b54f9a1634338b265936ab",
+          "fixed_tree_url": "https://github.com/maker-community/Verdure.Assistant/tree/98a8bcbc927b1a86c6b54f9a1634338b265936ab",
+          "local_snapshot": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__Verdure.Assistant"
+        },
+        {
+          "repo": "maker-community/VerdureBuddyRover",
+          "github_url": "https://github.com/maker-community/VerdureBuddyRover",
+          "role": "同组织移动底盘",
+          "branch": "main",
+          "fixed_commit": "cf1c772dcc854ae5c19699eebb3970e1c3f64f34",
+          "fixed_tree_url": "https://github.com/maker-community/VerdureBuddyRover/tree/cf1c772dcc854ae5c19699eebb3970e1c3f64f34",
+          "local_snapshot": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__VerdureBuddyRover"
+        },
+        {
+          "repo": "maker-community/VerdureLab",
+          "github_url": "https://github.com/maker-community/VerdureLab",
+          "role": "主项目结构资源",
+          "branch": "main",
+          "fixed_commit": "bcc1859dd35e7ad79ff4ea2a227f7ff26fb08ece",
+          "fixed_tree_url": "https://github.com/maker-community/VerdureLab/tree/bcc1859dd35e7ad79ff4ea2a227f7ff26fb08ece",
+          "local_snapshot": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__VerdureLab"
+        },
+        {
+          "repo": "maker-community/taishanpi-3m-rk3576-dotnet-iot",
+          "github_url": "https://github.com/maker-community/taishanpi-3m-rk3576-dotnet-iot",
+          "role": "VerdureLab 关联的泰山派设备控制",
+          "branch": "main",
+          "fixed_commit": "2b434fcfbddd66ed51a245c2531cb0a199e61ba9",
+          "fixed_tree_url": "https://github.com/maker-community/taishanpi-3m-rk3576-dotnet-iot/tree/2b434fcfbddd66ed51a245c2531cb0a199e61ba9",
+          "local_snapshot": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__taishanpi-3m-rk3576-dotnet-iot"
+        },
+        {
+          "repo": "maker-community/xiaozhi-esp32",
+          "github_url": "https://github.com/maker-community/xiaozhi-esp32",
+          "role": "移动底盘配套语音固件的正确分支",
+          "branch": "verdure-buddy-rover",
+          "fixed_commit": "caf40bbba4200d9605886fbef4a20ee7ab05b7ca",
+          "fixed_tree_url": "https://github.com/maker-community/xiaozhi-esp32/tree/caf40bbba4200d9605886fbef4a20ee7ab05b7ca",
+          "local_snapshot": "机器人开发参考库/12_VerdureLab外壳资源/仓库/maker-community__xiaozhi-esp32"
+        }
+      ],
+      "local_source_records": [],
+      "featured_related_repositories": [
+        "maker-community/VerdureBuddyRover",
+        "maker-community/VerdiBot"
+      ],
+      "reusable_content": "桌面壳体、Rover双电机差速、主机对话模块",
+      "adaptation_boundary": "壳体仓无统一电子BOM；Rover、VerdiBot与其语音板分路线。",
+      "capability_ids": [
+        "M15"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/02_动作与运动/M15_VerdureBuddyRover 双电机差速与 LED情绪.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 13,
+      "name": "XGO-Duck赛博鸭子",
+      "folder": "13_XGO-Duck赛博鸭子",
+      "readme": "机器人开发参考库/13_XGO-Duck赛博鸭子/README.md",
+      "primary_github": "LuwuDynamics/xgoduck_hardware",
+      "origin_kind": "github",
+      "origin_repositories": [
+        {
+          "repo": "LuwuDynamics/rig_omni",
+          "github_url": "https://github.com/LuwuDynamics/rig_omni",
+          "role": "同组织多形态固件参考",
+          "branch": "main",
+          "fixed_commit": "c2b42cd73ef65f5cd2a158d6949f0273869454dc",
+          "fixed_tree_url": "https://github.com/LuwuDynamics/rig_omni/tree/c2b42cd73ef65f5cd2a158d6949f0273869454dc",
+          "local_snapshot": "机器人开发参考库/13_XGO-Duck赛博鸭子/仓库/LuwuDynamics__rig_omni"
+        },
+        {
+          "repo": "LuwuDynamics/xgoduck_hardware",
+          "github_url": "https://github.com/LuwuDynamics/xgoduck_hardware",
+          "role": "主项目硬件",
+          "branch": "master",
+          "fixed_commit": "703bfd274071cb545b1ed6f512f3c81cf91e447b",
+          "fixed_tree_url": "https://github.com/LuwuDynamics/xgoduck_hardware/tree/703bfd274071cb545b1ed6f512f3c81cf91e447b",
+          "local_snapshot": "机器人开发参考库/13_XGO-Duck赛博鸭子/仓库/LuwuDynamics__xgoduck_hardware"
+        },
+        {
+          "repo": "LuwuDynamics/xgoduck_rl",
+          "github_url": "https://github.com/LuwuDynamics/xgoduck_rl",
+          "role": "训练与策略导出配套",
+          "branch": "main",
+          "fixed_commit": "326d77a1122870bdefa2c36403937502c958e69c",
+          "fixed_tree_url": "https://github.com/LuwuDynamics/xgoduck_rl/tree/326d77a1122870bdefa2c36403937502c958e69c",
+          "local_snapshot": "机器人开发参考库/13_XGO-Duck赛博鸭子/仓库/LuwuDynamics__xgoduck_rl"
+        },
+        {
+          "repo": "LuwuDynamics/xgoduck_runtime_arduino",
+          "github_url": "https://github.com/LuwuDynamics/xgoduck_runtime_arduino",
+          "role": "执行器与策略运行配套",
+          "branch": "master",
+          "fixed_commit": "8cdbbd84710d856581982c9eaf0d5e2970666232",
+          "fixed_tree_url": "https://github.com/LuwuDynamics/xgoduck_runtime_arduino/tree/8cdbbd84710d856581982c9eaf0d5e2970666232",
+          "local_snapshot": "机器人开发参考库/13_XGO-Duck赛博鸭子/仓库/LuwuDynamics__xgoduck_runtime_arduino"
+        },
+        {
+          "repo": "pollen-robotics/microduck",
+          "github_url": "https://github.com/pollen-robotics/microduck",
+          "role": "鸭子硬件与运行时上游",
+          "branch": "main",
+          "fixed_commit": "1fa84386f07884e27866411bc1ba166977bced95",
+          "fixed_tree_url": "https://github.com/pollen-robotics/microduck/tree/1fa84386f07884e27866411bc1ba166977bced95",
+          "local_snapshot": "机器人开发参考库/13_XGO-Duck赛博鸭子/仓库/pollen-robotics__microduck"
+        },
+        {
+          "repo": "pollen-robotics/microduck_rl",
+          "github_url": "https://github.com/pollen-robotics/microduck_rl",
+          "role": "鸭子训练上游",
+          "branch": "develop",
+          "fixed_commit": "8d0db74916a4f833d1d9b95d6a1d7f4d13b9d5ec",
+          "fixed_tree_url": "https://github.com/pollen-robotics/microduck_rl/tree/8d0db74916a4f833d1d9b95d6a1d7f4d13b9d5ec",
+          "local_snapshot": "机器人开发参考库/13_XGO-Duck赛博鸭子/仓库/pollen-robotics__microduck_rl"
+        }
+      ],
+      "local_source_records": [],
+      "featured_related_repositories": [
+        "LuwuDynamics/xgoduck_runtime_arduino",
+        "LuwuDynamics/xgoduck_rl"
+      ],
+      "reusable_content": "头颈/嘴表达、串行舵机、IMU、训练与部署分层",
+      "adaptation_boundary": "原UNO Q、15个Feetech 1910、QMI8658A；PWM微型舵机不能直接替代。",
+      "capability_ids": [
+        "M17"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/02_动作与运动/M17_XGO-Duck 61维观测与14维策略动作.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 14,
+      "name": "Jumper螃蟹机器人",
+      "folder": "14_Jumper螃蟹机器人",
+      "readme": "机器人开发参考库/14_Jumper螃蟹机器人/README.md",
+      "primary_github": "KingKongRobotics/jumper",
+      "origin_kind": "github",
+      "origin_repositories": [
+        {
+          "repo": "KingKongRobotics/jumper",
+          "github_url": "https://github.com/KingKongRobotics/jumper",
+          "role": "主项目",
+          "branch": "main",
+          "fixed_commit": "7d3cc4bebd1efe951e0adc38c053d417260867c0",
+          "fixed_tree_url": "https://github.com/KingKongRobotics/jumper/tree/7d3cc4bebd1efe951e0adc38c053d417260867c0",
+          "local_snapshot": "机器人开发参考库/14_Jumper螃蟹机器人/仓库/KingKongRobotics__jumper"
+        },
+        {
+          "repo": "KingKongRobotics/jumper-design",
+          "github_url": "https://github.com/KingKongRobotics/jumper-design",
+          "role": "外观与场景内容配套",
+          "branch": "main",
+          "fixed_commit": "918d192857fcea1678c2a40b339501004a94d838",
+          "fixed_tree_url": "https://github.com/KingKongRobotics/jumper-design/tree/918d192857fcea1678c2a40b339501004a94d838",
+          "local_snapshot": "机器人开发参考库/14_Jumper螃蟹机器人/仓库/KingKongRobotics__jumper-design"
+        }
+      ],
+      "local_source_records": [],
+      "featured_related_repositories": [
+        "KingKongRobotics/jumper-design"
+      ],
+      "reusable_content": "22关节仿真、任务动作、策略布局契约、Rust状态机",
+      "adaptation_boundary": "原RK3576；真机部署有缺口，mesh不等于制造BOM。",
+      "capability_ids": [
+        "M18",
+        "M19"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/02_动作与运动/M18_Jumper 按关节名称解析策略契约.md",
+        "机器人能力参考库/02_动作与运动/M19_Jumper 参考动作表与时间插值.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 15,
+      "name": "小纸壳机器人",
+      "folder": "15_小纸壳机器人",
+      "readme": "机器人开发参考库/15_小纸壳机器人/README.md",
+      "primary_github": null,
+      "origin_kind": "user_provided_local_files",
+      "origin_repositories": [],
+      "local_source_records": [
+        "机器人开发参考库/15_小纸壳机器人/来源与版本.json"
+      ],
+      "featured_related_repositories": [],
+      "reusable_content": "纸板双轴结构、摸头/双红外、Web Serial模块验收",
+      "adaptation_boundary": "本地DOCX/ZIP，缺完整设备端源码；C3 BIN不能直接刷S3。",
+      "capability_ids": [
+        "E12",
+        "I06"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/01_表情显示/E12_纸壳与作者 BIN 的表情源码边界.md",
+        "机器人能力参考库/03_交互状态与调度/I06_纸壳 Web Serial 模块验收与整机命令.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 16,
+      "name": "Tiny Engineer桌面编程机器人",
+      "folder": "16_TinyEngineer桌面编程机器人",
+      "readme": "机器人开发参考库/16_TinyEngineer桌面编程机器人/README.md",
+      "primary_github": "jamro/tiny-engineer",
+      "origin_kind": "github",
+      "origin_repositories": [
+        {
+          "repo": "jamro/tiny-engineer",
+          "github_url": "https://github.com/jamro/tiny-engineer",
+          "role": "主项目：ESP32-C3表达固件、结构、IDE钩子",
+          "branch": "main",
+          "fixed_commit": "d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+          "fixed_tree_url": "https://github.com/jamro/tiny-engineer/tree/d71eb42a7abd98d81aae17472f35ba9d55ef5c89",
+          "local_snapshot": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__tiny-engineer"
+        },
+        {
+          "repo": "jamro/yova",
+          "github_url": "https://github.com/jamro/yova",
+          "role": "同作者独立语音助手参考，非现成Tiny适配器",
+          "branch": "main",
+          "fixed_commit": "ef2aab36e1901d396e3ef9cbcb8210dc54b9e558",
+          "fixed_tree_url": "https://github.com/jamro/yova/tree/ef2aab36e1901d396e3ef9cbcb8210dc54b9e558",
+          "local_snapshot": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__yova"
+        },
+        {
+          "repo": "jamro/desk-hud",
+          "github_url": "https://github.com/jamro/desk-hud",
+          "role": "同作者独立桌面面板与接近感知参考",
+          "branch": "main",
+          "fixed_commit": "1e4eb6c77555abdccd5914aa84d12edc8e37c0a3",
+          "fixed_tree_url": "https://github.com/jamro/desk-hud/tree/1e4eb6c77555abdccd5914aa84d12edc8e37c0a3",
+          "local_snapshot": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__desk-hud"
+        },
+        {
+          "repo": "jamro/brass-thumb-pomodoro",
+          "github_url": "https://github.com/jamro/brass-thumb-pomodoro",
+          "role": "同作者机械完成奖励与计时器参考",
+          "branch": "main",
+          "fixed_commit": "04dfe78fb5fc89643590cd321c45707cfaef2fc9",
+          "fixed_tree_url": "https://github.com/jamro/brass-thumb-pomodoro/tree/04dfe78fb5fc89643590cd321c45707cfaef2fc9",
+          "local_snapshot": "机器人开发参考库/16_TinyEngineer桌面编程机器人/仓库/jamro__brass-thumb-pomodoro"
+        }
+      ],
+      "local_source_records": [],
+      "featured_related_repositories": [
+        "jamro/yova",
+        "jamro/desk-hud"
+      ],
+      "reusable_content": "16种独立表情、5轴PCA平滑/限位、编程事件→状态",
+      "adaptation_boundary": "原C3/128×32，有MAX98357A音效输出，无完整对话；YOVA另适配。",
+      "capability_ids": [
+        "E02",
+        "M20",
+        "I02",
+        "C03"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/01_表情显示/E02_TinyEngineer 独立 16 种位图表情.md",
+        "机器人能力参考库/02_动作与运动/M20_TinyEngineer 舵机平滑、限位与释放输出.md",
+        "机器人能力参考库/03_交互状态与调度/I02_TinyEngineer 表情与动作状态注册表.md",
+        "机器人能力参考库/04_通信与工具调用/C03_TinyEngineer HTTP 与外部事件到动画.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 17,
+      "name": "Needle端侧意图模型",
+      "folder": "17_Needle端侧模型",
+      "readme": "机器人开发参考库/17_Needle端侧模型/README.md",
+      "primary_github": "cactus-compute/needle",
+      "origin_kind": "github",
+      "origin_repositories": [
+        {
+          "repo": "cactus-compute/needle",
+          "github_url": "https://github.com/cactus-compute/needle",
+          "role": "主项目：Needle3 Python SDK、训练参考与导出",
+          "branch": "main",
+          "fixed_commit": "8881c1ceada54814465fa5edddc6599f32383985",
+          "fixed_tree_url": "https://github.com/cactus-compute/needle/tree/8881c1ceada54814465fa5edddc6599f32383985",
+          "local_snapshot": "机器人开发参考库/17_Needle端侧模型/仓库/cactus-compute__needle"
+        },
+        {
+          "repo": "cactus-compute/cactus",
+          "github_url": "https://github.com/cactus-compute/cactus",
+          "role": "同组织通用移动推理与旧版Needle源码参考",
+          "branch": "main",
+          "fixed_commit": "2cfcdb8568eb9192323b27fd0012a834517b4419",
+          "fixed_tree_url": "https://github.com/cactus-compute/cactus/tree/2cfcdb8568eb9192323b27fd0012a834517b4419",
+          "local_snapshot": "机器人开发参考库/17_Needle端侧模型/仓库/cactus-compute__cactus"
+        },
+        {
+          "repo": "cactus-compute/needle-environments",
+          "github_url": "https://github.com/cactus-compute/needle-environments",
+          "role": "六个工具场景的schema和手工测试参考",
+          "branch": "main",
+          "fixed_commit": "3875d55d7a2680157ea093d87694f16c59f79926",
+          "fixed_tree_url": "https://github.com/cactus-compute/needle-environments/tree/3875d55d7a2680157ea093d87694f16c59f79926",
+          "local_snapshot": "机器人开发参考库/17_Needle端侧模型/仓库/cactus-compute__needle-environments"
+        },
+        {
+          "repo": "cactus-compute/cq-convert",
+          "github_url": "https://github.com/cactus-compute/cq-convert",
+          "role": "TurboQuant-H固定量化研究参考，非Needle3直接依赖",
+          "branch": "main",
+          "fixed_commit": "f1d461218238eaf3a27c2e8d9a52ef7a7ff1365d",
+          "fixed_tree_url": "https://github.com/cactus-compute/cq-convert/tree/f1d461218238eaf3a27c2e8d9a52ef7a7ff1365d",
+          "local_snapshot": "机器人开发参考库/17_Needle端侧模型/仓库/cactus-compute__cq-convert"
+        },
+        {
+          "repo": "cactus-compute/depth-over-specialization",
+          "github_url": "https://github.com/cactus-compute/depth-over-specialization",
+          "role": "多模态对比编码器研究参考，非Needle3直接依赖",
+          "branch": "main",
+          "fixed_commit": "8849083ae61576fb65609fec8c342f52ed57958d",
+          "fixed_tree_url": "https://github.com/cactus-compute/depth-over-specialization/tree/8849083ae61576fb65609fec8c342f52ed57958d",
+          "local_snapshot": "机器人开发参考库/17_Needle端侧模型/仓库/cactus-compute__depth-over-specialization"
+        }
+      ],
+      "local_source_records": [],
+      "featured_related_repositories": [
+        "cactus-compute/needle-environments",
+        "cactus-compute/cactus"
+      ],
+      "reusable_content": "有限工具schema、结构化参数、complete与run边界",
+      "adaptation_boundary": "主机/移动/边缘软件；当前资源不是S3 N16R8可直接部署的模型。",
+      "capability_ids": [
+        "C04",
+        "C05"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/04_通信与工具调用/C04_Needle 端侧工具提案与 schema.md",
+        "机器人能力参考库/04_通信与工具调用/C05_Needle run 自动执行与 complete 的区别.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 18,
+      "name": "桌面小坦克",
+      "folder": "18_桌面小坦克",
+      "readme": "机器人开发参考库/18_桌面小坦克/README.md",
+      "primary_github": null,
+      "origin_kind": "user_provided_local_files",
+      "origin_repositories": [],
+      "local_source_records": [
+        "机器人开发参考库/18_桌面小坦克/本地资料来源与校验.json"
+      ],
+      "featured_related_repositories": [],
+      "reusable_content": "双轮混控、WebSocket、轨迹计时、命令超时停车",
+      "adaptation_boundary": "本地源码/BOM/PCB/3MF；原双3V N20/TB6612，公开上游GitHub未确认。",
+      "capability_ids": [
+        "M16",
+        "C08"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/02_动作与运动/M16_桌面坦克混控、死区与爬升限速.md",
+        "机器人能力参考库/04_通信与工具调用/C08_坦克 WebSocket、路径回放与超时停车.md"
+      ],
+      "physical_verification": false
+    },
+    {
+      "project_id": 19,
+      "name": "每逢佳节瘦三斤固件生态",
+      "folder": "19_每逢佳节瘦三斤固件生态",
+      "readme": "机器人开发参考库/19_每逢佳节瘦三斤固件生态/README.md",
+      "primary_github": null,
+      "origin_kind": "user_provided_local_files",
+      "origin_repositories": [],
+      "local_source_records": [
+        "机器人开发参考库/19_每逢佳节瘦三斤固件生态/本地资料来源与校验.json"
+      ],
+      "featured_related_repositories": [],
+      "reusable_content": "C3/S3功能取舍、控制模式、音乐服务、结构供电",
+      "adaptation_boundary": "本地多款BIN与Python配套；GitHub未确认，小智主仓不等于这些BIN来源。",
+      "capability_ids": [
+        "E12",
+        "A03",
+        "A05"
+      ],
+      "capability_documents": [
+        "机器人能力参考库/01_表情显示/E12_纸壳与作者 BIN 的表情源码边界.md",
+        "机器人能力参考库/05_媒体与资源/A03_作者配套本地音乐检索与HTTP流服务.md",
+        "机器人能力参考库/05_媒体与资源/A05_作者固件版本、板型与非源码材料.md"
+      ],
+      "physical_verification": false
+    }
+  ]
+}
